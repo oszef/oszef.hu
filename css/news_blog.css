@@ -1,0 +1,774 @@
+/* =========================================================
+   SZEFO.HU – HÍREK + BLOG OLDAL
+   Fájl: css/news_blog.css
+
+   Csak a hu/hireink/index.html oldal saját stílusa.
+   A közös navbar/offcanvas/style tokenek továbbra is a style.css-ben vannak.
+========================================================= */
+
+/* =========================================================
+   1. OLDAL ALAP
+========================================================= */
+
+.news-blog-page {
+  min-height: 100vh;
+  padding: calc(var(--navbar-height) + 64px) 20px 90px;
+  background:
+    radial-gradient(circle at top left, rgba(0, 91, 187, 0.12), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(0, 63, 125, 0.08), transparent 30%),
+    var(--color-bg);
+}
+
+/* =========================================================
+   2. HERO
+========================================================= */
+
+.news-blog-hero {
+  max-width: 980px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.news-blog-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  color: var(--color-primary-light);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.news-blog-hero h1 {
+  margin: 0 0 18px;
+  color: var(--color-primary);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  font-weight: 900;
+  text-wrap: balance;
+}
+
+.news-blog-hero p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   3. APP KERET
+========================================================= */
+
+.news-blog-app {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 34px;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(0, 63, 125, 0.08);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* =========================================================
+   4. TOOLBAR + KERESŐ
+========================================================= */
+
+.news-blog-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.news-blog-toolbar h2 {
+  margin: 0 0 8px;
+  color: var(--color-primary);
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height: 1.15;
+  font-weight: 900;
+  text-wrap: balance;
+}
+
+.news-blog-toolbar p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.news-blog-search {
+  flex: 0 0 min(360px, 100%);
+}
+
+.news-blog-search input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 17px;
+  border: 1px solid rgba(0, 63, 125, 0.18);
+  border-radius: 999px;
+  background: var(--color-white);
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.news-blog-search input::placeholder {
+  color: var(--color-soft-text);
+}
+
+/* A közös fókuszgyűrűt használjuk, mert a korábbi áttetsző változat
+   világos háttéren alig látszott */
+.news-blog-search input:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-color: var(--color-primary-light);
+}
+
+/* =========================================================
+   5. HÍREK / BLOG TABOK
+========================================================= */
+
+.news-blog-tabs {
+  display: inline-flex;
+  gap: 6px;
+  margin-bottom: 20px;
+  padding: 6px;
+  border-radius: 999px;
+  background: #e9eef5;
+  border: 1px solid rgba(0, 63, 125, 0.08);
+}
+
+.news-blog-tab {
+  min-height: 42px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.news-blog-tab:hover,
+.news-blog-tab:focus-visible {
+  transform: translateY(-1px);
+}
+
+.news-blog-tab.is-active,
+.news-blog-tab[aria-selected="true"] {
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 8px 18px rgba(0, 63, 125, 0.18);
+}
+
+/* =========================================================
+   6. KATEGÓRIA SZŰRŐK
+========================================================= */
+
+.news-blog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 30px;
+}
+
+.news-blog-filter {
+  min-height: 40px;
+  padding: 9px 15px;
+  border: 1px solid rgba(0, 63, 125, 0.16);
+  border-radius: 999px;
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.news-blog-filter:hover,
+.news-blog-filter:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 63, 125, 0.10);
+}
+
+.news-blog-filter.is-active,
+.news-blog-filter[aria-pressed="true"] {
+  background: var(--color-primary-light);
+  color: var(--color-white);
+  border-color: var(--color-primary-light);
+}
+
+/* =========================================================
+   7. KIEMELT KÁRTYA
+========================================================= */
+
+.news-blog-featured {
+  margin-bottom: 30px;
+}
+
+.news-blog-featured-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: var(--color-white);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(0, 63, 125, 0.10);
+}
+
+.news-blog-featured-image {
+  min-height: 350px;
+  margin: 0;
+  background: #dbe7f5;
+  overflow: hidden;
+}
+
+.news-blog-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.news-blog-featured-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 4vw, 46px);
+}
+
+.news-blog-featured-content h3 {
+  margin: 0 0 16px;
+  color: var(--color-white);
+  font-size: clamp(1.75rem, 3vw, 2.6rem);
+  line-height: 1.12;
+  font-weight: 900;
+  text-wrap: balance;
+}
+
+.news-blog-featured-content p {
+  margin: 0 0 24px;
+  max-width: 62ch;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   8. META ADATOK
+========================================================= */
+
+.news-blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.news-blog-category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.news-blog-featured-card .news-blog-category {
+  background: rgba(255, 255, 255, 0.17);
+  color: var(--color-white);
+}
+
+.news-blog-card .news-blog-meta {
+  color: var(--color-primary-light);
+}
+
+.news-blog-card .news-blog-category {
+  background: rgba(0, 91, 187, 0.08);
+  color: var(--color-primary-light);
+}
+
+/* =========================================================
+   9. GRID + NORMÁL KÁRTYÁK
+========================================================= */
+
+.news-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.news-blog-card {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--color-white);
+  border: 1px solid rgba(0, 63, 125, 0.08);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.news-blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.08),
+    0 20px 42px rgba(0, 63, 125, 0.12);
+}
+
+.news-blog-card-image {
+  margin: 0;
+  aspect-ratio: 16 / 10;
+  background: #e9eef5;
+  overflow: hidden;
+}
+
+.news-blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.45s ease;
+}
+
+.news-blog-card:hover .news-blog-card-image img {
+  transform: scale(1.05);
+}
+
+.news-blog-card-content {
+  padding: 22px;
+}
+
+.news-blog-card h3 {
+  margin: 0 0 12px;
+  color: var(--color-primary);
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 900;
+  text-wrap: balance;
+}
+
+.news-blog-card p {
+  margin: 0 0 18px;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   10. TOVÁBB OLVASOM GOMB
+========================================================= */
+
+.news-blog-read-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  background: var(--color-primary-light);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.news-blog-featured-card .news-blog-read-more {
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+.news-blog-read-more:hover,
+.news-blog-read-more:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 63, 125, 0.16);
+}
+
+.news-blog-card .news-blog-read-more:hover,
+.news-blog-card .news-blog-read-more:focus-visible {
+  background: var(--color-primary-dark);
+}
+
+/* =========================================================
+   11. ÜRES ÁLLAPOT
+========================================================= */
+
+.news-blog-empty {
+  margin-top: 26px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: #eef4fb;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =========================================================
+   12. TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+  .news-blog-page {
+    padding-top: calc(var(--navbar-height) + 54px);
+  }
+
+  .news-blog-app {
+    padding: 26px;
+  }
+
+  .news-blog-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .news-blog-search {
+    flex: auto;
+  }
+
+  .news-blog-featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .news-blog-featured-image {
+    min-height: 290px;
+  }
+
+  .news-blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   13. MOBIL
+========================================================= */
+
+@media (max-width: 768px) {
+  .news-blog-page {
+    padding: calc(var(--navbar-height) + 38px) 14px 70px;
+  }
+
+  .news-blog-hero {
+    margin-bottom: 30px;
+  }
+
+  .news-blog-hero h1 {
+    font-size: 32px;
+  }
+
+  .news-blog-hero p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .news-blog-app {
+    padding: 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .news-blog-toolbar {
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .news-blog-toolbar h2 {
+    font-size: 25px;
+  }
+
+  .news-blog-toolbar p {
+    font-size: 14px;
+  }
+
+  .news-blog-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .news-blog-tab {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .news-blog-filters {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .news-blog-filter {
+    flex: 1 1 auto;
+    min-height: 40px;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .news-blog-featured-image {
+    min-height: 215px;
+  }
+
+  .news-blog-featured-content {
+    padding: 24px 20px;
+  }
+
+  .news-blog-featured-content h3 {
+    font-size: 24px;
+  }
+
+  .news-blog-featured-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .news-blog-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .news-blog-card-content {
+    padding: 20px;
+  }
+
+  .news-blog-card h3 {
+    font-size: 19px;
+  }
+
+  .news-blog-card p {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   14. KIS MOBIL
+========================================================= */
+
+@media (max-width: 420px) {
+  .news-blog-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .news-blog-app {
+    padding: 15px;
+  }
+
+  .news-blog-hero h1 {
+    font-size: 29px;
+  }
+
+  .news-blog-featured-image {
+    min-height: 190px;
+  }
+
+  .news-blog-featured-content {
+    padding: 22px 17px;
+  }
+
+  .news-blog-card-content {
+    padding: 18px;
+  }
+}
+
+/* =========================================================
+   15. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .news-blog-card,
+  .news-blog-card-image img,
+  .news-blog-tab,
+  .news-blog-filter,
+  .news-blog-read-more {
+    transition: none !important;
+  }
+
+  .news-blog-card:hover,
+  .news-blog-tab:hover,
+  .news-blog-filter:hover,
+  .news-blog-read-more:hover {
+    transform: none !important;
+  }
+}
+/* =========================================================
+   HÍR / BLOG RÉSZLETES NÉZET – HELYBEN OLVASHATÓ
+========================================================= */
+
+.news-blog-detail {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 46px);
+  border-radius: var(--radius-xl);
+  background: var(--color-white);
+  border: 1px solid rgba(0, 63, 125, 0.08);
+  box-shadow: var(--shadow-card);
+}
+
+.news-blog-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  margin-bottom: 28px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+  background: #e5eef8;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.news-blog-back:hover,
+.news-blog-back:focus-visible {
+  background: #d4e2f3;
+  transform: translateY(-1px);
+}
+
+.news-blog-detail-header {
+  margin-bottom: 28px;
+}
+
+.news-blog-detail-header h2 {
+  margin: 0 0 18px;
+  color: var(--color-primary);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  font-weight: 900;
+  text-wrap: balance;
+}
+
+.news-blog-detail-header p {
+  max-width: 72ch;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.news-blog-detail-image {
+  margin: 0 0 34px;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: #e9eef5;
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 16 / 8;
+}
+
+.news-blog-detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.news-blog-detail-content {
+  max-width: 76ch;
+  margin: 0 auto;
+}
+
+.news-blog-detail-section {
+  margin-bottom: 30px;
+}
+
+.news-blog-detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.news-blog-detail-section h3 {
+  margin: 0 0 12px;
+  color: var(--color-primary);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.news-blog-detail-section p {
+  margin: 0 0 16px;
+  color: var(--color-text);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.news-blog-detail-section p:last-child {
+  margin-bottom: 0;
+}
+
+.news-blog-read-more {
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobil */
+
+@media (max-width: 768px) {
+  .news-blog-detail {
+    padding: 24px 20px;
+    border-radius: var(--radius-lg);
+  }
+
+  .news-blog-detail-header h2 {
+    font-size: 28px;
+  }
+
+  .news-blog-detail-header p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .news-blog-detail-image {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-lg);
+  }
+
+  .news-blog-detail-section h3 {
+    font-size: 21px;
+  }
+
+  .news-blog-detail-section p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}

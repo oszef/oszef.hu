@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Szegedi SZEFO Közhasznú Nonprofit Zrt. – rehabilitációs foglalkoztatás, textilipari gyártás, villamosipari bérmunka és fenntartható értékteremtés.">
+
+    <link rel="shortcut icon" href="../../img/fav/szefo_fav.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">    <title>Keresés</title>
+    <link rel="stylesheet" href="../../css/search_style.css">    <title>Keresés</title>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <header class="site-header">
+        <!-- NAVBAR -->
+        <nav class="navbar" aria-label="Fő navigáció">
+            <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </nav>
+
+        <!-- OFFCANVAS MENU -->
+        <div class="offcanvas" id="offcanvasMenu" aria-hidden="true">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="../../index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="../kuldetesunk/index.html">Küldetésünk</a>
+                            </li>
+                            <li>
+                                <a href="../kapcsolat/index.html">Kapcsolat</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CÉGINFORMÁCIÓK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Céginformációk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../altalanos_ceginformaciok/index.html">Általános céginformáció</a>
+                            </li>
+                            <li>
+                                <a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a>
+                            </li>
+                            <li>
+                                <a href="../kepzo_intezmenyek/index.html">Képző intézmények</a>
+                            </li>
+                            <li>
+                                <a href="../projektek/index.html">Projektek</a>
+                            </li>
+                            <li>
+                                <a href="../minosegpolitika/index.html">Minőségpolitika</a>
+                            </li>
+                            <li>
+                                <a href="../partnerek/index.html">Partnerek</a>
+                            </li>
+                            <li>
+                                <a href="../alapitvany/index.html">Alapítvány</a>
+                            </li>
+                            <li>
+                                <a href="../adatszolgaltatas/index.html">Adatszolgáltatás</a>
+                            </li>
+                            <li>
+                                <a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a>
+                            </li>
+                            <li>
+                                <a href="../eves_beszamolok/index.html">Éves beszámolók</a>
+                            </li>
+                            <li>
+                                <a href="../kozzetetelek/index.html">Közzétételek</a>
+                            </li>
+                            <li>
+                                <a href="../ellenorzesek/index.html">Ellenőrzések</a>
+                            </li>
+                            <li>
+                                <a href="../szerzodesek/index.html">Szerződések</a>
+                            </li>
+                            <li>
+                                <a href="../palyazat/index.html">Pályázat NEAO-KP-1-2022/8-000016</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="../e-hulladek/index.html">E-hulladék</a>
+                    </li>
+                    <li>
+                        <a href="../karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="../klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content">
+  <section class="search-page" aria-labelledby="search-page-title">
+
+    <div class="search-panel">
+      <span class="search-eyebrow">SZEFO.hu</span>
+
+      <h1 id="search-page-title">Keresés</h1>
+
+      <p id="search-page-description">
+        Keressen a SZEFO weboldal tartalmai között: tevékenységek, üzemegységek,
+        alapítvány, küldetés, történet és kapcsolódó információk.
+      </p>
+
+      <form
+        class="search-page-form"
+        role="search"
+        aria-describedby="search-page-description"
+        data-search-page-form
+      >
+        <label class="sr-only" for="searchPageInput">
+          Keresés az oldalon
+        </label>
+
+        <input
+          id="searchPageInput"
+          type="search"
+          name="q"
+          placeholder="Írja be a keresett kifejezést..."
+          autocomplete="off"
+          data-search-input
+        >
+
+        <button type="submit">
+          Keresés
+        </button>
+      </form>
+    </div>
+
+    <div
+      class="search-results-info"
+      data-search-info
+      aria-live="polite"
+    ></div>
+
+    <div
+      class="search-results"
+      data-search-results
+      aria-label="Keresési találatok"
+    ></div>
+
+  </section>
+    </main>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/search_data.js"></script>
+    <script src="../../js/search.js"></script>
+</body>
+</html>

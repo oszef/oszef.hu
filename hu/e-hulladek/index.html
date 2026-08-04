@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Szegedi SZEFO Közhasznú Nonprofit Zrt. – rehabilitációs foglalkoztatás, textilipari gyártás, villamosipari bérmunka és fenntartható értékteremtés.">
+
+    
+   <link href="../../css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+     <link rel="shortcut icon" href="../../img/fav/szefo_fav.PNG" type="image/x-icon">
+     
+   
+
+     <link rel="stylesheet" href="../../css/style.css">
+     <link rel="stylesheet" href="../../css/pdf_style.css">
+    <title>E-Hulladék</title>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <header class="site-header">
+        <!-- NAVBAR -->
+        <nav class="navbar" aria-label="Fő navigáció">
+            <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </nav>
+
+        <!-- OFFCANVAS MENU -->
+        <div class="offcanvas" id="offcanvasMenu" aria-hidden="true">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="../../index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="../kuldetesunk/index.html">Küldetésünk</a>
+                            </li>
+                            <li>
+                                <a href="../kapcsolat/index.html">Kapcsolat</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CÉGINFORMÁCIÓK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Céginformációk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../altalanos_ceginformaciok/index.html">Általános céginformáció</a>
+                            </li>
+                            <li>
+                                <a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a>
+                            </li>
+                            <li>
+                                <a href="../kepzo_intezmenyek/index.html">Képző intézmények</a>
+                            </li>
+                            <li>
+                                <a href="../projektek/index.html">Projektek</a>
+                            </li>
+                            <li>
+                                <a href="../minosegpolitika/index.html">Minőségpolitika</a>
+                            </li>
+                            <li>
+                                <a href="../partnerek/index.html">Partnerek</a>
+                            </li>
+                            <li>
+                                <a href="../alapitvany/index.html">Alapítvány</a>
+                            </li>
+                            <li>
+                                <a href="../adatszolgaltatas/index.html">Adatszolgáltatás</a>
+                            </li>
+                            <li>
+                                <a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a>
+                            </li>
+                            <li>
+                                <a href="../eves_beszamolok/index.html">Éves beszámolók</a>
+                            </li>
+                            <li>
+                                <a href="../kozzetetelek/index.html">Közzétételek</a>
+                            </li>
+                            <li>
+                                <a href="../ellenorzesek/index.html">Ellenőrzések</a>
+                            </li>
+                            <li>
+                                <a href="../szerzodesek/index.html">Szerződések</a>
+                            </li>
+                            <li>
+                                <a href="../palyazat/index.html">Pályázat NEAO-KP-1-2022/8-000016</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="../e-hulladek/index.html">E-hulladék</a>
+                    </li>
+                    <li>
+                        <a href="../karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="../klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+
+                 <div class="search search--button-only">
+                    <a class="search-link" href="../kereses/index.html">
+                        Keresés
+                    </a>
+                    </div>
+            </div>
+        </div>
+
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content">
+    <section class="ewaste-page" aria-labelledby="ewaste-title">
+
+        <header class="ewaste-header">
+        <span class="section-eyebrow">Hulladékgazdálkodás</span>
+        <h1 id="ewaste-title">Szegedi SZEFO Közhasznú Nonprofit Zrt. hulladékgazdálkodási tevékenysége</h1>
+        <p>
+            Társaságunk veszélyes és nem veszélyes hulladékok telephelyi gyűjtésével,
+            valamint előkezelésével foglalkozik a hódmezővásárhelyi telephelyen.
+        </p>
+        </header>
+
+        <div class="ewaste-layout">
+        <aside class="ewaste-card ewaste-card--details" aria-labelledby="ewaste-data-title">
+            <h2 id="ewaste-data-title">Cég- és telephelyadatok</h2>
+            <ul class="ewaste-data-list">
+            <li><span class="ewaste-icon" aria-hidden="true"><i class="bi bi-building"></i></span><div><span class="ewaste-data-label">Székhely</span><strong>6724 Szeged, Tavasz u. 2.</strong></div></li>
+            <li><span class="ewaste-icon" aria-hidden="true"><i class="bi bi-geo-alt"></i></span><div><span class="ewaste-data-label">Telephely</span><strong>6800 Hódmezővásárhely, Erzsébeti út 8.</strong></div></li>
+            <li><span class="ewaste-icon" aria-hidden="true"><i class="bi bi-envelope"></i></span><div><span class="ewaste-data-label">Kapcsolat</span><a href="mailto:e-projectig@szefo.hu">e-projectig@szefo.hu</a></div></li>
+            <li><span class="ewaste-icon" aria-hidden="true"><i class="bi bi-hash"></i></span><div><span class="ewaste-data-label">Statisztikai azonosító jel</span><strong>11090036-1439-114-06</strong></div></li>
+            <li><span class="ewaste-icon" aria-hidden="true"><i class="bi bi-receipt"></i></span><div><span class="ewaste-data-label">Adószám</span><strong>11090036-2-06</strong></div></li>
+            <li><span class="ewaste-icon" aria-hidden="true"><i class="bi bi-file-earmark-text"></i></span><div><span class="ewaste-data-label">Cégjegyzékszám</span><strong>06-10-000122</strong></div></li>
+            <li><span class="ewaste-icon" aria-hidden="true"><i class="bi bi-person-vcard"></i></span><div><span class="ewaste-data-label">Ügyfél azonosító / KÜJ</span><strong>100214695</strong></div></li>
+            <li><span class="ewaste-icon" aria-hidden="true"><i class="bi bi-pin-map"></i></span><div><span class="ewaste-data-label">Telephely azonosító / KTJ</span><strong>103002793</strong></div></li>
+            <li><span class="ewaste-icon" aria-hidden="true"><i class="bi bi-map"></i></span><div><span class="ewaste-data-label">Helyrajzi szám</span><strong>7706</strong></div></li>
+            </ul>
+        </aside>
+
+        <div class="ewaste-content">
+            <section class="ewaste-card" aria-labelledby="ewaste-activity-title">
+            <h2 id="ewaste-activity-title">Tevékenységünk</h2>
+            <p>A Szegedi SZEFO Közhasznú Nonprofit Zrt. hulladékgazdálkodási tevékenysége veszélyes és nem veszélyes hulladékok gyűjtésére, valamint előkezelésére terjed ki.</p>
+            <p>Társaságunk különféle, elsősorban elektronikai hulladékok kézi bontását és válogatását végzi a hódmezővásárhelyi telephelyen.</p>
+            </section>
+
+            <section class="ewaste-card" aria-labelledby="ewaste-types-title">
+            <h2 id="ewaste-types-title">Átvett és kezelt hulladéktípusok</h2>
+            <div class="ewaste-type-grid">
+                <article class="ewaste-type-card"><span class="ewaste-type-icon" aria-hidden="true"><i class="bi bi-pc-display"></i></span><h3>Elektronikai hulladékok</h3><p>16-os főcsoport, 200135*, 200136. Ide tartozhatnak többek között számítástechnikai eszközök, szórakoztató elektronikai berendezések, háztartási kisgépek és háztartási nagygépek.</p></article>
+                <article class="ewaste-type-card"><span class="ewaste-type-icon" aria-hidden="true"><i class="bi bi-fan"></i></span><h3>Hűtő- és klímaberendezések</h3><p>Hűtőgép és klímaberendezés esetében kizárólag gyűjtésre kerül sor.</p></article>
+                <article class="ewaste-type-card"><span class="ewaste-type-icon" aria-hidden="true"><i class="bi bi-nut"></i></span><h3>Fém hulladékok</h3><p>17-es főcsoport, illetve 200140 hulladékok gyűjtése.</p></article>
+                <article class="ewaste-type-card"><span class="ewaste-type-icon" aria-hidden="true"><i class="bi bi-recycle"></i></span><h3>Műanyag és csomagolási hulladékok</h3><p>Műanyag hulladékok, valamint a 15-ös főcsoportba tartozó csomagolási hulladékok gyűjtése.</p></article>
+                <article class="ewaste-type-card ewaste-type-card--wide"><span class="ewaste-type-icon" aria-hidden="true"><i class="bi bi-diagram-3"></i></span><h3>19-es főcsoportba tartozó hulladékok</h3><p>A 19-es főcsoportba tartozó hulladékok gyűjtésre vagy előkezelésre kerülnek attól függően, hogy pontosan milyen hulladékokról van szó. Ide olyan hulladékok tartoznak, amelyek már átestek valamilyen előkezelési műveleten, tehát más hulladékkezelő létesítménytől átvett hulladékokról van szó.</p></article>
+            </div>
+            </section>
+
+            <section class="ewaste-card" aria-labelledby="ewaste-tech-title">
+            <h2 id="ewaste-tech-title">Kezelési technológia</h2>
+            <div class="ewaste-tech-box"><h3>Kezelési kód</h3><p><strong>R12</strong> – Átalakítás az R1-R11 műveletek valamelyikének elvégzése érdekében.</p></div>
+            <ul class="ewaste-process-list">
+                <li><strong>E02 – 05</strong><span>Válogatás alaki jellemzők szerint / osztályozás.</span></li>
+                <li><strong>E02 – 06</strong><span>Válogatás anyagminőség szerint / osztályozás.</span></li>
+                <li><strong>E02 – 08</strong><span>Hulladékká vált elektromos, elektronikus berendezés bontása. Célja az összetett, többféle anyagot tartalmazó elektronikai hulladékok hasznosítható összetevőinek kinyerése, valamint a nem hasznosítható anyagok elkülönítése.</span></li>
+            </ul>
+            </section>
+        </div>
+        </div>
+
+        <section class="docs-section" aria-labelledby="ewaste-docs-title">
+        <div class="docs-header">
+            <span class="section-eyebrow">Dokumentumok</span>
+            <h2 id="ewaste-docs-title">Kapcsolódó dokumentumok</h2>
+            <p>A hulladékgazdálkodási tevékenységhez kapcsolódó dokumentumok PDF formátumban érhetők el.</p>
+        </div>
+
+        <div class="docs-grid">
+            <article class="doc-card"><div class="doc-card-icon" aria-hidden="true">PDF</div><div class="doc-card-content"><h3>Fémkereskedelmi engedély</h3><p>Fémkereskedelmi engedély PDF formátumban.</p><div class="doc-card-actions"><a class="doc-action doc-action--view" href="../../doc/e-hulladek/Femkereskedelmi-engedely_6400696576.pdf" target="_blank" rel="noopener">Megnyitás</a><a class="doc-action doc-action--download" href="../../doc/e-hulladek/Femkereskedelmi-engedely_6400696576.pdf" data-download>Letöltés</a></div></div></article>
+            <article class="doc-card"><div class="doc-card-icon" aria-hidden="true">PDF</div><div class="doc-card-content"><h3>Hulladékgazdálkodási engedély</h3><p>Hulladékgazdálkodási engedély PDF formátumban.</p><div class="doc-card-actions"><a class="doc-action doc-action--view" href="../../doc/e-hulladek/Hulladekgazdalkodasi-Engedely-Szegedi-SZEFO-zrt_CS-Z02-07067-15-2022.pdf" target="_blank" rel="noopener">Megnyitás</a><a class="doc-action doc-action--download" href="../../doc/e-hulladek/Hulladekgazdalkodasi-Engedely-Szegedi-SZEFO-zrt_CS-Z02-07067-15-2022.pdf" data-download>Letöltés</a></div></div></article>
+            <article class="doc-card"><div class="doc-card-icon" aria-hidden="true">PDF</div><div class="doc-card-content"><h3>Hódmezővásárhely, Erzsébeti út 8. Telepengedély</h3><p>Hódmezővásárhely, Erzsébeti út 8. Telepengedély PDF formátumban.</p><div class="doc-card-actions"><a class="doc-action doc-action--view" href="../../doc/e-hulladek/Telepengedely_HAT_340_31_SZEFO_Zrt_hatarozat.pdf" target="_blank" rel="noopener">Megnyitás</a><a class="doc-action doc-action--download" href="../../doc/e-hulladek/Telepengedely_HAT_340_31_SZEFO_Zrt_hatarozat.pdf" data-download>Letöltés</a></div></div></article>
+             <article class="doc-card"><div class="doc-card-icon" aria-hidden="true">PDF</div><div class="doc-card-content"><h3>Hódmezővásárhely, Erzsébeti út 8. engedélymódosítás</h3><p>Hódmezővásárhely, Erzsébeti út 8. engedélymódosítás PDF formátumban.</p><div class="doc-card-actions"><a class="doc-action doc-action--view" href="../../doc/e-hulladek/CS-Z02-04357-10-2023.pdf" target="_blank" rel="noopener">Megnyitás</a><a class="doc-action doc-action--download" href="../../doc/e-hulladek/CS-Z02-04357-10-2023.pdf" data-download>Letöltés</a></div></div></article>
+             <article class="doc-card"><div class="doc-card-icon" aria-hidden="true">PDF</div><div class="doc-card-content"><h3>MOHU Sajtóközlemény</h3><p>MOHU Sajtóközlemény PDF formátumban.</p><div class="doc-card-actions"><a class="doc-action doc-action--view" href="../../doc/e-hulladek/Sajtokozlemeny_MOHU-Egyhazmegye-SZEFO.pdf" target="_blank" rel="noopener">Megnyitás</a><a class="doc-action doc-action--download" href="../../doc/e-hulladek/Sajtokozlemeny_MOHU-Egyhazmegye-SZEFO.pdf" data-download>Letöltés</a></div></div></article>
+        </div>
+        </section>
+    </section>
+
+    <section class="ewaste-gallery-section" aria-labelledby="ewaste-gallery-title">
+  <div class="ewaste-gallery-header">
+    <span class="section-eyebrow">Képgaléria</span>
+
+    <h2 id="ewaste-gallery-title">Kapcsolódó képek</h2>
+
+    <p>
+      Az e-hulladék kezeléséhez kapcsolódó ülésen készült képek.
+    </p>
+  </div>
+
+  <div class="ewaste-gallery-grid" data-ewaste-gallery>
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-1.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 1"
+    >
+      <img src="../../img/e-hulladek/ules-1.webp" alt="E-hulladék ülésen készült kép 1">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-2.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 2"
+    >
+      <img src="../../img/e-hulladek/ules-2.webp" alt="E-hulladék ülésen készült kép 2" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-3.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 3"
+    >
+      <img src="../../img/e-hulladek/ules-3.webp" alt="E-hulladék ülésen készült kép 3" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-4.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 4"
+    >
+      <img src="../../img/e-hulladek/ules-4.webp" alt="E-hulladék ülésen készült kép 4" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-5.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 5"
+    >
+      <img src="../../img/e-hulladek/ules-5.webp" alt="E-hulladék ülésen készült kép 5" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-6.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 6"
+    >
+      <img src="../../img/e-hulladek/ules-6.webp" alt="E-hulladék ülésen készült kép 6" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-7.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 7"
+    >
+      <img src="../../img/e-hulladek/ules-7.webp" alt="E-hulladék ülésen készült kép 7" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-8.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 8"
+    >
+      <img src="../../img/e-hulladek/ules-8.webp" alt="E-hulladék ülésen készült kép 8" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-9.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 9"
+    >
+      <img src="../../img/e-hulladek/ules-9.webp" alt="E-hulladék ülésen készült kép 9" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-10.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 10"
+    >
+      <img src="../../img/e-hulladek/ules-10.webp" alt="E-hulladék ülésen készült kép 10" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-11.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 11"
+    >
+      <img src="../../img/e-hulladek/ules-11.webp" alt="E-hulladék ülésen készült kép 11" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-12.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 12"
+    >
+      <img src="../../img/e-hulladek/ules-12.webp" alt="E-hulladék ülésen készült kép 12" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-13.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 13"
+    >
+      <img src="../../img/e-hulladek/ules-13.webp" alt="E-hulladék ülésen készült kép 13" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-14.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 14"
+    >
+      <img src="../../img/e-hulladek/ules-14.webp" alt="E-hulladék ülésen készült kép 14" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-15.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 15"
+    >
+      <img src="../../img/e-hulladek/ules-15.webp" alt="E-hulladék ülésen készült kép 15" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-16.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 16"
+    >
+      <img src="../../img/e-hulladek/ules-16.webp" alt="E-hulladék ülésen készült kép 16" loading="lazy" decoding="async">
+    </button>
+
+    <button
+      class="ewaste-gallery-item"
+      type="button"
+      data-gallery-image="../../img/e-hulladek/ules-17.webp"
+      data-gallery-alt="E-hulladék ülésen készült kép 17"
+    >
+      <img src="../../img/e-hulladek/ules-17.webp" alt="E-hulladék ülésen készült kép 17" loading="lazy" decoding="async">
+    </button>
+  </div>
+</section>
+
+<div class="ewaste-gallery-modal" data-ewaste-gallery-modal aria-hidden="true">
+  <div class="ewaste-gallery-backdrop" data-ewaste-gallery-close></div>
+
+  <div class="ewaste-gallery-dialog" role="dialog" aria-modal="true" aria-label="Képgaléria megtekintő">
+    <button
+      class="ewaste-gallery-close"
+      type="button"
+      data-ewaste-gallery-close
+      aria-label="Képgaléria bezárása"
+    >
+      ×
+    </button>
+
+    <button
+      class="ewaste-gallery-nav ewaste-gallery-nav--prev"
+      type="button"
+      data-ewaste-gallery-prev
+      aria-label="Előző kép"
+    >
+      ‹
+    </button>
+
+    <figure class="ewaste-gallery-view">
+      <img src="" alt="" data-ewaste-gallery-image>
+
+      <figcaption data-ewaste-gallery-caption></figcaption>
+    </figure>
+
+    <button
+      class="ewaste-gallery-nav ewaste-gallery-nav--next"
+      type="button"
+      data-ewaste-gallery-next
+      aria-label="Következő kép"
+    >
+      ›
+    </button>
+  </div>
+</div>
+
+
+</main>
+
+ <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>
+                <h2>Szegedi SZEFO Közhasznú Nonprofit Zrt.</h2>
+                <p>
+                    A befogadó társadalom alapja a diszkriminációmentességgel párosuló pozitív cselekvés.
+                </p>
+            </div>
+
+            <div>
+                <h3>Gyors elérés</h3>
+                <ul>
+                    <li><a href="../../index.html">Kezdőlap</a></li>
+                    <li><a href="../tortenetunk/index.html">Történetünk</a></li>
+                    <li><a href="../kuldetesunk/index.html">Küldetésünk</a></li>
+                    <li><a href="../kapcsolat/index.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Kapcsolat</h3>
+                <p>6724 Szeged, Tavasz utca 2.</p>
+                <p>+36-62-554-054</p>
+                <p>titkarsag@szefo.hu</p>
+            </div>
+        </div>
+    </footer>
+
+
+    
+
+   
+
+  <script src="../../js/script.js"></script> 
+    <script src="../../js/downloader.js"></script>   
+</body>
+</html>

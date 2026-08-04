@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Szegedi SZEFO Közhasznú Nonprofit Zrt. – rehabilitációs foglalkoztatás, textilipari gyártás, villamosipari bérmunka és fenntartható értékteremtés.">
+
+    <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Közérdekű adatok</title>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <header class="site-header">
+        <!-- NAVBAR -->
+        <nav class="navbar" aria-label="Fő navigáció">
+            <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </nav>
+
+        <!-- OFFCANVAS MENU -->
+        <div class="offcanvas" id="offcanvasMenu" aria-hidden="true">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="../../index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="../kuldetesunk/index.html">Küldetésünk</a>
+                            </li>
+                            <li>
+                                <a href="../kapcsolat/index.html">Kapcsolat</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CÉGINFORMÁCIÓK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Céginformációk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../altalanos_ceginformaciok/index.html">Általános céginformáció</a>
+                            </li>
+                            <li>
+                                <a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a>
+                            </li>
+                            <li>
+                                <a href="../kepzo_intezmenyek/index.html">Képző intézmények</a>
+                            </li>
+                            <li>
+                                <a href="../projektek/index.html">Projektek</a>
+                            </li>
+                            <li>
+                                <a href="../minosegpolitika/index.html">Minőségpolitika</a>
+                            </li>
+                            <li>
+                                <a href="../partnerek/index.html">Partnerek</a>
+                            </li>
+                            <li>
+                                <a href="../alapitvany/index.html">Alapítvány</a>
+                            </li>
+                            <li>
+                                <a href="../adatszolgaltatas/index.html">Adatszolgáltatás</a>
+                            </li>
+                            <li>
+                                <a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a>
+                            </li>
+                            <li>
+                                <a href="../eves_beszamolok/index.html">Éves beszámolók</a>
+                            </li>
+                            <li>
+                                <a href="../kozzetetelek/index.html">Közzétételek</a>
+                            </li>
+                            <li>
+                                <a href="../ellenorzesek/index.html">Ellenőrzések</a>
+                            </li>
+                            <li>
+                                <a href="../szerzodesek/index.html">Szerződések</a>
+                            </li>
+                            <li>
+                                <a href="../palyazat/index.html">Pályázat NEAO-KP-1-2022/8-000016</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="../e-hulladek/index.html">E-hulladék</a>
+                    </li>
+                    <li>
+                        <a href="../karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="../klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+
+               <div class="search search--button-only">
+                <a class="search-link" href="../kereses/index.html">
+                    Keresés
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content">
+        <section class="info-page" aria-labelledby="kozerdeku-title">
+
+            <!-- BEVEZETŐ -->
+            <section class="info-block section-card" aria-labelledby="kozerdeku-title">
+                <div class="info-content">
+                    <h1 id="kozerdeku-title">Közérdekű adatok</h1>
+
+                    <p>
+                        Az információs önrendelkezési jogról és az információszabadságról szóló
+                        2011. évi CXII. törvény szerinti általános közzétételi lista alapján
+                        közzétett adataink. Az adatokat három csoportban tesszük közzé: szervezeti
+                        és személyzeti adatok, a tevékenységre és működésre vonatkozó adatok,
+                        valamint gazdálkodási adatok.
+                    </p>
+
+                    <p class="info-note">
+                        A táblázatokban a „–” jelölés azt jelenti, hogy az adott adatkör
+                        társaságunknál nem áll fenn, a „nem értelmezhető” megjelölés pedig azt,
+                        hogy az adott közzétételi kötelezettség társaságunkra nem vonatkozik.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 1. SZERVEZETI, SZEMÉLYZETI ADATOK -->
+            <article class="info-block section-card" aria-labelledby="szervezeti-adatok-title">
+                <div class="info-content">
+                    <h2 id="szervezeti-adatok-title">Szervezeti, személyzeti adatok</h2>
+
+                    <h3>Kapcsolat, szervezet, vezetők</h3>
+
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Elérhetőségi adatok táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Elérhetőségi adatok</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Hivatalos név (teljes név)</td>
+                                    <td>Szegedi SZEFO Fonalfeldolgozó „zártkörűen működő” Részvénytársaság</td>
+                                </tr>
+                                <tr>
+                                    <td>2. Székhely</td>
+                                    <td>6724 Szeged, Tavasz u. 2.</td>
+                                </tr>
+                                <tr>
+                                    <td>3. Postacím (postafiók szerinti címe, ha van)</td>
+                                    <td>6724 Szeged, Tavasz u. 2.</td>
+                                </tr>
+                                <tr>
+                                    <td>4. Telefonszám</td>
+                                    <td><a href="tel:+3662554054">+36-62-554-054</a></td>
+                                </tr>
+                                <tr>
+                                    <td>5. Faxszám</td>
+                                    <td>+36-62-554-063</td>
+                                </tr>
+                                <tr>
+                                    <td>6. Központi elektronikus levélcím</td>
+                                    <td><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></td>
+                                </tr>
+                                <tr>
+                                    <td>7. A honlap URL-je</td>
+                                    <td><a href="../../index.html">www.szefo.hu</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Céget nyilvántartó cégbíróság neve</td>
+                                    <td>Szegedi Törvényszék Cégbírósága</td>
+                                </tr>
+                                <tr>
+                                    <td>Cégjegyzékszám</td>
+                                    <td>Cg.06-10-000122</td>
+                                </tr>
+                                <tr>
+                                    <td>Adószám</td>
+                                    <td>11090036-2-06</td>
+                                </tr>
+                                <tr>
+                                    <td>Jegyzett tőke</td>
+                                    <td>1.100.000,- eFt</td>
+                                </tr>
+                                <tr>
+                                    <td>Jegyzett tőke ténylegesen rendelkezésre bocsátott összege</td>
+                                    <td>1.100.000,- eFt</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>A szervezeti struktúra</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="A szervezeti struktúra táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>A szervezeti struktúra</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A szervezeti struktúra ábrája</td>
+                                    <td><a href="../altalanos_ceginformaciok/index.html#szervezeti-felepites-title">Szegedi SZEFO zrt. szervezeti felépítése</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Társaság vezetői</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="A társaság vezetői táblázat, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Társaság vezetői</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Társaság vezetői</td>
+                                    <td><a href="../altalanos_ceginformaciok/index.html#ceginfo-title">Szegedi SZEFO zrt. vezetői</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2. Társaság szervezeti egységek, telephelyek, fióktelepek és vezetőik</td>
+                                    <td>
+                                        <a href="../altalanos_ceginformaciok/index.html#szervezet-title">Szegedi SZEFO zrt. szervezeti egységei, vezetői</a><br>
+                                        <a href="../altalanos_ceginformaciok/index.html#szervezet-title">Szegedi SZEFO zrt. telephelyei, fióktelepei és vezetőik</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Irányítás, felügyelet vagy ellenőrzés alatt álló, vagy alárendeltségében működő más szerv</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Irányítás, felügyelet alatt álló szervek táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Irányítás, felügyelet vagy ellenőrzés alatt álló szerv</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A Szegedi SZEFO zrt. irányítása, felügyelete vagy ellenőrzése alatt álló, vagy alárendeltségében működő más közfeladatot ellátó szervek megnevezése, adatai</td>
+                                    <td>–</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Többségi tulajdonában álló, illetve részvételével működő gazdálkodó szervezet</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Többségi tulajdonban álló gazdálkodó szervezet táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Többségi tulajdonában álló gazdálkodó szervezet</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A Szegedi SZEFO zrt. többségi tulajdonában álló, illetve részvételével működő gazdálkodó szervezet neve, székhelye, elérhetősége (postai címe, telefon- és telefaxszáma, elektronikus levélcíme), tevékenységi köre, képviselőjének neve, a közfeladatot ellátó szerv részesedésének mértéke</td>
+                                    <td>–</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Közalapítványok</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Közalapítványok táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Szegedi SZEFO zrt. által alapított közalapítványok</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Alapított közalapítványok neve, székhelye, elérhetősége (postai címe, telefon- és telefaxszáma, elektronikus levélcíme), alapító okirata, kezelő szervének tagjai</td>
+                                    <td>–</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Alapítványok</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Alapítványok táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Szegedi SZEFO zrt. által alapított alapítványok</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Az alapítvány neve, amelyet a Szegedi SZEFO zrt. alapított és, amely alapítói jogát gyakorolja</td>
+                                    <td>
+                                        SZEFO Fonalfeldolgozó Chance Alapítvány<br>
+                                        <a href="../alapitvany/index.html#foundation-docs-title">Az alapító okirat</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2. A fentiek szerinti alapítvány székhelye</td>
+                                    <td>6724 Szeged, Tavasz u. 2.</td>
+                                </tr>
+                                <tr>
+                                    <td>3. A fentiek szerinti alapítvány kuratóriumának tagjai</td>
+                                    <td>
+                                        dr. Ambrus Norbert<br>
+                                        Kiss Andrea
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Költségvetési szerv</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Költségvetési szerv táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Alapított költségvetési szerv</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alapított költségvetési szerv neve, székhelye, a költségvetési szervet alapító jogszabály megjelölése, illetve az azt alapító határozat, a költségvetési szerv alapító okirata, vezetője, honlapjának elérhetősége, működési engedélye</td>
+                                    <td>–</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Lapok, kiadványok</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Lapok, kiadványok táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Szegedi SZEFO zrt. kiadványai</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Kiadvány, lap neve</td>
+                                    <td>SZEFO Magazin (ingyenes kiadvány)</td>
+                                </tr>
+                                <tr>
+                                    <td>2. A kiadvány kiadójának neve és elérhetősége</td>
+                                    <td>
+                                        kiadó: Szegedi SZEFO Fonalfeldolgozó „zártkörűen működő” Részvénytársaság<br>
+                                        telefon: <a href="tel:+3662554054">+36-62-554-054</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3. A kiadvány főszerkesztőjének a neve</td>
+                                    <td>Gyurácz Annamária</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Felettes, felügyeleti, törvényességi ellenőrzést vagy felügyeletet gyakorló szerv</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Felettes, felügyeleti szervek táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Felettes, felügyeleti, törvényességi ellenőrzést vagy felügyeletet gyakorló szerv</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. A megváltozott munkaképességű munkavállalókat foglalkoztatók akkreditációjával, az akkreditált munkáltatók nyilvántartásával és az akkreditált munkáltatók ellenőrzésével összefüggő hatósági feladatokat rehabilitációs hatóságként Budapest Főváros Kormányhivatal látja el a 327/2012. (XI. 16.) Korm. rendelet szerint.</td>
+                                    <td>
+                                        <strong>Budapest Főváros Kormányhivatal</strong><br>
+                                        Honlap: <a href="http://www.kormanyhivatal.hu/hu/budapest" target="_blank" rel="noopener noreferrer">kormanyhivatal.hu/hu/budapest</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2. Az információs önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény 52. § (1) bekezdése értelmében a személyes adatok kezelésével, illetve a közérdekű adatok vagy a közérdekből nyilvános adatok megismeréséhez fűződő jogok gyakorlásával kapcsolatos jogsérelem bekövetkeztekor eljáró szerv a NAIH.</td>
+                                    <td>
+                                        <strong>Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH)</strong><br>
+                                        Székhely: 1055 Budapest, Falk Miksa utca 9-11.<br>
+                                        Postacím: 1363 Budapest, Pf.: 9.<br>
+                                        Telefonszám:
+                                        <a href="tel:+36306835969">+36 (30) 683-5969</a>,
+                                        <a href="tel:+36305496838">+36 (30) 549-6838</a>,
+                                        <a href="tel:+3613911400">+36 (1) 391-1400</a><br>
+                                        Fax: +36 (1) 391-1410<br>
+                                        E-mail cím: <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a><br>
+                                        Honlap: <a href="http://naih.hu" target="_blank" rel="noopener noreferrer">naih.hu</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2. TEVÉKENYSÉGRE, MŰKÖDÉSRE VONATKOZÓ ADATOK -->
+            <article class="info-block section-card" aria-labelledby="tevekenyseg-adatok-title">
+                <div class="info-content">
+                    <h2 id="tevekenyseg-adatok-title">Tevékenységre, működésre vonatkozó adatok</h2>
+
+                    <h3>A szerv alaptevékenysége, feladat- és hatásköre</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Alaptevékenység, feladat- és hatáskör táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>A szerv alaptevékenysége, feladat- és hatásköre</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. A Szegedi SZEFO zrt. feladatát, hatáskörét és alaptevékenységét meghatározó, a szervre vonatkozó alapvető jogszabályok, közjogi szervezetszabályozó eszközök, valamint a szervezeti és működési szabályzat, az adatvédelmi és adatbiztonsági szabályzat hatályos és teljes szövege</td>
+                                    <td>
+                                        <strong>Szabályzatok</strong>
+                                        <ul class="szefo-list">
+                                            <li>Alapszabály</li>
+                                            <li>Szervezeti és Működési Szabályzat</li>
+                                            <li>Adatvédelmi-adatbiztonsági szabályzat</li>
+                                            <li>Javadalmazási Szabályzat</li>
+                                            <li>Etikai Kódex</li>
+                                            <li>Közérdekű Adatok Közzétételének Szabályzata</li>
+                                        </ul>
+
+                                        <strong>Jogszabályok</strong>
+                                        <ul class="szefo-list">
+                                            <li>2007. évi CVI. törvény az állami vagyonról</li>
+                                            <li>327/2011. (XII. 29.) Korm. rendelet a megváltozott munkaképességű személyek ellátásaival kapcsolatos eljárásról</li>
+                                            <li>1/2018. (VI. 25.) NVTNM rendelet az egyes állami tulajdonban álló gazdasági társaságok feletti tulajdonosi joggyakorló kijelöléséről</li>
+                                        </ul>
+
+                                        <a href="../altalanos_ceginformaciok/index.html#szabalyzatok-title">A társaságra vonatkozó jogszabályok jegyzéke, szabályzatok</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Az országos illetékességű szervek, valamint a fővárosi és megyei kormányhivatal esetében a közfeladatot ellátó szerv feladatáról, tevékenységéről szóló tájékoztató magyar és angol nyelven</td>
+                                    <td>nem értelmezhető</td>
+                                </tr>
+                                <tr>
+                                    <td>A helyi önkormányzat önként vállalt feladatai</td>
+                                    <td>nem értelmezhető</td>
+                                </tr>
+                                <tr>
+                                    <td>Államigazgatási, önkormányzati, és egyéb hatósági ügyekben ügyfajtánként és eljárástípusonként a hatáskörrel rendelkező szerv megnevezése, hatáskör gyakorlásának átruházása esetén a ténylegesen eljáró szerv megnevezése, illetékességi területe, az ügyintézéshez szükséges dokumentumok, okmányok, eljárási illetékek (igazgatási szolgáltatási díjak) meghatározása, alapvető eljárási szabályok, az eljárást megindító irat benyújtásának módja (helye, ideje), ügyfélfogadás ideje, az ügyintézés határideje (elintézési, fellebbezési határidő), az ügyek intézését segítő útmutatók, az ügymenetre vonatkozó tájékoztatás és az ügyintézéshez használt letölthető formanyomtatványok, az igénybe vehető elektronikus programok elérése, időpontfoglalás, az ügytípusokhoz kapcsolódó jogszabályok jegyzéke, tájékoztatás az ügyfelet megillető jogokról és az ügyfelet terhelő kötelezettségekről</td>
+                                    <td>nem értelmezhető</td>
+                                </tr>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv által nyújtott vagy költségvetéséből finanszírozott közszolgáltatások megnevezése, tartalma, a közszolgáltatások igénybevételének rendje, a közszolgáltatásért fizetendő díj mértéke, az abból adott kedvezmények</td>
+                                    <td>nem értelmezhető</td>
+                                </tr>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv által fenntartott adatbázisok, illetve nyilvántartások leíró adatai (név, formátum, az adatkezelés célja, jogalapja, időtartama, az érintettek köre, az adatok forrása, kérdőíves adatfelvétel esetén a kitöltendő kérdőív), az adatvédelmi nyilvántartásba bejelentendő nyilvántartásoknak az e törvény szerinti azonosító adatai; a közfeladatot ellátó szerv által – alaptevékenysége keretében – gyűjtött és feldolgozott adatok fajtái, a hozzáférés módja, a másolatkészítés költségei</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv nyilvános kiadványainak címe, témája, a hozzáférés módja, a kiadvány ingyenessége, illetve a költségtérítés mértéke</td>
+                                    <td>
+                                        <strong>SZEFO Magazin</strong>
+                                        <ul class="szefo-list">
+                                            <li>a Társaságról szóló ingyenes kiadvány</li>
+                                            <li>papír alapon és elektronikus formátumban a Társaság honlapján</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>A testületi szerv döntései előkészítésének rendje, az állampolgári közreműködés (véleményezés) módja, eljárási szabályai, a testületi szerv üléseinek helye, ideje, továbbá nyilvánossága, döntései, ülésének jegyzőkönyvei, illetve összefoglalói; a testületi szerv szavazásának adatai, ha ezt jogszabály nem korlátozza</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A törvény alapján közzéteendő jogszabálytervezetek és kapcsolódó dokumentumok; a helyi önkormányzat képviselő-testületének nyilvános ülésére benyújtott előterjesztések a benyújtás időpontjától</td>
+                                    <td>nem értelmezhető</td>
+                                </tr>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv által közzétett hirdetmények, közlemények</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv által kiírt pályázatok szakmai leírása, azok eredményei és indokolásuk</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv tevékenységére vonatkozó, jogszabályon alapuló statisztikai adatgyűjtés eredményei, időbeli változásuk</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A közérdekű adatokkal kapcsolatos kötelező statisztikai adatszolgáltatás adott szervre vonatkozó adatai</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>Azon közérdekű adatok hasznosítására irányuló szerződések listája, amelyekben a közfeladatot ellátó szerv az egyik szerződő fél</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv kezelésében lévő közérdekű adatok felhasználására, hasznosítására vonatkozó általános szerződési feltételek</td>
+                                    <td>–</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Közérdekű adatok igénylése</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Közérdekű adatok igénylése táblázat, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Közérdekű adatok igénylése</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. A közérdekű adatok megismerésére irányuló igények intézésének rendje</td>
+                                    <td><a href="../adatigenyles_rendje/index.html">A közérdekű adatok megismerésére irányuló igények teljesítésének rendjéről szóló szabályzat</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2. A közérdekű adatok megismerésére irányuló igények tekintetében illetékes szervezeti egység neve</td>
+                                    <td>Vezérigazgatói Titkárság</td>
+                                </tr>
+                                <tr>
+                                    <td>3. A közérdekű adatok megismerésére irányuló igények tekintetében illetékes szervezeti egység elérhetősége (postacíme, földrajzi helye, telefonszáma, telefaxszáma, elektronikus levélcíme)</td>
+                                    <td>
+                                        Postacím: 6724 Szeged, Tavasz u. 2.<br>
+                                        Telefon: <a href="tel:+3662554054">+36-62-554-054</a><br>
+                                        Elektronikus levélcím: <a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4. Az adatvédelmi tisztviselő vagy az információs jogokkal foglalkozó személy neve</td>
+                                    <td>dr. Ambrus Norbert</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Közzétételi listák</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Közzétételi listák táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Közzétételi listák</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. A köztulajdonban álló gazdasági társaságok takarékosabb működéséről szóló 2009. évi CXXII. törvény által előírt közzététel</td>
+                                    <td>
+                                        <a href="../kozzetetelek/index.html">Közzététel</a><br>
+                                        Archív adatok elérhetősége:
+                                        <a href="../adatszolgaltatas/index.html">Adatszolgáltatás</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2. A 2015. évi LVII. tv. az energia hatékonyságról, valamint a 122/2015. (V. 26.) Korm. rendelet alapján előírt éves energetikai szakreferens jelentés</td>
+                                    <td><a href="../kozzetetelek/index.html">Éves energetikai szakreferens jelentés</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>További adatok</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="További adatok táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>További adatok</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv kezelésében levő, a közadatok újrahasznosításáról szóló törvény szerint újrahasznosítás céljára elérhető kulturális közadatok listája a rendelkezésre álló formátumok megjelölésével, valamint a közfeladatot ellátó szerv kezelésében levő, a közadatok újrahasznosításáról szóló törvény szerint újrahasznosítható közadat típusokról való tájékoztatás, a rendelkezésre álló formátumok megjelölésével</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A 19. sor szerinti közadatok és kulturális közadatok újrahasznosítására vonatkozó általános szerződési feltételek elektronikusan szerkeszthető változata</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A 19. sor szerinti közadatok és kulturális közadatok újrahasznosítás céljából történő rendelkezésre bocsátásáért fizetendő díjak általános jegyzéke, a díjszámítás alapját képező tényezőkkel együttesen</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A közadatok újrahasznosításáról szóló törvény szerinti jogorvoslati tájékoztatás</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv által megkötött, a közadatok újrahasznosításáról szóló törvény szerint kötött kizárólagos jogot biztosító megállapodások szerződő feleinek megjelölése, a kizárólagosság időtartamának, tárgyának, valamint a megállapodás egyéb lényeges elemeinek megjelölése</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv által kötött, a közadatok újrahasznosításáról szóló törvény szerint a kulturális közadatok digitalizálására kizárólagos jogot biztosító megállapodások szövege</td>
+                                    <td>–</td>
+                                </tr>
+                                <tr>
+                                    <td>A közadatok újrahasznosításáról szóló törvény szerinti azon jogszabály, közjogi szervezetszabályozó eszköz, közszolgáltatási szerződés vagy más kötelező erővel bíró dokumentum (vagy az annak elérhetőségére mutató hivatkozás), amely az újrahasznosítás céljából rendelkezésre bocsátható közadat gyűjtésével, előállításával, feldolgozásával és terjesztésével összefüggő költségek jelentős részének saját bevételből való fedezését írja elő a közfeladatot ellátó szerv részére</td>
+                                    <td>–</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3. GAZDÁLKODÁSI ADATOK -->
+            <article class="info-block section-card" aria-labelledby="gazdalkodasi-adatok-title">
+                <div class="info-content">
+                    <h2 id="gazdalkodasi-adatok-title">Gazdálkodási adatok</h2>
+
+                    <h3>A működés törvényessége, ellenőrzések</h3>
+                    <p class="info-highlight">Vizsgálatok, ellenőrzések listája</p>
+
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Állami Számvevőszék ellenőrzései táblázat, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Az Állami Számvevőszék ellenőrzései</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Az Állami Számvevőszék ellenőrzéseinek nyilvános megállapításai</td>
+                                    <td><a href="../ellenorzesek/index.html">Állami Számvevőszék ellenőrzése</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Egyéb ellenőrzések, vizsgálatok táblázat, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Egyéb ellenőrzések, vizsgálatok</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. A szervre vonatkozó egyéb ellenőrzések, vizsgálatok nyilvános megállapításai</td>
+                                    <td>–</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Számviteli beszámolók</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Számviteli beszámolók táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Számviteli beszámolók</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. A Szegedi SZEFO zrt. számviteli törvény szerinti beszámolói</td>
+                                    <td><a href="http://e-beszamolo.im.gov.hu/oldal/beszamolo_kereses" target="_blank" rel="noopener noreferrer">e-beszamolo.im.gov.hu</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Foglalkoztatottak</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Foglalkoztatottak táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Foglalkoztatottak</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. A Szegedi SZEFO zrt.-nél foglalkoztatottak létszáma és személyi juttatásaira vonatkozó összesített adatok</td>
+                                    <td><a href="../adatszolgaltatas/index.html#adat-title">Foglalkoztatottak adatai</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2. A vezetők és a vezető tisztségviselők illetménye, munkabére, és rendszeres juttatásai, valamint költségtérítése összesített összege</td>
+                                    <td><a href="../adatszolgaltatas/index.html#adat-title">Foglalkoztatottak adatai</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3. Az egyéb alkalmazottaknak nyújtott juttatások fajtája és mértéke összesítve</td>
+                                    <td><a href="../adatszolgaltatas/index.html#adat-title">Foglalkoztatottak adatai</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Társaság által nyújtott, az államháztartásról szóló törvény szerinti költségvetési támogatások</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Költségvetési támogatások táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Költségvetési támogatások</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv által nyújtott, az államháztartásról szóló törvény szerinti költségvetési támogatások kedvezményezettjeinek nevére, a támogatás céljára, összegére, továbbá a támogatási program megvalósítási helyére vonatkozó adatok, kivéve, ha a közzététel előtt a költségvetési támogatást visszavonják vagy arról a kedvezményezett lemond</td>
+                                    <td>–</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Szerződések</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Szerződések táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Szerződések</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        1. Az államháztartás pénzeszközei felhasználásával, az államháztartáshoz tartozó vagyonnal történő gazdálkodással összefüggő, ötmillió forintot elérő vagy azt meghaladó értékű árubeszerzésre, építési beruházásra, szolgáltatás megrendelésre, vagyonértékesítésre, vagyonhasznosításra, vagyon vagy vagyoni értékű jog átadására, valamint koncesszióba adásra vonatkozó szerződések megnevezése (típusa), tárgya, a szerződést kötő felek neve, a szerződés értéke, határozott időre kötött szerződés esetében annak időtartama, valamint az említett adatok változásai, a nemzetbiztonsági, illetve honvédelmi érdekkel közvetlenül összefüggő beszerzések adatai, és a minősített adatok kivételével.
+                                        <span class="info-note">
+                                            A szerződés értéke alatt a szerződés tárgyáért kikötött – általános forgalmi adó nélkül számított – ellenszolgáltatást kell érteni, ingyenes ügylet esetén a vagyon piaci vagy könyv szerinti értéke közül a magasabb összeget kell figyelembe venni.
+                                            Az időszakonként visszatérő – egy évnél hosszabb időtartamra kötött – szerződéseknél az érték kiszámításakor az ellenszolgáltatás egy évre számított összegét kell alapul venni. Az egy költségvetési évben ugyanazon szerződő féllel kötött azonos tárgyú szerződések értékét egybe kell számítani.
+                                        </span>
+                                    </td>
+                                    <td>nincs vonatkozó adat</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Koncesszióról szóló törvényben meghatározott nyilvános adatok</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Koncessziós adatok táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Koncesszióról szóló törvényben meghatározott nyilvános adatok</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A koncesszióról szóló törvényben meghatározott nyilvános adatok (pályázati kiírások, pályázók adatai, az elbírálásról készített emlékeztetők, pályázat eredménye)</td>
+                                    <td>–</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Nem alapfeladatai ellátására fordított, ötmillió forintot meghaladó kifizetések</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Nem alapfeladatra fordított kifizetések táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Nem alapfeladatai ellátására fordított, ötmillió forintot meghaladó kifizetések</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A közfeladatot ellátó szerv által nem alapfeladatai ellátására (így különösen egyesület támogatására, foglalkoztatottai szakmai és munkavállalói érdek-képviseleti szervei számára, foglalkoztatottjai, ellátottjai oktatási, kulturális, szociális és sporttevékenységet segítő szervezet támogatására, alapítványok által ellátott feladatokkal összefüggő kifizetésre) fordított, ötmillió forintot meghaladó kifizetések</td>
+                                    <td>–</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Európai Unió által támogatott fejlesztések</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Európai Uniós fejlesztések táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Európai Unió által támogatott fejlesztések</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Az Európai Unió támogatásával megvalósuló fejlesztések leírása, az azokra vonatkozó szerződések</td>
+                                    <td>nincs vonatkozó adat</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Közbeszerzés</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Közbeszerzés táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Közbeszerzés</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Közbeszerzési információk: éves terv, összegzés az ajánlatok elbírálásáról, a megkötött szerződésekről</td>
+                                    <td>
+                                        <a href="https://kereso-core.kozbeszerzes.hu/" target="_blank" rel="noopener noreferrer">kereso-core.kozbeszerzes.hu</a><br>
+                                        <a href="https://ekr.gov.hu/ekr-szerzodestar/hu/szerzodesLista" target="_blank" rel="noopener noreferrer">EKR szerződéstár</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Támogatások</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="Támogatások táblázata, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>Támogatások</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Megnevezés</th>
+                                    <th scope="col">Adat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. A Szegedi SZEFO zrt. részére Keret- és Támogatási szerződés megváltozott munkaképességű munkavállalók rehabilitációs foglalkoztatásához nyújtható egyéni támogatásra</td>
+                                    <td><a href="../szerzodesek/index.html">Támogatási szerződés</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+
+            <div class="mission-back">
+                <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>
+                <h2>Szegedi SZEFO Közhasznú Nonprofit Zrt.</h2>
+                <p>
+                    A befogadó társadalom alapja a diszkriminációmentességgel párosuló pozitív cselekvés.
+                </p>
+            </div>
+
+            <div>
+                <h3>Gyors elérés</h3>
+                <ul>
+                    <li><a href="../../index.html">Kezdőlap</a></li>
+                    <li><a href="../tortenetunk/index.html">Történetünk</a></li>
+                    <li><a href="../kuldetesunk/index.html">Küldetésünk</a></li>
+                    <li><a href="../kapcsolat/index.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Kapcsolat</h3>
+                <p>6724 Szeged, Tavasz utca 2.</p>
+                <p>+36-62-554-054</p>
+                <p>titkarsag@szefo.hu</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

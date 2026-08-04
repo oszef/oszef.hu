@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Szegedi SZEFO Közhasznú Nonprofit Zrt. – rehabilitációs foglalkoztatás, textilipari gyártás, villamosipari bérmunka és fenntartható értékteremtés.">
+
+    <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/pdf_style.css">
+    <title>Projektek</title>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <header class="site-header">
+        <!-- NAVBAR -->
+        <nav class="navbar" aria-label="Fő navigáció">
+            <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </nav>
+
+        <!-- OFFCANVAS MENU -->
+        <div class="offcanvas" id="offcanvasMenu" aria-hidden="true">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="../../index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="../kuldetesunk/index.html">Küldetésünk</a>
+                            </li>
+                            <li>
+                                <a href="../kapcsolat/index.html">Kapcsolat</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CÉGINFORMÁCIÓK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Céginformációk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../altalanos_ceginformaciok/index.html">Általános céginformáció</a>
+                            </li>
+                            <li>
+                                <a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a>
+                            </li>
+                            <li>
+                                <a href="../kepzo_intezmenyek/index.html">Képző intézmények</a>
+                            </li>
+                            <li>
+                                <a href="../projektek/index.html">Projektek</a>
+                            </li>
+                            <li>
+                                <a href="../minosegpolitika/index.html">Minőségpolitika</a>
+                            </li>
+                            <li>
+                                <a href="../partnerek/index.html">Partnerek</a>
+                            </li>
+                            <li>
+                                <a href="../alapitvany/index.html">Alapítvány</a>
+                            </li>
+                            <li>
+                                <a href="../adatszolgaltatas/index.html">Adatszolgáltatás</a>
+                            </li>
+                            <li>
+                                <a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a>
+                            </li>
+                            <li>
+                                <a href="../eves_beszamolok/index.html">Éves beszámolók</a>
+                            </li>
+                            <li>
+                                <a href="../kozzetetelek/index.html">Közzétételek</a>
+                            </li>
+                            <li>
+                                <a href="../ellenorzesek/index.html">Ellenőrzések</a>
+                            </li>
+                            <li>
+                                <a href="../szerzodesek/index.html">Szerződések</a>
+                            </li>
+                            <li>
+                                <a href="../palyazat/index.html">Pályázat NEAO-KP-1-2022/8-000016</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="../e-hulladek/index.html">E-hulladék</a>
+                    </li>
+                    <li>
+                        <a href="../karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="../klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+
+               <div class="search search--button-only">
+                <a class="search-link" href="../kereses/index.html">
+                    Keresés
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content">
+        <section class="info-page" aria-labelledby="projektek-title">
+
+            <!-- BEVEZETŐ -->
+            <section class="info-block section-card" aria-labelledby="projektek-title">
+                <div class="info-content">
+                    <h1 id="projektek-title">Projektek</h1>
+
+                    <p>
+                        A Szegedi SZEFO Közhasznú Nonprofit Zrt. az elmúlt években több hazai és uniós
+                        társfinanszírozású pályázati programot valósított meg. A projektek célja
+                        egyrészt a megváltozott munkaképességű munkavállalók képzésének, foglalkoztatásának
+                        és nyílt munkaerő-piaci integrációjának elősegítése, másrészt társaságunk
+                        piaci versenyképességének és technológiai fejlettségének megőrzése volt.
+                        Az alábbiakban megvalósult és lezárt projektjeinkről olvashat bővebben.
+                    </p>
+                </div>
+            </section>
+
+            <!-- EFOP-1.1.6-17 PROJEKT ZÁRÁSA - 2019.06.18 -->
+            <article class="info-block section-card" aria-labelledby="efop-zaras-title">
+                <div class="info-content">
+                    <h2 id="efop-zaras-title">EFOP-1.1.6-17 projekt zárása</h2>
+                    <p><time datetime="2019-06-18">2019. június 18.</time></p>
+
+                    <p>
+                        A Szegedi SZEFO zrt. 63 917 482 Ft vissza nem térítendő támogatást nyert el
+                        az Emberi Erőforrás Fejlesztési Operatív Program keretén belül „Megváltozott
+                        munkaképességű személyek csoportos és egyéni foglalkoztatásának elősegítése”
+                        című Széchenyi 2020 pályázati kiírás keretében.
+                    </p>
+
+                    <p>
+                        Társaságunk 2017. május 5-én kezdte meg a projekt előkészítési szakaszát.
+                        A szakmai tervben és a felhívásban leírtaknak megfelelően a projekt keretében
+                        felmérésre kerültek a tranzitfoglalkoztatásban vagy tartós foglalkoztatásban
+                        lévő célcsoporttagok, összesen 267 fő. Az előkészítés időszakában a képzések
+                        engedélyeztetéséhez szükséges képzési programok kidolgozását, valamint
+                        a szakmára felkészítő képzések szakmai program követelményeit saját
+                        teljesítésben, 5 fő munkatársunkkal készítettük el. A képzések elméleti és
+                        gyakorlati oktatóanyagának összeállítását ugyancsak a projekt előkészítés
+                        időszakában kezdtük el. 2017. szeptember 1-jén indult el a megvalósítási
+                        szakasz.
+                    </p>
+
+                    <p>
+                        A projekt sikeres lebonyolítására projektmenedzsmentet állítottunk fel,
+                        amelynek tagjai a projektmenedzser és a pénzügyi vezető voltak. A szakmai
+                        megvalósítók – szakmai vezető, képzési koordinátor, asszisztensek és mentorok –
+                        a képzésekről tájékoztatót tartottak a tervezett képzési helyszíneken.
+                        A tájékoztatókon kezdtük meg a mentorálási tevékenységet a szakmai vezető
+                        folyamatos koordinációja és irányítása mellett. A résztvevők számára folyamatos
+                        mentorálási tevékenységet végeztünk, melynek célja a képzésben tartás,
+                        bátorítás, támogatás, önbizalom erősítése, biztatás, konfliktuskezelés,
+                        a problémamegoldás és a képzés sikeres teljesítése volt, valamint
+                        a célcsoporttagok felkészítése arra, hogy sikeresen kilépjenek,
+                        elhelyezkedjenek a nyílt munkaerőpiacon, és ott beilleszkedjenek az új
+                        munkakörnyezetbe.
+                    </p>
+
+                    <dl class="info-data">
+                        <div><dt>Vállalt bevonás</dt><dd>200 fő</dd></div>
+                        <div><dt>Ténylegesen bevont létszám</dt><dd>240 fő</dd></div>
+                        <div><dt>Sikeresen végzett, Tanúsítványt kapott</dt><dd>228 fő</dd></div>
+                        <div><dt>Projektből kilépett</dt><dd>12 fő</dd></div>
+                        <div><dt>Nyílt munkaerőpiacon elhelyezkedett</dt><dd>9 fő (2019.04.30-ig)</dd></div>
+                    </dl>
+
+                    <p>
+                        A Támogatói Okiratban és a felhívásban leírtaknak megfelelően a projekt
+                        keretében 9 fő helyezkedett el a nyílt munkaerőpiacon a projekt fizikai
+                        befejezésének napjáig, 2019. április 30-ig.
+                    </p>
+                </div>
+            </article>
+
+            <!-- EFOP 1.1.6-17-2017-00006 - 2019.02.19 -->
+            <article class="info-block section-card" aria-labelledby="efop-tranzitalas-title">
+                <div class="info-content">
+                    <h2 id="efop-tranzitalas-title">EFOP 1.1.6-17-2017-00006 – Szegedi SZEFO zrt. a megváltozott munkaképességű személyek tranzitálásának elősegítéséért</h2>
+                    <p><time datetime="2019-02-19">2019. február 19.</time></p>
+
+                    <p>
+                        Szegedi SZEFO Fonalfeldolgozó „zártkörűen működő” Részvénytársaság
+                        felnőttképző intézményként (a felnőttképzési tevékenység végzését engedélyező
+                        hatóság nyilvántartásában szereplő nyilvántartásba vételi száma:
+                        E-001255/2015) valósította meg az EFOP 1.1.6-17-2017-00006 „Megváltozott
+                        munkaképességű személyek csoportos és egyéni foglalkoztatásának elősegítése”
+                        című projektet, melynek keretében a kormányzat célja olyan programok
+                        indítása volt, amelyek a megváltozott munkaképességű személyek integrációját
+                        segítik elő a nyílt munkaerőpiacon.
+                    </p>
+
+                    <p>
+                        A megvalósuló EFOP-1.1.6-17-2017-00006 kódszámú „Szegedi SZEFO zrt.
+                        a megváltozott munkaképességű személyek tranzitálásának elősegítéséért” című
+                        projekt keretében egyéni kompetenciafelmérés alapján készült képzési- és
+                        fejlesztési terv mentén valósultak meg egyéb szakmára felkészítő képzések és
+                        tréningek, valamint foglalkozási rehabilitációs szolgáltatások, melyek révén
+                        segítséget kaphattak a célcsoportba tartozó személyek annak érdekében, hogy
+                        elősegítsük a nyílt munkaerőpiacra kilépésüket.
+                    </p>
+
+                    <p>
+                        A program megvalósítási szakasza 2017. szeptember 1-jén kezdődött,
+                        a projektidőszak alatt 240 fő került bevonásra.
+                    </p>
+
+                    <h3>A projekt célcsoportja</h3>
+                    <p>
+                        A projekt célcsoportjába lakóhelytől függetlenül azok a megváltozott
+                        munkaképességű személyek tartoznak, akik a Szegedi SZEFO Zrt.-nél
+                        munkaviszonyban állnak, és érvényes komplex minősítéssel rendelkeznek:
+                    </p>
+                    <ul class="szefo-list">
+                        <li>B1, C1 minősítési kategóriába tartoznak (tranzit foglalkoztatottak),</li>
+                        <li>B2, C2 minősítési kategóriába tartoznak (tartós foglalkoztatottak).</li>
+                    </ul>
+
+                    <p>
+                        A projektbe történő belépést követően minden résztvevő esetében egyéni
+                        kompetenciafelmérés készült, mely alapján megtörtént a fejlesztendő
+                        területek meghatározása, a pálya- és karrierkép kialakítása. Szükség esetén
+                        kiegészítő szolgáltatásként foglalkozási rehabilitációs célú
+                        pályatanácsadást is igénybe vehettek a pontosabb képzési irányok
+                        meghatározása érdekében.
+                    </p>
+
+                    <p>
+                        A bevonási folyamat végén elkészült a tapasztalatokat összegző Egyéni
+                        képzési- és fejlesztési terv melléklete, mely tartalmazza az egyén sikeres
+                        munkaerő-piaci integrációját elősegítő képzéseket és szolgáltatásokat,
+                        melyek igénybevételére a projektben lehetősége nyílt a programrésztvevőnek.
+                        Mindezek alapján a személyre szóló rehabilitációs tervek is aktualizálásra
+                        kerültek.
+                    </p>
+
+                    <p>A projekt keretében megvalósult képzéseinket három nagy csoportba sorolhatjuk:</p>
+                    <ul class="szefo-list">
+                        <li>digitális kompetenciákat fejlesztő képzések,</li>
+                        <li>egyéb szakmára felkészítő szakmai képzések,</li>
+                        <li>a munkaerő-piaci integrációt elősegítő, készség- és képességfejlesztő tréningek.</li>
+                    </ul>
+
+                    <p>
+                        A projektidőszak alatt 240 fő került bevonásra 54 képzési csoportban,
+                        228 fő végezte el sikeresen a képzést és kapott Tanúsítványt.
+                    </p>
+
+                    <ul class="szefo-list">
+                        <li>„D” körös és egyéb, munkaerő-piaci integrációt elősegítő, készség- és képességfejlesztő tréningben 168 fő vett részt, ebből 165 fő végezte el sikeresen a képzéseket és kapott Tanúsítványt.</li>
+                        <li>Digitális kompetenciákat fejlesztő képzésekben 16 fő vett részt, ebből 15 fő végzett sikeresen és kapott Tanúsítványt.</li>
+                        <li>Egyéb szakmára felkészítő képzésbe 56 fő lett bevonva, ebből 48 fő tett sikeresen szakmai záróvizsgát és kapott Tanúsítványt.</li>
+                    </ul>
+
+                    <h3>Engedélyezett „A” képzési körös képzéseink</h3>
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="A képzési körös képzések, vízszintesen görgethető">
+                        <table class="info-table">
+                            <caption>„A” képzési körös képzéseink</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Képzés megnevezése</th>
+                                    <th scope="col">OKJ azonosító</th>
+                                    <th scope="col">Nyilvántartásba vételi száma</th>
+                                    <th scope="col">Nyilvántartásba vétel időpontja</th>
+                                    <th scope="col">Elméleti/gyakorlati órák száma</th>
+                                    <th scope="col">Ismertetés</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Textiltermék összeállító</th>
+                                    <td>21 542 02</td>
+                                    <td>E-001255/2015/A001</td>
+                                    <td>2015. június 12.</td>
+                                    <td>72 óra elmélet / 168 óra gyakorlat + 40 óra felnőttképzést kiegészítő tevékenység</td>
+                                    <td>A képzés célja olyan szakemberek képzése, akik képesek a munkájuk során műszaki dokumentáció alapján kiszabott ruházati termékek alkatrészeinek összeállítására és befejező műveleteinek elvégzésére.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Férfi szabó</th>
+                                    <td>34 542 04</td>
+                                    <td>E-001255/2015/A002</td>
+                                    <td>2015. június 12.</td>
+                                    <td>288 óra elmélet / 672 óra gyakorlat</td>
+                                    <td>A képzés célja olyan szakemberek képzése, akik képesek a munkájuk során műszaki dokumentáció alapján sorozat- és méretes férfi ruházati termékek gyártására, egyéb termékek (ágynemű, függöny, lakástextíliák) készítésére, ruházati termékek átalakítására, javítására.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Női szabó</th>
+                                    <td>34 542 06</td>
+                                    <td>E-001255/2015/A003</td>
+                                    <td>2015. június 12.</td>
+                                    <td>288 óra elmélet / 672 óra gyakorlat</td>
+                                    <td>A képzés célja olyan szakemberek képzése, akik képesek a munkájuk során műszaki dokumentáció alapján sorozat- és méretes női ruházati termékek gyártására, egyéb termékek (ágynemű, függöny, lakástextíliák) készítésére, ruházati termékek átalakítására, javítására.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        A projekt kiemelt célja a képzésekbe bevont személyek nyílt munkaerő-piaci
+                        elhelyezésének elősegítése, melynek érdekében széles körű munkaadói
+                        kapcsolatok kialakítására és a célcsoporttagok egyéni igényeinek megfelelő
+                        állások feltárására törekszünk, az elhelyezkedést támogató szolgáltatások
+                        biztosítása mellett.
+                    </p>
+                </div>
+            </article>
+
+            <!-- PROJEKTAZONOSÍTÓ: EFOP-1.1.6-17-2017-00006 - 2018.03.29 -->
+            <article class="info-block section-card" aria-labelledby="efop-projektazonosito-title">
+                <div class="info-content">
+                    <h2 id="efop-projektazonosito-title">Projektazonosító: EFOP-1.1.6-17-2017-00006</h2>
+                    <p><time datetime="2018-03-29">2018. március 29.</time></p>
+
+                    <p>
+                        A Szegedi SZEFO zrt. 63 917 482 Ft vissza nem térítendő támogatást nyert el
+                        az Emberi Erőforrás Fejlesztési Operatív Program keretén belül „Megváltozott
+                        munkaképességű személyek csoportos és egyéni foglalkoztatásának elősegítése”
+                        című Széchenyi 2020 pályázati kiírás keretében.
+                    </p>
+
+                    <p class="info-highlight">
+                        A projekt neve: Szegedi SZEFO zrt. a megváltozott munkaképességű személyek
+                        tranzitálásának elősegítéséért.
+                    </p>
+
+                    <h3>A projekt rövid bemutatása</h3>
+                    <p>
+                        A projekt elsődleges célja a megváltozott munkaképességű személyek nyílt
+                        munkaerőpiaci integrációjának elősegítése, a tranzitfoglalkoztatásban lévő
+                        személyek nyílt munkaerőpiacra történő integráció feltételeinek javítása,
+                        ezáltal pedig a célcsoport foglalkoztatási szintjének növekedésének elérése.
+                    </p>
+                    <p>
+                        További cél, hogy az eddig tartósan inaktív, valamint a tartós
+                        foglalkoztatásban lévő B2, C2 komplex minősítéssel rendelkező, megváltozott
+                        munkaképességű személyek olyan egyéni fejlesztésben, kompetenciafejlesztésben,
+                        képzésben, átképzésben, munkatapasztalat-szerzésben részesüljenek, hogy
+                        alkalmassá váljanak az értékteremtő, önálló munkavégzésre az őt fejlesztésbe
+                        vonó akkreditált foglalkoztatónál.
+                    </p>
+
+                    <h3>A projekt célja</h3>
+                    <p>
+                        A projekt megvalósításával társaságunk célja a megváltozott munkaképességű
+                        munkavállalók foglalkoztatásának megőrzése, ennek pedig legmegfelelőbb
+                        eszköze egy magasabb szintű munkavégzés általi integrálása a munkaerőpiaci
+                        elvárásokkal szinkronban. További célunk a pályázat megvalósításával, hogy
+                        elősegítsük a célcsoport sikeres rehabilitációját és munkaerő-piaci
+                        integrációját, ezáltal növeljük a munkaerő-piaci esélyeiket és személyes
+                        kompetenciáikat.
+                    </p>
+
+                    <h3>A projekt célcsoportja</h3>
+                    <p>
+                        Társaságunk a projektbe 200 fő megváltozott munkaképességű munkavállaló
+                        bevonását kívánta vállalni. A projekt keretein belül a megváltozott
+                        munkaképességű munkavállalók képzése saját környezetben, ismerős oktatók,
+                        munkatársak között történt.
+                    </p>
+
+                    <dl class="info-data">
+                        <div><dt>A projekt kezdete</dt><dd>2017.09.01.</dd></div>
+                        <div><dt>A projekt tervezett fizikai befejezése</dt><dd>2018.11.30.</dd></div>
+                        <div><dt>Elnyert támogatási összeg</dt><dd>63 917 482 Ft</dd></div>
+                        <div><dt>A támogatás mértéke</dt><dd>100%</dd></div>
+                        <div><dt>Megvalósítás helyszíne</dt><dd>6724 Szeged, Tavasz utca 2.</dd></div>
+                    </dl>
+                </div>
+            </article>
+
+            <!-- PROJEKTAZONOSÍTÓ: GOP-3.5.1-15/A-2015-0003 - 2016.02.01 -->
+            <article class="info-block section-card" aria-labelledby="gop-projektazonosito-title">
+                <div class="info-content">
+                    <h2 id="gop-projektazonosito-title">Projektazonosító: GOP-3.5.1-15/A-2015-0003</h2>
+                    <p><time datetime="2016-02-01">2016. február 1.</time></p>
+
+                    <p class="info-highlight">
+                        A projekt címe: „Eszközbeszerzés és információs technológia fejlesztése
+                        a SZEFO Zrt-nél”
+                    </p>
+
+                    <p>
+                        A projekt célja a társaság piaci versenyelőnyének megőrzése, és olyan
+                        eszközbeszerzések realizálása, melyek közvetlenül és közvetett módon is
+                        hozzájárulnak a megváltozott munkaképességű személyek egyenlő esélyű
+                        munkavégzési feltételeinek megteremtéséhez és biztosításához. A projekt
+                        céljaként jelölt piaci versenyelőny megőrzéséhez nélkülözhetetlen
+                        a folyamatosan változó, de trendjében rövid és középtávon tervezhető
+                        műszaki-technológiai fejlesztés a világpiac ezen innovatív területén, mely
+                        fejlesztést szolgálja a pályázat keretében megvalósult
+                        műszaki-technológiai fejlesztés is.
+                    </p>
+
+                    <dl class="info-data">
+                        <div><dt>Kedvezményezett neve</dt><dd>Szegedi SZEFO Fonalfeldolgozó „zártkörűen működő” Rt.</dd></div>
+                        <div><dt>A szerződött támogatás összege</dt><dd>144 591 952 Ft</dd></div>
+                        <div><dt>A támogatás mértéke</dt><dd>50%</dd></div>
+                        <div><dt>A projekt tervezett befejezési dátuma</dt><dd>2015. december 20.</dd></div>
+                    </dl>
+
+                    <p>A projekt az Európai Regionális Fejlesztési Alap támogatásával valósul meg.</p>
+                </div>
+            </article>
+
+            <!-- DOKUMENTUMOK - a mellékelt PDF-ek ide kerülnek majd -->
+            <section class="docs-section" aria-labelledby="projektek-docs-title">
+                <div class="docs-header">
+                    <span class="section-eyebrow">Dokumentumok</span>
+                    <h2 id="projektek-docs-title">Kapcsolódó dokumentumok</h2>
+                    <p>
+                        A fenti projektekhez kapcsolódó támogatási szerződések, támogatói okiratok
+                        és tájékoztatók az alábbi kártyákon lesznek elérhetők PDF formátumban.
+                    </p>
+                </div>
+
+                <div class="docs-grid">
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Támogatási szerződés – EFOP-1.1.6-17-2017-00006</h3>
+                            <p>Az EFOP-1.1.6-17-2017-00006 azonosítójú projekt támogatási szerződése PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/projektek/Tamogatasi-szerzodes-EFOP-1.1.6-17-2017-00006.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/projektek/Tamogatasi-szerzodes-EFOP-1.1.6-17-2017-00006.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Projekt tájékoztató tábla – EFOP</h3>
+                            <p>Az EFOP-1.1.6-17-2017-00006 projekt tájékoztató táblája PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/projektek/Projekt-tajekoztato-tabla-EFOP.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/projektek/Projekt-tajekoztato-tabla-EFOP.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Adatvédelmi tájékoztató</h3>
+                            <p>Az EFOP-1.1.6-17-2017-00006 projekthez kapcsolódó adatvédelmi tájékoztató PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/projektek/Adatvedelmi-tajekoztato-EFOP.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/projektek/Adatvedelmi-tajekoztato-EFOP.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Támogatói okirat – GOP-3.5.1-15/A-2015-0003 (2015.06.08.)</h3>
+                            <p>A 2015.06.08-án elnyert pályázati forrásról szóló Támogatói okirat PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/projektek/Tamogatoi-okirat-GOP-3.5.1-15-A-2015-0003-2015-06-08.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/projektek/Tamogatoi-okirat-GOP-3.5.1-15-A-2015-0003-2015-06-08.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Módosított támogatói okirat – GOP-3.5.1-15/A-2015-0003 (2015.11.20.)</h3>
+                            <p>A 2015.11.20-án módosított Támogatói okirat szerinti támogatás PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/projektek/Tamogatoi-okirat-modositas-GOP-3.5.1-15-A-2015-0003-2015-11-20.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/projektek/Tamogatoi-okirat-modositas-GOP-3.5.1-15-A-2015-0003-2015-11-20.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="mission-back">
+                <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>
+                <h2>Szegedi SZEFO Közhasznú Nonprofit Zrt.</h2>
+                <p>
+                    A befogadó társadalom alapja a diszkriminációmentességgel párosuló pozitív cselekvés.
+                </p>
+            </div>
+
+            <div>
+                <h3>Gyors elérés</h3>
+                <ul>
+                    <li><a href="../../index.html">Kezdőlap</a></li>
+                    <li><a href="../tortenetunk/index.html">Történetünk</a></li>
+                    <li><a href="../kuldetesunk/index.html">Küldetésünk</a></li>
+                    <li><a href="../kapcsolat/index.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Kapcsolat</h3>
+                <p>6724 Szeged, Tavasz utca 2.</p>
+                <p>+36-62-554-054</p>
+                <p>titkarsag@szefo.hu</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/downloader.js"></script>
+</body>
+</html>

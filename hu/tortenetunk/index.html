@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Szegedi SZEFO Közhasznú Nonprofit Zrt. története 1953-tól napjainkig – alapítás, fejlesztések, mérföldkövek és együttműködések.">
+    <link rel="shortcut icon" href="../../img/fav/szefo_fav.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Történetünk</title>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <header class="site-header">
+        <!-- NAVBAR -->
+        <nav class="navbar" aria-label="Fő navigáció">
+            <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </nav>
+
+        <!-- OFFCANVAS MENU -->
+        <div class="offcanvas" id="offcanvasMenu" aria-hidden="true">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="../../index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="../kuldetesunk/index.html">Küldetésünk</a>
+                            </li>
+                            <li>
+                                <a href="../kapcsolat/index.html">Kapcsolat</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CÉGINFORMÁCIÓK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Céginformációk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../altalanos_ceginformaciok/index.html">Általános céginformáció</a>
+                            </li>
+                            <li>
+                                <a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a>
+                            </li>
+                            <li>
+                                <a href="../kepzo_intezmenyek/index.html">Képző intézmények</a>
+                            </li>
+                            <li>
+                                <a href="../projektek/index.html">Projektek</a>
+                            </li>
+                            <li>
+                                <a href="../minosegpolitika/index.html">Minőségpolitika</a>
+                            </li>
+                            <li>
+                                <a href="../partnerek/index.html">Partnerek</a>
+                            </li>
+                            <li>
+                                <a href="../alapitvany/index.html">Alapítvány</a>
+                            </li>
+                            <li>
+                                <a href="../adatszolgaltatas/index.html">Adatszolgáltatás</a>
+                            </li>
+                            <li>
+                                <a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a>
+                            </li>
+                            <li>
+                                <a href="../eves_beszamolok/index.html">Éves beszámolók</a>
+                            </li>
+                            <li>
+                                <a href="../kozzetetelek/index.html">Közzétételek</a>
+                            </li>
+                            <li>
+                                <a href="../ellenorzesek/index.html">Ellenőrzések</a>
+                            </li>
+                            <li>
+                                <a href="../szerzodesek/index.html">Szerződések</a>
+                            </li>
+                            <li>
+                                <a href="../palyazat/index.html">Pályázat NEAO-KP-1-2022/8-000016</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="../e-hulladek/index.html">E-hulladék</a>
+                    </li>
+                    <li>
+                        <a href="../karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="../klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+
+                <div class="search search--button-only">
+                <a class="search-link" href="../kereses/index.html">
+                    Keresés
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content">
+        <section class="timeline-page" aria-labelledby="timeline-main-title">
+            <div class="timeline-header">
+                <h1 id="timeline-main-title">A SZEFO története</h1>
+                <p>Korszerű fejlesztések, mérföldkövek, együttműködések</p>
+            </div>
+            
+            <!-- ÉVSZÁM NAVIGÁCIÓ -->
+            <nav class="timeline-years-bar" aria-label="Történeti évszámok">
+                <button class="year-item active" type="button" data-year="1953" aria-pressed="true">1953</button>
+                <button class="year-item" type="button" data-year="1960" aria-pressed="false">1960</button>
+                <button class="year-item" type="button" data-year="1970" aria-pressed="false">1970</button>
+                <button class="year-item" type="button" data-year="1990" aria-pressed="false">1990</button>
+                <button class="year-item" type="button" data-year="1993" aria-pressed="false">1993</button>
+                <button class="year-item" type="button" data-year="1998" aria-pressed="false">1998</button>
+                <button class="year-item" type="button" data-year="2001" aria-pressed="false">2001</button>
+                <button class="year-item" type="button" data-year="2008" aria-pressed="false">2008</button>
+                <button class="year-item" type="button" data-year="2010" aria-pressed="false">2010</button>
+                <button class="year-item" type="button" data-year="2013" aria-pressed="false">2013</button>
+                <button class="year-item" type="button" data-year="2014" aria-pressed="false">2013–14</button>
+                <button class="year-item" type="button" data-year="2019" aria-pressed="false">2018–19</button>
+                <button class="year-item" type="button" data-year="2021" aria-pressed="false">2021</button>
+                <button class="year-item" type="button" data-year="jelen" aria-pressed="false">Jelen</button>
+                
+            </nav>
+          <nav class="timeline-years-bar timeline-years-bar--ticks"
+                aria-label="Történeti évszámok (mobil)"
+                data-start="1953"
+                data-end="Jelen">
+            <div class="timeline-years-track" role="listbox" aria-label="Év kiválasztása">
+                <button class="timeline-tick active" type="button" data-year="1953" aria-label="1953"></button>
+                <button class="timeline-tick" type="button" data-year="1960" aria-label="1960"></button>
+                <button class="timeline-tick" type="button" data-year="1970" aria-label="1970"></button>
+                <button class="timeline-tick" type="button" data-year="1990" aria-label="1990"></button>
+                <button class="timeline-tick" type="button" data-year="1993" aria-label="1993"></button>
+                <button class="timeline-tick" type="button" data-year="1998" aria-label="1998"></button>
+                <button class="timeline-tick" type="button" data-year="2001" aria-label="2001"></button>
+                <button class="timeline-tick" type="button" data-year="2008" aria-label="2008"></button>
+                <button class="timeline-tick" type="button" data-year="2010" aria-label="2010"></button>
+                <button class="timeline-tick" type="button" data-year="2013" aria-label="2013"></button>
+                <button class="timeline-tick" type="button" data-year="2014" aria-label="2013–14"></button>
+                <button class="timeline-tick" type="button" data-year="2019" aria-label="2018–19"></button>
+                <button class="timeline-tick" type="button" data-year="2021" aria-label="2021"></button>
+                <button class="timeline-tick" type="button" data-year="jelen" aria-label="Jelen"></button>
+            </div>
+            <span class="timeline-current-year" aria-live="polite">1953</span>
+        </nav>
+
+            <div class="timeline-wrapper" id="timeline" aria-live="polite">
+
+                <!-- 1953 -->
+                <section class="timeline-section active" data-year="1953" aria-hidden="false">
+                    <div class="timeline-block">
+                        <div class="timeline-image portrait">
+                            <img src="../../img/timeline/jakso_plakett.webp" alt="A SZEFO alapításához kapcsolódó történeti dokumentum">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1953</span>
+                            <h2>Vállalat alapítása</h2>
+
+                            <p><strong>A Szegedi Fonalmentő Vállalat megalapítása</strong></p>
+
+                            <p>
+                                Történetünk Szegeden kezdődött 1953-ban. A vállalat létrejötte egy olyan
+                                küldetéshez kapcsolódott, amelynek középpontjában az értékteremtő munka,
+                                a foglalkoztatás és a társadalmi felelősségvállalás állt.
+                            </p>
+
+                            <p>
+                                Az indulás évei szilárd alapot teremtettek a hosszú távú működéshez,
+                                amely később a SZEFO egyik legfontosabb örökségévé vált.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1960 -->
+                <section class="timeline-section" data-year="1960" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/gyartas_1960.webp" alt="A termelés indulásához kapcsolódó történeti kép">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1960</span>
+                            <h2>Termelés elindulása</h2>
+
+                            <p><strong>A textilipari tevékenység bővülése</strong></p>
+
+                            <p>
+                                A vállalat tevékenysége textilipari hulladék újrahasznosításával indult,
+                                majd fokozatosan bővült textilipari termékek készítésével,
+                                szövő- és előkészítő műveletekkel, valamint konfekciós feladatokkal.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1970 -->
+                <section class="timeline-section" data-year="1970" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1970</span>
+                            <h2>Technológiai beruházások</h2>
+
+                            <p><strong>Korszerű textilipari gépek és hatékonyabb termelés</strong></p>
+
+                            <p>
+                                Az új, korszerű textilipari gépek beszerzésével jelentősen növekedett
+                                a termelés hatékonysága, a feldolgozás pedig gazdaságosabbá és
+                                tervezhetőbbé vált.
+                            </p>
+
+                            <ul>
+                                <li>Évente mintegy <strong>62 tonna fonal megmentése</strong></li>
+                                <li>Évente kb. <strong>400 tonna fonal feldolgozása</strong></li>
+                                <li>Évente több tízezer kötött felsőruházati termék előállítása</li>
+                                <li>Bébi- és gyermekruházati termékek gyártása</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1990 -->
+                <section class="timeline-section" data-year="1990" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1990</span>
+                            <h2>Legrand együttműködés</h2>
+
+                            <p><strong>Elektromos kapcsolók és rendszerek gyártása</strong></p>
+
+                            <p>
+                                Hosszú távú és eredményes együttműködés indult a villamos rendszerek
+                                és informatikai hálózatok piacán meghatározó Legrand Hungary Zrt.-vel.
+                                A partnerség a SZEFO foglalkoztatási és gyártási tevékenységének
+                                egyik fontos pillérévé vált.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1993 -->
+                <section class="timeline-section" data-year="1993" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1993</span>
+                            <h2>Magyar állam tulajdonában</h2>
+
+                            <p><strong>Új szervezeti és tulajdonosi keretek</strong></p>
+
+                            <p>
+                                A társaság alapítója és egyedüli részvényese a Magyar Állam lett.
+                                A tulajdonosi jogokat később állami szervezetek gyakorolták,
+                                miközben a SZEFO tovább folytatta termelő és foglalkoztatási tevékenységét.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1998 -->
+                <section class="timeline-section" data-year="1998" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/gyartas_2_szines.webp" alt="1998 – A Szegedi SZEFO megújulásához kapcsolódó kép">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1998</span>
+                            <h2>Megújulás</h2>
+
+                            <p><strong>A Szegedi SZEFO Közhasznú Nonprofit Zrt. megújulása</strong></p>
+
+                            <p>
+                                A vállalat működésében jelentős fejlesztések és beruházások indultak:
+                                korszerű technológia, modernizált géppark és hatékonyabb gyártási
+                                folyamatok alapozták meg a következő időszak fejlődését.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2001 -->
+                <section class="timeline-section" data-year="2001" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">2001</span>
+                            <h2>Paul &amp; Shark együttműködés</h2>
+
+                            <p><strong>Nemzetközi divatipari partnerség</strong></p>
+
+                            <p>
+                                A SZEFO együttműködésbe kezdett a világszerte ismert Paul &amp; Shark
+                                prémium divatmárka tulajdonosával, az olasz DAMA S.p.A. vállalattal.
+                                A partnerség fontos mérföldkő volt a nemzetközi gyártási jelenlét erősítésében.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2008 -->
+                <section class="timeline-section" data-year="2008" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/egyuttmukodes_2008_javitott.webp" alt="2008 – Együttműködés a Szegedi Tudományegyetemmel">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">2008</span>
+                            <h2>Együttműködés a Szegedi Tudományegyetemmel</h2>
+
+                            <p><strong>K+F együttműködés</strong></p>
+
+                            <p>
+                                A SZEFO kutatás-fejlesztési együttműködést alakított ki a Szegedi Tudományegyetemmel.
+                                A közös munka célja az innovatív technológiák gyakorlati alkalmazása és
+                                a gyártási folyamatok fejlesztése volt.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2010 -->
+                <section class="timeline-section" data-year="2010" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/chance_2010.webp" alt="2010 – Chance márka megalapítása">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">2010</span>
+                            <h2>A Chance márka megalapítása</h2>
+
+                            <p><strong>Chance – a lehetőség márkája</strong></p>
+
+                            <p>
+                                2010-ben megalakult a Chance divatmárka. A márka a lehetőséget,
+                                az értékteremtést és a minőségi kivitelezést képviselte,
+                                miközben a SZEFO divatipari jelenlétét is erősítette.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2013 -->
+                <section class="timeline-section" data-year="2013" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">2013</span>
+                            <h2>Új együttműködések</h2>
+
+                            <p><strong>Hazai partnerek és formaruházati fejlesztések</strong></p>
+
+                            <p>
+                                A vállalat új hazai partnerekkel kezdett együttműködésbe,
+                                és tovább bővítette munkaruha- és formaruházati tevékenységét.
+                                Ez az időszak új piaci kapcsolatok kiépítését is jelentette.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2014 -->
+                <section class="timeline-section" data-year="2014" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">2013–2014</span>
+                            <h2>Együttműködés hazai divatmárkákkal</h2>
+
+                            <p><strong>Meghatározó hazai divatmárkákkal közösen</strong></p>
+
+                            <p>
+                                A SZEFO termékfejlesztési és gyártási együttműködéseket alakított ki
+                                több hazai divatmárkával és tervezővel.
+                            </p>
+
+                            <ul>
+                                <li>ABRON</li>
+                                <li>AERON</li>
+                                <li>Kata Szegő</li>
+                                <li>Nanushka</li>
+                                <li>Pápai Lilla</li>
+                                <li>Tomcsányi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2019 -->
+                <section class="timeline-section" data-year="2019" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">2018–2019</span>
+                            <h2>Együttműködés hazai divattervezőkkel</h2>
+
+                            <p><strong>Stratégiai partnerségek</strong></p>
+
+                            <p>
+                                Tovább erősödtek a hazai divatipari és gyártói kapcsolatok.
+                                A stratégiai együttműködések a prémium gyártási kompetenciák
+                                és a termékfejlesztési folyamatok erősítését szolgálták.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2021 -->
+                <section class="timeline-section" data-year="2021" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">2021</span>
+                            <h2>Tulajdonosváltás</h2>
+
+                            <p><strong>Szeged-Csanádi Egyházmegye tulajdonában</strong></p>
+
+                            <p>
+                                A társaság tulajdonosi háttere megváltozott, és a SZEFO
+                                a Szeged-Csanádi Egyházmegye tulajdonába került.
+                                Az új tulajdonosi háttér mellett a vállalat tovább vitte
+                                foglalkoztatási, termelő és társadalmi küldetését.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- JELEN -->
+                <section class="timeline-section" data-year="jelen" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/jelen.webp" alt="Jelenünk – A Szegedi SZEFO Közhasznú Nonprofit Zrt. jelenlegi működése">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">Jelen</span>
+                            <h2>A Szegedi SZEFO Közhasznú Nonprofit Zrt. jelenlegi helyzete</h2>
+
+                            <p>
+                                A Szegedi SZEFO Közhasznú Nonprofit Zrt. ma több telephelyen és fióktelepen működő,
+                                termelő és foglalkoztatási bázis, amely egyszerre épít ipari
+                                tevékenységre és társadalmi felelősségvállalásra.
+                            </p>
+
+                            <p>
+                                A vállalat tevékenysége két, egymást erősítő pilléren alapul:
+                                textil- és divatipari gyártáson, valamint foglalkoztatási
+                                rehabilitációhoz kapcsolódó bérmunkatevékenységen.
+                            </p>
+
+                            <p>
+                                A SZEFO küldetése ma is az, hogy értékteremtő munkát,
+                                méltó munkakörülményeket és stabil jövőképet biztosítson
+                                munkatársai számára.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="mission-back">
+                <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
+            </div>
+
+        </section>
+
+         
+                
+
+   </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>
+                <h2>Szegedi SZEFO Közhasznú Nonprofit Zrt.</h2>
+                <p>
+                    A befogadó társadalom alapja a diszkriminációmentességgel párosuló pozitív cselekvés.
+                </p>
+            </div>
+
+            <div>
+                <h3>Gyors elérés</h3>
+                <ul>
+                    <li><a href="../../index.html">Kezdőlap</a></li>
+                    <li><a href="../tortenetunk/index.html">Történetünk</a></li>
+                    <li><a href="../kuldetesunk/index.html">Küldetésünk</a></li>
+                    <li><a href="../kapcsolat/index.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Kapcsolat</h3>
+                <p>6724 Szeged, Tavasz utca 2.</p>
+                <p>+36-62-554-054</p>
+                <p>titkarsag@szefo.hu</p>
+            </div>
+        </div>
+    </footer>
+ 
+    
+ <script src="../../js/script.js"></script>   
+</body>
+</html>

@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Szegedi SZEFO Közhasznú Nonprofit Zrt. – rehabilitációs foglalkoztatás, textilipari gyártás, villamosipari bérmunka és fenntartható értékteremtés.">
+
+    <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Adatszolgáltatás</title>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <header class="site-header">
+        <!-- NAVBAR -->
+        <nav class="navbar" aria-label="Fő navigáció">
+            <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </nav>
+
+        <!-- OFFCANVAS MENU -->
+        <div class="offcanvas" id="offcanvasMenu" aria-hidden="true">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="../../index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="../kuldetesunk/index.html">Küldetésünk</a>
+                            </li>
+                            <li>
+                                <a href="../kapcsolat/index.html">Kapcsolat</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CÉGINFORMÁCIÓK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Céginformációk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../altalanos_ceginformaciok/index.html">Általános céginformáció</a>
+                            </li>
+                            <li>
+                                <a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a>
+                            </li>
+                            <li>
+                                <a href="../kepzo_intezmenyek/index.html">Képző intézmények</a>
+                            </li>
+                            <li>
+                                <a href="../projektek/index.html">Projektek</a>
+                            </li>
+                            <li>
+                                <a href="../minosegpolitika/index.html">Minőségpolitika</a>
+                            </li>
+                            <li>
+                                <a href="../partnerek/index.html">Partnerek</a>
+                            </li>
+                            <li>
+                                <a href="../alapitvany/index.html">Alapítvány</a>
+                            </li>
+                            <li>
+                                <a href="../adatszolgaltatas/index.html">Adatszolgáltatás</a>
+                            </li>
+                            <li>
+                                <a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a>
+                            </li>
+                            <li>
+                                <a href="../eves_beszamolok/index.html">Éves beszámolók</a>
+                            </li>
+                            <li>
+                                <a href="../kozzetetelek/index.html">Közzétételek</a>
+                            </li>
+                            <li>
+                                <a href="../ellenorzesek/index.html">Ellenőrzések</a>
+                            </li>
+                            <li>
+                                <a href="../szerzodesek/index.html">Szerződések</a>
+                            </li>
+                            <li>
+                                <a href="../palyazat/index.html">Pályázat NEAO-KP-1-2022/8-000016</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="../e-hulladek/index.html">E-hulladék</a>
+                    </li>
+                    <li>
+                        <a href="../karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="../klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+
+               <div class="search search--button-only">
+                <a class="search-link" href="../kereses/index.html">
+                    Keresés
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content">
+        <section class="info-page" aria-labelledby="adat-title">
+            <section class="info-block section-card" aria-labelledby="adat-title">
+                <div class="info-content">
+                    <h1 id="adat-title">Adatszolgáltatások</h1>
+
+                    <p>
+                        A köztulajdonban álló gazdasági társaságok takarékosabb működéséről szóló
+                        2009. évi CXXII. törvény (a továbbiakban: Takarékos törvény) alapján közzétett
+                        adatok évenkénti bontásban. A címsorra kattintva nyitható és zárható az adott év.
+                    </p>
+
+                    <!-- ===================== 2021 ===================== -->
+                    <details class="year-block" open>
+                        <summary>Adatszolgáltatás 2021.</summary>
+                        <div class="year-body">
+                            <p>A Takarékos törvény 2. §-a alapján közzétett adatok (2021.)</p>
+
+                            <h2>A társaság vezető tisztségviselője</h2>
+                            <p>
+                                Az Mt. 208. § (1) bekezdése szerinti vezető állású munkavállaló – önálló
+                                cégjegyzésre jogosult, önálló bankszámla feletti rendelkezésre jogosult –
+                                jogviszonya, javadalmazása (Takarékos törvény 2. § (1) bekezdés a)–c) pontja alapján).
+                            </p>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető tisztségviselő 2021, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető tisztségviselő – 2021.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Név</th>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Jogviszonya</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">időtartama</th>
+                                            <th scope="col">a kötelezettség vállalásának ellenértéke</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Sándor Csaba</th><td>vezérigazgató</td><td>határozatlan idejű munkaviszony</td><td>1 944 000</td><td>–</td><td>50</td><td>–</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Vezető állású munkavállalók</h2>
+                            <p>
+                                A társaság vezető állású munkavállalóinak (Mt. 208. §-a alapján) jogviszonya,
+                                javadalmazása (Takarékos törvény 2. § (1) bekezdés a)–c) pontja alapján).
+                            </p>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető állású munkavállalók 2021, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású munkavállalók – 2021.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Név</th>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Jogviszonya</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">időtartama</th>
+                                            <th scope="col">a kötelezettség vállalásának ellenértéke</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Andrea</th><td>vezérigazgató-helyettes (kontrolling igazgató)</td><td>határozatlan idejű munkaviszony</td><td>1 377 000</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Vas László</th><td>gazdasági igazgató</td><td>határozatlan idejű munkaviszony</td><td>1 350 000</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Felügyelő Bizottság</h2>
+                            <p>
+                                A társaság Felügyelő Bizottsága tagjainak jogviszonya, javadalmazása
+                                (Takarékos törvény 2. § (1) bekezdés d) pontja alapján).
+                            </p>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2021, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2021.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Név</th>
+                                            <th scope="col">Felügyelő bizottsági tisztsége</th>
+                                            <th scope="col">Mandátum időtartama</th>
+                                            <th scope="col">Megbízási díj (Ft/hó)</th>
+                                            <th scope="col">Megbízási díjon felül egyéb járandóság</th>
+                                            <th scope="col">A mandátum megszűnése esetén járó pénzbeli juttatás</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Deák Csaba</th><td>FB elnök</td><td>2021. április 1. – határozatlan</td><td>60 000</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Kató Eszter</th><td>FB tag</td><td>2019. november 1. – 2022. október 31.</td><td>50 000</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Kiss Andrea</th><td>FB munkavállalói tag</td><td>2016. 06. 01. – határozatlan időre</td><td>50 000</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Együttes cégjegyzésre jogosult és egyéb meghatározó munkavállalók</h2>
+                            <p>
+                                A társaságnál „másokkal együttesen cégjegyzésre jogosultak, vagy a bankszámla
+                                feletti rendelkezésre jogosult munkavállalók, valamint a munkáltató működése
+                                szempontjából meghatározó jelentőségű egyéb munkavállalók” jogviszonya,
+                                javadalmazása (Takarékos törvény 2. § (2) bekezdése alapján).
+                            </p>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Együttes cégjegyzésre jogosult munkavállalók 2021, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Együttes cégjegyzésre jogosult munkavállalók – 2021.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">időtartama</th>
+                                            <th scope="col">a kötelezettség vállalásának ellenértéke</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 350 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">üzemeltetési igazgató</th><td>600 000</td><td>–</td><td>–</td><td>55</td><td>3</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">HR igazgató</th><td>750 000</td><td>–</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">jogi menedzser</th><td>500 000</td><td>–</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">kontroller</th><td>550 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">rehabilitációs tanácsadó</th><td>240 000</td><td>25 000</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Bankszámla feletti rendelkezésre jogosult munkavállalók 2021, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Bankszámla felett együttes rendelkezésre jogosult munkavállalók – 2021.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">időtartama</th>
+                                            <th scope="col">a kötelezettség vállalásának ellenértéke</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 350 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó jelentőségű egyéb munkavállalók 2021, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>A munkáltató szempontjából meghatározó jelentőségű egyéb munkavállalók – 2021.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">időtartama</th>
+                                            <th scope="col">a kötelezettség vállalásának ellenértéke</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">kontrolling igazgató helyettes</th><td>800 000</td><td>–</td><td>–</td><td>70</td><td>4</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">termelési igazgató</th><td>650 000</td><td>–</td><td>–</td><td>55</td><td>3</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">operatív termelési menedzser</th><td>650 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">termelési információs team vezető</th><td>700 000</td><td>–</td><td>–</td><td>70</td><td>4</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">sík és körkötő-üzemegység vezető</th><td>750 000</td><td>–</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">szabászatvezető</th><td>450 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Legrand projekt igazgató, hódmezővásárhelyi fióktelep-vezető</th><td>500 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Szeged Bérkert u-i telepvezető</th><td>350 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">szentesi fióktelep-vezető</th><td>350 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">makói fióktelep-vezető</th><td>350 000</td><td>–</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">székkutasi telephelyvezető</th><td>220 000</td><td>–</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">apátfalvi fióktelep-vezető</th><td>275 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="info-note">
+                                * A felmondási idő tartamának, illetve a végkielégítésnek a munkavállaló részére
+                                az Mt. és a Kollektív Szerződés alapján, a közzététel időpontjában járó mértéke.
+                            </p>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Foglalkoztatási és béradatok 2021, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Foglalkoztatási és béradatok – 2021.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Megnevezés</th>
+                                            <th scope="col">I.</th><th scope="col">II.</th><th scope="col">III.</th><th scope="col">IV.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Foglalkoztatottak átlagos statisztikai állományi létszáma (fő)</th><td>935</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Foglalkoztatottak személyi juttatásaira vonatkozó összesített adatok (eFt)</th><td>431 291</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">A vezetők és vezető tisztviselők illetménye, munkabére, rendszeres juttatásai és költségtérítése összesítve (eFt)</th><td>14 013</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Egyéb alkalmazottaknak nyújtott juttatások</th><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2020 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2020.</summary>
+                        <div class="year-body">
+                            <p>A Takarékos törvény 2. §-a alapján közzétett adatok (2020.)</p>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető tisztségviselő 2020, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető tisztségviselő – 2020.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Név</th>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Jogviszonya</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Sándor Csaba</th><td>vezérigazgató</td><td>határozatlan idejű munkaviszony</td><td>1 944 000</td><td>–</td><td>50</td><td>–</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető állású munkavállalók 2020, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású munkavállalók – 2020.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Név</th>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Jogviszonya</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Andrea</th><td>vezérigazgató-helyettes (kontrolling igazgató)</td><td>határozatlan idejű munkaviszony</td><td>1 377 000</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Vas László</th><td>gazdasági igazgató</td><td>határozatlan idejű munkaviszony</td><td>1 350 000</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2020, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2020.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Név</th><th scope="col">Felügyelő bizottsági tisztsége</th><th scope="col">Mandátum időtartama</th>
+                                            <th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Megbízási díjon felül egyéb járandóság</th>
+                                            <th scope="col">A mandátum megszűnése esetén járó pénzbeli juttatás</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Szörényi Diána</th><td>FB elnök</td><td>2019. november 1. – 2022. október 31.</td><td>60 000</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Kató Eszter</th><td>FB tag</td><td>2019. november 1. – 2022. október 31.</td><td>50 000</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Kiss Andrea</th><td>FB munkavállalói tag</td><td>2016. 06. 01. – határozatlan időre</td><td>50 000</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Együttes cégjegyzésre jogosult munkavállalók 2020, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Együttes cégjegyzésre jogosult munkavállalók – 2020.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 350 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">mb. üzemeltetési igazgató</th><td>600 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">jogi menedzser</th><td>500 000</td><td>–</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">kontroller</th><td>450 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">rehabilitációs tanácsadó</th><td>206 000</td><td>–</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Bankszámla feletti rendelkezésre jogosult munkavállalók 2020, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Bankszámla felett együttes rendelkezésre jogosult munkavállalók – 2020.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 350 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó jelentőségű egyéb munkavállalók 2020, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>A munkáltató szempontjából meghatározó jelentőségű egyéb munkavállalók – 2020.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">kontrolling igazgató helyettes</th><td>800 000</td><td>–</td><td>–</td><td>60</td><td>4</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">termelési igazgató</th><td>650 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">operatív termelési menedzser</th><td>650 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">termelési információs team vezető</th><td>700 000</td><td>–</td><td>–</td><td>60</td><td>4</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">sík és körkötő-üzemegység vezető</th><td>550 000</td><td>–</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">szabászatvezető</th><td>450 000</td><td>–</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Legrand projekt igazgató, hódmezővásárhelyi fióktelep-vezető</th><td>500 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Szeged Bérkert u-i telepvezető</th><td>350 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">szentesi fióktelep-vezető</th><td>350 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">makó-apátfalvi fióktelep-vezető</th><td>220 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">székkutasi telephelyvezető</th><td>220 000</td><td>–</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="info-note">
+                                * A felmondási idő tartamának, illetve a végkielégítésnek a munkavállaló részére
+                                az Mt. és a Kollektív Szerződés alapján, a közzététel időpontjában járó mértéke.
+                            </p>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Foglalkoztatási és béradatok 2020, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Foglalkoztatási és béradatok – 2020.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Megnevezés</th><th scope="col">I.</th><th scope="col">II.</th><th scope="col">III.</th><th scope="col">IV.</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Foglalkoztatottak átlagos statisztikai állományi létszáma (fő)</th><td>845</td><td>835</td><td>865</td><td>914</td></tr>
+                                        <tr><th scope="row">Foglalkoztatottak személyi juttatásaira vonatkozó összesített adatok (eFt)</th><td>398 729</td><td>407 991</td><td>402 110</td><td>426 614</td></tr>
+                                        <tr><th scope="row">A vezetők és vezető tisztviselők illetménye, munkabére, rendszeres juttatásai és költségtérítése összesítve (eFt)</th><td>14 013</td><td>14 013</td><td>14 013</td><td>14 013</td></tr>
+                                        <tr><th scope="row">Egyéb alkalmazottaknak nyújtott juttatások</th><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2019 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2019.</summary>
+                        <div class="year-body">
+
+                            <h2>2019. november 01-től</h2>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető tisztségviselő 2019 novembertől, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető tisztségviselő – 2019. november 01-től</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Név</th>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Jogviszonya</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Sándor Csaba</th><td>vezérigazgató</td><td>határozatlan idejű munkaviszony</td><td>1 944 000</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető állású munkavállalók 2019 novembertől, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású munkavállalók – 2019. november 01-től</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Név</th>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Jogviszonya</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Andrea</th><td>vezérigazgató-helyettes (kontrolling igazgató)</td><td>határozatlan idejű munkaviszony</td><td>1 377 000</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Vas László</th><td>gazdasági igazgató</td><td>határozatlan idejű munkaviszony</td><td>1 045 000</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2019 novembertől, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2019. november 01-től</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Név</th><th scope="col">Felügyelő bizottsági tisztsége</th><th scope="col">Mandátum időtartama</th>
+                                            <th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Megbízási díjon felül egyéb járandóság</th>
+                                            <th scope="col">A mandátum megszűnése esetén járó pénzbeli juttatás</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Szörényi Diána</th><td>FB elnök</td><td>2019. november 1. – 2022. október 31.</td><td>60 000</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Kató Eszter</th><td>FB tag</td><td>2019. november 1. – 2022. október 31.</td><td>50 000</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Kiss Andrea</th><td>FB munkavállalói tag</td><td>2016. 06. 01. – határozatlan időre</td><td>50 000</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Együttes cégjegyzésre jogosult munkavállalók 2019 novembertől, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Együttes cégjegyzésre jogosult munkavállalók – 2019. november 01-től</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 045 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">HR igazgató</th><td>700 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">operatív termelési igazgató</th><td>700 000</td><td>15 000</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">mb. üzemeltetési igazgató</th><td>500 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">kontroller</th><td>450 000</td><td>50 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Bankszámla feletti rendelkezésre jogosult munkavállalók 2019 novembertől, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Bankszámla felett együttes rendelkezésre jogosult munkavállalók – 2019. november 01-től</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 045 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">számviteli előadó</th><td>375 000</td><td>25 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó jelentőségű egyéb munkavállalók 2019 novembertől, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>A munkáltató szempontjából meghatározó jelentőségű egyéb munkavállalók – 2019. november 01-től</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">kontrolling igazgató helyettes</th><td>800 000</td><td>–</td><td>–</td><td>60</td><td>4</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">termelési kabinet vezető</th><td>750 000</td><td>–</td><td>–</td><td>60</td><td>4</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">sík és körkötő-üzemegység vezető</th><td>550 000</td><td>50 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">szabászatvezető</th><td>450 000</td><td>15 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Legrand projekt igazgató, hódmezővásárhelyi fióktelep-vezető</th><td>500 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Szeged Bérkert u-i telepvezető</th><td>225 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">szentesi fióktelep-vezető</th><td>350 000</td><td>15 000</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">makó-apátfalvi fióktelep-vezető</th><td>350 000</td><td>–</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">székkutasi telephelyvezető</th><td>220 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">makó-apátfalvi fióktelep-vezető</th><td>220 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">székkutasi telephelyvezető</th><td>220 000</td><td>–</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>2019. november 01-ig</h2>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető tisztségviselő 2019 novemberig, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető tisztségviselő – 2019. november 01-ig</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Név</th>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Jogviszonya</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Sándor Csaba</th><td>vezérigazgató</td><td>határozatlan idejű munkaviszony</td><td>1 944 000</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető állású munkavállalók 2019 novemberig, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású munkavállalók – 2019. november 01-ig</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Név</th>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Jogviszonya</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Andrea</th><td>vezérigazgató-helyettes (kontrolling igazgató)</td><td>határozatlan idejű munkaviszony</td><td>1 377 000</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Vas László</th><td>gazdasági igazgató</td><td>határozatlan idejű munkaviszony</td><td>1 045 000</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2019 novemberig, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2019. november 01-ig</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Név</th><th scope="col">Felügyelő bizottsági tisztsége</th><th scope="col">Mandátum időtartama</th>
+                                            <th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Megbízási díjon felül egyéb járandóság</th>
+                                            <th scope="col">A mandátum megszűnése esetén járó pénzbeli juttatás</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kovács Zoltán</th><td>FB elnök</td><td>2016. 06. 01. – határozatlan időre</td><td>60 000</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Harmath Attila</th><td>FB tag</td><td>2017. 03. 02. – határozatlan időre; lemondás 2019. augusztus 7-én, megszűnt 2019. október 6. napjával</td><td>50 000</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Kiss Andrea</th><td>FB munkavállalói tag</td><td>2016. 06. 01. – határozatlan időre</td><td>50 000</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Együttes cégjegyzésre jogosult munkavállalók 2019 novemberig, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Együttes cégjegyzésre jogosult munkavállalók – 2019. november 01-ig</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 045 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">HR igazgató</th><td>700 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">operatív termelési igazgató</th><td>700 000</td><td>15 000</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">mb. üzemeltetési igazgató</th><td>500 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">kontroller</th><td>450 000</td><td>50 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Bankszámla feletti rendelkezésre jogosult munkavállalók 2019 novemberig, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Bankszámla felett együttes rendelkezésre jogosult munkavállalók – 2019. november 01-ig</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 045 000</td><td>–</td><td>–</td><td>50</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">számviteli előadó</th><td>375 000</td><td>25 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó jelentőségű egyéb munkavállalók 2019 novemberig, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>A munkáltató szempontjából meghatározó jelentőségű egyéb munkavállalók – 2019. november 01-ig</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">kontrolling igazgató helyettes</th><td>800 000</td><td>–</td><td>–</td><td>60</td><td>4</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">termelési kabinet vezető</th><td>750 000</td><td>–</td><td>–</td><td>60</td><td>4</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">sík és körkötő-üzemegység vezető</th><td>550 000</td><td>50 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">szabászatvezető</th><td>450 000</td><td>15 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Legrand projekt igazgató, hódmezővásárhelyi fióktelep-vezető</th><td>500 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Szeged Bérkert u-i telepvezető</th><td>225 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">szentesi fióktelep-vezető</th><td>350 000</td><td>15 000</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">makó-apátfalvi fióktelep-vezető</th><td>350 000</td><td>–</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">székkutasi telephelyvezető</th><td>220 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">makó-apátfalvi fióktelep-vezető</th><td>220 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">székkutasi telephelyvezető</th><td>220 000</td><td>–</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="info-note">
+                                * A felmondási idő tartamának, illetve a végkielégítésnek a munkavállaló részére
+                                az Mt. és a Kollektív Szerződés alapján, a közzététel időpontjában járó mértéke.
+                            </p>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Foglalkoztatási és béradatok 2019, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Foglalkoztatási és béradatok – 2019.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Megnevezés</th><th scope="col">I.</th><th scope="col">II.</th><th scope="col">III.</th><th scope="col">IV.</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Foglalkoztatottak átlagos statisztikai állományi létszáma (fő)</th><td>929</td><td>930</td><td>909</td><td>870</td></tr>
+                                        <tr><th scope="row">Foglalkoztatottak személyi juttatásaira vonatkozó összesített adatok (eFt)</th><td>411 854</td><td>420 433</td><td>418 948</td><td>395 944</td></tr>
+                                        <tr><th scope="row">A vezetők és vezető tisztviselők illetménye, munkabére, rendszeres juttatásai és költségtérítése összesítve (eFt)</th><td>13 098</td><td>13 097</td><td>13 097</td><td>13 098</td></tr>
+                                        <tr><th scope="row">Egyéb alkalmazottaknak nyújtott juttatások</th><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2018 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2018.</summary>
+                        <div class="year-body">
+                            <p>A Takarékos törvény 2. §-a alapján közzétett adatok (2018. június 1-től)</p>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető tisztségviselő 2018, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető tisztségviselő – 2018.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Név</th>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Jogviszonya</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Sándor Csaba</th><td>vezérigazgató</td><td>határozatlan idejű munkaviszony</td><td>1 944 000</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető állású munkavállalók 2018, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású munkavállalók – 2018.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Név</th>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Jogviszonya</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Andrea</th><td>vezérigazgató-helyettes (kontrolling igazgató)</td><td>határozatlan idejű munkaviszony</td><td>1 377 000</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Vas László</th><td>gazdasági igazgató</td><td>határozatlan idejű munkaviszony</td><td>1 008 000</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2018, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2018.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Név</th><th scope="col">Felügyelő bizottsági tisztsége</th><th scope="col">Mandátum időtartama</th>
+                                            <th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Megbízási díjon felül egyéb járandóság</th>
+                                            <th scope="col">A mandátum megszűnése esetén járó pénzbeli juttatás</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kovács Zoltán</th><td>FB elnök</td><td>2016. 06. 01. – határozatlan időre</td><td>60 000</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Harmath Attila</th><td>FB tag</td><td>2017. 03. 02. – határozatlan időre</td><td>50 000</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Kiss Andrea</th><td>FB munkavállalói tag</td><td>2016. 06. 01. – határozatlan időre</td><td>50 000</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Együttes cégjegyzésre jogosult munkavállalók 2018, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Együttes cégjegyzésre jogosult munkavállalók – 2018.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 008 000</td><td>–</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">HR igazgató</th><td>475 000</td><td>25 000</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">mb. kontrolling osztályvezető</th><td>550 000</td><td>25 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">üzemeltetési igazgató-helyettes</th><td>400 000</td><td>25 000</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">mb. termelési igazgató</th><td>750 000</td><td>50 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">rehabilitációs tanácsadó</th><td>450 000</td><td>50 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">rehabilitációs tanácsadó</th><td>206 000</td><td>50 000</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Bankszámla feletti rendelkezésre jogosult munkavállalók 2018, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Bankszámla felett együttes rendelkezésre jogosult munkavállalók – 2018.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 008 000</td><td>–</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">számviteli előadó</th><td>250 000</td><td>25 000</td><td>–</td><td>70</td><td>4</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó jelentőségű egyéb munkavállalók 2018, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>A munkáltató szempontjából meghatározó jelentőségű egyéb munkavállalók – 2018.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Munkakör</th>
+                                            <th scope="col" rowspan="2">Személyi bruttó alapbér (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Túlóraátalány (Ft/hó)</th>
+                                            <th scope="col" rowspan="2">Prémium</th>
+                                            <th scope="col" rowspan="2">Felmondási idő tartama* (nap)</th>
+                                            <th scope="col" rowspan="2">Végkielégítés* (havi távolléti díj)</th>
+                                            <th scope="colgroup" colspan="2">Mt. 228. § szerinti versenytilalmi megállapodás</th>
+                                        </tr>
+                                        <tr><th scope="col">időtartama</th><th scope="col">a kötelezettség vállalásának ellenértéke</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">adatvédelmi tisztviselő</th><td>500 000</td><td>–</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">kontrolling igazgató helyettes</th><td>800 000</td><td>50 000</td><td>–</td><td>60</td><td>4</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">termelési kabinet vezető</th><td>750 000</td><td>50 000</td><td>–</td><td>60</td><td>4</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">gyártáselőkészítő-mintázó, gyártásindító stúdió vezető</th><td>750 000</td><td>50 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">kötő-üzemegység vezető</th><td>300 000</td><td>100 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">szabászatvezető</th><td>500 000</td><td>50 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Legrand projekt igazgató</th><td>300 000</td><td>–</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Szeged Bérkert u-i telepvezető</th><td>225 000</td><td>25 000</td><td>–</td><td>90</td><td>6</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">szentesi fióktelep-vezető</th><td>225 000</td><td>25 000</td><td>–</td><td>45</td><td>2</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">hódmezővásárhelyi fióktelep-vezető</th><td>350 000</td><td>50 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">makó-apátfalvi fióktelep-vezető</th><td>350 000</td><td>50 000</td><td>–</td><td>30</td><td>–</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">székkutasi telephelyvezető</th><td>175 000</td><td>–</td><td>–</td><td>35</td><td>1</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="info-note">
+                                * A felmondási idő tartamának, illetve a végkielégítésnek a munkavállaló részére
+                                az Mt. és a Kollektív Szerződés alapján, a közzététel időpontjában járó mértéke.
+                            </p>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Foglalkoztatási és béradatok 2018, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Foglalkoztatási és béradatok – 2018.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Megnevezés</th><th scope="col">I.</th><th scope="col">II.</th><th scope="col">III.</th><th scope="col">IV.</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Foglalkoztatottak átlagos statisztikai állományi létszáma (fő)</th><td>896</td><td>922</td><td>923</td><td>921</td></tr>
+                                        <tr><th scope="row">Foglalkoztatottak személyi juttatásaira vonatkozó összesített adatok (eFt)</th><td>359 787</td><td>399 780</td><td>402 501</td><td>402 877</td></tr>
+                                        <tr><th scope="row">A vezetők és vezető tisztviselők illetménye, munkabére, rendszeres juttatásai és költségtérítése összesítve (eFt)</th><td>12 987</td><td>12 987</td><td>12 987</td><td>12 987</td></tr>
+                                        <tr><th scope="row">Egyéb alkalmazottaknak nyújtott juttatások</th><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2017 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2017.</summary>
+                        <div class="year-body">
+                            <p>A Takarékos törvény 2. §-a alapján közzétett adatok (2017.)</p>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető tisztségviselő 2017, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető tisztségviselő – 2017.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Név</th><th scope="col">Munkakör</th><th scope="col">Jogviszonya</th>
+                                            <th scope="col">Személyi bruttó alapbér (Ft/hó)</th><th scope="col">Prémium</th>
+                                            <th scope="col">Felmondási idő tartama</th><th scope="col">Végkielégítés</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kiss Sándor Csaba</th><td>vezérigazgató</td><td>munkaviszony, határozatlan időtartam</td><td>1 200 000 Ft/hó</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető állású munkavállalók 2017, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású munkavállalók – 2017.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Név</th><th scope="col">Munkakör</th><th scope="col">Jogviszonya</th>
+                                            <th scope="col">Személyi bruttó alapbér (Ft/hó)</th><th scope="col">Prémium</th>
+                                            <th scope="col">Felmondási idő tartama</th><th scope="col">Végkielégítés</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>vezérigazgató-helyettes (kontrolling igazgató)</td><td>munkaviszony, határozatlan időtartam</td><td>1 377 000 Ft/hó</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">Vas László</th><td>gazdasági igazgató</td><td>munkaviszony, határozatlan időtartam</td><td>1 008 000 Ft/hó</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2017, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2017.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Név</th><th scope="col">Felügyelő bizottsági tisztsége</th><th scope="col">Mandátum időtartama</th>
+                                            <th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Megbízási díjon felül egyéb járandóság</th>
+                                            <th scope="col">A mandátum megszűnése esetén járó pénzbeli juttatás</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Kovács Zoltán</th><td>FB elnök</td><td>2016. 06. 01. – határozatlan időre</td><td>60 000 Ft/hó</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Pál József</th><td>FB tag</td><td>2016. 06. 01. – határozatlan időre</td><td>50 000 Ft/hó</td><td>–</td><td>–</td></tr>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>FB munkavállalói tag</td><td>2016. 06. 01. – határozatlan időre</td><td>50 000 Ft/hó</td><td>–</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Együttes cégjegyzésre jogosult munkavállalók 2017, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Együttes cégjegyzésre jogosult munkavállalók – 2017.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi bruttó alapbér (Ft/hó)</th><th scope="col">Prémium</th><th scope="col">Felmondási idő tartama</th><th scope="col">Végkielégítés</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 008 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">igazgatási és jogi igazgató</th><td>475 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">üzemeltetési igazgató</th><td>450 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">üzembiztonságért felelős igazgató-helyettes</th><td>325 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">rehabilitációs tanácsadó</th><td>275 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Bankszámla feletti rendelkezésre jogosult munkavállalók 2017, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Bankszámla felett együttes rendelkezésre jogosult munkavállalók – 2017.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi bruttó alapbér (Ft/hó)</th><th scope="col">Prémium</th><th scope="col">Felmondási idő tartama</th><th scope="col">Végkielégítés</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes</th><td>1 377 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>1 008 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">számviteli előadó</th><td>330 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó jelentőségű egyéb munkavállalók 2017, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>A munkáltató szempontjából meghatározó jelentőségű egyéb munkavállalók – 2017.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi bruttó alapbér (Ft/hó)</th><th scope="col">Prémium</th><th scope="col">Felmondási idő tartama</th><th scope="col">Végkielégítés</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">termelési integrátor</th><td>600 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">termelés operatív kontroller</th><td>600 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">konfekció vezető</th><td>600 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">kötöde vezető</th><td>600 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">vezető mintázó</th><td>500 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">Legrand projekt igazgató</th><td>350 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">Legrand termelési kontroller</th><td>350 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">Szeged Bérkert u-i fióktelep-vezető</th><td>300 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">szentesi fióktelep-vezető</th><td>225 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">hódmezővásárhelyi fióktelep-vezető</th><td>275 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                        <tr><th scope="row">makó-apátfalvi fióktelep-vezető</th><td>250 000</td><td>–</td><td>Mt. 77. §-a szerint</td><td>Mt. 69. §-a szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2016 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2016.</summary>
+                        <div class="year-body">
+                            <p>A Takarékos törvény 2. § (1) bekezdése szerinti adatközzététel.</p>
+
+                            <h2>A társaság vezető tisztségviselője</h2>
+                            <dl class="info-data">
+                                <div><dt>Név, tisztség</dt><dd>Kiss Sándor vezérigazgató</dd></div>
+                                <div><dt>Postacím</dt><dd>6724 Szeged, Tavasz u. 2.</dd></div>
+                                <div><dt>Telefon</dt><dd><a href="tel:+3662554062">(62) 554-062</a></dd></div>
+                                <div><dt>E-mail</dt><dd><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></dd></div>
+                                <div><dt>Jogviszonya</dt><dd>munkaszerződés, határozatlan időtartam</dd></div>
+                                <div><dt>Személyi alapbér</dt><dd>bruttó 1 200 000 Ft/hó</dd></div>
+                                <div><dt>Egyéb járandóság</dt><dd>nemleges</dd></div>
+                                <div><dt>A jogviszony megszűnése esetén járó pénzbeli juttatás</dt><dd>nemleges</dd></div>
+                            </dl>
+
+                            <h2>Felügyelő Bizottság</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2016, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2016.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Tisztség</th><th scope="col">Mandátum időtartama</th><th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Egyéb járandóság</th><th scope="col">Megszűnéskor járó juttatás</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Fehérné Tolmács Mercédesz</th><td>elnök</td><td>2013. 09. 30. – 2016. 05. 31.</td><td>60 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                        <tr><th scope="row">Deák Csaba</th><td>tag</td><td>2013. 06. 01. – 2016. 05. 31.</td><td>50 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>munkavállalói képviselő</td><td>2013. 06. 01. – 2016. 05. 31.</td><td>50 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="info-note">
+                                A munkavállalói képviselőt az Üzemi Tanács jelölése alapján, a Szakszervezet
+                                véleményezésével választották. A Felügyelő Bizottság tagjainak jogviszonyára
+                                a Ptk. megbízási szerződésre vonatkozó szabályai irányadóak.
+                            </p>
+
+                            <h2>Az Mt. 208. § szerinti vezető állású munkavállalók</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető állású munkavállalók 2016, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású munkavállalók – 2016.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>vezérigazgató-helyettes (kontrolling igazgató)</td><td>bruttó 850 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">Vas László</th><td>gazdasági igazgató</td><td>bruttó 777 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Együttes cégjegyzésre, bankszámla feletti rendelkezésre jogosult és egyéb meghatározó munkavállalók</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó munkavállalók 2016, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Meghatározó jelentőségű munkavállalók – 2016.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Túlóraátalány (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">termelési igazgató</th><td>bruttó 455 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">K+F projekt igazgató</th><td>bruttó 400 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">rendezett munkaügyi kapcsolatokért felelős igazgató</th><td>bruttó 475 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">igazgatási és jogi igazgató</th><td>bruttó 475 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">üzemeltetési igazgató</th><td>bruttó 450 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">anyagbeszerzési és logisztikai igazgató helyettes</th><td>bruttó 300 000</td><td>25 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">üzembiztonságért felelős igazgató helyettes</th><td>bruttó 300 000</td><td>25 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">rehabilitációs tanácsadó</th><td>bruttó 275 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2015 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2015.</summary>
+                        <div class="year-body">
+                            <p>A Takarékos törvény 2. § (1) bekezdése szerinti adatközzététel.</p>
+
+                            <h2>A társaság vezető tisztségviselője</h2>
+                            <dl class="info-data">
+                                <div><dt>Név, tisztség</dt><dd>Kiss Sándor vezérigazgató</dd></div>
+                                <div><dt>Postacím</dt><dd>6724 Szeged, Tavasz u. 2.</dd></div>
+                                <div><dt>Telefon</dt><dd><a href="tel:+3662554062">(62) 554-062</a></dd></div>
+                                <div><dt>E-mail</dt><dd><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></dd></div>
+                                <div><dt>Jogviszonya</dt><dd>munkaszerződés, határozatlan időtartam</dd></div>
+                                <div><dt>Személyi alapbér</dt><dd>bruttó 1 200 000 Ft/hó</dd></div>
+                                <div><dt>Egyéb járandóság</dt><dd>nemleges</dd></div>
+                                <div><dt>A jogviszony megszűnése esetén járó pénzbeli juttatás</dt><dd>nemleges</dd></div>
+                            </dl>
+
+                            <h2>Felügyelő Bizottság</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2015, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2015.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Tisztség</th><th scope="col">Mandátum időtartama</th><th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Egyéb járandóság</th><th scope="col">Megszűnéskor járó juttatás</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Fehérné Tolmács Mercédesz</th><td>elnök</td><td>2013. 09. 30. – 2016. 05. 31.</td><td>60 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                        <tr><th scope="row">Deák Csaba</th><td>tag</td><td>2013. 06. 01. – 2016. 05. 31.</td><td>50 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>munkavállalói képviselő</td><td>2013. 06. 01. – 2016. 05. 31.</td><td>50 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Az Mt. 208. § szerinti vezető állású munkavállaló</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető állású munkavállaló 2015, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású munkavállaló – 2015.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>vezérigazgató-helyettes (kontrolling igazgató)</td><td>bruttó 850 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Együttes cégjegyzésre, bankszámla feletti rendelkezésre jogosult és egyéb meghatározó munkavállalók</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó munkavállalók 2015, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Meghatározó jelentőségű munkavállalók – 2015.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Túlóraátalány (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>bruttó 675 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">termelési igazgató</th><td>bruttó 455 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">termelési igazgató-helyettes</th><td>bruttó 315 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">K+F projekt igazgató</th><td>bruttó 400 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">humánerőforrás és szervezetfejlesztési igazgató</th><td>bruttó 450 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">rendezett munkaügyi kapcsolatokért felelős igazgató</th><td>bruttó 475 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">jogi igazgatási igazgató</th><td>bruttó 475 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">üzemeltetési igazgató</th><td>bruttó 450 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">logisztikai igazgató</th><td>bruttó 245 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">rehabilitációs tanácsadó</th><td>bruttó 275 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2014 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2014.</summary>
+                        <div class="year-body">
+                            <p>A Takarékos törvény 2. § (1) bekezdése szerinti adatközzététel.</p>
+
+                            <h2>A társaság vezető tisztségviselője</h2>
+                            <dl class="info-data">
+                                <div><dt>Név, tisztség</dt><dd>Kiss Sándor vezérigazgató</dd></div>
+                                <div><dt>Postacím</dt><dd>6724 Szeged, Tavasz u. 2.</dd></div>
+                                <div><dt>Telefon</dt><dd><a href="tel:+3662554062">(62) 554-062</a></dd></div>
+                                <div><dt>E-mail</dt><dd><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></dd></div>
+                                <div><dt>Jogviszonya</dt><dd>munkaszerződés, határozatlan időtartam</dd></div>
+                                <div><dt>Személyi alapbér</dt><dd>bruttó 1 200 000 Ft/hó</dd></div>
+                                <div><dt>Egyéb járandóság</dt><dd>nemleges</dd></div>
+                                <div><dt>A jogviszony megszűnése esetén járó pénzbeli juttatás</dt><dd>nemleges</dd></div>
+                            </dl>
+
+                            <h2>Felügyelő Bizottság</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2014, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2014.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Tisztség</th><th scope="col">Mandátum időtartama</th><th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Egyéb járandóság</th><th scope="col">Megszűnéskor járó juttatás</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Gógl Zsuzsanna</th><td>elnök</td><td>2012. 06. 01. – 2013. 05. 31.</td><td>60 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                        <tr><th scope="row">Deák Csaba</th><td>tag</td><td>2010. 05. 19. – 2013. 05. 31.</td><td>50 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>munkavállalói képviselő</td><td>2010. 05. 19. – 2013. 05. 31.</td><td>50 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Az Mt. 208. § szerinti vezető állású munkavállaló</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető állású munkavállaló 2014, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású munkavállaló – 2014.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>vezérigazgató-helyettes (kontrolling igazgató)</td><td>bruttó 850 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Együttes cégjegyzésre, bankszámla feletti rendelkezésre jogosult és egyéb meghatározó munkavállalók</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó munkavállalók 2014, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Meghatározó jelentőségű munkavállalók – 2014.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Túlóraátalány (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>bruttó 500 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">termelési igazgató</th><td>bruttó 650 000</td><td>50 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">termelési igazgató-helyettes</th><td>bruttó 650 000</td><td>50 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">termelési igazgató technológiai helyettese</th><td>bruttó 475 000</td><td>25 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">kontrolling osztályvezető</th><td>bruttó 350 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">belső ellenőr</th><td>bruttó 260 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">Legrand projektigazgató</th><td>bruttó 290 000</td><td>30 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">logisztikai igazgató</th><td>bruttó 350 000</td><td>25 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">rehabilitációs megbízott</th><td>bruttó 330 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">telephelyvezető (Szeged, Bérkert u.)</th><td>bruttó 300 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">fióktelep-vezető (szentesi fióktelep)</th><td>bruttó 204 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">fióktelep-vezető (makói fióktelep)</th><td>bruttó 161 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">fióktelep-vezető (hajdúnánási fióktelep)</th><td>bruttó 325 000</td><td>25 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2013 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2013.</summary>
+                        <div class="year-body">
+                            <p>A Takarékos törvény 2. § (1) bekezdése szerinti adatközzététel.</p>
+
+                            <h2>A társaság vezető tisztségviselője</h2>
+                            <dl class="info-data">
+                                <div><dt>Név, tisztség</dt><dd>Kiss Sándor vezérigazgató</dd></div>
+                                <div><dt>Postacím</dt><dd>6724 Szeged, Tavasz u. 2.</dd></div>
+                                <div><dt>Telefon</dt><dd><a href="tel:+3662554062">(62) 554-062</a></dd></div>
+                                <div><dt>E-mail</dt><dd><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></dd></div>
+                                <div><dt>Jogviszonya</dt><dd>munkaszerződés, határozatlan időtartam</dd></div>
+                                <div><dt>Személyi alapbér</dt><dd>bruttó 1 200 000 Ft/hó</dd></div>
+                                <div><dt>Egyéb járandóság</dt><dd>nemleges</dd></div>
+                                <div><dt>A jogviszony megszűnése esetén járó pénzbeli juttatás</dt><dd>nemleges</dd></div>
+                            </dl>
+
+                            <h2>Felügyelő Bizottság</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2013, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2013.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Tisztség</th><th scope="col">Mandátum időtartama</th><th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Egyéb járandóság</th><th scope="col">Megszűnéskor járó juttatás</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Gógl Zsuzsanna</th><td>elnök</td><td>2012. 06. 01. – 2013. 05. 31.</td><td>60 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                        <tr><th scope="row">Deák Csaba</th><td>tag</td><td>2010. 08. 13. – 2013. 05. 31.</td><td>50 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>munkavállalói képviselő</td><td>2010. 05. 19. – 2013. 05. 31.</td><td>50 000</td><td>nemleges</td><td>nemleges</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Az Mt. 208. § szerinti vezető állású munkavállaló</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető állású munkavállaló 2013, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású munkavállaló – 2013.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>vezérigazgató-helyettes (kontrolling igazgató)</td><td>bruttó 850 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Együttes cégjegyzésre, bankszámla feletti rendelkezésre jogosult és egyéb meghatározó munkavállalók</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó munkavállalók 2013, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Meghatározó jelentőségű munkavállalók – 2013.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Túlóraátalány (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>bruttó 500 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">termelési igazgató</th><td>bruttó 650 000</td><td>50 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">termelési igazgató-helyettes</th><td>bruttó 650 000</td><td>50 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">termelési igazgató technológiai helyettese</th><td>bruttó 475 000</td><td>25 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">kontrolling osztályvezető</th><td>bruttó 350 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">belső ellenőr</th><td>bruttó 260 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">Legrand projektigazgató</th><td>bruttó 290 000</td><td>30 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">logisztikai igazgató</th><td>bruttó 350 000</td><td>25 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">rehabilitációs megbízott</th><td>bruttó 330 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">telephelyvezető (Szeged, Bérkert u.)</th><td>bruttó 300 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">fióktelep-vezető (szentesi fióktelep)</th><td>bruttó 204 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">fióktelep-vezető (makói fióktelep)</th><td>bruttó 161 000</td><td>–</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                        <tr><th scope="row">fióktelep-vezető (hajdúnánási fióktelep)</th><td>bruttó 325 000</td><td>25 000</td><td>Mt. 77. § (3) szerint</td><td>Mt. 69. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2012 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2012.</summary>
+                        <div class="year-body">
+
+                            <h2>2012. június 01-től</h2>
+                            <p>A Kormány 175/2009. (VIII. 29.) kormányrendeletében jelölt közzétételi kötelezettség.</p>
+
+                            <dl class="info-data">
+                                <div><dt>Vezető tisztségviselő</dt><dd>Kiss Sándor vezérigazgató</dd></div>
+                                <div><dt>Postacím</dt><dd>6724 Szeged, Tavasz u. 2.</dd></div>
+                                <div><dt>Telefon</dt><dd><a href="tel:+3662554062">(62) 554-062</a></dd></div>
+                                <div><dt>E-mail</dt><dd><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></dd></div>
+                                <div><dt>Jogviszonya</dt><dd>munkaszerződés, határozatlan időtartam</dd></div>
+                                <div><dt>Személyi alapbér</dt><dd>bruttó 1 200 000 Ft/hó</dd></div>
+                                <div><dt>Egyéb járandóság</dt><dd>nemleges</dd></div>
+                            </dl>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2012 júniustól, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2012. június 01-től (3 fő)</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Tisztség</th><th scope="col">Mandátum időtartama</th><th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Megjegyzés</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Varga Zsuzsanna</th><td>elnök</td><td>2010. 09. 16. – 2013. 05. 31.</td><td>60 000</td><td>mandátuma 2012. május 31-én megszűnt</td></tr>
+                                        <tr><th scope="row">Gógl Zsuzsanna</th><td>tag</td><td>2012. 06. 01. – 2013. 05. 31.</td><td>50 000</td><td>–</td></tr>
+                                        <tr><th scope="row">Deák Csaba</th><td>tag</td><td>2010. 08. 13. – 2013. 05. 31.</td><td>50 000</td><td>–</td></tr>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>munkavállalói képviselő</td><td>2010. 05. 19. – 2013. 05. 31.</td><td>50 000</td><td>–</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó munkavállalók 2012 júniustól, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású és meghatározó jelentőségű munkavállalók – 2012. június 01-től</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Túlóraátalány (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes (kontrolling igazgató) – Víghné Kiss Andrea</th><td>bruttó 850 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">termelési igazgató</th><td>bruttó 475 000</td><td>25 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">termelési igazgató-helyettes</th><td>bruttó 475 000</td><td>25 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">gazdasági igazgató</th><td>bruttó 500 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">gyártmányfejlesztési igazgató</th><td>bruttó 385 000</td><td>15 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">kereskedelmi igazgató</th><td>bruttó 475 000</td><td>25 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">logisztikai igazgató</th><td>bruttó 350 000</td><td>25 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">Legrand projektigazgató</th><td>bruttó 290 000</td><td>30 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">kontrolling osztályvezető</th><td>bruttó 350 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">belső ellenőr</th><td>bruttó 260 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">rehabilitációs megbízott</th><td>bruttó 330 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">telephelyvezető (Szeged, Bérkert u.)</th><td>bruttó 300 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">fióktelep-vezető (szentesi fióktelep)</th><td>bruttó 204 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">fióktelep-vezető (makói fióktelep)</th><td>bruttó 161 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">fióktelep-vezető (orosházi fióktelep)</th><td>bruttó 161 900</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>2012. január 1-től 2012. május 31-ig</h2>
+
+                            <dl class="info-data">
+                                <div><dt>Vezető tisztségviselő</dt><dd>Kiss Sándor elnök-vezérigazgató</dd></div>
+                                <div><dt>Jogviszonya</dt><dd>megbízási szerződés, határozott idejű: 2010. 05. 19. – 2013. 05. 31.</dd></div>
+                                <div><dt>Megbízási díj</dt><dd>bruttó 1 200 000 Ft/hó</dd></div>
+                                <div><dt>Egyéb járandóság</dt><dd>nemleges</dd></div>
+                                <div><dt>Mt. 188/A § szerinti munkavállaló</dt><dd>nemleges</dd></div>
+                            </dl>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2012 első félév, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2012. január 1. – május 31. (3 fő)</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Tisztség</th><th scope="col">Mandátum időtartama</th><th scope="col">Megbízási díj (Ft/hó)</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Varga Zsuzsanna</th><td>elnök</td><td>2010. 09. 16. – 2013. 05. 31.</td><td>60 000</td></tr>
+                                        <tr><th scope="row">Deák Csaba</th><td>tag</td><td>2010. 08. 13. – 2013. 05. 31.</td><td>50 000</td></tr>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>munkavállalói képviselő</td><td>2010. 05. 19. – 2013. 05. 31.</td><td>50 000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó munkavállalók 2012 első félév, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású és meghatározó jelentőségű munkavállalók – 2012. január 1. – május 31.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Túlóraátalány / pótlék (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes (kontrolling igazgató) – Víghné Kiss Andrea</th><td>bruttó 850 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">számviteli vezető</th><td>bruttó 500 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">kontrolling osztályvezető</th><td>bruttó 300 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">belső ellenőr</th><td>bruttó 260 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">termelési kabinetvezető</th><td>bruttó 475 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">termelési kabinetvezető helyettes</th><td>bruttó 475 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">technológiai igazgató</th><td>bruttó 285 000</td><td>15 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">Legrand projekt igazgató</th><td>bruttó 290 000</td><td>30 000 (teljesítménypótlék)</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">rehabilitációs megbízott</th><td>bruttó 220 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">telepvezető (makói fióktelep)</th><td>bruttó 150 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">üzemvezető (szentesi fióktelep)</th><td>bruttó 200 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Közüzemi szerződések</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Közüzemi szerződések 2012, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Közüzemi szerződések – 2012.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Szerződés típusa</th><th scope="col">Szerződés tárgya</th><th scope="col">Szerződött partner</th><th scope="col">Időbeli hatály</th><th scope="col">Várható érték (ÁFA nélkül)</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Közüzemi (szolgáltatási) szerződés</th><td>villamos energia ellátás</td><td>EDF Démász Zrt.</td><td>2012. 01. 01. – 2012. 02. 29.</td><td>4 000 000 Ft</td></tr>
+                                        <tr><th scope="row">Közüzemi (szolgáltatási) szerződés</th><td>villamos energia ellátás</td><td>MVM Partner Zrt.</td><td>2012. 03. 01. – 2012. 12. 31.</td><td>15 000 000 Ft</td></tr>
+                                        <tr><th scope="row">Közüzemi (szolgáltatási) szerződés</th><td>földgáz ellátás</td><td>GDF SUEZ Energia Magyarország Zrt.</td><td>2012. 01. 01. – 2012. 12. 31.</td><td>25 000 000 Ft</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2011 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2011.</summary>
+                        <div class="year-body">
+                            <p>A Kormány 175/2009. (VIII. 29.) kormányrendeletében jelölt közzétételi kötelezettség.</p>
+
+                            <dl class="info-data">
+                                <div><dt>Vezető tisztségviselő</dt><dd>Kiss Sándor elnök-vezérigazgató</dd></div>
+                                <div><dt>Postacím</dt><dd>6724 Szeged, Tavasz u. 2.</dd></div>
+                                <div><dt>Telefon</dt><dd><a href="tel:+3662554062">(62) 554-062</a></dd></div>
+                                <div><dt>E-mail</dt><dd><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></dd></div>
+                                <div><dt>Jogviszonya</dt><dd>megbízási szerződés, határozott idejű: 2010. 05. 19. – 2013. 05. 31.</dd></div>
+                                <div><dt>Megbízási díj</dt><dd>bruttó 1 200 000 Ft/hó</dd></div>
+                                <div><dt>Mt. 188/A § szerinti munkavállaló</dt><dd>nemleges</dd></div>
+                            </dl>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2011, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2011.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Tisztség</th><th scope="col">Mandátum időtartama</th><th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Megjegyzés</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Varga Zsuzsanna</th><td>elnök (2010. augusztus 12-től)</td><td>2010. 09. 16. – 2013. 05. 31.</td><td>60 000</td><td>–</td></tr>
+                                        <tr><th scope="row">Deák Csaba</th><td>tag</td><td>2010. 08. 13. – 2013. 05. 31.</td><td>50 000</td><td>–</td></tr>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>munkavállalói képviselő</td><td>2010. 05. 19. – 2013. 08. 31.</td><td>50 000</td><td>–</td></tr>
+                                        <tr><th scope="row">Dr. Németh Gábor</th><td>elnök (2010. augusztus 12-ig)</td><td>2010. 05. 19. – 2013. 05. 31.</td><td>–</td><td>mandátuma 2010. augusztus 12-én megszűnt</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó munkavállalók 2011, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású és meghatározó jelentőségű munkavállalók – 2011.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Túlóraátalány / pótlék (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes (kontrolling igazgató) – Víghné Kiss Andrea</th><td>bruttó 850 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">kontrolling igazgató-helyettes</th><td>bruttó 500 000 (2011. 09. 01-től)</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">számviteli vezető</th><td>bruttó 450 000 (2011. 08. 31-ig), bruttó 500 000 (2011. 09. 01-től)</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">kontrolling osztályvezető</th><td>bruttó 260 000 (2011. 08. 31-ig), bruttó 300 000 (2011. 09. 01-től)</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">termelési kabinetvezető</th><td>bruttó 400 000 (2011. 08. 31-ig), bruttó 475 000 (2011. 09. 01-től)</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">termelési kabinetvezető helyettes</th><td>bruttó 475 000</td><td>25 000 (2011. 01. 01-től)</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">technológiai igazgató</th><td>bruttó 285 000</td><td>15 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">Legrand project igazgató</th><td>bruttó 290 000</td><td>30 000 (teljesítménypótlék)</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">rehabilitációs megbízott</th><td>bruttó 220 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">telepvezető (makói fióktelep)</th><td>bruttó 150 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">üzemvezető (szentesi fióktelep)</th><td>bruttó 200 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Közüzemi szerződések</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Közüzemi szerződések 2011, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Közüzemi szerződések – 2011.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Szerződés típusa</th><th scope="col">Szerződés tárgya</th><th scope="col">Szerződött partner</th><th scope="col">Időbeli hatály</th><th scope="col">Várható érték (ÁFA nélkül)</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Közüzemi (szolgáltatási) szerződés</th><td>villamos energia ellátás</td><td>EDF Démász Zrt.</td><td>2011. 01. 01. – 2011. 12. 31.</td><td>18 000 000 Ft</td></tr>
+                                        <tr><th scope="row">Közüzemi (szolgáltatási) szerződés</th><td>földgáz ellátás</td><td>GDF SUEZ Energia Magyarország Zrt.</td><td>2011. 01. 01. – 2011. 12. 31.</td><td>22 000 000 Ft</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2010 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2010.</summary>
+                        <div class="year-body">
+                            <p>A Kormány 175/2009. (VIII. 29.) kormányrendeletében jelölt közzétételi kötelezettség.</p>
+
+                            <dl class="info-data">
+                                <div><dt>Vezető tisztségviselő</dt><dd>Kiss Sándor elnök-vezérigazgató</dd></div>
+                                <div><dt>Postacím</dt><dd>6724 Szeged, Tavasz u. 2.</dd></div>
+                                <div><dt>Telefon</dt><dd><a href="tel:+3662554062">(62) 554-062</a></dd></div>
+                                <div><dt>E-mail</dt><dd><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></dd></div>
+                                <div><dt>Jogviszonya</dt><dd>megbízási szerződés, határozott idejű: 2010. 05. 19. – 2013. 05. 31.</dd></div>
+                                <div><dt>Megbízási díj</dt><dd>bruttó 1 200 000 Ft/hó</dd></div>
+                                <div><dt>Mt. 188/A § szerinti munkavállaló</dt><dd>nemleges</dd></div>
+                            </dl>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2010, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2010.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Tisztség</th><th scope="col">Mandátum időtartama</th><th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">Megjegyzés</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Varga Zsuzsanna</th><td>elnök (2010. augusztus 12-től)</td><td>2010. 09. 16. – 2013. 05. 31.</td><td>60 000</td><td>–</td></tr>
+                                        <tr><th scope="row">Deák Csaba</th><td>tag</td><td>2010. 08. 13. – 2013. 05. 31.</td><td>50 000</td><td>–</td></tr>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>munkavállalói képviselő</td><td>2010. 05. 19. – 2013. 08. 31.</td><td>50 000</td><td>–</td></tr>
+                                        <tr><th scope="row">Dr. Németh Gábor</th><td>elnök (2010. augusztus 12-ig)</td><td>2010. 05. 19. – 2013. 05. 31.</td><td>–</td><td>mandátuma 2010. augusztus 12-én megszűnt</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó munkavállalók 2010, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású és meghatározó jelentőségű munkavállalók – 2010.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Túlóraátalány (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes (kontrolling igazgató) – Víghné Kiss Andrea</th><td>bruttó 850 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">kontrolling igazgató-helyettes</th><td>bruttó 450 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">számviteli vezető</th><td>bruttó 350 000 (2010. 11. 14-ig), bruttó 450 000 (2010. 11. 15-től)</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">kontrolling osztályvezető</th><td>bruttó 260 000 (2010. 08. 31-ig), bruttó 300 000 (2010. 09. 01-től)</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">termelési kabinetvezető</th><td>bruttó 350 000</td><td>50 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">szakmai igazgató</th><td>bruttó 320 000</td><td>50 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint; munkaköre megszűnt 2010. 06. 27-én</td></tr>
+                                        <tr><th scope="row">technológiai igazgató</th><td>bruttó 285 000</td><td>15 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">rehabilitációs megbízott</th><td>bruttó 220 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">telepvezető (makói fióktelep)</th><td>bruttó 150 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">üzemvezető (szentesi fióktelep)</th><td>bruttó 200 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Közüzemi szerződések</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Közüzemi szerződések 2010, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Közüzemi szerződések – 2010.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Szerződés típusa</th><th scope="col">Szerződés tárgya</th><th scope="col">Szerződött partner</th><th scope="col">Időbeli hatály</th><th scope="col">Várható érték (ÁFA nélkül)</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Közüzemi (szolgáltatási) szerződés</th><td>villamos energia ellátás</td><td>EDF Démász Zrt.</td><td>2010. 01. 01. – 2010. 12. 31.</td><td>18 000 000 Ft</td></tr>
+                                        <tr><th scope="row">Közüzemi (szolgáltatási) szerződés</th><td>földgáz ellátás</td><td>GDF SUEZ Energia Magyarország Kft.</td><td>2010. 01. 01. – 2010. 12. 31.</td><td>22 000 000 Ft</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ===================== 2009 ===================== -->
+                    <details class="year-block">
+                        <summary>Adatszolgáltatás 2009.</summary>
+                        <div class="year-body">
+
+                            <h2>Költségvetési támogatás</h2>
+                            <p>
+                                A megváltozott munkaképességű munkavállalók alacsonyabb teljesítményének
+                                kompenzálására és a foglalkoztatás elismert, igazolt többletköltségének
+                                fedezésére szolgáló költségvetési támogatás bruttó értéke.
+                            </p>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Költségvetési támogatás 2009, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Költségvetési támogatás (adatok: eFt)</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Tétel megnevezése</th>
+                                            <th scope="col" rowspan="2">2008. év</th>
+                                            <th scope="colgroup" colspan="2">2009. év</th>
+                                        </tr>
+                                        <tr><th scope="col">Terv</th><th scope="col">Tény</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Költségvetési támogatás, ebből</th><td>847 241</td><td>594 000</td><td>619 244</td></tr>
+                                        <tr><th scope="row">Bértámogatás</th><td>562 957</td><td>344 000</td><td>369 246</td></tr>
+                                        <tr><th scope="row">Költségkompenzációs támogatás, ebből</th><td>284 284</td><td>250 000</td><td>249 998</td></tr>
+                                        <tr><th scope="row">Béralapú támogatás</th><td>247 895</td><td>210 000</td><td>209 998</td></tr>
+                                        <tr><th scope="row">Anyagjellegű ráfordítás alapú támogatás</th><td>36 389</td><td>40 000</td><td>40 000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>A társaság 2009. évi gazdálkodása</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Gazdálkodás 2009, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>A társaság gazdálkodása – 2009. (adatok: eFt)</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2">Megnevezés</th>
+                                            <th scope="colgroup" colspan="2">2009. év</th>
+                                        </tr>
+                                        <tr><th scope="col">Terv</th><th scope="col">Tény</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">A. Üzemi tevékenység eredménye</th><td>+59 000</td><td>+83 958</td></tr>
+                                        <tr><th scope="row">B. Pénzügyi műveletek eredménye</th><td>−45 000</td><td>−65 539</td></tr>
+                                        <tr><th scope="row">C. Szokásos vállalkozási eredmény</th><td>+14 000</td><td>+18 419</td></tr>
+                                        <tr><th scope="row">D. Rendkívüli eredmény</th><td>+1 750</td><td>+870</td></tr>
+                                        <tr><th scope="row">E. Adózás előtti eredmény</th><td>+15 750</td><td>+19 289</td></tr>
+                                        <tr><th scope="row">F. Adózott eredmény</th><td>+15 750</td><td>+19 289</td></tr>
+                                        <tr><th scope="row">G. Mérleg szerinti eredmény</th><td>+15 750</td><td>+19 289</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>A társaság vezető tisztségviselője</h2>
+                            <dl class="info-data">
+                                <div><dt>Név, tisztség</dt><dd>Kiss Sándor elnök-vezérigazgató</dd></div>
+                                <div><dt>Postacím</dt><dd>6724 Szeged, Tavasz u. 2.</dd></div>
+                                <div><dt>Telefon</dt><dd><a href="tel:+3662554062">(62) 554-062</a></dd></div>
+                                <div><dt>E-mail</dt><dd><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></dd></div>
+                                <div><dt>Jogviszonya</dt><dd>megbízási szerződés, határozott idejű: 2007. 06. 01. – 2012. 05. 31.</dd></div>
+                                <div><dt>Megbízási díj</dt><dd>bruttó 1 200 000 Ft/hó</dd></div>
+                                <div><dt>Egyéb járandóság</dt><dd>nemleges</dd></div>
+                            </dl>
+
+                            <h2>Felügyelő Bizottság</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Felügyelő Bizottság 2009, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Felügyelő Bizottság – 2009. (3 fő)</caption>
+                                    <thead>
+                                        <tr><th scope="col">Név</th><th scope="col">Tisztség</th><th scope="col">Mandátum időtartama</th><th scope="col">Megbízási díj (Ft/hó)</th><th scope="col">E-mail</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">Dr. Németh Gábor</th><td>elnök (az Állami Számvevőszék által kijelölten)</td><td>2007. 10. 01. – 2010. 05. 31.</td><td>60 000</td><td>kalkulus1@axelero.hu</td></tr>
+                                        <tr><th scope="row">Víghné Kiss Andrea</th><td>munkavállalói képviselő</td><td>2007. 10. 01. – 2010. 05. 31.</td><td>50 000</td><td><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></td></tr>
+                                        <tr><th scope="row">Varga Zsuzsanna</th><td>tulajdonosi joggyakorló képviseletében</td><td>2009. 08. 01. – 2010. 05. 31.</td><td>50 000</td><td>vargazsuzsanna@mnvzrt.hu</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2>Vezető állású és meghatározó jelentőségű munkavállalók</h2>
+                            <div class="table-scroll" tabindex="0" role="region" aria-label="Meghatározó munkavállalók 2009, vízszintesen görgethető">
+                                <table class="info-table">
+                                    <caption>Vezető állású és meghatározó jelentőségű munkavállalók – 2009.</caption>
+                                    <thead>
+                                        <tr><th scope="col">Munkakör</th><th scope="col">Személyi alapbér (Ft/hó)</th><th scope="col">Túlóraátalány (Ft/hó)</th><th scope="col">Végkielégítés</th><th scope="col">Felmondási idő</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th scope="row">vezérigazgató-helyettes (kontrolling igazgató) – Víghné Kiss Andrea</th><td>bruttó 850 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">kontrolling igazgató-helyettes</th><td>bruttó 450 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">számviteli vezető</th><td>bruttó 350 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">kontrolling osztályvezető</th><td>bruttó 260 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">termelési kabinetvezető</th><td>bruttó 350 000</td><td>50 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">szakmai igazgató</th><td>bruttó 320 000</td><td>50 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">technológiai igazgató</th><td>bruttó 285 000</td><td>15 000</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">rehabilitációs megbízott</th><td>bruttó 220 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">telepvezető (makói fióktelep)</th><td>bruttó 150 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                        <tr><th scope="row">üzemvezető (szentesi fióktelep)</th><td>bruttó 200 000</td><td>–</td><td>Mt. 95. § (4) szerint</td><td>Mt. 92. § szerint</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                </div>
+            </section>
+
+            <div class="mission-back">
+                <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
+            </div>
+        </section>
+    </main>
+    <script src="../../js/script.js"></script>
+</body>
+</html>

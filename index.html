@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SZEFO Közhasznú Nonprofit Zrt. – rehabilitációs foglalkoztatás, textilipari gyártás, villamosipari bérmunka és fenntartható értékteremtés.">
+
+    <link rel="icon" href="img/fav/szefo_fav.PNG" type="image/png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/popup.css">
+
+    <title>Kezdőlap | SZEFO Közhasznú Nonprofit Zrt.</title>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <header class="site-header">
+        <!-- NAVBAR -->
+        <nav class="navbar" aria-label="Fő navigáció">
+            <a class="navbar-brand" href="index.html" aria-label="SZEFO kezdőlap">
+                <img src="./img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </nav>
+
+        <!-- OFFCANVAS MENU -->
+        <div class="offcanvas" id="offcanvasMenu" aria-hidden="true">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="hu/tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="hu/kuldetesunk/index.html">Küldetésünk</a>
+                            </li>
+                            <li>
+                                <a href="hu/kapcsolat/index.html">Kapcsolat</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CÉGINFORMÁCIÓK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Céginformációk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="hu/altalanos_ceginformaciok/index.html">Általános céginformáció</a>
+                            </li>
+                            <li>
+                                <a href="hu/kozerdeku_adatok/index.html">Közérdekű adatok</a>
+                            </li>
+                            <li>
+                                <a href="hu/kepzo_intezmenyek/index.html">Képző intézmények</a>
+                            </li>
+                            <li>
+                                <a href="hu/projektek/index.html">Projektek</a>
+                            </li>
+                            <li>
+                                <a href="hu/minosegpolitika/index.html">Minőségpolitika</a>
+                            </li>
+                            <li>
+                                <a href="hu/partnerek/index.html">Partnerek</a>
+                            </li>
+                            <li>
+                                <a href="hu/alapitvany/index.html">Alapítvány</a>
+                            </li>
+                            <li>
+                                <a href="hu/adatszolgaltatas/index.html">Adatszolgáltatás</a>
+                            </li>
+                            <li>
+                                <a href="hu/adatigenyles_rendje/index.html">Adatigénylés rendje</a>
+                            </li>
+                            <li>
+                                <a href="hu/eves_beszamolok/index.html">Éves beszámolók</a>
+                            </li>
+                            <li>
+                                <a href="hu/kozzetetelek/index.html">Közzétételek</a>
+                            </li>
+                            <li>
+                                <a href="hu/ellenorzesek/index.html">Ellenőrzések</a>
+                            </li>
+                            <li>
+                                <a href="hu/szerzodesek/index.html">Szerződések</a>
+                            </li>
+                            <li>
+                                <a href="hu/palyazat/index.html">Pályázat NEAO-KP-1-2022/8-000016</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="hu/hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="hu/e-hulladek/index.html">E-hulladék</a>
+                    </li>
+                    <li>
+                        <a href="hu/karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="hu/klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+
+               <div class="search search--button-only">
+                <a class="search-link" href="hu/kereses/index.html">
+                    Keresés
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content">
+        <!-- HERO CAROUSEL -->
+        <section class="hero-carousel" aria-label="Kiemelt tartalmak">
+                <div class="hero-slide active" style="--hero-bg: url('../img/hero/hero-1.webp'); --hero-position: center center;">
+                    <img src="./img/hero/hero-1.webp" alt="SZEFO üzem" loading="lazy">
+                    <div class="hero-text">
+                        <h1>Értéket teremtünk – együtt</h1>
+                        <p>Foglalkoztatás, gyártás, szakmai tudás és társadalmi felelősségvállalás.</p>
+                    </div>
+                </div>
+
+                <div class="hero-slide" style="--hero-bg: url('../img/hero/hero-2.webp'); --hero-position: center center;">
+                    <img src="./img/hero/hero-2.webp" alt="Textilipari munkafolyamat" loading="lazy">
+                    <div class="hero-text">
+                        <h2>Rehabilitációs foglalkoztatás</h2>
+                        <p>Méltó munkalehetőség megváltozott munkaképességű munkatársaink számára.</p>
+                    </div>
+                </div>
+
+                <div class="hero-slide" style="--hero-bg: url('../img/hero/hero-3.webp'); --hero-position: center center;">
+                    <img src="./img/hero/hero-3.webp" alt="Gyártási környezet" loading="lazy">
+                    <div class="hero-text">
+                        <h2>Komplex gyártási megoldások</h2>
+                        <p>Textilipari, villamosipari és bérmunka szolgáltatások egy helyen.</p>
+                    </div>
+                </div>
+
+                <div class="hero-slide" style="--hero-bg: url('../img/hero/hero-4.webp'); --hero-position: center center;">
+                    <img src="./img/hero/hero-4.webp" alt="Gyártási környezet" loading="lazy">
+                    <div class="hero-text">
+                        <h2>Komplex gyártási megoldások</h2>
+                        <p>Textilipari, villamosipari és bérmunka szolgáltatások egy helyen.</p>
+                    </div>
+                </div>
+
+                <button
+                    class="hero-prev"
+                    type="button"
+                    aria-label="Előző kiemelt tartalom"
+                >
+                    ‹
+                </button>
+
+                <button
+                    class="hero-next"
+                    type="button"
+                    aria-label="Következő kiemelt tartalom"
+                >
+                    ›
+                </button>
+        </section>
+
+        <!-- VEZÉRIGAZGATÓI KÖSZÖNTŐ -->
+        <section class="ceo-wrapper" aria-labelledby="ceo-title">
+            <div class="ceo-preview">
+                <h2 id="ceo-title">Vezérigazgatói köszöntő</h2>
+
+                <p>
+                    Nagy megtiszteltetés számomra, hogy a SZEFO Közhasznú Nonprofit Zrt. új vezérigazgatójaként köszönthetem Önöket.
+                    Egy olyan vállalat munkáját folytathatom, amely immár több mint hetven éve biztosít méltó munkalehetőséget
+                    fogyatékossággal élő és egészségkárosodott emberek számára.
+                </p>
+
+                <p>
+                    Büszke vagyok arra a befogadó közösségre, amelyet munkatársaink alkotnak, és amelyben a mindennapokban
+                    láthatóvá válik az együttműködés, a szakmai tudás és az emberi méltóság tisztelete.
+                </p>
+
+                <a href="#" class="ceo-btn">Bővebben</a>
+            </div>
+
+            <div class="ceo-full">
+                <h3>Vezérigazgatói köszöntő</h3>
+
+                <p>
+                    <strong>Tisztelt Munkatársaink, Tisztelt Partnereink!</strong>
+                </p>
+
+                <p>
+                    Nagy megtiszteltetés számomra, hogy a SZEFO Közhasznú Nonprofit Zrt. új vezérigazgatójaként köszönthetem Önöket.
+                    Hatalmas felelősséggel és egyben mély elhivatottsággal fogadom el ezt a megbízatást, hiszen egy olyan vállalat
+                    munkáját folytathatom, amelynek immár több mint hetven éve legfontosabb feladata a megváltozott munkaképességű,
+                    fogyatékossággal élő és egészségkárosodott emberek foglalkoztatásának, foglalkozási rehabilitációjának és
+                    méltányos munkakörülményeinek biztosítása.
+                </p>
+
+                <p>
+                    Amikor 1953-ban 27 látássérült ember megalapította az egykori Szegedi Fonalmentő Vállalatot, egy közös
+                    küldetéssel tették: értékteremtő munkát biztosítani azoknak, akik számára fogyatékosságuk, betegségük miatt
+                    a munkaerőpiac kevés esélyt kínált. Ez a küldetés ma is ugyanolyan fontos, mint évtizedekkel ezelőtt.
+                </p>
+
+                <p>
+                    Büszke vagyok arra a befogadó közösségre, amelyet munkatársaink alkotnak, és amelyben a mindennapokban
+                    láthatóvá válik az együttműködés, a szakmai tudás és az emberi méltóság tisztelete.
+                </p>
+
+                <p>
+                    Vezérigazgatóként számomra egyértelmű: a fogyatékossággal élő és megváltozott munkaképességű kollégák iránti
+                    elköteleződés, felelősségvállalás és támogatás nem csupán hagyomány, hanem a jövőnk egyik legfontosabb alapja is.
+                </p>
+
+                <h3>Kiemelt céljaim:</h3>
+
+                <ul>
+                    <li>a társadalmi felelősségvállalás még határozottabb képviselete</li>
+                    <li>az esélyegyenlőség további erősítése</li>
+                    <li>a minőség és innováció folyamatos fejlesztése</li>
+                    <li>a stabilitás és fenntarthatóság megőrzése</li>
+                </ul>
+
+                <p>
+                    Személyes motivációm egyszerű, mégis mélyről fakadó: olyan munkahelyet, munkakörülményeket és jövőképet
+                    kívánok biztosítani, ahol minden kolléga megtalálhatja a helyét, szakmai tudását, képességeit
+                    kibontakoztathatja, és érezheti, hogy munkája valódi értéket teremt.
+                </p>
+
+                <p>
+                    Ezúton szeretném megköszönni munkatársainknak az eddigi elhivatott munkát, partnereinknek pedig a hosszú évek
+                    során tanúsított bizalmat és együttműködést. A jövőben is számítok arra, hogy közösen, egymást támogatva
+                    folytatjuk munkánkat.
+                </p>
+
+                <p>
+                    Inspiráljon bennünket az elmúlt 70 év összefogása és kitartása – és építsünk tovább egy olyan vállalatot,
+                    amely példát mutat emberségből, szakmaiságból és felelősségvállalásból.
+                </p>
+
+                <div class="ceo-sign">
+                    <p><strong>Mérész Attila</strong></p>
+                    <p>vezérigazgató</p>
+                    <img src="./img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" loading="lazy">
+                </div>
+
+                <button class="back-btn bottom-back" type="button">← Vissza</button>
+            </div>
+        </section>
+
+        <!-- ISO TANÚSÍTVÁNYOK -->
+        <section class="iso-section" aria-labelledby="iso-title">
+            <h2 class="iso-title" id="iso-title">ISO Tanúsítványaink</h2>
+
+            <div class="iso-carousel">
+                <div class="iso-slide active">
+                    <img src="./img/iso/ISO9001.webp" alt="ISO 9001 tanúsítvány" loading="lazy">
+                </div>
+
+                <div class="iso-slide">
+                    <img src="./img/iso/ISO14001.webp" alt="ISO 14001 tanúsítvány" loading="lazy">
+                </div>
+
+                <div class="iso-slide">
+                    <img src="./img/iso/ISO45001.webp" alt="ISO 45001 tanúsítvány" loading="lazy">
+                </div>
+
+                <button
+                    class="iso-prev"
+                    type="button"
+                    aria-label="Előző tanúsítvány"
+                >
+                    ‹
+                </button>
+
+                <button
+                    class="iso-next"
+                    type="button"
+                    aria-label="Következő tanúsítvány"
+                >
+                    ›
+                </button>
+            </div>
+        </section>
+
+        <!-- RÓLUNK -->
+        <section class="about-section" aria-labelledby="about-title">
+            <div class="about-inner">
+                <div class="about-text">
+                    <h2 id="about-title">Rólunk</h2>
+
+                    <p class="short-text">
+                        Magyarország egyik legrégebbi rehabilitációs foglalkoztatója, több mint 500 munkatárssal.
+                    </p>
+
+                    <p class="full-text">
+                        A SZEFO Közhasznú Nonprofit Zrt. Magyarország egyik legrégebbi rehabilitációs foglalkoztatója:
+                        1953 óta több ezer fogyatékossággal élő és egészségkárosodott embert segített munkához,
+                        jelenleg mintegy 500 megváltozott munkaképességű munkatársat foglalkoztat.
+                    </p>
+
+                    <p class="full-text">
+                        A textilipar, divat- és kötöttáru gyártás területén nyújtunk teljes körű szolgáltatást.
+                    </p>
+
+                    <p class="full-text">
+                        Fióktelepeinken villamosipari bérmunkagyártásban elektromos áramelosztók és szabályozók
+                        összeszerelésével is foglalkozunk.
+                    </p>
+
+                    <a
+                        href="hu/tortenetunk/index.html"
+                        class="about-btn"
+                        data-smooth-link
+                    >
+                        Bővebben
+                    </a>
+                </div>
+
+                <div class="about-image">
+                    <img
+                        src="img/main/jakso_plakett.webp"
+                        alt="Jáksó László történelmi emléktábla"
+                     loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- FŐBB ADATOK -->
+        <section class="facts-section" aria-labelledby="facts-title">
+            <h2 class="facts-title" id="facts-title">Főbb adatok</h2>
+
+            <div class="facts-top">
+                <article class="fact-item">
+                    <div class="fact-icon" aria-hidden="true">🏭</div>
+                    <p>
+                        Több mint 70 éve jelen vagyunk a textiliparban kötöttáru gyártási és
+                        termékfejlesztési tevékenységeinkkel.
+                    </p>
+                </article>
+
+                <article class="fact-item">
+                    <div class="fact-icon" aria-hidden="true">⚡</div>
+                    <p>
+                        35 éve végzünk villamosipari tevékenységet, elektromos áramelosztók és
+                        szabályozók összeszerelésével.
+                    </p>
+                </article>
+
+                <article class="fact-item">
+                    <div class="fact-icon" aria-hidden="true">🤝</div>
+                    <p>
+                        A munkavállalói létszám jelentős részét megváltozott munkaképességű munkatársak alkotják.
+                    </p>
+                </article>
+            </div>
+
+            <div class="facts-grid">
+                <article class="fact-card">
+                    <div class="fact-number" data-target="70">0</div>
+                    <p class="fact-label">év folyamatos működés</p>
+                </article>
+
+                <article class="fact-card">
+                    <div class="fact-number" data-target="250000">0</div>
+                    <p class="fact-label">kötöttáru / év</p>
+                </article>
+
+                <article class="fact-card">
+                    <div class="fact-number" data-target="30000000">0</div>
+                    <p class="fact-label">elektromos berendezés / év</p>
+                </article>
+
+                <article class="fact-card">
+                    <div class="fact-number" data-target="600">0</div>
+                    <p class="fact-label">kötöttáru / nap</p>
+                </article>
+            </div>
+
+            <div class="facts-bottom">
+                <div class="pie" aria-hidden="true">
+                    <svg viewBox="0 0 36 36">
+                        <path
+                            class="bg"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        ></path>
+
+                        <path
+                            class="progress"
+                            stroke-dasharray="70, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        ></path>
+                    </svg>
+
+                    <div class="pie-text">70%</div>
+                </div>
+
+                <p class="facts-note">
+                    Hiszünk a befogadó munkahelyben — csapatunk jelentős részét megváltozott munkaképességű kollégák alkotják.
+                </p>
+            </div>
+        </section>
+
+        <!-- TEVÉKENYSÉGEINK -->
+        <section class="services-section" aria-labelledby="services-title">
+            <h2 id="services-title">Tevékenységeink</h2>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Textilipari gyártás</h3>
+                    <p>
+                        Kötöttáru gyártás, termékfejlesztés és prémium kivitelezés hazai és nemzetközi partnerek számára.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Villamosipari bérmunka</h3>
+                    <p>
+                        Elektromos áramelosztók és szabályozók összeszerelése, stabil gyártási háttérrel.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Rehabilitációs foglalkoztatás</h3>
+                    <p>
+                        Méltó, támogató és értékteremtő munkakörnyezet megváltozott munkaképességű munkatársainknak.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- VÍZIÓNK -->
+        <section class="vision-section" aria-labelledby="vision-title">
+            <div class="vision-container">
+                <div class="vision-image">
+                    <img src="img/main/vizionk.webp" alt="SZEFO vízióját bemutató kép" loading="lazy">
+                </div>
+
+                <div class="vision-content">
+                    <h2 id="vision-title">Víziónk</h2>
+
+                    <p>
+                        1953 óta küldetésünk, hogy valódi értéket teremtsünk:
+                        méltó munkalehetőséget biztosítunk megváltozott munkaképességű embereknek,
+                        és támogatjuk őket abban, hogy aktív, megbecsült tagjai legyenek a társadalomnak.
+                    </p>
+
+                    <a href="hu/kuldetesunk/index.html" class="vision-btn" data-smooth-link>
+                        Bővebben
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- TEVÉKENYSÉGEK & ÜZLETÁGAK – ÚJ ELSŐ BLOKK -->
+            <section class="business-section" aria-labelledby="business-title">
+            <div class="business-header">
+                <h2 id="business-title">Tevékenységek &amp; üzletágak</h2>
+            </div>
+
+            <div class="business-grid">
+
+                <article class="business-card">
+                    <img src="img/tevekenysegek_web/tevekenyseg_1.webp" alt="Divat- és kötöttáru gyártás" loading="lazy">
+
+                    <div class="business-card-body">
+                        <h3>Divat- és kötöttáru gyártás</h3>
+
+                        <button class="business-card-toggle" type="button" aria-expanded="false">
+                        Bővebben
+                        </button>
+                    </div>
+
+                    <div class="business-card-summary">
+                        <p>
+                        Kötöttáru- és divatipari gyártás teljes gyártási háttérrel, prémium minőségben.
+                        </p>
+
+                        
+                    <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
+
+                        <button class="business-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
+                    </div>
+
+                    <div class="business-detail-content" hidden>
+                        <h2>Divat- és kötöttáru gyártás</h2>
+
+                        <h3>Fő tevékenységünk</h3>
+                        <p>
+                        A Társaság fő tevékenységében kötöttáru gyártására specializálódott. Technológiai fázisok szerint jelentős gépparkkal rendelkezünk. Jövőbeni célunk a piacbővítés és a termékspektrum szélesítése.
+                        </p>
+
+                        <h3>Teljes gyártási folyamat házon belül</h3>
+                        <p>
+                        Az alapanyag beérkezését követően a mintázástól a készáru kiszállításáig minden gyártási fázis házon belül történik: kötés, félkészáru-vasalás, szabás, konfekcionálás, hímzés, filmnyomás, készáru-vasalás, minőségellenőrzés és csomagolás.
+                        </p>
+
+                        <h3>Prémium textilruházati gyártás</h3>
+                        <p>
+                        Minőségi textilek és természetes fonalalapanyagok felhasználásával prémiumkategóriás textilruházati és divat kötöttárut gyártunk. A gyártás során modern technológiai és informatikai megoldásokat, valamint textil- és ruhaipari anyagtudományi eredményeket alkalmazunk.
+                        </p>
+
+                        <h3>Nemzetközi prémium partnerkapcsolat</h3>
+                        <p>
+                        Legfontosabb stratégiai piaci partnerünk az olaszországi DAMA S.p.A., a Paul&amp;Shark prémiumkategóriás márka tulajdonosa és gyártója. A 2001 óta fennálló együttműködés során a Társaság több millió Paul&amp;Shark modellt gyártott.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="business-card">
+                    <img src="img/tevekenysegek_web/tevekenyseg_2.webp" alt="Hazai design és divat" loading="lazy">
+
+                    <div class="business-card-body">
+                        <h3>Hazai design - divat</h3>
+
+                        <button class="business-card-toggle" type="button" aria-expanded="false">
+                        Bővebben
+                        </button>
+                    </div>
+
+                    <div class="business-card-summary">
+                        <p>
+                        Hazai divattervezői együttműködések, mintakollekciók és prémium kötött divattermékek gyártása.
+                        </p>
+
+                        <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
+
+                        <button class="business-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
+                    </div>
+
+                    <div class="business-detail-content" hidden>
+                        <h2>Hazai design - divat</h2>
+
+                        <p class="business-modal-lead">
+                        Évek óta együttműködünk hazai vezető divattervezőkkel a termékfejlesztéstől a mintázáson át a kollekciók gyártásáig.
+                        </p>
+
+                        <div class="business-modal-gallery" aria-label="Hazai design és divat galéria">
+                        <div class="business-modal-slider" data-business-slider aria-label="Hazai design és divat képgaléria">
+                    <div class="business-modal-slider-frame">
+
+                        <figure class="business-modal-slide is-active">
+                        <img src="img/tevekenysegek_web/hazai_design/hazai_design_1.webp" alt="Hazai design és divat galéria kép 1" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/tevekenysegek_web/hazai_design/hazai_design_2.webp" alt="Hazai design és divat galéria kép 2" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/tevekenysegek_web/hazai_design/hazai_design_3.webp" alt="Hazai design és divat galéria kép 3" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/tevekenysegek_web/hazai_design/hazai_design_4.webp" alt="Hazai design és divat galéria kép 4" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/tevekenysegek_web/hazai_design/hazai_design_5.webp" alt="Hazai design és divat galéria kép 5" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/tevekenysegek_web/hazai_design/hazai_design_6.webp" alt="Hazai design és divat galéria kép 6" loading="lazy">
+                        </figure>
+
+                        <button class="business-slider-btn business-slider-btn--prev" type="button" aria-label="Előző kép">
+                        ‹
+                        </button>
+
+                        <button class="business-slider-btn business-slider-btn--next" type="button" aria-label="Következő kép">
+                        ›
+                        </button>
+                    </div>
+
+                   
+                    </div>
+                        </div>
+
+                        <h3>Hazai divattervezői együttműködések</h3>
+                        <p>
+                        Évek óta együttműködünk hazai vezető divattervezőkkel a termékfejlesztéstől a mintázáson át a kollekciók gyártásáig.
+                        </p>
+
+                        <h3>Ismert márkák és tervezői kollekciók</h3>
+                        <p>
+                        Az ÁERON, Katti Zoób, ABODI, Tomcsányi, Nanushka és Lilla Pápai (Wyhoys) márkanevek, illetve divattervezők kollekciói közül több kötött darab is készült már kötödénkben.
+                        </p>
+
+                        <h3>Stratégiai partnerek</h3>
+                        <p>
+                        Fontos stratégiai partnereink közé tartozik a Nanushka Zrt., az ÁERON és az ABODI.
+                        </p>
+
+                        <h3>Saját márkás kötöttáru</h3>
+                        <p>
+                        Magas minőségű, saját fejlesztésű Chance márkás divat kötöttáru termékekkel is jelen vagyunk a piac igényes szegmenseiben.
+                        </p>
+
+                        <h3>Rugalmas gyártás és mintakollekciók</h3>
+                        <p>
+                        Vállaljuk kis- és közepes szériás, differenciált vevői igényeket kielégítő, korszerű technológiai gyártmányösszetételű és rövid gyártási idejű divat kötöttáruk és textilruházati felső divatáruk készítését.
+                        </p>
+
+                        <p>
+                        Tevékenységünk kiterjed a mintakollekciók fejlesztésére és gyártására, a szériázásra, a konfekcionálásra, a minőségellenőrzésre, valamint a csomagolásra és szállításra is.
+                        </p>
+
+                        <h3>Belföldi értékesítési jelenlét</h3>
+                        <p>
+                        A Társaság regionális, három megyés működési területen van jelen: a szegedi székhely és központi telephely mellett további tizenegy fiókteleppel és két márkabolttal rendelkezik, ahol a Chance saját márkás divat kötöttáruk belföldi értékesítése zajlik.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="business-card">
+                <img src="img/tevekenysegek_web/tevekenyseg_3.webp" alt="Termékfejlesztés" loading="lazy">
+
+                <div class="business-card-body">
+                    <h3>Termékfejlesztés</h3>
+
+                    <button class="business-card-toggle" type="button" aria-expanded="false">
+                    Bővebben
+                    </button>
+                </div>
+
+                <div class="business-card-summary">
+                    <p>
+                    Korszerű CAD/CAM támogatású termékfejlesztés a mintázástól a gyártás-előkészítésig.
+                    </p>
+
+                    <div class="business-card-summary-actions">
+                    <button class="business-detail-open" type="button">
+                        Részletek
+                    </button>
+
+                    <button class="business-card-close" type="button">
+                        Bezárás
+                    </button>
+                    </div>
+                </div>
+
+                <div class="business-detail-content" hidden>
+                    <h2>Termékfejlesztés</h2>
+
+                    <figure class="business-modal-image">
+                    <img src="img/tevekenysegek_web/termekfejlesztes/termekfejlesztes.webp" alt="Termékfejlesztés" loading="lazy">
+                    </figure>
+
+                    <h3>Rugalmas és minőségi vevőkiszolgálás</h3>
+                    <p>
+                    Számunkra kiemelten fontos, hogy megrendelőinkkel, üzleti partnereinkkel kölcsönösen előnyös kapcsolatot alakítsunk ki, és termékeink minőségi színvonalát a vevő által igényelt szinten teljesítsük.
+                    </p>
+
+                    <p>
+                    A korszerű infokommunikációs eszközökön, szoftvereken, a termelés- és vállalatirányítási, valamint CAD/CAM rendszereken alapuló gyártás és az online üzleti kapcsolattartás lehetővé teszi a gyors, rugalmas és költséghatékony vevőkiszolgálást.
+                    </p>
+
+                    <h3>Gyors kommunikáció a tervezőkkel</h3>
+                    <p>
+                    A tervezőinkkel kialakított bizalmon alapuló kapcsolat gyors és hatékony kommunikációt eredményez, melynek köszönhetően a tervezési és gyártási idő is nagymértékben felgyorsul.
+                    </p>
+
+                    <h3>Tapasztalt termékfejlesztői háttér</h3>
+                    <p>
+                    A tervezők e-mailen elküldött fotója vagy rajza alapján történő cikk vagy egész kollekció kivitelezésekor termékfejlesztő és kötödei mintázó munkatársaink már a termékfejlesztésbe bekapcsolódnak a kötöttáru-gyártás területén szerzett több évtizedes tapasztalatukkal, szaktudásukkal és kötéstechnológiai javaslataikkal.
+                    </p>
+
+                    <h3>A mintázástól a szériázásig</h3>
+                    <p>
+                    Így gyakran a termékfejlesztő csapatunk intenzív közreműködésével és erős szakmai hátterének köszönhetően születik meg egy új kreáció: a kötés bemintázástól kezdve a mintavarráson át a szériázásig és sablonkészítésig megtervezzük és előkészítjük a gyártást.
+                    </p>
+
+                    <p>
+                    A folyamat eredményeként elkészülhet a kézzel fogható, hordható ruházati termék, vagy akár a kifutóra kerülhet a divattervező által megálmodott és általunk megvalósított ruhakollekció.
+                    </p>
+
+                    <h3>Divatbemutatók és mintakollekciók</h3>
+                    <p>
+                    A 2019. november 4. és 10. között megrendezett Budapest Central European Fashion Week rendezvényen bemutatott ÁERON ruhadarabot a SZEFO Közhasznú Nonprofit Zrt. munkatársai készítették.
+                    </p>
+
+                    <p>
+                    Hazai divattervezők megrendelésére gyakran készítünk mintakollekciókat.
+                    </p>
+
+                    <h3>Digitális tervezési háttér</h3>
+                    <p>
+                    Digitális kelme- és mintatervező, rajzoló programokkal kötésmintázat-tervezést végzünk, valamint korszerű CAD/CAM szabásminta-szerkesztő program alkalmazásával komplett ruházati gyártást tervezünk.
+                    </p>
+
+                    <p>
+                    Ez magában foglalja a szabásminta-készítést, a szériázást, a terítékrajz-készítést, valamint a szerkesztési, modellezési és szériázási műveletek szakszerű előkészítését.
+                    </p>
+                </div>
+                </article>
+
+                <article class="business-card">
+                <img src="img/tevekenysegek_web/tevekenyseg_4.webp" alt="Ipari bérmunka - Legrand" loading="lazy">
+
+                <div class="business-card-body">
+                    <h3>Ipari bérmunka</h3>
+
+                    <button class="business-card-toggle" type="button" aria-expanded="false">
+                    Bővebben
+                    </button>
+                </div>
+
+                <div class="business-card-summary">
+                    <p>
+                    Több évtizedes együttműködés áramelosztó-szabályozó készülékek összeszerelésében és gyártásában.
+                    </p>
+
+                    <div class="business-card-summary-actions">
+                    <button class="business-detail-open" type="button">
+                        Részletek
+                    </button>
+
+                    <button class="business-card-close" type="button">
+                        Bezárás
+                    </button>
+                    </div>
+                </div>
+
+                <div class="business-detail-content" hidden>
+                    <h2>Ipari bérmunka</h2>
+
+                    <h3>Legrand</h3>
+                    <p>
+                    A Társaság másik fő tevékenysége – egyben a foglalkozási rehabilitációs tevékenységgyakorlás termelési bázisa – áramelosztó-szabályozó készülékek összeszerelése, gyártása, közvetett export értékesítése.
+                    </p>
+
+                    <h3>Az együttműködés kezdete</h3>
+                    <p>
+                    1990-ben kezdődött a Szentesi Kontakta Villamosszerelési Vállalat (Kontavil) és a Szegedi Fonalfeldolgozó Vállalat közötti együttműködés.
+                    </p>
+
+                    <p>
+                    1992-ben a szentesi gyár részvénytársasággá alakult, majd csatlakozott a Legrand csoporthoz.
+                    </p>
+
+                    <h3>Stratégiai piaci partnerség</h3>
+                    <p>
+                    A Legrand Zrt. több mint 30 éve a SZEFO Közhasznú Nonprofit Zrt. foglalkozási rehabilitációs tevékenységének legfontosabb stratégiai piaci partnere.
+                    </p>
+
+                    <p>
+                    Az eredményes együttműködésnek köszönhetően a Társaság mintegy 600 munkavállalója által gyártott 30 millió db/év „Legrand” márkájú áramelosztó-szabályozó készülékeket kb. hetven országba exportálják.
+                    </p>
+
+                    <h3>Technológiai fejlődés</h3>
+                    <p>
+                    A világpiaci kihívással, a folytonos technológiai haladással lépést tartva a műszaki-technikai fejlesztéseknek köszönhetően a múltbeli kézi szerelést mára fokozatosan felváltotta a gépi összeszerelés.
+                    </p>
+                </div>
+                </article>
+
+                <article class="business-card business-card--featured">
+                    <img src="img/tevekenysegek_web/tevekenyseg_5.webp" alt="E-hulladékhoz kapcsolódó tevékenység" loading="lazy">
+
+                    <div class="business-card-body">
+                        <h3>E-hulladék - MOHU</h3>
+
+                        <button class="business-card-toggle" type="button" aria-expanded="false">
+                        Bővebben
+                        </button>
+                    </div>
+
+                    <div class="business-card-summary">
+                        <p>
+                        Elektronikai hulladékok kézi bontása, válogatása és előkezelése felelős hulladékgazdálkodási rendszerben.
+                        </p>
+
+                        <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
+
+                        <button class="business-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
+                    </div>
+
+                    <div class="business-detail-content" hidden>
+                        <h2>E-hulladék - MOHU</h2>
+
+                        <h3>Hulladékgazdálkodási tevékenység</h3>
+                        <p>
+                        A SZEFO Közhasznú Nonprofit Zrt. hulladékgazdálkodási tevékenysége veszélyes és nem veszélyes hulladékok gyűjtésére (telephelyi) és előkezelésére terjed ki.
+                        </p>
+
+                        <h3>Elektronikai hulladékok kézi bontása</h3>
+                        <p>
+                        Társaságunk különféle, elsősorban elektronikai hulladékok (16-os főcsoport, 200135*, 200136) kézi bontását, válogatását végzi a hódmezővásárhelyi telephelyen.
+                        </p>
+
+                        <p>
+                        Az elektronikai hulladékok köre többek között számítástechnikai eszközökre terjed ki, például laptopra, monitorra, billentyűzetre, egérre és asztali számítógépre.
+                        </p>
+
+                        <h3>19-es főcsoportba tartozó hulladékok</h3>
+                        <p>
+                        A 19-es főcsoportba tartozó hulladékok gyűjtésre vagy előkezelésre kerülnek attól függően, hogy pontosan milyen hulladékokról van szó.
+                        </p>
+
+                        <p>
+                        Ebbe a csoportba olyan hulladékok tartoznak, amelyek már átestek valamilyen előkezelési műveleten, tehát más hulladékkezelő létesítménytől átvett hulladékokról van szó.
+                        </p>
+
+                        <p>
+                        Fémek esetében gyűjtés, míg elektronikai hulladékok esetén bontás és további válogatás a cél.
+                        </p>
+
+                        <h3>Kezelési technológia</h3>
+                        <p>
+                        A kezelési technológia célja az összetett, többféle anyagot tartalmazó elektronikai hulladékok hasznosítható összetevőinek kinyerése, valamint a nem hasznosítható anyagok elkülönítése.
+                        </p>
+
+                        <ul class="business-modal-list">
+                        <li>R12 – Átalakítás az R1-R11 műveletek valamelyikének elvégzése érdekében</li>
+                        <li>E02 – 05 válogatás alaki jellemzők szerint (osztályozás)</li>
+                        <li>E02 – 06 válogatás anyagminőség szerint (osztályozás)</li>
+                        <li>E02 – 08 hulladékká vált elektromos, elektronikus berendezés bontása</li>
+                        </ul>
+                    </div>
+                </article>    
+            </div>
+            </section>
+            <!-- ÜZEMEGYSÉGEK – MÁSODIK BLOKK -->
+            <section class="units-section" aria-labelledby="units-title">
+            <div class="units-header">
+                <h2 id="units-title">Üzemegységek</h2>
+            </div>
+
+            <div class="units-grid">
+                <article class="units-card">
+                <img 
+                    src="img/uzemegysegek_web/uzemegyseg_1.webp" 
+                    alt="Sík- és körkötő üzem"
+                 loading="lazy">
+
+                <div class="units-card-body">
+                    <h3>Sík- és körkötő üzem</h3>
+
+                    <button class="units-card-toggle" type="button" aria-expanded="false">
+                    Bővebben
+                    </button>
+                </div>
+
+                <div class="units-card-summary">
+                    <p>
+                    Számítógép-vezérelt sík- és körkötőgépekkel működő, modern digitális textilipari üzemegység.
+                    </p>
+
+                    <div class="business-card-summary-actions">
+                    <button class="business-detail-open" type="button">
+                        Részletek
+                    </button>
+
+                    <button class="units-card-close" type="button">
+                        Bezárás
+                    </button>
+                    </div>
+                </div>
+
+                <div class="business-detail-content" hidden>
+                    <h2>Sík- és körkötő üzem</h2>
+
+                    <div class="business-modal-slider" data-business-slider aria-label="Sík- és körkötő üzem képgaléria">
+                    <div class="business-modal-slider-frame">
+
+                        <figure class="business-modal-slide is-active">
+                        <img src="img/uzemegysegek_web/sik_korkoto_uzem/sik-korkoto-uzem-1.webp" alt="Sík- és körkötő üzem 1. kép" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/uzemegysegek_web/sik_korkoto_uzem/sik-korkoto-uzem-2.webp" alt="Sík- és körkötő üzem 2. kép" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/uzemegysegek_web/sik_korkoto_uzem/sik-korkoto-uzem-3.webp" alt="Sík- és körkötő üzem 3. kép" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/uzemegysegek_web/sik_korkoto_uzem/sik-korkoto-uzem-4.webp" alt="Sík- és körkötő üzem 4. kép" loading="lazy">
+                        </figure>
+
+                        <button class="business-slider-btn business-slider-btn--prev" type="button" aria-label="Előző kép">
+                        ‹
+                        </button>
+
+                        <button class="business-slider-btn business-slider-btn--next" type="button" aria-label="Következő kép">
+                        ›
+                        </button>
+                    </div>
+                    </div>
+
+                    <h3>Modern digitális textilipari technológia</h3>
+                    <p>
+                    Számítógép-vezérelt sík- és körkötőgépeinkkel modern, digitális textilipari technológiára építünk. A technológiai háttér segíti a kapacitás rugalmas bővítését, a gyártási tervekhez való gyors alkalmazkodást, és egységes minőségű gyártást tesz lehetővé – kis és nagy szériában is.
+                    </p>
+
+                    <h3>Kötőgépparkunk</h3>
+                    <p>
+                    Kiterjedt gépparkunk az alábbi géptípusokból áll:
+                    </p>
+
+                    <ul>
+                    <li>Shima Seiki síkkötőgépek 5-ös, 7-es, 8-as, 12-es és 14-es gépfinomsággal</li>
+                    <li>MEC-MOR körkötőgépek 12-es gépfinomsággal</li>
+                    </ul>
+
+                    <h3>Egyedi mintázás és különleges kötések</h3>
+                    <p>
+                    Kötödei mintázóprogramjaink és tapasztalt mintázóink lehetővé teszik, hogy egyedi, akár komplex igényeket is pontosan megvalósítsunk.
+                    </p>
+
+                    <p>
+                    Gépparkunk alkalmas az alábbi kötések készítésére:
+                    </p>
+
+                    <ul>
+                    <li>jacquard</li>
+                    <li>intarzia</li>
+                    <li>idomozott kötések</li>
+                    <li>terepmintás kivitel</li>
+                    <li>leopárdmintás kivitel</li>
+                    </ul>
+
+                    <h3>Idomozott modellek, igényes megjelenés</h3>
+                    <p>
+                    Idomozott termékeink esztétikus, elegáns megjelenéssel készülnek, magas minőségi színvonalon, a megrendelői elvárásokhoz igazítva.
+                    </p>
+                </div>
+                </article>
+
+                <article class="units-card">
+                <img
+                    src="img/uzemegysegek_web/uzemegyseg_2.webp"
+                    alt="Félkész- és készáruvasaló üzem"
+                 loading="lazy">
+
+                <div class="units-card-body">
+                    <h3>Félkész- és készáruvasaló üzem</h3>
+
+                    <button class="units-card-toggle" type="button" aria-expanded="false">
+                    Bővebben
+                    </button>
+                </div>
+
+                <div class="units-card-summary">
+                    <p>
+                    Kikészítési, elővasalási és készáruvasalási folyamatok a méretpontos, esztétikus késztermékért.
+                    </p>
+
+                    <div class="business-card-summary-actions">
+                    <button class="business-detail-open" type="button">
+                        Részletek
+                    </button>
+
+                    <button class="units-card-close" type="button">
+                        Bezárás
+                    </button>
+                    </div>
+                </div>
+
+                <div class="business-detail-content" hidden>
+                    <h2>Félkész- és készáruvasaló üzem</h2>
+
+                    <div class="business-modal-slider" data-business-slider aria-label="Félkész- és készáruvasaló üzem képgaléria">
+                    <div class="business-modal-slider-frame">
+
+                        <figure class="business-modal-slide is-active">
+                        <img
+                            src="img/uzemegysegek_web/felkesz_keszruha_vasalo/felkesz_keszruha_vasalo_1.webp"
+                            alt="Félkész- és készáruvasaló üzem – 1. kép"
+                         loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img
+                            src="img/uzemegysegek_web/felkesz_keszruha_vasalo/felkesz_keszruha_vasalo_2.webp"
+                            alt="Félkész- és készáruvasaló üzem – 2. kép"
+                         loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img
+                            src="img/uzemegysegek_web/felkesz_keszruha_vasalo/felkesz_keszruha_vasalo_3.webp"
+                            alt="Félkész- és készáruvasaló üzem – 3. kép"
+                         loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img
+                            src="img/uzemegysegek_web/felkesz_keszruha_vasalo/felkesz_keszruha_vasalo_4.webp"
+                            alt="Félkész- és készáruvasaló üzem – 4. kép"
+                         loading="lazy">
+                        </figure>
+
+                        <button class="business-slider-btn business-slider-btn--prev" type="button" aria-label="Előző kép">
+                        ‹
+                        </button>
+
+                        <button class="business-slider-btn business-slider-btn--next" type="button" aria-label="Következő kép">
+                        ›
+                        </button>
+                    </div>
+
+                    </div>
+
+                    <h3>Kikészítési és elővasalási folyamat</h3>
+                    <p>
+                    A kötött lapok, idomlapok és idomozott alkatrészek a termékfejlesztés során rögzített műszaki leírás alapján kikészítési és elővasalási folyamaton mennek át.
+                    </p>
+
+                    <p>
+                    A gőzölés segít abban, hogy a kelme elérje a technológiai előírások szerinti szerkezetet, és felvegye a kívánt méretet és formát.
+                    </p>
+
+                    <h3>Elővasalás és hőrögzítés</h3>
+                    <p>
+                    Az előkészített kötött lapokat asztali vasalóprésen fixáljuk, a műszaki dokumentáció szerint, hőrögzítéssel.
+                    </p>
+
+                    <p>
+                    Ez támogatja a méretpontosságot és az egységes minőséget.
+                    </p>
+
+                    <h3>Készáruvasalás: végső formázás és simítás</h3>
+                    <p>
+                    A kész ruhadarabok befejező vasalása a készáruvasaló üzemegységben történik, ahol elvégezzük a végső formázást és simítást.
+                    </p>
+
+                    <p>
+                    A készre vasalás két módon történhet:
+                    </p>
+
+                    <ul>
+                    <li>Karos készáru-vasalógépeken: a ruhadarabot feszített állapotban, méretre rögzítve vasaljuk.</li>
+                    <li>Asztali gőzölés + kézi utóigazítás: egyes modelleknél előkészítésként gőzölünk, majd kézi vasalással pontosítunk a kritikus részeken, például gallérnál, ujjvégeknél, patenteknél és szövetbetéteknél.</li>
+                    </ul>
+
+                    <h3>Eredmény: esztétikus, méretpontos késztermék</h3>
+                    <p>
+                    A gondosan felépített folyamat biztosítja, hogy a késztermékek szép megjelenéssel, pontos mérettel és magas minőségi színvonalon kerüljenek átadásra.
+                    </p>
+                </div>
+                </article>
+
+                <article class="units-card">
+                    <img
+                        src="img/uzemegysegek_web/uzemegyseg_3.webp"
+                        alt="Mosó-kikészítő és fércelő üzem"
+                     loading="lazy">
+
+                    <div class="units-card-body">
+                        <h3>Mosó-kikészítő és fércelő üzem</h3>
+
+                        <button class="units-card-toggle" type="button" aria-expanded="false">
+                        Bővebben
+                        </button>
+                    </div>
+
+                    <div class="units-card-summary">
+                        <p>
+                        Mosási, kikészítési és fércelési folyamatok a további gyártási lépések előkészítéséhez.
+                        </p>
+
+                        <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
+
+                        <button class="units-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
+                    </div>
+
+                    <div class="business-detail-content" hidden>
+                        <h2>Mosó-kikészítő és fércelő üzem</h2>
+
+                        <figure class="business-modal-image">
+                        <img
+                            src="img/uzemegysegek_web/moso/moso-1.webp"
+                            alt="Mosó-kikészítő és fércelő üzem részletező kép"
+                         loading="lazy">
+                        </figure>
+
+                        <h3>Mosási és kikészítési előkészítés</h3>
+                        <p>
+                        A kötőgépekről lekerülő kötött lapokat az igényekhez igazodva különböző mosási és kikészítési eljárásokkal készítjük elő a további gyártási lépésekhez.
+                        </p>
+
+                        <h3>Fércelés: az előkészítés első lépése</h3>
+                        <p>
+                        A feldolgozás a fércelő üzemben indul. Itt a darabokat hátulvarró géppel elszegjük, majd a termékek a mosodába kerülnek további kikészítésre.
+                        </p>
+
+                        <h3>Mosás és kikészítés: egységes minőség, stabil kelme</h3>
+                        <p>
+                        A mosási és kikészítési folyamatok minden esetben előre rögzített műszaki leírás alapján történnek.
+                        </p>
+
+                        <p>
+                        Korszerű IPSO mosó-, kikészítő-, szárító- és vegytisztító berendezéseink támogatják az egyenletes minőséget, a kelmeszerkezet stabilitását és az elvárt esztétikai megjelenést.
+                        </p>
+
+                        <h3>Használt berendezések</h3>
+                        <ul>
+                        <li>IPSO HF 234</li>
+                        <li>IPSO MC 60</li>
+                        <li>IPSO DR 55</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="units-card">
+                <img
+                    src="img/uzemegysegek_web/uzemegyseg_4.webp"
+                    alt="Szabászat"
+                 loading="lazy">
+
+                <div class="units-card-body">
+                    <h3>Szabászat</h3>
+
+                    <button class="units-card-toggle" type="button" aria-expanded="false">
+                    Bővebben
+                    </button>
+                </div>
+
+                <div class="units-card-summary">
+                    <p>
+                    Digitális és manuális szabásminták alapján végzett pontos, anyagtakarékos szabászati előkészítés.
+                    </p>
+
+                    <div class="business-card-summary-actions">
+                    <button class="business-detail-open" type="button">
+                        Részletek
+                    </button>
+
+                    <button class="units-card-close" type="button">
+                        Bezárás
+                    </button>
+                    </div>
+                </div>
+
+                <div class="business-detail-content" hidden>
+                    <h2>Szabászat</h2>
+
+                    <div class="business-modal-slider" data-business-slider aria-label="Szabászat képgaléria">
+                    <div class="business-modal-slider-frame">
+
+                        <figure class="business-modal-slide is-active">
+                        <img
+                            src="img/uzemegysegek_web/szabaszat/szabaszat-1.webp"
+                            alt="Szabászat kép 1"
+                         loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img
+                            src="img/uzemegysegek_web/szabaszat/szabaszat-2.webp"
+                            alt="Szabászat kép 2"
+                         loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img
+                            src="img/uzemegysegek_web/szabaszat/szabaszat-3.webp"
+                            alt="Szabászat kép 3"
+                         loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img
+                            src="img/uzemegysegek_web/szabaszat/szabaszat-4.webp"
+                            alt="Szabászat kép 4"
+                         loading="lazy">
+                        </figure>
+                        <button class="business-slider-btn business-slider-btn--prev" type="button" aria-label="Előző kép">
+                        ‹
+                        </button>
+
+                        <button class="business-slider-btn business-slider-btn--next" type="button" aria-label="Következő kép">
+                        ›
+                        </button>
+                    </div>
+                    </div>
+
+                    <h3>Digitális és manuális szabásminták</h3>
+                    <p>
+                    A ruházati termékek alkatrészeit digitális vagy manuális szabásminták alapján alakítjuk ki.
+                    </p>
+
+                    <p>
+                    A szabáshoz digitálisan tervezett felfektetési és terítékrajzokat használunk, így a folyamat átlátható és pontos.
+                    </p>
+
+                    <h3>Pontos méret, anyagtakarékos kivitelezés</h3>
+                    <p>
+                    A szabás korszerű gépi és kézi szabászgépekkel történik.
+                    </p>
+
+                    <p>
+                    Ennek köszönhetően biztosítható:
+                    </p>
+
+                    <ul>
+                    <li>a méretpontosság</li>
+                    <li>az anyaghatékony felhasználás</li>
+                    <li>az egységes minőség</li>
+                    </ul>
+
+                    <h3>Stabil alap a további gyártáshoz</h3>
+                    <p>
+                    A gondosan előkészített szabás a varrás és konfekcionálás megbízható kiindulópontja.
+                    </p>
+
+                    <p>
+                    Ez támogatja a hatékony gyártást és a magas minőségű késztermékek előállítását.
+                    </p>
+                </div>
+                </article>
+
+                <article class="units-card">
+                <img src="img/uzemegysegek_web/uzemegyseg_5.webp" alt="Logisztika" loading="lazy">
+
+                <div class="units-card-body">
+                    <h3>Logisztika</h3>
+
+                    <button class="units-card-toggle" type="button" aria-expanded="false">
+                    Bővebben
+                    </button>
+                </div>
+
+                <div class="units-card-summary">
+                    <p>
+                    Belföldi és nemzetközi áruszállítás stratégiailag kedvező szegedi logisztikai elhelyezkedéssel.
+                    </p>
+
+                    <div class="business-card-summary-actions">
+                    <button class="business-detail-open" type="button">
+                        Részletek
+                    </button>
+
+                    <button class="units-card-close" type="button">
+                        Bezárás
+                    </button>
+                    </div>
+                </div>
+
+                <div class="business-detail-content" hidden>
+                    <h2>Logisztika</h2>
+
+                    <div class="business-modal-slider" data-business-slider aria-label="Logisztika képgaléria">
+                    <div class="business-modal-slider-frame">
+
+                        <figure class="business-modal-slide is-active">
+                        <img src="img/uzemegysegek_web/logisztika/logisztika-1.webp" alt="Logisztika képgaléria 1. kép" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/uzemegysegek_web/logisztika/logisztika-2.webp" alt="Logisztika képgaléria 2. kép" loading="lazy">
+                        </figure>
+
+                        <button class="business-slider-btn business-slider-btn--prev" type="button" aria-label="Előző kép">
+                        ‹
+                        </button>
+
+                        <button class="business-slider-btn business-slider-btn--next" type="button" aria-label="Következő kép">
+                        ›
+                        </button>
+                    </div>
+                    <div class="business-slider-dots" aria-label="Logisztika galéria lapozó">
+                        <button class="business-slider-dot is-active" type="button" aria-label="1. kép"></button>
+                        <button class="business-slider-dot" type="button" aria-label="2. kép"></button>
+                    </div>
+                    </div>
+
+                    <h3>Stratégiai logisztikai elhelyezkedés</h3>
+                    <p>
+                    Székhelyünk Szegeden található, Magyarország déli részén, stratégiailag kedvező logisztikai elhelyezkedéssel, a szerb és román határ közelében.
+                    </p>
+
+                    <p>
+                    Elhelyezkedésünk ideális alapot biztosít a belföldi és nemzetközi áruszállításhoz egyaránt.
+                    </p>
+
+                    <h3>Gyors elérhetőség</h3>
+                    <p>
+                    Budapest gyorsan elérhető a korszerű autópálya-hálózatnak köszönhetően, így Európa számos célpontja hatékonyan kiszolgálható közúton vagy légi úton.
+                    </p>
+
+                    <h3>Nemzetközi kiszállítás</h3>
+                    <p>
+                    Külföldi partnereinkhez a készárut jellemzően kamionos, közúti szállítással juttatjuk el.
+                    </p>
+
+                    <p>
+                    Sürgős esetben légi szállítást is biztosítunk a gyors és rugalmas teljesítés érdekében.
+                    </p>
+
+                    <h3>Belföldi logisztika</h3>
+                    <p>
+                    Belföldön saját és bérelt járművekkel végezzük a szállítást.
+                    </p>
+
+                    <p>
+                    A be- és kiszállítások heti rendszerességgel, előre tervezetten történnek, így ügyfeleink pontos, megbízható teljesítést kapnak.
+                    </p>
+                </div>
+                </article>
+
+                <article class="units-card">
+                <img 
+                    src="img/uzemegysegek_web/uzemegyseg_6.webp" 
+                    alt="Hímző- és szitanyomó üzem"
+                 loading="lazy">
+
+                <div class="units-card-body">
+                    <h3>Hímző- és szitanyomó üzem</h3>
+
+                    <button class="units-card-toggle" type="button" aria-expanded="false">
+                    Bővebben
+                    </button>
+                </div>
+
+                <div class="units-card-summary">
+                    <p>
+                    Hímzés és szitanyomás házon belül, egyedi megjelenéshez és tartós textilnyomatokhoz.
+                    </p>
+
+                    <div class="business-card-summary-actions">
+                    <button class="business-detail-open" type="button">
+                        Részletek
+                    </button>
+
+                    <button class="units-card-close" type="button">
+                        Bezárás
+                    </button>
+                    </div>
+                </div>
+
+                <div class="business-detail-content" hidden>
+                    <h2>Hímző- és szitanyomó üzem</h2>
+
+                    <div class="business-modal-slider" data-business-slider aria-label="Hímző- és szitanyomó üzem képgaléria">
+                    <div class="business-modal-slider-frame">
+
+                        <figure class="business-modal-slide is-active">
+                        <img src="img/uzemegysegek_web/himzo/himzo-1.webp" alt="Hímző- és szitanyomó üzem kép 1" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/uzemegysegek_web/himzo/himzo-2.webp" alt="Hímző- és szitanyomó üzem kép 2" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/uzemegysegek_web/himzo/himzo-3.webp" alt="Hímző- és szitanyomó üzem kép 3" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/uzemegysegek_web/himzo/himzo-4.webp" alt="Hímző- és szitanyomó üzem kép 4" loading="lazy">
+                        </figure>
+                        <button class="business-slider-btn business-slider-btn--prev" type="button" aria-label="Előző kép">
+                        ‹
+                        </button>
+
+                        <button class="business-slider-btn business-slider-btn--next" type="button" aria-label="Következő kép">
+                        ›
+                        </button>
+                    </div>
+
+                    </div>
+
+                    <h3>Hímzés: precíz logózás és egyedi megjelenés</h3>
+                    <p>
+                    Hímzőüzemünkben 4 db nagy kapacitású, számítógép-vezérelt, 8 fejes hímzőgéppel dolgozunk.
+                    </p>
+
+                    <p>
+                    Gép- és szoftverparkunkat folyamatosan fejlesztjük, hogy partnereinknek stabil, egységes és magas minőségű kivitelezést biztosítsunk.
+                    </p>
+
+                    <h3>Hímzési lehetőségek</h3>
+                    <p>
+                    Tapasztalt csapatunkkal és korszerű hímző szoftvereinkkel készítünk:
+                    </p>
+
+                    <ul>
+                    <li>egyedi tervezésű hímzéseket</li>
+                    <li>szériagyártásra alkalmas hímzéseket</li>
+                    <li>logóhímzést kis és nagy darabszámban</li>
+                    </ul>
+
+                    <h3>Felhasználási területek</h3>
+                    <p>
+                    Hímzést vállalunk többek között:
+                    </p>
+
+                    <ul>
+                    <li>pólókra</li>
+                    <li>kötött felsőruházatra</li>
+                    <li>kabátokra</li>
+                    <li>munkaruházatra és egyéb késztermékekre</li>
+                    </ul>
+
+                    <h3>Szitanyomás: tartós, egységes nyomat nagy tételben is</h3>
+                    <p>
+                    Szitanyomó üzemegységünkben pólók, pulóverek, munkaruhák és egyéb textiltermékek házon belüli szitanyomását végezzük.
+                    </p>
+
+                    <p>
+                    Modern textilnyomó gépeinkkel nagy darabszámban is kiváló minőségű, egységes nyomatokat készítünk.
+                    </p>
+
+                    <h3>Direkt és transzfer szitanyomás</h3>
+                    <p>
+                    A gyártás során direkt és transzfer szitanyomási technológiákat alkalmazunk. A klasszikus megoldások mellett különleges, egyedi hatású nyomatok kivitelezésére is van lehetőség.
+                    </p>
+
+                    <h3>Tartós és komfortos viselet</h3>
+                    <p>
+                    A felhasznált festékek és alapanyagok garantálják a tartós, kopásálló és esztétikus nyomatokat.
+                    </p>
+
+                    <p>
+                    Nyomataink vékony festékréteggel készülnek, így a kész ruhadarabok könnyű, komfortos viseletet biztosítanak.
+                    </p>
+                </div>
+                </article>
+
+                <article class="units-card">
+                    <img src="img/uzemegysegek_web/uzemegyseg_7.webp" alt="Varróüzem" loading="lazy">
+
+                    <div class="units-card-body">
+                        <h3>Varróüzem</h3>
+
+                        <button class="units-card-toggle" type="button" aria-expanded="false">
+                        Bővebben
+                        </button>
+                    </div>
+
+                    <div class="units-card-summary">
+                        <p>
+                        Konfekcionálási és befejező műveletek korszerű ipari varrógépekkel és felkészült varrodai csapattal.
+                        </p>
+
+                        <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
+
+                        <button class="units-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
+                    </div>
+
+                    <div class="business-detail-content" hidden>
+                        <h2>Varróüzem</h2>
+
+                        <div class="business-modal-slider" data-business-slider aria-label="Varróüzem képgaléria">
+                        <div class="business-modal-slider-frame">
+
+                            <figure class="business-modal-slide is-active">
+                            <img src="img/uzemegysegek_web/varroda/varr-1.webp" alt="Varróüzem kép 1" loading="lazy">
+                            </figure>
+
+                            <figure class="business-modal-slide">
+                            <img src="img/uzemegysegek_web/varroda/varr-2.webp" alt="Varróüzem kép 2" loading="lazy">
+                            </figure>
+
+                            <figure class="business-modal-slide">
+                            <img src="img/uzemegysegek_web/varroda/varr-3.webp" alt="Varróüzem kép 3" loading="lazy">
+                            </figure>
+
+                            <figure class="business-modal-slide">
+                            <img src="img/uzemegysegek_web/varroda/varr-4.webp" alt="Varróüzem kép 4" loading="lazy">
+                            </figure>
+
+    
+                            <button class="business-slider-btn business-slider-btn--prev" type="button" aria-label="Előző kép">
+                            ‹
+                            </button>
+
+                            <button class="business-slider-btn business-slider-btn--next" type="button" aria-label="Következő kép">
+                            ›
+                            </button>
+                        </div>
+
+                        </div>
+
+                        <h3>Konfekcionálási műveletek</h3>
+                        <p>
+                        A kötőgépről lekerülő idomozott vagy kiszabott darabok konfekcionálási, befejező műveleteket igényelnek.
+                        </p>
+
+                        <p>
+                        Ezt a folyamatot korszerű, nagyüzemi technológiával és felkészült varrodai csapattal végezzük.
+                        </p>
+
+                        <h3>Modern géppark, megbízható minőség</h3>
+                        <p>
+                        Varróüzemünkben többfunkciós, energiatakarékos ipari varrógépek, valamint elektronikusan programozható gomblyukvarrógépek segítik a pontos és egységes kivitelezést.
+                        </p>
+
+                        <p>
+                        Az egyes műveleteket speciális varrógépekkel végezzük, a termék igényeihez igazítva.
+                        </p>
+
+                        <h3>Széles gépválaszték nagyobb kapacitáshoz</h3>
+                        <p>
+                        Gépparkunkban az alapgépek mellett elérhető többek között:
+                        </p>
+
+                        <ul>
+                        <li>kettli</li>
+                        <li>interlock</li>
+                        <li>fedőző</li>
+                        <li>hátulvarró</li>
+                        <li>dísztűző</li>
+                        <li>gombozó</li>
+                        <li>gomblyukazó</li>
+                        </ul>
+
+                        <h3>Gyorsabb gyártás, rugalmas kiszolgálás</h3>
+                        <p>
+                        A varrodában is folyamatosan törekszünk az automatizálásra, ami segíti a gyártás gyorsítását, és lehetővé teszi a nagyobb megrendelői igények hatékony kiszolgálását.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="units-card">
+                <img src="img/uzemegysegek_web/uzemegyseg_8.webp" alt="Minőségellenőrzési Osztály (MEO)" loading="lazy">
+
+                <div class="units-card-body">
+                    <h3>Minőségellenőrzési Osztály (MEO)</h3>
+
+                    <button class="units-card-toggle" type="button" aria-expanded="false">
+                    Bővebben
+                    </button>
+                </div>
+
+                <div class="units-card-summary">
+                    <p>
+                    Többlépcsős késztermék-ellenőrzés, címkevizsgálat, csomagolás és kiszállítási előkészítés.
+                    </p>
+
+                    <div class="business-card-summary-actions">
+                    <button class="business-detail-open" type="button">
+                        Részletek
+                    </button>
+
+                    <button class="units-card-close" type="button">
+                        Bezárás
+                    </button>
+                    </div>
+                </div>
+
+                <div class="business-detail-content" hidden>
+                    <h2>Minőségellenőrzési Osztály (MEO)</h2>
+
+                    <div class="business-modal-slider" data-business-slider aria-label="Minőségellenőrzési Osztály képgaléria">
+                    <div class="business-modal-slider-frame">
+
+                        <figure class="business-modal-slide is-active">
+                        <img src="img/uzemegysegek_web/minoseg/minoseg-1.webp" alt="Minőségellenőrzési Osztály kép 1" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/uzemegysegek_web/minoseg/minoseg-2.webp" alt="Minőségellenőrzési Osztály kép 2" loading="lazy">
+                        </figure>
+
+                        <figure class="business-modal-slide">
+                        <img src="img/uzemegysegek_web/minoseg/minoseg-3.webp" alt="Minőségellenőrzési Osztály kép 3" loading="lazy">
+                        </figure>
+
+                        <button class="business-slider-btn business-slider-btn--prev" type="button" aria-label="Előző kép">
+                        ‹
+                        </button>
+
+                        <button class="business-slider-btn business-slider-btn--next" type="button" aria-label="Következő kép">
+                        ›
+                        </button>
+                    </div>
+
+                    </div>
+
+                    <h3>Többlépcsős késztermék-ellenőrzés</h3>
+                    <p>
+                    A gyártás végén minden készterméket többlépcsős ellenőrzésnek vetünk alá a műszaki dokumentáció alapján.
+                    </p>
+
+                    <p>
+                    Így biztosítjuk, hogy a kiszállított áru méretben, jelölésekben és minőségben is megfeleljen az elvárásoknak.
+                    </p>
+
+                    <h3>Minőség- és címkeellenőrzés</h3>
+                    <p>
+                    Ellenőrizzük többek között:
+                    </p>
+
+                    <ul>
+                    <li>a minőséget és a méretet</li>
+                    <li>az alapanyag-összetételt</li>
+                    <li>a márkanevet és a termék megnevezését</li>
+                    <li>a kezelési utasításokat tartalmazó címkéket</li>
+                    </ul>
+
+                    <p>
+                    A címkéket és jelöléseket szükség esetén minősítjük / jóváhagyjuk, hogy a készáru minden előírásnak megfeleljen.
+                    </p>
+
+                    <h3>Csomagolás és kiszállítás előkészítése</h3>
+                    <p>
+                    Az ellenőrzés után elvégezzük a késztermékek:
+                    </p>
+
+                    <ul>
+                    <li>csomagolását</li>
+                    <li>dobozolását</li>
+                    <li>valamint elkészítjük a csomaglistát a kiszállításhoz</li>
+                    </ul>
+                </div>
+                </article>
+        
+            </div>
+            </section>
+            <div class="business-modal" id="businessModal" aria-hidden="true">
+            <div class="business-modal-backdrop" data-business-modal-close></div>
+
+            <div class="business-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="businessModalTitle">
+                <button class="business-modal-close" type="button" data-business-modal-close aria-label="Részletek bezárása">
+                ×
+                </button>
+
+                <div class="business-modal-content" id="businessModalContent">
+                <!-- JS tölti be -->
+                </div>
+            </div>
+            </div>
+
+            <!-- ALAPÍTVÁNYUNK BLOKK -->
+            <section class="foundation-section" aria-labelledby="foundation-title">
+            <div class="foundation-inner">
+
+                <figure class="foundation-image">
+                <img 
+                    src="img/main/alapitavany_logo.webp" 
+                    alt="SZEFO alapítvány társadalmi felelősségvállalását bemutató kép"
+                 loading="lazy">
+                </figure>
+
+                <div class="foundation-content">
+                <span class="foundation-eyebrow">Társadalmi felelősségvállalás</span>
+
+                <h2 id="foundation-title">Alapítványunk</h2>
+
+                <p>
+                    Társaságunk a társadalmi felelősségvállalás jegyében kiemelten támogatja a megváltozott munkaképességű személyek elfogadásának erősítését.
+                </p>
+
+                <p>
+                    A SZEFO Fonalfeldolgozó Chance Közhasznú Alapítvány célja a hátrányos helyzetű, fogyatékos, illetve megváltozott munkaképességű emberek társadalmi integrációjának elősegítése, életminőségük javítása, az általános diszkriminációmentesség és magasabb életszínvonal támogatása helyi, regionális és társadalmi szinten.
+                </p>
+
+                <a class="foundation-btn" href="hu/alapitvany/index.html">
+                    Bővebben az alapítványról
+                </a>
+                </div>
+
+            </div>
+            </section>
+
+            <!-- REFERENCIÁINK -->
+            <section class="home-trust-section" aria-labelledby="references-title">
+
+                <div class="references-section">
+                    <div class="references-header">
+                    <span class="section-eyebrow">Partnereink</span>
+
+                    <h2 id="references-title">Referenciáink</h2>
+
+                    <p>
+                        Partnereink és megrendelőink visszatérő bizalma meghatározó érték számunkra.
+                    </p>
+                    </div>
+
+                    <div class="references-marquee" aria-label="Referenciáink képgaléria">
+                    <div class="references-marquee-track">
+
+                        <figure class="reference-logo">
+                        <img
+                            src="img/referenciak/referencia-1.jpg"
+                            alt="Referencia kép 1"
+                         loading="lazy">
+                        </figure>
+
+                        <figure class="reference-logo">
+                        <img
+                            src="img/referenciak/referencia-2.jpg"
+                            alt="Referencia kép 2"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo">
+                        <img
+                            src="img/referenciak/referencia-3.jpg"
+                            alt="Referencia kép 3"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo">
+                        <img
+                            src="img/referenciak/referencia-4.jpg"
+                            alt="Referencia kép 4"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo">
+                        <img
+                            src="img/referenciak/referencia-5.jpg"
+                            alt="Referencia kép 5"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo">
+                        <img
+                            src="img/referenciak/referencia-6.jpg"
+                            alt="Referencia kép 6"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo">
+                        <img
+                            src="img/referenciak/referencia-7.jpg"
+                            alt="Referencia kép 7"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <!-- Ismételt sorozat a végtelen, akadásmentes mozgáshoz -->
+                        <figure class="reference-logo" aria-hidden="true">
+                        <img
+                            src="img/referenciak/referencia-1.jpg"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo" aria-hidden="true">
+                        <img
+                            src="img/referenciak/referencia-2.jpg"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo" aria-hidden="true">
+                        <img
+                            src="img/referenciak/referencia-3.jpg"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo" aria-hidden="true">
+                        <img
+                            src="img/referenciak/referencia-4.jpg"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo" aria-hidden="true">
+                        <img
+                            src="img/referenciak/referencia-5.jpg"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo" aria-hidden="true">
+                        <img
+                            src="img/referenciak/referencia-6.jpg"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                        <figure class="reference-logo" aria-hidden="true">
+                        <img
+                            src="img/referenciak/referencia-7.jpg"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        </figure>
+
+                    </div>
+                    </div>
+                </div>
+
+            </section>
+
+           
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>
+                <h2>SZEFO Közhasznú Nonprofit Zrt.</h2>
+                <p>
+                    A befogadó társadalom alapja a diszkriminációmentességgel párosuló pozitív cselekvés.
+                </p>
+            </div>
+
+            <div>
+                <h3>Gyors elérés</h3>
+                <ul>
+                    <li><a href="index.html">Kezdőlap</a></li>
+                    <li><a href="hu/tortenetunk/index.html">Történetünk</a></li>
+                    <li><a href="hu/kuldetesunk/index.html">Küldetésünk</a></li>
+                    <li><a href="hu/kapcsolat/index.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Kapcsolat</h3>
+                <p>6724 Szeged, Tavasz utca 2.</p>
+                <p>+36-62-554-054</p>
+                <p>titkarsag@szefo.hu</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Felugró hírdetés -->
+     <div id="smartPopup" class="popup">
+        <button class="popup-close" type="button" aria-label="Ajánlat bezárása">&times;</button>
+
+        <figure class="popup-figure">
+            <img src="img/popup/Autodekor_MMK_Munkat-keres_1024x370.webp" alt="Promóciós kép">
+            
+        </figure>
+    </div>
+
+
+
+   
+    <script src="js/popup.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
