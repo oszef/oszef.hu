@@ -176,6 +176,5 @@ ki a panelből, és csak utána állítsuk be az `inert`-et.
 - Az oldal egynyelvű (magyar). A `hu/` mappaszerkezet elvben lehetővé
   tenné más nyelvek felvételét is, de ahhoz a menüt is bővíteni kellene.
 - A pdf dokumentumok egy része nem értelmezhető a képernyőfelovasoknak.
-- A kezdőlapi Termékfejlesztés modálban lévő kép aránya/minősége nem
-  túl szerencsés, ezt is érdemes lesz még javítani.
+
 
