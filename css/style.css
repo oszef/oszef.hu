@@ -14,6 +14,8 @@
    Nem ide tartozik:
    - PDF dokumentumtár: pdf_style.css
    - keresési oldal: search_style.css
+   - hírek oldal: news_blog.css
+   - felugró hírdetés: popup.css
 ========================================================= */
 
 
@@ -824,7 +826,8 @@ select:focus-visible,
 
 @media (max-width: 768px) {
     .hero-carousel {
-        height: clamp(380px, 58vh, 520px);
+        height: 55vh;
+        min-height: 360px;
         margin-top: 60px;
     }
 
@@ -841,13 +844,17 @@ select:focus-visible,
     }
 
     .hero-text {
-        bottom: 72px;
+        bottom: 15%;
         width: min(88%, 560px);
     }
 
-    .hero-text h1,
-    .hero-text h2 {
+    .hero-text h1 {
         font-size: 28px;
+        line-height: 1.12;
+    }
+
+    .hero-text h2 {
+        font-size: 26px;
         line-height: 1.12;
     }
 
@@ -858,9 +865,9 @@ select:focus-visible,
 
     .hero-prev,
     .hero-next {
-        width: 40px;
-        height: 40px;
-        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        font-size: 24px;
     }
 
     .hero-prev {
@@ -879,6 +886,7 @@ select:focus-visible,
 @media (max-width: 420px) {
     .hero-carousel {
         height: 390px;
+        min-height: 330px;
     }
 
     .hero-slide::before {
@@ -891,9 +899,12 @@ select:focus-visible,
         bottom: 58px;
     }
 
-    .hero-text h1,
-    .hero-text h2 {
+    .hero-text h1 {
         font-size: 24px;
+    }
+
+    .hero-text h2 {
+        font-size: 23px;
     }
 
     .hero-text p {
@@ -1934,38 +1945,6 @@ select:focus-visible,
         font-size: 26px;
     }
 
-    .hero-carousel {
-        height: 55vh;
-        min-height: 360px;
-    }
-
-    .hero-text {
-        bottom: 15%;
-    }
-
-    .hero-text h2 {
-        font-size: 26px;
-    }
-
-    .hero-text p {
-        font-size: 16px;
-    }
-
-    .hero-prev,
-    .hero-next {
-        width: 38px;
-        height: 38px;
-        font-size: 24px;
-    }
-
-    .hero-prev {
-        left: 12px;
-    }
-
-    .hero-next {
-        right: 12px;
-    }
-
     .ceo-preview,
     .ceo-full {
         margin: 45px 15px;
@@ -2142,18 +2121,6 @@ select:focus-visible,
         right: -92vw;
     }
 
-    .hero-carousel {
-        min-height: 330px;
-    }
-
-    .hero-text h2 {
-        font-size: 23px;
-    }
-
-    .hero-text p {
-        font-size: 15px;
-    }
-
     .ceo-preview,
     .ceo-full,
     .about-section {
@@ -2291,6 +2258,7 @@ select:focus-visible,
   margin: 0;
   position: relative;
   width: 100%;
+  align-self: start;
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: #e9eef5;
@@ -2305,13 +2273,9 @@ select:focus-visible,
   inset: 0;
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: center !important;
   display: block;
-}
-
-.mission-media--philo img{
-  object-position: center top !important;
 }
 
 .mission-back{
@@ -2474,11 +2438,11 @@ select:focus-visible,
 
   .mission-media{
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 4;
     min-height: 0;
     height: auto;
     max-height: none;
-    align-self: stretch;
+    align-self: start;
   }
 
   .mission-content p{
@@ -2500,7 +2464,6 @@ select:focus-visible,
 @media (max-width: 420px){
   .mission-page{ padding: 0 14px; }
   .mission-block{ padding: 18px; }
-  .mission-media{ aspect-ratio: 4 / 3; }
   .mmk-pie{ --size: 170px; --thickness: 40px; }
   .mmk-title{ font-size: 1rem; }
   .mmk-mission{ font-size: 0.95rem; }
@@ -2719,8 +2682,8 @@ select:focus-visible,
 
 /* =========================================================
    TEVÉKENYSÉGEK & ÜZLETÁGAK
-   Desktop: 4 + 1
-   Tablet: 2 + 2 + 1
+   Desktop: 3 + 1 (teljes szélességű kiemelt kártya alul)
+   Tablet: 2 + 1 + 1
    Mobil: 1 oszlop
    Teljes dobozos overlay + részletek modal
 ========================================================= */
@@ -2751,7 +2714,7 @@ select:focus-visible,
 
 .business-grid{
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   align-items: stretch;
 }
@@ -2769,10 +2732,10 @@ select:focus-visible,
   isolation: isolate;
 }
 
-/* 5. kiemelt kártya desktopon középen */
+/* Kiemelt kártya: teljes szélességű "banner" a rendes kártyák alatt */
 .business-card--featured{
-  grid-column: 2 / span 2;
-  min-height: 285px;
+  grid-column: 1 / -1;
+  min-height: 260px;
 }
 
 /* Kép */
@@ -2971,11 +2934,15 @@ select:focus-visible,
     min-height: 245px;
   }
 
+  .business-grid > article:nth-of-type(3){
+    grid-column: 1 / -1;
+  }
+
   .business-card--featured{
     grid-column: 1 / -1;
-    width: calc((100% - 20px) / 2);
-    max-width: calc((100% - 20px) / 2);
-    justify-self: center;
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
     min-height: 245px;
   }
 
@@ -3273,11 +3240,15 @@ select:focus-visible,
 
 .business-modal-slider{
   margin: 24px 0 30px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .business-modal-slider-frame{
   position: relative;
   width: 100%;
+  max-width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -3285,17 +3256,20 @@ select:focus-visible,
   box-shadow: var(--shadow-card);
 }
 
+/* Minden slide pontosan a frame-ben marad */
 .business-modal-slide{
   position: absolute;
   inset: 0;
   margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   opacity: 0;
   visibility: hidden;
-  transform: scale(1.015);
+  transform: none;
   transition:
     opacity 0.35s ease,
-    visibility 0.35s ease,
-    transform 0.45s ease;
+    visibility 0.35s ease;
 }
 
 .business-modal-slide.is-active{
@@ -3305,18 +3279,28 @@ select:focus-visible,
   z-index: 1;
 }
 
+/* A kép ne csorduljon túl, a teljes illusztráció/fotó látszódjon */
 .business-modal-slide img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   object-position: center;
   display: block;
+  background: #e9eef5;
 }
+
+/* Ha inkább teljesen kitöltős/vágott képet szeretnél, erre cserélhető:
+.business-modal-slide img{
+  object-fit: cover;
+}
+*/
 
 .business-slider-btn{
   position: absolute;
   top: 50%;
-  z-index: 3;
+  z-index: 5;
   width: 42px;
   height: 42px;
   border: none;
@@ -3415,79 +3399,6 @@ select:focus-visible,
 
   .business-slider-btn--next{
     right: 10px;
-  }
-}
-/* =========================================================
-   BUSINESS MODAL SLIDER – képtúlcsordulás fix
-========================================================= */
-
-.business-modal-slider{
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.business-modal-slider-frame{
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  background: #e9eef5;
-  box-shadow: var(--shadow-card);
-}
-
-/* Minden slide pontosan a frame-ben marad */
-.business-modal-slide{
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  transform: none;
-  transition:
-    opacity 0.35s ease,
-    visibility 0.35s ease;
-}
-
-/* Aktív slide */
-.business-modal-slide.is-active{
-  opacity: 1;
-  visibility: visible;
-  z-index: 1;
-}
-
-/* A kép ne csorduljon túl */
-.business-modal-slide img{
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  background: #e9eef5;
-}
-
-/* Ha inkább teljesen kitöltős/vágott képet szeretnél, erre cserélhető:
-.business-modal-slide img{
-  object-fit: cover;
-}
-*/
-
-/* Gombok a kereten belül maradjanak */
-.business-slider-btn{
-  z-index: 5;
-}
-/* Mobil elrendezés */
-@media (max-width: 768px){
-  .business-modal-slider-frame{
-    aspect-ratio: 4 / 3;
-    border-radius: var(--radius-lg);
   }
 }
 /* =========================================================
@@ -4256,7 +4167,7 @@ select:focus-visible,
   background:
     linear-gradient(
       to right,
-      var(--shadow-soft),
+      var(--color-surface-alt),
       rgba(242, 246, 251, 0)
     );
 }
@@ -4266,7 +4177,7 @@ select:focus-visible,
   background:
     linear-gradient(
       to left,
-      var(--shadow-soft),
+      var(--color-surface-alt),
       rgba(242, 246, 251, 0)
     );
 }
@@ -5167,9 +5078,22 @@ select:focus-visible,
   .hero-text h2,
   .hero-text p,
   .business-card-body h3,
+  .units-card-body h3,
+  .business-card-summary p,
+  .units-card-summary p,
+  .business-modal-content h2,
+  .business-modal-content h3,
+  .foundation-page-card h1,
   .references-header h2,
   .contact-page-header h1,
-  .ewaste-header h1 {
+  .contact-card h2,
+  .ewaste-header h1,
+  .ewaste-card h2,
+  .ewaste-gallery-header h2,
+  .career-intro-text h1,
+  .career-jobs-header h2,
+  .career-job-body h3,
+  .career-modal-content h2 {
     text-wrap: normal;
   }
 }/* =========================================================
