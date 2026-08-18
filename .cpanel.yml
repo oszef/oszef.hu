@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/nattodvn/devel
+    - /bin/cp -R * $DEPLOYPATH
