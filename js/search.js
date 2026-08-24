@@ -16,6 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
    1. KERESÉSI OLDAL INICIALIZÁLÁSA
 ========================================================= */
 
+/* Ennyi karaktertől indul a keresés. 1-2 betűre a találatok nagy része
+   értelmetlen lenne, ezért addig csak egy rövid útmutatót mutatunk. */
+const MIN_KARAKTER = 3;
+
+/* Gépelés közben nem minden leütésre keresünk, csak ha rövid ideig
+   szünet van – így hosszabb kifejezésnél sem fut fölöslegesen sokszor. */
+const GEPELES_KESLELTETES = 180;
+
 function initSearchPage() {
   const form = document.querySelector("[data-search-page-form]");
   const input = document.querySelector("[data-search-input]");
@@ -29,40 +37,69 @@ function initSearchPage() {
 
   input.value = initialQuery;
 
-  if (initialQuery.trim()) {
-    renderSearchResults(initialQuery);
-  } else {
-    renderStartState();
-  }
+  renderForQuery(initialQuery.trim());
+
+  let gepelesIdozito = null;
+
+  /* Élő keresés: a találatok már gépelés közben megjelennek. */
+  input.addEventListener("input", () => {
+    window.clearTimeout(gepelesIdozito);
+
+    gepelesIdozito = window.setTimeout(() => {
+      const query = input.value.trim();
+
+      /* Gépelés közben replaceState, hogy a böngésző előzménye ne teljen
+         meg minden egyes leütéssel – a vissza gomb így használható marad. */
+      updateUrl(query, "replace");
+      renderForQuery(query);
+    }, GEPELES_KESLELTETES);
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    window.clearTimeout(gepelesIdozito);
+
     const query = input.value.trim();
 
+    updateUrl(query, "push");
+    renderForQuery(query);
+  });
+
+  /* Egy helyen dől el, mit mutatunk: üres mező, túl rövid kifejezés,
+     vagy valódi találatok. Így a gépelés és a gombnyomás nem térhet el. */
+  function renderForQuery(query) {
     if (!query) {
-      window.history.pushState({}, "", window.location.pathname);
       renderStartState();
       return;
     }
 
-    const nextUrl = `${window.location.pathname}?q=${encodeURIComponent(query)}`;
+    if (query.length < MIN_KARAKTER) {
+      renderTooShortState(query);
+      return;
+    }
 
-    window.history.pushState({}, "", nextUrl);
     renderSearchResults(query);
-  });
+  }
+
+  function updateUrl(query, mod) {
+    const nextUrl = query.length >= MIN_KARAKTER
+      ? `${window.location.pathname}?q=${encodeURIComponent(query)}`
+      : window.location.pathname;
+
+    if (mod === "push") {
+      window.history.pushState({}, "", nextUrl);
+    } else {
+      window.history.replaceState({}, "", nextUrl);
+    }
+  }
 
   window.addEventListener("popstate", () => {
     const params = new URLSearchParams(window.location.search);
     const query = params.get("q") || "";
 
     input.value = query;
-
-    if (query.trim()) {
-      renderSearchResults(query);
-    } else {
-      renderStartState();
-    }
+    renderForQuery(query.trim());
   });
 
   function renderStartState() {
@@ -79,11 +116,35 @@ function initSearchPage() {
       <h2>Kezdje el a keresést</h2>
 
       <p>
-        Írjon be egy keresőkifejezést a SZEFO weboldal tartalmai között.
+        Írjon be legalább ${MIN_KARAKTER} karaktert, és a találatok
+        gépelés közben megjelennek.
       </p>
     </article>
   `;
 }
+
+  /* 1-2 karakternél még nem keresünk, de jelezzük, mennyi hiányzik. */
+  function renderTooShortState(query) {
+    const hiany = MIN_KARAKTER - query.length;
+
+    info.textContent = `Írjon be még ${hiany} karaktert a kereséshez.`;
+
+    resultsContainer.innerHTML = `
+      <article class="search-state-card">
+        <div class="search-state-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M10.5 4a6.5 6.5 0 0 1 5.17 10.45l3.94 3.94a1 1 0 0 1-1.42 1.42l-3.94-3.94A6.5 6.5 0 1 1 10.5 4Zm0 2a4.5 4.5 0 1 0 0 9a4.5 4.5 0 0 0 0-9Z"/>
+          </svg>
+        </div>
+
+        <h2>Még ${hiany} karakter</h2>
+
+        <p>
+          A kereséshez legalább ${MIN_KARAKTER} karakter szükséges.
+        </p>
+      </article>
+    `;
+  }
 
   function renderSearchResults(query) {
     const searchIndex = Array.isArray(window.SZEFO_SEARCH_INDEX)

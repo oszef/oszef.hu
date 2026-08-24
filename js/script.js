@@ -10,7 +10,7 @@
    - számláló animációk
    - timeline
    - business / units / ISO kártyák
-   - közös részletező modal + galéria
+   - közös részletező modal + egy kép
    - e-hulladék galéria
    - karrier modal
    - kereső űrlap átirányítás
@@ -475,7 +475,7 @@ function initFactsAnimation() {
 
     pieWrapper.classList.add("visible");
 
-    const target = 70;
+    const target = 74;
     const duration = 1600;
     const startTime = performance.now();
 
@@ -835,7 +835,6 @@ function initBusinessDetailsModal() {
 
     setBodyLocked(true);
     updateBusinessModalTitle();
-    initBusinessModalSliders(modalContent);
 
     qs(".business-modal-close", modal)?.focus({ preventScroll: true });
   }
@@ -898,72 +897,7 @@ function initBusinessDetailsModal() {
 }
 
 /* =========================================================
-   11. MODALON BELÜLI GALÉRIA / SLIDER
-========================================================= */
-
-function initBusinessModalSliders(scope) {
-  const sliders = qsa("[data-business-slider]", scope);
-
-  sliders.forEach((slider) => {
-    const slides = qsa(".business-modal-slide", slider);
-    const dots = qsa(".business-slider-dot", slider);
-    const prevButton = qs(".business-slider-btn--prev", slider);
-    const nextButton = qs(".business-slider-btn--next", slider);
-
-    if (!slides.length) return;
-
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      currentIndex = (index + slides.length) % slides.length;
-
-      slides.forEach((slide, slideIndex) => {
-        const isActive = slideIndex === currentIndex;
-
-        slide.classList.toggle("is-active", isActive);
-        slide.setAttribute("aria-hidden", String(!isActive));
-      });
-
-      dots.forEach((dot, dotIndex) => {
-        const isActive = dotIndex === currentIndex;
-
-        dot.classList.toggle("is-active", isActive);
-        dot.setAttribute("aria-current", isActive ? "true" : "false");
-      });
-    }
-
-    prevButton?.addEventListener("click", () => {
-      showSlide(currentIndex - 1);
-    });
-
-    nextButton?.addEventListener("click", () => {
-      showSlide(currentIndex + 1);
-    });
-
-    dots.forEach((dot, dotIndex) => {
-      dot.addEventListener("click", () => {
-        showSlide(dotIndex);
-      });
-    });
-
-    slider.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        showSlide(currentIndex - 1);
-      }
-
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        showSlide(currentIndex + 1);
-      }
-    });
-
-    showSlide(0);
-  });
-}
-
-/* =========================================================
-   12. E-HULLADÉK KÉPGALÉRIA
+   11. E-HULLADÉK KÉPGALÉRIA
 ========================================================= */
 
 function initEwasteGallery() {
@@ -1069,7 +1003,7 @@ function initEwasteGallery() {
 }
 
 /* =========================================================
-   13. KARRIER OLDAL – ÁLLÁSHIRDETÉS MODAL
+   12. KARRIER OLDAL – ÁLLÁSHIRDETÉS MODAL
 ========================================================= */
 
 function initCareerJobsModal() {

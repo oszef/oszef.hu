@@ -400,6 +400,24 @@ window.SZEFO_SEARCH_INDEX = [
   text: "A SZEFO hírei, aktualitásai, eseményei és blogbejegyzései egy helyen, SPA jellegű hírek és blog tartalmi oldalon."
 },
   {
+    id: "szefo-magazin",
+    title: "Korábbi SZEFO Magazinok",
+    url: "../szefo_magazin/index.html",
+    category: "Hírek és blog",
+    keywords: [
+      "SZEFO Magazin",
+      "magazin",
+      "lapszám",
+      "újság",
+      "vállalati újság",
+      "archívum",
+      "korábbi lapszámok",
+      "PDF",
+      "letöltés"
+    ],
+    text: "A SZEFO Magazin korábbi lapszámainak archívuma 2019 és 2026 között: nyolc lapszám PDF formátumban, online olvasható és letölthető változatban."
+  },
+  {
     id: "e-hulladek",
     title: "E-hulladék",
     url: "../e-hulladek/index.html",
