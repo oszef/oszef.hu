@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A SZEFO Magazin korábbi lapszámainak archívuma – a Szegedi SZEFO Közhasznú Nonprofit Zrt. vállalati újságának 2019 és 2026 közötti számai PDF formátumban, olvasható és letölthető változatban.">
+
+    <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/magazin.css">
+    <title>Korábbi SZEFO Magazinok</title>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <header class="site-header">
+        <!-- NAVBAR -->
+        <nav class="navbar" aria-label="Fő navigáció">
+            <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </nav>
+
+        <!-- OFFCANVAS MENU -->
+        <div class="offcanvas" id="offcanvasMenu" aria-hidden="true">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="../../index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="../kuldetesunk/index.html">Küldetésünk</a>
+                            </li>
+                            <li>
+                                <a href="../kapcsolat/index.html">Kapcsolat</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CÉGINFORMÁCIÓK -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Céginformációk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../altalanos_ceginformaciok/index.html">Általános céginformáció</a>
+                            </li>
+                            <li>
+                                <a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a>
+                            </li>
+                            <li>
+                                <a href="../kepzo_intezmenyek/index.html">Képző intézmények</a>
+                            </li>
+                            <li>
+                                <a href="../projektek/index.html">Projektek</a>
+                            </li>
+                            <li>
+                                <a href="../minosegpolitika/index.html">Minőségpolitika</a>
+                            </li>
+                            <li>
+                                <a href="../partnerek/index.html">Partnerek</a>
+                            </li>
+                            <li>
+                                <a href="../alapitvany/index.html">Alapítvány</a>
+                            </li>
+                            <li>
+                                <a href="../adatszolgaltatas/index.html">Adatszolgáltatás</a>
+                            </li>
+                            <li>
+                                <a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a>
+                            </li>
+                            <li>
+                                <a href="../eves_beszamolok/index.html">Éves beszámolók</a>
+                            </li>
+                            <li>
+                                <a href="../kozzetetelek/index.html">Közzétételek</a>
+                            </li>
+                            <li>
+                                <a href="../ellenorzesek/index.html">Ellenőrzések</a>
+                            </li>
+                            <li>
+                                <a href="../szerzodesek/index.html">Szerződések</a>
+                            </li>
+                            <li>
+                                <a href="../palyazat/index.html">Pályázat NEAO-KP-1-2022/8-000016</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="../e-hulladek/index.html">E-hulladék</a>
+                    </li>
+                    <li>
+                        <a href="../karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="../klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+
+               <div class="search search--button-only">
+                <a class="search-link" href="../kereses/index.html">
+                    Keresés
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content" class="magazine-page">
+        <section class="magazine-hero" aria-labelledby="magazine-title">
+            <span class="magazine-eyebrow">Archívum</span>
+
+            <h1 id="magazine-title">Korábbi SZEFO Magazinok</h1>
+
+            <p>
+                A SZEFO Magazin a Szegedi SZEFO Közhasznú Nonprofit Zrt. vállalati
+                újsága. Az alábbi lapszámok 2019 és 2026 között jelentek meg –
+                mindegyik online elolvasható és PDF formátumban letölthető.
+            </p>
+        </section>
+
+        <p class="magazine-notice">
+            <strong>Archív tartalom.</strong> Ezek a lapszámok a korábbi
+            szefo.hu oldalon megjelent formájukban, változatlan tartalommal
+            érhetők el. A bennük szereplő adatok, elérhetőségek és tisztségek a
+            megjelenés időpontjában voltak érvényesek, ezért a jelenlegi
+            állapottól eltérhetnek. A magazinokat személyes adatokat is
+            tartalmazó, korábban nyilvánosságra hozott kiadványokként őrizzük
+            meg. Adatkezeléssel kapcsolatos kérdés vagy kérelem esetén a
+            <a href="../kapcsolat/index.html">Kapcsolat</a> oldalon található
+            elérhetőségeinken vagy a
+            <a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a>
+            szerint fordulhat hozzánk.
+        </p>
+
+        <div class="magazine-toolbar">
+            <a class="magazine-back-link" href="../hireink/index.html">
+                <span aria-hidden="true">←</span> Vissza a Hírek és blog oldalra
+            </a>
+
+            <span class="magazine-count">8 lapszám</span>
+        </div>
+
+        <section class="magazine-grid" aria-label="Korábbi SZEFO Magazin lapszámok">
+
+            <!-- 2026. MÁJUS -->
+            <article class="magazine-card">
+                <figure class="magazine-cover">
+                    <img
+                        src="../../img/szefo_magazin/szefo-magazin-2026-05.webp"
+                        alt="A SZEFO Magazin 2026. májusi lapszámának címlapja"
+                        width="760"
+                        height="1075"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <div class="magazine-card-body">
+                    <h2>SZEFO Magazin – 2026. május, 08. évfolyam, 1. szám</h2>
+
+                    <ul class="magazine-meta">
+                        <li>PDF</li>
+                        <li>13 oldal</li>
+                        <li>9,0 MB</li>
+                    </ul>
+
+                    <p>
+                        Hosszú szünet után ismét megjelent a SZEFO Magazin legújabb
+                        lapszáma! Ezúttal a közös jövő, a stabilitás és az emberi
+                        értékek kerültek a középpontba. Interjút olvashatnak a SZEFO
+                        új vezérigazgatójával, betekintést nyerhetnek egy több mint
+                        40 éve nálunk dolgozó munkatárs inspiráló történetébe,
+                        valamint megismerhetik legújabb szakmai együttműködéseinket
+                        és eseményeinket is. Történetek emberekről, munkáról,
+                        összetartásról és fejlődésről – ez a májusi SZEFO Magazin.
+                    </p>
+
+                    <div class="magazine-actions">
+                        <a
+                            class="magazine-action magazine-action--view doc-action--view"
+                            href="../../doc/szefo_magazin/szefo-magazin-2026-05.pdf"
+                            aria-label="SZEFO Magazin 2026. május – megnyitás új lapon"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Olvasás
+                        </a>
+
+                        <a
+                            class="magazine-action magazine-action--download"
+                            href="../../doc/szefo_magazin/szefo-magazin-2026-05.pdf"
+                            aria-label="SZEFO Magazin 2026. május – PDF letöltése"
+                            data-download
+                        >
+                            Letöltés
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2023. FEBRUÁR -->
+            <article class="magazine-card">
+                <figure class="magazine-cover">
+                    <img
+                        src="../../img/szefo_magazin/szefo-magazin-2023-02.webp"
+                        alt="A SZEFO Magazin 2023. februári lapszámának címlapja"
+                        width="760"
+                        height="1075"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <div class="magazine-card-body">
+                    <h2>SZEFO Magazin – 2023. február, 05. évfolyam, 1. szám</h2>
+
+                    <ul class="magazine-meta">
+                        <li>PDF</li>
+                        <li>19 oldal</li>
+                        <li>46,4 MB</li>
+                    </ul>
+
+                    <p>
+                        Jelen lapszám középpontjában a Szegedi SZEFO zrt. legrégebbi
+                        vidéki fióktelepe, a Szentesi Fióktelep áll, az ott folyó
+                        munkálatok és ott dolgozó munkatársak. A Szentesi Fióktelep
+                        egyik munkatársával külön interjú is készült, aki – ha nem a
+                        SZEFO-ban dolgozik, akkor verseket, novellákat, regényeket ír.
+                        A Társaság szakmai hírei közül a Gyártó Mentorprogramot és egy
+                        Fenntarthatósági konferenciát emeltük ki. Az Alapítvány által
+                        szervezett kulturális, egészségmegőrző és szemléletformáló
+                        programokról is lehet olvasni, és nem maradhattak el a SZEFO
+                        Manók Alternatív napközbeni ellátás programjairól készült
+                        fényképes beszámolók sem.
+                    </p>
+
+                    <div class="magazine-actions">
+                        <a
+                            class="magazine-action magazine-action--view doc-action--view"
+                            href="../../doc/szefo_magazin/szefo-magazin-2023-02.pdf"
+                            aria-label="SZEFO Magazin 2023. február – megnyitás új lapon"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Olvasás
+                        </a>
+
+                        <a
+                            class="magazine-action magazine-action--download"
+                            href="../../doc/szefo_magazin/szefo-magazin-2023-02.pdf"
+                            aria-label="SZEFO Magazin 2023. február – PDF letöltése"
+                            data-download
+                        >
+                            Letöltés
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2022. FEBRUÁR -->
+            <article class="magazine-card">
+                <figure class="magazine-cover">
+                    <img
+                        src="../../img/szefo_magazin/szefo-magazin-2022-02.webp"
+                        alt="A SZEFO Magazin 2022. februári lapszámának címlapja"
+                        width="760"
+                        height="1075"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <div class="magazine-card-body">
+                    <h2>SZEFO Magazin – 2022. február, 04. évfolyam, 1. szám</h2>
+
+                    <ul class="magazine-meta">
+                        <li>PDF</li>
+                        <li>20 oldal</li>
+                        <li>18,3 MB</li>
+                    </ul>
+
+                    <p>
+                        A járvány sokadik hullámán túlról tekintünk vissza ebben a
+                        lapszámban. Bemutatjuk azt a kiemelkedő team-munkát, amivel a
+                        Szegedi SZEFO zrt. foglalkozás-egészségügyi munkatársai,
+                        orvosok, ápolók és asszisztensek a járványt kezelték, és
+                        megosztjuk munkatársaink visszaemlékezéseit, gondolatait a
+                        COVID-ról. A vállalati pszichológussal arra kerestük a választ,
+                        hogyan tovább a járvány után. Beszámolunk a SZEFO Manók
+                        táborában szervezett érzékenyítő hétről is, végül kulturális
+                        rovatunkban munkatársunk verseit és a vele készült interjút
+                        olvashatjuk írásról, munkáról.
+                    </p>
+
+                    <div class="magazine-actions">
+                        <a
+                            class="magazine-action magazine-action--view doc-action--view"
+                            href="../../doc/szefo_magazin/szefo-magazin-2022-02.pdf"
+                            aria-label="SZEFO Magazin 2022. február – megnyitás új lapon"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Olvasás
+                        </a>
+
+                        <a
+                            class="magazine-action magazine-action--download"
+                            href="../../doc/szefo_magazin/szefo-magazin-2022-02.pdf"
+                            aria-label="SZEFO Magazin 2022. február – PDF letöltése"
+                            data-download
+                        >
+                            Letöltés
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2021. MÁJUS -->
+            <article class="magazine-card">
+                <figure class="magazine-cover">
+                    <img
+                        src="../../img/szefo_magazin/szefo-magazin-2021-05.webp"
+                        alt="A SZEFO Magazin 2021. májusi lapszámának címlapja"
+                        width="760"
+                        height="1075"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <div class="magazine-card-body">
+                    <h2>SZEFO Magazin – 2021. május, 03. évfolyam, 1. szám</h2>
+
+                    <ul class="magazine-meta">
+                        <li>PDF</li>
+                        <li>15 oldal</li>
+                        <li>8,7 MB</li>
+                    </ul>
+
+                    <p>
+                        A SZEFO Magazin jelen lapszámában munkatársunktól, Németné
+                        Janó Beátától búcsúzunk, aki 2021. 02. 20-án hunyt el tragikus
+                        hirtelenséggel. Németné Janó Beáta (1975–2021) a Szegedi SZEFO
+                        zrt. Legrand Projekt vezérigazgatói biztosa és központi
+                        logisztikai vezető menedzsere volt. Közel 30 éven át dolgozott
+                        a Szegedi SZEFO zrt-nél, halálával nagy veszteség érte a
+                        Társaságot.
+                    </p>
+
+                    <div class="magazine-actions">
+                        <a
+                            class="magazine-action magazine-action--view doc-action--view"
+                            href="../../doc/szefo_magazin/szefo-magazin-2021-05.pdf"
+                            aria-label="SZEFO Magazin 2021. május – megnyitás új lapon"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Olvasás
+                        </a>
+
+                        <a
+                            class="magazine-action magazine-action--download"
+                            href="../../doc/szefo_magazin/szefo-magazin-2021-05.pdf"
+                            aria-label="SZEFO Magazin 2021. május – PDF letöltése"
+                            data-download
+                        >
+                            Letöltés
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2020. SZEPTEMBER -->
+            <article class="magazine-card">
+                <figure class="magazine-cover">
+                    <img
+                        src="../../img/szefo_magazin/szefo-magazin-2020-09.webp"
+                        alt="A SZEFO Magazin 2020. szeptemberi lapszámának címlapja"
+                        width="760"
+                        height="1075"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <div class="magazine-card-body">
+                    <h2>SZEFO Magazin – 2020. szeptember, 02. évfolyam, 2. szám</h2>
+
+                    <ul class="magazine-meta">
+                        <li>PDF</li>
+                        <li>16 oldal</li>
+                        <li>22,1 MB</li>
+                    </ul>
+
+                    <p>
+                        A Szegedi SZEFO zrt-ben egy régi álom vált valóra: a Társaság
+                        központi székhelyén kialakított játszóházban napközis tábor és
+                        gyermekmegőrző szolgáltatás indult a munkatársak gyermekei
+                        részére. A SZEFO Manók nyári táborról a játszóház vezetőjével
+                        beszélgettünk. Beszámolunk továbbá az időközben megjelent,
+                        egész világot sújtó koronavírus-járványról, a kialakult
+                        válsághelyzet kihívásairól és a járványhelyzet kezeléséről.
+                    </p>
+
+                    <div class="magazine-actions">
+                        <a
+                            class="magazine-action magazine-action--view doc-action--view"
+                            href="../../doc/szefo_magazin/szefo-magazin-2020-09.pdf"
+                            aria-label="SZEFO Magazin 2020. szeptember – megnyitás új lapon"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Olvasás
+                        </a>
+
+                        <a
+                            class="magazine-action magazine-action--download"
+                            href="../../doc/szefo_magazin/szefo-magazin-2020-09.pdf"
+                            aria-label="SZEFO Magazin 2020. szeptember – PDF letöltése"
+                            data-download
+                        >
+                            Letöltés
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2020. MÁRCIUS -->
+            <article class="magazine-card">
+                <figure class="magazine-cover">
+                    <img
+                        src="../../img/szefo_magazin/szefo-magazin-2020-03.webp"
+                        alt="A SZEFO Magazin 2020. márciusi lapszámának címlapja"
+                        width="760"
+                        height="1075"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <div class="magazine-card-body">
+                    <h2>SZEFO Magazin – 2020. március, 02. évfolyam, 1. szám</h2>
+
+                    <ul class="magazine-meta">
+                        <li>PDF</li>
+                        <li>19 oldal</li>
+                        <li>9,5 MB</li>
+                    </ul>
+
+                    <p>
+                        A SZEFO Magazin jelen lapszámában a három vagy ennél is több
+                        kisgyermeket nevelő munkatársainkkal készültek interjúk.
+                        Elsősorban arra kerestünk válaszokat, kinek hogyan sikerül
+                        összeegyeztetni a munkahelyi és magánéleti, családi
+                        kötelezettségeit. Bemutatunk irodalomban, művészetekben jártas,
+                        tehetséges munkatársakat és alkotásaikat is, továbbá
+                        beszámolunk egy szakmai kiállításról, egy divatbemutatóról,
+                        néhány nagyon jól sikerült rendezvényről, egy csapatépítő
+                        tréningről és a már hagyománnyá vált Mikulás-ünnepségről.
+                    </p>
+
+                    <div class="magazine-actions">
+                        <a
+                            class="magazine-action magazine-action--view doc-action--view"
+                            href="../../doc/szefo_magazin/szefo-magazin-2020-03.pdf"
+                            aria-label="SZEFO Magazin 2020. március – megnyitás új lapon"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Olvasás
+                        </a>
+
+                        <a
+                            class="magazine-action magazine-action--download"
+                            href="../../doc/szefo_magazin/szefo-magazin-2020-03.pdf"
+                            aria-label="SZEFO Magazin 2020. március – PDF letöltése"
+                            data-download
+                        >
+                            Letöltés
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2019. OKTÓBER -->
+            <article class="magazine-card">
+                <figure class="magazine-cover">
+                    <img
+                        src="../../img/szefo_magazin/szefo-magazin-2019-10.webp"
+                        alt="A SZEFO Magazin 2019. októberi lapszámának címlapja"
+                        width="760"
+                        height="1061"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <div class="magazine-card-body">
+                    <h2>SZEFO Magazin – 2019. október, 01. évfolyam, 2. szám</h2>
+
+                    <ul class="magazine-meta">
+                        <li>PDF</li>
+                        <li>25 oldal</li>
+                        <li>9,0 MB</li>
+                    </ul>
+
+                    <p>
+                        A SZEFO Magazin második lapszámával az előttünk járó
+                        generációk iránti tiszteletünket és hálánkat szeretnénk
+                        kifejezni. Beszámolunk a Szegedi SZEFO zrt. nyugdíjasai
+                        részére szervezett találkozóról, és közreadunk néhány velük
+                        készített interjút is. Olvashatunk a MEO-ban dolgozó
+                        kolléganőkről és a szentesi fióktelepen dolgozó tehetséges
+                        munkatársainkról, megtekinthetjük az egyik szentesi kolléganő
+                        festményeit, valamint a munkatársak gyermekei által kézműves
+                        foglalkozásokon készített kis alkotásokat.
+                    </p>
+
+                    <div class="magazine-actions">
+                        <a
+                            class="magazine-action magazine-action--view doc-action--view"
+                            href="../../doc/szefo_magazin/szefo-magazin-2019-10.pdf"
+                            aria-label="SZEFO Magazin 2019. október – megnyitás új lapon"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Olvasás
+                        </a>
+
+                        <a
+                            class="magazine-action magazine-action--download"
+                            href="../../doc/szefo_magazin/szefo-magazin-2019-10.pdf"
+                            aria-label="SZEFO Magazin 2019. október – PDF letöltése"
+                            data-download
+                        >
+                            Letöltés
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2019. ÁPRILIS -->
+            <article class="magazine-card">
+                <figure class="magazine-cover">
+                    <img
+                        src="../../img/szefo_magazin/szefo-magazin-2019-04.webp"
+                        alt="A SZEFO Magazin 2019. áprilisi, első lapszámának címlapja"
+                        width="760"
+                        height="1057"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <div class="magazine-card-body">
+                    <h2>SZEFO Magazin – 2019. április, 01. évfolyam, 1. szám</h2>
+
+                    <ul class="magazine-meta">
+                        <li>PDF</li>
+                        <li>17 oldal</li>
+                        <li>9,7 MB</li>
+                    </ul>
+
+                    <p>
+                        A SZEFO Magazin első száma. A rendszeresen megjelenő vállalati
+                        újságban bemutatjuk mindazokat az értékeket, jó gyakorlatokat
+                        és eredményeket, amelyeket az itt dolgozó emberek – sokan
+                        közülük több évtizedes munkájukkal – létrehoztak, megalkottak.
+                        Köszönjük mindazoknak, akik történeteik, örömeik és gondjaik
+                        megosztásával hozzájárultak e lapszám elkészítéséhez, és
+                        bepillantást engedtek munkahelyi életük és egyéni boldogulásuk
+                        egy-egy szeletébe.
+                    </p>
+
+                    <div class="magazine-actions">
+                        <a
+                            class="magazine-action magazine-action--view doc-action--view"
+                            href="../../doc/szefo_magazin/szefo-magazin-2019-04.pdf"
+                            aria-label="SZEFO Magazin 2019. április – megnyitás új lapon"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Olvasás
+                        </a>
+
+                        <a
+                            class="magazine-action magazine-action--download"
+                            href="../../doc/szefo_magazin/szefo-magazin-2019-04.pdf"
+                            aria-label="SZEFO Magazin 2019. április – PDF letöltése"
+                            data-download
+                        >
+                            Letöltés
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <div class="mission-back">
+            <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>
+                <h2>Szegedi SZEFO Közhasznú Nonprofit Zrt.</h2>
+                <p>
+                    A befogadó társadalom alapja a diszkriminációmentességgel párosuló pozitív cselekvés.
+                </p>
+            </div>
+
+            <div>
+                <h3>Gyors elérés</h3>
+                <ul>
+                    <li><a href="../../index.html">Kezdőlap</a></li>
+                    <li><a href="../tortenetunk/index.html">Történetünk</a></li>
+                    <li><a href="../kuldetesunk/index.html">Küldetésünk</a></li>
+                    <li><a href="../kapcsolat/index.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Kapcsolat</h3>
+                <p>6724 Szeged, Tavasz utca 2.</p>
+                <p>+36-62-554-054</p>
+                <p>titkarsag@szefo.hu</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/downloader.js"></script>
+</body>
+</html>

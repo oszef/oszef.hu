@@ -16,7 +16,7 @@
         <!-- NAVBAR -->
         <nav class="navbar" aria-label="Fő navigáció">
             <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
-                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
             </a>
 
             <button
@@ -190,26 +190,34 @@
             </form>
             </div>
 
+            <div class="news-blog-tabs-row">
             <div class="news-blog-tabs" role="tablist" aria-label="Tartalomtípus választó">
-            <button
-                class="news-blog-tab is-active"
-                type="button"
-                role="tab"
-                aria-selected="true"
-                data-news-blog-type="news"
-            >
-                Hírek
-            </button>
+                <button
+                    class="news-blog-tab is-active"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    data-news-blog-type="news"
+                >
+                    Hírek
+                </button>
 
-            <button
-                class="news-blog-tab"
-                type="button"
-                role="tab"
-                aria-selected="false"
-                data-news-blog-type="blog"
-            >
-                Blog
-            </button>
+                <button
+                    class="news-blog-tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-news-blog-type="blog"
+                >
+                    Blog
+                </button>
+            </div>
+
+            <!-- A korábbi lapszámok archívuma külön oldalon él, nem a
+                 hírek/blog listában, ezért link és nem tab. -->
+            <a class="news-blog-magazine-link" href="../szefo_magazin/index.html">
+                Korábbi SZEFO Magazinok
+            </a>
             </div>
 
             <div class="news-blog-filters" data-news-blog-filters></div>
@@ -229,11 +237,39 @@
             Nincs találat. Próbáljon meg másik keresőkifejezést vagy kategóriát választani.
             </p>
         </section>
+
+        <div class="mission-back">
+            <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
+        </div>
     </main>
 
-   
-    
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>
+                <h2>Szegedi SZEFO Közhasznú Nonprofit Zrt.</h2>
+                <p>
+                    A befogadó társadalom alapja a diszkriminációmentességgel párosuló pozitív cselekvés.
+                </p>
+            </div>
 
+            <div>
+                <h3>Gyors elérés</h3>
+                <ul>
+                    <li><a href="../../index.html">Kezdőlap</a></li>
+                    <li><a href="../tortenetunk/index.html">Történetünk</a></li>
+                    <li><a href="../kuldetesunk/index.html">Küldetésünk</a></li>
+                    <li><a href="../kapcsolat/index.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Kapcsolat</h3>
+                <p>6724 Szeged, Tavasz utca 2.</p>
+                <p>+36-62-554-054</p>
+                <p>titkarsag@szefo.hu</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="../../js/script.js"></script>
     <script src="../../js/news_blog.js"></script>
