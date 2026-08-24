@@ -15,7 +15,7 @@
    - PDF dokumentumtár: pdf_style.css
    - keresési oldal: search_style.css
    - hírek oldal: news_blog.css
-   - felugró hírdetés: popup.css
+   - felugró hirdetés: popup.css
 ========================================================= */
 
 
@@ -53,11 +53,10 @@
     --container: 1200px;
     --container-narrow: 1100px;
     --navbar-height: 60px;
-    --hero-carousel-margin-top: 66px;
+    --hero-carousel-margin-top: calc(var(--navbar-height) + 16px);
 
-    /* Hero slide alapértelmezések – az egyes slide-ok felülírhatják. */
-    --hero-bg: none;
-    --hero-position: center center;
+    /* Hero slide alapértelmezés – az egyes slide-ok felülírhatják. */
+    --hero-position: center top;
 
     /* Standard betűtípus és címméret tokenek */
     --font-base: Arial, Helvetica, sans-serif;
@@ -116,11 +115,18 @@ body {
     overflow-x: hidden;
 }
 
+/* A height: auto elengedhetetlen a max-width: 100% mellé: a képeken ott van a
+   width/height attribútum (ez előzi meg a betöltés közbeni elrendezés-ugrást),
+   enélkül viszont a böngésző a fix attribútum-magasságot használná, és a kép
+   megnyúlna. Így az attribútumokból csak a képarány érvényesül.
+   Ahol a CSS szándékosan ad magasságot (pl. .navbar-brand img), az a
+   specifikusabb szabály továbbra is felülírja ezt. */
 img,
 picture,
 svg {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -458,7 +464,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   5. OFFCANVAS MENU
+   5. OFFCANVAS MENÜ
 ========================================================= */
 
 /* FONTOS:
@@ -657,10 +663,18 @@ select:focus-visible,
 .hero-carousel {
     position: relative;
     width: 100%;
-    height: clamp(520px, 72vh, 760px);
+    /* A hero képek natív aránya 16:9 (1366x768) – a 56.25vw pontosan
+       ezt az arányt adja ki a szélességből, így a kép a legtöbb
+       nézeten kitölti a keretet, nem marad elmosott üres sáv. */
+    height: clamp(400px, 56.25vw, 720px);
     overflow: hidden;
+    border-radius: var(--radius-sm);
     margin-top: var(--hero-carousel-margin-top);
-    background: #111827;
+    background: #e9eef5;
+    /* A háttér és az oldal saját háttere majdnem egyforma világos szín,
+       enélkül a lekerekített sarok kontraszt hiányában láthatatlan lenne. */
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0, 63, 125, 0.08);
     isolation: isolate;
 }
 
@@ -685,29 +699,9 @@ select:focus-visible,
 }
 
 /*
-   Háttérkép:
-   ugyanaz a kép, mint az img,
-   de cover + blur módban.
-   Ez tölti ki a teljes hero keretet.
-*/
-.hero-slide::before {
-    content: "";
-    position: absolute;
-    inset: -28px;
-    z-index: 0;
-    background-image: var(--hero-bg);
-    background-size: cover;
-    background-position: var(--hero-position, center center);
-    background-repeat: no-repeat;
-    filter: blur(18px);
-    transform: scale(1.08);
-    opacity: 0.78;
-}
-
-/*
-   Előtérkép:
-   contain módban jelenik meg,
-   ezért nem vágódik le úgy, mint cover esetén.
+   Előtérkép: cover módban tölti ki a keretet, hogy széles monitoron
+   se maradjon üres sáv oldalt. A pozíció felülről indul, hogy a
+   vágás inkább alul (láb, padló) essen, ne a fejeknél.
 */
 .hero-slide img {
     position: absolute;
@@ -716,9 +710,8 @@ select:focus-visible,
     width: 100%;
     height: 100%;
     max-width: none;
-    object-fit: contain;
-    object-position: var(--hero-position, center center);
-    padding: clamp(0px, 1vw, 12px);
+    object-fit: cover;
+    object-position: var(--hero-position, center top);
 }
 
 /*
@@ -802,17 +795,7 @@ select:focus-visible,
 
 @media (max-width: 1024px) {
     .hero-carousel {
-        height: clamp(460px, 62vh, 640px);
-    }
-
-    .hero-slide::before {
-        inset: -24px;
-        filter: blur(16px);
-        transform: scale(1.07);
-    }
-
-    .hero-slide img {
-        padding: clamp(0px, 1.2vw, 10px);
+        height: clamp(340px, 56.25vw, 620px);
     }
 
     .hero-text {
@@ -826,25 +809,12 @@ select:focus-visible,
 
 @media (max-width: 768px) {
     .hero-carousel {
-        height: 55vh;
-        min-height: 360px;
+        height: clamp(320px, 56.25vw, 460px);
         margin-top: 60px;
     }
 
-    .hero-slide::before {
-        inset: -22px;
-        filter: blur(15px);
-        transform: scale(1.08);
-        opacity: 0.82;
-    }
-
-    .hero-slide img {
-        padding: 0;
-        object-fit: contain;
-    }
-
     .hero-text {
-        bottom: 15%;
+        bottom: 8%;
         width: min(88%, 560px);
     }
 
@@ -885,30 +855,27 @@ select:focus-visible,
 
 @media (max-width: 420px) {
     .hero-carousel {
-        height: 390px;
-        min-height: 330px;
-    }
-
-    .hero-slide::before {
-        inset: -20px;
-        filter: blur(14px);
-        transform: scale(1.09);
+        height: clamp(230px, 56.25vw, 280px);
     }
 
     .hero-text {
-        bottom: 58px;
+        bottom: 22px;
     }
 
     .hero-text h1 {
         font-size: 24px;
+        margin-bottom: 0;
     }
 
     .hero-text h2 {
         font-size: 23px;
+        margin-bottom: 0;
     }
 
+    /* Ilyen kis helyen az alcím már túl sokat takarna ki a képből –
+       a főcím önmagában is elég a mondanivalóhoz. */
     .hero-text p {
-        font-size: 15px;
+        display: none;
     }
 }
 /* =========================================================
@@ -949,6 +916,10 @@ select:focus-visible,
     transition: opacity 0.4s ease;
 }
 
+/* A .ceo-preview doboz a kezdőlapon h2-t tartalmaz (ott a h1 máshol van),
+   a Klaszter oldalon viszont ez az oldal egyetlen címsora, ezért ott h1.
+   Mindkettő ugyanúgy nézzen ki. */
+.ceo-preview h1,
 .ceo-preview h2,
 .ceo-full h1 {
     color: var(--color-primary);
@@ -956,6 +927,7 @@ select:focus-visible,
     line-height: 1.2;
 }
 
+.ceo-preview h1,
 .ceo-preview h2 {
     font-size: clamp(1.75rem, 3vw, 2.2rem);
     margin-bottom: 20px;
@@ -987,7 +959,7 @@ select:focus-visible,
     margin-top: 8px;
 }
 
-/* .ceo-btn - base button styles already defined in BUTTON & CARD SYSTEM */
+/* .ceo-btn – az alap gombstílusok már meg vannak adva a "Gombok közös alapja" résznél */
 
 .ceo-full h3 {
     color: var(--color-primary);
@@ -1016,7 +988,7 @@ select:focus-visible,
     padding: 10px 18px;
 }
 
-/* .back-btn - secondary button styles already defined in BUTTON & CARD SYSTEM */
+/* .back-btn – a másodlagos gombstílusok már meg vannak adva a "Gombok közös alapja" résznél */
 
 .bottom-back {
     display: block;
@@ -1502,10 +1474,21 @@ select:focus-visible,
     background: var(--color-surface);
 }
 
+/* Amíg nincs feltöltve kép: szaggatott keretes helykitöltő, a hely megmarad */
 .timeline-image.no-photo {
-    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: none;
-    background: transparent;
+    border: 2px dashed rgba(0, 63, 125, 0.28);
+}
+
+.timeline-image.no-photo::before {
+    content: "Kép hamarosan";
+    color: var(--color-primary-light);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 .timeline-text {
@@ -1614,10 +1597,6 @@ select:focus-visible,
     .timeline-image {
         max-width: 620px;
         margin: 0 auto;
-    }
-
-    .timeline-image.no-photo {
-        display: none;
     }
 
     .timeline-text {
@@ -1808,10 +1787,6 @@ select:focus-visible,
     overflow: hidden;
     margin-bottom: 12px;
     box-shadow: none;
-  }
-
-  .timeline-image.no-photo {
-    display: none;
   }
 
   .timeline-image.portrait img {
@@ -2323,7 +2298,7 @@ select:focus-visible,
 .mmk-pie{
   --size: 220px;
   --thickness: 48px;
-  --value: 70%;
+  --value: 74%;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
@@ -2714,7 +2689,7 @@ select:focus-visible,
 
 .business-grid{
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
   align-items: stretch;
 }
@@ -2732,9 +2707,8 @@ select:focus-visible,
   isolation: isolate;
 }
 
-/* Kiemelt kártya: teljes szélességű "banner" a rendes kártyák alatt */
+/* Kiemelt kártya: a többivel egy sorban, csak kicsit magasabb */
 .business-card--featured{
-  grid-column: 1 / -1;
   min-height: 260px;
 }
 
@@ -2796,10 +2770,6 @@ select:focus-visible,
   text-align: center;
   text-wrap: balance;
   text-shadow: 0 2px 14px rgba(0,0,0,0.35);
-}
-
-.business-card--featured .business-card-body h3{
-  font-size: 20px;
 }
 
 /* Tablet/mobil nyitó gomb – desktopon rejtve */
@@ -2930,19 +2900,8 @@ select:focus-visible,
     gap: 20px;
   }
 
-  .business-card{
-    min-height: 245px;
-  }
-
-  .business-grid > article:nth-of-type(3){
-    grid-column: 1 / -1;
-  }
-
+  .business-card,
   .business-card--featured{
-    grid-column: 1 / -1;
-    width: 100%;
-    max-width: none;
-    justify-self: stretch;
     min-height: 245px;
   }
 
@@ -3019,8 +2978,7 @@ select:focus-visible,
     padding: 16px;
   }
 
-  .business-card-body h3,
-  .business-card--featured .business-card-body h3{
+  .business-card-body h3{
     font-size: 18px;
   }
 
@@ -3148,10 +3106,6 @@ select:focus-visible,
   font-weight: 700;
 }
 
-.business-modal-gallery{
-  margin: 24px 0 26px;
-}
-
 .business-modal-list{
   list-style: none;
   padding: 0;
@@ -3207,10 +3161,11 @@ select:focus-visible,
 }
 /* =========================================================
    BUSINESS MODAL – EGYKÉPES BLOKK
+   A szöveges tartalom után a modal alján jelenik meg.
 ========================================================= */
 
 .business-modal-image{
-  margin: 4px 0 28px;
+  margin: 28px 0 0;
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: #e9eef5;
@@ -3227,178 +3182,29 @@ select:focus-visible,
   background: #e9eef5;
 }
 
+/* Amíg nincs feltöltve kép: szaggatott keretes helykitöltő */
+.business-modal-image--placeholder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2f7;
+  border: 2px dashed rgba(0, 63, 125, 0.28);
+  box-shadow: none;
+}
+
+.business-modal-image--placeholder::before{
+  content: "Kép hamarosan";
+  color: var(--color-primary-light);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 @media (max-width: 768px){
   .business-modal-image{
-    margin: 0 0 22px;
+    margin: 22px 0 0;
     border-radius: var(--radius-lg);
     aspect-ratio: 4 / 3;
-  }
-}
-/* =========================================================
-   BUSINESS MODAL – LAPOZHATÓ KÉPGALÉRIA / SLIDER
-========================================================= */
-
-.business-modal-slider{
-  margin: 24px 0 30px;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.business-modal-slider-frame{
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  background: #e9eef5;
-  box-shadow: var(--shadow-card);
-}
-
-/* Minden slide pontosan a frame-ben marad */
-.business-modal-slide{
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  transform: none;
-  transition:
-    opacity 0.35s ease,
-    visibility 0.35s ease;
-}
-
-.business-modal-slide.is-active{
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-  z-index: 1;
-}
-
-/* A kép ne csorduljon túl, a teljes illusztráció/fotó látszódjon */
-.business-modal-slide img{
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  background: #e9eef5;
-}
-
-/* Ha inkább teljesen kitöltős/vágott képet szeretnél, erre cserélhető:
-.business-modal-slide img{
-  object-fit: cover;
-}
-*/
-
-.business-slider-btn{
-  position: absolute;
-  top: 50%;
-  z-index: 5;
-  width: 42px;
-  height: 42px;
-  border: none;
-  border-radius: 999px;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.46);
-  color: var(--color-white);
-  font-size: 32px;
-  line-height: 1;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  transition:
-    background var(--transition-fast),
-    transform var(--transition-fast);
-}
-
-.business-slider-btn:hover{
-  background: rgba(0,0,0,0.68);
-  transform: translateY(-50%) scale(1.05);
-}
-
-.business-slider-btn--prev{
-  left: 14px;
-}
-
-.business-slider-btn--next{
-  right: 14px;
-}
-
-.business-slider-dots{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-/* Ugyanaz a megoldás, mint a timeline tickeknél: a gomb a 24x24-es
-   érinthető felület, a látható pöttyöt a ::before rajzolja. Korábban
-   maga a gomb volt 9x9 px. */
-.business-slider-dot{
-  width: var(--hit-target);
-  height: var(--hit-target);
-  display: grid;
-  place-items: center;
-  background: transparent;
-  border: none;
-  padding: 0;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.business-slider-dot::before{
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  /* Erősebb alfa, mint korábban – a 0.25 fehér háttéren alig látszott */
-  background: rgba(0, 63, 125, 0.55);
-  transition:
-    width var(--transition-fast),
-    background var(--transition-fast);
-}
-
-/* Az aktív pont pirula alakú – a gomb szélesebb, a pötty benne nyúlik meg */
-.business-slider-dot.is-active{
-  width: 34px;
-}
-
-.business-slider-dot.is-active::before{
-  width: 24px;
-  background: var(--color-primary-light);
-}
-
-/* Mobil finomítás */
-@media (max-width: 768px){
-  .business-modal-slider{
-    margin: 18px 0 24px;
-  }
-
-  .business-modal-slider-frame{
-    aspect-ratio: 4 / 3;
-    border-radius: var(--radius-lg);
-  }
-
-  .business-slider-btn{
-    width: 36px;
-    height: 36px;
-    font-size: 26px;
-  }
-
-  .business-slider-btn--prev{
-    left: 10px;
-  }
-
-  .business-slider-btn--next{
-    right: 10px;
   }
 }
 /* =========================================================
@@ -5108,7 +4914,7 @@ select:focus-visible,
 .career-page {
   max-width: var(--container);
   margin: 0 auto 100px;
-  padding: calc(var(--navbar-height) + 72px) 20px 0;
+  padding: calc(var(--navbar-height) + 24px) 20px 0;
 }
 
 /* =========================================================
@@ -5117,7 +4923,7 @@ select:focus-visible,
 
 .career-hero {
   margin: 0 auto 46px;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-sm);
   overflow: hidden;
   background: #e9eef5;
   box-shadow: var(--shadow-soft);
@@ -5126,10 +4932,9 @@ select:focus-visible,
 
 .career-hero img {
   width: 100%;
-  height: clamp(290px, 38vw, 460px);
+  aspect-ratio: 3 / 2;
   display: block;
-  object-fit: fill;
-  object-position: center;
+  object-fit: contain;
 }
 
 /* =========================================================
@@ -5577,7 +5382,7 @@ select:focus-visible,
 @media (max-width: 1024px) {
   .career-page {
     margin-bottom: 85px;
-    padding-top: calc(var(--navbar-height) + 58px);
+    padding-top: calc(var(--navbar-height) + 20px);
   }
 
   .career-intro {
@@ -5607,16 +5412,12 @@ select:focus-visible,
 @media (max-width: 768px) {
   .career-page {
     margin-bottom: 70px;
-    padding: calc(var(--navbar-height) + 42px) 14px 0;
+    padding: calc(var(--navbar-height) + 16px) 14px 0;
   }
 
   .career-hero {
     margin-bottom: 30px;
-    border-radius: var(--radius-lg);
-  }
-
-  .career-hero img {
-    height: clamp(220px, 58vw, 320px);
+    border-radius: var(--radius-sm);
   }
 
   .career-intro {
@@ -5740,10 +5541,6 @@ select:focus-visible,
     padding-right: 12px;
   }
 
-  .career-hero img {
-    height: 210px;
-  }
-
   .career-intro-text {
     padding: 26px 18px;
   }
@@ -5846,6 +5643,9 @@ select:focus-visible,
   object-fit: contain;
 }
 
+/* A Partnereink oldalon a kártyacím h2 (ott ez az első szint a h1 alatt),
+   a Pályázat oldalon h3 (ott egy h2 szekción belül van) – egyformán nézzenek ki. */
+.partner-card h2,
 .partner-card h3{
   color: var(--color-primary);
   font-weight: 900;

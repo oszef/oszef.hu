@@ -139,6 +139,17 @@
    5. HÍREK / BLOG TABOK
 ========================================================= */
 
+/* A tab-kapcsoló és a magazin archívum linkje egy sorban áll.
+   A sor viszi a lenti térközt, hogy a tabs saját margója ne
+   tolja el egymáshoz képest a két elemet. */
+.news-blog-tabs-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
 .news-blog-tabs {
   display: inline-flex;
   gap: 6px;
@@ -147,6 +158,53 @@
   border-radius: 999px;
   background: #e9eef5;
   border: 1px solid rgba(0, 63, 125, 0.08);
+}
+
+.news-blog-tabs-row .news-blog-tabs {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   5/B. KORÁBBI SZEFO MAGAZINOK LINK
+========================================================= */
+
+.news-blog-magazine-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 54px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: 1px solid rgba(0, 63, 125, 0.16);
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.news-blog-magazine-link::before {
+  content: "";
+  width: 14px;
+  height: 18px;
+  flex: 0 0 auto;
+  border-radius: 2px 3px 3px 2px;
+  background: var(--color-primary-light);
+  box-shadow: inset -3px 0 0 rgba(255, 255, 255, 0.55);
+}
+
+.news-blog-magazine-link:hover,
+.news-blog-magazine-link:focus-visible {
+  background: #eef3f9;
+  border-color: rgba(0, 63, 125, 0.32);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 63, 125, 0.12);
 }
 
 .news-blog-tab {
@@ -515,6 +573,11 @@
     font-size: 14px;
   }
 
+  .news-blog-tabs-row {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
   .news-blog-tabs {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -526,6 +589,14 @@
     width: 100%;
     min-height: 42px;
     padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  /* Keskeny kijelzőn a magazin link a tabok alá, teljes szélességben kerül. */
+  .news-blog-magazine-link {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
     font-size: 14px;
   }
 
@@ -616,14 +687,16 @@
   .news-blog-card-image img,
   .news-blog-tab,
   .news-blog-filter,
-  .news-blog-read-more {
+  .news-blog-read-more,
+  .news-blog-magazine-link {
     transition: none !important;
   }
 
   .news-blog-card:hover,
   .news-blog-tab:hover,
   .news-blog-filter:hover,
-  .news-blog-read-more:hover {
+  .news-blog-read-more:hover,
+  .news-blog-magazine-link:hover {
     transform: none !important;
   }
 }
@@ -771,4 +844,14 @@
     font-size: 15px;
     line-height: 1.7;
   }
+}
+
+/* =========================================================
+   17. VISSZA A FŐOLDALRA
+   A .mission-back / .mission-back-link a style.css-ből jön; itt csak
+   a tartalmi szekció alatti térközt állítjuk.
+========================================================= */
+
+.news-blog-page .mission-back {
+  margin-top: 40px;
 }
