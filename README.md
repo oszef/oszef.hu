@@ -4,7 +4,7 @@ Szia! Ez a SZEFO honlapjának a "gépterme" - itt találsz mindent, amiből az
 oldal felépül, és pár szót arról is, hogyan kell vele bánni. Igyekeztem
 úgy megírni, hogy az is értse, aki nem programozó.
 
-## Miből épül fel az oldal?
+## Miből épül fel az oldal?!
 
 A legegyszerűbb technikából: sima HTML, CSS és JavaScript fájlokból, nincs
 mögötte adatbázis és nincs "szerver oldali" kód, ami háttérben futna. Ez
@@ -23,7 +23,8 @@ háttér nélkül is módosítható és költségmentesen üzemeltethető legyen
   `index.html`-je van (pl. `hu/kapcsolat/index.html`).
 - `css/` - a kinézetért felelős stíluslapok. A `style.css` a közös, fő
   stíluslap, a többi (`popup.css`, `news_blog.css`, `pdf_style.css`,
-  `search_style.css`) egy-egy konkrét oldalrészhez tartozik.
+  `search_style.css`, `magazin.css`) egy-egy konkrét oldalrészhez
+  tartozik.
 - `js/` - amitől "életre kel" az oldal (menü, popup, keresés stb.), lásd
   lentebb részletesen.
 - `img/` - a képek, témák szerint almappákba rendezve, webp formátumban
@@ -159,8 +160,8 @@ bele:
 }
 ```
 
-Ez a minta már használatban van a `.timeline-tick` és a
-`.business-slider-dot` elemeknél, onnan lehet ellesni.
+Ez a minta már használatban van a `.timeline-tick` elemnél, onnan
+lehet ellesni.
 
 **3. Ami kicsúszik a képernyőről, azt `inert`-té kell tenni.** A
 kihúzható menü zárt állapotban is a DOM-ban marad, ezért a `script.js`
@@ -176,5 +177,12 @@ ki a panelből, és csak utána állítsuk be az `inert`-et.
 - Az oldal egynyelvű (magyar). A `hu/` mappaszerkezet elvben lehetővé
   tenné más nyelvek felvételét is, de ahhoz a menüt is bővíteni kellene.
 - A pdf dokumentumok egy része nem értelmezhető a képernyőfelovasoknak.
-
-
+- A `hu/szefo_magazin/` a SZEFO Magazin korábbi lapszámainak archívuma.
+  A régi WordPress oldal `szefo-magazin` aloldalát váltja ki, a
+  lapszámokat megőrzési kötelezettség miatt tartjuk elérhetőn. A nyolc
+  PDF a `doc/szefo_magazin/` mappában van, együtt kb. 139 MB - ez a
+  repó legnagyobb tétele, feltöltésnél és klónozásnál érdemes számolni
+  vele. A borítók (`img/szefo_magazin/`) a PDF-ek első oldalából
+  készültek, ezért nem a régi oldal gyenge minőségű képei.
+- A kezdőlapi Termékfejlesztés modálban lévő kép aránya/minősége nem
+  túl szerencsés, ezt is érdemes lesz még javítani.
