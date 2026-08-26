@@ -5702,3 +5702,284 @@ select:focus-visible,
   color: var(--color-muted);
   text-align: center;
 }
+
+
+/* =========================================================
+   ASZTALI FELSŐ MENÜSÁV (1025 px felett)
+
+   1024 px-ig marad minden a régiben: hamburger gomb + kicsúszó
+   offcanvas panel. Efölött ugyanaz a markup vízszintes sávvá
+   rendeződik – a HTML-hez nem kellett hozzányúlni, csak az
+   elrendezés más.
+
+   A töréspont a js/script.js ASZTALI_MENU_TORESPONT konstansával
+   van összehangolva. Ha itt változik, ott is át kell írni.
+========================================================= */
+
+@media (min-width: 1025px) {
+
+  /* ---------------------------------------------------------
+     A fix sáv szerepét a .site-header veszi át, mert az fogja
+     össze a logót (.navbar) és a menüt (.offcanvas). Így a kettő
+     egy sorba kerülhet anélkül, hogy a HTML-t átrendeznénk.
+  --------------------------------------------------------- */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 6px 28px;
+    background: rgba(247, 247, 248, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 63, 125, 0.08);
+  }
+
+  /* A navbar már csak a logót tartja; a saját fix pozícióját és
+     hátterét a .site-header vette át. */
+  .navbar {
+    position: static;
+    width: auto;
+    min-height: 0;
+    flex: 0 0 auto;
+    padding: 0;
+    background: none;
+    border-bottom: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .navbar-brand img {
+    height: 44px;
+  }
+
+  /* Hamburger, bezáró gomb és a sötétítő réteg asztalon nem kell. */
+  .menu-toggle,
+  .offcanvas-header,
+  .backdrop {
+    display: none !important;
+  }
+
+  /* ---------------------------------------------------------
+     A kicsúszó panelből vízszintes menüsáv lesz.
+  --------------------------------------------------------- */
+  .offcanvas {
+    position: static;
+    transform: none;
+    width: auto;
+    max-width: none;
+    height: auto;
+    flex: 1 1 auto;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    overflow: visible;
+    visibility: visible;
+    transition: none;
+  }
+
+  .offcanvas-body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+    padding: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    margin: 0;
+  }
+
+  /* A lenyílók ehhez képest pozicionálódnak. */
+  .menu > li {
+    position: relative;
+    border: none;
+  }
+
+  .menu > li > a,
+  .dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    width: auto;
+    padding: 9px 13px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: none;
+    color: var(--color-primary);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .menu > li > a:hover,
+  .dropdown-toggle:hover,
+  .dropdown.open > .dropdown-toggle {
+    background: rgba(0, 63, 125, 0.08);
+    color: var(--color-primary-dark);
+  }
+
+  /* A nyíl lefelé mutat, nem oldalra, mert a panel lefelé nyílik. */
+  .dropdown-toggle .arrow {
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: transform var(--transition-fast);
+  }
+
+  .dropdown.open .arrow {
+    transform: rotate(-90deg);
+  }
+
+  /* ---------------------------------------------------------
+     LENYÍLÓ PANELEK
+     Alapból rejtve, de a DOM-ban maradnak. A visibility: hidden
+     azért kell a display: none helyett, hogy legyen mihez animálni,
+     és hogy a méretük kiszámítható maradjon.
+  --------------------------------------------------------- */
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 1200;
+    display: block;
+    min-width: 250px;
+    max-height: none;
+    margin: 0;
+    padding: 8px;
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    border: 1px solid rgba(0, 63, 125, 0.12);
+    box-shadow: 0 16px 38px rgba(0, 63, 125, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    /* A visibility nem folytonos érték, ezért nem időtartamot kap, hanem
+       késleltetést: záráskor csak a halványodás végén vált hidden-re, így
+       az animáció végigfut, utána viszont tényleg kikerül a tabsorrendből. */
+    transition:
+      opacity var(--transition-fast),
+      transform var(--transition-fast),
+      visibility 0s linear 0.25s;
+  }
+
+  .dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    /* Nyitáskor viszont azonnal láthatóvá kell válnia, különben a
+       megjelenő panel a fade alatt még kattinthatatlan lenne. */
+    transition:
+      opacity var(--transition-fast),
+      transform var(--transition-fast),
+      visibility 0s linear 0s;
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    padding: 9px 12px;
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    white-space: normal;
+  }
+
+  .dropdown-menu li a:hover {
+    background: var(--color-surface-alt);
+    color: var(--color-primary);
+  }
+
+  /* ---------------------------------------------------------
+     KÉTHASÁBOS LENYÍLÓ
+     A Céginformációk 14 elemű – egy hasábban ~600 px magas lenne,
+     ami kisebb laptopon lelógna a képernyőről. A :has() alapján
+     magától kéthasábos lesz minden 10-nél több elemű lenyíló, így
+     nem kell külön osztályt tenni a HTML-be. Ahol a böngésző nem
+     ismeri a :has()-t, ott egyhasábos marad – az is használható.
+  --------------------------------------------------------- */
+  .dropdown-menu:has(li:nth-child(10)) {
+    width: 540px;
+    columns: 2;
+    column-gap: 6px;
+  }
+
+  .dropdown-menu:has(li:nth-child(10)) li {
+    break-inside: avoid;
+  }
+
+  /* A jobb szélen álló menüpontok panelje jobbra igazodjon,
+     különben kilógna a képernyőről. */
+  .menu > li:nth-last-child(-n + 3) .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+
+  /* ---------------------------------------------------------
+     KERESÉS GOMB a menü mellett
+  --------------------------------------------------------- */
+  .search--button-only {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+
+  .search-link {
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+}
+
+/* A globális csökkentett-mozgás szabály csak a transition-duration-t
+   nullázza, a transition-delay-t nem. A lenyíló záró átmenete viszont
+   késleltetéssel rejti el a panelt, így ott a késleltetés életben
+   maradna: a panel negyed másodpercig láthatatlanul, de fókuszálhatóan
+   bennragadna a tabsorrendben. Ezért itt teljesen kikapcsoljuk. */
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-menu,
+  .dropdown.open .dropdown-menu {
+    transition: none !important;
+  }
+}
+
+/* Szűkebb asztali képernyőn (1025–1240 px) összébb húzzuk a menüt,
+   hogy a 7 menüpont + keresés + logó egy sorban maradjon. */
+@media (min-width: 1025px) and (max-width: 1240px) {
+  .site-header {
+    gap: 12px;
+    padding: 6px 16px;
+  }
+
+  .offcanvas-body {
+    gap: 10px;
+  }
+
+  .menu > li > a,
+  .dropdown-toggle {
+    padding: 8px 9px;
+    font-size: 14px;
+  }
+
+  .search-link {
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+
+  .navbar-brand img {
+    height: 38px;
+  }
+}

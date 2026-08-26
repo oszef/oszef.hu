@@ -123,6 +123,17 @@ function scrollToElement(element, offset = 80) {
    1. OFFCANVAS MENÜ
 ========================================================= */
 
+/*
+   Asztali nézetben (1025 px felett) a menü vízszintes sávban ül a logó
+   mellett: nincs hamburger, nincs kicsúszó panel, a lenyílók lefelé
+   nyílnak. Alatta marad a kicsúszó offcanvas.
+
+   A töréspont a style.css `min-width: 1025px` szabályával van
+   összehangolva – ha ott változik, ezt is át kell írni, különben a
+   kettő szétcsúszik.
+*/
+const ASZTALI_MENU_TORESPONT = window.matchMedia("(min-width: 1025px)");
+
 function initOffcanvasMenu() {
   const menuToggle = qs("#menuToggle");
   const offcanvas = qs("#offcanvasMenu");
@@ -134,16 +145,21 @@ function initOffcanvasMenu() {
   const dropdownButtons = qsa(".dropdown-toggle", offcanvas);
   const menuLinks = qsa(".menu a", offcanvas);
 
+  const asztali = () => ASZTALI_MENU_TORESPONT.matches;
+
   /*
-     A zárt panel csak kicsúszik a képernyőről, de a DOM-ban marad,
-     így a benne lévő linkek alapból fókuszálhatók maradnának:
+     Mobilon a zárt panel csak kicsúszik a képernyőről, de a DOM-ban
+     marad, így a benne lévő linkek alapból fókuszálhatók maradnának:
      billentyűzettel végig lehetne tabolni a láthatatlan menüponton.
      Az inert egyszerre veszi ki az elemet a tabsorrendből és
-     a képernyőolvasó elől. Az aria-hidden mellette marad, a régebbi
-     böngészőkre pedig a style.css visibility szabálya a tartalék.
+     a képernyőolvasó elől.
+
+     Asztalon viszont a menü végig látható, ott az inert épp a
+     billentyűzetes használatot lehetetlenítené el – ezért ott soha
+     nem tesszük rá.
   */
   function setMenuInert(isInert) {
-    if (isInert) {
+    if (isInert && !asztali()) {
       offcanvas.setAttribute("inert", "");
     } else {
       offcanvas.removeAttribute("inert");
@@ -151,6 +167,8 @@ function initOffcanvasMenu() {
   }
 
   function openMenu() {
+    if (asztali()) return;
+
     offcanvas.classList.add("open");
     backdrop.classList.add("show");
 
@@ -164,6 +182,11 @@ function initOffcanvasMenu() {
   }
 
   function closeMenuPanel() {
+    if (asztali()) {
+      closeDropdowns();
+      return;
+    }
+
     // A fókuszt még az inert előtt ki kell hozni, különben a body-ra esik
     if (offcanvas.contains(document.activeElement)) {
       menuToggle.focus({ preventScroll: true });
@@ -181,9 +204,6 @@ function initOffcanvasMenu() {
     closeDropdowns();
   }
 
-  // Induláskor a panel zárva van, tehát inert
-  setMenuInert(!offcanvas.classList.contains("open"));
-
   function closeDropdowns() {
     dropdownButtons.forEach((button) => {
       const dropdown = button.closest(".dropdown");
@@ -194,11 +214,84 @@ function initOffcanvasMenu() {
     });
   }
 
+  /*
+     A töréspont átlépésekor rendet kell rakni: ami mobilon nyitva
+     maradt, az asztali sávban ottragadna, és fordítva – az asztali
+     nézetből érkező aria-hidden="false" mobilon elrejtetlenül hagyná
+     a kicsúszott panelt.
+  */
+  function alkalmazNezet() {
+    closeDropdowns();
+
+    offcanvas.classList.remove("open");
+    backdrop.classList.remove("show");
+    setBodyLocked(false);
+    menuToggle.setAttribute("aria-expanded", "false");
+
+    if (asztali()) {
+      offcanvas.setAttribute("aria-hidden", "false");
+      offcanvas.removeAttribute("inert");
+    } else {
+      offcanvas.setAttribute("aria-hidden", "true");
+      setMenuInert(true);
+    }
+  }
+
+  /*
+     A töréspontot két forrásból is figyeljük. A matchMedia "change"
+     eseménye a szabályos út, de nem minden környezetben sül el
+     megbízhatóan – ha kimarad, az asztali menü inert állapotban
+     ragadna, vagyis billentyűzettel és képernyőolvasóval használhatatlan
+     lenne. A resize csak akkor csinál bármit, ha tényleg átléptük a
+     határt, így nincs fölösleges munka görgetés/átméretezés közben.
+  */
+  let elozoAsztali = asztali();
+
+  function nezetFrissites() {
+    const mostAsztali = asztali();
+    if (mostAsztali === elozoAsztali) return;
+
+    elozoAsztali = mostAsztali;
+    alkalmazNezet();
+  }
+
+  alkalmazNezet();
+  ASZTALI_MENU_TORESPONT.addEventListener("change", nezetFrissites);
+  window.addEventListener("resize", nezetFrissites);
+
+  /*
+     Harmadik háló. Ha a fenti két esemény valamiért kimarad, az asztali
+     menü inert állapotban ragadna: látszik, de billentyűzettel nem
+     elérhető és a képernyőolvasó sem látja. A ResizeObserver a
+     gyökérelem méretét figyeli, ami a nézetablakkal együtt változik, és
+     megbízhatóbban jelez, mint a resize esemény. A nezetFrissites úgyis
+     kilép, ha nem történt tényleges töréspontváltás.
+  */
+  if (typeof ResizeObserver === "function") {
+    new ResizeObserver(nezetFrissites).observe(document.documentElement);
+  }
+
   menuToggle.addEventListener("click", openMenu);
   closeMenu.addEventListener("click", closeMenuPanel);
   backdrop.addEventListener("click", closeMenuPanel);
 
   document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" && !offcanvas.classList.contains("open")) return;
+
+    if (asztali()) {
+      // Asztalon az Escape a nyitott lenyílót zárja, és visszaadja
+      // a fókuszt a gombjára, hogy ne vesszen el.
+      if (event.key !== "Escape") return;
+
+      const nyitott = offcanvas.querySelector(".dropdown.open");
+      if (!nyitott) return;
+
+      const gomb = qs(".dropdown-toggle", nyitott);
+      closeDropdowns();
+      gomb?.focus({ preventScroll: true });
+      return;
+    }
+
     if (!offcanvas.classList.contains("open")) return;
 
     if (event.key === "Escape") {
@@ -210,13 +303,29 @@ function initOffcanvasMenu() {
   });
 
   dropdownButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
       const dropdown = button.closest(".dropdown");
       if (!dropdown) return;
 
-      const isOpen = dropdown.classList.toggle("open");
-      button.setAttribute("aria-expanded", String(isOpen));
+      event.stopPropagation();
+
+      const nyit = !dropdown.classList.contains("open");
+
+      // Asztalon egyszerre csak egy lenyíló legyen nyitva, különben
+      // két panel takarná egymást. Mobilon marad a régi viselkedés.
+      if (asztali()) closeDropdowns();
+
+      dropdown.classList.toggle("open", nyit);
+      button.setAttribute("aria-expanded", String(nyit));
     });
+  });
+
+  // Asztalon a sávon kívülre kattintva záruljon a lenyíló.
+  document.addEventListener("click", (event) => {
+    if (!asztali()) return;
+    if (event.target.closest(".dropdown")) return;
+
+    closeDropdowns();
   });
 
   menuLinks.forEach((link) => {

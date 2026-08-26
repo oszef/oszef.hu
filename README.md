@@ -4,7 +4,7 @@ Szia! Ez a SZEFO honlapjának a "gépterme" - itt találsz mindent, amiből az
 oldal felépül, és pár szót arról is, hogyan kell vele bánni. Igyekeztem
 úgy megírni, hogy az is értse, aki nem programozó.
 
-## Miből épül fel az oldal?!
+## Miből épül fel az oldal?
 
 A legegyszerűbb technikából: sima HTML, CSS és JavaScript fájlokból, nincs
 mögötte adatbázis és nincs "szerver oldali" kód, ami háttérben futna. Ez
@@ -33,9 +33,10 @@ háttér nélkül is módosítható és költségmentesen üzemeltethető legyen
 
 ## A JavaScript fájlok, dióhéjban
 
-- `script.js` - a közös logika: a kihúzható (offcanvas) menü, a kezdőlapi
-  és ISO képváltogató (carousel), az idővonal, az üzletági és karrieres
-  felugró ablakok (modálok), a galériák.
+- `script.js` - a közös logika: a menü (asztalon felső sáv, 1024 px-ig
+  kihúzható offcanvas panel), a kezdőlapi és ISO képváltogató (carousel),
+  az idővonal, az üzletági és karrieres felugró ablakok (modálok), a
+  galériák.
 - `news_blog.js` - a Hírek/Blog oldal, benne magával a cikkek szövegével
   is.
 - `search.js` - a keresőoldal logikája.
@@ -112,10 +113,16 @@ akadálymentességi irányelvek) 2.1-es, AA szintű ajánlásai mentén készül
 - nem egy hivatalos, auditált tanúsítvány, de a fontosabb szempontokat
 lefedi:
 
-- A kihúzható menü és a felugró ablakok billentyűzetről is teljesen
-  kezelhetők, a fókusz nem "szökik ki" belőlük, és Escape-re bezáródnak.
-- Amikor a menü zárva van, `inert` állapotba kerül, így véletlenül sem
-  lehet rátabolni.
+- A menü és a felugró ablakok billentyűzetről is teljesen kezelhetők,
+  a fókusz nem "szökik ki" belőlük, és Escape-re bezáródnak. Az asztali
+  menüsávban az Escape a nyitott lenyílót zárja, és visszaadja a fókuszt
+  annak a gombjára.
+- Zárt menüre nem lehet rátabolni. Mobilon ezt az `inert` attribútum
+  intézi, asztalon pedig a `visibility: hidden` a zárt lenyílókon - a
+  védelem ugyanaz, csak más eszközzel, mert az asztali sáv maga végig
+  látható marad.
+- A menü egy `<nav aria-label="Fő navigáció">` landmarkon belül van, így
+  képernyőolvasóval egy lépésben oda lehet ugrani.
 - Minden kattintható elemen jól látható fókuszgyűrű jelenik meg, amikor
   billentyűzettel állsz rá.
 - A vezérlők állapotát (nyitva/zárva, kiválasztva stb.) a képernyőolvasók
@@ -169,6 +176,21 @@ kihúzható menü zárt állapotban is a DOM-ban marad, ezért a `script.js`
 a régebbi böngészők kedvéért). Fontos, hogy a fókuszt mindig előbb hozzuk
 ki a panelből, és csak utána állítsuk be az `inert`-et.
 
+Az `inert` viszont **csak 1024 px-ig** kerül fel, mert afölött a menü
+vízszintes sávban ül és végig látható - ott az `inert` épp a billentyűzetes
+használatot lehetetlenítené el. A töréspont két helyen szerepel, és a
+kettőnek együtt kell mozognia:
+
+- `css/style.css` - `@media (min-width: 1025px)`
+- `js/script.js` - `ASZTALI_MENU_TORESPONT`
+
+**4. A csökkentett mozgás a késleltetésre is vonatkozik.** A globális
+`prefers-reduced-motion` szabály csak a `transition-duration`-t nullázza,
+a `transition-delay`-t nem. Ha egy elem késleltetéssel rejtőzik el (mint
+az asztali lenyílók `visibility`-je), akkor azt külön ki kell kapcsolni,
+különben csökkentett mozgásnál láthatatlanul, de fókuszálhatóan
+bennragadna a tabsorrendben.
+
 ## Amit még érdemes tudni
 
 - Nincs benne semmilyen build eszköz vagy csomagkezelő - ahogy fentebb
@@ -186,3 +208,4 @@ ki a panelből, és csak utána állítsuk be az `inert`-et.
   készültek, ezért nem a régi oldal gyenge minőségű képei.
 - A kezdőlapi Termékfejlesztés modálban lévő kép aránya/minősége nem
   túl szerencsés, ezt is érdemes lesz még javítani.
+
