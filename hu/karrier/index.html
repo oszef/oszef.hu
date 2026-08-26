@@ -20,7 +20,7 @@
   <a class="skip-link" href="#main-content">Tartalom átugrása</a>
   <header class="site-header">
     <!-- NAVBAR -->
-    <nav class="navbar" aria-label="Fő navigáció">
+    <div class="navbar">
       <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
         <img
           src="../../img/logo/szefo_logo.webp"
@@ -40,10 +40,10 @@
       >
         ☰
       </button>
-    </nav>
+    </div>
 
     <!-- OFFCANVAS MENU -->
-    <div class="offcanvas" id="offcanvasMenu" aria-hidden="true">
+    <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
       <div class="offcanvas-header">
         <button
           class="close-btn"
@@ -120,7 +120,7 @@
           </a>
         </div>
       </div>
-    </div>
+    </nav>
 
     <div class="backdrop" id="backdrop" aria-hidden="true"></div>
   </header>
