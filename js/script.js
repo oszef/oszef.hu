@@ -512,7 +512,7 @@ function initCeoBlock() {
       });
 
       openButton.setAttribute("aria-expanded", "true");
-      document.title = "Vezérigazgatói köszöntő | Szegedi SZEFO Közhasznú Nonprofit Zrt.";
+      document.title = "Vezérigazgatói köszöntő | SZEFO Közhasznú Nonprofit Zrt.";
 
       scrollToElement(full, 80);
     }, 300);

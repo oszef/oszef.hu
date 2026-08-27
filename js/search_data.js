@@ -16,7 +16,7 @@ window.SZEFO_SEARCH_INDEX = [
     category: "Főoldal",
     keywords: [
       "SZEFO",
-      "Szegedi SZEFO Közhasznú Nonprofit Zrt.",
+      "SZEFO Közhasznú Nonprofit Zrt.",
       "főoldal",
       "rehabilitációs foglalkoztatás",
       "tevékenységek",
