@@ -202,10 +202,5 @@ bennragadna a tabsorrendben.
 - A `hu/szefo_magazin/` a SZEFO Magazin korábbi lapszámainak archívuma.
   A régi WordPress oldal `szefo-magazin` aloldalát váltja ki, a
   lapszámokat megőrzési kötelezettség miatt tartjuk elérhetőn. A nyolc
-  PDF a `doc/szefo_magazin/` mappában van, együtt kb. 139 MB - ez a
-  repó legnagyobb tétele, feltöltésnél és klónozásnál érdemes számolni
-  vele. A borítók (`img/szefo_magazin/`) a PDF-ek első oldalából
-  készültek, ezért nem a régi oldal gyenge minőségű képei.
-- A kezdőlapi Termékfejlesztés modálban lévő kép aránya/minősége nem
-  túl szerencsés, ezt is érdemes lesz még javítani.
+  PDF a `doc/szefo_magazin/` mappában van. A borítók (`img/szefo_magazin/`) a PDF-ek első oldalából készültek, ezért nem a régi oldal gyenge minőségű képei.
 
