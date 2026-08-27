@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/nattodvn/devel
+    - export DEPLOYPATH=/home/nattodvn/public_html
     - /bin/cp -R * $DEPLOYPATH
