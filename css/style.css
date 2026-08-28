@@ -621,6 +621,18 @@ select:focus-visible,
     color: var(--color-primary-light);
 }
 
+/* ---------------------------------------------------------
+   AKTUÁLIS OLDAL A MENÜBEN
+   Az aria-current="page" a képernyőolvasónak mondja be, hol jár
+   a látogató; szemmel a sötétebb betűszín jelzi ugyanezt. Itt a
+   menüpontok alapszíne --color-text, ezért a sötétkék emel ki.
+--------------------------------------------------------- */
+.menu > li > a[aria-current="page"],
+.dropdown-menu li a[aria-current="page"],
+.dropdown:has(a[aria-current="page"]) > .dropdown-toggle {
+    color: var(--color-primary);
+}
+
 
 /* Offcanvas kereső – csak gombos változat */
 .search--button-only{
@@ -5900,6 +5912,17 @@ select:focus-visible,
   .dropdown-menu li a:hover {
     background: var(--color-surface-alt);
     color: var(--color-primary);
+  }
+
+  /* ---------------------------------------------------------
+     AKTUÁLIS OLDAL A MENÜBEN – asztali
+     A vízszintes sávban a menüpontok alapszíne már --color-primary,
+     ezért ott a fekete az egyetlen sötétebb árnyalat. A lenyílók
+     elemei --color-text alapon maradnak sötétkékkel kiemelve.
+  --------------------------------------------------------- */
+  .menu > li > a[aria-current="page"],
+  .dropdown:has(a[aria-current="page"]) > .dropdown-toggle {
+    color: var(--color-black);
   }
 
   /* ---------------------------------------------------------

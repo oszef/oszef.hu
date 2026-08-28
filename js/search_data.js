@@ -16,7 +16,7 @@ window.SZEFO_SEARCH_INDEX = [
     category: "Főoldal",
     keywords: [
       "SZEFO",
-      "SZEFO Közhasznú Nonprofit Zrt.",
+      "Szegedi SZEFO Közhasznú Nonprofit Zrt.",
       "főoldal",
       "rehabilitációs foglalkoztatás",
       "tevékenységek",
@@ -59,7 +59,7 @@ window.SZEFO_SEARCH_INDEX = [
     id: "kapcsolat",
     title: "Kapcsolat",
     url: "../kapcsolat/index.html",
-    category: "Rólunk",
+    category: "Információ",
     keywords: [
       "kapcsolat",
       "elérhetőség",
@@ -421,7 +421,7 @@ window.SZEFO_SEARCH_INDEX = [
     id: "e-hulladek",
     title: "E-hulladék",
     url: "../e-hulladek/index.html",
-    category: "Információ",
+    category: "Rólunk",
     keywords: [
       "e-hulladék",
       "elektronikai hulladék",
