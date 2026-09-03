@@ -1195,3 +1195,23 @@ function initCareerJobsModal() {
     trapFocus(event, modal);
   });
 }
+
+/* =========================================================
+   COPYRIGHT ÉVSZÁM AUTOMATIKUS FRISSÍTÉSE
+   A láblécben a HTML tartalmazza az évszámot, így JavaScript
+   nélkül is látszik. Ez a blokk az aktuális évre állítja.
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateFooterYear();
+});
+
+function updateFooterYear() {
+  const currentYear = String(new Date().getFullYear());
+
+  document.querySelectorAll(".site-footer-year").forEach((element) => {
+    if (element.textContent.trim() !== currentYear) {
+      element.textContent = currentYear;
+    }
+  });
+}
