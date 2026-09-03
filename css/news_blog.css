@@ -7,6 +7,18 @@
 ========================================================= */
 
 /* =========================================================
+   0. REJTETT ELEMEK
+   A JS a hidden attribútummal kapcsolgatja a blokkokat, de a
+   .news-blog-filters (flex) és .news-blog-grid (grid) saját display
+   értéke erősebb a böngésző [hidden] szabályánál, ezért azok
+   elrejtve is látszottak. Ez állítja helyre a hidden működését.
+========================================================= */
+
+.news-blog-app [hidden] {
+  display: none !important;
+}
+
+/* =========================================================
    1. OLDAL ALAP
 ========================================================= */
 
@@ -498,6 +510,19 @@
   text-align: center;
 }
 
+/* Olyan fül tartalma, amelyhez még egyáltalán nincs feltöltve semmi. */
+.news-blog-placeholder {
+  margin-top: 26px;
+  padding: 40px 24px;
+  border-radius: var(--radius-lg);
+  background: #eef4fb;
+  color: var(--color-primary);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: center;
+}
+
 /* =========================================================
    12. TABLET
 ========================================================= */
@@ -763,18 +788,26 @@
 
 .news-blog-detail-image {
   margin: 0 0 34px;
-  overflow: hidden;
-  border-radius: var(--radius-xl);
-  background: #e9eef5;
-  box-shadow: var(--shadow-card);
-  aspect-ratio: 16 / 8;
 }
 
 .news-blog-detail-image img {
+  display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 8;
   object-fit: cover;
   object-position: center;
+  border-radius: var(--radius-xl);
+  background: #e9eef5;
+  box-shadow: var(--shadow-card);
+}
+
+/* Fotós/forrás megjelölése a kép alatt. */
+.news-blog-image-credit {
+  margin-top: 10px;
+  color: var(--color-soft-text);
+  font-size: 14px;
+  font-style: italic;
+  text-align: right;
 }
 
 .news-blog-detail-content {

@@ -11,180 +11,65 @@
 
 const SZEFO_NEWS_BLOG_CONTENT = [
   {
-    id: "kozossegi-esemeny",
+    id: "gal-ferenc-egyuttmukodes",
     type: "news",
-    title: "Közösségi esemény a SZEFO-nál",
-    date: "2026. június 12.",
-    category: "kozosseg",
-    categoryLabel: "Közösség",
-    image: "../../img/hirek/hir/hir-1.webp",
-    excerpt:
-      "Munkatársaink közös programon vettek részt, amely erősítette az összetartozást és a vállalati közösséget.",
-    featured: true,
-    content: [
-      {
-        heading: "Közösség és összetartozás",
-        paragraphs: [
-          "A SZEFO életében kiemelten fontosak azok az alkalmak, amelyek erősítik a munkatársak közötti kapcsolatot és a közös vállalati értékeket.",
-          "A program célja az volt, hogy a mindennapi munka mellett lehetőséget teremtsen a találkozásra, beszélgetésre és közös élmények megélésére."
-        ]
-      },
-      {
-        heading: "Értékteremtő közösség",
-        paragraphs: [
-          "A közösségi események hozzájárulnak ahhoz, hogy a munkatársak ne csak munkahelyként, hanem támogató közösségként is tekintsenek a SZEFO-ra.",
-          "A vállalat számára a szakmai teljesítmény mellett az emberi méltóság, az elfogadás és az együttműködés is meghatározó érték."
-        ]
-      }
-    ]
-  },
-  {
-    id: "gyartasi-fejlesztesek",
-    type: "news",
-    title: "Új fejlesztések a gyártási folyamatokban",
-    date: "2026. május 28.",
+    title: "Stratégiai partnerség a jövő könnyűipari szakembereiért",
+    date: "2026. január 12.",
     category: "ceges",
     categoryLabel: "Céges hírek",
-    image: "../../img/hirek/hir/hir-2.webp",
+    image: "../../img/hirek/hir/gal-ferenc-egyuttmukodes.webp",
+    imageCredit: "Fotó: Gémes Sándor",
     excerpt:
-      "A modern technológiai megoldások támogatják a hatékonyabb és pontosabb működést.",
-    content: [
-      {
-        heading: "Modernizáció a mindennapi működésben",
-        paragraphs: [
-          "A gyártási folyamatok fejlesztése hozzájárul a stabilabb, átláthatóbb és pontosabb munkavégzéshez.",
-          "A korszerű megoldások célja, hogy a vállalat tovább erősítse szakmai hátterét és versenyképességét."
-        ]
-      },
-      {
-        heading: "Minőség és hatékonyság",
-        paragraphs: [
-          "A fejlesztések támogatják a minőségbiztosítást, a hatékonyabb munkaszervezést és a megrendelői igényekhez való rugalmas alkalmazkodást."
-        ]
-      }
-    ]
-  },
-  {
-    id: "szakmai-program",
-    type: "news",
-    title: "Szakmai program és üzemlátogatás",
-    date: "2026. április 18.",
-    category: "esemeny",
-    categoryLabel: "Események",
-    image: "../../img/hirek/hir/hir-3.webp",
-    excerpt:
-      "Látogatóink betekintést nyerhettek a SZEFO tevékenységeibe, üzemegységeibe és értékteremtő munkájába.",
-    content: [
-      {
-        heading: "Betekintés a működésbe",
-        paragraphs: [
-          "A szakmai program lehetőséget adott arra, hogy az érdeklődők közelebbről is megismerjék a SZEFO tevékenységeit.",
-          "A látogatás során bemutatásra kerültek azok a folyamatok, amelyek a vállalat mindennapi értékteremtő munkáját támogatják."
-        ]
-      },
-      {
-        heading: "Szakmai párbeszéd",
-        paragraphs: [
-          "Az esemény fontos alkalom volt a tapasztalatcserére, a szakmai kapcsolatok erősítésére és a rehabilitációs foglalkoztatás értékeinek bemutatására."
-        ]
-      }
-    ]
-  },
-  {
-    id: "rehabilitacios-foglalkoztatas-blog",
-    type: "blog",
-    title: "Miért fontos a rehabilitációs foglalkoztatás?",
-    date: "2026. május 10.",
-    category: "szakmai",
-    categoryLabel: "Szakmai blog",
-    image: "../../img/hirek/blog/blog-1.webp",
-    excerpt:
-      "A rehabilitációs foglalkoztatás társadalmi és emberi jelentőségéről közérthetően.",
+      "A Gál Ferenc Egyetem és a Szegedi SZEFO zrt. 2026. január 9-én Stratégiai együttműködési megállapodást írt alá.",
     featured: true,
     content: [
       {
-        heading: "Több mint munkahely",
         paragraphs: [
-          "A rehabilitációs foglalkoztatás nem csupán munkalehetőséget jelent, hanem társadalmi részvételt, önállóságot és megbecsülést is.",
-          "Egy befogadó munkahely lehetőséget ad arra, hogy a megváltozott munkaképességű emberek értékteremtő módon kapcsolódjanak a közösséghez."
-        ]
-      },
-      {
-        heading: "Stabilitás és emberi méltóság",
-        paragraphs: [
-          "A kiszámítható, támogató munkakörnyezet hozzájárul az életminőség javításához, az önbizalom erősödéséhez és a hosszú távú társadalmi integrációhoz."
-        ]
-      }
-    ]
-  },
-  {
-    id: "fenntarthatosag-blog",
-    type: "blog",
-    title: "Fenntarthatóság a mindennapi működésben",
-    date: "2026. április 22.",
-    category: "fenntarthatosag",
-    categoryLabel: "Fenntarthatóság",
-    image: "../../img/hirek/blog/blog-2.webp",
-    excerpt:
-      "Hogyan jelenhet meg a felelős működés egy modern rehabilitációs vállalat életében?",
-    content: [
-      {
-        heading: "Felelős működés",
-        paragraphs: [
-          "A fenntartható működés a vállalati gondolkodás fontos része: egyszerre jelenti az erőforrások tudatos használatát, a minőségi munkavégzést és a társadalmi felelősségvállalást.",
-          "Egy modern vállalat számára a fenntarthatóság nem különálló cél, hanem a mindennapi döntések része."
-        ]
-      },
-      {
-        heading: "Hosszú távú szemlélet",
-        paragraphs: [
-          "A stabil, értékteremtő működéshez olyan megoldásokra van szükség, amelyek egyszerre támogatják a gazdasági, környezeti és társadalmi szempontokat."
-        ]
-      }
-    ]
-  },
-  {
-    id: "mindennapi-tortenetek-blog",
-    type: "blog",
-    title: "Mindennapi történetek egy befogadó munkahelyről",
-    date: "2026. március 15.",
-    category: "tortenetek",
-    categoryLabel: "Történetek",
-    image: "../../img/hirek/blog/blog-3.webp",
-    excerpt:
-      "Emberi történetek, közösségi értékek és mindennapi tapasztalatok egy értékteremtő vállalat életéből.",
-    content: [
-      {
-        heading: "A mindennapok értéke",
-        paragraphs: [
-          "Egy befogadó munkahely ereje a mindennapi együttműködésekben, apró sikerekben és közös célokban mutatkozik meg.",
-          "A SZEFO közössége számára fontos, hogy minden munkatárs értékes részese legyen a vállalat működésének."
-        ]
-      },
-      {
-        heading: "Közös célok",
-        paragraphs: [
-          "A közös munka, a szakmai támogatás és az egymás iránti figyelem olyan alapot teremt, amely hosszú távon is erősíti a vállalati közösséget."
+          "A Gál Ferenc Egyetem és a Szegedi SZEFO zrt. 2026. január 9-én Stratégiai együttműködési megállapodást írt alá. A Gál Ferenc Egyetemet Prof. Dr. Dux László rektor és Tóth József kancellár képviselte, a Szegedi SZEFO zrt.-t Mérész Attila vezérigazgató.",
+          "Az együttműködés, partnerség elsődleges célja a textil- és könnyűipari szakképzés erősítése, a piacképes tudással rendelkező szakemberhiány pótlása, az elméleti tudás és a gyakorlati szakmai tapasztalat szorosabb összekapcsolása, valamint a tanulók közvetlen bekapcsolása a piaci alapú termelési folyamatokba a duális képzési modell keretein belül.",
+          "A megállapodás értelmében a 2026/2027-es tanévtől kezdődően a Szegedi SZEFO zrt. korszerűen felszerelt gyártóegységeiben tölthetik szakmai gyakorlatukat. Itt nemcsak a legmodernebb varrástechnológiai eljárásokat sajátíthatják el, hanem valós ipari környezetben ismerhetik meg a gyártástervezés, a minőségbiztosítás és a fenntartható divatipar kihívásait."
         ]
       }
     ]
   }
 ];
 
-const NEWS_BLOG_FILTERS = {
-  news: [
-    { id: "all", label: "Összes hír" },
-    { id: "ceges", label: "Céges hírek" },
-    { id: "kozosseg", label: "Közösség" },
-    { id: "esemeny", label: "Események" }
-  ],
-  blog: [
-    { id: "all", label: "Összes blog" },
-    { id: "szakmai", label: "Szakmai blog" },
-    { id: "fenntarthatosag", label: "Fenntarthatóság" },
-    { id: "tortenetek", label: "Történetek" }
-  ]
+/* A szűrők címkéi. Csak azok jelennek meg, amelyekhez ténylegesen
+   tartozik tartalom - így nem marad "üres" szűrőgomb az oldalon. */
+const NEWS_BLOG_CATEGORY_LABELS = {
+  news: {
+    all: "Összes hír",
+    ceges: "Céges hírek",
+    kozosseg: "Közösség",
+    esemeny: "Események"
+  },
+  blog: {
+    all: "Összes blog",
+    szakmai: "Szakmai blog",
+    fenntarthatosag: "Fenntarthatóság",
+    tortenetek: "Történetek"
+  }
 };
+
+function getAvailableFilters(type) {
+  const labels = NEWS_BLOG_CATEGORY_LABELS[type] || {};
+  const used = new Set(
+    SZEFO_NEWS_BLOG_CONTENT.filter((item) => item.type === type).map(
+      (item) => item.category
+    )
+  );
+
+  if (!used.size) return [];
+
+  return [
+    { id: "all", label: labels.all || "Összes" },
+    ...[...used].map((id) => ({ id, label: labels[id] || id }))
+  ];
+}
+
+function hasContentOfType(type) {
+  return SZEFO_NEWS_BLOG_CONTENT.some((item) => item.type === type);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   initNewsBlogPage();
@@ -199,6 +84,7 @@ function initNewsBlogPage() {
   const detailContainer = document.querySelector("[data-news-blog-detail]");
   const emptyState = document.querySelector("[data-news-blog-empty]");
   const searchInput = document.querySelector("[data-news-blog-search]");
+  const placeholder = document.querySelector("[data-news-blog-placeholder]");
 
   if (
     !app ||
@@ -233,6 +119,21 @@ if (searchInput && initialSearch) {
       renderDetail(activeDetailId);
       return;
     }
+
+    /* Ha az adott típushoz (pl. blog) még egyáltalán nincs tartalom,
+       a "nincs találat" helyett a feltöltés alatti üzenetet mutatjuk. */
+    if (!hasContentOfType(activeType)) {
+      detailContainer.hidden = true;
+      featuredContainer.hidden = true;
+      resultsContainer.hidden = true;
+      filtersContainer.hidden = true;
+      emptyState.hidden = true;
+
+      if (placeholder) placeholder.hidden = false;
+      return;
+    }
+
+    if (placeholder) placeholder.hidden = true;
 
     const items = getFilteredItems();
 
@@ -273,7 +174,7 @@ if (searchInput && initialSearch) {
   }
 
   function renderFilters() {
-    const filters = NEWS_BLOG_FILTERS[activeType] || [];
+    const filters = getAvailableFilters(activeType);
 
     filtersContainer.innerHTML = filters
       .map((filter) => {
@@ -352,6 +253,8 @@ if (searchInput && initialSearch) {
     resultsContainer.hidden = true;
     filtersContainer.hidden = true;
     emptyState.hidden = true;
+
+    if (placeholder) placeholder.hidden = true;
 
     detailContainer.hidden = false;
     detailContainer.innerHTML = createDetailView(item);
@@ -477,9 +380,15 @@ function createContentCard(item) {
 function createDetailView(item) {
   const contentHtml = item.content
     .map((section) => {
+      /* Az alcím opcionális: ha a forrásszöveg nem tartalmaz alcímet,
+         nem teszünk bele üres <h3>-at. */
+      const headingHtml = section.heading
+        ? `<h3>${escapeHtml(section.heading)}</h3>`
+        : "";
+
       return `
         <section class="news-blog-detail-section">
-          <h3>${escapeHtml(section.heading)}</h3>
+          ${headingHtml}
           ${section.paragraphs
             .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
             .join("")}
@@ -487,6 +396,10 @@ function createDetailView(item) {
       `;
     })
     .join("");
+
+  const creditHtml = item.imageCredit
+    ? `<figcaption class="news-blog-image-credit">${escapeHtml(item.imageCredit)}</figcaption>`
+    : "";
 
   return `
     <button class="news-blog-back" type="button" data-news-blog-back>
@@ -510,6 +423,7 @@ function createDetailView(item) {
         loading="lazy"
         decoding="async"
       >
+      ${creditHtml}
     </figure>
 
     <div class="news-blog-detail-content">
