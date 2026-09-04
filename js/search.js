@@ -166,7 +166,7 @@ function initSearchPage() {
     }
 
     resultsContainer.innerHTML = results
-      .map((item) => createResultCard(item, query))
+      .map((item) => createResultCard(item))
       .join("");
   }
 
@@ -201,10 +201,38 @@ function initSearchPage() {
 ========================================================= */
 
 function getSearchResults(searchIndex, query) {
+  /* A tokenek a TELJES lekérdezés normalizálása utáni felbontásból
+     származnak (nem a nyers szavak egyenkénti normalizálásából) – így
+     az írásjellel, szóköz nélkül összekötött szavak (pl. "szülő,gondviselő")
+     is helyesen két külön AND-tokenre esnek szét, mert a normalizálás
+     a vesszőt is szóközzé alakítja, mielőtt a felbontás megtörténne. */
   const normalizedQuery = normalizeText(query);
   const queryTokens = normalizedQuery.split(/\s+/).filter(Boolean);
 
   if (!queryTokens.length) return [];
+
+  /* A találati listában az eredeti, ékezetes/nagybetűs alakot mutatjuk:
+     minden tokenhez megkeressük azt a nyers (szóközzel tagolt) szót,
+     amelynek normalizált alakja pontosan megegyezik vele. Ha egy token
+     írásjellel összekötött szavak felbontásából jött létre (nincs ilyen
+     1:1 megfelelő nyers szó), a normalizált alakot mutatjuk – ez a ritka
+     esetben kevésbé szép, de a keresés helyessége nem sérül. */
+  const rawWords = String(query).trim().split(/\s+/).filter(Boolean);
+  const displayByToken = new Map();
+
+  queryTokens.forEach((token) => {
+    if (displayByToken.has(token)) return;
+
+    const rawMatch = rawWords.find((raw) => normalizeText(raw) === token);
+
+    displayByToken.set(token, rawMatch || token);
+  });
+
+  /* A találati szavak felsorolásához (matchDetails) egyedi tokenek
+     kellenek, különben egy kétszer beírt szó (pl. "ház ház") duplikált
+     sorként jelenne meg a kártyán. A pontozás (queryTokens) viszont
+     szándékosan megtartja az esetleges ismétlődést. */
+  const uniqueQueryTokens = [...displayByToken.keys()];
 
   return searchIndex
     .map((item) => {
@@ -217,14 +245,32 @@ function getSearchResults(searchIndex, query) {
       if (!matchesAllTokens) return null;
 
       const score = calculateSearchScore(searchableText, normalizedQuery, queryTokens);
+      const matchDetails = getMatchDetails(searchableText, uniqueQueryTokens, displayByToken);
 
       return {
         ...item,
-        score
+        score,
+        matchDetails
       };
     })
     .filter(Boolean)
     .sort(sortSearchResults);
+}
+
+/* Minden keresett szóhoz megállapítja, az oldal mely mezőiben
+   (cím, kategória, kulcsszó, leírás) fordul elő – ez adja a
+   találati kártyán megjelenő "hol található" felsorolást. */
+function getMatchDetails(searchableText, queryTokens, displayByToken) {
+  return queryTokens.map((token) => {
+    const locations = [];
+
+    if (searchableText.title.includes(token)) locations.push("cím");
+    if (searchableText.category.includes(token)) locations.push("kategória");
+    if (searchableText.keywords.includes(token)) locations.push("kulcsszó");
+    if (searchableText.text.includes(token)) locations.push("leírás");
+
+    return { token, display: displayByToken.get(token) || token, locations };
+  });
 }
 
 function createSearchableText(item) {
@@ -287,11 +333,20 @@ function sortSearchResults(a, b) {
    3. TALÁLATI KÁRTYA LÉTREHOZÁSA
 ========================================================= */
 
-function createResultCard(item, query) {
-  const title = escapeHtml(item.title || "Cím nélküli oldal");
+function createResultCard(item) {
+  const matchDetails = item.matchDetails || [];
+  const tokens = matchDetails.map((detail) => detail.token);
+
+  /* Ha nincs cím, a helyőrző szöveget nem futtatjuk át a kiemelésen –
+     különben egy olyan keresőszó, ami a helyőrző szövegrészletébe esne
+     (pl. "cím"), tévesen kiemelt találatnak tűnne. */
+  const title = item.title
+    ? highlightMatches(item.title, tokens)
+    : escapeHtml("Cím nélküli oldal");
   const category = escapeHtml(item.category || "Oldal");
   const url = escapeAttribute(item.url || "#");
-  const excerpt = escapeHtml(createExcerpt(item.text || item.title || "", query));
+  const excerpt = highlightMatches(createExcerpt(item.text || item.title || "", tokens), tokens);
+  const matchList = createMatchList(matchDetails);
 
   return `
     <article class="search-result-card">
@@ -303,6 +358,8 @@ function createResultCard(item, query) {
 
       <p>${excerpt}</p>
 
+      ${matchList}
+
       <a class="search-result-link" href="${url}">
         Megnyitás
       </a>
@@ -310,28 +367,129 @@ function createResultCard(item, query) {
   `;
 }
 
+/* Felsorolja, hogy a keresett szavak közül melyik hol található
+   (cím, kategória, kulcsszó, leírás) az adott találaton belül. */
+function createMatchList(matchDetails) {
+  const items = matchDetails.filter((detail) => detail.locations.length);
+
+  if (!items.length) return "";
+
+  const rows = items
+    .map((detail) => {
+      const word = escapeHtml(detail.display || detail.token);
+      const locations = detail.locations.map(escapeHtml).join(", ");
+
+      return `<li><span class="search-match-word">${word}</span> – ${locations}</li>`;
+    })
+    .join("");
+
+  return `<ul class="search-result-matches">${rows}</ul>`;
+}
+
 /* =========================================================
-   4. KIVONAT KÉSZÍTÉSE
+   4. SZÖVEG NORMALIZÁLÁSA ÉS POZÍCIÓ-TÉRKÉP
+   Ékezetfüggetlen és kisbetűs kereséshez. A buildNormalizedMap()
+   az EGYETLEN hely, ahol eldől, mi számít normalizálható karakternek –
+   a normalizeText() is ebből képzi az eredményét, hogy a keresési
+   egyezés (normalizeText) és a kiemelés/kivonat pozíciószámítása
+   (buildNormalizedMap) soha ne csúszhasson szét egymástól.
 ========================================================= */
 
-function createExcerpt(text, query) {
+/* Karakterenként végzi el a normalizálást (kisbetűsítés, ékezetek
+   levágása, a nem megengedett karakterek szóközre cserélése, majd az
+   egymást követő szóközök összevonása), és közben megjegyzi minden
+   normalizált karakterhez az eredeti szövegbeli forrás-indexét. Így egy
+   a normalizált szövegben talált egyezés pozíciója pontosan
+   visszavezethető az eredeti szövegre, akkor is, ha írásjelek vagy
+   egymás melletti speciális karakterek miatt a whitespace-összevonás
+   egyébként eltolná a pozíciókat (ez a sima "normalizálás után
+   indexOf" megközelítés hibája lenne). */
+function buildNormalizedMap(source) {
+  const normalizedChars = [];
+  const sourceIndexes = [];
+  let previousWasSpace = false;
+
+  for (let i = 0; i < source.length; i++) {
+    const decomposed = source[i]
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    for (const ch of decomposed) {
+      const isWhitespace = /\s/.test(ch);
+      const isAllowed = isWhitespace || /[a-z0-9-]/i.test(ch);
+      const outChar = isAllowed ? (isWhitespace ? " " : ch) : " ";
+      const isSpace = outChar === " ";
+
+      if (isSpace && previousWasSpace) continue;
+
+      normalizedChars.push(outChar);
+      sourceIndexes.push(i);
+      previousWasSpace = isSpace;
+    }
+  }
+
+  let start = 0;
+  let end = normalizedChars.length;
+
+  while (start < end && normalizedChars[start] === " ") start++;
+  while (end > start && normalizedChars[end - 1] === " ") end--;
+
+  return {
+    normalized: normalizedChars.slice(start, end).join(""),
+    sourceIndexes: sourceIndexes.slice(start, end)
+  };
+}
+
+function normalizeText(value) {
+  return buildNormalizedMap(String(value)).normalized;
+}
+
+/* =========================================================
+   4b. KIVONAT KÉSZÍTÉSE
+========================================================= */
+
+function createExcerpt(text, tokens) {
   const source = String(text).replace(/\s+/g, " ").trim();
 
   if (!source) return "";
 
-  const normalizedSource = normalizeText(source);
-  const normalizedQuery = normalizeText(query);
+  /* A buildNormalizedMap pontos forrás-pozíciókat ad vissza, ezért itt
+     nem merülhet fel a sima normalizeText() + indexOf() eltolódási hibája
+     (amikor szóköz melletti írásjelek miatt a normalizált szöveg rövidebb
+     lesz, mint az eredeti, és az abban talált index már nem illik rá az
+     eredeti szövegre). */
+  const { normalized, sourceIndexes } = buildNormalizedMap(source);
 
-  const index = normalizedSource.indexOf(normalizedQuery);
+  /* A kivonat ablakát a legkorábban előforduló keresett szó köré
+     építjük, nem a teljes kifejezés köré – több szavas keresésnél
+     a pontos kifejezés gyakran elő sem fordul egy az egyben. */
+  let matchStart = -1;
+  let matchEnd = -1;
 
-  if (index === -1) {
+  (tokens || []).forEach((token) => {
+    if (!token) return;
+
+    const foundAt = normalized.indexOf(token);
+
+    if (foundAt === -1) return;
+
+    const sourceStart = sourceIndexes[foundAt];
+
+    if (matchStart === -1 || sourceStart < matchStart) {
+      matchStart = sourceStart;
+      matchEnd = sourceIndexes[foundAt + token.length - 1] + 1;
+    }
+  });
+
+  if (matchStart === -1) {
     return source.length > 190
       ? `${source.slice(0, 190)}...`
       : source;
   }
 
-  const start = Math.max(0, index - 75);
-  const end = Math.min(source.length, index + normalizedQuery.length + 135);
+  const start = Math.max(0, matchStart - 75);
+  const end = Math.min(source.length, matchEnd + 135);
 
   return `${start > 0 ? "..." : ""}${source.slice(start, end)}${
     end < source.length ? "..." : ""
@@ -339,22 +497,67 @@ function createExcerpt(text, query) {
 }
 
 /* =========================================================
-   5. SZÖVEG NORMALIZÁLÁSA
-   Ékezetfüggetlen és kisbetűs kereséshez.
+   4c. TALÁLT SZAVAK KIEMELÉSE
 ========================================================= */
 
-function normalizeText(value) {
-  return String(value)
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9áéíóöőúüű\s-]/gi, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+function highlightMatches(text, tokens) {
+  const source = String(text).replace(/\s+/g, " ").trim();
+  const cleanTokens = (tokens || []).filter(Boolean);
+
+  if (!source) return "";
+  if (!cleanTokens.length) return escapeHtml(source);
+
+  const { normalized, sourceIndexes } = buildNormalizedMap(source);
+  const ranges = [];
+
+  cleanTokens.forEach((token) => {
+    let fromIndex = 0;
+
+    while (fromIndex <= normalized.length) {
+      const foundAt = normalized.indexOf(token, fromIndex);
+
+      if (foundAt === -1) break;
+
+      const sourceStart = sourceIndexes[foundAt];
+      const sourceEnd = sourceIndexes[foundAt + token.length - 1] + 1;
+
+      ranges.push([sourceStart, sourceEnd]);
+      fromIndex = foundAt + token.length;
+    }
+  });
+
+  if (!ranges.length) return escapeHtml(source);
+
+  ranges.sort((a, b) => a[0] - b[0]);
+
+  const mergedRanges = [ranges[0]];
+
+  ranges.slice(1).forEach(([start, end]) => {
+    const last = mergedRanges[mergedRanges.length - 1];
+
+    if (start <= last[1]) {
+      last[1] = Math.max(last[1], end);
+    } else {
+      mergedRanges.push([start, end]);
+    }
+  });
+
+  let html = "";
+  let cursor = 0;
+
+  mergedRanges.forEach(([start, end]) => {
+    html += escapeHtml(source.slice(cursor, start));
+    html += `<mark>${escapeHtml(source.slice(start, end))}</mark>`;
+    cursor = end;
+  });
+
+  html += escapeHtml(source.slice(cursor));
+
+  return html;
 }
 
 /* =========================================================
-   6. HTML BIZTONSÁGI SEGÉDEK
+   5. HTML BIZTONSÁGI SEGÉDEK
 ========================================================= */
 
 function escapeHtml(value) {

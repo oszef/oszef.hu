@@ -16,14 +16,34 @@ window.SZEFO_SEARCH_INDEX = [
     category: "Főoldal",
     keywords: [
       "SZEFO",
-      "Szegedi SZEFO Közhasznú Nonprofit Zrt.",
+      "SZEFO Közhasznú Nonprofit Zrt.",
       "főoldal",
       "rehabilitációs foglalkoztatás",
       "tevékenységek",
       "üzletágak",
-      "üzemegységek"
+      "üzemegységek",
+      "Mérész Attila",
+      "vezérigazgató",
+      "vezérigazgatói köszöntő",
+      "1953",
+      "74% MMK",
+      "Legrand",
+      "Paul Shark",
+      "DAMA S.p.A.",
+      "Chance márka",
+      "e-hulladék",
+      "MOHU",
+      "sík- és körkötő üzem",
+      "vasaló üzem",
+      "mosó-kikészítő üzem",
+      "szabászat",
+      "logisztika",
+      "hímző- és szitanyomó üzem",
+      "varróüzem",
+      "Minőségellenőrzési Osztály",
+      "MEO"
     ],
-    text: "A SZEFO.hu kezdőoldala, fő bemutatkozó tartalmak, kiemelt információk, tevékenységek, üzemegységek és vállalati bemutatkozás."
+    text: "A SZEFO.hu kezdőoldala: 1953 óta Magyarország egyik legrégebbi rehabilitációs foglalkoztatója, jelenleg mintegy 500 munkatárssal, akiknek 74%-a megváltozott munkaképességű. Vezérigazgatói köszöntő Mérész Attilától. Fő tevékenységek: divat- és kötöttáru gyártás (Chance saját márka, Paul&Shark / DAMA S.p.A. partnerség), villamosipari bérmunka (Legrand áramelosztó-szabályozó készülékek), valamint e-hulladék (MOHU) hulladékgazdálkodás. Üzemegységeink: sík- és körkötő üzem, félkész- és készáruvasaló üzem, mosó-kikészítő és fércelő üzem, szabászat, logisztika, hímző- és szitanyomó üzem, varróüzem, Minőségellenőrzési Osztály (MEO). Kapcsolódó oldalak: Alapítvány, Partnerek, Referenciák."
   },
   {
     id: "tortenetunk",
@@ -33,12 +53,22 @@ window.SZEFO_SEARCH_INDEX = [
     keywords: [
       "történet",
       "timeline",
+      "időszalag",
       "mérföldkövek",
       "SZEFO története",
       "alapítás",
-      "fejlődés"
+      "fejlődés",
+      "Jáksó László",
+      "Szegedi Fonalmentő Vállalat",
+      "Kontavil",
+      "1990 Legrand",
+      "2001 Paul Shark DAMA",
+      "2008 Szegedi Tudományegyetem",
+      "2010 Chance márka",
+      "2021 Szeged-Csanádi Egyházmegye",
+      "tulajdonosváltás"
     ],
-    text: "A SZEFO történetét és fontosabb mérföldköveit bemutató idővonalas oldal."
+    text: "A SZEFO idővonalas története 1953-tól napjainkig. 1953: Dr. Jáksó László és 26 vak, gyengénlátó sorstársa megalapítja a Szegedi Fonalmentő Vállalatot. 1960: textilipari tevékenység bővülése, kötőrészleg. 1970: technológiai beruházások. 1990: Legrand-együttműködés kezdete (Kontavil). 1993: a Magyar Állam tulajdonába kerül. 1998: a SZEFO Közhasznú Nonprofit Zrt. megújulása. 2001: Paul & Shark / DAMA S.p.A. nemzetközi divatipari partnerség. 2008: K+F együttműködés a Szegedi Tudományegyetemmel. 2010: a Chance márka megalapítása. 2013–2019: új hazai divatmárka-együttműködések (ABRON, AERON, Kata Szegő, Nanushka, Pápai Lilla, Tomcsányi). 2021: tulajdonosváltás, a társaság a Szeged-Csanádi Egyházmegye tulajdonába kerül."
   },
   {
     id: "kuldetesunk",
@@ -51,9 +81,16 @@ window.SZEFO_SEARCH_INDEX = [
       "megváltozott munkaképesség",
       "MMK",
       "társadalmi felelősségvállalás",
-      "foglalkoztatás"
+      "foglalkoztatás",
+      "74% MMK",
+      "CAD",
+      "digitális gyártás-előkészítés",
+      "diszkriminációmentesség",
+      "esélyegyenlőség",
+      "energiatakarékosság",
+      "textilhulladék csökkentése"
     ],
-    text: "A SZEFO küldetését, foglalkoztatási szemléletét és társadalmi szerepvállalását bemutató oldal."
+    text: "A SZEFO küldetése 1953 óta: méltó munkalehetőség, szakmai támogatás és biztonságos munkakörülmények biztosítása megváltozott munkaképességű, fogyatékossággal élő és egészségkárosodott emberek számára. Munkavállalóink 74%-a megváltozott munkaképességű (MMK) munkatárs. Filozófiánk a megbízható minőségre, a korszerű CAD gyártás-előkészítő szoftverre és a felelős, energia- és anyagtakarékos, textilhulladék-csökkentő gyártásra épül. Alapelveink: pontos gyártói határidők, felelősségvállalás munkatársainkért és a természetért, energiahatékony megoldások, folyamatos innováció."
   },
   {
     id: "kapcsolat",
@@ -66,9 +103,15 @@ window.SZEFO_SEARCH_INDEX = [
       "cím",
       "telefon",
       "email",
-      "ügyfélszolgálat"
+      "ügyfélszolgálat",
+      "titkarsag@szefo.hu",
+      "Facebook",
+      "LinkedIn",
+      "TikTok",
+      "Instagram",
+      "közösségi média"
     ],
-    text: "Kapcsolati és elérhetőségi információk a SZEFO.hu oldalon."
+    text: "Elérhetőségeink: székhely 6724 Szeged, Tavasz utca 2., telefon +36-62-554-054, e-mail titkarsag@szefo.hu. Kövesse híreinket Facebook, LinkedIn, TikTok és Instagram oldalainkon is."
   },
   {
     id: "altalanos-ceginformaciok",
@@ -85,15 +128,24 @@ window.SZEFO_SEARCH_INDEX = [
       "részvényes",
       "egyházmegye",
       "vezérigazgató",
+      "Mérész Attila",
+      "Kiss Andrea",
+      "Vas László",
+      "Musa Imre",
+      "Szilléry Annamária",
+      "Vígh Norbert",
       "vezetőség",
       "székhely",
       "telephely",
       "fióktelep",
+      "Chance Bolt",
       "elérhetőség",
       "teáor",
+      "TEÁOR 1439",
       "tevékenységi kör",
       "saját tőke",
       "jegyzett tőke",
+      "CHANCE védjegy",
       "alapszabály",
       "szervezeti és működési szabályzat",
       "SZMSZ",
@@ -105,7 +157,7 @@ window.SZEFO_SEARCH_INDEX = [
       "szervezeti felépítés",
       "PDF"
     ],
-    text: "A társaság tulajdonosa és részvényese a Szeged-Csanádi Egyházmegye. Vezérigazgató Mérész Attila, vezérigazgató-helyettes Kiss Andrea. Székhely: 6724 Szeged, Tavasz u. 2. Központi szervezeti egységek, telephelyek és fióktelepek elérhetőségei Szegeden, Apátfalván, Hódmezővásárhelyen, Makón, Orosházán és Szentesen. A társaság vagyona, TEÁOR szerinti tevékenységi kör és erőforrásaink. Letölthető szabályzatok: Alapszabály, Szervezeti és Működési Szabályzat, Adatvédelmi-adatbiztonsági szabályzat, Javadalmazási Szabályzat, Etikai Kódex, Közérdekű Adatok Közzétételének Szabályzata. Jogszabályok: a társaságra vonatkozó jogszabályok jegyzéke, 2007. évi CVI. törvény az állami vagyonról, 327/2011. (XII. 29.) Korm. rendelet, 1/2018. (VI. 25.) NVTNM rendelet. Továbbá a szervezeti felépítést bemutató ábra."
+    text: "A társaság alapítója és 100%-os tulajdonosa 2021. december 29. óta a Szeged-Csanádi Egyházmegye (korábban a Magyar Állam nevében az MNV Zrt., majd az Emberi Erőforrások Minisztériuma gyakorolta a tulajdonosi jogokat). Vezérigazgató: Mérész Attila, vezérigazgató-helyettes: Kiss Andrea. Igazgatóságok vezetői: Vas László (gazdasági igazgató), Musa Imre (HR igazgató), Szilléry Annamária (termelési igazgató), Vígh Norbert (Legrand-, E-projekt igazgató). Székhely és központi telephely: 6724 Szeged, Tavasz u. 2. Telephelyek és fióktelepek: Szeged (Dorozsmai út), Apátfalva, Hódmezővásárhely, Makó, Orosháza, Szentes. Chance márkabolt: 6720 Szeged, Tisza Lajos krt. 75. Főtevékenység (TEÁOR 1439): egyéb kötött, hurkolt ruházati termék gyártása; további tevékenységek: áramelosztó-szabályozó készülék gyártása, villanyszerelés, textil- és ruházati kis- és nagykereskedelem, oktatás. A CHANCE védjegy lajstromszáma 186057/2005. Letölthető szabályzatok: Alapszabály, SZMSZ, Adatvédelmi-adatbiztonsági szabályzat, Javadalmazási Szabályzat, Etikai Kódex, Közérdekű Adatok Közzétételének Szabályzata, valamint a vonatkozó jogszabályok jegyzéke és a szervezeti felépítést bemutató ábra."
   },
   {
     id: "kozerdeku-adatok",
@@ -124,13 +176,22 @@ window.SZEFO_SEARCH_INDEX = [
       "szervezeti adatok",
       "személyzeti adatok",
       "gazdálkodási adatok",
+      "Cg.06-10-000122",
+      "adószám",
       "NAIH",
+      "Falk Miksa utca",
       "adatvédelmi tisztviselő",
+      "Budapest Főváros Kormányhivatal",
+      "SZEFO Magazin",
+      "Gyurácz Annamária",
+      "SZEFO Fonalfeldolgozó Chance Alapítvány",
+      "Ambrus Norbert",
       "közbeszerzés",
+      "EKR szerződéstár",
       "számviteli beszámoló",
       "Állami Számvevőszék"
     ],
-    text: "Az információs önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény szerinti általános közzétételi lista: szervezeti és személyzeti adatok (elérhetőségek, cégjegyzékszám Cg.06-10-000122, adószám, jegyzett tőke, szervezeti struktúra, vezetők, alapítványok, kiadványok, felügyeleti szervek – Budapest Főváros Kormányhivatal, NAIH), tevékenységre és működésre vonatkozó adatok (szabályzatok, jogszabályok, közérdekű adatigénylés rendje, közzétételi listák), valamint gazdálkodási adatok (ellenőrzések, számviteli beszámolók, foglalkoztatottak, szerződések, közbeszerzés, támogatások)."
+    text: "Az Infotv. (2011. évi CXII. törvény) szerinti általános közzétételi lista. Cégadatok: SZEFO Közhasznú Nonprofit Zrt., székhely 6724 Szeged, Tavasz u. 2., cégjegyzékszám Cg.06-10-000122, adószám 11090036-2-06, jegyzett tőke 1.100.000 eFt. Szervezeti és személyzeti adatok: vezetők, szervezeti egységek, telephelyek, a SZEFO Fonalfeldolgozó Chance Alapítvány (kuratóriumi tagok: dr. Ambrus Norbert, Kiss Andrea), a SZEFO Magazin kiadvány (főszerkesztő: Gyurácz Annamária). Felügyeleti szervek: Budapest Főváros Kormányhivatal (rehabilitációs hatóság) és a Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH, 1055 Budapest, Falk Miksa u. 9-11.). Tevékenységre és működésre vonatkozó adatok: szabályzatok, jogszabályok, közérdekű adatigénylés rendje. Gazdálkodási adatok: Állami Számvevőszéki ellenőrzés, számviteli beszámolók, foglalkoztatottak létszáma és béradatai, közbeszerzés (EKR szerződéstár), a megváltozott munkaképességű munkavállalók rehabilitációs foglalkoztatásához nyújtott támogatási szerződés."
   },
   {
     id: "kepzo-intezmenyek",
@@ -145,12 +206,22 @@ window.SZEFO_SEARCH_INDEX = [
       "felnőttképzés",
       "okj",
       "efop",
+      "Péli Katalin",
+      "E-001255/2015",
       "textiltermék összeállító",
-      "szabó",
+      "férfi szabó",
+      "női szabó",
       "kötőgép kezelő",
-      "péli katalin"
+      "kötöttáru mosodai gépkezelő",
+      "kötöttáru varró szalagmunkás",
+      "ruhaipari sablonkivágó",
+      "kompetenciafejlesztés",
+      "konfliktuskezelés",
+      "önismeret",
+      "stresszkezelés",
+      "digitális kompetencia"
     ],
-    text: "A Szegedi SZEFO Zrt. Képző Intézményének nyilvántartásba vételi száma: E-001255/2015. OKJ szerinti szakmai képzések (A kör), egyéb szakmai képzések (B kör) és egyéb, kompetenciafejlesztő képzések (D kör), valamint az EFOP-1.1.6-17 projekt keretében megvalósult képzések és tréningek."
+    text: "A SZEFO Közhasznú Nonprofit Zrt. felnőttképző intézményének nyilvántartásba vételi száma E-001255/2015, képzési vezető Péli Katalin. „A” képzési körben OKJ szerinti szakmai képzések: Textiltermék összeállító (21 542 02), Férfi szabó (34 542 04), Női szabó (34 542 06). „B” képzési körben egyéb szakmai képzések: Betanított kötőgép kezelő, Betanított kötöttáru mosodai gépkezelő, Betanított kötöttáru varró szalagmunkás, Kötöttáru alapanyag és kellék nyilvántartó, Ruhaipari sablonkivágó. „D” képzési körben kompetenciafejlesztő tréningek: társadalmi és munkaerő-piaci beilleszkedés, hatékony kommunikáció és konfliktuskezelés, munkaerő-piaci ismeretek, önismeret, stressz- és krízishelyzetek kezelése, tanulási technikák, digitális kompetenciafejlesztés. Az EFOP-1.1.6-17-2017-00006 projekt keretében 240 fő vett részt a képzéseken, 228 fő szerzett tanúsítványt."
   },
   {
     id: "projektek",
@@ -169,9 +240,11 @@ window.SZEFO_SEARCH_INDEX = [
       "tranzitfoglalkoztatás",
       "megváltozott munkaképesség",
       "eszközbeszerzés",
-      "európai regionális fejlesztési alap"
+      "európai regionális fejlesztési alap",
+      "63 917 482 Ft",
+      "144 591 952 Ft"
     ],
-    text: "Az EFOP-1.1.6-17-2017-00006 „Szegedi SZEFO zrt. a megváltozott munkaképességű személyek tranzitálásának elősegítéséért” projekt zárása, megvalósítása és indítása, 63 917 482 Ft vissza nem térítendő támogatással a Széchenyi 2020 program keretében. A GOP-3.5.1-15/A-2015-0003 azonosítójú „Eszközbeszerzés és információs technológia fejlesztése a SZEFO Zrt-nél” projekt, 144 591 952 Ft támogatással."
+    text: "Megvalósult hazai és uniós társfinanszírozású pályázati programjaink. EFOP-1.1.6-17-2017-00006 „Szegedi SZEFO zrt. a megváltozott munkaképességű személyek tranzitálásának elősegítéséért”: 63 917 482 Ft vissza nem térítendő támogatás a Széchenyi 2020 program keretében, 2017.09.01–2019.04.30, 240 fő bevonásával, 228 fő tanúsítvánnyal zárva, 9 fő nyílt munkaerőpiaci elhelyezkedéssel. GOP-3.5.1-15/A-2015-0003 „Eszközbeszerzés és információs technológia fejlesztése a SZEFO Zrt-nél”: 144 591 952 Ft támogatás (50%-os intenzitás) az Európai Regionális Fejlesztési Alapból. Letölthető dokumentumok: támogatási szerződések, projekt tájékoztató táblák, adatvédelmi tájékoztató és támogatói okiratok PDF formátumban."
   },
   {
     id: "minosegpolitika",
@@ -195,10 +268,11 @@ window.SZEFO_SEARCH_INDEX = [
       "munkabiztonság",
       "CERTOP",
       "King Cert",
+      "I1768985033Q",
       "audit",
       "PDF"
     ],
-    text: "A Szegedi SZEFO Zrt. integrált irányítási rendszert működtet: ISO 9001:2015 minőségirányítási rendszer (King Cert, tanúsítvány száma I1768985033Q, érvényes 2027.01.25-ig), ISO 14001:2015 környezetközpontú irányítási rendszer (KIR) és ISO 45001:2018 munkahelyi egészségvédelem és biztonság irányítási rendszere (MEBIR) – mindkettő CERTOP Termék- és Rendszertanúsító Kft., érvényes 2026.09.14-ig. Tanúsított tevékenységi terület: kötött ruhaipari termékek fejlesztése, gyártása és értékesítése. Letölthető a minőségpolitikai nyilatkozat és a tanúsítványok magyar, angol és olasz nyelven."
+    text: "A SZEFO Közhasznú Nonprofit Zrt. integrált irányítási rendszert működtet. ISO 9001:2015 minőségirányítási rendszer (King Cert International Certification Ltd., tanúsítvány száma I1768985033Q, érvényes 2027.01.25-ig). ISO 14001:2015 környezetközpontú irányítási rendszer (KIR, tanúsítvány 01-20772/23-15490) és ISO 45001:2018 munkahelyi egészségvédelem és biztonság irányítási rendszere (MEBIR, tanúsítvány 01-20772/23-15491) – mindkettő CERTOP Termék- és Rendszertanúsító Kft., érvényes 2026.09.14-ig, magyar, angol és olasz nyelven is elérhető. Tanúsított tevékenységi terület: kötött ruhaipari termékek fejlesztése, gyártása és értékesítése. Letölthető a minőségpolitikai nyilatkozat és valamennyi tanúsítvány PDF formátumban."
   },
   {
     id: "partnerek",
@@ -216,7 +290,7 @@ window.SZEFO_SEARCH_INDEX = [
       "fogyatékosügy",
       "esélyegyenlőség"
     ],
-    text: "A Szegedi SZEFO zrt. érdekvédelmi partnerei: Vakok és Gyengénlátók Csongrád-Csanád Megyei Egyesülete, SINOSZ – Siketek és Nagyothallók Országos Szövetsége, MEOSZ – Mozgáskorlátozottak Egyesületeinek Országos Szövetsége, ÉFOÉSZ – Értelmi Fogyatékossággal Élők és Segítőik Országos Érdekvédelmi Szövetsége."
+    text: "A SZEFO Közhasznú Nonprofit Zrt. érdekvédelmi partnerei: Vakok és Gyengénlátók Csongrád-Csanád Megyei Egyesülete, SINOSZ – Siketek és Nagyothallók Országos Szövetsége, MEOSZ – Mozgáskorlátozottak Egyesületeinek Országos Szövetsége, ÉFOÉSZ – Értelmi Fogyatékossággal Élők és Segítőik Országos Érdekvédelmi Szövetsége. E partnerségek szakmai háttértudást, tapasztalati szakértelmet és érzékenyítést nyújtanak a befogadó, esélyegyenlőségen alapuló foglalkoztatáshoz."
   },
   {
     id: "alapitvany",
@@ -231,9 +305,11 @@ window.SZEFO_SEARCH_INDEX = [
       "dokumentumok",
       "PDF",
       "adószám",
-      "számlaszám"
+      "18285491-1-06",
+      "számlaszám",
+      "kuratórium"
     ],
-    text: "Az alapítvány bemutatása, adatkártyák és kapcsolódó PDF dokumentumok."
+    text: "A SZEFO Fonalfeldolgozó Chance Közhasznú Alapítvány (cím: 6724 Szeged, Tavasz utca 2., adószám 18285491-1-06, számlaszám 11600006-00000000-95879064) célja a hátrányos helyzetű, fogyatékos, illetve megváltozott munkaképességű emberek társadalmi integrációja: foglalkozási rehabilitáció és tranzitfoglalkoztatás segítése, képzési projektek, szabadidős és családi programok szervezése, nyílt munkaerőpiaci elhelyezkedés támogatása. Letölthető dokumentumok: alapító okirat, kuratóriumi jegyzőkönyvek és meghívók, egyszerűsített éves beszámolók és közhasznúsági mellékletek, közhasznú jogosultságról szóló végzések."
   },
   {
     id: "adatszolgaltatas",
@@ -246,6 +322,7 @@ window.SZEFO_SEARCH_INDEX = [
       "közzététel",
       "nyilvános információ",
       "takarékos törvény",
+      "2009. évi CXXII. törvény",
       "javadalmazás",
       "vezető tisztségviselő",
       "felügyelő bizottság",
@@ -255,9 +332,10 @@ window.SZEFO_SEARCH_INDEX = [
       "megbízási díj",
       "cégjegyzés",
       "közüzemi szerződés",
-      "foglalkoztatottak létszáma"
+      "foglalkoztatottak létszáma",
+      "versenytilalmi megállapodás"
     ],
-    text: "A köztulajdonban álló gazdasági társaságok takarékosabb működéséről szóló 2009. évi CXXII. törvény (Takarékos törvény) alapján közzétett adatok 2009-től 2021-ig, évenkénti bontásban. Vezető tisztségviselők és vezető állású munkavállalók jogviszonya és javadalmazása, a Felügyelő Bizottság tagjainak megbízási díja, együttes cégjegyzésre és bankszámla feletti rendelkezésre jogosult munkavállalók, foglalkoztatási és béradatok, valamint közüzemi szerződések."
+    text: "A köztulajdonban álló gazdasági társaságok takarékosabb működéséről szóló 2009. évi CXXII. törvény (Takarékos törvény) alapján közzétett adatok évenkénti bontásban, 2009-től 2021-ig. Minden évre vonatkozóan: a vezető tisztségviselő és a vezető állású munkavállalók jogviszonya és javadalmazása (alapbér, prémium, felmondási idő, végkielégítés, versenytilalmi megállapodás), a Felügyelő Bizottság tagjainak megbízási díja, az együttes cégjegyzésre és bankszámla feletti rendelkezésre jogosult, valamint a munkáltató szempontjából meghatározó jelentőségű munkavállalók (igazgatók, fióktelep-vezetők) adatai, továbbá a foglalkoztatottak statisztikai állományi létszáma és személyi juttatásainak összesített adatai."
   },
   {
     id: "adatigenyles-rendje",
@@ -274,11 +352,12 @@ window.SZEFO_SEARCH_INDEX = [
       "Infotv.",
       "2011. évi CXII. törvény",
       "információszabadság",
-      "Vezérigazgatói Titkárság",
+      "Péli Katalin",
       "adatvédelmi tisztviselő",
+      "adatvedelmitisztviselo@szefo.hu",
       "PDF"
     ],
-    text: "A közérdekű adatok megismerésére irányuló igények teljesítésének rendje az információs önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény alapján. Az igények tekintetében illetékes szervezeti egység a Vezérigazgatói Titkárság (6724 Szeged, Tavasz u. 2., +36-62-554-054, titkarsag@szefo.hu), adatvédelmi tisztviselő dr. Ambrus Norbert. Letölthető dokumentumok: a közérdekű adatok megismerése iránti igény teljesítésének szabályzata, valamint az adatkezelési tájékoztató."
+    text: "A közérdekű adatok megismerésére irányuló igények az Infotv. (2011. évi CXII. törvény) alapján nyújthatók be. Adatvédelmi tisztviselő: Péli Katalin (adatvedelmitisztviselo@szefo.hu, +36-62-554-054, 6724 Szeged, Tavasz u. 2.). Letölthető a közérdekű adatok megismerése iránti igény teljesítésének szabályzata (6 oldal) és az ehhez kapcsolódó adatkezelési tájékoztató (2 oldal) PDF formátumban."
   },
   {
     id: "eves-beszamolok",
@@ -292,9 +371,10 @@ window.SZEFO_SEARCH_INDEX = [
       "e-beszámoló",
       "céginformációs szolgálat",
       "igazságügyi minisztérium",
-      "beszámolókereső"
+      "beszámolókereső",
+      "e-beszamolo.im.gov.hu"
     ],
-    text: "A Szegedi SZEFO Zrt. éves beszámolói az Igazságügyi Minisztérium Céginformációs és az Elektronikus Cégeljárásban Közreműködő Szolgálata honlapján, a beszámolókeresőben érhetők el."
+    text: "A SZEFO Közhasznú Nonprofit Zrt. hivatalos éves beszámolói az Igazságügyi Minisztérium Céginformációs és az Elektronikus Cégeljárásban Közreműködő Szolgálatának online beszámolókeresőjében (e-beszamolo.im.gov.hu) érhetők el."
   },
   {
     id: "kozzetetelek",
@@ -316,7 +396,7 @@ window.SZEFO_SEARCH_INDEX = [
       "122/2015. Korm. rendelet",
       "PDF"
     ],
-    text: "Az energiahatékonyságról szóló 2015. évi LVII. törvény és a 122/2015. (V. 26.) Korm. rendelet alapján közzétett éves energetikai szakreferens jelentések a 2017–2025. évekre. A jelentések bemutatják az energiafelhasználást, a részterületek szén-dioxid-kibocsátását, az energiahatékonyság javítását célzó intézkedéseket és a szemléletformálást. Minden év külön PDF formátumban letölthető."
+    text: "Az energiahatékonyságról szóló 2015. évi LVII. törvény és a 122/2015. (V. 26.) Korm. rendelet alapján közzétett éves energetikai szakreferens jelentések 2017-től 2025-ig, évenkénti PDF formátumban. A jelentések bemutatják az energiafelhasználást, a szén-dioxid-kibocsátást, az energiahatékonyságot javító intézkedéseket és a szemléletformálás lépéseit."
   },
   {
     id: "ellenorzesek",
@@ -334,9 +414,10 @@ window.SZEFO_SEARCH_INDEX = [
       "19127",
       "állami tulajdonú gazdasági társaságok",
       "audit",
+      "asz.hu",
       "PDF"
     ],
-    text: "Az Állami Számvevőszék 2019-ben az állami tulajdonú gazdasági társaságok ellenőrzése keretében vizsgálta a Szegedi SZEFO Fonalfeldolgozó zrt. működését. A 19127 számú ÁSZ jelentés nyilvános megállapításai PDF formátumban letölthetők."
+    text: "Az Állami Számvevőszék 2019-ben, az állami tulajdonú gazdasági társaságok ellenőrzése keretében vizsgálta a SZEFO Közhasznú Nonprofit Zrt. (akkori nevén Szegedi SZEFO Fonalfeldolgozó zrt.) működését. A 19127 számú ÁSZ-jelentés nyilvános megállapításai PDF formátumban letölthetők, és a www.asz.hu oldalon is elérhetők."
   },
   {
     id: "szerzodesek",
@@ -355,9 +436,9 @@ window.SZEFO_SEARCH_INDEX = [
       "2009. évi CXXII. törvény",
       "KBA",
       "közbeszerzés",
-      "Budapest Főváros Kormányhivatala"
+      "kozbeszerzes.hu"
     ],
-    text: "A köztulajdonban álló gazdasági társaságok takarékosabb működéséről szóló 2009. évi CXXII. törvény 2. § (3) és (4) bekezdése szerinti szerződések a KBA rendszerben érhetők el. Mellékletként letölthetők a megváltozott munkaképességű munkavállalók rehabilitációs foglalkoztatásához nyújtható egyéni támogatásra kötött Keret- és Támogatási szerződések: 2021. évi szerződés és annak módosítása, 2019. évi szerződés, valamint a 2018. évi támogatási szerződés."
+    text: "A köztulajdonban álló gazdasági társaságok takarékosabb működéséről szóló 2009. évi CXXII. törvény 2. § (3)-(4) bekezdése szerinti szerződések a KBA rendszerben (kereso-core.kozbeszerzes.hu) érhetők el. Letölthető mellékletek: a megváltozott munkaképességű munkavállalók rehabilitációs foglalkoztatásához nyújtható egyéni támogatásra kötött Keret- és Támogatási szerződések (2018, 2019, 2021 és annak módosítása)."
   },
   {
     id: "palyazat-neao",
@@ -373,32 +454,40 @@ window.SZEFO_SEARCH_INDEX = [
       "érzékenyítő tréning",
       "szemléletformálás",
       "színházlátogatás",
+      "Mórahalom",
+      "Rómeó és Júlia",
       "Mikulás",
       "családi nap",
+      "Bethlen Gábor Alapkezelő",
       "Vakok és Gyengénlátók Csongrád-Csanád Megyei Egyesülete"
     ],
-    text: "A NEAO-KP-1-2022/8-000016 azonosítójú „CHANCE az esélyegyenlőségért és családokért” pályázati program a Nemzeti Együttműködési Alap támogatásával, 2022.04.01–2023.03.31 között: színházlátogatás Mórahalmon, érzékenyítő és szemléletformáló foglalkozások a székhelyen és a fióktelepeken, valamint Mikulás-napi családi nap."
+    text: "A NEAO-KP-1-2022/8-000016 azonosítójú „CHANCE az esélyegyenlőségért és családokért” pályázati program a SZEFO Fonalfeldolgozó Chance Alapítvány megvalósításában, a Nemzeti Együttműködési Alap 1 620 000 Ft támogatásával, 2022.04.01–2023.03.31 között. Programok: színházlátogatás a Mórahalmi Patkó Lovas és Szabadtéri Színházban (Rómeó és Júlia, 100 fő), érzékenyítő és szemléletformáló foglalkozások a székhelyen és 4 fióktelepen a Vakok és Gyengénlátók Csongrád-Csanád Megyei Egyesülete közreműködésével (159 fő), valamint Mikulás-napi családi nap (159 gyermek). Támogatók: Nemzeti Együttműködési Alap, Miniszterelnökség, Bethlen Gábor Alapkezelő."
   },
   {
-  id: "hireink",
-  title: "Hírek és blog",
-  url: "../hireink/index.html",
-  category: "Hírek és blog",
-  keywords: [
-    "hírek",
-    "hír",
-    "blog",
-    "aktualitások",
-    "újdonságok",
-    "események",
-    "céges hírek",
-    "szakmai blog",
-    "közösség",
-    "fenntarthatóság",
-    "rehabilitációs foglalkoztatás"
-  ],
-  text: "A SZEFO hírei, aktualitásai, eseményei és blogbejegyzései egy helyen, SPA jellegű hírek és blog tartalmi oldalon."
-},
+    id: "hireink",
+    title: "Hírek és blog",
+    url: "../hireink/index.html",
+    category: "Hírek és blog",
+    keywords: [
+      "hírek",
+      "hír",
+      "blog",
+      "aktualitások",
+      "újdonságok",
+      "események",
+      "céges hírek",
+      "szakmai blog",
+      "közösség",
+      "fenntarthatóság",
+      "rehabilitációs foglalkoztatás",
+      "Gál Ferenc Egyetem",
+      "stratégiai együttműködés",
+      "duális képzés",
+      "Dux László",
+      "Tóth József"
+    ],
+    text: "A SZEFO hírei és blogbejegyzései egy helyen, kategóriák szerint szűrhető és kereshető felületen (Céges hírek, Közösség, Események / Szakmai blog, Fenntarthatóság, Történetek). Kiemelt hír: 2026. január 9-én a Gál Ferenc Egyetem (Prof. Dr. Dux László rektor, Tóth József kancellár) és a SZEFO Közhasznú Nonprofit Zrt. (Mérész Attila vezérigazgató) stratégiai együttműködési megállapodást írt alá a textil- és könnyűipari duális szakképzés erősítéséért; a 2026/2027-es tanévtől a diákok a SZEFO gyártóegységeiben tölthetik szakmai gyakorlatukat."
+  },
   {
     id: "szefo-magazin",
     title: "Korábbi SZEFO Magazinok",
@@ -413,9 +502,13 @@ window.SZEFO_SEARCH_INDEX = [
       "archívum",
       "korábbi lapszámok",
       "PDF",
-      "letöltés"
+      "letöltés",
+      "Szentesi Fióktelep",
+      "COVID",
+      "Németné Janó Beáta",
+      "SZEFO Manók"
     ],
-    text: "A SZEFO Magazin korábbi lapszámainak archívuma 2019 és 2026 között: nyolc lapszám PDF formátumban, online olvasható és letölthető változatban."
+    text: "A SZEFO Magazin vállalati újság archívuma, 8 lapszám 2019 és 2026 között, online olvasható és letölthető PDF formátumban. Témák évek szerint: 2026 – interjú az új vezérigazgatóval és egy 40 éve dolgozó munkatárssal; 2023 – a Szentesi Fióktelep bemutatása; 2022 – a COVID-járvány kezelése, foglalkozás-egészségügyi csapat; 2021 – megemlékezés Németné Janó Beátáról; 2020 – SZEFO Manók nyári tábor és a koronavírus-járvány kezdete; 2019 – nyugdíjas találkozó és az első lapszám bemutatkozása."
   },
   {
     id: "e-hulladek",
@@ -426,9 +519,16 @@ window.SZEFO_SEARCH_INDEX = [
       "e-hulladék",
       "elektronikai hulladék",
       "újrahasznosítás",
-      "hulladékgazdálkodás"
+      "hulladékgazdálkodás",
+      "MOHU",
+      "Hódmezővásárhely",
+      "Erzsébeti út",
+      "KÜJ",
+      "KTJ",
+      "fémkereskedelmi engedély",
+      "hulladékgazdálkodási engedély"
     ],
-    text: "E-hulladékkal kapcsolatos információs oldal."
+    text: "A SZEFO hulladékgazdálkodási tevékenysége a hódmezővásárhelyi telephelyen (6800 Hódmezővásárhely, Erzsébeti út 8., KÜJ 100214695, KTJ 103002793) veszélyes és nem veszélyes hulladékok gyűjtésére és előkezelésére terjed ki: elektronikai hulladékok (16-os főcsoport) kézi bontása és válogatása, hűtő- és klímaberendezések gyűjtése, fém- és csomagolási hulladékok gyűjtése. Kezelési kódok: R12, E02-05, E02-06, E02-08. Letölthető dokumentumok: fémkereskedelmi engedély, hulladékgazdálkodási engedély, telepengedély és engedélymódosítás, MOHU sajtóközlemény."
   },
   {
     id: "karrier",
@@ -445,11 +545,13 @@ window.SZEFO_SEARCH_INDEX = [
       "állásajánlat",
       "megváltozott munkaképesség",
       "részmunkaidő",
+      "Fogyatékosság-barát munkahely",
       "alkatrészszerelő",
       "udvaros",
       "anyagmozgató",
       "rakodómunkás",
       "adminisztrátor",
+      "adminisztrációs ügyintéző",
       "takarító",
       "portás",
       "raktáros",
@@ -459,10 +561,9 @@ window.SZEFO_SEARCH_INDEX = [
       "gépbeállító",
       "kazángépkezelő",
       "EKÁER",
-      "fióktelepvezető",
-      "Fogyatékosság-barát munkahely"
+      "fióktelepvezető"
     ],
-    text: "Aktuális állásajánlataink megváltozott munkaképességű munkavállalók számára, jellemzően részmunkaidőben, napi 4 órában. Nyitott pozíciók: alkatrészszerelő, udvaros, anyagmozgató és rakodómunkás, adminisztrátor, adminisztrációs ügyintéző, takarító, portás, raktáros, karbantartó, villanyszerelő, targoncás rakodómunkás, gépbeállító, kazángépkezelő, EKÁER-ügyintéző és fióktelepvezető. Munkavégzés helyszínei: Szeged (Tavasz utca, Dorozsmai út), Makó, Szentes, Hódmezővásárhely, Apátfalva és Orosháza. Jelentkezés: karrier@szefo.hu, +36 (30) 243-0585, illetve +36 (62) 554-054/108."
+    text: "Aktuális állásajánlataink megváltozott munkaképességű munkavállalók számára, jellemzően részmunkaidőben, napi 4 órában, két műszakban. 2010-ben elnyertük a Fogyatékosság-barát munkahely elismerést; munkatársaink 74%-a megváltozott munkaképességű. Nyitott pozíciók: fióktelepvezető, alkatrészszerelő, udvaros, anyagmozgató és rakodómunkás, adminisztrátor, adminisztrációs ügyintéző, takarító, portás, raktáros, karbantartó, villanyszerelő, targoncás rakodómunkás, gépbeállító, kazángépkezelő, EKÁER-ügyintéző. Munkavégzés helyszínei: Szeged (Tavasz utca, Dorozsmai út), Makó, Szentes, Hódmezővásárhely, Apátfalva és Orosháza. Jelentkezés: karrier@szefo.hu, +36 (30) 243-0585, illetve +36 (62) 554-054/108."
   },
   {
     id: "klaszter",
@@ -475,7 +576,6 @@ window.SZEFO_SEARCH_INDEX = [
       "hálózat",
       "partnerség"
     ],
-    text: "Klaszterrel kapcsolatos információs oldal."
+    text: "Klaszterrel kapcsolatos oldal, jelenleg fejlesztés alatt."
   }
 ];
-``
