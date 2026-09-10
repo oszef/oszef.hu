@@ -677,8 +677,15 @@ select:focus-visible,
     width: 100%;
     /* A hero képek natív aránya 16:9 (1366x768) – a 56.25vw pontosan
        ezt az arányt adja ki a szélességből, így a kép a legtöbb
-       nézeten kitölti a keretet, nem marad elmosott üres sáv. */
-    height: clamp(400px, 56.25vw, 720px);
+       nézeten kitölti a keretet, nem marad elmosott üres sáv.
+       A biztonsági korlát NEM egy fix vh-százalék (az normál, magas
+       ablakon is feleslegesen vágott volna), hanem a tényleges elérhető
+       magasság: 100vh mínusz a fejléc (~65px, lásd a lenti asztali
+       nézet .hero-carousel margin-top-ját) és egy kis ráhagyás – így
+       csak akkor szűkíti a dobozt a 16:9-nél kisebbre, ha az egyébként
+       tényleg a lapon kívülre tolná a szöveget. */
+    height: clamp(400px, min(56.25vw, calc(100vh - 85px)), 1100px);
+    height: clamp(400px, min(56.25vw, calc(100dvh - 85px)), 1100px);
     overflow: hidden;
     border-radius: var(--radius-sm);
     margin-top: var(--hero-carousel-margin-top);
@@ -711,9 +718,13 @@ select:focus-visible,
 }
 
 /*
-   Előtérkép: cover módban tölti ki a keretet, hogy széles monitoron
-   se maradjon üres sáv oldalt. A pozíció felülről indul, hogy a
-   vágás inkább alul (láb, padló) essen, ne a fejeknél.
+   Előtérkép: cover módban tölti ki a teljes szélességet és magasságot,
+   üres sáv (letterbox) sosem marad oldalt. Mind a 4 hero kép egységesen
+   16:9 arányú fájl, így ez a keret is szinte mindig pontosan 16:9 –
+   vágás csak a nagyon alacsony (rövid, de széles) ablakoknál fordul elő,
+   ahol a hero-carousel magassága a vh-sapka miatt szűkebb a 16:9-nél.
+   Ilyenkor a "top" pozíció miatt a vágás alulról (láb, padló) essen,
+   ne a fejeknél – kis kijelzőn/felbontáson ez számít igazán.
 */
 .hero-slide img {
     position: absolute;
@@ -723,7 +734,7 @@ select:focus-visible,
     height: 100%;
     max-width: none;
     object-fit: cover;
-    object-position: var(--hero-position, center top);
+    object-position: center top;
 }
 
 /*
@@ -748,7 +759,7 @@ select:focus-visible,
 .hero-text {
     position: absolute;
     left: 50%;
-    bottom: clamp(72px, 16vh, 150px);
+    bottom: clamp(36px, 8vh, 90px);
     width: min(90%, 920px);
     transform: translateX(-50%);
     text-align: center;
@@ -807,11 +818,12 @@ select:focus-visible,
 
 @media (max-width: 1024px) {
     .hero-carousel {
-        height: clamp(340px, 56.25vw, 620px);
+        height: clamp(340px, min(56.25vw, 83vh), 850px);
+        height: clamp(340px, min(56.25vw, 83dvh), 850px);
     }
 
     .hero-text {
-        bottom: clamp(58px, 13vh, 110px);
+        bottom: clamp(30px, 7vh, 70px);
     }
 }
 
@@ -821,7 +833,8 @@ select:focus-visible,
 
 @media (max-width: 768px) {
     .hero-carousel {
-        height: clamp(320px, 56.25vw, 460px);
+        height: clamp(320px, min(56.25vw, 72vh), 460px);
+        height: clamp(320px, min(56.25vw, 72dvh), 460px);
         margin-top: 60px;
     }
 
@@ -867,7 +880,8 @@ select:focus-visible,
 
 @media (max-width: 420px) {
     .hero-carousel {
-        height: clamp(230px, 56.25vw, 280px);
+        height: clamp(230px, min(56.25vw, 68vh), 280px);
+        height: clamp(230px, min(56.25vw, 68dvh), 280px);
     }
 
     .hero-text {
@@ -919,7 +933,11 @@ select:focus-visible,
 .ceo-preview,
 .ceo-full {
     max-width: var(--container-narrow);
-    margin: 80px auto;
+    /* Felül kisebb a rés, mert közvetlenül a hero carousel után jön,
+       ami már önmagában is elválasztja a tartalmat a navbartól – a
+       80px-es alsó rés viszont marad, hogy illeszkedjen a többi
+       szekció megszokott ritmusához. */
+    margin: 48px auto 80px;
     padding: 50px 40px;
     background: var(--color-surface);
     border-radius: var(--radius-lg);
@@ -5770,6 +5788,14 @@ select:focus-visible,
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 63, 125, 0.08);
+  }
+
+  /* Ebben a nézetben a fejléc tényleges magassága (logó + padding + szegély)
+     ~57px, nem a --navbar-height (60px) alapú érték – a hero ezért itt
+     kap saját, a valós magassághoz igazított margót, hogy ne maradjon
+     felesleges rés a fejléc és a carousel között. */
+  .hero-carousel {
+    margin-top: 65px;
   }
 
   /* A navbar már csak a logót tartja; a saját fix pozícióját és
