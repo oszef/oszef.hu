@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
     <meta name="description" content="A SZEFO Zrt. cégadatai: tulajdonos, vezetőség, székhely és telephelyek, tevékenységi kör, valamint letölthető alapszabály és belső szabályzatok.">
     <link rel="canonical" href="https://www.szefo.hu/hu/altalanos_ceginformaciok/">
 
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="Általános céginformációk">
@@ -15,15 +17,18 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Böngészőfül ikonja (favicon), valamint az oldal és a PDF-dokumentumok kártyáinak kinézetét meghatározó CSS-stíluslapok betöltése -->
     <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/pdf_style.css">
     <title>Általános céginformációk | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 <body>
+    <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
     <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR -->
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
         <div class="navbar">
             <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
                 <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -41,7 +46,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENU -->
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -60,7 +65,7 @@
                         <a href="../../index.html">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK -->
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -83,7 +88,7 @@
                         </ul>
                     </li>
 
-                    <!-- CÉGINFORMÁCIÓK -->
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -153,6 +158,7 @@
                     </li>
                 </ul>
 
+               <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
                <div class="search search--button-only">
                 <a class="search-link" href="../kereses/index.html">
                     Keresés
@@ -161,14 +167,16 @@
             </div>
         </nav>
 
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
         <div class="backdrop" id="backdrop" aria-hidden="true"></div>
     </header>
 
 
     <main id="main-content">
+        <!-- FŐ TARTALOM: a cég hivatalos adatai (tulajdonos, vezetők, telephelyek, tevékenységi kör) és a kapcsolódó dokumentumok -->
         <section class="info-page" aria-labelledby="ceginfo-title">
 
-            <!-- TULAJDONOS ÉS VEZETÉS -->
+            <!-- TULAJDONOS ÉS VEZETÉS: a cég tulajdonosi háttere és vezetőinek felsorolása -->
             <section class="info-block section-card" aria-labelledby="ceginfo-title">
                 <div class="info-content">
                     <h1 id="ceginfo-title">Általános céginformációk</h1>
@@ -227,7 +235,7 @@
                 </div>
             </section>
 
-            <!-- VAGYON -->
+            <!-- VAGYON: a társaság saját és jegyzett tőkéjének összege -->
             <section class="info-block section-card" aria-labelledby="vagyon-title">
                 <div class="info-content">
                     <h2 id="vagyon-title">A társaság vagyona</h2>
@@ -247,7 +255,7 @@
                 </div>
             </section>
 
-            <!-- ELÉRHETŐSÉG -->
+            <!-- ELÉRHETŐSÉG: a székhely címe, telefonszáma és a titkárság elérhetősége -->
             <section class="info-block section-card" aria-labelledby="elerhetoseg-title">
                 <div class="info-content">
                     <h2 id="elerhetoseg-title">Elérhetőségünk</h2>
@@ -279,13 +287,14 @@
                 </div>
             </section>
 
-            <!-- SZERVEZETI EGYSÉGEK ÉS TELEPHELYEK -->
+            <!-- SZERVEZETI EGYSÉGEK ÉS TELEPHELYEK: három táblázat a központi igazgatóságokról, az üzletről, valamint a telephelyekről és fióktelepekről, elérhetőségeikkel -->
             <section class="info-block section-card" aria-labelledby="szervezet-title">
                 <div class="info-content">
                     <h2 id="szervezet-title">Székhely, szervezeti egységek, telephelyek</h2>
 
                     <p class="info-highlight">Székhely és központi telephely: 6724 Szeged, Tavasz u. 2.</p>
 
+                    <!-- Keskeny (pl. mobil) képernyőn oldalra görgethető táblázat, hogy a sok oszlop is elférjen -->
                     <div class="table-scroll" tabindex="0" role="region" aria-label="Központi szervezeti egységek táblázata, vízszintesen görgethető">
                         <table class="info-table">
                             <caption>Központi szervezeti egységek</caption>
@@ -433,7 +442,7 @@
                 </div>
             </section>
 
-            <!-- TEVÉKENYSÉGI KÖR -->
+            <!-- TEVÉKENYSÉGI KÖR: a társaság TEÁOR '08 szerinti bejegyzett tevékenységeinek teljes listája -->
             <section class="info-block section-card" aria-labelledby="teaor-title">
                 <div class="info-content">
                     <h2 id="teaor-title">A társaság tevékenységi köre</h2>
@@ -491,7 +500,7 @@
                 </div>
             </section>
 
-            <!-- ERŐFORRÁSOK -->
+            <!-- ERŐFORRÁSOK: a társaság piaci pozíciójának, technológiai, humán- és információs erőforrásainak összefoglalása -->
             <section class="info-block section-card" aria-labelledby="eroforras-title">
                 <div class="info-content">
                     <h2 id="eroforras-title">Erőforrásaink</h2>
@@ -565,7 +574,7 @@
                 </div>
             </section>
 
-            <!-- SZABÁLYZATOK -->
+            <!-- SZABÁLYZATOK: a társaság belső szabályzatai PDF formátumban, megnyitható és letölthető linkkel -->
             <section class="docs-section" aria-labelledby="szabalyzatok-title">
                 <div class="docs-header">
                     <span class="section-eyebrow">Dokumentumok</span>
@@ -651,7 +660,7 @@
                 </div>
             </section>
 
-            <!-- JOGSZABÁLYOK -->
+            <!-- JOGSZABÁLYOK: a társaság működésére vonatkozó jogszabályok PDF formátumban, megnyitható és letölthető linkkel -->
             <section class="docs-section" aria-labelledby="jogszabalyok-title">
                 <div class="docs-header">
                     <span class="section-eyebrow">Dokumentumok</span>
@@ -713,7 +722,7 @@
                 </div>
             </section>
 
-            <!-- SZERVEZETI FELÉPÍTÉS -->
+            <!-- SZERVEZETI FELÉPÍTÉS: a szervezeti ábrát tartalmazó PDF, megnyitható és letölthető linkkel -->
             <section class="docs-section" aria-labelledby="szervezeti-felepites-title">
                 <div class="docs-header">
                     <span class="section-eyebrow">Dokumentumok</span>
@@ -738,6 +747,7 @@
                 </div>
             </section>
 
+            <!-- Vissza a főoldalra mutató link -->
             <div class="mission-back">
                 <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
             </div>
@@ -745,6 +755,7 @@
         </section>
     </main>
 
+     <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
      <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -771,12 +782,14 @@
                 <p>titkarsag@szefo.hu</p>
             </div>
         </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
         <div class="site-footer-bottom">
             <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
             <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
         </div>
 
     </footer>
+    <!-- JavaScript-fájlok: a script.js a menü, a downloader.js a dokumentumok letöltés gombjának működését biztosítja -->
     <script src="../../js/script.js"></script>
     <script src="../../js/downloader.js"></script>
 </body>

@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
     <meta name="description" content="A SZEFO Közhasznú Nonprofit Zrt. elektronikai hulladékgazdálkodási tevékenysége: felelős gyűjtés, kezelés és újrahasznosítás.">
     <link rel="canonical" href="https://www.szefo.hu/hu/e-hulladek/">
 
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="E-hulladék">
@@ -15,6 +17,7 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
+   <!-- Böngészőfül ikonja (favicon), az ikonokhoz használt Bootstrap Icons betűkészlet, valamint az oldal és a PDF-dokumentumok kártyáinak kinézetét meghatározó CSS-stíluslapok betöltése -->
    <link href="../../css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
      <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
      
@@ -26,9 +29,11 @@
     <title>E-hulladék | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 <body>
+    <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
     <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR -->
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
         <div class="navbar">
             <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
                 <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -46,7 +51,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENU -->
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -65,7 +70,7 @@
                         <a href="../../index.html">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK -->
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -88,7 +93,7 @@
                         </ul>
                     </li>
 
-                    <!-- CÉGINFORMÁCIÓK -->
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -158,6 +163,7 @@
                     </li>
                 </ul>
 
+                 <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
                  <div class="search search--button-only">
                     <a class="search-link" href="../kereses/index.html">
                         Keresés
@@ -166,13 +172,16 @@
             </div>
         </nav>
 
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
         <div class="backdrop" id="backdrop" aria-hidden="true"></div>
     </header>
 
 
     <main id="main-content">
+    <!-- FŐ TARTALOM: a hódmezővásárhelyi telephely e-hulladékkal kapcsolatos tevékenységének bemutatása, adatai, dokumentumai és képgalériája -->
     <section class="ewaste-page" aria-labelledby="ewaste-title">
 
+        <!-- OLDALCÍM ÉS BEVEZETŐ SZÖVEG -->
         <header class="ewaste-header">
         <span class="section-eyebrow">Hulladékgazdálkodás</span>
         <h1 id="ewaste-title">SZEFO Közhasznú Nonprofit Zrt. hulladékgazdálkodási tevékenysége</h1>
@@ -183,6 +192,7 @@
         </header>
 
         <div class="ewaste-layout">
+        <!-- CÉG- ÉS TELEPHELYADATOK: hatósági azonosítók és elérhetőségek listája -->
         <aside class="ewaste-card ewaste-card--details" aria-labelledby="ewaste-data-title">
             <h2 id="ewaste-data-title">Cég- és telephelyadatok</h2>
             <ul class="ewaste-data-list">
@@ -199,12 +209,14 @@
         </aside>
 
         <div class="ewaste-content">
+            <!-- TEVÉKENYSÉG LEÍRÁSA -->
             <section class="ewaste-card" aria-labelledby="ewaste-activity-title">
             <h2 id="ewaste-activity-title">Tevékenységünk</h2>
             <p>A SZEFO Közhasznú Nonprofit Zrt. hulladékgazdálkodási tevékenysége veszélyes és nem veszélyes hulladékok gyűjtésére, valamint előkezelésére terjed ki.</p>
             <p>Társaságunk különféle, elsősorban elektronikai hulladékok kézi bontását és válogatását végzi a hódmezővásárhelyi telephelyen.</p>
             </section>
 
+            <!-- ÁTVETT ÉS KEZELT HULLADÉKTÍPUSOK: kártyák a fogadott hulladékfajtákról -->
             <section class="ewaste-card" aria-labelledby="ewaste-types-title">
             <h2 id="ewaste-types-title">Átvett és kezelt hulladéktípusok</h2>
             <div class="ewaste-type-grid">
@@ -216,6 +228,7 @@
             </div>
             </section>
 
+            <!-- KEZELÉSI TECHNOLÓGIA: a hulladékkezelés hatósági kódjai és lépései -->
             <section class="ewaste-card" aria-labelledby="ewaste-tech-title">
             <h2 id="ewaste-tech-title">Kezelési technológia</h2>
             <div class="ewaste-tech-box"><h3>Kezelési kód</h3><p><strong>R12</strong> – Átalakítás az R1-R11 műveletek valamelyikének elvégzése érdekében.</p></div>
@@ -228,6 +241,7 @@
         </div>
         </div>
 
+        <!-- DOKUMENTUMOK: engedélyek és egyéb kapcsolódó iratok PDF formátumban, megnyitható és letölthető linkkel -->
         <section class="docs-section" aria-labelledby="ewaste-docs-title">
         <div class="docs-header">
             <span class="section-eyebrow">Dokumentumok</span>
@@ -245,6 +259,7 @@
         </section>
     </section>
 
+    <!-- KÉPGALÉRIA: kattintható fotók, amelyek nagyobb méretben, felugró ablakban nyílnak meg -->
     <section class="ewaste-gallery-section" aria-labelledby="ewaste-gallery-title">
   <div class="ewaste-gallery-header">
     <span class="section-eyebrow">Képgaléria</span>
@@ -412,6 +427,7 @@
   </div>
 </section>
 
+<!-- KÉPGALÉRIA FELUGRÓ ABLAK (MODAL): a galériában kiválasztott kép nagyított nézete, elő-/hátralépő nyilakkal -->
 <div class="ewaste-gallery-modal" data-ewaste-gallery-modal aria-hidden="true">
   <div class="ewaste-gallery-backdrop" data-ewaste-gallery-close></div>
 
@@ -454,6 +470,7 @@
 
 </main>
 
+ <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
  <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -480,6 +497,7 @@
                 <p>titkarsag@szefo.hu</p>
             </div>
         </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
         <div class="site-footer-bottom">
             <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
             <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
@@ -492,7 +510,8 @@
 
    
 
-  <script src="../../js/script.js"></script> 
-    <script src="../../js/downloader.js"></script>   
+  <!-- JavaScript-fájlok: a script.js a menü, a downloader.js a dokumentumok letöltés gombjának működését biztosítja -->
+  <script src="../../js/script.js"></script>
+    <script src="../../js/downloader.js"></script>
 </body>
 </html>

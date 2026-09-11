@@ -9,6 +9,9 @@
    - helyben olvasható részletes nézet
 ========================================================= */
 
+// Itt található az összes hír és blogbejegyzés tényleges szövege (cím, dátum,
+// kategória, rövid kivonat, teljes szöveg). Új hír vagy blogbejegyzés
+// közzétételéhez ide kell felvenni egy újabb elemet a listába.
 const SZEFO_NEWS_BLOG_CONTENT = [
   {
     id: "gal-ferenc-egyuttmukodes",
@@ -51,6 +54,9 @@ const NEWS_BLOG_CATEGORY_LABELS = {
   }
 };
 
+// Visszaadja, hogy az adott típushoz (hírek vagy blog) milyen kategória-
+// szűrőgombokat kell megjeleníteni – lásd a fenti komment: csak azok
+// jelennek meg, amelyekhez ténylegesen tartozik legalább egy bejegyzés.
 function getAvailableFilters(type) {
   const labels = NEWS_BLOG_CATEGORY_LABELS[type] || {};
   const used = new Set(
@@ -67,6 +73,9 @@ function getAvailableFilters(type) {
   ];
 }
 
+// Megmondja, van-e egyáltalán feltöltött tartalom az adott típushoz
+// (hírek vagy blog) – ha nincs, a "Blogok feltöltése folyamatban" üzenet
+// jelenik meg a "nincs találat" szöveg helyett.
 function hasContentOfType(type) {
   return SZEFO_NEWS_BLOG_CONTENT.some((item) => item.type === type);
 }
@@ -75,6 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initNewsBlogPage();
 });
 
+// A Hírek és blog oldal működését indítja el: beolvassa az oldalon lévő
+// elemeket, majd bekapcsolja a fülváltást, a kategóriaszűrést, a keresést
+// és a "Tovább olvasom" gombra megnyíló részletes nézetet.
 function initNewsBlogPage() {
   const app = document.querySelector(".news-blog-app");
   const tabs = Array.from(document.querySelectorAll("[data-news-blog-type]"));
@@ -86,6 +98,8 @@ function initNewsBlogPage() {
   const searchInput = document.querySelector("[data-news-blog-search]");
   const placeholder = document.querySelector("[data-news-blog-placeholder]");
 
+  // Ha az oldalon hiányzik bármelyik szükséges elem, a szkript leáll –
+  // ez védi ki, hogy hibás oldalszerkezet esetén ne fusson feleslegesen.
   if (
     !app ||
     !tabs.length ||
@@ -98,6 +112,8 @@ function initNewsBlogPage() {
     return;
   }
 
+// Ha a link végén ?type=blog vagy ?q=keresett+szó szerepel (pl. egy külső
+// hivatkozásból érkezve), az oldal ezzel a beállítással, ill. kereséssel nyílik meg.
 const params = new URLSearchParams(window.location.search);
 const initialType = params.get("type") === "blog" ? "blog" : "news";
 const initialSearch = params.get("q") || "";
@@ -111,6 +127,9 @@ if (searchInput && initialSearch) {
   searchInput.value = initialSearch;
 }
 
+  // Újrarajzolja a látható tartalmat a jelenlegi fül, szűrő, keresés és
+  // kiválasztott cikk alapján. Gyakorlatilag minden felhasználói művelet
+  // (fülváltás, szűrés, keresés, cikk megnyitása/bezárása) ezt hívja meg.
   function render() {
     renderTabs();
     renderFilters();
@@ -147,6 +166,9 @@ if (searchInput && initialSearch) {
     renderEmptyState(items);
   }
 
+  // Kiválogatja azokat a hír-/blogbejegyzéseket, amelyek megfelelnek a
+  // jelenleg kiválasztott fülnek (hírek/blog), kategóriaszűrőnek és a
+  // keresőmezőbe beírt szövegnek.
   function getFilteredItems() {
     return SZEFO_NEWS_BLOG_CONTENT.filter((item) => {
       const matchesType = item.type === activeType;
@@ -164,6 +186,7 @@ if (searchInput && initialSearch) {
     });
   }
 
+  // Kiemeli (aktívra állítja) a Hírek vagy Blog fület, amelyik éppen látszik
   function renderTabs() {
     tabs.forEach((tab) => {
       const isActive = tab.dataset.newsBlogType === activeType;
@@ -173,6 +196,7 @@ if (searchInput && initialSearch) {
     });
   }
 
+  // Legenerálja és megjeleníti a kategóriaszűrő gombokat (pl. "Céges hírek")
   function renderFilters() {
     const filters = getAvailableFilters(activeType);
 
@@ -194,6 +218,8 @@ if (searchInput && initialSearch) {
       .join("");
   }
 
+  // Megjeleníti a listából kiemelt (featured) cikket egy nagyobb, önálló
+  // kártyán a lista tetején; ha nincs külön kiemelt cikk, az elsőt mutatja.
   function renderFeatured(items) {
     const featuredItem = items.find((item) => item.featured) || items[0];
 
@@ -205,6 +231,7 @@ if (searchInput && initialSearch) {
     featuredContainer.innerHTML = createFeaturedCard(featuredItem);
   }
 
+  // A kiemelt cikken kívüli többi találatot jeleníti meg kártyák rácsában
   function renderCards(items) {
     const normalItems = items.filter((item) => !item.featured);
 
@@ -213,10 +240,14 @@ if (searchInput && initialSearch) {
       .join("");
   }
 
+  // A "Nincs találat" üzenetet csak akkor mutatja, ha valóban nincs egy
+  // egyezés sem az aktuális szűrésre/keresésre
   function renderEmptyState(items) {
     emptyState.hidden = items.length > 0;
   }
 
+  // Megnyitja egy adott cikk teljes, helyben olvasható nézetét (nem
+  // navigál el másik oldalra), és odagörget a tartalomhoz
   function openDetail(id) {
     activeDetailId = id;
     render();
@@ -230,6 +261,7 @@ if (searchInput && initialSearch) {
     });
   }
 
+  // Bezárja a részletes cikknézetet, és visszatér a lista nézetéhez
   function closeDetail() {
     activeDetailId = null;
     render();
@@ -240,6 +272,8 @@ if (searchInput && initialSearch) {
     });
   }
 
+  // Felépíti és megjeleníti a kiválasztott cikk teljes szövegét, a lista és
+  // a szűrők elrejtése mellett
   function renderDetail(id) {
     const item = SZEFO_NEWS_BLOG_CONTENT.find((entry) => entry.id === id);
 
@@ -260,6 +294,8 @@ if (searchInput && initialSearch) {
     detailContainer.innerHTML = createDetailView(item);
   }
 
+  // Fülre kattintva (Hírek/Blog) váltunk típust, és minden szűrés/keresés/
+  // megnyitott cikk visszaáll alapállapotba
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       activeType = tab.dataset.newsBlogType || "news";
@@ -275,6 +311,8 @@ if (searchInput && initialSearch) {
     });
   });
 
+  // Kategóriaszűrő gombra kattintva csak az adott kategória bejegyzései
+  // maradnak láthatók
   filtersContainer.addEventListener("click", (event) => {
     const button = event.target.closest("[data-news-blog-category]");
     if (!button) return;
@@ -285,6 +323,7 @@ if (searchInput && initialSearch) {
     render();
   });
 
+  // Gépelés közben, folyamatosan szűri a listát a beírt szöveg alapján
   searchInput?.addEventListener("input", () => {
     activeSearch = searchInput.value.trim();
     activeDetailId = null;
@@ -292,6 +331,8 @@ if (searchInput && initialSearch) {
     render();
   });
 
+  // A "Tovább olvasom" és a "Vissza a listához" gombok kattintását figyeli
+  // (mindkettő a kártyák/részletnézet dinamikusan generált HTML-jében van)
   document.addEventListener("click", (event) => {
     const openButton = event.target.closest("[data-news-blog-open]");
     const backButton = event.target.closest("[data-news-blog-back]");
@@ -311,6 +352,8 @@ if (searchInput && initialSearch) {
   render();
 }
 
+// Legyártja a kiemelt cikk HTML-jét (kép, kategória, dátum, cím, kivonat,
+// "Tovább olvasom" gomb)
 function createFeaturedCard(item) {
   return `
     <article class="news-blog-featured-card">
@@ -344,6 +387,7 @@ function createFeaturedCard(item) {
   `;
 }
 
+// Legyártja egy szokásos (nem kiemelt) hír-/blogkártya HTML-jét
 function createContentCard(item) {
   return `
     <article class="news-blog-card">
@@ -377,6 +421,8 @@ function createContentCard(item) {
   `;
 }
 
+// Legyártja egy cikk teljes, részletes nézetének HTML-jét (visszalink,
+// fejléc, kép, majd az összes szövegbekezdés szakaszonként)
 function createDetailView(item) {
   const contentHtml = item.content
     .map((section) => {
@@ -432,6 +478,8 @@ function createDetailView(item) {
   `;
 }
 
+// A keresést ékezet- és kis-/nagybetű-érzéketlenné teszi (pl. "esemeny"
+// is megtalálja az "esemény" szót tartalmazó cikkeket)
 function normalizeText(value) {
   return String(value)
     .toLowerCase()
@@ -442,6 +490,9 @@ function normalizeText(value) {
     .trim();
 }
 
+// Biztonsági célú segédfüggvény: a cikkek szövegében esetlegesen szereplő
+// <, >, & stb. jeleket ártalmatlan formára cseréli, mielőtt a szöveg
+// HTML-ként bekerülne az oldalba – ez védi ki a rosszindulatú kódbeszúrást.
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -451,6 +502,8 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+// Ugyanaz, mint az escapeHtml, de HTML-attribútumokba (pl. src="...") kerülő
+// szövegekhez, ahol a backtick (`) karaktert is le kell cserélni
 function escapeAttribute(value) {
   return escapeHtml(value).replaceAll("`", "&#096;");
 }

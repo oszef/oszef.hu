@@ -85,6 +85,9 @@ function getFocusableElements(scope) {
   return qsa(SELECTOR_FOCUSABLE, scope).filter(isVisible);
 }
 
+// Nyitott menüben/felugró ablakban (modal) a Tab billentyűvel a fókusz nem
+// szökhet ki a háttérbe: az utolsó elemről Tab-bal az elsőre ugrik vissza,
+// és fordítva (Shift+Tab-bal az elsőről az utolsóra).
 function trapFocus(event, container) {
   if (event.key !== "Tab") return;
 
@@ -337,6 +340,10 @@ function initOffcanvasMenu() {
    2. ÁLTALÁNOS CAROUSEL
 ========================================================= */
 
+// Újrafelhasználható diavetítő (carousel) motor: automatikusan lépteti a
+// diákat, kezeli az előző/következő gombokat, és szünetelteti a léptetést,
+// amíg a látogató az egérrel egy dia fölött van, vagy arra fókuszál. Ezt
+// használja mind a főoldali hero, mind az ISO tanúsítványok carousel-je.
 function createCarousel({
   slideSelector,
   nextSelector,
@@ -449,6 +456,9 @@ function initIsoCarousel() {
    3. OLDALVÁLTÁS / FADE
 ========================================================= */
 
+// A data-smooth-link jelölésű linkekre kattintva az oldal előbb elhalványul,
+// és csak ez után navigál el a célra, hogy ne legyen kellemetlenül hirtelen
+// az oldalváltás.
 function initSmoothPageLinks() {
   document.body.classList.add("page-fade-in");
 
@@ -482,6 +492,9 @@ function initSmoothPageLinks() {
    4. VEZÉRIGAZGATÓI KÖSZÖNTŐ
 ========================================================= */
 
+// A "Bővebben" gombra kattintva a rövid előnézeti szöveget lecseréli a
+// vezérigazgatói köszöntő teljes szövegére (és fordítva a "Vissza" gombbal),
+// finom elhalványulással a kettő között.
 function initCeoBlock() {
   const preview = qs(".ceo-preview");
   const full = qs(".ceo-full");
@@ -544,6 +557,8 @@ function initCeoBlock() {
    5. FŐBB ADATOK / SZÁMLÁLÓK
 ========================================================= */
 
+// Amikor a "Főbb adatok" szekció megjelenik a képernyőn (görgetéskor),
+// elindítja a számok feltöltő animációját és a kördiagram kirajzolását.
 function initFactsAnimation() {
   const section = qs(".facts-section");
   if (!section) return;
@@ -556,6 +571,8 @@ function initFactsAnimation() {
 
   let hasStarted = false;
 
+  // Egy darab számot fokozatosan, gyorsulva-lassulva pörget fel 0-ról a
+  // data-target attribútumban megadott célértékig
   function animateNumber(element) {
     const target = Number(element.dataset.target) || 0;
     const duration = 1600;
@@ -579,6 +596,7 @@ function initFactsAnimation() {
     requestAnimationFrame(update);
   }
 
+  // A kördiagramot 0%-ról tölti fel fokozatosan a tényleges 74%-os értékig
   function animatePie() {
     if (!pieProgress || !pieWrapper) return;
 
@@ -606,6 +624,8 @@ function initFactsAnimation() {
     requestAnimationFrame(update);
   }
 
+  // Egymás után, kis késleltetéssel indítja el az összes animációt (kártyák
+  // felbukkanása, számlálók, kördiagram), hogy ne egyszerre ugorjanak be
   function startFactsAnimation() {
     if (hasStarted) return;
     hasStarted = true;
@@ -646,6 +666,8 @@ function initFactsAnimation() {
    6. VÍZIÓ BLOKK ANIMÁCIÓ
 ========================================================= */
 
+// A "Víziónk" szekció képét és szövegét görgetéskor, megjelenéskor
+// úsztatja be (a kép előbb, a szöveg egy kis késleltetéssel utána)
 function initVisionAnimation() {
   const section = qs(".vision-section");
   const image = qs(".vision-image");
@@ -682,6 +704,9 @@ function initVisionAnimation() {
    7. TIMELINE
 ========================================================= */
 
+// A Történetünk oldal idővonalát vezérli: az évszám gombokra (asztali nézet)
+// vagy a pontokra (mobil nézet) kattintva, illetve nyílbillentyűkkel az
+// adott év szövege és képe jelenik meg, a többi elrejtve marad.
 function initTimeline() {
   const timeline = qs("#timeline");
   const sections = qsa(".timeline-section");
@@ -692,6 +717,8 @@ function initTimeline() {
 
   if (!timeline || !sections.length) return;
 
+  // Megmondja, hogy az idővonal éppen látszik-e a képernyőn (a fejléc alatt),
+  // hogy évváltáskor csak akkor görgessünk oda, ha tényleg nem látszana
   function isTimelineVisible() {
     const rect = timeline.getBoundingClientRect();
     const styles = window.getComputedStyle(document.documentElement);
@@ -701,6 +728,7 @@ function initTimeline() {
     return rect.bottom > navbarHeight && rect.top < viewportHeight;
   }
 
+  // Frissíti a mobil nézeten látható "aktuális évszám" feliratot
   function updateCurrentYearLabel(year) {
     if (!currentYearLabel) return;
 
@@ -713,6 +741,8 @@ function initTimeline() {
       year;
   }
 
+  // Az idővonal szíve: a kiválasztott évhez tartozó szöveges blokkot mutatja
+  // meg, az összes évszám-gombot és -pontot pedig ennek megfelelően jelöli ki
   function showSection(year, shouldScroll = false) {
     if (!year) return;
 
@@ -753,6 +783,8 @@ function initTimeline() {
     updateCurrentYearLabel(year);
   }
 
+  // Nyílbillentyűkkel (illetve Home/End-del) lépked az évszám gombok/pontok
+  // között, és rögtön meg is jeleníti a kiválasztott év tartalmát
   function moveTimelineControl(items, currentIndex, key) {
     let nextIndex = currentIndex;
 
@@ -818,6 +850,8 @@ function initTimeline() {
    8. KERESŐ ŰRLAP – ÁTIRÁNYÍTÁS
 ========================================================= */
 
+// A fejlécben és a menüben lévő kis keresőmezőt a beírt szöveggel átirányítja
+// a honlap saját kereső aloldalára, ahol a tényleges találatok megjelennek.
 function initSearchForm() {
   const searchForms = qsa("form.search");
   if (!searchForms.length) return;
@@ -849,6 +883,9 @@ function initSearchForm() {
    9. KÖZÖS KÁRTYA NYITÁS / ZÁRÁS
 ========================================================= */
 
+// Közös, újrafelhasználható "Bővebben / Bezárás" viselkedés az üzletág- és
+// üzemegység-kártyákhoz: egy kártya kinyitásakor az összes többi bezárul,
+// hogy mindig legfeljebb egy kártya legyen nyitva egyszerre.
 function initToggleCards({
   sectionSelector,
   cardSelector,
@@ -922,6 +959,9 @@ function initUnitsCards() {
    10. BUSINESS / UNITS KÖZÖS MODAL
 ========================================================= */
 
+// Az üzletág- és üzemegység-kártyák "Részletek" gombjára kattintva a kártyán
+// (egyébként rejtve tárolt) hosszú leírását egy közös felugró ablakba (modal)
+// másolja be és jeleníti meg.
 function initBusinessDetailsModal() {
   const modal = qs("#businessModal");
   const modalContent = qs("#businessModalContent");
@@ -1009,6 +1049,9 @@ function initBusinessDetailsModal() {
    11. E-HULLADÉK KÉPGALÉRIA
 ========================================================= */
 
+// Az e-hulladék oldal képgalériáját vezérli: egy képre kattintva felugró,
+// nagyított nézet nyílik, amelyben az előző/következő gombokkal (vagy a
+// nyílbillentyűkkel) lehet lapozni a képek között.
 function initEwasteGallery() {
   const gallery = qs("[data-ewaste-gallery]");
   const modal = qs("[data-ewaste-gallery-modal]");
@@ -1115,6 +1158,9 @@ function initEwasteGallery() {
    12. KARRIER OLDAL – ÁLLÁSHIRDETÉS MODAL
 ========================================================= */
 
+// A Karrier oldalon egy álláshirdetés-kártya "Részletek" gombjára kattintva
+// a kártyán (egyébként rejtve tárolt) teljes hirdetésszöveget egy közös
+// felugró ablakba (modal) másolja be és jeleníti meg.
 function initCareerJobsModal() {
   const modal = qs("#careerModal");
   const modalContent = qs("#careerModalContent");

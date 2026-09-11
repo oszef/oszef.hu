@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
     <meta name="description" content="A Szegedi SZEFO Zrt. nyilvántartott képző intézménye: OKJ-s és egyéb szakmai, valamint kompetenciafejlesztő képzések bemutatása.">
     <link rel="canonical" href="https://www.szefo.hu/hu/kepzo_intezmenyek/">
 
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="Képző intézmények">
@@ -15,14 +17,17 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Böngészőfül ikonja (favicon) és az oldal kinézetét meghatározó CSS-stíluslap betöltése -->
     <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
     <link rel="stylesheet" href="../../css/style.css">
     <title>Képző intézmények | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 <body>
+     <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
      <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR -->
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
         <div class="navbar">
             <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
                 <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -40,7 +45,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENU -->
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -59,7 +64,7 @@
                         <a href="../../index.html">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK -->
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -82,7 +87,7 @@
                         </ul>
                     </li>
 
-                    <!-- CÉGINFORMÁCIÓK -->
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -152,6 +157,7 @@
                     </li>
                 </ul>
 
+               <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
                <div class="search search--button-only">
                 <a class="search-link" href="../kereses/index.html">
                     Keresés
@@ -160,13 +166,15 @@
             </div>
         </nav>
 
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
         <div class="backdrop" id="backdrop" aria-hidden="true"></div>
     </header>
 
     <main id="main-content">
+        <!-- FŐ TARTALOM: a cég nyilvántartott képző intézményének bemutatása és a meghirdetett képzések listája -->
         <section class="info-page" aria-labelledby="kepzo-title">
 
-            <!-- FEJLÉC + KAPCSOLAT -->
+            <!-- CÍM ÉS KAPCSOLAT: az oldal címe és a képzési vezető elérhetőségei -->
             <section class="info-block section-card" aria-labelledby="kepzo-title">
                 <div class="info-content">
                     <h1 id="kepzo-title">Képző intézmény</h1>
@@ -186,7 +194,7 @@
                 </div>
             </section>
 
-            <!-- KÉPZÉSI TEVÉKENYSÉGEK - 2017.09.20 -->
+            <!-- KÉPZÉSI TEVÉKENYSÉGEK (2017.09.20): a képzési kínálat általános bemutatása és az "A" képzési körös képzések táblázata -->
             <article class="info-block section-card" aria-labelledby="kepzesi-tevekenysegek-title">
                 <div class="info-content">
                     <h2 id="kepzesi-tevekenysegek-title">Képzési tevékenységek</h2>
@@ -215,6 +223,7 @@
                     <h3>„A” képzési kör</h3>
                     <p>OKJ szerinti szakmai képzések („engedélykötelesek”).</p>
 
+                    <!-- Keskeny (pl. mobil) képernyőn oldalra görgethető táblázat, hogy a sok oszlop is elférjen -->
                     <div class="table-scroll" tabindex="0" role="region" aria-label="A képzési körös képzések, vízszintesen görgethető">
                         <table class="info-table">
                             <caption>„A” képzési körös képzéseink</caption>
@@ -259,7 +268,7 @@
                 </div>
             </article>
 
-            <!-- EFOP PROJEKT ZÁRÁSA - 2019.03.29 -->
+            <!-- EFOP PROJEKT ZÁRÁSA (2019.03.29): a tranzitfoglalkoztatási projekt lezárása és a képzési eredmények táblázata -->
             <article class="info-block section-card" aria-labelledby="efop-zaras-title">
                 <div class="info-content">
                     <h2 id="efop-zaras-title">EFOP-1.1.6-17 projekt zárása</h2>
@@ -340,7 +349,7 @@
                 </div>
             </article>
 
-            <!-- EFOP PROJEKT KERETÉBEN ZAJLÓ KÉPZÉSEK - 2018.09.28 -->
+            <!-- EFOP PROJEKT KERETÉBEN ZAJLÓ KÉPZÉSEK (2018.09.28): a projekt akkori állása, célcsoportja és a képzéstípusok -->
             <article class="info-block section-card" aria-labelledby="efop-zajlo-title">
                 <div class="info-content">
                     <h2 id="efop-zajlo-title">EFOP-1.1.6-17 projekt keretében zajló képzések</h2>
@@ -411,7 +420,7 @@
                 </div>
             </article>
 
-            <!-- FELNŐTTKÉPZÉSI TEVÉKENYSÉGEINKBEN VÁLTOZÁS - 2018.03.29 -->
+            <!-- FELNŐTTKÉPZÉSI TEVÉKENYSÉGEINKBEN VÁLTOZÁS (2018.03.29): az "A", "B" és "D" képzési körök ismertetése, mindegyikhez a hozzá tartozó képzések táblázatával -->
             <article class="info-block section-card" aria-labelledby="valtozas-title">
                 <div class="info-content">
                     <h2 id="valtozas-title">Felnőttképzési tevékenységeinkben változás</h2>
@@ -683,11 +692,13 @@
                 </div>
             </article>
 
+            <!-- Vissza a főoldalra mutató link -->
             <div class="mission-back">
                 <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
             </div>
         </section>
     </main>
+    <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -714,6 +725,7 @@
                 <p>titkarsag@szefo.hu</p>
             </div>
         </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
         <div class="site-footer-bottom">
             <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
             <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
@@ -721,6 +733,7 @@
 
     </footer>
 
+    <!-- JavaScript-fájl: a menü és az oldal egyéb interaktív elemeinek működését biztosítja -->
     <script src="../../js/script.js"></script>
 </body>
 </html>

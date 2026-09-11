@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
     <meta name="description" content="A SZEFO Fonalfeldolgozó Chance Alapítvány közhasznú dokumentumai: alapító okirat, éves beszámolók, kuratóriumi jegyzőkönyvek és meghívók.">
     <link rel="canonical" href="https://www.szefo.hu/hu/alapitvany/">
 
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="Alapítványunk">
@@ -15,6 +17,7 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Böngészőfül ikonja (favicon), valamint az oldal és a PDF-dokumentumok kártyáinak kinézetét meghatározó CSS-stíluslapok betöltése -->
     <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/pdf_style.css">
@@ -22,9 +25,11 @@
     <title>Alapítványunk | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 <body>
+      <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
       <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR -->
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
         <div class="navbar">
             <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
                 <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -42,7 +47,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENU -->
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -61,7 +66,7 @@
                         <a href="../../index.html">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK -->
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -84,7 +89,7 @@
                         </ul>
                     </li>
 
-                    <!-- CÉGINFORMÁCIÓK -->
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -154,6 +159,7 @@
                     </li>
                 </ul>
 
+                <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
                 <div class="search search--button-only">
                     <a class="search-link" href="../kereses/index.html">
                         Keresés
@@ -162,12 +168,15 @@
             </div>
         </nav>
 
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
         <div class="backdrop" id="backdrop" aria-hidden="true"></div>
     </header>
 
     <main id="main-content">
+            <!-- FŐ TARTALOM: az Alapítvány bemutatása, adatai és a kapcsolódó dokumentumok -->
             <section class="foundation-page" aria-labelledby="foundation-page-title">
 
+                <!-- BEMUTATKOZÓ KÁRTYA: az Alapítvány adatai, célja és tevékenységei -->
                 <div class="foundation-page-card foundation-page-card--intro">
                 <h1 id="foundation-page-title">
                     Chance Alapítvány
@@ -218,7 +227,7 @@
                 </ul>
                 </div>
 
-                <!-- PDF fájlok -->
+                <!-- DOKUMENTUMOK: az Alapítvány PDF dokumentumai (alapító okirat, beszámolók, jegyzőkönyvek, meghívók), megnyitható és letölthető linkkel -->
 
                 <section class="docs-section" aria-labelledby="foundation-docs-title">
                     <div class="docs-header">
@@ -566,6 +575,7 @@
                     </div>
                 </section>
 
+                <!-- Vissza a főoldalra mutató link -->
                 <div class="mission-back">
                 <a class="mission-back-link" href="../../index.html">
                     ← Vissza a főoldalra
@@ -575,6 +585,7 @@
             </section>
    </main>
 
+    <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -601,6 +612,7 @@
                 <p>titkarsag@szefo.hu</p>
             </div>
         </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
         <div class="site-footer-bottom">
             <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
             <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
@@ -608,10 +620,8 @@
 
     </footer>
 
-
-    
-
+    <!-- JavaScript-fájlok: a script.js a menü, a downloader.js a dokumentumok letöltés gombjának működését biztosítja -->
  <script src="../../js/script.js"></script>
- <script src="../../js/downloader.js"></script>   
+ <script src="../../js/downloader.js"></script>
 </body>
 </html>

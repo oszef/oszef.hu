@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
     <meta name="description" content="A SZEFO aktuális hírei, eseményei és blogbejegyzései: céges újdonságok és a fenntartható, felelős foglalkoztatás történetei.">
     <link rel="canonical" href="https://www.szefo.hu/hu/hireink/">
 
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="Híreink">
@@ -15,15 +17,18 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Böngészőfül ikonja (favicon), valamint az oldal és a hírek/blog rész kinézetét meghatározó CSS-stíluslapok betöltése -->
     <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/news_blog.css">
     <title>Híreink | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 <body>
+   <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR -->
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
         <div class="navbar">
             <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
                 <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -41,7 +46,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENU -->
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -60,7 +65,7 @@
                         <a href="../../index.html">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK -->
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -83,7 +88,7 @@
                         </ul>
                     </li>
 
-                    <!-- CÉGINFORMÁCIÓK -->
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -153,6 +158,7 @@
                     </li>
                 </ul>
 
+               <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
                <div class="search search--button-only">
                 <a class="search-link" href="../kereses/index.html">
                     Keresés
@@ -161,11 +167,13 @@
             </div>
         </nav>
 
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
         <div class="backdrop" id="backdrop" aria-hidden="true"></div>
     </header>
 
 
     <main id="main-content" class="news-blog-page">
+        <!-- OLDALCÍM ÉS BEVEZETŐ: a "Hírek és blog" cím és rövid ismertető szöveg -->
         <section class="news-blog-hero" aria-labelledby="news-blog-title">
             <span class="news-blog-eyebrow">Aktualitások</span>
 
@@ -177,6 +185,7 @@
             </p>
         </section>
 
+        <!-- HÍREK ÉS BLOG ALKALMAZÁS: kereséssel és Hírek/Blog fülekkel működő tartalomlista, amelyet a news_blog.js szkript tölt fel -->
         <section class="news-blog-app" aria-labelledby="news-blog-app-title">
             <div class="news-blog-toolbar">
             <div>
@@ -186,6 +195,7 @@
                 </p>
             </div>
 
+            <!-- Keresőmező a hírek és blogbejegyzések szövegében -->
             <form class="news-blog-search" data-news-blog-search-form>
                 <label class="sr-only" for="newsBlogSearch">
                 Keresés a hírek és blogbejegyzések között
@@ -202,6 +212,7 @@
             </div>
 
             <div class="news-blog-tabs-row">
+            <!-- Hírek / Blog váltógombok (fülek) -->
             <div class="news-blog-tabs" role="tablist" aria-label="Tartalomtípus választó">
                 <button
                     class="news-blog-tab is-active"
@@ -224,13 +235,14 @@
                 </button>
             </div>
 
-            <!-- A korábbi lapszámok archívuma külön oldalon él, nem a
-                 hírek/blog listában, ezért link és nem tab. -->
+            <!-- A korábbi lapszámok archívuma külön aloldalon található, nem a hírek/blog
+                 listában jelenik meg, ezért ez egy hivatkozás (link), nem váltógomb (fül). -->
             <a class="news-blog-magazine-link" href="../szefo_magazin/index.html">
                 Korábbi SZEFO Magazinok
             </a>
             </div>
 
+            <!-- A következő üres elemeket a news_blog.js szkript tölti fel dinamikusan: szűrők, kiemelt hír, tartalomlista és a részletes nézet -->
             <div class="news-blog-filters" data-news-blog-filters></div>
 
             <div class="news-blog-featured" data-news-blog-featured></div>
@@ -248,18 +260,20 @@
             Nincs találat. Próbáljon meg másik keresőkifejezést vagy kategóriát választani.
             </p>
 
-            <!-- Akkor jelenik meg, ha az adott fülhöz (jelenleg a Blog) még
-                 egyáltalán nincs feltöltött tartalom. -->
+            <!-- Ez az üzenet akkor jelenik meg, ha a kiválasztott fülhöz (jelenleg a Blog)
+                 még nincs feltöltve semmilyen tartalom. -->
             <div class="news-blog-placeholder" data-news-blog-placeholder hidden>
             Blogok feltöltése folyamatban.
             </div>
         </section>
 
+        <!-- Vissza a főoldalra mutató link -->
         <div class="mission-back">
             <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
         </div>
     </main>
 
+    <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -286,6 +300,7 @@
                 <p>titkarsag@szefo.hu</p>
             </div>
         </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
         <div class="site-footer-bottom">
             <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
             <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
@@ -293,6 +308,7 @@
 
     </footer>
 
+    <!-- JavaScript-fájlok: a script.js a menü, a news_blog.js a hírek/blog keresésének, szűrésének és megjelenítésének működését biztosítja -->
     <script src="../../js/script.js"></script>
     <script src="../../js/news_blog.js"></script>
 </body>

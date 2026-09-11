@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
     <meta name="description" content="A SZEFO Magazin korábbi lapszámainak archívuma: a vállalati újság 2019 és 2026 közötti számai PDF formátumban, olvasható és letölthető változatban.">
     <link rel="canonical" href="https://www.szefo.hu/hu/szefo_magazin/">
 
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="Korábbi SZEFO Magazinok">
@@ -15,15 +17,18 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Böngészőfül ikonja (favicon), valamint az oldal és a magazinkártyák kinézetét meghatározó CSS-stíluslapok betöltése -->
     <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/magazin.css">
     <title>Korábbi SZEFO Magazinok | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 <body>
+        <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
         <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR -->
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
         <div class="navbar">
             <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
                 <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -41,7 +46,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENU -->
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -60,7 +65,7 @@
                         <a href="../../index.html">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK -->
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -83,7 +88,7 @@
                         </ul>
                     </li>
 
-                    <!-- CÉGINFORMÁCIÓK -->
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -153,6 +158,7 @@
                     </li>
                 </ul>
 
+               <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
                <div class="search search--button-only">
                 <a class="search-link" href="../kereses/index.html">
                     Keresés
@@ -161,11 +167,13 @@
             </div>
         </nav>
 
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
         <div class="backdrop" id="backdrop" aria-hidden="true"></div>
     </header>
 
 
     <main id="main-content" class="magazine-page">
+        <!-- FŐ TARTALOM: a SZEFO Magazin korábbi lapszámainak archívuma, mindegyik olvasható és letölthető PDF formátumban -->
         <section class="magazine-hero" aria-labelledby="magazine-title">
             <span class="magazine-eyebrow">Archívum</span>
 
@@ -178,6 +186,7 @@
             </p>
         </section>
 
+        <!-- Jogi/adatvédelmi figyelmeztetés arról, hogy az archív lapszámok változatlan, korabeli tartalommal érhetők el -->
         <p class="magazine-notice">
             <strong>Archív tartalom.</strong> Ezek a lapszámok a korábbi
             szefo.hu oldalon megjelent formájukban, változatlan tartalommal
@@ -192,6 +201,7 @@
             szerint fordulhat hozzánk.
         </p>
 
+        <!-- ESZKÖZSOR: visszalink a Hírek és blog oldalra, valamint a lapszámok darabszáma -->
         <div class="magazine-toolbar">
             <a class="magazine-back-link" href="../hireink/index.html">
                 <span aria-hidden="true">←</span> Vissza a Hírek és blog oldalra
@@ -200,6 +210,7 @@
             <span class="magazine-count">8 lapszám</span>
         </div>
 
+        <!-- LAPSZÁMOK RÁCSA: az egyes magazinszámok kártyái borítóképpel, rövid ismertetővel, valamint Olvasás és Letöltés gombbal, a legfrissebbel kezdve -->
         <section class="magazine-grid" aria-label="Korábbi SZEFO Magazin lapszámok">
 
             <!-- 2026. MÁJUS -->
@@ -657,11 +668,13 @@
 
         </section>
 
+        <!-- Vissza a főoldalra mutató link -->
         <div class="mission-back">
             <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
         </div>
     </main>
 
+    <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -688,6 +701,7 @@
                 <p>titkarsag@szefo.hu</p>
             </div>
         </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
         <div class="site-footer-bottom">
             <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
             <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
@@ -695,6 +709,7 @@
 
     </footer>
 
+    <!-- JavaScript-fájlok: a script.js a menü, a downloader.js a lapszámok letöltés gombjának működését biztosítja -->
     <script src="../../js/script.js"></script>
     <script src="../../js/downloader.js"></script>
 </body>

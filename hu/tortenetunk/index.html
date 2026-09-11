@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
     <meta name="description" content="A SZEFO Közhasznú Nonprofit Zrt. története 1953-tól napjainkig – alapítás, fejlesztések, mérföldkövek és együttműködések.">
     <link rel="canonical" href="https://www.szefo.hu/hu/tortenetunk/">
 
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="Történetünk">
@@ -15,14 +17,17 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Böngészőfül ikonja (favicon) és az oldal kinézetét meghatározó CSS-stíluslap betöltése -->
     <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
     <link rel="stylesheet" href="../../css/style.css">
     <title>Történetünk | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 <body>
+    <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
     <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR -->
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
         <div class="navbar">
             <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
                 <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -40,7 +45,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENU -->
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -59,7 +64,7 @@
                         <a href="../../index.html">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK -->
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -82,7 +87,7 @@
                         </ul>
                     </li>
 
-                    <!-- CÉGINFORMÁCIÓK -->
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -152,6 +157,7 @@
                     </li>
                 </ul>
 
+                <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
                 <div class="search search--button-only">
                 <a class="search-link" href="../kereses/index.html">
                     Keresés
@@ -160,16 +166,18 @@
             </div>
         </nav>
 
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
         <div class="backdrop" id="backdrop" aria-hidden="true"></div>
     </header>
     <main id="main-content">
+        <!-- FŐ TARTALOM: a cég története évszámok szerint böngészhető idővonalon -->
         <section class="timeline-page" aria-labelledby="timeline-main-title">
             <div class="timeline-header">
                 <h1 id="timeline-main-title">A SZEFO története</h1>
                 <p>Korszerű fejlesztések, mérföldkövek, együttműködések</p>
             </div>
             
-            <!-- ÉVSZÁM NAVIGÁCIÓ -->
+            <!-- ÉVSZÁM NAVIGÁCIÓ (ASZTALI NÉZET): gombok az egyes évekhez; kattintásra az idővonal az adott időszak leírására vált -->
             <nav class="timeline-years-bar" aria-label="Történeti évszámok">
                 <button class="year-item active" type="button" data-year="1953" aria-pressed="true">1953</button>
                 <button class="year-item" type="button" data-year="1960" aria-pressed="false">1960</button>
@@ -187,6 +195,7 @@
                 <button class="year-item" type="button" data-year="jelen" aria-pressed="false">Jelen</button>
                 
             </nav>
+          <!-- ÉVSZÁM NAVIGÁCIÓ (MOBIL NÉZET): ugyanaz, mint fent, kisebb képernyőn pontokkal (csúszkával) megjelenítve -->
           <nav class="timeline-years-bar timeline-years-bar--ticks"
                 aria-label="Történeti évszámok (mobil)"
                 data-start="1953"
@@ -210,6 +219,7 @@
             <span class="timeline-current-year" aria-live="polite">1953</span>
         </nav>
 
+            <!-- IDŐVONAL TARTALMA: az egyes évekhez tartozó szövegek és képek; egyszerre csak a kiválasztott év blokkja jelenik meg -->
             <div class="timeline-wrapper" id="timeline" aria-live="polite">
 
                 <!-- 1953 -->
@@ -263,7 +273,7 @@
                 <!-- 1970 -->
                 <section class="timeline-section" data-year="1970" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN -->
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <div class="timeline-image no-photo" aria-hidden="true"></div>
 
                         <div class="timeline-text">
@@ -291,7 +301,7 @@
                 <!-- 1990 -->
                 <section class="timeline-section" data-year="1990" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN -->
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <div class="timeline-image no-photo" aria-hidden="true"></div>
 
                         <div class="timeline-text">
@@ -313,7 +323,7 @@
                 <!-- 1993 -->
                 <section class="timeline-section" data-year="1993" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN -->
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <div class="timeline-image no-photo" aria-hidden="true"></div>
 
                         <div class="timeline-text">
@@ -356,7 +366,7 @@
                 <!-- 2001 -->
                 <section class="timeline-section" data-year="2001" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN -->
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <div class="timeline-image no-photo" aria-hidden="true"></div>
 
                         <div class="timeline-text">
@@ -421,7 +431,7 @@
                 <!-- 2013 -->
                 <section class="timeline-section" data-year="2013" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN -->
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <div class="timeline-image no-photo" aria-hidden="true"></div>
 
                         <div class="timeline-text">
@@ -442,7 +452,7 @@
                 <!-- 2014 -->
                 <section class="timeline-section" data-year="2014" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN -->
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <div class="timeline-image no-photo" aria-hidden="true"></div>
 
                         <div class="timeline-text">
@@ -471,7 +481,7 @@
                 <!-- 2019 -->
                 <section class="timeline-section" data-year="2019" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN -->
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <div class="timeline-image no-photo" aria-hidden="true"></div>
 
                         <div class="timeline-text">
@@ -492,7 +502,7 @@
                 <!-- 2021 -->
                 <section class="timeline-section" data-year="2021" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN -->
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <div class="timeline-image no-photo" aria-hidden="true"></div>
 
                         <div class="timeline-text">
@@ -543,6 +553,7 @@
                     </div>
                 </section>
             </div>
+            <!-- Vissza a főoldalra mutató link -->
             <div class="mission-back">
                 <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
             </div>
@@ -554,6 +565,7 @@
 
    </main>
 
+    <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -580,14 +592,15 @@
                 <p>titkarsag@szefo.hu</p>
             </div>
         </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
         <div class="site-footer-bottom">
             <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
             <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
         </div>
 
     </footer>
- 
-    
- <script src="../../js/script.js"></script>   
+
+    <!-- JavaScript-fájl: a menü és az oldal egyéb interaktív elemeinek (pl. idővonal) működését biztosítja -->
+ <script src="../../js/script.js"></script>
 </body>
 </html>

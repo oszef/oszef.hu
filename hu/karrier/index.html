@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
   <meta
     name="description"
     content="Karrier és munkalehetőségek a SZEFO Közhasznú Nonprofit Zrt.-nél. Befogadó, biztonságos és kiszámítható munkahely megváltozott munkaképességű munkavállalók számára."
@@ -11,6 +12,7 @@
 
   <link rel="canonical" href="https://www.szefo.hu/hu/karrier/">
 
+  <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
   <meta property="og:title" content="Karrier">
@@ -20,6 +22,7 @@
   <meta property="og:locale" content="hu_HU">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Böngészőfül ikonja (favicon), valamint az oldal és az állásikonok kinézetét meghatározó CSS-stíluslapok (Bootstrap Icons betűkészlettel) betöltése -->
   <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
    <link rel="stylesheet" href="../../css/style.css">
   <link href="../../css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -29,9 +32,11 @@
 </head>
 
 <body>
+   <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+  <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
   <header class="site-header">
-    <!-- NAVBAR -->
+    <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
     <div class="navbar">
       <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
         <img
@@ -54,7 +59,7 @@
       </button>
     </div>
 
-    <!-- OFFCANVAS MENU -->
+    <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
     <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
       <div class="offcanvas-header">
         <button
@@ -73,7 +78,7 @@
             <a href="../../index.html">Kezdőlap</a>
           </li>
 
-          <!-- RÓLUNK -->
+          <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
           <li class="dropdown">
             <button
               class="dropdown-toggle"
@@ -91,7 +96,7 @@
             </ul>
           </li>
 
-          <!-- CÉGINFORMÁCIÓK -->
+          <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
           <li class="dropdown">
             <button
               class="dropdown-toggle"
@@ -126,6 +131,7 @@
           <li><a href="../klaszter/index.html">Klaszter</a></li>
         </ul>
 
+        <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
         <div class="search search--button-only">
           <a class="search-link" href="../kereses/index.html">
             Keresés
@@ -134,10 +140,11 @@
       </div>
     </nav>
 
+    <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
     <div class="backdrop" id="backdrop" aria-hidden="true"></div>
   </header>
   <main id="main-content" class="career-page">
-<!-- KARRIER HERO    KÉP -->
+<!-- KARRIER HERO KÉP: az oldal tetején megjelenő, teljes szélességű bemutatkozó kép -->
     <section class="career-hero" aria-label="Karrier oldal kiemelt képe">
       <img
         src="../../img/karrier/karrier-hero.webp"
@@ -149,7 +156,8 @@
     </section>
 
     <!-- =========================================================
-         2. BEVEZETŐ BLOKK – SZÖVEG + VIDEÓ
+         2. BEVEZETŐ BLOKK – SZÖVEG + VIDEÓ: köszöntő szöveg,
+         jelentkezési elérhetőségek és egy bemutatkozó videó
     ========================================================== -->
     <section class="career-intro" aria-labelledby="career-title">
       <div class="career-intro-text section-card">
@@ -193,13 +201,13 @@
         <div class="career-contact-box" aria-label="Karrier jelentkezési elérhetőségek">
           <p>
             <strong>E-mail:</strong>
-            <!-- mailto: attributum megnyitja a felhaszáló email kliensét -->
+            <!-- A mailto: attribútum megnyitja a felhasználó e-mail kliensét -->
             <a href="mailto:karrier@szefo.hu">karrier@szefo.hu</a>
           </p>
 
           <p>
             <strong>Telefon:</strong>
-            <!-- tel: attributum megnyitja a felhasználó telefonalkalmazását -->
+            <!-- A tel: attribútum megnyitja a felhasználó telefonalkalmazását -->
             <a href="tel:+3662554054">+36 (62) 554 054</a>
             <span>/108 mellék</span>
             vagy
@@ -239,7 +247,9 @@
     </section>
 
     <!-- =========================================================
-         3. AKTUÁLIS ÁLLÁSAJÁNLATOK
+         3. AKTUÁLIS ÁLLÁSAJÁNLATOK: a nyitott pozíciók kártyái;
+         "Részletek" gombra kattintva egy felugró ablakban (modal)
+         nyílik meg a teljes álláshirdetés szövege
     ========================================================== -->
     <section class="career-jobs" aria-labelledby="career-jobs-title">
       <header class="career-jobs-header">
@@ -3040,8 +3050,8 @@
     </section>
 
     <!-- =========================================================
-         4. KARRIER MODAL
-         Az álláshirdetés részletei ide töltődnek be JS-sel.
+         4. KARRIER MODAL: felugró ablak, amelybe a kiválasztott
+         álláshirdetés részletei töltődnek be JavaScript segítségével
     ========================================================== -->
     <div
       class="career-modal"
@@ -3076,7 +3086,9 @@
   </main>
 
   <!-- =========================================================
-       KÖZÖS LÁBLÉC
+       KÖZÖS LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg;
+       mivel az oldal nem közös sablonból épül fel, minden aloldalon
+       külön-külön, azonos tartalommal szerepel
   ========================================================== -->
   <footer class="site-footer">
     <div class="site-footer-inner">
@@ -3110,6 +3122,7 @@
         </p>
       </div>
     </div>
+      <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
       <div class="site-footer-bottom">
           <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
           <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
@@ -3117,6 +3130,7 @@
 
   </footer>
 
+  <!-- JavaScript-fájl: a menü és az oldal egyéb interaktív elemeinek (pl. álláshirdetés-modal) működését biztosítja -->
   <script src="../../js/script.js"></script>
 </body>
 </html>

@@ -30,6 +30,10 @@ háttér nélkül is módosítható és költségmentesen üzemeltethető legyen
 - `img/` - a képek, témák szerint almappákba rendezve, webp formátumban
   (ez egy tömörebb, gyorsabban betöltődő képformátum).
 - `doc/` - a letölthető PDF dokumentumok.
+- `robots.txt` és `sitemap.xml` - a keresőmotoroknak szóló technikai
+  fájlok: a `robots.txt` szabályozza, mely részeket járhatják be a
+  keresőrobotok, a `sitemap.xml` pedig felsorolja, milyen URL-ek
+  tartoznak az oldalhoz.
 
 ## A JavaScript fájlok, dióhéjban
 
@@ -70,11 +74,22 @@ után is még a régi változatot látod.
 
 ## Hogyan kerül fel élesbe
 
-Az oldal csak fájlokból áll, úgyhogy bármilyen tárhelyre feltölthető
-FTP-vel vagy SFTP-vel, nincs semmilyen külön "build" lépés - amit
-feltöltesz, az fog futni. Feltöltés után érdemes a böngészőben
-gyorsítótár nélkül frissíteni (Ctrl+F5), nehogy a régi CSS maradjon
-betöltve.
+Az oldal csak fájlokból áll, nincs semmilyen külön "build" lépés - amit
+a tárhelyre feltöltesz, az fog futni. Elvben bármilyen tárhelyre
+feltölthető lenne FTP-vel vagy SFTP-vel is, de a szefo.hu élesítése
+ténylegesen a cPanel "Git Version Control" funkcióján keresztül, push-ra
+történő automatikus telepítéssel (push-to-deploy) megy: a gyökérben lévő
+`.cpanel.yml` fájl írja elő, hogy egy git push után a cPanel átmásolja a
+fájlokat az élő könyvtárba.
+
+Egy fontos apróság: a `.cpanel.yml`-ben használt másolóparancs a `*`
+minta miatt nem másolja át a ponttal kezdődő ("rejtett") fájlokat - ha
+valaha ilyesmit vennél fel a gyökérbe (pl. egy jövőbeli `.htaccess`-t),
+arról külön kellene gondoskodni, mert automatikusan nem kerülne fel
+élesbe.
+
+Feltöltés/telepítés után érdemes a böngészőben gyorsítótár nélkül
+frissíteni (Ctrl+F5), nehogy a régi CSS maradjon betöltve.
 
 ## Ha módosítani szeretnél valamit
 
@@ -195,10 +210,10 @@ bennragadna a tabsorrendben.
 
 - Nincs benne semmilyen build eszköz vagy csomagkezelő - ahogy fentebb
   írtam, ez tudatos döntés volt.
-- Nincs `sitemap.xml` és `robots.txt`.
+- Van `sitemap.xml` és `robots.txt` a gyökérben, a keresőmotoroknak.
 - Az oldal egynyelvű (magyar). A `hu/` mappaszerkezet elvben lehetővé
   tenné más nyelvek felvételét is, de ahhoz a menüt is bővíteni kellene.
-- A pdf dokumentumok egy része nem értelmezhető a képernyőfelovasoknak.
+- A pdf dokumentumok egy része nem értelmezhető a képernyőolvasóknak.
 - A `hu/szefo_magazin/` a SZEFO Magazin korábbi lapszámainak archívuma.
   A régi WordPress oldal `szefo-magazin` aloldalát váltja ki, a
   lapszámokat megőrzési kötelezettség miatt tartjuk elérhetőn. A nyolc

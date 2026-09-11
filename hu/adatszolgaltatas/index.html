@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
     <meta name="description" content="A Takarékos törvény szerint közzétett adatok 2009–2021: vezetői javadalmazás, felügyelőbizottsági díjak és foglalkoztatási adatok.">
     <link rel="canonical" href="https://www.szefo.hu/hu/adatszolgaltatas/">
 
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="Adatszolgáltatás">
@@ -15,14 +17,17 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Böngészőfül ikonja (favicon) és az oldal kinézetét meghatározó CSS-stíluslap betöltése -->
     <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
     <link rel="stylesheet" href="../../css/style.css">
     <title>Adatszolgáltatás | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 <body>
+     <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
      <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR -->
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
         <div class="navbar">
             <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
                 <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -40,7 +45,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENU -->
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -59,7 +64,7 @@
                         <a href="../../index.html">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK -->
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -82,7 +87,7 @@
                         </ul>
                     </li>
 
-                    <!-- CÉGINFORMÁCIÓK -->
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -152,6 +157,7 @@
                     </li>
                 </ul>
 
+               <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
                <div class="search search--button-only">
                 <a class="search-link" href="../kereses/index.html">
                     Keresés
@@ -160,10 +166,12 @@
             </div>
         </nav>
 
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
         <div class="backdrop" id="backdrop" aria-hidden="true"></div>
     </header>
 
     <main id="main-content">
+        <!-- FŐ TARTALOM: a Takarékos törvény szerint kötelezően közzéteendő vezetői javadalmazási és foglalkoztatási adatok, évenkénti bontásban, 2009-től 2021-ig -->
         <section class="info-page" aria-labelledby="adat-title">
             <section class="info-block section-card" aria-labelledby="adat-title">
                 <div class="info-content">
@@ -174,6 +182,17 @@
                         2009. évi CXXII. törvény (a továbbiakban: Takarékos törvény) alapján közzétett
                         adatok évenkénti bontásban. A címsorra kattintva nyitható és zárható az adott év.
                     </p>
+
+                    <!--
+                        Az oldal további része 13, egymással azonos felépítésű, évenkénti blokkból áll
+                        (2021-től visszafelé 2009-ig), minden évhez saját, lenyitható/összecsukható
+                        (<details><summary>) szakasszal. Egy-egy éven belül jellemzően ugyanazok a kis
+                        táblázatok ismétlődnek: a vezető tisztségviselő (vezérigazgató), a vezető állású
+                        munkavállalók, a Felügyelő Bizottság tagjai, a cégjegyzésre/bankszámla felett
+                        rendelkezésre jogosult és egyéb meghatározó munkavállalók javadalmazása, valamint
+                        a foglalkoztatottak összesített létszám- és béradatai. Csak a konkrét nevek,
+                        beosztások és összegek térnek el évről évre.
+                    -->
 
                     <!-- ===================== 2021 ===================== -->
                     <details class="year-block" open>
@@ -187,6 +206,7 @@
                                 cégjegyzésre jogosult, önálló bankszámla feletti rendelkezésre jogosult –
                                 jogviszonya, javadalmazása (Takarékos törvény 2. § (1) bekezdés a)–c) pontja alapján).
                             </p>
+                            <!-- Az oldal összes táblázata keskeny (pl. mobil) képernyőn oldalra görgethető, hogy a sok oszlop is elférjen -->
                             <div class="table-scroll" tabindex="0" role="region" aria-label="Vezető tisztségviselő 2021, vízszintesen görgethető">
                                 <table class="info-table">
                                     <caption>Vezető tisztségviselő – 2021.</caption>
@@ -1821,11 +1841,13 @@
                 </div>
             </section>
 
+            <!-- Vissza a főoldalra mutató link -->
             <div class="mission-back">
                 <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
             </div>
         </section>
     </main>
+    <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -1852,6 +1874,7 @@
                 <p>titkarsag@szefo.hu</p>
             </div>
         </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
         <div class="site-footer-bottom">
             <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
             <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
@@ -1859,6 +1882,7 @@
 
     </footer>
 
+    <!-- JavaScript-fájl: a menü és az oldal egyéb interaktív elemeinek működését biztosítja -->
     <script src="../../js/script.js"></script>
 </body>
 </html>

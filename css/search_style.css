@@ -4,6 +4,11 @@
    Csak a hu/kereses/index.html oldalon betöltve.
 ========================================================= */
 
+/* =========================================================
+   KERESŐ PANEL
+   Az oldal fejléce: cím, rövid leírás és a keresőmező.
+========================================================= */
+
 .search-page{
   max-width: var(--container);
   margin: 0 auto 90px;
@@ -114,6 +119,13 @@
   background: var(--color-primary-light);
   transform: translateY(-1px);
 }
+
+/* =========================================================
+   TALÁLATOK
+   A keresés állapotszövege (pl. "12 találat"), valamint a
+   találati kártyák (cím, kiemelt szórészletek, link) stílusai.
+   A tartalmat a js/search.js tölti be JavaScript-tel.
+========================================================= */
 
 .search-results-info{
   max-width: 920px;

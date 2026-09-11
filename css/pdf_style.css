@@ -9,6 +9,7 @@
    --color-muted, --color-surface, --radius-*, --shadow-*, stb.
 ========================================================= */
 
+/* A dokumentumkártyákon (méretek, térközök) újra felhasznált egyedi értékek */
 :root{
   --doc-grid-gap: 20px;
   --doc-card-padding: 20px;

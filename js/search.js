@@ -200,6 +200,9 @@ function initSearchPage() {
    2. KERESÉSI TALÁLATOK ELŐÁLLÍTÁSA
 ========================================================= */
 
+// Kiválogatja a keresőindexből azokat az oldalakat, amelyek a beírt
+// kifejezés MINDEN szavát tartalmazzák valahol, majd relevancia (pontszám)
+// szerint csökkenő sorrendbe rendezi őket.
 function getSearchResults(searchIndex, query) {
   /* A tokenek a TELJES lekérdezés normalizálása utáni felbontásból
      származnak (nem a nyers szavak egyenkénti normalizálásából) – így
@@ -273,6 +276,9 @@ function getMatchDetails(searchableText, queryTokens, displayByToken) {
   });
 }
 
+// Egy keresőindex-elem (oldal) minden mezőjéből (cím, kategória, kulcsszavak,
+// szöveg) ékezet- és kisbetűsített, kereshető változatot készít, plusz egy
+// "combined" mezőt, amely mindet egyben tartalmazza a gyors egyezésvizsgálathoz.
 function createSearchableText(item) {
   const title = normalizeText(item.title || "");
   const category = normalizeText(item.category || "");
@@ -321,6 +327,8 @@ function calculateSearchScore(searchableText, normalizedQuery, queryTokens) {
   return score;
 }
 
+// A relevánsabb (magasabb pontszámú) találatok kerülnek előre; azonos
+// pontszám esetén a cím szerinti magyar ábécésorrend dönt.
 function sortSearchResults(a, b) {
   if (b.score !== a.score) {
     return b.score - a.score;
@@ -333,6 +341,9 @@ function sortSearchResults(a, b) {
    3. TALÁLATI KÁRTYA LÉTREHOZÁSA
 ========================================================= */
 
+// Legyártja egy találat kártyájának HTML-jét: kategória, cím (linkkel),
+// kiemelt találati szavakkal ellátott szövegkivonat, majd a "hol található"
+// lista és a "Megnyitás" gomb.
 function createResultCard(item) {
   const matchDetails = item.matchDetails || [];
   const tokens = matchDetails.map((detail) => detail.token);

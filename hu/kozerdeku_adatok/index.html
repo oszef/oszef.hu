@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
     <meta name="description" content="Az Infotv. szerinti általános közzétételi lista: szervezeti, személyzeti és gazdálkodási adatok a SZEFO Közhasznú Nonprofit Zrt.-ről.">
     <link rel="canonical" href="https://www.szefo.hu/hu/kozerdeku_adatok/">
 
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="Közérdekű adatok">
@@ -15,14 +17,17 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Böngészőfül ikonja (favicon) és az oldal kinézetét meghatározó CSS-stíluslap betöltése -->
     <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
     <link rel="stylesheet" href="../../css/style.css">
     <title>Közérdekű adatok | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 <body>
+       <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
        <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR -->
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
         <div class="navbar">
             <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
                 <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -40,7 +45,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENU -->
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -59,7 +64,7 @@
                         <a href="../../index.html">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK -->
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -82,7 +87,7 @@
                         </ul>
                     </li>
 
-                    <!-- CÉGINFORMÁCIÓK -->
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -152,6 +157,7 @@
                     </li>
                 </ul>
 
+               <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
                <div class="search search--button-only">
                 <a class="search-link" href="../kereses/index.html">
                     Keresés
@@ -160,13 +166,15 @@
             </div>
         </nav>
 
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
         <div class="backdrop" id="backdrop" aria-hidden="true"></div>
     </header>
 
     <main id="main-content">
+        <!-- FŐ TARTALOM: az Infotv. szerinti általános közzétételi lista, három nagy adatcsoportra bontva, sok kis táblázatban -->
         <section class="info-page" aria-labelledby="kozerdeku-title">
 
-            <!-- BEVEZETŐ -->
+            <!-- BEVEZETŐ: jogszabályi háttér és a táblázatokban használt jelölések (–, „nem értelmezhető”) magyarázata -->
             <section class="info-block section-card" aria-labelledby="kozerdeku-title">
                 <div class="info-content">
                     <h1 id="kozerdeku-title">Közérdekű adatok</h1>
@@ -187,13 +195,14 @@
                 </div>
             </section>
 
-            <!-- 1. SZERVEZETI, SZEMÉLYZETI ADATOK -->
+            <!-- 1. SZERVEZETI, SZEMÉLYZETI ADATOK: a cég elérhetőségei, szervezeti felépítése, vezetői, valamint az alapított alapítvány adatai, kis táblázatokban -->
             <article class="info-block section-card" aria-labelledby="szervezeti-adatok-title">
                 <div class="info-content">
                     <h2 id="szervezeti-adatok-title">Szervezeti, személyzeti adatok</h2>
 
                     <h3>Kapcsolat, szervezet, vezetők</h3>
 
+                    <!-- Az ezután következő táblázatok mindegyike keskeny (pl. mobil) képernyőn oldalra görgethető, hogy a sok oszlop is elférjen -->
                     <div class="table-scroll" tabindex="0" role="region" aria-label="Elérhetőségi adatok táblázata, vízszintesen görgethető">
                         <table class="info-table">
                             <caption>Elérhetőségi adatok</caption>
@@ -479,7 +488,7 @@
                 </div>
             </article>
 
-            <!-- 2. TEVÉKENYSÉGRE, MŰKÖDÉSRE VONATKOZÓ ADATOK -->
+            <!-- 2. TEVÉKENYSÉGRE, MŰKÖDÉSRE VONATKOZÓ ADATOK: a cég alaptevékenysége, a közérdekű adatok igénylésének módja és a közzétételi listák, kis táblázatokban -->
             <article class="info-block section-card" aria-labelledby="tevekenyseg-adatok-title">
                 <div class="info-content">
                     <h2 id="tevekenyseg-adatok-title">Tevékenységre, működésre vonatkozó adatok</h2>
@@ -691,7 +700,7 @@
                 </div>
             </article>
 
-            <!-- 3. GAZDÁLKODÁSI ADATOK -->
+            <!-- 3. GAZDÁLKODÁSI ADATOK: ellenőrzések, beszámolók, foglalkoztatottak, szerződések, támogatások és közbeszerzési adatok, kis táblázatokban -->
             <article class="info-block section-card" aria-labelledby="gazdalkodasi-adatok-title">
                 <div class="info-content">
                     <h2 id="gazdalkodasi-adatok-title">Gazdálkodási adatok</h2>
@@ -925,12 +934,14 @@
                 </div>
             </article>
 
+            <!-- Vissza a főoldalra mutató link -->
             <div class="mission-back">
                 <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
             </div>
         </section>
     </main>
 
+    <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -957,6 +968,7 @@
                 <p>titkarsag@szefo.hu</p>
             </div>
         </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
         <div class="site-footer-bottom">
             <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
             <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
@@ -964,6 +976,7 @@
 
     </footer>
 
+    <!-- JavaScript-fájl: a menü és az oldal egyéb interaktív elemeinek működését biztosítja -->
     <script src="../../js/script.js"></script>
 </body>
 </html>

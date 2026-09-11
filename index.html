@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
     <meta name="description" content="SZEFO Közhasznú Nonprofit Zrt. – rehabilitációs foglalkoztatás, textilipari gyártás, villamosipari bérmunka és fenntartható értékteremtés.">
     <link rel="canonical" href="https://www.szefo.hu/">
 
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="SZEFO Közhasznú Nonprofit Zrt.">
@@ -15,6 +17,7 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Strukturált adat (JSON-LD) a keresőmotoroknak a cég nevéről, címéről és elérhetőségeiről; ez nem jelenik meg látható szövegként az oldalon -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -35,6 +38,7 @@
     }
     </script>
 
+    <!-- Böngészőfül ikonja (favicon), valamint az oldal kinézetét meghatározó CSS-stíluslapok betöltése -->
     <link rel="icon" href="img/fav/szefo_fav.PNG" type="image/png">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/popup.css">
@@ -43,9 +47,11 @@
 </head>
 
 <body>
+    <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
     <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR -->
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
         <div class="navbar">
             <a class="navbar-brand" href="index.html" aria-label="SZEFO kezdőlap">
                 <img src="./img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -63,7 +69,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENÜ -->
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -82,7 +88,7 @@
                         <a href="index.html" aria-current="page">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK -->
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -105,7 +111,7 @@
                         </ul>
                     </li>
 
-                    <!-- CÉGINFORMÁCIÓK -->
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -175,6 +181,7 @@
                     </li>
                 </ul>
 
+               <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
                <div class="search search--button-only">
                 <a class="search-link" href="hu/kereses/index.html">
                     Keresés
@@ -183,12 +190,13 @@
             </div>
         </nav>
 
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
         <div class="backdrop" id="backdrop" aria-hidden="true"></div>
     </header>
 
 
     <main id="main-content">
-        <!-- HERO CAROUSEL -->
+        <!-- HERO CAROUSEL: a nyitóoldal tetején automatikusan váltakozó, teljes szélességű képes bemutató, rövid szlogenekkel -->
         <section class="hero-carousel" aria-label="Kiemelt tartalmak">
                 <div class="hero-slide active">
                     <img src="./img/hero/hero-1.webp" alt="SZEFO üzem" width="1366" height="768" loading="eager">
@@ -239,7 +247,7 @@
                 </button>
         </section>
 
-        <!-- VEZÉRIGAZGATÓI KÖSZÖNTŐ -->
+        <!-- VEZÉRIGAZGATÓI KÖSZÖNTŐ: rövid bevezető szöveg "Bővebben" gombbal, amely ugyanitt jeleníti meg a teljes köszöntőt -->
         <section class="ceo-wrapper" aria-labelledby="ceo-title">
             <div class="ceo-preview">
                 <h2 id="ceo-title">Vezérigazgatói köszöntő</h2>
@@ -325,7 +333,7 @@
             </div>
         </section>
 
-        <!-- ISO TANÚSÍTVÁNYOK -->
+        <!-- ISO TANÚSÍTVÁNYOK: a cég minőségirányítási tanúsítványainak (ISO 9001, 14001, 45001) képei, egymás után váltakozva -->
         <section class="iso-section" aria-labelledby="iso-title">
             <h2 class="iso-title" id="iso-title">ISO Tanúsítványaink</h2>
 
@@ -360,7 +368,7 @@
             </div>
         </section>
 
-        <!-- RÓLUNK -->
+        <!-- RÓLUNK SZEKCIÓ: rövid bemutatkozó szöveg a cégről, illusztráló képpel -->
         <section class="about-section" aria-labelledby="about-title">
             <div class="about-inner">
                 <div class="about-text">
@@ -405,7 +413,7 @@
             </div>
         </section>
 
-        <!-- FŐBB ADATOK -->
+        <!-- FŐBB ADATOK: a céget bemutató számok és tények (működési évek, éves termelési mennyiségek stb.) -->
         <section class="facts-section" aria-labelledby="facts-title">
             <h2 class="facts-title" id="facts-title">Főbb adatok</h2>
 
@@ -484,7 +492,7 @@
             </div>
         </section>
 
-        <!-- TEVÉKENYSÉGEINK -->
+        <!-- TEVÉKENYSÉGEINK: a három fő tevékenységi terület (textilipari gyártás, villamosipari bérmunka, rehabilitációs foglalkoztatás) rövid bemutatása -->
         <section class="services-section" aria-labelledby="services-title">
             <h2 id="services-title">Tevékenységeink</h2>
 
@@ -512,7 +520,7 @@
             </div>
         </section>
 
-        <!-- VÍZIÓNK -->
+        <!-- VÍZIÓNK: a cég küldetésének rövid összefoglalása, képpel és a Küldetésünk aloldalra mutató gombbal -->
         <section class="vision-section" aria-labelledby="vision-title">
             <div class="vision-container">
                 <div class="vision-image">
@@ -534,7 +542,7 @@
                 </div>
             </div>
         </section>
-        <!-- TEVÉKENYSÉGEK & ÜZLETÁGAK – ÚJ ELSŐ BLOKK -->
+        <!-- TEVÉKENYSÉGEK ÉS ÜZLETÁGAK: kattintható kártyák a fő üzletágakról; a "Bővebben" gombra kattintva egy felugró ablakban részletes leírás nyílik meg -->
             <section class="business-section" aria-labelledby="business-title">
             <div class="business-header">
                 <h2 id="business-title">Tevékenységek &amp; üzletágak</h2>
@@ -593,7 +601,7 @@
                         Legfontosabb stratégiai piaci partnerünk az olaszországi DAMA S.p.A., a Paul&amp;Shark prémiumkategóriás márka tulajdonosa és gyártója. A 2001 óta fennálló együttműködés során a Társaság több millió Paul&amp;Shark modellt gyártott.
                         </p>
 
-                        <!-- KÉP HAMAROSAN -->
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <figure class="business-modal-image business-modal-image--placeholder" aria-hidden="true"></figure>
                     </div>
                 </article>
@@ -731,7 +739,7 @@
                     A világpiaci kihívással, a folytonos technológiai haladással lépést tartva a műszaki-technikai fejlesztéseknek köszönhetően a múltbeli kézi szerelést mára fokozatosan felváltotta a gépi összeszerelés.
                     </p>
 
-                    <!-- KÉP HAMAROSAN -->
+                    <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                     <figure class="business-modal-image business-modal-image--placeholder" aria-hidden="true"></figure>
                 </div>
                 </article>
@@ -805,13 +813,13 @@
                         <li>E02 – 08 hulladékká vált elektromos, elektronikus berendezés bontása</li>
                         </ul>
 
-                        <!-- KÉP HAMAROSAN -->
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <figure class="business-modal-image business-modal-image--placeholder" aria-hidden="true"></figure>
                     </div>
                 </article>
             </div>
             </section>
-            <!-- ÜZEMEGYSÉGEK – MÁSODIK BLOKK -->
+            <!-- ÜZEMEGYSÉGEK: kattintható kártyák a gyártási üzemegységekről (kötöde, vasaló, varroda stb.), "Bővebben" gombbal megnyitható részletes leírással -->
             <section class="units-section" aria-labelledby="units-title">
             <div class="units-header">
                 <h2 id="units-title">Üzemegységek</h2>
@@ -1436,12 +1444,12 @@
                 </button>
 
                 <div class="business-modal-content" id="businessModalContent">
-                <!-- JS tölti be -->
+                <!-- Ezt a részt a JavaScript tölti fel automatikusan a kiválasztott kártya (üzletág vagy üzemegység) részletes tartalmával -->
                 </div>
             </div>
             </div>
 
-            <!-- ALAPÍTVÁNYUNK BLOKK -->
+            <!-- ALAPÍTVÁNYUNK: rövid bemutatkozás a SZEFO Fonalfeldolgozó Chance Közhasznú Alapítványról, linkkel a részletes aloldalra -->
             <section class="foundation-section" aria-labelledby="foundation-title">
             <div class="foundation-inner">
 
@@ -1475,7 +1483,7 @@
             </div>
             </section>
 
-            <!-- REFERENCIÁINK -->
+            <!-- REFERENCIÁINK: partnercégek logóinak folyamatosan mozgó, végtelenített sora -->
             <section class="home-trust-section" aria-labelledby="references-title">
 
                 <div class="references-section">
@@ -1567,7 +1575,7 @@
                         >
                         </figure>
 
-                        <!-- Ismételt sorozat a végtelen, akadásmentes mozgáshoz -->
+                        <!-- Ismételt logósorozat: a fenti képek listája itt megismétlődik, hogy a mozgó (marquee) sáv végtelennek és folyamatosnak tűnjön -->
                         <figure class="reference-logo" aria-hidden="true">
                         <img
                             src="img/referenciak/referencia-1.webp"
@@ -1654,6 +1662,7 @@
            
     </main>
 
+    <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div>
@@ -1680,6 +1689,7 @@
                 <p>titkarsag@szefo.hu</p>
             </div>
         </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
         <div class="site-footer-bottom">
             <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
             <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
@@ -1687,7 +1697,7 @@
 
     </footer>
 
-    <!-- Felugró hirdetés -->
+    <!-- FELUGRÓ HIRDETÉS (POPUP): néhány másodperc várakozás után automatikusan megjelenő promóciós ablak, amely a jobb felső × gombbal zárható be -->
      <div id="smartPopup" class="popup">
         <button class="popup-close" type="button" aria-label="Ajánlat bezárása">&times;</button>
 
@@ -1699,7 +1709,8 @@
 
 
 
-   
+
+    <!-- JavaScript-fájlok: a popup.js a felugró hirdetést, a script.js a menü, a csúszkák és a kártyák működését biztosítja -->
     <script src="js/popup.js"></script>
     <script src="js/script.js"></script>
 </body>
