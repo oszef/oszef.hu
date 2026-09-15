@@ -130,7 +130,7 @@ window.SZEFO_SEARCH_INDEX = [
       "vezérigazgató",
       "Mérész Attila",
       "Kiss Andrea",
-      "Vas László",
+      "Herczeg Barbara",
       "Musa Imre",
       "Szilléry Annamária",
       "Vígh Norbert",
@@ -138,7 +138,6 @@ window.SZEFO_SEARCH_INDEX = [
       "székhely",
       "telephely",
       "fióktelep",
-      "Chance Bolt",
       "elérhetőség",
       "teáor",
       "TEÁOR 1439",
@@ -157,7 +156,7 @@ window.SZEFO_SEARCH_INDEX = [
       "szervezeti felépítés",
       "PDF"
     ],
-    text: "A társaság alapítója és 100%-os tulajdonosa 2021. december 29. óta a Szeged-Csanádi Egyházmegye (korábban a Magyar Állam nevében az MNV Zrt., majd az Emberi Erőforrások Minisztériuma gyakorolta a tulajdonosi jogokat). Vezérigazgató: Mérész Attila, vezérigazgató-helyettes: Kiss Andrea. Igazgatóságok vezetői: Vas László (gazdasági igazgató), Musa Imre (HR igazgató), Szilléry Annamária (termelési igazgató), Vígh Norbert (Legrand-, E-projekt igazgató). Székhely és központi telephely: 6724 Szeged, Tavasz u. 2. Telephelyek és fióktelepek: Szeged (Dorozsmai út), Apátfalva, Hódmezővásárhely, Makó, Orosháza, Szentes. Chance márkabolt: 6720 Szeged, Tisza Lajos krt. 75. Főtevékenység (TEÁOR 1439): egyéb kötött, hurkolt ruházati termék gyártása; további tevékenységek: áramelosztó-szabályozó készülék gyártása, villanyszerelés, textil- és ruházati kis- és nagykereskedelem, oktatás. A CHANCE védjegy lajstromszáma 186057/2005. Letölthető szabályzatok: Alapszabály, SZMSZ, Adatvédelmi-adatbiztonsági szabályzat, Javadalmazási Szabályzat, Etikai Kódex, Közérdekű Adatok Közzétételének Szabályzata, valamint a vonatkozó jogszabályok jegyzéke és a szervezeti felépítést bemutató ábra."
+    text: "A társaság alapítója és 100%-os tulajdonosa 2021. december 29. óta a Szeged-Csanádi Egyházmegye (korábban a Magyar Állam nevében az MNV Zrt., majd az Emberi Erőforrások Minisztériuma gyakorolta a tulajdonosi jogokat). Vezérigazgató: Mérész Attila, vezérigazgató-helyettes: Kiss Andrea. Igazgatóságok vezetői: Herczeg Barbara (gazdasági igazgató), Musa Imre (HR igazgató), Szilléry Annamária (termelési igazgató), Vígh Norbert (Legrand-, E-projekt igazgató). Székhely és központi telephely: 6724 Szeged, Tavasz u. 2. Telephelyek és fióktelepek: Szeged (Dorozsmai út), Apátfalva, Hódmezővásárhely, Makó, Orosháza, Szentes. Főtevékenység (TEÁOR 1439): egyéb kötött, hurkolt ruházati termék gyártása; további tevékenységek: áramelosztó-szabályozó készülék gyártása, villanyszerelés, textil- és ruházati kis- és nagykereskedelem, oktatás. A CHANCE védjegy lajstromszáma 186057/2005. Letölthető szabályzatok: Alapszabály, SZMSZ, Adatvédelmi-adatbiztonsági szabályzat, Javadalmazási Szabályzat, Etikai Kódex, Közérdekű Adatok Közzétételének Szabályzata, valamint a vonatkozó jogszabályok jegyzéke és a szervezeti felépítést bemutató ábra."
   },
   {
     id: "kozerdeku-adatok",
