@@ -265,9 +265,7 @@ select:focus-visible,
 /* Kerek lapozógombok a carousel-ekhez */
 .btn--carousel,
 .hero-prev,
-.hero-next,
-.iso-prev,
-.iso-next {
+.hero-next {
     background: rgba(0, 0, 0, 0.42);
     color: var(--color-white);
     width: 46px;
@@ -283,8 +281,7 @@ select:focus-visible,
 
 .btn--carousel:hover, .btn--carousel:focus-visible,
 .hero-prev:hover, .hero-next:hover,
-.hero-prev:focus-visible, .hero-next:focus-visible,
-.iso-prev:hover, .iso-next:hover {
+.hero-prev:focus-visible, .hero-next:focus-visible {
     background: rgba(0, 0, 0, 0.62);
 }
 
@@ -293,7 +290,8 @@ select:focus-visible,
 .service-card,
 .mmk-card,
 .timeline-block,
-.business-card {
+.business-card,
+.iso-certificate-image {
     background: var(--color-surface);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
@@ -1027,7 +1025,9 @@ select:focus-visible,
 
 
 /* =========================================================
-   9. ISO TANÚSÍTVÁNYOK
+   9. ISO TANÚSÍTVÁNY
+   Bal oldalt a tanúsítvány logója egy dobozban, jobb oldalt a
+   "Részletek" gomb. Mobilon a kettő egymás alá kerül (17. pont).
 ========================================================= */
 
 .iso-section {
@@ -1044,55 +1044,32 @@ select:focus-visible,
     margin-bottom: 40px;
 }
 
-.iso-carousel {
-    position: relative;
+/* A logó doboza és a gomb egy sorban, középre igazítva */
+.iso-certificate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Logó doboza: a korábbi, teljes szélességű képváltó felének megfelelő méret
+   (háttér, árnyék, keret, lekerekítés: lásd "Kártyák közös alapja").
+   A logó legfeljebb eredeti méretében (300 × 150 px) jelenik meg,
+   így nem lesz elmosódott. */
+.iso-certificate-image {
     width: 100%;
-    height: 360px;
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-    background: var(--color-surface);
-    box-shadow: var(--shadow-soft);
+    max-width: 530px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
 }
 
-.iso-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-
-.iso-slide.active {
-    opacity: 1;
-}
-
-.iso-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 30px;
-    background: var(--color-surface);
-}
-
-.iso-prev,
-.iso-next {
-    position: absolute;
-    top: 50%;
-    z-index: 3;
-    transform: translateY(-50%);
-    font-size: 32px;
-}
-
-.iso-prev:hover,
-.iso-next:hover {
-    transform: translateY(-50%) scale(1.05);
-}
-
-.iso-prev {
-    left: 20px;
-}
-
-.iso-next {
-    right: 20px;
+/* A gomb szövege ne törjön két sorba, és a gomb ne nyomódjon össze */
+.iso-certificate-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 
@@ -2006,15 +1983,10 @@ select:focus-visible,
         margin-bottom: 25px;
     }
 
-    .iso-carousel {
-        height: 240px;
-    }
-
-    .iso-prev,
-    .iso-next {
-        width: 36px;
-        height: 36px;
-        font-size: 22px;
+    /* Mobilon a logó doboza és a gomb egymás alá kerül */
+    .iso-certificate {
+        flex-direction: column;
+        gap: 20px;
     }
 
     .about-section {

@@ -38,8 +38,8 @@ háttér nélkül is módosítható és költségmentesen üzemeltethető legyen
 ## A JavaScript fájlok, dióhéjban
 
 - `script.js` - a közös logika: a menü (asztalon felső sáv, 1024 px-ig
-  kihúzható offcanvas panel), a kezdőlapi és ISO képváltogató (carousel),
-  az idővonal, az üzletági és karrieres felugró ablakok (modálok), a
+  kihúzható offcanvas panel), a kezdőlapi képváltogató (carousel), az
+  idővonal, az üzletági és karrieres felugró ablakok (modálok), a
   galériák.
 - `news_blog.js` - a Hírek/Blog oldal, benne magával a cikkek szövegével
   is.

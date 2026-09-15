@@ -4,12 +4,12 @@
 
    Szerepe:
    - offcanvas menü
-   - hero / ISO carousel
+   - hero carousel
    - oldalváltás animáció
    - vezérigazgatói köszöntő
    - számláló animációk
    - timeline
-   - business / units / ISO kártyák
+   - business / units kártyák
    - közös részletező modal + egy kép
    - e-hulladék galéria
    - karrier modal
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   [
     initOffcanvasMenu,
     initHeroCarousel,
-    initIsoCarousel,
     initSmoothPageLinks,
     initCeoBlock,
     initFactsAnimation,
@@ -342,8 +341,8 @@ function initOffcanvasMenu() {
 
 // Újrafelhasználható diavetítő (carousel) motor: automatikusan lépteti a
 // diákat, kezeli az előző/következő gombokat, és szünetelteti a léptetést,
-// amíg a látogató az egérrel egy dia fölött van, vagy arra fókuszál. Ezt
-// használja mind a főoldali hero, mind az ISO tanúsítványok carousel-je.
+// amíg a látogató az egérrel egy dia fölött van, vagy arra fókuszál.
+// Jelenleg a főoldali hero carousel használja.
 function createCarousel({
   slideSelector,
   nextSelector,
@@ -437,16 +436,6 @@ function initHeroCarousel() {
     slideSelector: ".hero-slide",
     nextSelector: ".hero-next",
     prevSelector: ".hero-prev",
-    autoplay: true,
-    interval: 5000
-  });
-}
-
-function initIsoCarousel() {
-  createCarousel({
-    slideSelector: ".iso-slide",
-    nextSelector: ".iso-next",
-    prevSelector: ".iso-prev",
     autoplay: true,
     interval: 5000
   });
