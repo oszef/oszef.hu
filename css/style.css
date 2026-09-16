@@ -1110,6 +1110,11 @@ select:focus-visible,
     margin-bottom: 18px;
 }
 
+/* A bekezdésekben kiemelt (félkövér) kulcsszavak a címmel azonos kék színűek */
+.about-text p strong {
+    color: var(--color-primary);
+}
+
 .about-text p.full-text {
     display: block;
 }
