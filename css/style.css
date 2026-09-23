@@ -4934,7 +4934,7 @@ select:focus-visible,
    KARRIER OLDAL
    Felépítés:
    - felső statikus hero kép
-   - kétoszlopos bemutatkozó blokk: szöveg + videó
+   - bemutatkozó blokk: kéthasábos szöveg, alatta középen a videó
    - álláshirdetés kártyák
    - álláshirdetés részletező modal
 ========================================================= */
@@ -4942,7 +4942,10 @@ select:focus-visible,
 .career-page {
   max-width: var(--container);
   margin: 0 auto 100px;
-  padding: calc(var(--navbar-height) + 24px) 20px 0;
+  /* A felső térköz a főoldali .hero-carousel margin-top értékeit követi
+     (asztalon 65px, tableten --hero-carousel-margin-top, mobilon 60px),
+     így a hero kép ugyanakkora résre kerül a fix fejléc alatt. */
+  padding: 65px 20px 0;
 }
 
 /* =========================================================
@@ -4966,14 +4969,12 @@ select:focus-visible,
 }
 
 /* =========================================================
-   2. BEVEZETŐ BLOKK – SZÖVEG + VIDEÓ
+   2. BEVEZETŐ BLOKK – KÉTHASÁBOS SZÖVEG, ALATTA A VIDEÓ
 ========================================================= */
 
 .career-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
   gap: 34px;
-  align-items: start;
   margin-bottom: 86px;
 }
 
@@ -4996,6 +4997,23 @@ select:focus-visible,
   font-weight: 900;
   margin-bottom: 24px;
   text-wrap: balance;
+}
+
+/* A szöveg két hasábban: bal oldalt a bemutatkozás, jobb oldalt a
+   jelentkezés. A főcím a hasábok fölött, teljes szélességben marad. */
+.career-intro-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px;
+}
+
+/* Két hasábos nézetben a jobb hasáb címének nem kell felső margó, így
+   egy vonalba kerül a bal hasáb első bekezdésével. Mobilon, egymás alatt
+   a cím megtartja a szokásos térközét. */
+@media (min-width: 769px) {
+  .career-intro-column > h2:first-child {
+    margin-top: 0;
+  }
 }
 
 .career-intro-text h2 {
@@ -5051,13 +5069,23 @@ select:focus-visible,
   overflow-wrap: anywhere;
 }
 
+/* A telefonszám és az utána álló mellék ne törjön két sorba
+   (pl. „243 / 0585” vagy „/108 / mellék”): ha nem fér ki a sor végére,
+   inkább egészben kerül a következő sorba. */
+.career-contact-box a[href^="tel:"],
+.career-contact-box a[href^="tel:"] + span {
+  white-space: nowrap;
+}
+
 .career-contact-box a:hover,
 .career-contact-box a:focus-visible {
   text-decoration: underline;
 }
 
-/* Videó kártya: a bemutatkozó videót keretező doboz */
+/* Videó kártya: a bemutatkozó videót keretező doboz, a szöveg alatt középen */
 .career-video {
+  justify-self: center;
+  width: min(100%, 880px);
   padding: 18px;
 }
 
@@ -5410,17 +5438,20 @@ select:focus-visible,
 @media (max-width: 1024px) {
   .career-page {
     margin-bottom: 85px;
-    padding-top: calc(var(--navbar-height) + 20px);
+    padding-top: var(--hero-carousel-margin-top);
   }
 
   .career-intro {
-    grid-template-columns: 1fr;
     gap: 26px;
     margin-bottom: 72px;
   }
 
   .career-intro-text {
     padding: 38px;
+  }
+
+  .career-intro-columns {
+    gap: 36px;
   }
 
   .career-video {
@@ -5440,7 +5471,7 @@ select:focus-visible,
 @media (max-width: 768px) {
   .career-page {
     margin-bottom: 70px;
-    padding: calc(var(--navbar-height) + 16px) 14px 0;
+    padding: 60px 14px 0;
   }
 
   .career-hero {
@@ -5451,6 +5482,11 @@ select:focus-visible,
   .career-intro {
     gap: 22px;
     margin-bottom: 58px;
+  }
+
+  /* Mobilon a két hasáb egymás alá kerül, egyetlen folyó szövegként */
+  .career-intro-columns {
+    display: block;
   }
 
   .career-intro-text {
