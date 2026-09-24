@@ -12,7 +12,164 @@
 // Itt található az összes hír és blogbejegyzés tényleges szövege (cím, dátum,
 // kategória, rövid kivonat, teljes szöveg). Új hír vagy blogbejegyzés
 // közzétételéhez ide kell felvenni egy újabb elemet a listába.
+// Az opcionális imagePosition mezővel (CSS object-position érték, pl.
+// "center bottom") megadható, merre igazodjon a kép vágása, ha a kép fontos
+// része (pl. egy felirat) nem középen van.
 const SZEFO_NEWS_BLOG_CONTENT = [
+  {
+    id: "rehabilitacios-foglalkoztatas-a-gyakorlatban",
+    type: "blog",
+    title: "Rehabilitációs foglalkoztatás a gyakorlatban – HR-hallgatók a SZEFO-nál",
+    date: "2026. március 18.",
+    category: "szakmai",
+    categoryLabel: "Szakmai blog",
+    image: "../../img/hirek/hir/szte-hallgatok-latogatas.webp",
+    imageCredit: "Fotó: SZEFO Közhasznú Nonprofit Zrt.",
+    excerpt:
+      "Mit jelent valójában a befogadó munkahely? Hogyan működik a rehabilitációs foglalkoztatás a mindennapokban? És milyen kihívásokkal találkozik egy megváltozott munkaképességű munkavállaló?",
+    featured: true,
+    content: [
+      {
+        paragraphs: [
+          "A Szegedi Tudományegyetem Juhász Gyula Pedagógusképző Karának Emberi erőforrás tanácsadó szakos hallgatói tanulmányaik gyakorlati részeként látogattak el a SZEFO-hoz. A program célja az volt, hogy személyesen is megismerjék egy rehabilitációs foglalkoztató működését, és első kézből szerezzenek tapasztalatokat a befogadó foglalkoztatásról."
+        ]
+      },
+      {
+        heading: "Amit nem lehet egy prezentációból megtanulni",
+        paragraphs: [
+          "A találkozó nem hagyományos előadás volt: kötetlen, interaktív szakmai beszélgetés alakult ki a hallgatók és a SZEFO szakemberei között.",
+          "A beszélgetést a társaság vezető rehabilitációs tanácsadója vezette, aki több évtizedes tapasztalattal rendelkezik a rehabilitációs foglalkoztatás területén. Gyakorlati példákon keresztül mutatta be, miért fontos az egyéni képességek és szükségletek figyelembevétele a munkaszervezésben.",
+          "A SZEFO-nál például előfordult, hogy látássérült munkatársaknak bizonyos összeszerelési folyamatok nehézséget okoztak, más munkafázisokban viszont gyorsabban és precízebben teljesítettek, mint látó kollégáik.",
+          "A példa jól mutatja: a rehabilitációs foglalkoztatásban nem kizárólag a korlátokra, hanem az egyéni képességekre és erősségekre is építeni kell. Az egyik munkatárs abban a feladatban lehet különösen hatékony, amelyben másnak nehézséget okoz a munkavégzés – és fordítva.",
+          "Ehhez pedig nem elég ismerni a munkakört. Ismerni kell az embert is."
+        ]
+      },
+      {
+        heading: "A rehabilitáció a munkahelyen túl is fontos",
+        paragraphs: [
+          "A beszélgetés során szó esett arról is, hogy a rehabilitációs foglalkoztatás jóval összetettebb a munkafeladatok megszervezésénél.",
+          "A megváltozott munkaképességű munkatársak életében is adódhatnak olyan nehéz helyzetek – egészségügyi problémák, családi nehézségek vagy más élethelyzetek –, amelyek a munkavégzésre is hatással lehetnek.",
+          "Ilyenkor különösen fontos a bizalmi kapcsolat a munkatárs és a rehabilitációs mentor vagy tanácsadó között. A munkatársak számára sokat jelenthet, ha tudják, hogy problémáikkal van kihez fordulniuk, és segítséget, támogatást kaphatnak."
+        ]
+      },
+      {
+        heading: "Két hiteles nézőpont",
+        paragraphs: [
+          "A hallgatók nemcsak a rehabilitációs szakember tapasztalatait ismerhették meg. A programban olyan SZEFO-s munkatárs is részt vett, aki maga is fogyatékossággal élő, megváltozott munkaképességű munkavállaló.",
+          "Így a hallgatók szakmai és személyes nézőpontból egyaránt képet kaphattak arról, mit jelent a mindennapokban a megváltozott munkaképességű emberek foglalkoztatása.",
+          "A kérdésekből hamar valódi párbeszéd alakult ki. A hallgatókat többek között az érdekelte, hogyan lehet megtalálni a megfelelő munkakört, mi történik, ha megváltozik egy munkavállaló állapota, és hogyan lehet összehangolni az egyéni szükségleteket a munkáltató elvárásaival.",
+          "A személyes tapasztalatok és a gyakorlati példák olyan kérdéseket is megnyitottak, amelyekre egy hagyományos előadás nem feltétlenül ad választ."
+        ]
+      },
+      {
+        heading: "A gyárlátogatás is fontos része volt a programnak",
+        paragraphs: [
+          "A szakmai beszélgetést gyárlátogatás követte. A hallgatók megismerhették a SZEFO székhelyén több mint 70 éve működő kötöttáru-gyártás munkafolyamatait, az üzemegységeket és munkatársainkat.",
+          "Így a rehabilitációs foglalkoztatást nemcsak elméleti szempontból, hanem valós munkahelyi környezetben is megtapasztalhatták.",
+          "Bízunk benne, hogy amikor a jövőben HR-szakemberként megváltozott munkaképességű munkatársakkal dolgoznak majd, eszükbe jutnak az itt hallottak és tapasztaltak.",
+          "Hogy ne csak arra fókuszáljanak, milyen akadályokkal kell számolni, hanem arra is, hogyan tudják megfelelő munkakörnyezettel, támogatással és odafigyeléssel segíteni a munkatársat abban, hogy képességeit, tudását és tehetségét kibontakoztathassa a munkája során.",
+          "Mindez ugyanakkor nem jelenti a nehézségek figyelmen kívül hagyását. A befogadó szemlélethez az is hozzátartozik, hogy a munkatársak egyéni nehézségeit komolyan vegyük, és keressük azokat a megoldásokat, amelyekkel ezek mellett is lehetőséget teremthetünk a sikeres munkavégzésre.",
+          "Mert egy inkluzív munkahely emberekről szól, akik szeretnének dolgozni, értéket teremteni, közösséghez tartozni – és arról, hogy ehhez megkapják a megfelelő lehetőséget és támogatást.",
+          "A SZEFO számára ezért is különösen fontos, hogy ezt a szemléletet a jövő HR-szakemberei is megismerjék, és szakmai pályájuk során magukkal vigyék."
+        ]
+      }
+    ]
+  },
+  {
+    id: "ausztralia-messze-van",
+    type: "blog",
+    title: "Ausztrália messze van – de a lehetőség közelebb, mint gondolnánk",
+    date: "2026. szeptember 4.",
+    category: "szakmai",
+    categoryLabel: "Szakmai blog",
+    image: "../../img/hirek/blog/ausztralia-messze-van.webp",
+    imagePosition: "center bottom",
+    imageCredit: "Fotó: SZEFO Közhasznú Nonprofit Zrt.",
+    excerpt:
+      "Egy európai gyártóvállalat számára Ausztrália első pillantásra távoli piacnak tűnik.",
+    featured: false,
+    content: [
+      {
+        paragraphs: [
+          "Egy európai gyártóvállalat számára Ausztrália első pillantásra távoli piacnak tűnik. Több mint 15 000 kilométer, jelentős időeltolódás, hosszú logisztikai útvonalak és egy teljesen más üzleti környezet választ el bennünket egymástól. Mégis éppen egy ilyen megkeresés mutatja meg, hogy a SZEFO előtt álló lehetőségeket ma már nem feltétlenül földrajzi határok határozzák meg.",
+          "A közelmúltban egy ausztrál prémium divatpiaci szereplő keresett meg bennünket egy lehetséges európai gyártási együttműködés kapcsán. A tárgyalások még kezdeti szakaszban vannak, ezért korai lenne eredményekről beszélni. Arra azonban már most érdemes rávilágítani, hogy egy ilyen lehetőség milyen kihívásokat – és egyben milyen fejlődési lehetőségeket – jelenthet a SZEFO számára."
+        ]
+      },
+      {
+        heading: "A prémium piac nem kizárólag árról szól",
+        paragraphs: [
+          "Az európai gyártás egyik legnagyobb kihívása a globális verseny. Költségben nem minden esetben tudunk és nem is feltétlenül akarunk versenyezni a világ legalacsonyabb költségű gyártóival.",
+          "A prémium szegmensben azonban más tényezők is meghatározóak: a minőség, a rugalmasság, a kis szériák gyártásának képessége, a rövid reakcióidő, a megbízhatóság, az átlátható európai beszállítói háttér és a magas szintű szakmai tudás.",
+          "Ebben a környezetben a SZEFO több évtizedes textilipari tapasztalata valódi értéket képviselhet."
+        ]
+      },
+      {
+        heading: "Kis széria, nagy elvárások",
+        paragraphs: [
+          "A prémium divatipar egyik sajátossága, hogy sok esetben viszonylag alacsony darabszámok mellett vár el kiemelkedő minőséget és magas fokú rugalmasságot.",
+          "Ez gyártási oldalról komoly kihívás.",
+          "Egy 25–50 darabos széria megszervezése fajlagosan sokszor több figyelmet igényel, mint egy több ezres rendelés. Gyakoribbak az átállások, nagyobb szerepet kap a mintagyártás és az előkészítés, miközben ugyanazt a minőségi szintet kell biztosítani minden egyes terméknél.",
+          "Ehhez nem pusztán megfelelő gépek szükségesek. Tapasztalt és rugalmas munkatársakra, jól működő folyamatokra és gyors döntéshozatalra is szükség van."
+        ]
+      },
+      {
+        heading: "Több mint bérgyártás",
+        paragraphs: [
+          "Az igazán érdekes lehetőség számunkra azonban az, ha a SZEFO nem egyszerűen gyártókapacitást kínál.",
+          "Egyre több potenciális partner olyan beszállítót keres, amely képes részt venni az alapanyagok beszerzésében, kapcsolatot tart európai fonal- és textilgyártókkal, támogatni a termékfejlesztést, mintadarabokat készíteni, majd megszervezni a teljes gyártási folyamatot.",
+          "Ez már egy magasabb hozzáadott értékű szerep.",
+          "A célunk ezért az, hogy a SZEFO a jövőben ne egyszerűen azt tudja mondani egy potenciális partnernek, hogy „ezt le tudjuk gyártani”, hanem azt is, hogy „segítünk megoldani a teljes gyártási feladatot”."
+        ]
+      },
+      {
+        heading: "A távolság újfajta működést követel",
+        paragraphs: [
+          "Ausztrália esetében természetesen a földrajzi távolság sem hagyható figyelmen kívül.",
+          "A minták küldése, az alapanyagok beszerzése, a késztermékek szállítása és a határidők összehangolása lényegesen nagyobb tervezési fegyelmet követel. Még egy videókonferencia megszervezésénél is figyelembe kell vennünk a nyolcórás időeltolódást.",
+          "Ez azonban nem feltétlenül hátrány.",
+          "A digitalizált kommunikáció, a megfelelő dokumentáció és a professzionális projektmenedzsment ma már lehetővé teszi, hogy egy szegedi gyártó ugyanolyan közvetlen kapcsolatban dolgozzon egy melbourne-i partnerrel, mint egy európai megrendelővel."
+        ]
+      },
+      {
+        heading: "A legfontosabb kérdés: készen állunk-e?",
+        paragraphs: [
+          "Egy ilyen megkeresés számunkra egyelőre nem megrendelést, hanem egy fontos tesztet jelent: képesek vagyunk-e megfelelni egy távoli prémium piac elvárásainak?",
+          "Képesek vagyunk-e gyorsan reagálni?",
+          "Képesek vagyunk-e kis szériában is versenyképesen gyártani?",
+          "Képesek vagyunk-e a prémium piac által elvárt minőséget következetesen biztosítani?",
+          "Képesek vagyunk-e beszállítóból valódi gyártási partnerré válni?",
+          "Ezekre a kérdésekre nem egy tárgyalás során kell választ adnunk, hanem a mindennapi működésünkkel.",
+          "A SZEFO több mint hetvenéves gyártási tapasztalattal rendelkezik, miközben társadalmi küldetést is teljesít: munkalehetőséget biztosít megváltozott munkaképességű emberek számára. Számunkra ezért minden új piac és minden új partner kettős jelentőséggel bír.",
+          "Az üzleti siker nálunk egyben munkahelyek stabilitását és új lehetőségek megteremtését is jelenti.",
+          "Ausztrália valóban messze van Szegedtől.",
+          "De ha a megfelelő tudással, minőséggel és rugalmassággal rendelkezünk, akkor a világ egyetlen prémium piaca sem feltétlenül túl távoli számunkra."
+        ]
+      }
+    ]
+  },
+  {
+    id: "szte-hallgatok-latogatas",
+    type: "news",
+    title: "Az SZTE hallgatói a rehabilitációs foglalkoztatással ismerkedtek a SZEFO-nál",
+    date: "2026. március 18.",
+    category: "esemeny",
+    categoryLabel: "Események",
+    image: "../../img/hirek/hir/szte-hallgatok-latogatas.webp",
+    imageCredit: "Fotó: SZEFO Közhasznú Nonprofit Zrt.",
+    excerpt:
+      "A Szegedi Tudományegyetem Juhász Gyula Pedagógusképző Karának Emberi erőforrás tanácsadó szakos hallgatóit fogadta a SZEFO Közhasznú Nonprofit Zrt.",
+    featured: true,
+    content: [
+      {
+        paragraphs: [
+          "A Szegedi Tudományegyetem Juhász Gyula Pedagógusképző Karának Emberi erőforrás tanácsadó szakos hallgatóit fogadta a SZEFO Közhasznú Nonprofit Zrt. A látogatás célja az volt, hogy a hallgatók gyakorlati betekintést kapjanak a rehabilitációs foglalkoztatás működésébe és egy befogadó munkahely mindennapjaiba.",
+          "A program során a SZEFO vezető rehabilitációs tanácsadója osztotta meg több évtizedes szakmai tapasztalatait a megváltozott munkaképességű munkavállalók foglalkoztatásának kihívásairól és a sikeres rehabilitációs foglalkoztatást segítő jó gyakorlatokról.",
+          "A szakmai beszélgetést gyárlátogatás követte, amely során a hallgatók megismerhették a SZEFO működését, bepillantást nyerhettek a mindennapi munkafolyamatokba, és személyesen is találkozhattak munkatársainkkal.",
+          "A SZEFO számára fontos, hogy megoszthassa a rehabilitációs foglalkoztatás terén szerzett tapasztalatait a jövő szakembereivel, és hozzájáruljon egy nyitottabb, befogadóbb munkaerőpiac kialakításához."
+        ]
+      }
+    ]
+  },
   {
     id: "gal-ferenc-egyuttmukodes",
     type: "news",
@@ -24,7 +181,7 @@ const SZEFO_NEWS_BLOG_CONTENT = [
     imageCredit: "Fotó: Gémes Sándor",
     excerpt:
       "A Gál Ferenc Egyetem és a Szegedi SZEFO zrt. 2026. január 9-én Stratégiai együttműködési megállapodást írt alá.",
-    featured: true,
+    featured: false,
     content: [
       {
         paragraphs: [
@@ -161,8 +318,8 @@ if (searchInput && initialSearch) {
     resultsContainer.hidden = false;
     filtersContainer.hidden = false;
 
-    renderFeatured(items);
-    renderCards(items);
+    const featuredItem = renderFeatured(items);
+    renderCards(items, featuredItem);
     renderEmptyState(items);
   }
 
@@ -220,20 +377,25 @@ if (searchInput && initialSearch) {
 
   // Megjeleníti a listából kiemelt (featured) cikket egy nagyobb, önálló
   // kártyán a lista tetején; ha nincs külön kiemelt cikk, az elsőt mutatja.
+  // Visszaadja a kiemelt helyre került cikket, hogy a rács kihagyhassa.
   function renderFeatured(items) {
     const featuredItem = items.find((item) => item.featured) || items[0];
 
     if (!featuredItem) {
       featuredContainer.innerHTML = "";
-      return;
+      return null;
     }
 
     featuredContainer.innerHTML = createFeaturedCard(featuredItem);
+    return featuredItem;
   }
 
-  // A kiemelt cikken kívüli többi találatot jeleníti meg kártyák rácsában
-  function renderCards(items) {
-    const normalItems = items.filter((item) => !item.featured);
+  // A kiemelt helyen már látható cikken kívüli többi találatot jeleníti meg
+  // kártyák rácsában. Nem elég a featured jelölést nézni: ha szűréskor vagy
+  // kereséskor a kiemelt cikk kiesik, a lista első eleme kerül a kiemelt
+  // helyre, és az nem jelenhet meg még egyszer a rácsban.
+  function renderCards(items, featuredItem) {
+    const normalItems = items.filter((item) => item !== featuredItem);
 
     resultsContainer.innerHTML = normalItems
       .map((item) => createContentCard(item))
@@ -363,6 +525,7 @@ function createFeaturedCard(item) {
           alt="${escapeAttribute(item.title)}"
           loading="lazy"
           decoding="async"
+          ${imagePositionStyle(item)}
         >
       </figure>
 
@@ -397,6 +560,7 @@ function createContentCard(item) {
           alt="${escapeAttribute(item.title)}"
           loading="lazy"
           decoding="async"
+          ${imagePositionStyle(item)}
         >
       </figure>
 
@@ -468,6 +632,7 @@ function createDetailView(item) {
         alt="${escapeAttribute(item.title)}"
         loading="lazy"
         decoding="async"
+        ${imagePositionStyle(item)}
       >
       ${creditHtml}
     </figure>
@@ -476,6 +641,16 @@ function createDetailView(item) {
       ${contentHtml}
     </div>
   `;
+}
+
+// Opcionális képigazítás: ha a bejegyzésnél meg van adva az imagePosition
+// (CSS object-position érték, pl. "center bottom"), a kép vágása arra igazodik
+// a kártyákon és a részletes nézetben; enélkül a CSS szerinti középre
+// igazítás marad érvényben.
+function imagePositionStyle(item) {
+  return item.imagePosition
+    ? `style="object-position: ${escapeAttribute(item.imagePosition)}"`
+    : "";
 }
 
 // A keresést ékezet- és kis-/nagybetű-érzéketlenné teszi (pl. "esemeny"
