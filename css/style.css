@@ -2685,10 +2685,11 @@ select:focus-visible,
 
 /* =========================================================
    TEVÉKENYSÉGEK & ÜZLETÁGAK
-   Desktop: 3 + 1 (teljes szélességű kiemelt kártya alul)
-   Tablet: 2 + 1 + 1
+   Desktop: 3 kártya egy sorban
+   Tablet: 2 + 1 (a harmadik kártya középen, a többivel azonos szélességben)
    Mobil: 1 oszlop
-   Teljes dobozos overlay + részletek modal
+   Teljes, sötétítés nélküli kép, közvetlenül alatta kék címsáv;
+   nyitáskor a panel a képre felcsúszik + részletek modal
 ========================================================= */
 
 .business-section{
@@ -2717,7 +2718,7 @@ select:focus-visible,
 
 .business-grid{
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   align-items: stretch;
 }
@@ -2726,110 +2727,163 @@ select:focus-visible,
    BUSINESS CARD ALAP
 ========================================================= */
 
+/* A kártya magassága = a teljes kép + közvetlenül alatta a címsáv.
+   A --card-bar-h a címsáv magassága: a kártya alján ennyi helyet
+   hagyunk a sávnak, így az zárt állapotban nem takarja a képet. */
 .business-card {
+  --card-bar-h: 66px;
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
-  min-height: 250px;
+  padding-bottom: var(--card-bar-h);
   border-radius: var(--radius-xl);
   overflow: hidden;
   isolation: isolate;
 }
 
-/* Kiemelt kártya: a többivel egy sorban, csak kicsit magasabb */
-.business-card--featured{
-  min-height: 260px;
-}
-
-/* Kép: a kártya fotója a teljes kártyát kitölti háttérként */
+/* Kép: az eredeti 700×467 arányban, vágás és sötétítés nélkül, teljes egészében látszik a címsáv fölött */
 .business-card img{
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 0;
+  display: block;
+  flex: 1 0 auto;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 700 / 467;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.01);
+  transform: none;
   transition: transform 0.45s ease;
 }
 
-/* Alap sötétítés: sötét színátmenet a kép fölött, hogy a rajta lévő fehér cím és szöveg olvasható maradjon */
-.business-card::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.08),
-      rgba(0,0,0,0.74)
-    );
-}
-
 /* =========================================================
-   ALAP CÍMRÉTEG
-   - alapállapotban látszik
-   - overlay aktív állapotban eltűnik
+   FELCSÚSZÓ PANEL
+   - a panel a teljes kártyát lefedi, de alapállapotban csak az
+     alsó kék címsáv látszik: a rács felső, üres sora kitölti a
+     helyet, az összefoglaló sora 0 magas
+   - nyitáskor a két sor aránya megfordul, így a címsáv a kártya
+     tetejére csúszik, alatta előtűnik az összefoglaló
 ========================================================= */
 
-.business-card-body{
+.business-card-panel{
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 5;
-  padding: 18px;
-  color: var(--color-white);
-  pointer-events: none;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    visibility 0.25s ease;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 1fr auto 0fr;
+  transition: grid-template-rows 0.35s ease;
 }
 
-.business-card-body h3{
-  font-size: 17px;
-  line-height: 1.2;
-  font-weight: 900;
-  text-align: center;
-  text-wrap: balance;
-  text-shadow: 0 2px 14px rgba(0,0,0,0.35);
-}
-
-/* Tablet/mobil nyitó gomb – desktopon rejtve */
-.business-card-toggle{
-  display: none;
-}
-
-/* =========================================================
-   TELJES DOBOZOS OVERLAY
-========================================================= */
-
-.business-card-summary{
-  position: absolute;
-  inset: 0;
-  z-index: 7;
-  padding: 24px;
-  color: var(--color-white);
+/* Kék háttér a címsáv és az összefoglaló mögött egyben, hogy nyitott állapotban se törjön meg a színátmenet */
+.business-card-panel::before{
+  content: "";
+  grid-row: 2 / 4;
+  grid-column: 1;
   background:
     linear-gradient(
       to top,
       rgba(0, 63, 125, 0.97),
       rgba(0, 91, 187, 0.88)
     );
+}
+
+/* Címsáv: cím balra, nyitó nyíl gomb jobbra */
+.business-card-body{
+  grid-row: 2;
+  grid-column: 1;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: var(--card-bar-h);
+  padding: 12px 14px 12px 18px;
+  color: var(--color-white);
+}
+
+.business-card-body h3{
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 900;
+  text-align: left;
+  text-wrap: balance;
+}
+
+/* Nyitó / záró nyíl gomb (Bootstrap Icons) – a meglévő áttetsző, kerek gombstílusban */
+.business-card-toggle{
+  flex: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  color: var(--color-white);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background var(--transition-fast);
+}
+
+/* A gomb láthatatlan rétege a teljes címsávot kattinthatóvá teszi */
+.business-card-toggle::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.business-card-toggle:hover{
+  background: rgba(255,255,255,0.25);
+}
+
+.business-card-toggle .bi{
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.business-card-toggle .bi::before{
+  display: block;
+  vertical-align: 0;
+}
+
+/* =========================================================
+   ÖSSZEFOGLALÓ (a címsáv alatt előtűnő rész)
+   Függőleges padding szándékosan nincs rajta, hogy zárt
+   állapotban valóban 0 magas lehessen.
+========================================================= */
+
+.business-card-summary{
+  grid-row: 3;
+  grid-column: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  color: var(--color-white);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  justify-content: safe center;
   align-items: center;
   gap: 14px;
   text-align: center;
-  transform: translateY(100%);
-  transition: transform 0.35s ease;
+  visibility: hidden;
   pointer-events: none;
+  transition: visibility 0s linear 0.35s;
+}
+
+/* Vékony elválasztó vonal a cím alatt */
+.business-card-summary::before{
+  content: "";
+  flex: none;
+  align-self: stretch;
+  height: 1px;
+  background: rgba(255,255,255,0.35);
 }
 
 .business-card-summary p{
@@ -2847,6 +2901,7 @@ select:focus-visible,
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
 /* Részletek + Bezárás gomb */
@@ -2889,8 +2944,28 @@ select:focus-visible,
 }
 
 /* =========================================================
-   DESKTOP HOVER
+   NYITOTT ÁLLAPOT
+   - .is-open: a nyíl gombbal / címsávra koppintva (minden méreten)
+   - desktopon egérrel rámutatva vagy billentyűzetfókusszal is
 ========================================================= */
+
+.business-card.is-open .business-card-panel{
+  grid-template-rows: 0fr auto 1fr;
+}
+
+.business-card.is-open .business-card-summary{
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.business-card.is-open .business-card-toggle .bi{
+  transform: rotate(180deg);
+}
+
+.business-card.is-open img{
+  transform: scale(1.04);
+}
 
 @media (hover: hover) and (pointer: fine){
 
@@ -2899,17 +2974,21 @@ select:focus-visible,
     transform: scale(1.06);
   }
 
-  .business-card:hover .business-card-summary,
-  .business-card:focus-within .business-card-summary{
-    transform: translateY(0);
-    pointer-events: auto;
+  .business-card:hover .business-card-panel,
+  .business-card:focus-within .business-card-panel{
+    grid-template-rows: 0fr auto 1fr;
   }
 
-  .business-card:hover .business-card-body,
-  .business-card:focus-within .business-card-body{
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(12px);
+  .business-card:hover .business-card-summary,
+  .business-card:focus-within .business-card-summary{
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+
+  .business-card:hover .business-card-toggle .bi,
+  .business-card:focus-within .business-card-toggle .bi{
+    transform: rotate(180deg);
   }
 }
 
@@ -2928,44 +3007,11 @@ select:focus-visible,
     gap: 20px;
   }
 
-  .business-card,
-  .business-card--featured{
-    min-height: 245px;
-  }
-
-  .business-card-toggle{
-    display: inline-flex;
-    position: relative;
-    z-index: 8;
-    pointer-events: auto;
-    touch-action: manipulation;
-    margin: 12px auto 0;
-    padding: 8px 12px;
-    border: 1px solid rgba(255,255,255,0.45);
-    border-radius: 999px;
-    background: rgba(255,255,255,0.14);
-    color: var(--color-white);
-    font-size: 13px;
-    font-weight: 900;
-    line-height: 1;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-
-  .business-card.is-open .business-card-summary{
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  .business-card.is-open .business-card-body{
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(12px);
-    pointer-events: none;
-  }
-
-  .business-card.is-open img{
-    transform: scale(1.04);
+  /* Páratlan darabszámnál az utolsó kártya a következő sor közepére kerül, a többivel azonos szélességben */
+  .business-card:last-child:nth-child(odd){
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 20px) / 2);
   }
 
   .business-card-close{
@@ -2994,16 +3040,16 @@ select:focus-visible,
   }
 
   .business-card,
-  .business-card--featured{
+  .business-card:last-child:nth-child(odd){
+    --card-bar-h: 68px;
     grid-column: auto;
     width: 100%;
     max-width: none;
     justify-self: stretch;
-    min-height: 220px;
   }
 
   .business-card-body{
-    padding: 16px;
+    padding: 12px 12px 12px 16px;
   }
 
   .business-card-body h3{
@@ -3011,7 +3057,7 @@ select:focus-visible,
   }
 
   .business-card-summary{
-    padding: 22px 18px;
+    padding: 0 18px;
     gap: 13px;
   }
 
@@ -3028,18 +3074,18 @@ select:focus-visible,
 }
 
 @media (max-width: 420px){
-  .business-card,
-  .business-card--featured{
-    min-height: 205px;
-  }
-
   .business-card-summary{
-    padding: 18px 14px;
-    gap: 12px;
+    padding: 0 14px;
+    gap: 10px;
   }
 
   .business-card-summary p{
     font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .business-card-summary-actions{
+    margin-bottom: 12px;
   }
 }
 
@@ -3240,7 +3286,7 @@ select:focus-visible,
    Desktop: 4 + 4
    Tablet: 2 oszlop
    Mobil: 1 oszlop
-   Business-blokkal egységes teljes dobozos overlay
+   Business-blokkal egységes: teljes kép, alatta felcsúszó kék címsáv
 ========================================================= */
 
 .units-section{
@@ -3274,10 +3320,14 @@ select:focus-visible,
    UNITS CARD ALAP
 ========================================================= */
 
+/* Ugyanaz a méretezés, mint a business kártyáknál: teljes kép + alatta a címsáv */
 .units-card{
+  --card-bar-h: 64px;
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
-  min-height: 235px;
+  padding-bottom: var(--card-bar-h);
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: #111827;
@@ -3286,95 +3336,144 @@ select:focus-visible,
   isolation: isolate;
 }
 
-/* Fontos: csak a kártya közvetlen fő képét célozzuk */
+/* Fontos: csak a kártya közvetlen fő képét célozzuk; eredeti arányban, vágás és sötétítés nélkül */
 .units-card > img{
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 0;
+  display: block;
+  flex: 1 0 auto;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 700 / 467;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.01);
+  transform: none;
   transition: transform 0.45s ease;
 }
 
-.units-card::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.08),
-      rgba(0,0,0,0.74)
-    );
-}
-
 /* =========================================================
-   UNITS ALAP CÍMRÉTEG
-   - alapállapotban látszik
-   - overlay aktív állapotban eltűnik
+   UNITS FELCSÚSZÓ PANEL
+   Ugyanaz a rács-mechanika, mint a business kártyáknál:
+   alapállapotban csak az alsó címsáv látszik, nyitáskor a sáv
+   a kártya tetejére csúszik, alatta előtűnik az összefoglaló.
 ========================================================= */
 
-.units-card-body{
+.units-card-panel{
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 5;
-  padding: 18px;
-  color: var(--color-white);
-  pointer-events: none;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    visibility 0.25s ease;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 1fr auto 0fr;
+  transition: grid-template-rows 0.35s ease;
 }
 
-.units-card-body h3{
-  font-size: 16px;
-  line-height: 1.2;
-  font-weight: 900;
-  text-align: center;
-  text-wrap: balance;
-  text-shadow: 0 2px 14px rgba(0,0,0,0.35);
-}
-
-/* Tablet/mobil nyitó gomb – desktopon rejtve */
-.units-card-toggle{
-  display: none;
-}
-
-/* =========================================================
-   UNITS TELJES DOBOZOS OVERLAY
-========================================================= */
-
-.units-card-summary{
-  position: absolute;
-  inset: 0;
-  z-index: 7;
-  padding: 24px;
-  color: var(--color-white);
+.units-card-panel::before{
+  content: "";
+  grid-row: 2 / 4;
+  grid-column: 1;
   background:
     linear-gradient(
       to top,
       rgba(0, 63, 125, 0.97),
       rgba(0, 91, 187, 0.88)
     );
+}
+
+.units-card-body{
+  grid-row: 2;
+  grid-column: 1;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--card-bar-h);
+  padding: 12px 12px 12px 16px;
+  color: var(--color-white);
+}
+
+.units-card-body h3{
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 900;
+  text-align: left;
+  text-wrap: balance;
+}
+
+/* Nyitó / záró nyíl gomb: ugyanaz a forma, mint a business kártyáknál */
+.units-card-toggle{
+  flex: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  color: var(--color-white);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background var(--transition-fast);
+}
+
+/* A gomb láthatatlan rétege a teljes címsávot kattinthatóvá teszi */
+.units-card-toggle::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.units-card-toggle:hover{
+  background: rgba(255,255,255,0.25);
+}
+
+.units-card-toggle .bi{
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.units-card-toggle .bi::before{
+  display: block;
+  vertical-align: 0;
+}
+
+/* =========================================================
+   UNITS ÖSSZEFOGLALÓ
+   Függőleges padding szándékosan nincs rajta, hogy zárt
+   állapotban valóban 0 magas lehessen.
+========================================================= */
+
+.units-card-summary{
+  grid-row: 3;
+  grid-column: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  color: var(--color-white);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  justify-content: safe center;
   align-items: center;
   gap: 14px;
   text-align: center;
-  transform: translateY(100%);
-  transition: transform 0.35s ease;
+  visibility: hidden;
   pointer-events: none;
+  transition: visibility 0s linear 0.35s;
+}
+
+/* Vékony elválasztó vonal a cím alatt */
+.units-card-summary::before{
+  content: "";
+  flex: none;
+  align-self: stretch;
+  height: 1px;
+  background: rgba(255,255,255,0.35);
 }
 
 .units-card-summary p{
@@ -3384,6 +3483,10 @@ select:focus-visible,
   line-height: 1.55;
   font-weight: 700;
   text-align: center;
+}
+
+.units-card-summary .business-card-summary-actions{
+  margin-bottom: 14px;
 }
 
 /* Units overlay gombok: ugyanaz a forma, mint a business kártyáknál */
@@ -3419,8 +3522,28 @@ select:focus-visible,
 }
 
 /* =========================================================
-   DESKTOP HOVER
+   UNITS NYITOTT ÁLLAPOT
+   - .is-open: a nyíl gombbal / címsávra koppintva (minden méreten)
+   - desktopon egérrel rámutatva vagy billentyűzetfókusszal is
 ========================================================= */
+
+.units-card.is-open .units-card-panel{
+  grid-template-rows: 0fr auto 1fr;
+}
+
+.units-card.is-open .units-card-summary{
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.units-card.is-open .units-card-toggle .bi{
+  transform: rotate(180deg);
+}
+
+.units-card.is-open > img{
+  transform: scale(1.04);
+}
 
 @media (hover: hover) and (pointer: fine){
 
@@ -3429,17 +3552,62 @@ select:focus-visible,
     transform: scale(1.06);
   }
 
-  .units-card:hover .units-card-summary,
-  .units-card:focus-within .units-card-summary{
-    transform: translateY(0);
-    pointer-events: auto;
+  .units-card:hover .units-card-panel,
+  .units-card:focus-within .units-card-panel{
+    grid-template-rows: 0fr auto 1fr;
   }
 
-  .units-card:hover .units-card-body,
-  .units-card:focus-within .units-card-body{
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(12px);
+  .units-card:hover .units-card-summary,
+  .units-card:focus-within .units-card-summary{
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+
+  .units-card:hover .units-card-toggle .bi,
+  .units-card:focus-within .units-card-toggle .bi{
+    transform: rotate(180deg);
+  }
+}
+
+/* =========================================================
+   KESKENY DESKTOP (1025–1199px)
+   A 4 oszlopos kártyák itt a legkeskenyebbek: kisebb cím és
+   tömörebb címsáv, hogy a „Félkész- és készáruvasaló üzem”
+   cím se törjön 3 sorba.
+========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1199px){
+
+  .units-card-body{
+    gap: 8px;
+    padding: 12px 8px 12px 12px;
+  }
+
+  .units-card-body h3{
+    font-size: 15px;
+  }
+
+  .units-card-toggle{
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  /* A kinyitott összefoglaló is elférjen: szélesebb, kisebb betűs szöveg */
+  .units-card-summary{
+    padding: 0 12px;
+    gap: 12px;
+  }
+
+  .units-card-summary p{
+    max-width: none;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .units-card-summary .business-card-summary-actions{
+    margin-bottom: 10px;
   }
 }
 
@@ -3456,45 +3624,6 @@ select:focus-visible,
   .units-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
-  }
-
-  .units-card{
-    min-height: 235px;
-  }
-
-  .units-card-toggle{
-    display: inline-flex;
-    position: relative;
-    z-index: 8;
-    pointer-events: auto;
-    touch-action: manipulation;
-    margin: 12px auto 0;
-    padding: 8px 12px;
-    border: 1px solid rgba(255,255,255,0.45);
-    border-radius: 999px;
-    background: rgba(255,255,255,0.14);
-    color: var(--color-white);
-    font-size: 13px;
-    font-weight: 900;
-    line-height: 1;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-
-  .units-card.is-open .units-card-summary{
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  .units-card.is-open .units-card-body{
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(12px);
-    pointer-events: none;
-  }
-
-  .units-card.is-open > img{
-    transform: scale(1.04);
   }
 
   .units-card-close{
@@ -3523,11 +3652,11 @@ select:focus-visible,
   }
 
   .units-card{
-    min-height: 220px;
+    --card-bar-h: 68px;
   }
 
   .units-card-body{
-    padding: 16px;
+    padding: 12px 12px 12px 16px;
   }
 
   .units-card-body h3{
@@ -3535,7 +3664,7 @@ select:focus-visible,
   }
 
   .units-card-summary{
-    padding: 22px 18px;
+    padding: 0 18px;
     gap: 13px;
   }
 
@@ -3553,17 +3682,18 @@ select:focus-visible,
 
 @media (max-width: 420px){
 
-  .units-card{
-    min-height: 205px;
-  }
-
   .units-card-summary{
-    padding: 18px 14px;
-    gap: 12px;
+    padding: 0 14px;
+    gap: 10px;
   }
 
   .units-card-summary p{
     font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .units-card-summary .business-card-summary-actions{
+    margin-bottom: 12px;
   }
 }
 

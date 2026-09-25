@@ -66,10 +66,11 @@
     }
     </script>
 
-    <!-- Böngészőfül ikonja (favicon), valamint az oldal kinézetét meghatározó CSS-stíluslapok betöltése -->
+    <!-- Böngészőfül ikonja (favicon), valamint az oldal kinézetét meghatározó CSS-stíluslapok (a kártyák nyitóikonjaihoz Bootstrap Icons betűkészlettel) betöltése -->
     <link rel="icon" href="img/fav/szefo_fav.PNG" type="image/png">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/popup.css">
+    <link rel="stylesheet" href="./css/bootstrap-icons/bootstrap-icons.css">
 
     <title>Kezdőlap | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
@@ -554,7 +555,7 @@
                 </div>
             </div>
         </section>
-        <!-- TEVÉKENYSÉGEK ÉS ÜZLETÁGAK: kattintható kártyák a fő üzletágakról; a "Bővebben" gombra kattintva egy felugró ablakban részletes leírás nyílik meg -->
+        <!-- TEVÉKENYSÉGEK ÉS ÜZLETÁGAK: 3 kártya a fő üzletágakról. A kép sötétítés nélkül, teljes egészében látszik, közvetlenül alatta kék címsáv; egérrel rámutatva vagy a nyíl gombra koppintva a sáv felcsúszik és megjelenik a rövid összefoglaló, a "Részletek" gomb egy felugró ablakban nyitja meg a részletes leírást -->
             <section class="business-section" aria-labelledby="business-title">
             <div class="business-header">
                 <h2 id="business-title">Tevékenységek &amp; üzletágak</h2>
@@ -565,28 +566,30 @@
                 <article class="business-card">
                     <img src="img/tevekenysegek_web/tevekenyseg_1.webp" alt="Divat- és kötöttáru gyártás" width="700" height="467" loading="lazy">
 
-                    <div class="business-card-body">
-                        <h3>Divat- és kötöttáru gyártás</h3>
+                    <div class="business-card-panel">
+                        <div class="business-card-body">
+                            <h3>Divat- és kötöttáru gyártás</h3>
 
-                        <button class="business-card-toggle" type="button" aria-expanded="false">
-                        Bővebben
-                        </button>
-                    </div>
+                            <button class="business-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
 
-                    <div class="business-card-summary">
-                        <p>
-                        Kötöttáru- és divatipari gyártás teljes gyártási háttérrel, prémium minőségben.
-                        </p>
+                        <div class="business-card-summary">
+                            <p>
+                            Kötöttáru- és divatipari gyártás teljes gyártási háttérrel, prémium minőségben.
+                            </p>
 
                         
-                    <div class="business-card-summary-actions">
-                        <button class="business-detail-open" type="button">
-                            Részletek
-                        </button>
+                        <div class="business-card-summary-actions">
+                            <button class="business-detail-open" type="button">
+                                Részletek
+                            </button>
 
-                        <button class="business-card-close" type="button">
-                            Bezárás
-                        </button>
+                            <button class="business-card-close" type="button">
+                                Bezárás
+                            </button>
+                            </div>
                         </div>
                     </div>
 
@@ -618,20 +621,22 @@
                     </div>
                 </article>
 
+
                 <article class="business-card">
-                    <img src="img/tevekenysegek_web/tevekenyseg_2.webp" alt="Hazai design és divat" width="700" height="467" loading="lazy">
+                <img src="img/tevekenysegek_web/tevekenyseg_4.webp" alt="Ipari bérmunka - Legrand" width="700" height="467" loading="lazy">
 
+                <div class="business-card-panel">
                     <div class="business-card-body">
-                        <h3>Hazai design - divat</h3>
+                        <h3>Ipari bérmunka</h3>
 
-                        <button class="business-card-toggle" type="button" aria-expanded="false">
-                        Bővebben
+                        <button class="business-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
                         </button>
                     </div>
 
                     <div class="business-card-summary">
                         <p>
-                        Hazai divattervezői együttműködések, mintakollekciók és prémium kötött divattermékek gyártása.
+                        Több évtizedes együttműködés áramelosztó-szabályozó készülékek összeszerelésében és gyártásában.
                         </p>
 
                         <div class="business-card-summary-actions">
@@ -643,80 +648,6 @@
                             Bezárás
                         </button>
                         </div>
-                    </div>
-
-                    <div class="business-detail-content" hidden>
-                        <h2>Hazai design - divat</h2>
-
-                        <p class="business-modal-lead">
-                        Évek óta együttműködünk hazai vezető divattervezőkkel a termékfejlesztéstől a mintázáson át a kollekciók gyártásáig.
-                        </p>
-
-                        <h3>Hazai divattervezői együttműködések</h3>
-                        <p>
-                        Évek óta együttműködünk hazai vezető divattervezőkkel a termékfejlesztéstől a mintázáson át a kollekciók gyártásáig.
-                        </p>
-
-                        <h3>Ismert márkák és tervezői kollekciók</h3>
-                        <p>
-                        Az ÁERON, Katti Zoób, ABODI, Tomcsányi, Nanushka és Lilla Pápai (Wyhoys) márkanevek, illetve divattervezők kollekciói közül több kötött darab is készült már kötödénkben.
-                        </p>
-
-                        <h3>Stratégiai partnerek</h3>
-                        <p>
-                        Fontos stratégiai partnereink közé tartozik a Nanushka Zrt., az ÁERON és az ABODI.
-                        </p>
-
-                        <h3>Saját márkás kötöttáru</h3>
-                        <p>
-                        Magas minőségű, saját fejlesztésű Chance márkás divat kötöttáru termékekkel is jelen vagyunk a piac igényes szegmenseiben.
-                        </p>
-
-                        <h3>Rugalmas gyártás és mintakollekciók</h3>
-                        <p>
-                        Vállaljuk kis- és közepes szériás, differenciált vevői igényeket kielégítő, korszerű technológiai gyártmányösszetételű és rövid gyártási idejű divat kötöttáruk és textilruházati felső divatáruk készítését.
-                        </p>
-
-                        <p>
-                        Tevékenységünk kiterjed a mintakollekciók fejlesztésére és gyártására, a szériázásra, a konfekcionálásra, a minőségellenőrzésre, valamint a csomagolásra és szállításra is.
-                        </p>
-
-                        <h3>Belföldi értékesítési jelenlét</h3>
-                        <p>
-                        A Társaság regionális, három megyés működési területen van jelen: a szegedi székhely és központi telephely mellett további tizenegy fiókteleppel és két márkabolttal rendelkezik, ahol a Chance saját márkás divat kötöttáruk belföldi értékesítése zajlik.
-                        </p>
-
-                        <figure class="business-modal-image">
-                        <img src="img/tevekenysegek_web/hazai_design/hazai_design_1.webp" alt="Hazai design és divat" width="400" height="746" loading="lazy">
-                        </figure>
-                    </div>
-                </article>
-
-
-                <article class="business-card">
-                <img src="img/tevekenysegek_web/tevekenyseg_4.webp" alt="Ipari bérmunka - Legrand" width="700" height="467" loading="lazy">
-
-                <div class="business-card-body">
-                    <h3>Ipari bérmunka</h3>
-
-                    <button class="business-card-toggle" type="button" aria-expanded="false">
-                    Bővebben
-                    </button>
-                </div>
-
-                <div class="business-card-summary">
-                    <p>
-                    Több évtizedes együttműködés áramelosztó-szabályozó készülékek összeszerelésében és gyártásában.
-                    </p>
-
-                    <div class="business-card-summary-actions">
-                    <button class="business-detail-open" type="button">
-                        Részletek
-                    </button>
-
-                    <button class="business-card-close" type="button">
-                        Bezárás
-                    </button>
                     </div>
                 </div>
 
@@ -756,30 +687,32 @@
                 </div>
                 </article>
 
-                <article class="business-card business-card--featured">
+                <article class="business-card">
                     <img src="img/tevekenysegek_web/tevekenyseg_5.webp" alt="E-hulladékhoz kapcsolódó tevékenység" width="700" height="467" loading="lazy">
 
-                    <div class="business-card-body">
-                        <h3>E-hulladék - MOHU</h3>
+                    <div class="business-card-panel">
+                        <div class="business-card-body">
+                            <h3>E-hulladék - MOHU</h3>
 
-                        <button class="business-card-toggle" type="button" aria-expanded="false">
-                        Bővebben
-                        </button>
-                    </div>
+                            <button class="business-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
 
-                    <div class="business-card-summary">
-                        <p>
-                        Elektronikai hulladékok kézi bontása, válogatása és előkezelése felelős hulladékgazdálkodási rendszerben.
-                        </p>
+                        <div class="business-card-summary">
+                            <p>
+                            Elektronikai hulladékok kézi bontása, válogatása és előkezelése felelős hulladékgazdálkodási rendszerben.
+                            </p>
 
-                        <div class="business-card-summary-actions">
-                        <button class="business-detail-open" type="button">
-                            Részletek
-                        </button>
+                            <div class="business-card-summary-actions">
+                            <button class="business-detail-open" type="button">
+                                Részletek
+                            </button>
 
-                        <button class="business-card-close" type="button">
-                            Bezárás
-                        </button>
+                            <button class="business-card-close" type="button">
+                                Bezárás
+                            </button>
+                            </div>
                         </div>
                     </div>
 
@@ -831,7 +764,7 @@
                 </article>
             </div>
             </section>
-            <!-- ÜZEMEGYSÉGEK: kattintható kártyák a gyártási üzemegységekről (kötöde, vasaló, varroda stb.), "Bővebben" gombbal megnyitható részletes leírással -->
+            <!-- ÜZEMEGYSÉGEK: kártyák a gyártási üzemegységekről (kötöde, vasaló, varroda stb.), a Tevékenységek kártyáival azonos felcsúszó címsávval és "Részletek" gombbal megnyitható részletes leírással -->
             <section class="units-section" aria-labelledby="units-title">
             <div class="units-header">
                 <h2 id="units-title">Üzemegységek</h2>
@@ -846,27 +779,29 @@
                     height="467"
                  loading="lazy">
 
-                <div class="units-card-body">
-                    <h3>Sík- és körkötő üzem</h3>
+                <div class="units-card-panel">
+                    <div class="units-card-body">
+                        <h3>Sík- és körkötő üzem</h3>
 
-                    <button class="units-card-toggle" type="button" aria-expanded="false">
-                    Bővebben
-                    </button>
-                </div>
+                        <button class="units-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
 
-                <div class="units-card-summary">
-                    <p>
-                    Számítógép-vezérelt sík- és körkötőgépekkel működő, modern digitális textilipari üzemegység.
-                    </p>
+                    <div class="units-card-summary">
+                        <p>
+                        Számítógép-vezérelt sík- és körkötőgépekkel működő, modern digitális textilipari üzemegység.
+                        </p>
 
-                    <div class="business-card-summary-actions">
-                    <button class="business-detail-open" type="button">
-                        Részletek
-                    </button>
+                        <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
 
-                    <button class="units-card-close" type="button">
-                        Bezárás
-                    </button>
+                        <button class="units-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
                     </div>
                 </div>
 
@@ -924,27 +859,29 @@
                     height="467"
                  loading="lazy">
 
-                <div class="units-card-body">
-                    <h3>Félkész- és készáruvasaló üzem</h3>
+                <div class="units-card-panel">
+                    <div class="units-card-body">
+                        <h3>Félkész- és készáruvasaló üzem</h3>
 
-                    <button class="units-card-toggle" type="button" aria-expanded="false">
-                    Bővebben
-                    </button>
-                </div>
+                        <button class="units-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
 
-                <div class="units-card-summary">
-                    <p>
-                    Kikészítési, elővasalási és készáruvasalási folyamatok a méretpontos, esztétikus késztermékért.
-                    </p>
+                    <div class="units-card-summary">
+                        <p>
+                        Kikészítési, elővasalási és készáruvasalási folyamatok a méretpontos, esztétikus késztermékért.
+                        </p>
 
-                    <div class="business-card-summary-actions">
-                    <button class="business-detail-open" type="button">
-                        Részletek
-                    </button>
+                        <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
 
-                    <button class="units-card-close" type="button">
-                        Bezárás
-                    </button>
+                        <button class="units-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
                     </div>
                 </div>
 
@@ -1002,27 +939,29 @@
                         height="467"
                      loading="lazy">
 
-                    <div class="units-card-body">
-                        <h3>Mosó-kikészítő és fércelő üzem</h3>
+                    <div class="units-card-panel">
+                        <div class="units-card-body">
+                            <h3>Mosó-kikészítő és fércelő üzem</h3>
 
-                        <button class="units-card-toggle" type="button" aria-expanded="false">
-                        Bővebben
-                        </button>
-                    </div>
+                            <button class="units-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
 
-                    <div class="units-card-summary">
-                        <p>
-                        Mosási, kikészítési és fércelési folyamatok a további gyártási lépések előkészítéséhez.
-                        </p>
+                        <div class="units-card-summary">
+                            <p>
+                            Mosási, kikészítési és fércelési folyamatok a további gyártási lépések előkészítéséhez.
+                            </p>
 
-                        <div class="business-card-summary-actions">
-                        <button class="business-detail-open" type="button">
-                            Részletek
-                        </button>
+                            <div class="business-card-summary-actions">
+                            <button class="business-detail-open" type="button">
+                                Részletek
+                            </button>
 
-                        <button class="units-card-close" type="button">
-                            Bezárás
-                        </button>
+                            <button class="units-card-close" type="button">
+                                Bezárás
+                            </button>
+                            </div>
                         </div>
                     </div>
 
@@ -1069,27 +1008,29 @@
                     height="467"
                  loading="lazy">
 
-                <div class="units-card-body">
-                    <h3>Szabászat</h3>
+                <div class="units-card-panel">
+                    <div class="units-card-body">
+                        <h3>Szabászat</h3>
 
-                    <button class="units-card-toggle" type="button" aria-expanded="false">
-                    Bővebben
-                    </button>
-                </div>
+                        <button class="units-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
 
-                <div class="units-card-summary">
-                    <p>
-                    Digitális és manuális szabásminták alapján végzett pontos, anyagtakarékos szabászati előkészítés.
-                    </p>
+                    <div class="units-card-summary">
+                        <p>
+                        Digitális és manuális szabásminták alapján végzett pontos, anyagtakarékos szabászati előkészítés.
+                        </p>
 
-                    <div class="business-card-summary-actions">
-                    <button class="business-detail-open" type="button">
-                        Részletek
-                    </button>
+                        <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
 
-                    <button class="units-card-close" type="button">
-                        Bezárás
-                    </button>
+                        <button class="units-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
                     </div>
                 </div>
 
@@ -1138,27 +1079,29 @@
                 <article class="units-card">
                 <img src="img/uzemegysegek_web/uzemegyseg_5.webp" alt="Logisztika" width="700" height="467" loading="lazy">
 
-                <div class="units-card-body">
-                    <h3>Logisztika</h3>
+                <div class="units-card-panel">
+                    <div class="units-card-body">
+                        <h3>Logisztika</h3>
 
-                    <button class="units-card-toggle" type="button" aria-expanded="false">
-                    Bővebben
-                    </button>
-                </div>
+                        <button class="units-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
 
-                <div class="units-card-summary">
-                    <p>
-                    Belföldi és nemzetközi áruszállítás stratégiailag kedvező szegedi logisztikai elhelyezkedéssel.
-                    </p>
+                    <div class="units-card-summary">
+                        <p>
+                        Belföldi és nemzetközi áruszállítás stratégiailag kedvező szegedi logisztikai elhelyezkedéssel.
+                        </p>
 
-                    <div class="business-card-summary-actions">
-                    <button class="business-detail-open" type="button">
-                        Részletek
-                    </button>
+                        <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
 
-                    <button class="units-card-close" type="button">
-                        Bezárás
-                    </button>
+                        <button class="units-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
                     </div>
                 </div>
 
@@ -1211,27 +1154,29 @@
                     height="467"
                  loading="lazy">
 
-                <div class="units-card-body">
-                    <h3>Hímző- és szitanyomó üzem</h3>
+                <div class="units-card-panel">
+                    <div class="units-card-body">
+                        <h3>Hímző- és szitanyomó üzem</h3>
 
-                    <button class="units-card-toggle" type="button" aria-expanded="false">
-                    Bővebben
-                    </button>
-                </div>
+                        <button class="units-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
 
-                <div class="units-card-summary">
-                    <p>
-                    Hímzés és szitanyomás házon belül, egyedi megjelenéshez és tartós textilnyomatokhoz.
-                    </p>
+                    <div class="units-card-summary">
+                        <p>
+                        Hímzés és szitanyomás házon belül, egyedi megjelenéshez és tartós textilnyomatokhoz.
+                        </p>
 
-                    <div class="business-card-summary-actions">
-                    <button class="business-detail-open" type="button">
-                        Részletek
-                    </button>
+                        <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
 
-                    <button class="units-card-close" type="button">
-                        Bezárás
-                    </button>
+                        <button class="units-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
                     </div>
                 </div>
 
@@ -1302,27 +1247,29 @@
                 <article class="units-card">
                     <img src="img/uzemegysegek_web/uzemegyseg_7.webp" alt="Varróüzem" width="700" height="467" loading="lazy">
 
-                    <div class="units-card-body">
-                        <h3>Varróüzem</h3>
+                    <div class="units-card-panel">
+                        <div class="units-card-body">
+                            <h3>Varróüzem</h3>
 
-                        <button class="units-card-toggle" type="button" aria-expanded="false">
-                        Bővebben
-                        </button>
-                    </div>
+                            <button class="units-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
 
-                    <div class="units-card-summary">
-                        <p>
-                        Konfekcionálási és befejező műveletek korszerű ipari varrógépekkel és felkészült varrodai csapattal.
-                        </p>
+                        <div class="units-card-summary">
+                            <p>
+                            Konfekcionálási és befejező műveletek korszerű ipari varrógépekkel és felkészült varrodai csapattal.
+                            </p>
 
-                        <div class="business-card-summary-actions">
-                        <button class="business-detail-open" type="button">
-                            Részletek
-                        </button>
+                            <div class="business-card-summary-actions">
+                            <button class="business-detail-open" type="button">
+                                Részletek
+                            </button>
 
-                        <button class="units-card-close" type="button">
-                            Bezárás
-                        </button>
+                            <button class="units-card-close" type="button">
+                                Bezárás
+                            </button>
+                            </div>
                         </div>
                     </div>
 
@@ -1376,27 +1323,29 @@
                 <article class="units-card">
                 <img src="img/uzemegysegek_web/uzemegyseg_8.webp" alt="Minőségellenőrzési Osztály (MEO)" width="700" height="467" loading="lazy">
 
-                <div class="units-card-body">
-                    <h3>Minőségellenőrzési Osztály (MEO)</h3>
+                <div class="units-card-panel">
+                    <div class="units-card-body">
+                        <h3>Minőségellenőrzési Osztály (MEO)</h3>
 
-                    <button class="units-card-toggle" type="button" aria-expanded="false">
-                    Bővebben
-                    </button>
-                </div>
+                        <button class="units-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
 
-                <div class="units-card-summary">
-                    <p>
-                    Többlépcsős késztermék-ellenőrzés, címkevizsgálat, csomagolás és kiszállítási előkészítés.
-                    </p>
+                    <div class="units-card-summary">
+                        <p>
+                        Többlépcsős késztermék-ellenőrzés, címkevizsgálat, csomagolás és kiszállítási előkészítés.
+                        </p>
 
-                    <div class="business-card-summary-actions">
-                    <button class="business-detail-open" type="button">
-                        Részletek
-                    </button>
+                        <div class="business-card-summary-actions">
+                        <button class="business-detail-open" type="button">
+                            Részletek
+                        </button>
 
-                    <button class="units-card-close" type="button">
-                        Bezárás
-                    </button>
+                        <button class="units-card-close" type="button">
+                            Bezárás
+                        </button>
+                        </div>
                     </div>
                 </div>
 

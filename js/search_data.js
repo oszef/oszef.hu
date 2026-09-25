@@ -35,7 +35,6 @@ window.SZEFO_SEARCH_INDEX = [
       "Legrand",
       "Paul Shark",
       "DAMA S.p.A.",
-      "Chance márka",
       "e-hulladék",
       "MOHU",
       "sík- és körkötő üzem",
@@ -48,7 +47,7 @@ window.SZEFO_SEARCH_INDEX = [
       "Minőségellenőrzési Osztály",
       "MEO"
     ],
-    text: "A SZEFO.hu kezdőoldala: 1953 óta Magyarország egyik legrégebbi rehabilitációs foglalkoztatója, jelenleg mintegy 500 munkatárssal, akiknek 74%-a megváltozott munkaképességű. Vezérigazgatói köszöntő Mérész Attilától. Fő tevékenységek: divat- és kötöttáru gyártás (Chance saját márka, Paul&Shark / DAMA S.p.A. partnerség), villamosipari bérmunka (Legrand áramelosztó-szabályozó készülékek), valamint e-hulladék (MOHU) hulladékgazdálkodás. Üzemegységeink: sík- és körkötő üzem, félkész- és készáruvasaló üzem, mosó-kikészítő és fércelő üzem, szabászat, logisztika, hímző- és szitanyomó üzem, varróüzem, Minőségellenőrzési Osztály (MEO). Kapcsolódó oldalak: Alapítvány, Partnerek, Referenciák."
+    text: "A SZEFO.hu kezdőoldala: 1953 óta Magyarország egyik legrégebbi rehabilitációs foglalkoztatója, jelenleg mintegy 500 munkatárssal, akiknek 74%-a megváltozott munkaképességű. Vezérigazgatói köszöntő Mérész Attilától. Fő tevékenységek: divat- és kötöttáru gyártás (Paul&Shark / DAMA S.p.A. partnerség), villamosipari bérmunka (Legrand áramelosztó-szabályozó készülékek), valamint e-hulladék (MOHU) hulladékgazdálkodás. Üzemegységeink: sík- és körkötő üzem, félkész- és készáruvasaló üzem, mosó-kikészítő és fércelő üzem, szabászat, logisztika, hímző- és szitanyomó üzem, varróüzem, Minőségellenőrzési Osztály (MEO). Kapcsolódó oldalak: Alapítvány, Partnerek, Referenciák."
   },
   {
     id: "tortenetunk",

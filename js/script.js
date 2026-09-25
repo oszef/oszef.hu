@@ -873,8 +873,10 @@ function initSearchForm() {
 ========================================================= */
 
 // Közös, újrafelhasználható "Bővebben / Bezárás" viselkedés az üzletág- és
-// üzemegység-kártyákhoz: egy kártya kinyitásakor az összes többi bezárul,
-// hogy mindig legfeljebb egy kártya legyen nyitva egyszerre.
+// üzemegység-kártyákhoz: a címsáv nyíl gombja (ikon, ezért a felolvasott
+// neve aria-label) nyitja és zárja a felcsúszó panelt; egy kártya
+// kinyitásakor az összes többi bezárul, hogy mindig legfeljebb egy kártya
+// legyen nyitva egyszerre.
 function initToggleCards({
   sectionSelector,
   cardSelector,
@@ -891,7 +893,7 @@ function initToggleCards({
     if (!button) return;
 
     button.setAttribute("aria-expanded", "false");
-    button.textContent = "Bővebben";
+    button.setAttribute("aria-label", "Bővebben");
   }
 
   function closeOtherCards(activeCard) {
@@ -920,7 +922,7 @@ function initToggleCards({
     const isOpen = card.classList.toggle("is-open");
 
     openButton.setAttribute("aria-expanded", String(isOpen));
-    openButton.textContent = isOpen ? "Bezárás" : "Bővebben";
+    openButton.setAttribute("aria-label", isOpen ? "Bezárás" : "Bővebben");
 
     if (isOpen) closeOtherCards(card);
   });
