@@ -3,3 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/nattodvn/public_html
     - /bin/cp -R * $DEPLOYPATH
+    - /bin/rm -f "${DEPLOYPATH:?}/README.md"
