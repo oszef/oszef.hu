@@ -1025,9 +1025,11 @@ select:focus-visible,
 
 
 /* =========================================================
-   9. ISO TANÚSÍTVÁNY
-   Bal oldalt a tanúsítvány logója egy dobozban, jobb oldalt a
-   "Részletek" gomb. Mobilon a kettő egymás alá kerül (17. pont).
+   9. ISO TANÚSÍTVÁNYOK
+   Három tanúsítvány (ISO 9001, 14001, 45001): mindegyik logója egy
+   dobozban, alatta a saját "Részletek" gombja. Asztali és tablet
+   nézetben a három egymás mellett, telefonon (600px alatt) egymás
+   alatt jelenik meg.
 ========================================================= */
 
 .iso-section {
@@ -1044,32 +1046,59 @@ select:focus-visible,
     margin-bottom: 40px;
 }
 
-/* A logó doboza és a gomb egy sorban, középre igazítva */
-.iso-certificate {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+/* A három tanúsítvány rácsa: asztali és tablet nézetben 3 oszlop */
+.iso-certificates {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(14px, 2.5vw, 28px);
 }
 
-/* Logó doboza: a korábbi, teljes szélességű képváltó felének megfelelő méret
-   (háttér, árnyék, keret, lekerekítés: lásd "Kártyák közös alapja").
-   A logó legfeljebb eredeti méretében (300 × 150 px) jelenik meg,
-   így nem lesz elmosódott. */
+/* Egy tanúsítvány: felül a logó doboza, alatta a gomb, középre igazítva */
+.iso-certificate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Logó doboza (háttér, árnyék, keret, lekerekítés: lásd "Kártyák közös alapja").
+   A container-type azért kell, hogy a logó magasságát a doboz szélességéhez
+   lehessen kötni (cqw egység, lásd lent). */
 .iso-certificate-image {
+    container-type: inline-size;
     width: 100%;
-    max-width: 530px;
-    height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px;
 }
 
+/* A három képfájl képaránya eltér (az ISO 9001 2:1, a másik kettő kb. 1,6:1),
+   maga a logó viszont mindháromban ugyanakkora arányban tölti ki a magasságot.
+   Ezért a magasságot rögzítjük, a szélesség pedig ehhez igazodik: így a három
+   logó minden képernyőméreten egyforma nagynak látszik.
+   A magasság legfeljebb 150px (az ISO 9001 kép eredeti mérete, hogy ne legyen
+   elmosódott), keskeny dobozban pedig a doboz szélességének fele. */
+.iso-certificate-image img {
+    height: 150px;
+    height: min(150px, 50cqw);
+    width: auto;
+    max-width: none;
+}
+
 /* A gomb szövege ne törjön két sorba, és a gomb ne nyomódjon össze */
 .iso-certificate-btn {
     flex-shrink: 0;
     white-space: nowrap;
+}
+
+/* Telefonon egy oszlop: a három tanúsítvány egymás alatt */
+@media (max-width: 600px) {
+    .iso-certificates {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
 }
 
 
@@ -1986,12 +2015,6 @@ select:focus-visible,
     .iso-title {
         font-size: 26px;
         margin-bottom: 25px;
-    }
-
-    /* Mobilon a logó doboza és a gomb egymás alá kerül */
-    .iso-certificate {
-        flex-direction: column;
-        gap: 20px;
     }
 
     .about-section {

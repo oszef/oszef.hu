@@ -275,10 +275,12 @@ window.SZEFO_SEARCH_INDEX = [
       "munkabiztonság",
       "King Cert",
       "I1768985033Q",
+      "I1790166229E",
+      "I1790166354O",
       "audit",
       "PDF"
     ],
-    text: "A SZEFO Közhasznú Nonprofit Zrt. integrált irányítási rendszert működtet. ISO 9001:2015 minőségirányítási rendszer (King Cert International Certification Ltd., tanúsítvány száma I1768985033Q, érvényes 2027.01.25-ig). Tanúsított tevékenységi terület: kötött ruhaipari termékek fejlesztése, gyártása és értékesítése. Letölthető a minőségpolitikai nyilatkozat és az ISO 9001:2015 tanúsítvány PDF formátumban."
+    text: "A SZEFO Közhasznú Nonprofit Zrt. integrált irányítási rendszert működtet. ISO 9001:2015 minőségirányítási rendszer (King Cert International Certification Ltd., tanúsítvány száma I1768985033Q, érvényes 2027. 01. 25-ig). ISO 14001:2015 környezetközpontú irányítási rendszer, KIR (King Cert International Certification Ltd., tanúsítvány száma I1790166229E, érvényes 2027. 09. 24-ig). ISO 45001:2018 munkahelyi egészségvédelem és biztonság irányítási rendszere, MEBIR (King Cert International Certification Ltd., tanúsítvány száma I1790166354O, érvényes 2027. 09. 24-ig). Tanúsított tevékenységi terület: kötött ruhaipari termékek fejlesztése, gyártása és értékesítése. Letölthető a minőségpolitikai nyilatkozat, valamint az ISO 9001:2015, az ISO 14001:2015 és az ISO 45001:2018 tanúsítvány PDF formátumban."
   },
   {
     id: "partnerek",
