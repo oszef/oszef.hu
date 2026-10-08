@@ -347,6 +347,7 @@ function createCarousel({
   slideSelector,
   nextSelector,
   prevSelector,
+  pauseSelector,
   activeClass = "active",
   autoplay = true,
   interval = 5000
@@ -354,6 +355,7 @@ function createCarousel({
   const slides = qsa(slideSelector);
   const nextButton = qs(nextSelector);
   const prevButton = qs(prevSelector);
+  const pauseButton = pauseSelector ? qs(pauseSelector) : null;
 
   if (!slides.length) return;
 
@@ -363,6 +365,11 @@ function createCarousel({
   );
 
   let intervalId = null;
+
+  // A látogató a szünet gombbal megállíthatja a lapozást (WCAG 2.2.2).
+  // Ha a rendszer csökkentett mozgást kér, eleve szüneteltetve indul,
+  // de a gombbal a látogató maga elindíthatja.
+  let userPaused = prefersReducedMotion();
 
   function showSlide(index) {
     currentIndex = (index + slides.length) % slides.length;
@@ -392,9 +399,20 @@ function createCarousel({
 
   function startAutoplay() {
     if (!autoplay || slides.length <= 1 || intervalId) return;
-    if (prefersReducedMotion()) return;
+    if (userPaused) return;
 
     intervalId = setInterval(goToNextSlide, interval);
+  }
+
+  function updatePauseButton() {
+    if (!pauseButton) return;
+
+    pauseButton.setAttribute("aria-pressed", String(userPaused));
+    pauseButton.title = userPaused ? "Lapozás folytatása" : "Lapozás szüneteltetése";
+
+    const icon = pauseButton.querySelector(".bi");
+    icon?.classList.toggle("bi-pause-fill", !userPaused);
+    icon?.classList.toggle("bi-play-fill", userPaused);
   }
 
   function restartAutoplay() {
@@ -403,7 +421,19 @@ function createCarousel({
   }
 
   showSlide(currentIndex);
+  updatePauseButton();
   startAutoplay();
+
+  pauseButton?.addEventListener("click", () => {
+    userPaused = !userPaused;
+    updatePauseButton();
+
+    if (userPaused) {
+      stopAutoplay();
+    } else {
+      startAutoplay();
+    }
+  });
 
   nextButton?.addEventListener("click", () => {
     goToNextSlide();
@@ -436,6 +466,7 @@ function initHeroCarousel() {
     slideSelector: ".hero-slide",
     nextSelector: ".hero-next",
     prevSelector: ".hero-prev",
+    pauseSelector: ".hero-pause",
     autoplay: true,
     interval: 5000
   });
@@ -561,24 +592,28 @@ function initFactsAnimation() {
   let hasStarted = false;
 
   // Egy darab számot fokozatosan, gyorsulva-lassulva pörget fel 0-ról a
-  // data-target attribútumban megadott célértékig
+  // data-target attribútumban megadott célértékig; a data-suffix (pl. "+")
+  // a szám után jelenik meg
   function animateNumber(element) {
     const target = Number(element.dataset.target) || 0;
+    const suffix = element.dataset.suffix || "";
     const duration = 1600;
     const startTime = performance.now();
 
     function update(currentTime) {
-      const elapsed = currentTime - startTime;
+      // Az első képkocka időbélyege a performance.now() előtti is lehet,
+      // ezért a haladást 0 alá sem engedjük (különben negatív szám villanna fel)
+      const elapsed = Math.max(currentTime - startTime, 0);
       const progress = Math.min(elapsed / duration, 1);
       const easedProgress = 1 - Math.pow(1 - progress, 3);
       const currentValue = Math.floor(target * easedProgress);
 
-      element.textContent = currentValue.toLocaleString("hu-HU");
+      element.textContent = currentValue.toLocaleString("hu-HU") + suffix;
 
       if (progress < 1) {
         requestAnimationFrame(update);
       } else {
-        element.textContent = target.toLocaleString("hu-HU");
+        element.textContent = target.toLocaleString("hu-HU") + suffix;
       }
     }
 
@@ -596,7 +631,7 @@ function initFactsAnimation() {
     const startTime = performance.now();
 
     function update(currentTime) {
-      const elapsed = currentTime - startTime;
+      const elapsed = Math.max(currentTime - startTime, 0);
       const progress = Math.min(elapsed / duration, 1);
       const easedProgress = 1 - Math.pow(1 - progress, 3);
       const value = Math.round(target * easedProgress);
@@ -925,6 +960,43 @@ function initToggleCards({
     openButton.setAttribute("aria-label", isOpen ? "Bezárás" : "Bővebben");
 
     if (isOpen) closeOtherCards(card);
+  });
+
+  // WCAG 1.4.13: az egérrel vagy fókusszal előbukkanó összefoglaló Escape-pel
+  // eltüntethető, az egér / a fókusz elmozdítása nélkül. A gombbal kinyitott
+  // kártyát az Escape bezárja, a fókusz a nyíl gombra kerül vissza.
+  // Capture fázisban fut, hogy egy nyitott modal Escape-jét ne zavarja.
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.key !== "Escape") return;
+      if (qs('[aria-modal="true"].is-open, .is-open > [aria-modal="true"]')) return;
+
+      qsa(cardSelector, section).forEach((card) => {
+        if (card.classList.contains("is-open")) {
+          const hadFocus = card.contains(document.activeElement);
+          closeCard(card);
+          if (hadFocus) qs(openButtonSelector, card)?.focus({ preventScroll: true });
+        }
+
+        if (card.matches(":hover, :focus-within")) {
+          card.classList.add("hover-dismissed");
+        }
+      });
+    },
+    true
+  );
+
+  qsa(cardSelector, section).forEach((card) => {
+    card.addEventListener("mouseleave", () => {
+      card.classList.remove("hover-dismissed");
+    });
+
+    card.addEventListener("focusout", (event) => {
+      if (!card.contains(event.relatedTarget)) {
+        card.classList.remove("hover-dismissed");
+      }
+    });
   });
 }
 

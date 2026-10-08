@@ -8,20 +8,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = popup.querySelector(".popup-close");
     if (!closeBtn) return;
 
-    // Az oldal betöltése után 5 másodperccel jelenik meg a popup
+    // Az oldal betöltése után 5 másodperccel jelenik meg a popup.
+    // Magától nem tűnik el: a látogató addig olvashatja, ameddig akarja
+    // (WCAG 2.2.1 – nincs időkorlát), és ő maga zárja be.
     setTimeout(() => {
         popup.classList.add("show");
-
-        // Megjelenés után további 10 másodperccel automatikusan eltűnik,
-        // ha addig a látogató nem zárta be kézzel
-        setTimeout(() => {
-            popup.classList.remove("show");
-        }, 10000);
-
     }, 5000);
 
-    // Kézi bezárás: a × gombra kattintva azonnal eltűnik a popup
-    closeBtn.addEventListener("click", () => {
+    function closePopup() {
         popup.classList.remove("show");
+    }
+
+    // Kézi bezárás: a × gombra kattintva azonnal eltűnik a popup
+    closeBtn.addEventListener("click", closePopup);
+
+    // Escape-pel is bezárható, így ha éppen eltakarna egy fókuszált elemet,
+    // a billentyűzetes látogató a fókusz elmozdítása nélkül eltüntetheti
+    // (WCAG 2.1.1, 2.4.11).
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && popup.classList.contains("show")) {
+            closePopup();
+        }
     });
 });

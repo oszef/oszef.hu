@@ -61,9 +61,27 @@
     /* Standard betűtípus és címméret tokenek */
     --font-base: Arial, Helvetica, sans-serif;
 
-    --font-size-page-title: clamp(2.4rem, 4vw, 3.4rem);
-    --font-size-section-title: clamp(1.75rem, 3vw, 2.35rem);
-    --font-size-card-title: clamp(1.45rem, 2.4vw, 2rem);
+    /* Tipográfiai skála. Minden érték rem-ben van,
+       így a szöveg a böngésző betűméret-beállítását is követi (WCAG 1.4.4).
+       A clamp() alsó-felső határa is rem, ezért nagyításkor együtt nő.
+       12–13px-es szöveg nincs: a legkisebb a kiegészítő szöveg (14px).
+       Ikonok és nagy számkijelzők (pl. .fact-number) nem tartoznak ide. */
+    --font-size-page-title: clamp(2rem, 1.5rem + 1.6vw, 2.5rem);         /* H1: 32–40px */
+    --font-size-section-title: clamp(1.5rem, 1.3rem + 0.7vw, 1.75rem);   /* H2: 24–28px */
+    --font-size-card-title: 1.5rem;          /* kártyán belüli H2: 24px (a H2 alsó értéke) */
+    --font-size-subsection-title: 1.25rem;   /* H3: 20px */
+    --font-size-body: 1rem;                  /* törzsszöveg: 16px */
+    --font-size-small: 0.875rem;             /* kiegészítő szöveg: 14px */
+    --block-padding: 36px;                   /* fő tartalmi blokkok (fehér kártyák) belső térköze asztali nézetben */
+    --font-weight-bold: 700;                 /* címek: félkövér (a 900 Windowson Arial Black lenne) */
+
+    /* Sorköz: minden szövegtípusnak egy érték. A folyó szöveg 1,5 felett
+       van (WCAG 1.4.8 ajánlás), a cím szorosabb, hogy egy blokként olvassuk.
+       Csupa nagybetűs (text-transform: uppercase) cím nincs: a vegyes
+       kis-nagybetűs szöveg gyorsabban olvasható. */
+    --line-height-heading: 1.2;
+    --line-height-body: 1.65;
+    --line-height-small: 1.5;               /* 14px-es kiegészítő szöveg */
 
     --transition-fast: 0.25s ease;
     --transition-base: 0.35s ease;
@@ -82,8 +100,8 @@
     --list-margin: 18px 0 0;
     --list-item-gap: 12px;
     --list-indent: 30px;
-    --list-font-size: 16px;
-    --list-line-height: 1.65;
+    --list-font-size: var(--font-size-body);
+    --list-line-height: var(--line-height-body);
     --list-marker: "➜";
     --list-marker-color: var(--color-primary-light);
     --list-marker-size: 17px;
@@ -105,14 +123,48 @@
 
 html {
     scroll-behavior: smooth;
+    /* A fix menüsor ne takarja el a billentyűzettel fókuszált vagy
+       horgonnyal megcélzott elemet (WCAG 2.4.11) */
+    scroll-padding-top: calc(var(--navbar-height) + 16px);
 }
 
 body {
     font-family: var(--font-base);
     color: var(--color-text);
     background: var(--color-bg);
-    line-height: 1.6;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
     overflow-x: hidden;
+}
+
+/* Alap címméretek a skála szerint. Az osztályra írt szabályok (pl.
+   .section-title) felülírják, de így egy stílus nélküli cím sem esik
+   vissza a böngésző saját méretére (a h3 ott 18,7px lenne).
+   Az overflow-wrap csak akkor tör szót, ha egy hosszú szó (pl.
+   „Hulladékgazdálkodás”) keskeny kijelzőn nem férne ki a sorban. */
+h1,
+h2,
+h3 {
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    overflow-wrap: break-word;
+}
+
+h1 { font-size: var(--font-size-page-title); }
+h2 { font-size: var(--font-size-section-title); }
+h3 { font-size: var(--font-size-subsection-title); }
+
+/* Keskeny telefonon (320–480px) a hosszú összetett szavak (pl.
+   „Karrieroldalunkon”) 32px-en nem férnének ki egy sorban, és vízszintes
+   görgetést okoznának (WCAG 1.4.10). Itt a címek magyar elválasztással
+   törhetnek; ha a böngésző nem tud elválasztani, az overflow-wrap tör. */
+@media (max-width: 480px) {
+    h1,
+    h2,
+    h3 {
+        hyphens: auto;
+        overflow-wrap: anywhere;
+    }
 }
 
 /* A height: auto elengedhetetlen a max-width: 100% mellé: a képeken ott van a
@@ -233,11 +285,13 @@ select:focus-visible,
     color: var(--color-white);
     text-decoration: none;
     border: none;
-    border-radius: var(--radius-sm);
-    font-size: 17px;
-    font-weight: 600;
+    border-radius: 999px;
+    font-size: var(--font-size-body);
+    font-weight: 700;
     cursor: pointer;
     transition: background var(--transition-fast), transform var(--transition-fast);
+    line-height: var(--line-height-heading);
+    min-height: 44px;
 }
 
 .btn:hover, .btn:focus-visible,
@@ -253,7 +307,7 @@ select:focus-visible,
 .back-btn {
     background: #e5eef8;
     color: var(--color-primary);
-    font-size: 16px;
+    font-size: var(--font-size-body);
 }
 
 .btn--secondary:hover, .btn--secondary:focus-visible,
@@ -265,7 +319,8 @@ select:focus-visible,
 /* Kerek lapozógombok a carousel-ekhez */
 .btn--carousel,
 .hero-prev,
-.hero-next {
+.hero-next,
+.hero-pause {
     background: rgba(0, 0, 0, 0.42);
     color: var(--color-white);
     width: 46px;
@@ -281,13 +336,13 @@ select:focus-visible,
 
 .btn--carousel:hover, .btn--carousel:focus-visible,
 .hero-prev:hover, .hero-next:hover,
-.hero-prev:focus-visible, .hero-next:focus-visible {
+.hero-prev:focus-visible, .hero-next:focus-visible,
+.hero-pause:hover, .hero-pause:focus-visible {
     background: rgba(0, 0, 0, 0.62);
 }
 
 /* Kártyák közös alapja */
 .card,
-.service-card,
 .mmk-card,
 .timeline-block,
 .business-card,
@@ -297,17 +352,6 @@ select:focus-visible,
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(0, 63, 125, 0.08);
     padding: 24px;
-}
-
-.service-card {
-    padding: 32px 24px;
-    text-align: left;
-    border: none;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.service-card:hover {
-    transform: translateY(-6px);
 }
 
 .mmk-card {
@@ -647,7 +691,7 @@ select:focus-visible,
   background: var(--color-primary-light);
   color: var(--color-white);
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1;
   text-decoration: none;
   transition:
@@ -766,20 +810,38 @@ select:focus-visible,
     text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
 }
 
+/* Lágy sötét „folt” közvetlenül a szöveg mögött, a széle felé elhalványul.
+   Világos fotón (pl. a 4. dia) enélkül a fehér szöveg kontrasztja 3,6:1
+   lenne; így a szöveg alatt is megvan a WCAG 1.4.3 szerinti 4,5:1, a kép
+   többi része viszont ugyanolyan világos marad. */
+.hero-text::before {
+    content: "";
+    position: absolute;
+    inset: -28px -8%;
+    z-index: -1;
+    background: radial-gradient(
+        closest-side,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.42) 70%,
+        rgba(0, 0, 0, 0)
+    );
+    pointer-events: none;
+}
+
 .hero-text h1,
 .hero-text h2 {
-    font-size: clamp(2rem, 4vw, 3.6rem);
-    line-height: 1.1;
+    font-size: var(--font-size-page-title);
+    line-height: var(--line-height-heading);
     margin-bottom: 14px;
-    font-weight: 900;
+    font-weight: 700;
     text-wrap: balance;
 }
 
 .hero-text p {
     max-width: 760px;
     margin: 0 auto;
-    font-size: clamp(1rem, 2vw, 1.35rem);
-    line-height: 1.5;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
     font-weight: 600;
     text-wrap: balance;
 }
@@ -808,6 +870,18 @@ select:focus-visible,
 
 .hero-next {
     right: 22px;
+}
+
+/* Lapozás szüneteltetése / folytatása – a kép jobb felső sarkában,
+   ugyanolyan kerek gomb, mint a lapozók, csak kisebb */
+.hero-pause {
+    position: absolute;
+    top: 16px;
+    right: 22px;
+    z-index: 4;
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
 }
 
 /* =========================================================
@@ -841,21 +915,6 @@ select:focus-visible,
         width: min(88%, 560px);
     }
 
-    .hero-text h1 {
-        font-size: 28px;
-        line-height: 1.12;
-    }
-
-    .hero-text h2 {
-        font-size: 26px;
-        line-height: 1.12;
-    }
-
-    .hero-text p {
-        font-size: 16px;
-        line-height: 1.45;
-    }
-
     .hero-prev,
     .hero-next {
         width: 38px;
@@ -869,6 +928,14 @@ select:focus-visible,
 
     .hero-next {
         right: 12px;
+    }
+
+    .hero-pause {
+        top: 10px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
     }
 }
 
@@ -887,12 +954,10 @@ select:focus-visible,
     }
 
     .hero-text h1 {
-        font-size: 24px;
         margin-bottom: 0;
     }
 
     .hero-text h2 {
-        font-size: 23px;
         margin-bottom: 0;
     }
 
@@ -915,8 +980,8 @@ select:focus-visible,
 .section-title {
     color: var(--color-primary);
     font-size: var(--font-size-section-title);
-    font-weight: 800;
-    line-height: 1.2;
+    font-weight: 700;
+    line-height: var(--line-height-heading);
 }
 
 
@@ -946,30 +1011,35 @@ select:focus-visible,
 
 /* A .ceo-preview doboz a kezdőlapon h2-t tartalmaz (ott a h1 máshol van),
    a Klaszter oldalon viszont ez az oldal egyetlen címsora, ezért ott h1.
-   Mindkettő ugyanúgy nézzen ki. */
+   Színben és térközben egyformák, méretben a címszintet követik
+   (h1: oldalcím, h2: szekciócím). */
 .ceo-preview h1,
 .ceo-preview h2,
 .ceo-full h1 {
     color: var(--color-primary);
-    font-weight: 800;
-    line-height: 1.2;
+    font-weight: 700;
+    line-height: var(--line-height-heading);
 }
 
 .ceo-preview h1,
 .ceo-preview h2 {
-    font-size: clamp(1.75rem, 3vw, 2.2rem);
+    font-size: var(--font-size-section-title);
     margin-bottom: 20px;
 }
 
+.ceo-preview h1 {
+    font-size: var(--font-size-page-title);
+}
+
 .ceo-full h1 {
-    font-size: clamp(2rem, 3.5vw, 2.5rem);
+    font-size: var(--font-size-page-title);
     margin-bottom: 30px;
 }
 
 .ceo-preview p,
 .ceo-full p {
-    font-size: 18px;
-    line-height: 1.75;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
     color: var(--color-text);
     margin-bottom: 18px;
 }
@@ -991,7 +1061,7 @@ select:focus-visible,
 
 .ceo-full h3 {
     color: var(--color-primary);
-    font-size: 24px;
+    font-size: var(--font-size-subsection-title);
     margin: 32px 0 18px;
 }
 
@@ -1002,7 +1072,7 @@ select:focus-visible,
 
 .ceo-sign p {
     margin: 4px 0;
-    font-size: 18px;
+    font-size: var(--font-size-body);
 }
 
 .ceo-sign img {
@@ -1040,9 +1110,9 @@ select:focus-visible,
 }
 
 .iso-title {
-    font-size: clamp(1.75rem, 3vw, 2.1rem);
+    font-size: var(--font-size-section-title);
     color: var(--color-primary);
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 40px;
 }
 
@@ -1126,15 +1196,15 @@ select:focus-visible,
 }
 
 .about-text h2 {
-    font-size: clamp(1.75rem, 3vw, 2.2rem);
+    font-size: var(--font-size-section-title);
     color: var(--color-primary);
     margin-bottom: 20px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .about-text p {
-    font-size: 18px;
-    line-height: 1.75;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
     color: var(--color-text);
     margin-bottom: 18px;
 }
@@ -1178,13 +1248,7 @@ select:focus-visible,
     text-align: center;
 }
 
-.facts-title {
-    font-size: clamp(1.75rem, 3vw, 2.1rem);
-    color: var(--color-primary);
-    font-weight: 800;
-    margin-bottom: 40px;
-}
-
+/* Felső sor: ikon, alatta kék szövegdoboz; a dobozok egy sorban azonos magasságúak */
 .facts-top {
     display: flex;
     gap: 30px;
@@ -1193,10 +1257,8 @@ select:focus-visible,
 
 .fact-item {
     flex: 1;
-    background: var(--color-surface);
-    padding: 28px 24px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
     opacity: 0;
     transform: translateY(20px);
     transition:
@@ -1209,15 +1271,40 @@ select:focus-visible,
     transform: translateY(0);
 }
 
+/* Egységes 1em ikonmagasság, hogy a kék dobozok teteje egy vonalban legyen */
 .fact-icon {
     font-size: 40px;
-    margin-bottom: 12px;
+    line-height: 1;
+    height: 1em;
+    color: var(--color-primary);
+    margin-bottom: 18px;
 }
 
+.fact-icon .bi {
+    display: block;
+    margin: 0 auto;
+}
+
+.fact-icon .bi::before {
+    vertical-align: top;
+}
+
+/* A szöveg egy <span>-ben van, hogy a <br> sortörés megmaradjon a függőlegesen középre igazító flex dobozban;
+   a text-wrap: balance egyenletes hosszúságú sorokat tör, hogy ne maradjon árva szó a dobozban */
 .fact-item p {
-    font-size: 17px;
-    line-height: 1.65;
-    color: var(--color-text);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 32px 26px;
+    background: var(--color-primary-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-white);
+    text-wrap: balance;
 }
 
 .facts-grid {
@@ -1247,13 +1334,13 @@ select:focus-visible,
 .fact-number {
     font-size: clamp(2rem, 4vw, 2.7rem);
     line-height: 1;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--color-primary-light);
     margin-bottom: 12px;
 }
 
 .fact-label {
-    font-size: 18px;
+    font-size: var(--font-size-body);
     color: var(--color-text);
 }
 
@@ -1303,60 +1390,21 @@ select:focus-visible,
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 30px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--color-primary);
 }
 
 .facts-note {
     max-width: 760px;
     margin: 0 auto;
-    font-size: 18px;
+    font-size: var(--font-size-body);
     color: var(--color-primary);
     font-weight: 700;
 }
 
 
 /* =========================================================
-   12. TEVÉKENYSÉGEINK / SERVICES
-   Opcionális blokk, ha benne lesz a kezdőlapon
-========================================================= */
-
-.services-section {
-    max-width: var(--container);
-    margin: 100px auto;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.services-section h2 {
-    font-size: clamp(1.75rem, 3vw, 2.1rem);
-    color: var(--color-primary);
-    margin-bottom: 40px;
-    font-weight: 800;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.service-card h3 {
-    color: var(--color-primary);
-    font-size: 22px;
-    margin-bottom: 14px;
-    font-weight: 800;
-}
-
-.service-card p {
-    font-size: 17px;
-    line-height: 1.65;
-    color: var(--color-text);
-}
-
-
-/* =========================================================
-   13. VÍZIÓ / KÜLDETÉS BLOKK
+   12. VÍZIÓ / KÜLDETÉS BLOKK
 ========================================================= */
 
 .vision-section {
@@ -1407,27 +1455,25 @@ select:focus-visible,
 }
 
 .vision-content h2 {
-    font-size: clamp(1.75rem, 3vw, 2.1rem);
+    font-size: var(--font-size-section-title);
     color: var(--color-primary);
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
 .vision-content p {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
     color: var(--color-text);
     margin-bottom: 30px;
 }
 
 .vision-btn {
-    padding: 12px 26px;
-    font-weight: 700;
 }
 
 
 /* =========================================================
-   14. TIMELINE OLDAL (DESKTOP / TABLET)
+   13. TIMELINE OLDAL (DESKTOP / TABLET)
 ========================================================= */
 
 .timeline-page {
@@ -1444,18 +1490,18 @@ select:focus-visible,
 .timeline-header h1,
 .timeline-header h2 {
     font-size: var(--font-size-page-title);
-    font-weight: 900;
+    font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 10px;
-    line-height: 1.15;
+    line-height: var(--line-height-heading);
 }
 
 .timeline-header p {
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: var(--font-size-body);
     color: var(--color-muted);
     max-width: 760px;
     margin: 0 auto;
-    line-height: 1.65;
+    line-height: var(--line-height-body);
 }
 
 .timeline-wrapper {
@@ -1527,7 +1573,7 @@ select:focus-visible,
 .timeline-image.no-photo::before {
     content: "Kép hamarosan";
     color: var(--color-primary-light);
-    font-size: 14px;
+    font-size: var(--font-size-small);
     font-weight: 700;
     letter-spacing: 0.02em;
 }
@@ -1545,18 +1591,21 @@ select:focus-visible,
     border-radius: 999px;
     background: #e9eef5;
     color: var(--color-primary-light);
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 0.04em;
+    font-size: var(--font-size-small);
+    font-weight: 700;
 }
 
 .timeline-text h2,
 .timeline-text h3 {
-    font-size: var(--font-size-card-title);
+    font-size: var(--font-size-section-title);
     color: var(--color-primary);
     margin-bottom: 18px;
-    font-weight: 900;
-    line-height: 1.18;
+    font-weight: 700;
+    line-height: var(--line-height-heading);
+}
+
+.timeline-text h3 {
+    font-size: var(--font-size-subsection-title);
 }
 
 .timeline-text p,
@@ -1572,7 +1621,7 @@ select:focus-visible,
 
 .timeline-text strong {
     color: var(--color-primary-light);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 /* Desktop/tablet: gombos évszám nav látszik, tick nav rejtve */
@@ -1597,8 +1646,8 @@ select:focus-visible,
     cursor: pointer;
     padding: 6px 10px;
     border-radius: 999px;
-    font-size: 16px;
-    font-weight: 800;
+    font-size: var(--font-size-body);
+    font-weight: 700;
     line-height: 1;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
     transition: color var(--transition-fast),
@@ -1666,16 +1715,7 @@ select:focus-visible,
     padding: 0 16px;
   }
 
-  .timeline-header h1,
-  .timeline-header h2 {
-    font-size: 26px;
-    line-height: 1.15;
-  }
 
-  .timeline-header p {
-    font-size: 15px;
-    line-height: 1.55;
-  }
 
   /* Mobil tick nav: sticky a navbar alatt */
   .timeline-years-bar--ticks {
@@ -1709,8 +1749,8 @@ select:focus-visible,
     flex: 0 0 auto;
     min-width: 58px;
     text-align: center;
-    font-weight: 900;
-    font-size: 13px;
+    font-weight: 700;
+    font-size: var(--font-size-small);
     line-height: 1;
     color: var(--color-primary-light);
     padding: 7px 10px;
@@ -1835,7 +1875,6 @@ select:focus-visible,
   }
 
   .timeline-year-label {
-    font-size: 12px;
     padding: 4px 10px;
     margin-bottom: 6px;
     border-radius: 999px;
@@ -1844,16 +1883,9 @@ select:focus-visible,
 
   .timeline-text h2,
   .timeline-text h3 {
-    font-size: 19px;
     margin-bottom: 10px;
-    line-height: 1.2;
   }
 
-  .timeline-text p,
-  .timeline-text li {
-    font-size: 14px;
-    line-height: 1.55;
-  }
 
   .timeline-text ul {
     margin: 12px 0;
@@ -1870,7 +1902,6 @@ select:focus-visible,
 
   .timeline-current-year {
     min-width: 52px;
-    font-size: 12px;
     padding: 6px 8px;
   }
 
@@ -1884,20 +1915,12 @@ select:focus-visible,
     height: 170px;
   }
 
-  .timeline-text h2,
-  .timeline-text h3 {
-    font-size: 18px;
-  }
 
-  .timeline-text p,
-  .timeline-text li {
-    font-size: 13px;
-  }
 }
 
 
 /* =========================================================
-   15. FOOTER - opcionális, ha később beépítjuk a kezdőlapra
+   14. FOOTER - opcionális, ha később beépítjuk a kezdőlapra
 ========================================================= */
 
 .site-footer {
@@ -1913,6 +1936,10 @@ select:focus-visible,
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 30px;
+}
+
+.site-footer h2 {
+    font-size: var(--font-size-card-title);
 }
 
 .site-footer a {
@@ -1934,35 +1961,40 @@ select:focus-visible,
 
 .site-footer-copy {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: var(--font-size-small);
 }
 
 .site-footer-legal {
     max-width: 760px;
     margin: 8px auto 0;
-    font-size: 0.82rem;
-    line-height: 1.55;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
     opacity: 0.75;
 }
 
 
 /* =========================================================
-   16. TABLET BREAKPOINT
+   15. TABLET BREAKPOINT
 ========================================================= */
 
 @media (max-width: 1024px) {
-    .facts-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* A Főbb adatok három kék doboza tableten is egy sorban marad, kisebb belső térközzel */
+    .facts-top {
+        gap: 20px;
     }
 
-    .services-grid {
-        grid-template-columns: 1fr;
+    .fact-item p {
+        padding: 26px 18px;
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
 /* =========================================================
-   17. MOBIL BREAKPOINT
+   16. MOBIL BREAKPOINT
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -1988,14 +2020,9 @@ select:focus-visible,
         padding: 32px 20px;
     }
 
-    .ceo-preview p,
-    .ceo-full p {
-        font-size: 16px;
-    }
 
     .ceo-btn,
     .back-btn {
-        font-size: 15px;
         padding: 10px 18px;
     }
 
@@ -2003,9 +2030,6 @@ select:focus-visible,
         width: 100%;
     }
 
-    .ceo-full ul li {
-        font-size: 16px;
-    }
 
     .iso-section {
         margin: 60px 15px;
@@ -2013,7 +2037,6 @@ select:focus-visible,
     }
 
     .iso-title {
-        font-size: 26px;
         margin-bottom: 25px;
     }
 
@@ -2039,7 +2062,6 @@ select:focus-visible,
     }
 
     .about-text h2 {
-        font-size: 26px;
         margin-top: 10px;
     }
 
@@ -2049,12 +2071,9 @@ select:focus-visible,
 
     .about-text p.short-text {
         display: block;
-        font-size: 16px;
-        line-height: 1.65;
     }
 
     .about-btn {
-        font-size: 15px;
         padding: 10px 18px;
     }
 
@@ -2076,25 +2095,11 @@ select:focus-visible,
         font-size: 34px;
     }
 
-    .fact-label {
-        font-size: 15px;
-    }
 
-    .facts-note {
-        font-size: 16px;
-    }
 
     .fact-item,
     .fact-card {
         transform: translateY(30px);
-    }
-
-    .services-section {
-        margin: 70px auto;
-    }
-
-    .service-card {
-        text-align: center;
     }
 
     .vision-section {
@@ -2117,19 +2122,14 @@ select:focus-visible,
         margin: 0 auto;
     }
 
-    .vision-content h2 {
-        font-size: 28px;
-    }
 
     .vision-content p {
-        font-size: 16px;
         margin-bottom: 20px;
     }
 
     .vision-btn {
         width: 100%;
         padding: 14px;
-        font-size: 17px;
     }
     .site-footer-inner {
         grid-template-columns: 1fr;
@@ -2138,7 +2138,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   18. KIS MOBIL
+   17. KIS MOBIL
 ========================================================= */
 
 @media (max-width: 420px) {
@@ -2161,7 +2161,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   19. REDUCED MOTION
+   18. REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2195,7 +2195,7 @@ select:focus-visible,
 .info-block{
   border-radius: var(--radius-xl);
   border: 1px solid rgba(0, 63, 125, 0.08);
-  padding: 34px;
+  padding: var(--block-padding);
 }
 
 /* FONTOS:
@@ -2236,19 +2236,24 @@ select:focus-visible,
 .info-content h1,
 .mission-content h2{
   color: var(--color-primary);
-  font-weight: 900;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: var(--line-height-heading);
   margin-bottom: 14px;
-  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-size: var(--font-size-page-title);
+}
+
+/* A Küldetésünk oldal h2-je ugyanígy néz ki, csak szekciócím-méretben */
+.mission-content h2{
+  font-size: var(--font-size-section-title);
 }
 
 /* Szekciócím – kisebb, mint az oldalcím, nagyobb, mint az alcím */
 .info-content h2{
   color: var(--color-primary);
-  font-weight: 900;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: var(--line-height-heading);
   margin-bottom: 12px;
-  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  font-size: var(--font-size-section-title);
 }
 
 .info-content h3,
@@ -2256,15 +2261,15 @@ select:focus-visible,
   margin-top: 18px;
   margin-bottom: 10px;
   color: var(--color-primary);
-  font-weight: 900;
-  font-size: 18px;
-  line-height: 1.25;
+  font-weight: 700;
+  font-size: var(--font-size-subsection-title);
+  line-height: var(--line-height-heading);
 }
 
 .info-content p,
 .mission-content p{
-  font-size: 18px;
-  line-height: 1.75;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   color: var(--color-text);
   margin-bottom: 14px;
 }
@@ -2277,7 +2282,7 @@ select:focus-visible,
   background: rgba(0, 91, 187, 0.06);
   border: 1px solid rgba(0, 63, 125, 0.12);
   color: var(--color-muted);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .mission-media{
@@ -2312,12 +2317,13 @@ select:focus-visible,
 .mission-back-link{
   display: inline-flex;
   text-decoration: none;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-primary);
   background: #e5eef8;
-  padding: 10px 14px;
+  padding: 10px 20px;
   border-radius: 999px;
   transition: transform var(--transition-fast), background var(--transition-fast);
+  line-height: var(--line-height-heading);
 }
 
 .mission-back-link:hover{
@@ -2374,7 +2380,7 @@ select:focus-visible,
   position: relative;
   z-index: 2;
   text-align: center;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--color-text);
 }
 
@@ -2384,7 +2390,7 @@ select:focus-visible,
 }
 
 .mmk-tag{
-  font-size: 0.95rem;
+  font-size: var(--font-size-small);
   display: block;
   margin-top: 4px;
   font-weight: 700;
@@ -2392,7 +2398,7 @@ select:focus-visible,
 }
 
 .mmk-legend{
-  font-size: 0.92rem;
+  font-size: var(--font-size-small);
   color: var(--color-muted);
   display: flex;
   gap: 12px;
@@ -2420,15 +2426,14 @@ select:focus-visible,
 }
 
 .mmk-title{
-  font-size: 1.05rem;
-  font-weight: 900;
-  letter-spacing: 0.2px;
+  font-size: var(--font-size-card-title);
+  font-weight: 700;
   margin: 0 0 8px 0;
   color: var(--color-primary);
 }
 
 .mmk-subtitle{
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-primary);
   margin-bottom: 10px;
 }
@@ -2436,8 +2441,8 @@ select:focus-visible,
 .mmk-mission{
   margin: 0;
   color: var(--color-text);
-  line-height: 1.55;
-  font-size: 0.98rem;
+  line-height: var(--line-height-body);
+  font-size: var(--font-size-body);
 }
 
 .mmk-card--compact{
@@ -2447,7 +2452,7 @@ select:focus-visible,
 }
 
 .mmk-compact-title{
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-primary);
 }
 
@@ -2471,10 +2476,6 @@ select:focus-visible,
     align-self: start;
   }
 
-  .mission-content p{
-    font-size: 16px;
-    line-height: 1.7;
-  }
 
   .mmk-wrap{
     flex-direction: column;
@@ -2491,8 +2492,6 @@ select:focus-visible,
   .mission-page{ padding: 0 14px; }
   .mission-block{ padding: 18px; }
   .mmk-pie{ --size: 170px; --thickness: 40px; }
-  .mmk-title{ font-size: 1rem; }
-  .mmk-mission{ font-size: 0.95rem; }
 }
 
 /* =========================================================
@@ -2502,28 +2501,40 @@ select:focus-visible,
    itt csak az ezen az oldalon jelentkező extrák vannak.
 ========================================================= */
 
-/* Címkézett adatsor (Cím, Telefon, E-mail stb.) */
+/* Címkézett adatsor (Cím, Telefon, E-mail stb.)
+   Úgy viselkedik, mint egy kétoszlopos táblázat: az egész lista egy rács,
+   a sorokat adó <div>-ek subgriddel ezt a közös oszlopszélességet veszik
+   át, így minden érték (dd) ugyanabban az oszlopban kezdődik.
+   A címkeoszlop legfeljebb 45%-ig nő (hosszabb címke ott tördelődik),
+   az értékoszlop a maradékot kapja, és benne a hosszú szöveg is tör.
+   Ha a böngésző nem ismeri a subgridet, a soronkénti rács marad érvényben
+   (a dd-k akkor soronként igazodnak, de minden olvasható marad). */
 .info-data{
   margin: 16px 0 0;
   display: grid;
-  gap: 10px;
+  grid-template-columns: fit-content(45%) minmax(0, 1fr);
+  gap: 10px 24px;
 }
 
 .info-data div{
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: minmax(140px, max-content) 1fr;
-  gap: 6px 16px;
+  grid-template-columns: subgrid;
+  gap: 6px 24px;
   align-items: baseline;
 }
 
 .info-data dt{
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-primary);
 }
 
 .info-data dd{
   margin: 0;
+  min-width: 0;
   color: var(--color-text);
+  overflow-wrap: anywhere;
 }
 
 /*
@@ -2552,14 +2563,14 @@ select:focus-visible,
   width: 100%;
   min-width: 620px;
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: var(--font-size-body);
   line-height: 1.5;
 }
 
 .info-table caption{
   text-align: left;
   padding: 12px 14px;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-primary);
   background: var(--color-surface-alt);
   border-bottom: 1px solid var(--color-border);
@@ -2576,7 +2587,7 @@ select:focus-visible,
 .info-table thead th{
   background: var(--color-surface-alt);
   color: var(--color-primary);
-  font-weight: 900;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -2590,7 +2601,7 @@ select:focus-visible,
 }
 
 .info-table tbody th{
-  font-weight: 800;
+  font-weight: 700;
   color: var(--color-text);
   white-space: nowrap;
 }
@@ -2601,6 +2612,12 @@ select:focus-visible,
 .info-table td a{
   display: inline-block;
   padding: 5px 0;
+}
+
+/* A telefonszám egy darabban maradjon (ne „+36-62-554-” / „054”);
+   a táblázat úgyis vízszintesen görgethető, ha nem fér ki. */
+.info-table td a[href^="tel:"]{
+  white-space: nowrap;
 }
 
 /*
@@ -2618,8 +2635,8 @@ select:focus-visible,
 .year-block > summary{
   padding: 14px 16px;
   min-height: var(--hit-target);
-  font-weight: 900;
-  font-size: 1.05rem;
+  font-weight: 700;
+  font-size: var(--font-size-subsection-title);
   color: var(--color-primary);
   background: var(--color-surface-alt);
   border-radius: var(--radius-md);
@@ -2648,8 +2665,8 @@ select:focus-visible,
 /* Lábjegyzet a táblázatok alatt */
 .info-note{
   margin-top: 12px;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
   color: var(--color-muted);
 }
 
@@ -2665,7 +2682,7 @@ select:focus-visible,
 .teaor-list li{
   break-inside: avoid;
   padding: 5px 0;
-  font-size: 15px;
+  font-size: var(--font-size-body);
   line-height: 1.5;
   color: var(--color-text);
 }
@@ -2674,31 +2691,32 @@ select:focus-visible,
   display: inline-block;
   min-width: 52px;
   color: var(--color-primary);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .teaor-list li.is-main{
-  font-weight: 800;
+  font-weight: 700;
   color: var(--color-primary);
 }
 
 @media (max-width: 768px){
   .info-block{ padding: 22px; }
 
+  /* Mobilon a címke az érték fölé kerül */
+  .info-data{ grid-template-columns: minmax(0, 1fr); }
+
   .info-data div{
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2px;
   }
 
   .teaor-list{ columns: 1; }
 
-  .info-table{ font-size: 14px; }
-
   .info-table th,
   .info-table td{ padding: 9px 11px; }
 
   .year-body{ padding: 4px 11px 14px; }
-  .year-block > summary{ font-size: 1rem; padding: 12px 13px; }
+  .year-block > summary{ padding: 12px 13px; }
 }
 
 @media (max-width: 420px){
@@ -2729,10 +2747,8 @@ select:focus-visible,
 .business-header h2{
   color: var(--color-primary);
   font-size: var(--font-size-section-title);
-  line-height: 1.15;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  line-height: var(--line-height-heading);
+  font-weight: 700;
 }
 
 /* =========================================================
@@ -2752,9 +2768,11 @@ select:focus-visible,
 
 /* A kártya magassága = a teljes kép + közvetlenül alatta a címsáv.
    A --card-bar-h a címsáv magassága: a kártya alján ennyi helyet
-   hagyunk a sávnak, így az zárt állapotban nem takarja a képet. */
+   hagyunk a sávnak, így az zárt állapotban nem takarja a képet.
+   Két sornyi 20px-es (H3) cím + 2 × 12px belső térköz = 72px; rem-alapú,
+   így nagyobb böngésző-betűméretnél a sáv is együtt nő. */
 .business-card {
-  --card-bar-h: 66px;
+  --card-bar-h: calc(2 * 1.2 * var(--font-size-subsection-title) + 24px);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2827,11 +2845,13 @@ select:focus-visible,
 }
 
 .business-card-body h3{
-  font-size: 17px;
-  line-height: 1.2;
-  font-weight: 900;
+  font-size: var(--font-size-subsection-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   text-align: left;
   text-wrap: balance;
+  /* nagyított szövegnél (WCAG 1.4.4) a hosszú szó is a sávon belül törjön */
+  min-width: 0;
 }
 
 /* Nyitó / záró nyíl gomb (Bootstrap Icons) – a meglévő áttetsző, kerek gombstílusban */
@@ -2912,8 +2932,8 @@ select:focus-visible,
 .business-card-summary p{
   max-width: 92%;
   margin: 0;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: var(--font-size-small); /* kártya-ízelítő = kiegészítő szöveg; a teljes leírás a modalban 16px */
+  line-height: var(--line-height-small);
   font-weight: 700;
 }
 
@@ -2933,14 +2953,14 @@ select:focus-visible,
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 9px 14px;
+  padding: 9px 16px;
   border: 1px solid rgba(255,255,255,0.55);
   border-radius: 999px;
   background: rgba(255,255,255,0.16);
   color: var(--color-white);
-  font-size: 13px;
-  font-weight: 900;
-  line-height: 1;
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  line-height: var(--line-height-heading);
   cursor: pointer;
   text-decoration: none;
   backdrop-filter: blur(8px);
@@ -2948,6 +2968,7 @@ select:focus-visible,
   transition:
     background var(--transition-fast),
     transform var(--transition-fast);
+  min-height: 36px;
 }
 
 .business-detail-open:hover,
@@ -2980,6 +3001,9 @@ select:focus-visible,
   visibility: visible;
   pointer-events: auto;
   transition-delay: 0s;
+  /* Ha a felhasználó nagyobb sor-/betűközt állít be (WCAG 1.4.12),
+     a szöveg ne vágódjon le: a panel ilyenkor görgethetővé válik. */
+  overflow-y: auto;
 }
 
 .business-card.is-open .business-card-toggle .bi{
@@ -2992,25 +3016,26 @@ select:focus-visible,
 
 @media (hover: hover) and (pointer: fine){
 
-  .business-card:hover img,
-  .business-card:focus-within img{
+  .business-card:not(.hover-dismissed):hover img,
+  .business-card:not(.hover-dismissed):focus-within img{
     transform: scale(1.06);
   }
 
-  .business-card:hover .business-card-panel,
-  .business-card:focus-within .business-card-panel{
+  .business-card:not(.hover-dismissed):hover .business-card-panel,
+  .business-card:not(.hover-dismissed):focus-within .business-card-panel{
     grid-template-rows: 0fr auto 1fr;
   }
 
-  .business-card:hover .business-card-summary,
-  .business-card:focus-within .business-card-summary{
+  .business-card:not(.hover-dismissed):hover .business-card-summary,
+  .business-card:not(.hover-dismissed):focus-within .business-card-summary{
     visibility: visible;
     pointer-events: auto;
     transition-delay: 0s;
+    overflow-y: auto;
   }
 
-  .business-card:hover .business-card-toggle .bi,
-  .business-card:focus-within .business-card-toggle .bi{
+  .business-card:not(.hover-dismissed):hover .business-card-toggle .bi,
+  .business-card:not(.hover-dismissed):focus-within .business-card-toggle .bi{
     transform: rotate(180deg);
   }
 }
@@ -3064,7 +3089,6 @@ select:focus-visible,
 
   .business-card,
   .business-card:last-child:nth-child(odd){
-    --card-bar-h: 68px;
     grid-column: auto;
     width: 100%;
     max-width: none;
@@ -3075,23 +3099,15 @@ select:focus-visible,
     padding: 12px 12px 12px 16px;
   }
 
-  .business-card-body h3{
-    font-size: 18px;
-  }
 
   .business-card-summary{
     padding: 0 18px;
     gap: 13px;
   }
 
-  .business-card-summary p{
-    font-size: 14px;
-    line-height: 1.55;
-  }
 
   .business-detail-open,
   .business-card-close{
-    font-size: 13px;
     padding: 9px 13px;
   }
 }
@@ -3102,10 +3118,6 @@ select:focus-visible,
     gap: 10px;
   }
 
-  .business-card-summary p{
-    font-size: 13px;
-    line-height: 1.5;
-  }
 
   .business-card-summary-actions{
     margin-bottom: 12px;
@@ -3173,33 +3185,39 @@ select:focus-visible,
 
 .business-modal-content h2{
   color: var(--color-primary);
-  font-size: clamp(1.7rem, 3vw, 2.35rem);
-  line-height: 1.15;
-  font-weight: 900;
+  font-size: var(--font-size-section-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 22px;
   padding-right: 42px;
 }
 
 .business-modal-content h3{
   color: var(--color-primary);
-  font-size: 18px;
-  line-height: 1.25;
-  font-weight: 900;
+  font-size: var(--font-size-subsection-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin: 24px 0 10px;
 }
 
 .business-modal-content p{
   color: var(--color-text);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   margin-bottom: 14px;
+}
+
+/* Kiemelt szövegrészek: kék, erősebb betű */
+.business-modal-content strong{
+  color: var(--color-primary-light);
+  font-weight: 700;
 }
 
 .business-modal-lead{
   margin-bottom: 22px;
   color: var(--color-text);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   font-weight: 700;
 }
 
@@ -3215,8 +3233,8 @@ select:focus-visible,
   position: relative;
   padding-left: 24px;
   color: var(--color-text);
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 .business-modal-list li::before{
@@ -3225,7 +3243,7 @@ select:focus-visible,
   left: 0;
   top: 0;
   color: var(--color-primary-light);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 /* Modal mobil */
@@ -3243,18 +3261,8 @@ select:focus-visible,
     padding: 42px 20px 32px;
   }
 
-  .business-modal-content h2{
-    font-size: 26px;
-  }
 
-  .business-modal-content h3{
-    font-size: 17px;
-  }
 
-  .business-modal-content p{
-    font-size: 15px;
-    line-height: 1.65;
-  }
 }
 /* =========================================================
    BUSINESS MODAL – EGYKÉPES BLOKK
@@ -3292,7 +3300,7 @@ select:focus-visible,
 .business-modal-image--placeholder::before{
   content: "Kép hamarosan";
   color: var(--color-primary-light);
-  font-size: 14px;
+  font-size: var(--font-size-small);
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -3326,10 +3334,8 @@ select:focus-visible,
 .units-header h2{
   color: var(--color-primary);
   font-size: var(--font-size-section-title);
-  line-height: 1.15;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  line-height: var(--line-height-heading);
+  font-weight: 700;
 }
 
 .units-grid{
@@ -3345,7 +3351,7 @@ select:focus-visible,
 
 /* Ugyanaz a méretezés, mint a business kártyáknál: teljes kép + alatta a címsáv */
 .units-card{
-  --card-bar-h: 64px;
+  --card-bar-h: calc(2 * 1.2 * var(--font-size-subsection-title) + 24px);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -3417,11 +3423,13 @@ select:focus-visible,
 }
 
 .units-card-body h3{
-  font-size: 16px;
-  line-height: 1.2;
-  font-weight: 900;
+  font-size: var(--font-size-subsection-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   text-align: left;
   text-wrap: balance;
+  /* nagyított szövegnél (WCAG 1.4.4) a hosszú szó is a sávon belül törjön */
+  min-width: 0;
 }
 
 /* Nyitó / záró nyíl gomb: ugyanaz a forma, mint a business kártyáknál */
@@ -3502,8 +3510,8 @@ select:focus-visible,
 .units-card-summary p{
   max-width: 92%;
   margin: 0;
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: var(--font-size-small); /* kártya-ízelítő = kiegészítő szöveg; a teljes leírás a modalban 16px */
+  line-height: var(--line-height-small);
   font-weight: 700;
   text-align: center;
 }
@@ -3521,14 +3529,14 @@ select:focus-visible,
 .units-card-summary .business-detail-open{
   justify-content: center;
   align-items: center;
-  padding: 9px 14px;
+  padding: 9px 16px;
   border: 1px solid rgba(255,255,255,0.55);
   border-radius: 999px;
   background: rgba(255,255,255,0.16);
   color: var(--color-white);
-  font-size: 13px;
-  font-weight: 900;
-  line-height: 1;
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  line-height: var(--line-height-heading);
   cursor: pointer;
   text-decoration: none;
   backdrop-filter: blur(8px);
@@ -3536,6 +3544,7 @@ select:focus-visible,
   transition:
     background var(--transition-fast),
     transform var(--transition-fast);
+  min-height: 36px;
 }
 
 .units-card-close:hover,
@@ -3558,6 +3567,9 @@ select:focus-visible,
   visibility: visible;
   pointer-events: auto;
   transition-delay: 0s;
+  /* Ha a felhasználó nagyobb sor-/betűközt állít be (WCAG 1.4.12),
+     a szöveg ne vágódjon le: a panel ilyenkor görgethetővé válik. */
+  overflow-y: auto;
 }
 
 .units-card.is-open .units-card-toggle .bi{
@@ -3570,45 +3582,47 @@ select:focus-visible,
 
 @media (hover: hover) and (pointer: fine){
 
-  .units-card:hover > img,
-  .units-card:focus-within > img{
+  .units-card:not(.hover-dismissed):hover > img,
+  .units-card:not(.hover-dismissed):focus-within > img{
     transform: scale(1.06);
   }
 
-  .units-card:hover .units-card-panel,
-  .units-card:focus-within .units-card-panel{
+  .units-card:not(.hover-dismissed):hover .units-card-panel,
+  .units-card:not(.hover-dismissed):focus-within .units-card-panel{
     grid-template-rows: 0fr auto 1fr;
   }
 
-  .units-card:hover .units-card-summary,
-  .units-card:focus-within .units-card-summary{
+  .units-card:not(.hover-dismissed):hover .units-card-summary,
+  .units-card:not(.hover-dismissed):focus-within .units-card-summary{
     visibility: visible;
     pointer-events: auto;
     transition-delay: 0s;
+    overflow-y: auto;
   }
 
-  .units-card:hover .units-card-toggle .bi,
-  .units-card:focus-within .units-card-toggle .bi{
+  .units-card:not(.hover-dismissed):hover .units-card-toggle .bi,
+  .units-card:not(.hover-dismissed):focus-within .units-card-toggle .bi{
     transform: rotate(180deg);
   }
 }
 
 /* =========================================================
    KESKENY DESKTOP (1025–1199px)
-   A 4 oszlopos kártyák itt a legkeskenyebbek: kisebb cím és
-   tömörebb címsáv, hogy a „Félkész- és készáruvasaló üzem”
-   cím se törjön 3 sorba.
+   A 4 oszlopos kártyák itt a legkeskenyebbek: tömörebb címsáv.
+   A 20px-es címből a „Félkész- és készáruvasaló üzem” itt 3 sorba
+   törik, ezért a sáv minden kártyán 3 sornyi magas – így egy sorban
+   egyformák maradnak, és a sáv a képet sem takarja.
 ========================================================= */
 
 @media (min-width: 1025px) and (max-width: 1199px){
 
+  .units-card{
+    --card-bar-h: calc(3 * 1.2 * var(--font-size-subsection-title) + 24px);
+  }
+
   .units-card-body{
     gap: 8px;
     padding: 12px 8px 12px 12px;
-  }
-
-  .units-card-body h3{
-    font-size: 15px;
   }
 
   .units-card-toggle{
@@ -3617,20 +3631,18 @@ select:focus-visible,
     font-size: 13px;
   }
 
-  /* A kinyitott összefoglaló is elférjen: szélesebb, kisebb betűs szöveg */
+  /* A kinyitott összefoglaló is elférjen: szélesebb szövegsáv */
   .units-card-summary{
     padding: 0 12px;
-    gap: 12px;
+    gap: 10px;
   }
 
   .units-card-summary p{
     max-width: none;
-    font-size: 13px;
-    line-height: 1.5;
   }
 
   .units-card-summary .business-card-summary-actions{
-    margin-bottom: 10px;
+    margin-bottom: 4px;
   }
 }
 
@@ -3674,31 +3686,19 @@ select:focus-visible,
     gap: 18px;
   }
 
-  .units-card{
-    --card-bar-h: 68px;
-  }
-
   .units-card-body{
     padding: 12px 12px 12px 16px;
   }
 
-  .units-card-body h3{
-    font-size: 18px;
-  }
 
   .units-card-summary{
     padding: 0 18px;
     gap: 13px;
   }
 
-  .units-card-summary p{
-    font-size: 14px;
-    line-height: 1.55;
-  }
 
   .units-card-close,
   .units-card-summary .business-detail-open{
-    font-size: 13px;
     padding: 9px 13px;
   }
 }
@@ -3710,10 +3710,6 @@ select:focus-visible,
     gap: 10px;
   }
 
-  .units-card-summary p{
-    font-size: 13px;
-    line-height: 1.5;
-  }
 
   .units-card-summary .business-card-summary-actions{
     margin-bottom: 12px;
@@ -3808,28 +3804,24 @@ select:focus-visible,
   align-items: center;
   margin-bottom: 12px;
   color: var(--color-primary-light);
-  font-size: 13px;
+  font-size: var(--font-size-small);
   line-height: 1;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .foundation-content h2{
   color: var(--color-primary);
-  font-size: clamp(1.8rem, 3vw, 2.45rem);
-  line-height: 1.12;
-  font-weight: 900;
+  font-size: var(--font-size-section-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
 }
 
 .foundation-content p{
   max-width: 68ch;
   color: var(--color-text);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   margin-bottom: 16px;
 }
 
@@ -3838,19 +3830,20 @@ select:focus-visible,
   align-items: center;
   justify-content: center;
   margin-top: 8px;
-  padding: 12px 22px;
+  padding: 12px 24px;
   border-radius: 999px;
   background: var(--color-primary);
   color: var(--color-white);
-  font-size: 15px;
-  font-weight: 900;
-  line-height: 1;
+  font-size: var(--font-size-body);
+  font-weight: 700;
+  line-height: var(--line-height-heading);
   text-decoration: none;
   box-shadow: 0 10px 24px rgba(0, 63, 125, 0.18);
   transition:
     background var(--transition-fast),
     transform var(--transition-fast),
     box-shadow var(--transition-fast);
+  min-height: 44px;
 }
 
 .foundation-btn:hover,
@@ -3897,14 +3890,7 @@ select:focus-visible,
     border-radius: var(--radius-lg);
   }
 
-  .foundation-content h2{
-    font-size: 26px;
-  }
 
-  .foundation-content p{
-    font-size: 15px;
-    line-height: 1.65;
-  }
 
   .foundation-btn{
     width: 100%;
@@ -3934,7 +3920,7 @@ select:focus-visible,
 .foundation-page-card{
   max-width: 980px;
   margin: 0 auto 52px;
-  padding: 46px;
+  padding: var(--block-padding);
   border-radius: var(--radius-xl);
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
@@ -3963,27 +3949,25 @@ select:focus-visible,
 
 .foundation-page-card h1{
   color: var(--color-primary);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  font-size: var(--font-size-page-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 28px;
   text-wrap: balance;
 }
 
 .foundation-page-card h2{
   color: var(--color-primary);
-  font-size: clamp(1.6rem, 3vw, 2.25rem);
-  line-height: 1.15;
-  font-weight: 900;
+  font-size: var(--font-size-section-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
 .foundation-page-card p{
   color: var(--color-text);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   margin-bottom: 16px;
   max-width: 78ch;
 }
@@ -4015,19 +3999,17 @@ select:focus-visible,
   display: block;
   margin-bottom: 8px;
   color: var(--color-primary-light);
-  font-size: 12px;
+  font-size: var(--font-size-small);
   line-height: 1;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .foundation-info-item strong{
   display: block;
   color: var(--color-primary);
-  font-size: 16px;
-  line-height: 1.45;
-  font-weight: 900;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: 700;
   overflow-wrap: anywhere;
 }
 
@@ -4036,10 +4018,6 @@ select:focus-visible,
   .foundation-page{
     padding-top: calc(var(--navbar-height) + 58px);
     margin-bottom: 80px;
-  }
-
-  .foundation-page-card{
-    padding: 38px;
   }
 
   .foundation-info-grid{
@@ -4061,13 +4039,10 @@ select:focus-visible,
   }
 
   .foundation-page-card h1{
-    font-size: 28px;
     margin-bottom: 24px;
   }
 
   .foundation-page-card p{
-    font-size: 15px;
-    line-height: 1.65;
     max-width: none;
   }
 
@@ -4081,9 +4056,6 @@ select:focus-visible,
     border-radius: var(--radius-md);
   }
 
-  .foundation-info-item strong{
-    font-size: 15px;
-  }
 }
 
 @media (max-width: 420px){
@@ -4112,19 +4084,17 @@ select:focus-visible,
 
 .references-header h2{
   color: var(--color-primary);
-  font-size: var(--font-size-section-title, clamp(1.75rem, 3vw, 2.35rem));
-  line-height: 1.15;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  font-size: var(--font-size-section-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 12px;
   text-wrap: balance;
 }
 
 .references-header p{
   color: var(--color-muted);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   margin: 0 auto;
   max-width: 68ch;
 }
@@ -4235,10 +4205,6 @@ select:focus-visible,
     margin-bottom: 24px;
   }
 
-  .references-header p{
-    font-size: 15px;
-    line-height: 1.65;
-  }
 
   .references-marquee::before,
   .references-marquee::after{
@@ -4295,11 +4261,9 @@ select:focus-visible,
 
 .contact-page-header h1{
   color: var(--color-primary);
-  font-size: var(--font-size-page-title, clamp(2.1rem, 4vw, 3rem));
-  line-height: 1.1;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  font-size: var(--font-size-page-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 16px;
   text-wrap: balance;
 }
@@ -4308,8 +4272,8 @@ select:focus-visible,
   max-width: 64ch;
   margin: 0 auto;
   color: var(--color-muted);
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 .contact-grid{
@@ -4321,7 +4285,7 @@ select:focus-visible,
 
 .contact-card{
   position: relative;
-  padding: 38px;
+  padding: var(--block-padding);
   border-radius: var(--radius-xl);
   background:
     linear-gradient(
@@ -4351,9 +4315,9 @@ select:focus-visible,
 
 .contact-card h2{
   color: var(--color-primary);
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
-  line-height: 1.2;
-  font-weight: 900;
+  font-size: var(--font-size-section-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 24px;
   text-wrap: balance;
 }
@@ -4393,21 +4357,26 @@ select:focus-visible,
   display: block;
   margin-bottom: 4px;
   color: var(--color-primary-light);
-  font-size: 12px;
+  font-size: var(--font-size-small);
   line-height: 1;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .contact-list-item strong,
 .contact-list-item a{
   color: var(--color-text);
-  font-size: 17px;
-  line-height: 1.55;
-  font-weight: 800;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: 700;
   text-decoration: none;
   overflow-wrap: anywhere;
+}
+
+/* A link ne csak a környezetéből legyen felismerhető, hanem látszódjon is:
+   aláhúzva, ahogy a céginformációs adatlistákban (WCAG 1.4.1, ajánlás). */
+.contact-list-item a{
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .contact-list-item a:hover,
@@ -4418,8 +4387,8 @@ select:focus-visible,
 
 .contact-card--social p{
   color: var(--color-muted);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   margin-bottom: 24px;
 }
 
@@ -4438,8 +4407,8 @@ select:focus-visible,
   background: rgba(255, 255, 255, 0.76);
   border: 1px solid rgba(0, 63, 125, 0.10);
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 900;
+  font-size: var(--font-size-body);
+  font-weight: 700;
   transition:
     background var(--transition-fast),
     color var(--transition-fast),
@@ -4489,10 +4458,6 @@ select:focus-visible,
   .contact-grid{
     grid-template-columns: 1fr;
   }
-
-  .contact-card{
-    padding: 34px;
-  }
 }
 
 /* Mobil */
@@ -4506,14 +4471,7 @@ select:focus-visible,
     margin-bottom: 28px;
   }
 
-  .contact-page-header h1{
-    font-size: 28px;
-  }
 
-  .contact-page-header p{
-    font-size: 15px;
-    line-height: 1.65;
-  }
 
   .contact-card{
     padding: 28px 20px;
@@ -4521,7 +4479,6 @@ select:focus-visible,
   }
 
   .contact-card h2{
-    font-size: 23px;
     margin-bottom: 20px;
   }
 
@@ -4529,14 +4486,9 @@ select:focus-visible,
     padding: 16px;
   }
 
-  .contact-list-item strong,
-  .contact-list-item a{
-    font-size: 15px;
-  }
 
   .social-link{
     padding: 15px 16px;
-    font-size: 15px;
   }
 }
 
@@ -4580,11 +4532,9 @@ select:focus-visible,
 
 .ewaste-header h1{
   color: var(--color-primary);
-  font-size: var(--font-size-page-title, clamp(2.1rem, 4vw, 3rem));
-  line-height: 1.1;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  font-size: var(--font-size-page-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 16px;
   text-wrap: balance;
 }
@@ -4593,8 +4543,8 @@ select:focus-visible,
   max-width: 72ch;
   margin: 0 auto;
   color: var(--color-muted);
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 .ewaste-layout{
@@ -4611,7 +4561,7 @@ select:focus-visible,
 
 .ewaste-card{
   position: relative;
-  padding: 36px;
+  padding: var(--block-padding);
   border-radius: var(--radius-xl);
   background: linear-gradient(145deg, var(--color-surface), var(--color-surface-alt));
   border: 1px solid rgba(0, 63, 125, 0.10);
@@ -4629,25 +4579,25 @@ select:focus-visible,
 
 .ewaste-card h2{
   color: var(--color-primary);
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
-  line-height: 1.2;
-  font-weight: 900;
+  font-size: var(--font-size-section-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 20px;
   text-wrap: balance;
 }
 
 .ewaste-card h3{
   color: var(--color-primary);
-  font-size: 18px;
-  line-height: 1.25;
-  font-weight: 900;
+  font-size: var(--font-size-subsection-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
 .ewaste-card p{
   color: var(--color-text);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   margin-bottom: 14px;
 }
 
@@ -4690,21 +4640,24 @@ select:focus-visible,
   display: block;
   margin-bottom: 4px;
   color: var(--color-primary-light);
-  font-size: 12px;
+  font-size: var(--font-size-small);
   line-height: 1;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .ewaste-data-list strong,
 .ewaste-data-list a{
   color: var(--color-text);
-  font-size: 15px;
-  line-height: 1.5;
-  font-weight: 800;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: 700;
   text-decoration: none;
   overflow-wrap: anywhere;
+}
+
+.ewaste-data-list a{
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .ewaste-data-list a:hover,
@@ -4743,8 +4696,8 @@ select:focus-visible,
 }
 
 .ewaste-type-card p{
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 .ewaste-tech-box{
@@ -4774,13 +4727,13 @@ select:focus-visible,
 
 .ewaste-process-list strong{
   color: var(--color-primary-light);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .ewaste-process-list span{
   color: var(--color-text);
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 @media (max-width: 1024px){
@@ -4794,11 +4747,7 @@ select:focus-visible,
     padding: calc(var(--navbar-height) + 42px) 14px 0;
   }
   .ewaste-header{ margin-bottom: 30px; }
-  .ewaste-header h1{ font-size: 28px; }
-  .ewaste-header p{ font-size: 15px; line-height: 1.65; }
   .ewaste-card{ padding: 28px 20px; border-radius: var(--radius-lg); }
-  .ewaste-card h2{ font-size: 23px; }
-  .ewaste-card p{ font-size: 15px; line-height: 1.65; }
   .ewaste-type-grid{ grid-template-columns: 1fr; }
 }
 
@@ -4829,17 +4778,17 @@ select:focus-visible,
 
 .ewaste-gallery-header h2{
   color: var(--color-primary);
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
-  line-height: 1.2;
-  font-weight: 900;
+  font-size: var(--font-size-section-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 10px;
   text-wrap: balance;
 }
 
 .ewaste-gallery-header p{
   color: var(--color-muted);
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   margin: 0 auto;
   max-width: 62ch;
 }
@@ -4933,8 +4882,8 @@ select:focus-visible,
 .ewaste-gallery-view figcaption{
   margin-top: 12px;
   color: var(--color-muted);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
   text-align: center;
   font-weight: 700;
 }
@@ -5140,14 +5089,14 @@ select:focus-visible,
 }
 
 .career-intro-text {
-  padding: 44px;
+  padding: var(--block-padding);
 }
 
 .career-intro-text h1 {
   color: var(--color-primary);
   font-size: var(--font-size-page-title);
-  line-height: 1.1;
-  font-weight: 900;
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 24px;
   text-wrap: balance;
 }
@@ -5171,23 +5120,23 @@ select:focus-visible,
 
 .career-intro-text h2 {
   color: var(--color-primary);
-  font-size: clamp(1.35rem, 2.3vw, 1.7rem);
-  line-height: 1.2;
-  font-weight: 900;
+  font-size: var(--font-size-section-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin: 32px 0 12px;
 }
 
 .career-intro-text p {
   color: var(--color-text);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   margin-bottom: 16px;
   max-width: 76ch;
 }
 
 .career-intro-text strong {
   color: var(--color-primary);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .career-signature {
@@ -5207,8 +5156,8 @@ select:focus-visible,
 
 .career-contact-box p {
   margin-bottom: 10px;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 .career-contact-box p:last-child {
@@ -5217,8 +5166,9 @@ select:focus-visible,
 
 .career-contact-box a {
   color: var(--color-primary-light);
-  font-weight: 900;
-  text-decoration: none;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   overflow-wrap: anywhere;
 }
 
@@ -5277,17 +5227,15 @@ select:focus-visible,
 .career-jobs-header h2 {
   color: var(--color-primary);
   font-size: var(--font-size-section-title);
-  line-height: 1.15;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 14px;
   text-wrap: balance;
 }
 
 .career-jobs-header p {
   color: var(--color-muted);
-  font-size: 17px;
+  font-size: var(--font-size-body);
   line-height: 1.65;
   margin: 0 auto;
   max-width: 70ch;
@@ -5364,23 +5312,23 @@ select:focus-visible,
 
 .career-job-body h3 {
   color: var(--color-primary);
-  font-size: clamp(1.25rem, 2.1vw, 1.55rem);
-  line-height: 1.2;
-  font-weight: 900;
+  font-size: var(--font-size-subsection-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 10px;
   text-wrap: balance;
 }
 
 .career-job-body p {
   color: var(--color-text);
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   margin-bottom: 9px;
 }
 
 .career-job-meta {
   color: var(--color-primary-light) !important;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 /* Álláskártya adatai bootstrap ikonokkal.
@@ -5401,8 +5349,8 @@ select:focus-visible,
   gap: 10px;
   margin-bottom: 8px;
   color: var(--color-text);
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 .career-job-facts li:last-child {
@@ -5420,7 +5368,7 @@ select:focus-visible,
 /* Kiemelt sor: a munkakör legfontosabb jellemzője. */
 .career-job-facts li.is-highlight {
   color: var(--color-primary);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 /* Részletek gomb */
@@ -5429,14 +5377,14 @@ select:focus-visible,
   margin-top: auto;
   min-width: 150px;
   min-height: 44px;
-  padding: 12px 22px;
+  padding: 12px 24px;
   border: none;
   border-radius: 999px;
   background: var(--color-primary);
   color: var(--color-white);
-  font-size: 15px;
-  font-weight: 900;
-  line-height: 1;
+  font-size: var(--font-size-body);
+  font-weight: 700;
+  line-height: var(--line-height-heading);
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 10px 24px rgba(0, 63, 125, 0.18);
@@ -5538,9 +5486,9 @@ select:focus-visible,
 
 .career-modal-content h2 {
   color: var(--color-primary);
-  font-size: clamp(1.7rem, 3vw, 2.35rem);
-  line-height: 1.15;
-  font-weight: 900;
+  font-size: var(--font-size-section-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin-bottom: 22px;
   padding-right: 48px;
   text-wrap: balance;
@@ -5548,28 +5496,28 @@ select:focus-visible,
 
 .career-modal-content h3 {
   color: var(--color-primary);
-  font-size: 19px;
-  line-height: 1.25;
-  font-weight: 900;
+  font-size: var(--font-size-subsection-title);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
   margin: 28px 0 12px;
 }
 
 .career-modal-content p {
   color: var(--color-text);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   margin-bottom: 14px;
   max-width: 78ch;
 }
 
 .career-modal-content strong {
   color: var(--color-primary);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .career-modal-content a {
   color: var(--color-primary-light);
-  font-weight: 900;
+  font-weight: 700;
   text-decoration: none;
   overflow-wrap: anywhere;
 }
@@ -5648,18 +5596,14 @@ select:focus-visible,
   }
 
   .career-intro-text h1 {
-    font-size: 28px;
     margin-bottom: 20px;
   }
 
   .career-intro-text h2 {
-    font-size: 22px;
     margin: 26px 0 10px;
   }
 
   .career-intro-text p {
-    font-size: 15px;
-    line-height: 1.65;
     max-width: none;
   }
 
@@ -5668,9 +5612,6 @@ select:focus-visible,
     border-radius: var(--radius-md);
   }
 
-  .career-contact-box p {
-    font-size: 14px;
-  }
 
   .career-video {
     padding: 12px;
@@ -5681,14 +5622,7 @@ select:focus-visible,
     margin-bottom: 26px;
   }
 
-  .career-jobs-header h2 {
-    font-size: 26px;
-  }
 
-  .career-jobs-header p {
-    font-size: 15px;
-    line-height: 1.65;
-  }
 
   .career-job-grid {
     grid-template-columns: 1fr;
@@ -5703,13 +5637,7 @@ select:focus-visible,
     padding: 24px 20px 26px;
   }
 
-  .career-job-body h3 {
-    font-size: 22px;
-  }
 
-  .career-job-body p {
-    font-size: 14px;
-  }
 
   .career-job-open {
     width: 100%;
@@ -5733,17 +5661,11 @@ select:focus-visible,
   }
 
   .career-modal-content h2 {
-    font-size: 26px;
     padding-right: 42px;
   }
 
-  .career-modal-content h3 {
-    font-size: 17px;
-  }
 
   .career-modal-content p {
-    font-size: 15px;
-    line-height: 1.65;
     max-width: none;
   }
 }
@@ -5762,21 +5684,12 @@ select:focus-visible,
     padding: 26px 18px;
   }
 
-  .career-intro-text h1 {
-    font-size: 26px;
-  }
 
-  .career-intro-text h2 {
-    font-size: 20px;
-  }
 
   .career-job-body {
     padding: 22px 18px 24px;
   }
 
-  .career-job-body h3 {
-    font-size: 20px;
-  }
 
   .career-modal-content {
     padding-left: 18px;
@@ -5865,9 +5778,13 @@ select:focus-visible,
 .partner-card h2,
 .partner-card h3{
   color: var(--color-primary);
-  font-weight: 900;
-  font-size: 17px;
-  line-height: 1.35;
+  font-weight: 700;
+  font-size: var(--font-size-card-title);
+  line-height: var(--line-height-heading);
+}
+
+.partner-card h3{
+  font-size: var(--font-size-subsection-title);
 }
 
 .partner-link{
@@ -5876,8 +5793,8 @@ select:focus-visible,
   justify-content: center;
   padding: 9px 16px;
   border-radius: 999px;
-  font-size: 13px;
-  font-weight: 900;
+  font-size: var(--font-size-small);
+  font-weight: 700;
   text-decoration: none;
   background: #e8f0fa;
   color: var(--color-primary);
@@ -5885,6 +5802,8 @@ select:focus-visible,
     background var(--transition-fast),
     color var(--transition-fast),
     transform var(--transition-fast);
+  min-height: 36px;
+  line-height: var(--line-height-heading);
 }
 
 .partner-link:hover,
@@ -5915,7 +5834,7 @@ select:focus-visible,
 
 .evidence-photo figcaption{
   margin-top: 8px;
-  font-size: 14px;
+  font-size: var(--font-size-small);
   color: var(--color-muted);
   text-align: center;
 }
@@ -6043,7 +5962,7 @@ select:focus-visible,
     background: none;
     color: var(--color-primary);
     font-size: 15px;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
     white-space: nowrap;
     cursor: pointer;

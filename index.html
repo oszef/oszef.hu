@@ -274,6 +274,16 @@
                 >
                     ›
                 </button>
+
+                <!-- Az automatikus lapozás megállítása / folytatása (WCAG 2.2.2): a mozgó tartalmat a látogató meg tudja állítani -->
+                <button
+                    class="hero-pause"
+                    type="button"
+                    aria-pressed="false"
+                    aria-label="Automatikus lapozás szüneteltetése"
+                >
+                    <i class="bi bi-pause-fill" aria-hidden="true"></i>
+                </button>
         </section>
 
         <!-- VEZÉRIGAZGATÓI KÖSZÖNTŐ: rövid bevezető szöveg "Bővebben" gombbal, amely ugyanitt jeleníti meg a teljes köszöntőt -->
@@ -397,9 +407,9 @@
         <section class="about-section" aria-labelledby="about-title">
             <div class="about-inner">
                 <div class="about-text">
-                    <h2 id="about-title">TÖBB MINT 70 ÉVE VAGYUNK JELEN</h2>
+                    <h2 id="about-title">Több mint 70 éve vagyunk jelen</h2>
 
-                    <!-- Mobilon (768 px alatt) csak a "short-text" bekezdés látszik, asztali nézetben a "full-text" bekezdések (lásd style.css, 10. és 17. pont) -->
+                    <!-- Mobilon (768 px alatt) csak a "short-text" bekezdés látszik, asztali nézetben a "full-text" bekezdések (lásd style.css, 10. és 16. pont) -->
                     <p class="short-text">
                         1953 óta több ezer megváltozott munkaképességű embernek biztosítottunk munkalehetőséget.
                         <strong>Rehabilitációs foglalkoztatóként</strong> működésünk szerves része a
@@ -444,38 +454,37 @@
             </div>
         </section>
 
-        <!-- FŐBB ADATOK: a céget bemutató számok és tények (működési évek, éves termelési mennyiségek stb.) -->
-        <section class="facts-section" aria-labelledby="facts-title">
-            <h2 class="facts-title" id="facts-title">Főbb adatok</h2>
-
+        <!-- FŐBB ADATOK: három fő terület Bootstrap ikonnal és kék szövegdobozzal, alatta a céget bemutató számok (működési évek, éves és napi termelési mennyiségek) és a megváltozott munkaképességű munkatársak arányát mutató kördiagram; látható cím nélkül -->
+        <section class="facts-section" aria-label="Főbb adatok">
             <div class="facts-top">
                 <article class="fact-item">
-                    <div class="fact-icon" aria-hidden="true">🏭</div>
+                    <div class="fact-icon" aria-hidden="true"><i class="bi bi-scissors"></i></div>
                     <p>
-                        Több mint 70 éve jelen vagyunk a textiliparban kötöttáru gyártási és
-                        termékfejlesztési tevékenységeinkkel.
+                        <span>70+ év textilipari tapasztalat és szakértelem&nbsp;–
+                        kötöttáru-gyártás és termékfejlesztés.</span>
                     </p>
                 </article>
 
                 <article class="fact-item">
-                    <div class="fact-icon" aria-hidden="true">⚡</div>
+                    <div class="fact-icon" aria-hidden="true"><i class="bi bi-lightning-charge"></i></div>
                     <p>
-                        35 éve végzünk villamosipari tevékenységet, elektromos áramelosztók és
-                        szabályozók összeszerelésével.
+                        <span>35+ év villamosipari gyártási tapasztalat&nbsp;–
+                        áramelosztók és szabályozók összeszerelése.</span>
                     </p>
                 </article>
 
                 <article class="fact-item">
-                    <div class="fact-icon" aria-hidden="true">🤝</div>
+                    <div class="fact-icon" aria-hidden="true"><i class="bi bi-person-wheelchair"></i></div>
                     <p>
-                        A munkavállalói létszám jelentős részét megváltozott munkaképességű munkatársak alkotják.
+                        <span>70+ év tapasztalat rehabilitációs foglalkoztatásban.<br>
+                        Befogadó munkahely, valódi értékteremtés.</span>
                     </p>
                 </article>
             </div>
 
             <div class="facts-grid">
                 <article class="fact-card">
-                    <div class="fact-number" data-target="70">0</div>
+                    <div class="fact-number" data-target="70" data-suffix="+">0</div>
                     <p class="fact-label">év folyamatos működés</p>
                 </article>
 
@@ -518,35 +527,182 @@
                 </div>
 
                 <p class="facts-note">
-                    Hiszünk a befogadó munkahelyben — csapatunk jelentős részét megváltozott munkaképességű kollégák alkotják.
+                    Befogadó munkahely vagyunk – csapatunk 74%-át megváltozott munkaképességű munkatársak alkotják.
                 </p>
             </div>
         </section>
 
-        <!-- TEVÉKENYSÉGEINK: a három fő tevékenységi terület (textilipari gyártás, villamosipari bérmunka, rehabilitációs foglalkoztatás) rövid bemutatása -->
-        <section class="services-section" aria-labelledby="services-title">
-            <h2 id="services-title">Tevékenységeink</h2>
+        <!-- TEVÉKENYSÉGEK ÉS ÜZLETÁGAK: 3 kártya a fő üzletágakról. A kép sötétítés nélkül, teljes egészében látszik, közvetlenül alatta kék címsáv; egérrel rámutatva vagy a nyíl gombra koppintva a sáv felcsúszik és megjelenik a rövid összefoglaló, a "Részletek" gomb egy felugró ablakban nyitja meg a részletes leírást -->
+        <section class="business-section" aria-labelledby="business-title">
+            <div class="business-header">
+                <h2 id="business-title">Tevékenységek &amp; üzletágak</h2>
+            </div>
 
-            <div class="services-grid">
-                <article class="service-card">
-                    <h3>Textilipari gyártás</h3>
-                    <p>
-                        Kötöttáru gyártás, termékfejlesztés és prémium kivitelezés hazai és nemzetközi partnerek számára.
-                    </p>
+            <div class="business-grid">
+
+                <article class="business-card">
+                    <img src="img/tevekenysegek_web/tevekenyseg_1.webp" alt="Divat- és kötöttárugyártás" width="700" height="467" loading="lazy">
+
+                    <div class="business-card-panel">
+                        <div class="business-card-body">
+                            <h3>Divat- és kötöttárugyártás</h3>
+
+                            <button class="business-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <div class="business-card-summary">
+                            <p>
+                            Több mint 70 év gyártási tapasztalattal, korszerű technológiával és széles körű szakértelemmel dolgozunk.
+                            </p>
+
+                            <div class="business-card-summary-actions">
+                                <button class="business-detail-open" type="button">
+                                    Részletek
+                                </button>
+
+                                <button class="business-card-close" type="button">
+                                    Bezárás
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-detail-content" hidden>
+                        <h2>Divat- és kötöttárugyártás</h2>
+
+                        <h3>Több mint 70 év szakmai tapasztalat</h3>
+                        <p>
+                        Több mint 70 éve foglalkozunk kötöttárugyártással, folyamatosan fejlesztve <strong>technológiánkat</strong>, szakmai <strong>tudásunkat</strong> és gyártási <strong>kapacitásunkat</strong>.
+                        </p>
+
+                        <h3>Megbízható gyártópartner</h3>
+                        <p>
+                        Nemzetközi és hazai divatmárkák megbízható gyártópartnereként <strong>több évtizedes szakmai tapasztalattal</strong> rendelkezünk; a <strong>Paul&amp;Shark márka tulajdonosával 2001</strong> óta működünk együtt.
+                        </p>
+
+                        <h3>Teljes körű gyártás egy kézben</h3>
+                        <p>
+                        <strong>Prémium minőségű divat- és kötöttáruk</strong> teljes körű <strong>fejlesztését és gyártását</strong> biztosítjuk. A mintázástól a készáruig <strong>minden gyártási fázist házon belül végzünk</strong>, beleértve a kötést, kikészítést, vasalást, szabást, konfekcionálást, hímzést, filmnyomást, minőségellenőrzést és csomagolást.
+                        </p>
+
+                        <h3>Rugalmas megoldások a vevői igényekre</h3>
+                        <p>
+                        Rugalmasan alkalmazkodunk a vevői igényekhez: <strong>kis- és közepes szériák, egyedi termékek és rövid határidejű gyártási feladatok</strong> megvalósítását is vállaljuk.
+                        </p>
+
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
+                        <figure class="business-modal-image business-modal-image--placeholder" aria-hidden="true"></figure>
+                    </div>
                 </article>
 
-                <article class="service-card">
-                    <h3>Villamosipari bérmunka</h3>
-                    <p>
-                        Elektromos áramelosztók és szabályozók összeszerelése, stabil gyártási háttérrel.
-                    </p>
+                <article class="business-card">
+                    <img src="img/tevekenysegek_web/tevekenyseg_4.webp" alt="Ipari bérgyártás – áramelosztó- és szabályozókészülékek összeszerelése" width="700" height="467" loading="lazy">
+
+                    <div class="business-card-panel">
+                        <div class="business-card-body">
+                            <h3>Ipari bérgyártás</h3>
+
+                            <button class="business-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <div class="business-card-summary">
+                            <p>
+                            Több mint 35 éve megbízható partnerként veszünk részt villamosipari áramelosztó- és szabályozókészülékek gyártásában.
+                            </p>
+
+                            <div class="business-card-summary-actions">
+                                <button class="business-detail-open" type="button">
+                                    Részletek
+                                </button>
+
+                                <button class="business-card-close" type="button">
+                                    Bezárás
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-detail-content" hidden>
+                        <h2>Ipari bérgyártás</h2>
+
+                        <h3>Több mint 35 év gyártási tapasztalat</h3>
+                        <p>
+                        Több mint 35 éve megbízható gyártópartnerként <strong>villamosipari áramelosztó- és szabályozókészülékek gyártását</strong> és összeszerelését végezzük.
+                        </p>
+
+                        <h3>Nagy volumenű, hatékony gyártás</h3>
+                        <p>
+                        Korszerű technológiai háttérrel és <strong>nagy volumenű gyártási kapacitással</strong> évente mintegy <strong>30 millió készüléket</strong> gyártunk.
+                        </p>
+
+                        <h3>Gépi és kézi gyártás együttesen</h3>
+                        <p>
+                        A korszerű gépi összeszerelés mellett <strong>precíz kézi munkát és szakértelmet igénylő</strong>, nem vagy nehezen automatizálható munkafolyamatokat is végzünk.
+                        </p>
+
+                        <h3>Folyamatosan fejlesztett technológiai háttér</h3>
+                        <p>
+                        Folyamatos technológiai fejlesztéseinkkel a <strong>változó piaci és vevői igényekhez igazodva biztosítunk</strong> stabil, hatékony és megbízható gyártást.
+                        </p>
+
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
+                        <figure class="business-modal-image business-modal-image--placeholder" aria-hidden="true"></figure>
+                    </div>
                 </article>
 
-                <article class="service-card">
-                    <h3>Rehabilitációs foglalkoztatás</h3>
-                    <p>
-                        Méltó, támogató és értékteremtő munkakörnyezet megváltozott munkaképességű munkatársainknak.
-                    </p>
+                <article class="business-card">
+                    <img src="img/tevekenysegek_web/tevekenyseg_5.webp" alt="Elektronikai hulladék kézi bontása" width="700" height="467" loading="lazy">
+
+                    <div class="business-card-panel">
+                        <div class="business-card-body">
+                            <h3>E-hulladék-kezelés</h3>
+
+                            <button class="business-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
+                                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <div class="business-card-summary">
+                            <p>
+                            Elektronikai hulladék szakszerű bontását, válogatását és előkezelését végezzük.
+                            </p>
+
+                            <div class="business-card-summary-actions">
+                                <button class="business-detail-open" type="button">
+                                    Részletek
+                                </button>
+
+                                <button class="business-card-close" type="button">
+                                    Bezárás
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-detail-content" hidden>
+                        <h2>E-hulladék-kezelés</h2>
+
+                        <h3>Szakszerű bontás és előkezelés</h3>
+                        <p>
+                        Elektronikai hulladék szakszerű bontását, válogatását és előkezelését végezzük.
+                        </p>
+
+                        <h3>Elektronikai hulladékok kézi bontása</h3>
+                        <p>
+                        Fióktelepünkön veszélyes és nem veszélyes hulladék gyűjtését és előkezelését végezzük, elsősorban <strong>elektronikai és számítástechnikai eszközök kézi bontásával</strong>, valamint a különböző anyagösszetevők szerinti válogatásával foglalkozunk.
+                        </p>
+
+                        <p>
+                        Tevékenységünk célja a <strong>hasznosítható anyagok minél hatékonyabb elkülönítése</strong> és a hulladék megfelelő további kezelése.
+                        </p>
+
+                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
+                        <figure class="business-modal-image business-modal-image--placeholder" aria-hidden="true"></figure>
+                    </div>
                 </article>
             </div>
         </section>
@@ -573,215 +729,6 @@
                 </div>
             </div>
         </section>
-        <!-- TEVÉKENYSÉGEK ÉS ÜZLETÁGAK: 3 kártya a fő üzletágakról. A kép sötétítés nélkül, teljes egészében látszik, közvetlenül alatta kék címsáv; egérrel rámutatva vagy a nyíl gombra koppintva a sáv felcsúszik és megjelenik a rövid összefoglaló, a "Részletek" gomb egy felugró ablakban nyitja meg a részletes leírást -->
-            <section class="business-section" aria-labelledby="business-title">
-            <div class="business-header">
-                <h2 id="business-title">Tevékenységek &amp; üzletágak</h2>
-            </div>
-
-            <div class="business-grid">
-
-                <article class="business-card">
-                    <img src="img/tevekenysegek_web/tevekenyseg_1.webp" alt="Divat- és kötöttáru gyártás" width="700" height="467" loading="lazy">
-
-                    <div class="business-card-panel">
-                        <div class="business-card-body">
-                            <h3>Divat- és kötöttáru gyártás</h3>
-
-                            <button class="business-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
-                                <i class="bi bi-chevron-down" aria-hidden="true"></i>
-                            </button>
-                        </div>
-
-                        <div class="business-card-summary">
-                            <p>
-                            Kötöttáru- és divatipari gyártás teljes gyártási háttérrel, prémium minőségben.
-                            </p>
-
-                        
-                        <div class="business-card-summary-actions">
-                            <button class="business-detail-open" type="button">
-                                Részletek
-                            </button>
-
-                            <button class="business-card-close" type="button">
-                                Bezárás
-                            </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="business-detail-content" hidden>
-                        <h2>Divat- és kötöttáru gyártás</h2>
-
-                        <h3>Fő tevékenységünk</h3>
-                        <p>
-                        A Társaság fő tevékenységében kötöttáru gyártására specializálódott. Technológiai fázisok szerint jelentős gépparkkal rendelkezünk. Jövőbeni célunk a piacbővítés és a termékspektrum szélesítése.
-                        </p>
-
-                        <h3>Teljes gyártási folyamat házon belül</h3>
-                        <p>
-                        Az alapanyag beérkezését követően a mintázástól a készáru kiszállításáig minden gyártási fázis házon belül történik: kötés, félkészáru-vasalás, szabás, konfekcionálás, hímzés, filmnyomás, készáru-vasalás, minőségellenőrzés és csomagolás.
-                        </p>
-
-                        <h3>Prémium textilruházati gyártás</h3>
-                        <p>
-                        Minőségi textilek és természetes fonalalapanyagok felhasználásával prémiumkategóriás textilruházati és divat kötöttárut gyártunk. A gyártás során modern technológiai és informatikai megoldásokat, valamint textil- és ruhaipari anyagtudományi eredményeket alkalmazunk.
-                        </p>
-
-                        <h3>Nemzetközi prémium partnerkapcsolat</h3>
-                        <p>
-                        Legfontosabb stratégiai piaci partnerünk az olaszországi DAMA S.p.A., a Paul&amp;Shark prémiumkategóriás márka tulajdonosa és gyártója. A 2001 óta fennálló együttműködés során a Társaság több millió Paul&amp;Shark modellt gyártott.
-                        </p>
-
-                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
-                        <figure class="business-modal-image business-modal-image--placeholder" aria-hidden="true"></figure>
-                    </div>
-                </article>
-
-
-                <article class="business-card">
-                <img src="img/tevekenysegek_web/tevekenyseg_4.webp" alt="Ipari bérmunka - Legrand" width="700" height="467" loading="lazy">
-
-                <div class="business-card-panel">
-                    <div class="business-card-body">
-                        <h3>Ipari bérmunka</h3>
-
-                        <button class="business-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
-                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
-                        </button>
-                    </div>
-
-                    <div class="business-card-summary">
-                        <p>
-                        Több évtizedes együttműködés áramelosztó-szabályozó készülékek összeszerelésében és gyártásában.
-                        </p>
-
-                        <div class="business-card-summary-actions">
-                        <button class="business-detail-open" type="button">
-                            Részletek
-                        </button>
-
-                        <button class="business-card-close" type="button">
-                            Bezárás
-                        </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="business-detail-content" hidden>
-                    <h2>Ipari bérmunka</h2>
-
-                    <h3>Legrand</h3>
-                    <p>
-                    A Társaság másik fő tevékenysége – egyben a foglalkozási rehabilitációs tevékenységgyakorlás termelési bázisa – áramelosztó-szabályozó készülékek összeszerelése, gyártása, közvetett export értékesítése.
-                    </p>
-
-                    <h3>Az együttműködés kezdete</h3>
-                    <p>
-                    1990-ben kezdődött a Szentesi Kontakta Villamosszerelési Vállalat (Kontavil) és a Szegedi Fonalfeldolgozó Vállalat közötti együttműködés.
-                    </p>
-
-                    <p>
-                    1992-ben a szentesi gyár részvénytársasággá alakult, majd csatlakozott a Legrand csoporthoz.
-                    </p>
-
-                    <h3>Stratégiai piaci partnerség</h3>
-                    <p>
-                    A Legrand Zrt. több mint 30 éve a SZEFO Közhasznú Nonprofit Zrt. foglalkozási rehabilitációs tevékenységének legfontosabb stratégiai piaci partnere.
-                    </p>
-
-                    <p>
-                    Az eredményes együttműködésnek köszönhetően a Társaság mintegy 600 munkavállalója által gyártott 30 millió db/év „Legrand” márkájú áramelosztó-szabályozó készülékeket kb. hetven országba exportálják.
-                    </p>
-
-                    <h3>Technológiai fejlődés</h3>
-                    <p>
-                    A világpiaci kihívással, a folytonos technológiai haladással lépést tartva a műszaki-technikai fejlesztéseknek köszönhetően a múltbeli kézi szerelést mára fokozatosan felváltotta a gépi összeszerelés.
-                    </p>
-
-                    <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
-                    <figure class="business-modal-image business-modal-image--placeholder" aria-hidden="true"></figure>
-                </div>
-                </article>
-
-                <article class="business-card">
-                    <img src="img/tevekenysegek_web/tevekenyseg_5.webp" alt="E-hulladékhoz kapcsolódó tevékenység" width="700" height="467" loading="lazy">
-
-                    <div class="business-card-panel">
-                        <div class="business-card-body">
-                            <h3>E-hulladék - MOHU</h3>
-
-                            <button class="business-card-toggle" type="button" aria-expanded="false" aria-label="Bővebben">
-                                <i class="bi bi-chevron-down" aria-hidden="true"></i>
-                            </button>
-                        </div>
-
-                        <div class="business-card-summary">
-                            <p>
-                            Elektronikai hulladékok kézi bontása, válogatása és előkezelése felelős hulladékgazdálkodási rendszerben.
-                            </p>
-
-                            <div class="business-card-summary-actions">
-                            <button class="business-detail-open" type="button">
-                                Részletek
-                            </button>
-
-                            <button class="business-card-close" type="button">
-                                Bezárás
-                            </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="business-detail-content" hidden>
-                        <h2>E-hulladék - MOHU</h2>
-
-                        <h3>Hulladékgazdálkodási tevékenység</h3>
-                        <p>
-                        A SZEFO Közhasznú Nonprofit Zrt. hulladékgazdálkodási tevékenysége veszélyes és nem veszélyes hulladékok gyűjtésére (telephelyi) és előkezelésére terjed ki.
-                        </p>
-
-                        <h3>Elektronikai hulladékok kézi bontása</h3>
-                        <p>
-                        Társaságunk különféle, elsősorban elektronikai hulladékok (16-os főcsoport, 200135*, 200136) kézi bontását, válogatását végzi a hódmezővásárhelyi telephelyen.
-                        </p>
-
-                        <p>
-                        Az elektronikai hulladékok köre többek között számítástechnikai eszközökre terjed ki, például laptopra, monitorra, billentyűzetre, egérre és asztali számítógépre.
-                        </p>
-
-                        <h3>19-es főcsoportba tartozó hulladékok</h3>
-                        <p>
-                        A 19-es főcsoportba tartozó hulladékok gyűjtésre vagy előkezelésre kerülnek attól függően, hogy pontosan milyen hulladékokról van szó.
-                        </p>
-
-                        <p>
-                        Ebbe a csoportba olyan hulladékok tartoznak, amelyek már átestek valamilyen előkezelési műveleten, tehát más hulladékkezelő létesítménytől átvett hulladékokról van szó.
-                        </p>
-
-                        <p>
-                        Fémek esetében gyűjtés, míg elektronikai hulladékok esetén bontás és további válogatás a cél.
-                        </p>
-
-                        <h3>Kezelési technológia</h3>
-                        <p>
-                        A kezelési technológia célja az összetett, többféle anyagot tartalmazó elektronikai hulladékok hasznosítható összetevőinek kinyerése, valamint a nem hasznosítható anyagok elkülönítése.
-                        </p>
-
-                        <ul class="business-modal-list">
-                        <li>R12 – Átalakítás az R1-R11 műveletek valamelyikének elvégzése érdekében</li>
-                        <li>E02 – 05 válogatás alaki jellemzők szerint (osztályozás)</li>
-                        <li>E02 – 06 válogatás anyagminőség szerint (osztályozás)</li>
-                        <li>E02 – 08 hulladékká vált elektromos, elektronikus berendezés bontása</li>
-                        </ul>
-
-                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
-                        <figure class="business-modal-image business-modal-image--placeholder" aria-hidden="true"></figure>
-                    </div>
-                </article>
-            </div>
-            </section>
             <!-- ÜZEMEGYSÉGEK: kártyák a gyártási üzemegységekről (kötöde, vasaló, varroda stb.), a Tevékenységek kártyáival azonos felcsúszó címsávval és "Részletek" gombbal megnyitható részletes leírással -->
             <section class="units-section" aria-labelledby="units-title">
             <div class="units-header">
@@ -1676,12 +1623,12 @@
 
     </footer>
 
-    <!-- FELUGRÓ HIRDETÉS (POPUP): néhány másodperc várakozás után automatikusan megjelenő promóciós ablak, amely a jobb felső × gombbal zárható be -->
-     <div id="smartPopup" class="popup">
+    <!-- FELUGRÓ HIRDETÉS (POPUP): néhány másodperc várakozás után megjelenő promóciós ablak; addig marad, amíg a látogató be nem zárja (× gomb vagy Escape) -->
+     <div id="smartPopup" class="popup" role="complementary" aria-label="Álláshirdetés">
         <button class="popup-close" type="button" aria-label="Ajánlat bezárása">&times;</button>
 
         <figure class="popup-figure">
-            <img src="img/popup/Autodekor_MMK_Munkat-keres_1024x370.webp" alt="Promóciós kép" width="1400" height="506">
+            <img src="img/popup/Autodekor_MMK_Munkat-keres_1024x370.webp" alt="Munkát keres? Megváltozott munkaképességű munkavállalókat felveszünk a SZEFO Közhasznú Nonprofit Zrt. telephelyeire: Szeged, Szentes, Orosháza, Makó, Hódmezővásárhely és Apátfalva. Részmunkaidő (4–6 óra). Jelentkezés: karrier@szefo.hu, 06 (30) 243-0585." width="1400" height="506">
             
         </figure>
     </div>
