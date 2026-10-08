@@ -439,17 +439,12 @@ window.SZEFO_SEARCH_INDEX = [
       "szerződések",
       "megállapodások",
       "dokumentumok",
-      "PDF",
-      "keret- és támogatási szerződés",
-      "támogatási szerződés",
-      "rehabilitációs foglalkoztatás",
-      "egyéni támogatás",
       "2009. évi CXXII. törvény",
       "KBA",
       "közbeszerzés",
       "kozbeszerzes.hu"
     ],
-    text: "A köztulajdonban álló gazdasági társaságok takarékosabb működéséről szóló 2009. évi CXXII. törvény 2. § (3)-(4) bekezdése szerinti szerződések a KBA rendszerben (kereso-core.kozbeszerzes.hu) érhetők el. Letölthető mellékletek: a megváltozott munkaképességű munkavállalók rehabilitációs foglalkoztatásához nyújtható egyéni támogatásra kötött Keret- és Támogatási szerződések (2018, 2019, 2021 és annak módosítása)."
+    text: "A köztulajdonban álló gazdasági társaságok takarékosabb működéséről szóló 2009. évi CXXII. törvény 2. § (3)-(4) bekezdése szerinti szerződések a KBA rendszerben (kereso-core.kozbeszerzes.hu) érhetők el."
   },
   {
     id: "palyazat-neao",
