@@ -3312,6 +3312,17 @@ select:focus-visible,
     aspect-ratio: 4 / 3;
   }
 }
+
+/* Képhez igazodó doboz: a doboz a kép saját arányát veszi fel,
+   így a kép vágás és oldalsó sáv nélkül, teljesen kitölti
+   (Tevékenységek & üzletágak modaljai). */
+.business-modal-image--fit{
+  aspect-ratio: auto;
+}
+
+.business-modal-image--fit img{
+  height: auto;
+}
 /* =========================================================
    ÜZEMEGYSÉGEK
    Desktop: 4 + 4
