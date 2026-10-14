@@ -2538,6 +2538,58 @@ select:focus-visible,
 }
 
 /*
+   Telephelyek és fióktelepek listája (Általános céginformációk):
+   egységenként egy halványkék doboz névvel, címmel és telefonszámmal.
+   Asztalin 3, tableten 2, mobilon 1 oszlop.
+*/
+.site-list{
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.site-item{
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+}
+
+.site-item h3{
+  margin: 0 0 4px;
+}
+
+.site-item .info-data{
+  margin-top: 8px;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 6px 16px;
+}
+
+/* Az I. számú telephely kiemelt, teljes szélességű kártya a fióktelepek fölött */
+.site-item--featured{
+  grid-column: 1 / -1;
+  padding: 24px 28px;
+  background: var(--color-surface);
+  border-left: 4px solid var(--color-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.site-item--featured h3{
+  font-size: var(--font-size-card-title);
+}
+
+@media (max-width: 1024px){
+  .site-list{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px){
+  .site-list{ grid-template-columns: 1fr; }
+}
+
+/*
    A táblázat mobilon nem fér ki, ezért ez a doboz görgeti vízszintesen.
    A tabindex azért kell, hogy billentyűzettel is lehessen görgetni,
    a role+aria-label pedig hogy a képernyőolvasó bejelentse a régiót.

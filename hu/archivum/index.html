@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
+    <meta name="description" content="A SZEFO Közhasznú Nonprofit Zrt. korábban közzétett adatai és dokumentumai PDF formátumban: közérdekű adatok, adatszolgáltatások, jelentések, szabályzatok.">
+    <link rel="canonical" href="https://www.szefo.hu/hu/archivum/">
+
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
+    <meta property="og:title" content="Archívum">
+    <meta property="og:description" content="A SZEFO Közhasznú Nonprofit Zrt. korábban közzétett adatai és dokumentumai PDF formátumban: közérdekű adatok, adatszolgáltatások, jelentések, szabályzatok.">
+    <meta property="og:image" content="https://www.szefo.hu/img/hero/hero-1.webp">
+    <meta property="og:url" content="https://www.szefo.hu/hu/archivum/">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Böngészőfül ikonja (favicon), valamint az oldal és a PDF-dokumentumok kártyáinak kinézetét meghatározó CSS-stíluslapok betöltése -->
+    <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/pdf_style.css">
+    <title>Archívum | SZEFO Közhasznú Nonprofit Zrt.</title>
+</head>
+<body>
+      <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
+      <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
+    <header class="site-header">
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
+        <div class="navbar">
+            <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </div>
+
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
+        <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="../../index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk és az E-hulladék aloldalakra mutató lenyíló menüpont -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="../kuldetesunk/index.html">Küldetésünk</a>
+                            </li>
+                            <li>
+                                <a href="../e-hulladek/index.html">E-hulladék</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CÉGINFORMÁCIÓK ALMENÜ: a cég adataival, közérdekű adataival, szerződéseivel és egyéb hivatalos dokumentumaival kapcsolatos aloldalak gyűjtőmenüje -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Céginformációk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../altalanos_ceginformaciok/index.html">Általános céginformáció</a>
+                            </li>
+                            <li>
+                                <a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a>
+                            </li>
+                            <li>
+                                <a href="../kepzo_intezmenyek/index.html">Képző intézmények</a>
+                            </li>
+                            <li>
+                                <a href="../projektek/index.html">Projektek</a>
+                            </li>
+                            <li>
+                                <a href="../minosegpolitika/index.html">Minőségpolitika</a>
+                            </li>
+                            <li>
+                                <a href="../partnerek/index.html">Partnerek</a>
+                            </li>
+                            <li>
+                                <a href="../alapitvany/index.html">Alapítvány</a>
+                            </li>
+                            <li>
+                                <a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a>
+                            </li>
+                            <li>
+                                <a href="../eves_beszamolok/index.html">Éves beszámolók</a>
+                            </li>
+                            <li>
+                                <a href="../archivum/index.html" aria-current="page">Archívum</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="../kapcsolat/index.html">Kapcsolat</a>
+                    </li>
+                    <li>
+                        <a href="../karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="../klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+
+               <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
+               <div class="search search--button-only">
+                <a class="search-link" href="../kereses/index.html">
+                    Keresés
+                </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content">
+        <!-- FŐ TARTALOM: a korábban közzétett, a többi oldalról archivált adatok és dokumentumok PDF formátumban -->
+        <section class="info-page" aria-labelledby="archivum-title">
+
+            <!-- BEVEZETŐ: mit tartalmaz az archívum, és hol találhatók az aktuális adatok -->
+            <section class="info-block section-card" aria-labelledby="archivum-title">
+                <div class="info-content">
+                    <h1 id="archivum-title">Archívum</h1>
+
+                    <p>
+                        Ezen az oldalon társaságunk korábban közzétett adatai és dokumentumai
+                        érhetők el PDF formátumban. Az archivált dokumentumok az archiválás
+                        időpontjában közzétett állapotot rögzítik.
+                    </p>
+
+                    <p class="info-note">
+                        Aktuális adataink a
+                        <a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a> és az
+                        <a href="../altalanos_ceginformaciok/index.html">Általános céginformációk</a>
+                        oldalon érhetők el.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ARCHIVÁLT KÖZÉRDEKŰ ADATOK: a Közérdekű adatok oldalról archivált adatkörök és a szervezeti felépítés -->
+            <section class="docs-section" aria-labelledby="archiv-kozerdeku">
+                <div class="docs-header">
+                    <span class="section-eyebrow">Dokumentumok</span>
+                    <h2 id="archiv-kozerdeku">Archivált közérdekű adatok</h2>
+                    <p>
+                        A Közérdekű adatok oldalról archivált adatkörök PDF formátumban.
+                    </p>
+                </div>
+
+                <div class="docs-grid">
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>A társaság vezetői</h3>
+                            <p>A társaság vezetőire vonatkozó, korábban közzétett adatok PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/archivum/tarsasag-vezetoi.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/archivum/tarsasag-vezetoi.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Alapítványok</h3>
+                            <p>A társaság által alapított alapítvány korábban közzétett adatai PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/archivum/alapitvanyok.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/archivum/alapitvanyok.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Lapok, kiadványok</h3>
+                            <p>A társaság kiadványainak korábban közzétett adatai PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/archivum/lapok-kiadvanyok.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/archivum/lapok-kiadvanyok.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Közzétételi listák</h3>
+                            <p>A korábbi közzétételi listák PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/archivum/kozzeteteli-listak.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/archivum/kozzeteteli-listak.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Gazdálkodási adatok</h3>
+                            <p>Ellenőrzések, beszámolók, foglalkoztatottak, szerződések, közbeszerzés és támogatások korábban közzétett adatai PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/archivum/gazdalkodasi-adatok.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/archivum/gazdalkodasi-adatok.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Szervezeti felépítés (2020. szeptember)</h3>
+                            <p>A társaság szervezeti struktúráját bemutató ábra PDF formátumban. A dokumentum a 2020. szeptemberi állapotot tükrözi.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/Szervezeti-felepites.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/Szervezeti-felepites.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ADATSZOLGÁLTATÁSOK, ELLENŐRZÉSEK, SZERZŐDÉSEK: a korábbi önálló oldalak tartalma -->
+            <section class="docs-section" aria-labelledby="archiv-oldalak">
+                <div class="docs-header">
+                    <span class="section-eyebrow">Dokumentumok</span>
+                    <h2 id="archiv-oldalak">Adatszolgáltatások, ellenőrzések, szerződések</h2>
+                    <p>
+                        A korábbi Adatszolgáltatás, Ellenőrzések és Szerződések oldal tartalma PDF formátumban.
+                    </p>
+                </div>
+
+                <div class="docs-grid">
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Adatszolgáltatások 2009–2021</h3>
+                            <p>A Takarékos törvény alapján közzétett adatok évenkénti bontásban, PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/archivum/adatszolgaltatasok-2009-2021.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/archivum/adatszolgaltatasok-2009-2021.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Szerződések</h3>
+                            <p>A Takarékos törvény szerinti szerződésekről szóló tájékoztatás PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/archivum/szerzodesek.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/archivum/szerzodesek.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Állami Számvevőszék jelentése (19127)</h3>
+                            <p>Az állami tulajdonú gazdasági társaságok ellenőrzése – Szegedi SZEFO Fonalfeldolgozó „zártkörűen működő” Részvénytársaság, 2019. PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ellenorzesek/ASZ-jelentes-19127.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ellenorzesek/ASZ-jelentes-19127.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ÉVES ENERGETIKAI SZAKREFERENS JELENTÉSEK: a korábbi Közzétételek oldal jelentései, a legfrissebbel kezdve -->
+            <section class="docs-section" aria-labelledby="archiv-energetika">
+                <div class="docs-header">
+                    <span class="section-eyebrow">Dokumentumok</span>
+                    <h2 id="archiv-energetika">Éves energetikai szakreferens jelentések</h2>
+                    <p>
+                        A 2017–2025. évekre vonatkozó jelentések PDF formátumban érhetők el, a legfrissebbel kezdve.
+                    </p>
+                </div>
+
+                <div class="docs-grid">
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Éves energetikai szakreferens jelentés – 2025</h3>
+                            <p>A 2025. évre vonatkozó energiahatékonysági összefoglaló jelentés PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2025.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2025.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Éves energetikai szakreferens jelentés – 2024</h3>
+                            <p>A 2024. évre vonatkozó energiahatékonysági összefoglaló jelentés PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2024.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2024.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Éves energetikai szakreferens jelentés – 2023</h3>
+                            <p>A 2023. évre vonatkozó energiahatékonysági összefoglaló jelentés PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2023.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2023.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Éves energetikai szakreferens jelentés – 2022</h3>
+                            <p>A 2022. évre vonatkozó energiahatékonysági összefoglaló jelentés PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2022.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2022.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Éves energetikai szakreferens jelentés – 2021</h3>
+                            <p>A 2021. évre vonatkozó energiahatékonysági összefoglaló jelentés PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2021.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2021.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Éves energetikai szakreferens jelentés – 2020</h3>
+                            <p>A 2020. évre vonatkozó energiahatékonysági összefoglaló jelentés PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2020.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2020.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Éves energetikai szakreferens jelentés – 2019</h3>
+                            <p>A 2019. évre vonatkozó energiahatékonysági összefoglaló jelentés PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2019.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2019.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Éves energetikai szakreferens jelentés – 2018</h3>
+                            <p>A 2018. évre vonatkozó éves energetikai szakreferensi riport PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2018.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2018.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Éves energetikai szakreferens jelentés – 2017</h3>
+                            <p>A 2017. évre vonatkozó éves energetikai szakreferens jelentés PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2017.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/kozzetetelek/Eves-energetikai-szakreferens-jelentes-2017.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- SZABÁLYZATOK: a társaság belső szabályzatai -->
+            <section class="docs-section" aria-labelledby="archiv-szabalyzatok">
+                <div class="docs-header">
+                    <span class="section-eyebrow">Dokumentumok</span>
+                    <h2 id="archiv-szabalyzatok">Szabályzatok</h2>
+                    <p>
+                        A társaság működését meghatározó belső szabályzatok PDF formátumban.
+                    </p>
+                </div>
+
+                <div class="docs-grid">
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Alapszabály</h3>
+                            <p>A Szegedi SZEFO Fonalfeldolgozó „zártkörűen működő” Részvénytársaság alapszabálya PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/Alapszabaly.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/Alapszabaly.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Szervezeti és Működési Szabályzat</h3>
+                            <p>A társaság Szervezeti és Működési Szabályzata PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/Szervezeti-es-Mukodesi-Szabalyzat.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/Szervezeti-es-Mukodesi-Szabalyzat.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Adatvédelmi-adatbiztonsági szabályzat</h3>
+                            <p>A társaság adatvédelmi és adatbiztonsági szabályzata PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/Adatvedelmi-adatbiztonsagi-szabalyzat.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/Adatvedelmi-adatbiztonsagi-szabalyzat.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Javadalmazási Szabályzat</h3>
+                            <p>A társaság javadalmazási szabályzata PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/Javadalmazasi-Szabalyzat.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/Javadalmazasi-Szabalyzat.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Etikai Kódex</h3>
+                            <p>A Szegedi SZEFO zrt. Etikai Kódexe, hatályos 2020. október 1-jétől, PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/Etikai-Kodex.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/Etikai-Kodex.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>Közérdekű Adatok Közzétételének Szabályzata</h3>
+                            <p>A közérdekű adatok közzétételének rendjéről szóló szabályzat PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/Kozerdeku-Adatok-Kozzetetelenek-Szabalyzata.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/Kozerdeku-Adatok-Kozzetetelenek-Szabalyzata.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- JOGSZABÁLYOK: a társaság működésére vonatkozó jogszabályok -->
+            <section class="docs-section" aria-labelledby="archiv-jogszabalyok">
+                <div class="docs-header">
+                    <span class="section-eyebrow">Dokumentumok</span>
+                    <h2 id="archiv-jogszabalyok">Jogszabályok</h2>
+                    <p>
+                        A társaság működésére vonatkozó jogszabályok PDF formátumban.
+                    </p>
+                </div>
+
+                <div class="docs-grid">
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>A társaságra vonatkozó jogszabályok jegyzéke</h3>
+                            <p>A Szegedi SZEFO zrt.-re vonatkozó jogszabályok listája PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/Tarsasagra-vonatkozo-jogszabalyok-jegyzeke.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/Tarsasagra-vonatkozo-jogszabalyok-jegyzeke.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>2007. évi CVI. törvény az állami vagyonról</h3>
+                            <p>Az állami vagyonról szóló 2007. évi CVI. törvény szövege PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/2007-evi-CVI-torveny-az-allami-vagyonrol.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/2007-evi-CVI-torveny-az-allami-vagyonrol.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>327/2011. (XII. 29.) Korm. rendelet</h3>
+                            <p>A megváltozott munkaképességű személyek ellátásaival kapcsolatos eljárásról szóló kormányrendelet PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/327-2011-Korm-rendelet.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/327-2011-Korm-rendelet.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="doc-card">
+                        <div class="doc-card-icon" aria-hidden="true">PDF</div>
+                        <div class="doc-card-content">
+                            <h3>1/2018. (VI. 25.) NVTNM rendelet</h3>
+                            <p>Az egyes állami tulajdonban álló gazdasági társaságok feletti tulajdonosi joggyakorló kijelöléséről szóló rendelet PDF formátumban.</p>
+                            <div class="doc-card-actions">
+                                <a class="doc-action doc-action--view" href="../../doc/ceginformaciok/1-2018-NVTNM-rendelet.pdf" target="_blank" rel="noopener">Megnyitás</a>
+                                <a class="doc-action doc-action--download" href="../../doc/ceginformaciok/1-2018-NVTNM-rendelet.pdf" data-download>Letöltés</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Vissza a főoldalra mutató link -->
+            <div class="mission-back">
+                <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>
+                <h2>SZEFO Közhasznú Nonprofit Zrt.</h2>
+                <p>
+                    A befogadó társadalom alapja a diszkriminációmentességgel párosuló pozitív cselekvés.
+                </p>
+            </div>
+
+            <div>
+                <h3>Gyors elérés</h3>
+                <ul>
+                    <li><a href="../../index.html">Kezdőlap</a></li>
+                    <li><a href="../tortenetunk/index.html">Történetünk</a></li>
+                    <li><a href="../kuldetesunk/index.html">Küldetésünk</a></li>
+                    <li><a href="../kapcsolat/index.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Kapcsolat</h3>
+                <p>6724 Szeged, Tavasz utca 2.</p>
+                <p>+36-62-554-054</p>
+                <p>titkarsag@szefo.hu</p>
+            </div>
+        </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
+        <div class="site-footer-bottom">
+            <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
+            <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
+        </div>
+
+    </footer>
+
+    <!-- JavaScript-fájlok: a script.js a menü, a downloader.js a dokumentumok letöltés gombjának működését biztosítja -->
+    <script src="../../js/script.js"></script>
+    <script src="../../js/downloader.js"></script>
+</body>
+</html>
