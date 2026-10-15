@@ -1,0 +1,59 @@
+# SZEFO weboldal feltöltése a szerverre FTPS-en (titkosított FTP)
+name: Deploy (FTPS)
+
+on:
+  # Kézi indítás: Actions fül → Deploy (FTPS) → Run workflow
+  workflow_dispatch:
+    inputs:
+      probafutas:
+        description: "Próbafutás: csak kiírja, mit töltene fel vagy törölne, nem módosít semmit"
+        type: boolean
+        default: true
+  # Automatikus indítás minden main ágra küldött változásnál.
+  # A sikeres éles próba UTÁN vedd ki a # jelet a következő két sor elől:
+  # push:
+  #   branches: [main]
+
+permissions:
+  contents: read
+
+# Egyszerre csak egy feltöltés fusson
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Kód letöltése
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Feltöltés FTPS-en
+        uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287 # v4.4.0
+        with:
+          server: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          password: ${{ secrets.DEPLOY_PASSWORD }}
+          protocol: ftps
+          port: 21
+          # A szerver tanúsítványát is ellenőrzi
+          security: strict
+          # Az FTP-fiók gyökere maga a weboldal mappája
+          server-dir: ./
+          dry-run: ${{ inputs.probafutas == true }}
+          log-level: standard
+          # Ezeket nem tölti fel, és a szerveren sem törli
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
+            .claude/**
+            .cpanel.yml
+            README.md
+            .well-known/**
+            .ftpquota
