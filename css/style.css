@@ -1198,6 +1198,15 @@ select:focus-visible,
 .about-text h2 {
     font-size: var(--font-size-section-title);
     color: var(--color-primary);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+/* A „Rólunk” cím alatti alcím: H3 a tipográfiai rendszer szerint (20px) */
+.about-text h3 {
+    font-size: var(--font-size-subsection-title);
+    line-height: var(--line-height-heading);
+    color: var(--color-primary);
     margin-bottom: 20px;
     font-weight: 700;
 }
