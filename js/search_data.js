@@ -502,13 +502,12 @@ window.SZEFO_SEARCH_INDEX = [
       "anyagmozgató",
       "rakodómunkás",
       "portás",
-      "raktáros",
       "karbantartó",
       "villanyszerelő",
       "gépbeállító",
       "fióktelepvezető"
     ],
-    text: "Aktuális állásajánlataink megváltozott munkaképességű munkavállalók számára, jellemzően részmunkaidőben, napi 4 órában, két műszakban. 2010-ben elnyertük a Fogyatékosság-barát munkahely elismerést; munkatársaink 74%-a megváltozott munkaképességű. Nyitott pozíciók: fióktelepvezető, alkatrészszerelő, anyagmozgató és rakodómunkás, portás, raktáros, karbantartó, villanyszerelő, gépbeállító. Munkavégzés helyszínei: Szeged (Tavasz utca, Dorozsmai út), Makó, Szentes, Hódmezővásárhely, Apátfalva és Orosháza. Jelentkezés: karrier@szefo.hu, +36 (30) 243-0585, illetve +36 (62) 554-054/108."
+    text: "Aktuális állásajánlataink megváltozott munkaképességű munkavállalók számára, jellemzően részmunkaidőben, napi 4 órában, két műszakban. 2010-ben elnyertük a Fogyatékosság-barát munkahely elismerést; munkatársaink 74%-a megváltozott munkaképességű. Nyitott pozíciók: fióktelepvezető, alkatrészszerelő, anyagmozgató és rakodómunkás, portás, karbantartó, villanyszerelő, gépbeállító. Munkavégzés helyszínei: Szeged (Tavasz utca, Dorozsmai út), Szentes, Hódmezővásárhely és Apátfalva. Jelentkezés: karrier@szefo.hu, +36 (30) 243-0585, illetve +36 (62) 554-054/108."
   },
   {
     id: "klaszter",
