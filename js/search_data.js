@@ -118,7 +118,7 @@ window.SZEFO_SEARCH_INDEX = [
       "Instagram",
       "közösségi média"
     ],
-    text: "Elérhetőségeink: székhely 6724 Szeged, Tavasz utca 2., telefon +36-62-554-054, e-mail titkarsag@szefo.hu. Kövesse híreinket Facebook, LinkedIn, TikTok és Instagram oldalainkon is."
+    text: "Elérhetőségeink: székhely 6724 Szeged, Tavasz utca 2., telefon +36 62 554 054, e-mail titkarsag@szefo.hu. Kövesse híreinket Facebook, LinkedIn, TikTok és Instagram oldalainkon is."
   },
   {
     id: "altalanos-ceginformaciok",
@@ -147,7 +147,7 @@ window.SZEFO_SEARCH_INDEX = [
       "TEÁOR 1439",
       "tevékenységi kör"
     ],
-    text: "Elérhetőségünk: központi szék- és telephely 6724 Szeged, Tavasz u. 2., központi telefonszám (62) 554-054, fax +36-62-554-063, e-mail titkarsag@szefo.hu. Telephelyek és fióktelepek: I. számú telephely (6728 Szeged, Dorozsmai út 56.), Apátfalvi, Hódmezővásárhelyi, Makói, Orosházi és Szentesi fióktelep, címmel és vezetékes telefonszámmal. Főtevékenység (TEÁOR 1439): egyéb kötött, hurkolt ruházati termék gyártása; további tevékenységek: áramelosztó-szabályozó készülék gyártása, villanyszerelés, textil- és ruházati kis- és nagykereskedelem, oktatás."
+    text: "Elérhetőségünk: központi szék- és telephely 6724 Szeged, Tavasz u. 2., központi telefonszám +36 62 554 054, fax +36 62 554 063, e-mail titkarsag@szefo.hu. Telephelyek és fióktelepek: I. számú telephely (6728 Szeged, Dorozsmai út 56.), Apátfalvi, Hódmezővásárhelyi, Makói, Orosházi és Szentesi fióktelep, címmel és vezetékes telefonszámmal. Főtevékenység (TEÁOR 1439): egyéb kötött, hurkolt ruházati termék gyártása; további tevékenységek: áramelosztó-szabályozó készülék gyártása, villanyszerelés, textil- és ruházati kis- és nagykereskedelem, oktatás."
   },
   {
     id: "kozerdeku-adatok",
@@ -352,7 +352,7 @@ window.SZEFO_SEARCH_INDEX = [
       "adatvedelmitisztviselo@szefo.hu",
       "PDF"
     ],
-    text: "A közérdekű adatok megismerésére irányuló igények az Infotv. (2011. évi CXII. törvény) alapján nyújthatók be. Adatvédelmi tisztviselő: Péli Katalin (adatvedelmitisztviselo@szefo.hu, +36-62-554-054, 6724 Szeged, Tavasz u. 2.). Letölthető a közérdekű adatok megismerése iránti igény teljesítésének szabályzata (6 oldal) és az ehhez kapcsolódó adatkezelési tájékoztató (2 oldal) PDF formátumban."
+    text: "A közérdekű adatok megismerésére irányuló igények az Infotv. (2011. évi CXII. törvény) alapján nyújthatók be. Adatvédelmi tisztviselő: Péli Katalin (adatvedelmitisztviselo@szefo.hu, +36 62 554 054, 6724 Szeged, Tavasz u. 2.). Letölthető a közérdekű adatok megismerése iránti igény teljesítésének szabályzata (6 oldal) és az ehhez kapcsolódó adatkezelési tájékoztató (2 oldal) PDF formátumban."
   },
   {
     id: "eves-beszamolok",
@@ -497,17 +497,9 @@ window.SZEFO_SEARCH_INDEX = [
       "állásajánlat",
       "megváltozott munkaképesség",
       "részmunkaidő",
-      "Fogyatékosság-barát munkahely",
-      "alkatrészszerelő",
-      "anyagmozgató",
-      "rakodómunkás",
-      "portás",
-      "karbantartó",
-      "villanyszerelő",
-      "gépbeállító",
-      "fióktelepvezető"
+      "Fogyatékosság-barát munkahely"
     ],
-    text: "Aktuális állásajánlataink megváltozott munkaképességű munkavállalók számára, jellemzően részmunkaidőben, napi 4 órában, két műszakban. 2010-ben elnyertük a Fogyatékosság-barát munkahely elismerést; munkatársaink 74%-a megváltozott munkaképességű. Nyitott pozíciók: fióktelepvezető, alkatrészszerelő, anyagmozgató és rakodómunkás, portás, karbantartó, villanyszerelő, gépbeállító. Munkavégzés helyszínei: Szeged (Tavasz utca, Dorozsmai út), Szentes, Hódmezővásárhely és Apátfalva. Jelentkezés: karrier@szefo.hu, +36 (30) 243-0585, illetve +36 (62) 554-054/108."
+    text: "Aktuális állásajánlataink megváltozott munkaképességű munkavállalók számára, jellemzően részmunkaidőben, napi 4 órában, két műszakban. 2010-ben elnyertük a Fogyatékosság-barát munkahely elismerést; munkatársaink 74%-a megváltozott munkaképességű. Jelenleg nincs aktuális állásajánlatunk; kérjük, látogasson vissza később."
   },
   {
     id: "klaszter",
