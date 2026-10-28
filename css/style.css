@@ -1949,6 +1949,16 @@ select:focus-visible,
 
 .site-footer h2 {
     font-size: var(--font-size-card-title);
+    margin-bottom: 16px;
+}
+
+.site-footer h3 {
+    margin-bottom: 10px;
+}
+
+/* A felsorolásjel a cím alatt, beljebb álljon (ne lógjon a margóba) */
+.site-footer ul {
+    padding-left: 20px;
 }
 
 .site-footer a {
@@ -1958,6 +1968,76 @@ select:focus-visible,
 
 .site-footer a:hover {
     text-decoration: underline;
+}
+
+/* Második cím az első lábléc-oszlopban (Kapcsolat) */
+.site-footer-subtitle {
+    margin-top: 32px;
+}
+
+/* Közösségi média: márkaszínű Bootstrap-ikonok a linkek előtt */
+.site-footer-social {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-footer-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 44px;
+}
+
+.site-footer-social-icon {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-white);
+    font-size: 22px;
+    line-height: 1;
+}
+
+.site-footer-social-icon i {
+    display: block;
+    line-height: 1;
+}
+
+.site-footer-social-icon--facebook {
+    color: #1877f2;
+    font-size: 40px;
+}
+
+.site-footer-social-icon--instagram {
+    border-radius: 10px;
+}
+
+.site-footer-social-icon--instagram i {
+    color: #d62976;
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.site-footer-social-icon--tiktok {
+    background: #000;
+    color: var(--color-white);
+}
+
+.site-footer-social-icon--tiktok i {
+    text-shadow: -1px -1px 0 #25f4ee, 1px 1px 0 #fe2c55;
+}
+
+.site-footer-social-icon--linkedin {
+    border-radius: 6px;
+    color: #0a66c2;
+    font-size: 40px;
 }
 
 .site-footer-bottom {
@@ -3816,170 +3896,6 @@ select:focus-visible,
   }
 }
 /* =========================================================
-   ALAPÍTVÁNYUNK – FŐOLDALI ÁTVEZETŐ BLOKK
-========================================================= */
-
-.foundation-section{
-  max-width: var(--container);
-  margin: 100px auto 110px;
-  padding: 0 20px;
-}
-
-.foundation-inner{
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: 36px;
-  align-items: center;
-}
-
-.foundation-image{
-  position: relative;
-  min-height: 390px;
-  margin: 0;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  background: #e9eef5;
-  box-shadow: var(--shadow-soft);
-}
-
-.foundation-image::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.04),
-      rgba(0,63,125,0.18)
-    );
-  pointer-events: none;
-}
-
-.foundation-image img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.foundation-content{
-  position: relative;
-  padding: 42px;
-  border-radius: var(--radius-xl);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(0, 63, 125, 0.08);
-}
-
-.foundation-eyebrow{
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 12px;
-  color: var(--color-primary-light);
-  font-size: var(--font-size-small);
-  line-height: 1;
-  font-weight: 700;
-}
-
-.foundation-content h2{
-  color: var(--color-primary);
-  font-size: var(--font-size-section-title);
-  line-height: var(--line-height-heading);
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.foundation-content p{
-  max-width: 68ch;
-  color: var(--color-text);
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-  margin-bottom: 16px;
-}
-
-.foundation-btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8px;
-  padding: 12px 24px;
-  border-radius: 999px;
-  background: var(--color-primary);
-  color: var(--color-white);
-  font-size: var(--font-size-body);
-  font-weight: 700;
-  line-height: var(--line-height-heading);
-  text-decoration: none;
-  box-shadow: 0 10px 24px rgba(0, 63, 125, 0.18);
-  transition:
-    background var(--transition-fast),
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast);
-  min-height: 44px;
-}
-
-.foundation-btn:hover,
-.foundation-btn:focus-visible{
-  background: var(--color-primary-light);
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0, 63, 125, 0.24);
-}
-
-/* Tablet elrendezés */
-@media (max-width: 1024px){
-  .foundation-section{
-    margin: 85px auto 95px;
-  }
-
-  .foundation-inner{
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .foundation-image{
-    min-height: 330px;
-  }
-
-  .foundation-content{
-    padding: 34px;
-  }
-}
-
-/* Mobil elrendezés */
-@media (max-width: 768px){
-  .foundation-section{
-    margin: 70px auto;
-    padding: 0 14px;
-  }
-
-  .foundation-image{
-    min-height: 240px;
-    border-radius: var(--radius-lg);
-  }
-
-  .foundation-content{
-    padding: 28px 22px;
-    border-radius: var(--radius-lg);
-  }
-
-
-
-  .foundation-btn{
-    width: 100%;
-    padding: 12px 18px;
-  }
-}
-
-@media (max-width: 420px){
-  .foundation-image{
-    min-height: 215px;
-  }
-
-  .foundation-content{
-    padding: 24px 18px;
-  }
-}
-/* =========================================================
    ALAPÍTVÁNY OLDAL
 ========================================================= */
 
@@ -4046,6 +3962,78 @@ select:focus-visible,
 
 .foundation-page-card p:last-child{
   margin-bottom: 0;
+}
+
+/* =========================================================
+   ALAPÍTVÁNY OLDAL – BEMUTATKOZÓ RÉSZ (balra kép, jobbra kártya)
+========================================================= */
+
+.foundation-page-intro{
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: 36px;
+  align-items: start;
+  margin: 0 0 52px;
+}
+
+.foundation-page-intro .foundation-page-card{
+  max-width: none;
+  margin: 0;
+}
+
+/* A kép görgetéskor a fejléc alatt marad, amíg a mellette lévő szöveg tart */
+.foundation-page-image{
+  position: sticky;
+  top: calc(var(--navbar-height) + 24px);
+  margin: 0;
+  padding: 24px;
+  border-radius: var(--radius-xl);
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(0, 63, 125, 0.08);
+}
+
+.foundation-page-image img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Asztali nézetben a keskenyebb kártyán: a Cím teljes szélességben, alatta a két szám egymás mellett (nem törnek) */
+@media (min-width: 1025px){
+  .foundation-page-intro .foundation-info-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .foundation-page-intro .foundation-info-item:first-child{
+    grid-column: 1 / -1;
+  }
+}
+
+/* Kisebb kijelzőn egymás alatt: a kép felül, középre igazítva */
+@media (max-width: 1024px){
+  .foundation-page-intro{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .foundation-page-image{
+    position: static;
+    width: min(100%, 360px);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px){
+  .foundation-page-intro{
+    margin-bottom: 42px;
+  }
+
+  .foundation-page-image{
+    width: min(100%, 280px);
+    padding: 18px;
+    border-radius: var(--radius-lg);
+  }
 }
 
 /* =========================================================
@@ -4169,6 +4157,10 @@ select:focus-visible,
   line-height: var(--line-height-body);
   margin: 0 auto;
   max-width: 68ch;
+}
+
+.references-header p + p{
+  margin-top: 16px;
 }
 
 /* Külső maszk / látható sáv */

@@ -5,7 +5,8 @@
    Szerepe (ideiglenes, amíg a Céginformációk adatai frissülnek):
    - a látogató a Céginformációk menüre kattintva lenyíló helyett
      egy értesítő ablakot kap: „Tartalmaink frissítés alatt.
-     Köszönjük türelmét!”
+     Köszönjük türelmét!” (2026-10-28 óta a menüsorban nincs
+     Céginformációk, az aloldalak a láblécből nyílnak)
    - a Céginformációk aloldalait közvetlen linkről (kereső, könyvjelző,
      főoldali gomb) megnyitva a tartalom helyett ugyanez az értesítés látszik
    - a fejlesztő (helyi gépen: localhost, 127.0.0.1, file://) mindent
@@ -28,7 +29,8 @@
   const NEZET_KULCS = "szefo-ceginf-nezet";
   const UZENET = "Tartalmaink frissítés alatt. Köszönjük türelmét!";
 
-  // A Céginformációk menü aloldalai (a mappanevük szerint)
+  // A Céginformációk aloldalai (a mappanevük szerint). Az Alapítvány 2026-10-28 óta
+  // a Rólunk menüben van, és minden látogató látja, ezért nincs a listán.
   const CEGINFO_OLDALAK = [
     "altalanos_ceginformaciok",
     "kozerdeku_adatok",
@@ -36,7 +38,6 @@
     "projektek",
     "minosegpolitika",
     "partnerek",
-    "alapitvany",
     "adatigenyles_rendje",
     "eves_beszamolok",
     "archivum"
