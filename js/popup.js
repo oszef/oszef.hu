@@ -1,3 +1,6 @@
+// IDEIGLENESEN KIKAPCSOLVA (2026-11-02): jelenleg nincs állásajánlat, ezért a popup nem jelenhet meg.
+// Visszakapcsolás: a lenti /* és */ sorok törlése. A HTML az index.html-ben, a stílus a css/popup.css-ben maradt.
+/*
 // A főoldalon megjelenő felugró hirdetés (popup) időzítését és bezárását vezérli.
 document.addEventListener("DOMContentLoaded", () => {
     // Ha az oldalon nincs popup elem (pl. egy aloldalon), a szkript itt leáll,
@@ -31,3 +34,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+*/
