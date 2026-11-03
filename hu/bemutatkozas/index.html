@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
+    <meta name="description" content="A SZEFO Közhasznú Nonprofit Zrt. bemutatkozása: 1953 óta biztosítunk munkalehetőséget megváltozott munkaképességű és fogyatékossággal élő embereknek textilipari és villamosipari gyártásban, valamint e-hulladék-kezelésben.">
+    <link rel="canonical" href="https://www.szefo.hu/hu/bemutatkozas/">
+
+    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
+    <meta property="og:title" content="Bemutatkozás">
+    <meta property="og:description" content="A SZEFO Közhasznú Nonprofit Zrt. bemutatkozása: 1953 óta biztosítunk munkalehetőséget megváltozott munkaképességű és fogyatékossággal élő embereknek textilipari és villamosipari gyártásban, valamint e-hulladék-kezelésben.">
+    <meta property="og:image" content="https://www.szefo.hu/img/hero/hero-1.webp">
+    <meta property="og:url" content="https://www.szefo.hu/hu/bemutatkozas/">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+
+     <!-- Böngészőfül ikonja (favicon) és az oldal kinézetét meghatározó CSS-stíluslap betöltése -->
+     <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
+     <link rel="stylesheet" href="../../css/bootstrap-icons/bootstrap-icons.css">
+     <link rel="stylesheet" href="../../css/style.css">
+     <!-- IDEIGLENES: a Céginformációk aloldalai frissítés alatt; a látogató értesítést lát, a fejlesztő helyben mindent (törléskor ezt a két sort is töröld) -->
+     <script src="../../js/company_inf_filter.js"></script>
+     <title>Bemutatkozás | SZEFO Közhasznú Nonprofit Zrt.</title>
+</head>
+<body>
+      <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
+      <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
+    <header class="site-header">
+        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
+        <div class="navbar">
+            <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </div>
+
+        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
+        <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="../../index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK ALMENÜ: a Bemutatkozás, a Történetünk, az E-hulladék és az Alapítvány aloldalakra mutató lenyíló menüpont -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../bemutatkozas/index.html" aria-current="page">Bemutatkozás</a>
+                            </li>
+                            <li>
+                                <a href="../tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="../e-hulladek/index.html">E-hulladék</a>
+                            </li>
+                            <li>
+                                <a href="../alapitvany/index.html">Alapítvány</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="../kapcsolat/index.html">Kapcsolat</a>
+                    </li>
+                    <li>
+                        <a href="../karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="../klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+
+                 <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
+                 <div class="search search--button-only">
+                    <a class="search-link" href="../kereses/index.html">
+                        Keresés
+                    </a>
+                    </div>
+            </div>
+        </nav>
+
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+
+
+
+<main id="main-content">
+  <!-- FŐ TARTALOM: a SZEFO bemutatkozása (alapítás, küldetés, filozófia, ipari tevékenységek, értékek, regionális jelenlét) -->
+  <section class="info-page intro-page" aria-labelledby="intro-title">
+
+    <!-- BEVEZETŐ: az alapítás és az alapítók öröksége -->
+    <section class="info-block section-card" aria-labelledby="intro-title">
+      <div class="info-content">
+        <span class="intro-eyebrow">Rólunk</span>
+        <h1 id="intro-title">Bemutatkozás</h1>
+        <p class="intro-lead">Értéket teremtünk – együtt.</p>
+
+        <p><strong>1953-ban látássérült emberek alapították</strong> a SZEFO-t a Magyar Vakok és Gyengénlátók Országos Szövetsége Délmagyarországi csoportjának kezdeményezésére. Céljuk az volt, hogy a vak és gyengénlátó emberek méltó körülmények között dolgozhassanak.</p>
+
+        <p>Az alapítók küldetése ma is meghatározza működésünket. Az emberi méltóság tisztelete, a munka megbecsülése és az egymás iránti felelősségvállalás ma is alapvető értékeink.</p>
+      </div>
+    </section>
+
+    <!-- KÜLDETÉSÜNK -->
+    <section class="info-block section-card" aria-labelledby="intro-mission-title">
+      <div class="info-content">
+        <h2 id="intro-mission-title">Küldetésünk</h2>
+
+        <p>A SZEFO Közhasznú Nonprofit Zrt. küldetése több mint <strong>70 éve változatlan</strong>: <strong>megváltozott munkaképességű és fogyatékossággal élő emberek</strong> számára biztosítunk munkalehetőséget, szakmai támogatást és biztonságos munkakörülményeket. Segítjük <strong>foglalkozási rehabilitációjukat, társadalmi beilleszkedésüket és esélyegyenlőségüket</strong>.</p>
+
+        <p>Magyarország egyik legrégebbi rehabilitációs foglalkoztatójaként olyan <strong>befogadó munkahely</strong> kialakítására törekszünk, ahol a különböző képességű emberek egyaránt megmutathatják szakmai tudásukat.</p>
+      </div>
+    </section>
+
+    <!-- FILOZÓFIÁNK -->
+    <section class="info-block section-card" aria-labelledby="intro-philosophy-title">
+      <div class="info-content">
+        <h2 id="intro-philosophy-title">Filozófiánk</h2>
+
+        <p>Hiszünk abban, hogy mindenki értékes tudással és képességekkel járulhat hozzá a közös sikerekhez. Fontos számunkra, hogy munkatársaink megbecsülést és lehetőséget kapjanak arra, hogy megmutassák, mire képesek és megtapasztalják, hogy <strong>munkájuk valódi értéket teremt</strong>.</p>
+      </div>
+    </section>
+
+    <!-- TÁRSADALMI FELELŐSSÉGVÁLLALÁS ÉS IPARI TERMELÉS -->
+    <section class="info-block section-card" aria-labelledby="intro-csr-title">
+      <div class="info-content">
+        <h2 id="intro-csr-title">Társadalmi felelősségvállalás és ipari termelés</h2>
+
+        <p>A társadalmi felelősségvállalás működésünk alapja. Ipari tevékenységünk nem csupán gazdasági értéket teremt, hanem közhasznú küldetésünk megvalósításának eszköze. Minőségi termékeket állítunk elő, megbízható partneri kapcsolatokat építünk, és közben több száz megváltozott munkaképességű ember számára biztosítunk értékteremtő munkát.</p>
+      </div>
+    </section>
+
+    <!-- IPARI TEVÉKENYSÉGEINK: textilipari gyártás, villamosipari gyártás, hulladékgazdálkodás -->
+    <section class="info-block section-card" aria-labelledby="intro-industry-title">
+      <div class="info-content">
+        <h2 id="intro-industry-title">Ipari tevékenységeink</h2>
+
+        <p>Három fő tevékenységi területünk a textilipari gyártás, a villamosipari gyártás, valamint az elektromos és elektronikai hulladékok kezelése.</p>
+
+        <h3>1. Textilipari gyártás – több mint 70 év szakértelem</h3>
+        <p>Nagy hagyományokkal rendelkezünk a kötött-hurkolt felsőruházati termékek gyártásában. Korszerű kötöde-, valamint hímző- és konfekciótechnológia biztosítja versenyképességünket. Sokoldalú gyártási kapacitásunkkal a termékfejlesztéstől a késztermék előállításáig támogatjuk partnereinket.</p>
+        <p>Több mint két évtizedes nemzetközi beszállítói tapasztalattal rendelkezünk. Prémium divatmárkák számára évente több százezer kötöttáru- és ruházati terméket gyártunk, a magas minőségi elvárásoknak megfelelően.</p>
+
+        <h3>2. Villamosipari gyártás – precizitás és megbízhatóság</h3>
+        <p>Több mint 35 éve végzünk villamosipari bérgyártást. Tevékenységünkben fontos szerepet kapnak a precíz kézi összeszerelést és speciális munkafolyamatokat igénylő műveletek.</p>
+        <p>Több évtizedes beszállítói tapasztalattal rendelkezünk a villamosiparban: áramelosztó- és szabályozókészülékek, elektromos kapcsolók gyártásában veszünk részt.</p>
+        <p>Nagy volumenű gyártási kapacitásunkkal évente mintegy 30 millió készülék előállításához járulunk hozzá.</p>
+
+        <h3>3. Hulladékgazdálkodás és -kezelés – értékmentés felelős szemlélettel</h3>
+        <p>Elektromos és elektronikai hulladékok szakszerű kézi bontását végezzük. A hulladék megfelelő kezelésével hozzájárulunk az értékes nyersanyagok visszanyeréséhez és a hulladékok újrahasznosításához.</p>
+        <p>Ez a tevékenység egyszerre szolgálja a felelős erőforrás-felhasználást és az értékteremtő foglalkoztatást.</p>
+      </div>
+    </section>
+
+    <!-- ÉRTÉKEINK ÉS ERŐSSÉGEINK: hat rövid kártya (asztalon két oszlopban, mobilon egy oszlopban) -->
+    <section class="info-block section-card" aria-labelledby="intro-values-title">
+      <div class="info-content">
+        <h2 id="intro-values-title">Értékeink és erősségeink</h2>
+
+        <div class="intro-values">
+          <div class="intro-value">
+            <h3>Szakértelem és tapasztalat</h3>
+            <p>Több évtizedes gyártási tapasztalatunkra és felkészült munkatársainkra építünk a textiliparban és a villamosiparban egyaránt.</p>
+          </div>
+
+          <div class="intro-value">
+            <h3>Minőség és megbízhatóság</h3>
+            <p>Korszerű technológiával, szabályozott munkafolyamatokkal és következetes minőségellenőrzéssel dolgozunk. Irányítási rendszereink között szerepel az ISO 9001, az ISO 14001 és az ISO 45001 szabvány szerinti működés. Partnereink számára kiszámítható gyártási hátteret és hosszú távú együttműködést kínálunk.</p>
+          </div>
+
+          <div class="intro-value">
+            <h3>Komplex és rugalmas gyártási megoldások</h3>
+            <p>A kötöttáru-gyártásban a termékfejlesztéstől a konfekcionáláson át a késztermékig minden munkafolyamatot egy helyen végzünk. Teljes gyártási folyamatot vagy annak meghatározott részét is átvállaljuk.</p>
+            <p>Kis-, közepes és nagyobb szériák gyártását egyaránt vállaljuk. Speciális kézi munkát, precíz összeszerelést vagy nehezen automatizálható műveleteket igénylő feladatokban is partnerek vagyunk.</p>
+          </div>
+
+          <div class="intro-value">
+            <h3>Stabil partnerkapcsolatok</h3>
+            <p>Hosszú távú hazai és nemzetközi együttműködéseink a szakmai felkészültségre, a megbízhatóságra és a kölcsönös bizalomra épülnek.</p>
+          </div>
+
+          <div class="intro-value">
+            <h3>Felelős, fenntartható működés</h3>
+            <p>Működésünk során törekszünk az energia- és anyagtakarékos megoldásokra, a hulladék csökkentésére és környezetünk terhelésének mérséklésére. Felelősséget vállalunk munkatársainkért, partnereinkért és a környezetünkért.</p>
+          </div>
+
+          <div class="intro-value">
+            <h3>Minőségi munka, valódi társadalmi érték</h3>
+            <p>A SZEFO-val való együttműködés üzleti és társadalmi szempontból egyaránt értéket teremt. Partnereink megbízható gyártási hátteret és több évtizedes szakmai tapasztalatot kapnak, miközben fontos társadalmi ügyet is támogatnak: a megváltozott munkaképességű és fogyatékossággal élő emberek foglalkoztatását.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HELYI FOGLALKOZTATÁS, REGIONÁLIS JELENLÉT -->
+    <section class="info-block section-card" aria-labelledby="intro-regional-title">
+      <div class="info-content">
+        <h2 id="intro-regional-title">Helyi foglalkoztatás, regionális jelenlét</h2>
+
+        <p>Fontos számunkra, hogy a munkavégzés a lakóhelyhez közel is elérhető legyen. Szegedi központunk mellett Csongrád-Csanád és Békés vármegye több településén működő telephelyeinken és fióktelepeinken is biztosítunk munkalehetőséget megváltozott munkaképességű munkavállalók számára.</p>
+
+        <p>Regionális hálózatunk erősíti a helyi foglalkoztatást, és lehetőséget teremt arra, hogy munkatársaink saját közösségükben, lakóhelyükhöz közel végezzenek értékteremtő munkát.</p>
+      </div>
+    </section>
+
+    <!-- Vissza a főoldalra mutató link -->
+    <div class="mission-back">
+      <a class="mission-back-link" href="../../index.html" data-smooth-link>← Vissza a főoldalra</a>
+    </div>
+
+  </section>
+</main>
+
+ <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
+ <footer class="site-footer">
+        <!-- LÁBLÉC OSZLOPAI: cégnév, idézet és kapcsolat; a Céginformációk aloldalai; a közösségi oldalak (új lapon nyílnak) -->
+        <div class="site-footer-inner">
+            <div>
+                <h2>SZEFO Közhasznú Nonprofit Zrt.</h2>
+                <p>
+                    „A befogadó társadalom alapja a diszkrimináció-mentességgel párosuló pozitív cselekvés.” (Madridi nyilatkozat)
+                </p>
+
+                <h3 class="site-footer-subtitle">Kapcsolat</h3>
+                <p>6724 Szeged, Tavasz utca 2.</p>
+                <p><a href="tel:+3662554054">+36 62 554 054</a></p>
+                <p><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></p>
+            </div>
+
+            <div>
+                <h2>Céginformációk</h2>
+                <ul>
+                    <li><a href="../altalanos_ceginformaciok/index.html">Általános céginformációk</a></li>
+                    <li><a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a></li>
+                    <li><a href="../kepzo_intezmenyek/index.html">Képző intézmények</a></li>
+                    <li><a href="../projektek/index.html">Projektek</a></li>
+                    <li><a href="../minosegpolitika/index.html">Minőségpolitika</a></li>
+                    <li><a href="../partnerek/index.html">Partnerek</a></li>
+                    <li><a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a></li>
+                    <li><a href="../eves_beszamolok/index.html">Éves beszámolók</a></li>
+                    <li><a href="../archivum/index.html">Archívum</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Közösségi média</h2>
+                <ul class="site-footer-social">
+                    <li>
+                        <a href="https://www.facebook.com/szefononprofitzrt" target="_blank" rel="noopener noreferrer" aria-label="Facebook (új lapon nyílik)">
+                            <span class="site-footer-social-icon site-footer-social-icon--facebook" aria-hidden="true"><i class="bi bi-facebook"></i></span>
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/szegediszefo/?hl=de" target="_blank" rel="noopener noreferrer" aria-label="Instagram (új lapon nyílik)">
+                            <span class="site-footer-social-icon site-footer-social-icon--instagram" aria-hidden="true"><i class="bi bi-instagram"></i></span>
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tiktok.com/@szefokarrier" target="_blank" rel="noopener noreferrer" aria-label="TikTok (új lapon nyílik)">
+                            <span class="site-footer-social-icon site-footer-social-icon--tiktok" aria-hidden="true"><i class="bi bi-tiktok"></i></span>
+                            TikTok
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/szefo-nonprofit-zrt" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (új lapon nyílik)">
+                            <span class="site-footer-social-icon site-footer-social-icon--linkedin" aria-hidden="true"><i class="bi bi-linkedin"></i></span>
+                            LinkedIn
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+     <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
+     <div class="site-footer-bottom">
+         <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
+         <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
+     </div>
+
+ </footer>
+
+  <!-- JavaScript-fájl: a menü és az oldal egyéb interaktív elemeinek működését biztosítja -->
+     <script src="../../js/script.js"></script>
+</body>
+</html>

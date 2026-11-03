@@ -119,7 +119,7 @@
                         <a href="index.html" aria-current="page">Kezdőlap</a>
                     </li>
 
-                    <!-- RÓLUNK ALMENÜ: a Történetünk, a Küldetésünk, az E-hulladék és az Alapítvány aloldalakra mutató lenyíló menüpont -->
+                    <!-- RÓLUNK ALMENÜ: a Bemutatkozás, a Történetünk, az E-hulladék és az Alapítvány aloldalakra mutató lenyíló menüpont -->
                     <li class="dropdown">
                         <button
                             class="dropdown-toggle"
@@ -131,10 +131,10 @@
 
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="hu/tortenetunk/index.html">Történetünk</a>
+                                <a href="hu/bemutatkozas/index.html">Bemutatkozás</a>
                             </li>
                             <li>
-                                <a href="hu/kuldetesunk/index.html">Küldetésünk</a>
+                                <a href="hu/tortenetunk/index.html">Történetünk</a>
                             </li>
                             <li>
                                 <a href="hu/e-hulladek/index.html">E-hulladék</a>
@@ -352,40 +352,54 @@
             </ul>
         </section>
 
-        <!-- RÓLUNK SZEKCIÓ: rövid bemutatkozó szöveg a cégről, illusztráló képpel -->
+        <!-- RÓLUNK SZEKCIÓ: rövid bemutatkozó szöveg a cégről, illusztráló képpel; a Bővebben gomb a Bemutatkozás aloldalra visz -->
         <section class="about-section" aria-labelledby="about-title">
             <div class="about-inner">
                 <div class="about-text">
                     <h2 id="about-title">Rólunk</h2>
-                    <h3>Több mint 70 éve vagyunk jelen</h3>
+                    <h3>Értéket teremtünk – együtt</h3>
 
-                    <!-- Mobilon (768 px alatt) csak a "short-text" bekezdés látszik, asztali nézetben a "full-text" bekezdések (lásd style.css, 10. és 16. pont) -->
-                    <p class="short-text">
-                        1953 óta több ezer megváltozott munkaképességű embernek biztosítottunk munkalehetőséget.
-                        <strong>Rehabilitációs foglalkoztatóként</strong> működésünk szerves része a
-                        <strong>társadalmi felelősségvállalás</strong> és <strong>értékteremtés</strong>.
+                    <!-- Mobilon (768 px alatt) csak a két cím, az első kiemelt mondat és a gomb látszik, a "full-text" elemek csak asztali nézetben (lásd style.css, 10. és 15. pont) -->
+                    <p><strong>Több mint 70 éve dolgozunk egy befogadóbb munkahelyért.</strong></p>
+
+                    <p class="full-text">
+                        <strong>1953-ban</strong> vak és gyengénlátó emberek alapították a SZEFO-t azzal a céllal,
+                        hogy a látássérült emberek is méltó körülmények között dolgozhassanak.
                     </p>
 
                     <p class="full-text">
-                        1953 óta több ezer megváltozott munkaképességű embernek biztosítottunk munkalehetőséget.
-                        <strong>Rehabilitációs foglalkoztatóként</strong> működésünk szerves része a
-                        <strong>társadalmi felelősségvállalás</strong> és <strong>értékteremtés</strong>.
+                        <strong>Küldetésünk</strong> az alapítás óta meghatározza működésünket. A SZEFO Közhasznú
+                        Nonprofit Zrt. <strong>megváltozott munkaképességű és fogyatékossággal élő emberek</strong>
+                        számára biztosít munkalehetőséget, szakmai támogatást és befogadó munkakörnyezetet. Segíti
+                        <strong>foglalkozási rehabilitációjukat, társadalmi beilleszkedésüket és esélyegyenlőségüket</strong>.
                     </p>
 
                     <p class="full-text">
-                        <strong>Divat- és kötöttáru-gyártással, villamosipari bérgyártással</strong> és
-                        <strong>e-hulladék-kezeléssel</strong> foglalkozunk. Korszerű technológia, sok évtizedes
-                        szakértelem és gyártási tapasztalat, valamint teljes körű gyártási kapacitás biztosítja
-                        versenyképességünket.
+                        <strong>Közhasznú tevékenységünket, társadalmi küldetésünket értékteremtő munkával valósítjuk meg</strong>
+                        több száz megváltozott munkaképességű ember számára biztosítva munkalehetőséget.
                     </p>
 
                     <p class="full-text">
-                        <strong>Nemzetközi és hazai partnereink</strong> számára megbízható gyártási hátteret kínálunk
-                        ipari bérgyártás és kötöttárugyártás területén a fejlesztéstől a késztermékig.
+                        <strong>Több évtizedes szakmai tapasztalattal</strong> rendelkező, megbízható gyártóként komplex és
+                        rugalmas megoldásokkal támogatjuk hazai és nemzetközi partnereink sikerét három ipari termelési
+                        területen:
                     </p>
+
+                    <ul class="szefo-list full-text">
+                        <li><strong>Textilipari gyártás</strong> – kötött-hurkolt felsőruházati és egyéb textilipari termékek előállítása</li>
+                        <li><strong>Villamosipari bérgyártás</strong> – elektromos kapcsolók és alkatrészek precíziós összeszerelése</li>
+                        <li><strong>Hulladékgazdálkodás</strong> – elektronikai (e-) hulladékok bontása és kezelése</li>
+                    </ul>
+
+                    <p class="full-text">
+                        Szegedi központunk és regionális telephelyhálózatunk révén a lakóhelyhez közeli foglalkoztatást
+                        is erősítjük.
+                    </p>
+
+                    <p class="full-text"><strong>Értéket teremtünk – munkatársainknak, partnereinknek.</strong></p>
 
                     <a
-                        href="hu/tortenetunk/index.html"
+                        href="hu/bemutatkozas/index.html"
                         class="about-btn"
                         data-smooth-link
                     >
@@ -660,28 +674,6 @@
             </div>
         </section>
 
-        <!-- VÍZIÓNK: a cég küldetésének rövid összefoglalása, képpel és a Küldetésünk aloldalra mutató gombbal -->
-        <section class="vision-section" aria-labelledby="vision-title">
-            <div class="vision-container">
-                <div class="vision-image">
-                    <img src="img/main/vizionk.webp" alt="SZEFO vízióját bemutató kép" width="512" height="512" loading="lazy">
-                </div>
-
-                <div class="vision-content">
-                    <h2 id="vision-title">Víziónk</h2>
-
-                    <p>
-                        1953 óta küldetésünk, hogy valódi értéket teremtsünk:
-                        méltó munkalehetőséget biztosítunk megváltozott munkaképességű embereknek,
-                        és támogatjuk őket abban, hogy aktív, megbecsült tagjai legyenek a társadalomnak.
-                    </p>
-
-                    <a href="hu/kuldetesunk/index.html" class="vision-btn" data-smooth-link>
-                        Bővebben
-                    </a>
-                </div>
-            </div>
-        </section>
             <!-- ÜZEMEGYSÉGEK: kártyák a gyártási üzemegységekről (kötöde, vasaló, varroda stb.), a Tevékenységek kártyáival azonos felcsúszó címsávval és "Részletek" gombbal megnyitható részletes leírással -->
             <section class="units-section" aria-labelledby="units-title">
             <div class="units-header">

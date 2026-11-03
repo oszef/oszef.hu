@@ -16,38 +16,93 @@ Szándékosan hagytam eszközmentesen (nincs "build lépés", vagyis nem kell
 a feltöltés előtt semmit legenerálni vagy lefordítani), hogy programozói
 háttér nélkül is módosítható és költségmentesen üzemeltethető legyen.
 
+Nincs közös sablon sem: a fejléc a menüvel és a lábléc **minden oldalon
+külön-külön szerepel**. Ha a menün vagy a láblécen változtatsz, mind a 21
+oldalon ugyanúgy át kell írni.
+
 ## Mi merre található
 
 - `index.html` - a kezdőlap. Ez a gyökérben van, nem a `hu/` mappában.
 - `hu/` - az összes többi aloldal, mindegyiknek saját mappája és saját
-  `index.html`-je van (pl. `hu/kapcsolat/index.html`).
+  `index.html`-je van (pl. `hu/kapcsolat/index.html`). A listát lásd lent.
 - `css/` - a kinézetért felelős stíluslapok. A `style.css` a közös, fő
   stíluslap, a többi (`popup.css`, `news_blog.css`, `pdf_style.css`,
   `search_style.css`, `magazin.css`) egy-egy konkrét oldalrészhez
-  tartozik.
-- `js/` - amitől "életre kel" az oldal (menü, popup, keresés stb.), lásd
+  tartozik. A `css/bootstrap-icons/` a Bootstrap Icons ikonkészlet
+  (v1.13.1) helyi másolata - minden oldal betölti, a lábléc közösségi
+  ikonjai is ebből jönnek.
+- `js/` - amitől "életre kel" az oldal (menü, keresés stb.), lásd
   lentebb részletesen.
-- `img/` - a képek, témák szerint almappákba rendezve, webp formátumban
-  (ez egy tömörebb, gyorsabban betöltődő képformátum).
-- `doc/` - a letölthető PDF dokumentumok.
+- `img/` - a képek, témák szerint almappákba rendezve.
+- `doc/` - a letölthető PDF dokumentumok, oldalanként almappákban.
 - `robots.txt` és `sitemap.xml` - a keresőmotoroknak szóló technikai
   fájlok: a `robots.txt` szabályozza, mely részeket járhatják be a
   keresőrobotok, a `sitemap.xml` pedig felsorolja, milyen URL-ek
   tartoznak az oldalhoz.
+- `.github/workflows/deploy.yml` - az élesítés (feltöltés a tárhelyre),
+  lásd lentebb.
+
+## Az oldalak
+
+A felső menü (asztalon vízszintes sáv, 1024 px-ig kihúzható panel):
+
+- **Kezdőlap** - `index.html`
+- **Rólunk** (lenyíló menü):
+  - Bemutatkozás - `hu/bemutatkozas/`
+  - Történetünk - `hu/tortenetunk/`
+  - E-hulladék - `hu/e-hulladek/`
+  - Alapítvány - `hu/alapitvany/`
+- **Híreink** - `hu/hireink/`
+- **Kapcsolat** - `hu/kapcsolat/`
+- **Karrier** - `hu/karrier/`
+- **Klaszter** - `hu/klaszter/`
+- **Keresés** gomb - `hu/kereses/`
+
+A lábléc minden oldalon azonos, három oszlopból áll: cégnév, idézet és
+elérhetőségek; a **Céginformációk** aloldalai; a közösségi oldalak
+(Facebook, Instagram, TikTok, LinkedIn). A Céginformációk a felső
+menüben nem szerepel, csak a láblécben:
+
+- Általános céginformációk - `hu/altalanos_ceginformaciok/`
+- Közérdekű adatok - `hu/kozerdeku_adatok/`
+- Képző intézmények - `hu/kepzo_intezmenyek/`
+- Projektek - `hu/projektek/`
+- Minőségpolitika - `hu/minosegpolitika/`
+- Partnerek - `hu/partnerek/`
+- Adatigénylés rendje - `hu/adatigenyles_rendje/`
+- Éves beszámolók - `hu/eves_beszamolok/`
+- Archívum - `hu/archivum/`
+
+Menüből nem, csak egy másik oldalról elérhető:
+
+- Pályázat (NEAO-KP-1-2022/8-000016) - `hu/palyazat/`, az Alapítvány
+  oldal dokumentumai közül.
+- SZEFO Magazin - `hu/szefo_magazin/`, a Híreink oldalról.
 
 ## A JavaScript fájlok, dióhéjban
 
 - `script.js` - a közös logika: a menü (asztalon felső sáv, 1024 px-ig
-  kihúzható offcanvas panel), a kezdőlapi képváltogató (carousel), az
-  idővonal, az üzletági és karrieres felugró ablakok (modálok), a
-  galériák.
+  kihúzható offcanvas panel), a kezdőlapi képváltogató (carousel), a
+  számlálók, az idővonal, az üzletági és karrieres felugró ablakok
+  (modálok), a galériák.
 - `news_blog.js` - a Hírek/Blog oldal, benne magával a cikkek szövegével
   is.
 - `search.js` - a keresőoldal logikája.
 - `search_data.js` - a keresés "adatbázisa" (egy egyszerű lista a
   kereshető oldalakról). Ennek a `search.js` előtt kell betöltődnie.
 - `downloader.js` - ez intézi a PDF-letöltéseket a dokumentumos oldalakon.
-- `popup.js` - a kezdőlapon felugró ablak időzítését végzi.
+- `popup.js` - a kezdőlapon felugró álláshirdetés időzítését végezné.
+  **Jelenleg ki van kapcsolva**, mert nincs aktuális állásajánlat: a
+  fájl teljes kódja megjegyzésben (`/* ... */`) van. Visszakapcsolás: a
+  fájl elején a `/*`, a végén a `*/` sort kell törölni. A popup HTML-je
+  az `index.html`-ben, a stílusa a `css/popup.css`-ben megmaradt.
+- `company_inf_filter.js` - **ideiglenes** szűrő, amíg a Céginformációk
+  adatai frissülnek: a látogató a 9 Céginformációk-aloldalon a
+  "Tartalmaink frissítés alatt" értesítést látja a tartalom helyett. Csak
+  megjelenítési szűrő, a lapok a szerveren továbbra is elérhetők, ezért
+  bizalmas adat nem kerülhet rájuk. Minden oldal `<head>` része betölti.
+  Kikapcsolás: a fájl törlése, és mind a 21 oldal `<head>`-jéből a rá
+  mutató két sor (megjegyzés + `<script>`) törlése.
 
 ## Hogyan nézheted meg a saját gépeden
 
@@ -72,32 +127,45 @@ A `-c-1` azért kell, hogy a böngésző ne gyorsítótárazza (ne "jegyezze
 meg") a fájlokat - enélkül előfordulhat, hogy egy CSS vagy JS módosítás
 után is még a régi változatot látod.
 
+Helyi gépen (`localhost`, `127.0.0.1`, dupla kattintás) a Céginformációk
+szűrője nem kapcsol be, ott minden tartalom látszik. A látogatói nézet
+így nézhető meg: a cím végére `?fejleszto=0` (vissza: `?fejleszto=1`) -
+a böngésző megjegyzi a választást.
+
 ## Hogyan kerül fel élesbe
 
-Az oldal csak fájlokból áll, nincs semmilyen külön "build" lépés - amit
-a tárhelyre feltöltesz, az fog futni. Elvben bármilyen tárhelyre
-feltölthető lenne FTP-vel vagy SFTP-vel is, de a szefo.hu élesítése
-ténylegesen a cPanel "Git Version Control" funkcióján keresztül, push-ra
-történő automatikus telepítéssel (push-to-deploy) megy: a gyökérben lévő
-`.cpanel.yml` fájl írja elő, hogy egy git push után a cPanel átmásolja a
-fájlokat az élő könyvtárba.
+Az élesítést a GitHub Actions végzi, a `.github/workflows/deploy.yml`
+alapján: a fájlokat FTPS-en (titkosított FTP-n) tölti fel a tárhelyre.
 
-Egy fontos apróság: a `.cpanel.yml`-ben használt másolóparancs a `*`
-minta miatt nem másolja át a ponttal kezdődő ("rejtett") fájlokat - ha
-valaha ilyesmit vennél fel a gyökérbe (pl. egy jövőbeli `.htaccess`-t),
-arról külön kellene gondoskodni, mert automatikusan nem kerülne fel
-élesbe.
+- **Kézzel kell indítani**: a GitHub oldalán az *Actions* fül → *Deploy
+  (FTPS)* → *Run workflow*. Automatikusan, egy push után nem indul el
+  (a `push` indítás a fájlban ki van kommentelve, később bekapcsolható).
+- Indításkor a **Próbafutás** pipa alapból be van jelölve: ilyenkor csak
+  kiírja, mit töltene fel vagy törölne, de nem módosít semmit. Valódi
+  feltöltéshez ki kell venni a pipát.
+- Csak a megváltozott fájlokat tölti fel, és **amit a repóból törölsz,
+  azt a szerverről is törli** - kézzel semmit nem kell törölni.
+- Nem tölti fel (és a szerveren nem is törli) a következőket: a `.git`
+  fájlokat, a `.github/` és a `.claude/` mappát, a `README.md`-t, a
+  `.well-known/` mappát és a `.ftpquota` fájlt.
+- A belépési adatok a GitHub tároló titkos beállításai (*Secrets*)
+  között vannak, a fájlokban sehol nem szerepelnek, és ne is kerüljenek
+  oda.
 
-Feltöltés/telepítés után érdemes a böngészőben gyorsítótár nélkül
-frissíteni (Ctrl+F5), nehogy a régi CSS maradjon betöltve.
+A korábbi cPanel-es telepítés (`.cpanel.yml`) 2026. október 15-én
+megszűnt, a fájl már nincs a repóban. `.htaccess` fájl sincs.
+
+Feltöltés után érdemes a böngészőben gyorsítótár nélkül frissíteni
+(Ctrl+F5), nehogy a régi CSS maradjon betöltve.
 
 ## Ha módosítani szeretnél valamit
 
-**Színek, sarokkerekítés, árnyékok.** Ezek nincsenek szétszórva a
-fájlban, hanem egy helyen, a `style.css` legelején, a `:root` blokkban
-vannak összegyűjtve. Ha egy színt vagy méretet módosítasz, mindig itt
-tedd, ne az egyes szabályoknál külön-külön - így egyszerre, egységesen
-változik az egész oldalon.
+**Színek, méretek, sarokkerekítés, árnyékok, listák.** Ezek nincsenek
+szétszórva a fájlban, hanem egy helyen, a `style.css` legelején, a
+`:root` blokkban vannak összegyűjtve (a tartalmi listák nyíl jelölője is).
+Ha egy színt vagy méretet módosítasz, mindig itt tedd, ne az egyes
+szabályoknál külön-külön - így egyszerre, egységesen változik az egész
+oldalon.
 
 **Gombok és kártyák.** A `style.css`-ben van egy "Gombok és kártyák -
 közös alap" szakasz, ide vannak összegyűjtve a közös tulajdonságok, és a
@@ -106,27 +174,37 @@ adsz hozzá, inkább ehhez a listához vedd fel az osztálynevét, minthogy
 újra lemásold a teljes stílust.
 
 **Töréspontok** (vagyis hogy hány pixelnél vált át az oldal mobil
-nézetre). A ténylegesen használt méretek: 1024px, 768px és 420px. Új
-szabályt ezekhez igazíts, ne vezess be egy negyediket.
+nézetre). A fő méretek: 1024px (tablet), 768px (mobil) és 420px (kis
+mobil); 1025px felett jelenik meg az asztali menüsáv. Néhány elemnek van
+saját, finomhangoló töréspontja is (480, 600, 640, 1199 és 1240px). Új
+szabályt lehetőleg a három fő mérethez igazíts.
 
-**Képek.** Minden kép webp formátumú. Az elérési útjuk mindig ahhoz a
+**Képek.** A képek webp formátumúak; kivétel a böngészőfül ikonja
+(`img/fav/szefo_fav.PNG`), a Karrier oldal videója (mp4) és egy nem
+használt png az `img/palyazat/` mappában. Az elérési útjuk mindig ahhoz a
 HTML fájlhoz képest relatív, amelyikben szerepelnek: a gyökérből
 `./img/...`, egy `hu/valami/index.html`-ből pedig `../../img/...`. Új
 képnél tegyél rá `loading="lazy"` attribútumot, hogy csak akkor
-töltődjön be, amikor a látogató tényleg odagörget.
+töltődjön be, amikor a látogató tényleg odagörget (kivéve, ha a kép az
+oldal tetején, azonnal látszik).
 
-**Keresés.** A `search_data.js` kézzel karbantartott lista. Ha új oldalt
-veszel fel a honlapra, ide is fel kell venni, különben a keresőben nem
-fog előjönni. Az URL-ek a `hu/kereses/index.html`-hez képest relatívak.
+**Új oldal felvétele** - ezekre kell figyelni:
+
+1. Új mappa a `hu/` alatt, benne `index.html` (érdemes egy hasonló
+   meglévő oldalt lemásolni).
+2. A menübe és (ha kell) a láblécbe mind a 21 oldalon fel kell venni.
+3. `search_data.js` - különben a keresőben nem jön elő. Az URL-ek a
+   `hu/kereses/index.html`-hez képest relatívak.
+4. `sitemap.xml` - új `<url>` sor, a mai dátummal.
 
 ## Akadálymentesség (WCAG)
 
 Igyekeztem odafigyelni arra, hogy az oldalt azok is tudják használni,
 akik például billentyűzettel navigálnak, képernyőolvasót használnak,
 vagy érzékenyek a villódzó/mozgó elemekre. Ez a WCAG (a nemzetközi
-akadálymentességi irányelvek) 2.1-es, AA szintű ajánlásai mentén készült
-- nem egy hivatalos, auditált tanúsítvány, de a fontosabb szempontokat
-lefedi:
+akadálymentességi irányelvek) 2.2-es, A és AA szintű ajánlásai mentén
+készült, az utolsó teljes ellenőrzés 2026. október 1-jén volt - nem egy
+hivatalos, auditált tanúsítvány, de a fontosabb szempontokat lefedi:
 
 - A menü és a felugró ablakok billentyűzetről is teljesen kezelhetők,
   a fókusz nem "szökik ki" belőlük, és Escape-re bezáródnak. Az asztali
@@ -144,12 +222,15 @@ lefedi:
   is érzékelik (`aria-expanded`, `aria-pressed`, `aria-selected`,
   `aria-hidden`).
 - Ha valaki a rendszerében a "csökkentett mozgás" beállítást
-  kérte, nálunk az animációk és a képváltogatók is leállnak.
+  kérte, nálunk az animációk és a képváltogatók is leállnak. A kezdőlapi
+  képváltogatónak szünet gombja is van.
 - Minden oldalon van "ugrás a tartalomra" link, és be van állítva, hogy
   az oldal nyelve magyar (`lang="hu"`).
 - Minden képnek van szöveges leírása (`alt` attribútum).
 
-Ha új elemet adsz a laphoz, három dolgot tarts szem előtt:
+Tudott, vállalt hiányosság: a Karrier oldal videójához nincs felirat.
+
+Ha új elemet adsz a laphoz, ezeket tartsd szem előtt:
 
 **1. A fókuszgyűrű legyen jól látható**, ne egy alig észrevehető,
 áttetsző karika. Erre már van kész megoldás:
@@ -210,12 +291,16 @@ bennragadna a tabsorrendben.
 
 - Nincs benne semmilyen build eszköz vagy csomagkezelő - ahogy fentebb
   írtam, ez tudatos döntés volt.
-- Van `sitemap.xml` és `robots.txt` a gyökérben, a keresőmotoroknak.
+- Van `sitemap.xml` és `robots.txt` a gyökérben, a keresőmotoroknak. A
+  Klaszter oldal szándékosan `noindex` (a keresők nem veszik fel), ezért
+  a sitemapben sem szerepel.
 - Az oldal egynyelvű (magyar). A `hu/` mappaszerkezet elvben lehetővé
   tenné más nyelvek felvételét is, de ahhoz a menüt is bővíteni kellene.
 - A pdf dokumentumok egy része nem értelmezhető a képernyőolvasóknak.
 - A `hu/szefo_magazin/` a SZEFO Magazin korábbi lapszámainak archívuma.
   A régi WordPress oldal `szefo-magazin` aloldalát váltja ki, a
-  lapszámokat megőrzési kötelezettség miatt tartjuk elérhetőn. A nyolc
-  PDF a `doc/szefo_magazin/` mappában van. A borítók (`img/szefo_magazin/`) a PDF-ek első oldalából készültek, ezért nem a régi oldal gyenge minőségű képei.
-
+  lapszámokat megőrzési kötelezettség miatt tartjuk elérhetőn. A borítók
+  (`img/szefo_magazin/`) a PDF-ek első oldalából készültek. **A nyolc
+  PDF-nek a `doc/szefo_magazin/` mappában kellene lennie, de ez a mappa
+  jelenleg nincs a repóban**, így a magazinoldal Megnyitás/Letöltés
+  gombjai addig nem működnek, amíg a PDF-ek fel nem kerülnek.

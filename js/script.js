@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initSmoothPageLinks,
     initCeoBlock,
     initFactsAnimation,
-    initVisionAnimation,
     initTimeline,
     initBusinessCards,
     initUnitsCards,
@@ -687,45 +686,7 @@ function initFactsAnimation() {
 }
 
 /* =========================================================
-   6. VÍZIÓ BLOKK ANIMÁCIÓ
-========================================================= */
-
-// A "Víziónk" szekció képét és szövegét görgetéskor, megjelenéskor
-// úsztatja be (a kép előbb, a szöveg egy kis késleltetéssel utána)
-function initVisionAnimation() {
-  const section = qs(".vision-section");
-  const image = qs(".vision-image");
-  const content = qs(".vision-content");
-
-  if (!section || !image || !content) return;
-
-  function reveal() {
-    image.classList.add("visible");
-
-    setTimeout(() => {
-      content.classList.add("visible");
-    }, 250);
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        reveal();
-        observer.unobserve(section);
-      });
-    },
-    {
-      threshold: 0.25
-    }
-  );
-
-  observer.observe(section);
-}
-
-/* =========================================================
-   7. TIMELINE
+   6. TIMELINE
 ========================================================= */
 
 // A Történetünk oldal idővonalát vezérli: az évszám gombokra (asztali nézet)
@@ -871,7 +832,7 @@ function initTimeline() {
 }
 
 /* =========================================================
-   8. KERESŐ ŰRLAP – ÁTIRÁNYÍTÁS
+   7. KERESŐ ŰRLAP – ÁTIRÁNYÍTÁS
 ========================================================= */
 
 // A fejlécben és a menüben lévő kis keresőmezőt a beírt szöveggel átirányítja
@@ -904,7 +865,7 @@ function initSearchForm() {
 }
 
 /* =========================================================
-   9. KÖZÖS KÁRTYA NYITÁS / ZÁRÁS
+   8. KÖZÖS KÁRTYA NYITÁS / ZÁRÁS
 ========================================================= */
 
 // Közös, újrafelhasználható "Bővebben / Bezárás" viselkedés az üzletág- és
@@ -1019,7 +980,7 @@ function initUnitsCards() {
 }
 
 /* =========================================================
-   10. BUSINESS / UNITS KÖZÖS MODAL
+   9. BUSINESS / UNITS KÖZÖS MODAL
 ========================================================= */
 
 // Az üzletág- és üzemegység-kártyák "Részletek" gombjára kattintva a kártyán
@@ -1109,7 +1070,7 @@ function initBusinessDetailsModal() {
 }
 
 /* =========================================================
-   11. E-HULLADÉK KÉPGALÉRIA
+   10. E-HULLADÉK KÉPGALÉRIA
 ========================================================= */
 
 // Az e-hulladék oldal képgalériáját vezérli: egy képre kattintva felugró,
@@ -1218,7 +1179,7 @@ function initEwasteGallery() {
 }
 
 /* =========================================================
-   12. KARRIER OLDAL – ÁLLÁSHIRDETÉS MODAL
+   11. KARRIER OLDAL – ÁLLÁSHIRDETÉS MODAL
 ========================================================= */
 
 // A Karrier oldalon egy álláshirdetés-kártya "Részletek" gombjára kattintva
