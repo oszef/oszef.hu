@@ -1484,6 +1484,32 @@ select:focus-visible,
     background: var(--color-surface);
 }
 
+/* Fotó: mindig a teljes kép látszik, semmi nem vágódik le. A keret a kép
+   saját arányát veszi fel: a kép szélessége 100%, a magasságát a böngésző a
+   width/height attribútumokból már betöltés előtt kiszámolja, így a kártya
+   nem ugrik, amikor a kép megérkezik.
+   A portré (1953) és a „Kép hamarosan” helykitöltő marad fix magasságú. */
+.timeline-image:not(.portrait):not(.no-photo) {
+    height: auto;
+}
+
+.timeline-image:not(.portrait):not(.no-photo) img {
+    display: block;
+    height: auto;
+}
+
+/* Négyzetes és álló fotó: keskenyebb, középre igazított keret,
+   hogy legfeljebb 480 px magas legyen (480 x 1, illetve 480 x 3/4) */
+.timeline-image.timeline-image--square {
+    width: min(100%, 480px);
+    margin-inline: auto;
+}
+
+.timeline-image.timeline-image--tall {
+    width: min(100%, 360px);
+    margin-inline: auto;
+}
+
 /* Amíg nincs feltöltve kép: szaggatott keretes helykitöltő, a hely megmarad */
 .timeline-image.no-photo {
     display: flex;
@@ -1599,6 +1625,85 @@ select:focus-visible,
     outline-offset: 3px;
 }
 
+/* Asztali/tablet évszám-sáv: a fő évszámok kiírt gombok, a köztes évek
+   vékony vonalkák (tickek), így mind a 23 év egy sorban elfér.
+   A tick maga a 24 px széles érinthető felület (--hit-target), a látható
+   vonalat a ::before rajzolja – ugyanúgy, mint a mobil .timeline-tick-nél. */
+.timeline-years-bar:not(.timeline-years-bar--ticks) {
+    align-items: center;
+    gap: 4px;
+}
+
+.year-item--tick,
+.year-item--tick.active,
+.year-item--tick[aria-pressed="true"] {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    width: var(--hit-target);
+    height: 32px;
+    padding: 0;
+    border-color: transparent;
+    border-radius: 6px;
+    background: transparent;
+    box-shadow: none;
+}
+
+.year-item--tick:hover {
+    transform: none;
+}
+
+.year-item--tick::before {
+    content: "";
+    width: 2px;
+    height: 14px;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.45);
+    transition: height var(--transition-fast), background var(--transition-fast);
+}
+
+.year-item--tick:hover::before {
+    height: 18px;
+    background: var(--color-primary-light);
+}
+
+.year-item--tick.active::before {
+    width: 3px;
+    height: 22px;
+    background: var(--color-primary-light);
+}
+
+.year-item--tick:focus-visible {
+    outline-offset: 0;
+}
+
+/* Évszám-buborék a tick alatt rámutatáskor és billentyűs fókuszkor.
+   A sáv és a kártya közti résben jelenik meg (tartalmat nem takar),
+   és a gomb része, így ráhúzott egérrel is látva marad. */
+.year-item--tick::after {
+    content: attr(aria-label);
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%);
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--font-size-small);
+    line-height: 1;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.year-item--tick:hover::after,
+.year-item--tick:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* TABLET */
 @media (max-width: 1024px) {
     .timeline-block {
@@ -1615,30 +1720,31 @@ select:focus-visible,
     .timeline-text {
         text-align: left;
     }
+
+    /* Évszám-sáv: kisebb gombok és rések, hogy a 23 év egy sorban maradjon */
+    .timeline-years-bar:not(.timeline-years-bar--ticks) {
+        gap: 2px;
+        padding: 0 8px 8px;
+    }
+
+    .year-item:not(.year-item--tick) {
+        padding: 6px 8px;
+        font-size: var(--font-size-small);
+    }
 }
 /* =========================================================
-   TIMELINE – MOBIL
-   - tick nav megmarad
-   - 1953 / Jelen fix felirat levéve
-   - aktuális évszámot a .timeline-current-year mutatja
-   - kártyás mobil layout
+   TIMELINE – TICK-SÁV (860 px-ig)
+   - a kiírt évszámos sáv itt már nem férne ki egy sorban,
+     ezért a mobil tick-sáv látszik (a szabályok változatlanok)
+   - a mobil kártyás layout továbbra is 768 px-től indul
 ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
 
   /* Desktop/tablet év-gombok eltűnnek mobilon */
   .timeline-years-bar:not(.timeline-years-bar--ticks) {
     display: none;
   }
-
-  /* Header: kompaktabb mobilon */
-  .timeline-header {
-    margin-top: calc(var(--navbar-height) + 18px);
-    margin-bottom: 10px;
-    padding: 0 16px;
-  }
-
-
 
   /* Mobil tick nav: sticky a navbar alatt */
   .timeline-years-bar--ticks {
@@ -1761,6 +1867,26 @@ select:focus-visible,
     scrollbar-width: thin;
     scrollbar-color: rgba(0,0,0,0.28) rgba(0,0,0,0.06);
   }
+}
+
+/* =========================================================
+   TIMELINE – MOBIL
+   - tick nav megmarad
+   - 1953 / Jelen fix felirat levéve
+   - aktuális évszámot a .timeline-current-year mutatja
+   - kártyás mobil layout
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* Header: kompaktabb mobilon */
+  .timeline-header {
+    margin-top: calc(var(--navbar-height) + 18px);
+    margin-bottom: 10px;
+    padding: 0 16px;
+  }
+
+
 
   /* Tartalom: ne legyen teljesen széltől szélig */
   .timeline-wrapper {
@@ -1795,6 +1921,15 @@ select:focus-visible,
 
   .timeline-image.portrait img {
     padding: 12px;
+  }
+
+  /* Fotó mobilon: a négyzetes és az álló kép legfeljebb 420 px magas legyen */
+  .timeline-image.timeline-image--square {
+    width: min(100%, 420px);
+  }
+
+  .timeline-image.timeline-image--tall {
+    width: min(100%, 315px);
   }
 
   .timeline-year-label {

@@ -127,33 +127,49 @@
                 <p>Korszerű fejlesztések, mérföldkövek, együttműködések</p>
             </div>
             
-            <!-- ÉVSZÁM NAVIGÁCIÓ (ASZTALI NÉZET): gombok az egyes évekhez; kattintásra az idővonal az adott időszak leírására vált -->
+            <!-- ÉVSZÁM NAVIGÁCIÓ (ASZTALI NÉZET): a fő évszámok kiírt gombok, a köztes évek vékony vonalkák (tickek, 24 px széles érinthető felülettel), hogy minden egy sorban elférjen; a tick évszáma a felolvasónak az aria-label, egérrel/billentyűvel ráállva buborékban is megjelenik. Kattintásra az idővonal az adott év leírására vált -->
             <nav class="timeline-years-bar" aria-label="Történeti évszámok">
                 <button class="year-item active" type="button" data-year="1953" aria-pressed="true">1953</button>
+                <button class="year-item year-item--tick" type="button" data-year="1954" aria-pressed="false" aria-label="1954"></button>
+                <button class="year-item year-item--tick" type="button" data-year="1957" aria-pressed="false" aria-label="1957"></button>
+                <button class="year-item year-item--tick" type="button" data-year="1959" aria-pressed="false" aria-label="1959"></button>
                 <button class="year-item" type="button" data-year="1960" aria-pressed="false">1960</button>
-                <button class="year-item" type="button" data-year="1970" aria-pressed="false">1970</button>
-                <button class="year-item" type="button" data-year="1990" aria-pressed="false">1990</button>
-                <button class="year-item" type="button" data-year="1993" aria-pressed="false">1993</button>
+                <button class="year-item year-item--tick" type="button" data-year="1961" aria-pressed="false" aria-label="1961"></button>
+                <button class="year-item year-item--tick" type="button" data-year="1967" aria-pressed="false" aria-label="1967"></button>
+                <button class="year-item year-item--tick" type="button" data-year="1970" aria-pressed="false" aria-label="1970"></button>
+                <button class="year-item" type="button" data-year="1975" aria-pressed="false">1975</button>
+                <button class="year-item year-item--tick" type="button" data-year="1983-1985" aria-pressed="false" aria-label="1983–85"></button>
+                <button class="year-item" type="button" data-year="1989" aria-pressed="false">1989</button>
+                <button class="year-item year-item--tick" type="button" data-year="1990" aria-pressed="false" aria-label="1990"></button>
+                <button class="year-item year-item--tick" type="button" data-year="1993" aria-pressed="false" aria-label="1993"></button>
                 <button class="year-item" type="button" data-year="1998" aria-pressed="false">1998</button>
                 <button class="year-item" type="button" data-year="2001" aria-pressed="false">2001</button>
-                <button class="year-item" type="button" data-year="2008" aria-pressed="false">2008</button>
+                <button class="year-item year-item--tick" type="button" data-year="2008" aria-pressed="false" aria-label="2008"></button>
                 <button class="year-item" type="button" data-year="2010" aria-pressed="false">2010</button>
-                <button class="year-item" type="button" data-year="2013" aria-pressed="false">2013</button>
-                <button class="year-item" type="button" data-year="2014" aria-pressed="false">2013–14</button>
-                <button class="year-item" type="button" data-year="2019" aria-pressed="false">2018–19</button>
-                <button class="year-item" type="button" data-year="2021" aria-pressed="false">2021</button>
-                <button class="year-item" type="button" data-year="jelen" aria-pressed="false">Jelen</button>
-                
+                <button class="year-item year-item--tick" type="button" data-year="2013" aria-pressed="false" aria-label="2013"></button>
+                <button class="year-item year-item--tick" type="button" data-year="2013-2014" aria-pressed="false" aria-label="2013–2014"></button>
+                <button class="year-item year-item--tick" type="button" data-year="2021" aria-pressed="false" aria-label="2021"></button>
+                <button class="year-item" type="button" data-year="2023" aria-pressed="false">2023</button>
+                <button class="year-item year-item--tick" type="button" data-year="2023-mohu" aria-pressed="false" aria-label="2023 (MOHU)"></button>
+                <button class="year-item" type="button" data-year="2026" aria-pressed="false">2026</button>
             </nav>
-          <!-- ÉVSZÁM NAVIGÁCIÓ (MOBIL NÉZET): ugyanaz, mint fent, kisebb képernyőn pontokkal (csúszkával) megjelenítve -->
+          <!-- ÉVSZÁM NAVIGÁCIÓ (MOBIL NÉZET): ugyanaz, mint fent, kisebb képernyőn minden év vonalkával (csúszkával) megjelenítve -->
           <nav class="timeline-years-bar timeline-years-bar--ticks"
                 aria-label="Történeti évszámok (mobil)"
                 data-start="1953"
-                data-end="Jelen">
+                data-end="2026">
             <div class="timeline-years-track" role="listbox" aria-label="Év kiválasztása">
                 <button class="timeline-tick active" type="button" data-year="1953" aria-label="1953"></button>
+                <button class="timeline-tick" type="button" data-year="1954" aria-label="1954"></button>
+                <button class="timeline-tick" type="button" data-year="1957" aria-label="1957"></button>
+                <button class="timeline-tick" type="button" data-year="1959" aria-label="1959"></button>
                 <button class="timeline-tick" type="button" data-year="1960" aria-label="1960"></button>
+                <button class="timeline-tick" type="button" data-year="1961" aria-label="1961"></button>
+                <button class="timeline-tick" type="button" data-year="1967" aria-label="1967"></button>
                 <button class="timeline-tick" type="button" data-year="1970" aria-label="1970"></button>
+                <button class="timeline-tick" type="button" data-year="1975" aria-label="1975"></button>
+                <button class="timeline-tick" type="button" data-year="1983-1985" aria-label="1983–85"></button>
+                <button class="timeline-tick" type="button" data-year="1989" aria-label="1989"></button>
                 <button class="timeline-tick" type="button" data-year="1990" aria-label="1990"></button>
                 <button class="timeline-tick" type="button" data-year="1993" aria-label="1993"></button>
                 <button class="timeline-tick" type="button" data-year="1998" aria-label="1998"></button>
@@ -161,10 +177,11 @@
                 <button class="timeline-tick" type="button" data-year="2008" aria-label="2008"></button>
                 <button class="timeline-tick" type="button" data-year="2010" aria-label="2010"></button>
                 <button class="timeline-tick" type="button" data-year="2013" aria-label="2013"></button>
-                <button class="timeline-tick" type="button" data-year="2014" aria-label="2013–14"></button>
-                <button class="timeline-tick" type="button" data-year="2019" aria-label="2018–19"></button>
+                <button class="timeline-tick" type="button" data-year="2013-2014" aria-label="2013–2014"></button>
                 <button class="timeline-tick" type="button" data-year="2021" aria-label="2021"></button>
-                <button class="timeline-tick" type="button" data-year="jelen" aria-label="Jelen"></button>
+                <button class="timeline-tick" type="button" data-year="2023" aria-label="2023"></button>
+                <button class="timeline-tick" type="button" data-year="2023-mohu" aria-label="2023 (MOHU)"></button>
+                <button class="timeline-tick" type="button" data-year="2026" aria-label="2026"></button>
             </div>
             <span class="timeline-current-year" aria-live="polite">1953</span>
         </nav>
@@ -176,25 +193,62 @@
                 <section class="timeline-section active" data-year="1953" aria-hidden="false">
                     <div class="timeline-block">
                         <div class="timeline-image portrait">
-                            <img src="../../img/timeline/jakso_plakett.webp" alt="A SZEFO alapításához kapcsolódó történeti dokumentum" width="733" height="1100">
+                            <img src="../../img/timeline/jakso_plakett.webp" alt="dr. Jáksó László, a Szegedi Fonalmentő Vállalat alapítója – archív portré" width="733" height="1100">
                         </div>
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">1953</span>
-                            <h2>Vállalat alapítása</h2>
+                            <h2>A Szegedi Fonalmentő alapítása</h2>
 
-                            <p><strong>A Szegedi Fonalmentő alapítása</strong></p>
+                            <p>1953. november 2-án dr. Jáksó László, a Magyar Vakok és Gyengénlátók Országos Szövetségének akkori elnöke 26 vak és gyengénlátó sorstársával megalapította a Szegedi Fonalmentő Vállalatot a délmagyarországi látássérült emberek foglalkoztatása céljából. A termelés egy kis pincehelyiségben indult el néhány keresztorsózógéppel és kézi szövőgéppel.</p>
+                        </div>
+                    </div>
+                </section>
 
-                            <p>
-                               Dr. Jáksó László, a Magyar Vakok és Gyengénlátók Országos Szövetségének akkori 
-                               elnöke 26 vak és gyengénlátó sorstársával megalapította a Szegedi Fonalmentő Vállalatot a délmagyarországi látássérült emberek foglalkoztatása céljából.
-                            </p>
+                <!-- 1954 -->
+                <section class="timeline-section" data-year="1954" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/fonalmentes_1954.webp" alt="Munkatársak fonalmaradékot válogatnak a szabadban – archív fotó" width="1040" height="783" loading="lazy" decoding="async">
+                        </div>
 
-                            <p>
-                                 A termelés egy kis Kálvária sugárúti pincehelyiségben indult el néhány 
-                                 keresztorsózó-géppel és kézi szövőgéppel.
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1954</span>
+                            <h2>Fonalmentés és orsózás</h2>
 
-                            </p>
+                            <p>A Fonalmentőben a könnyűipari vállalatoknál keletkezett textilhulladékot, fonalmaradékot válogatták, átorsózták, majd újrahasznosították. A vállalat saját késztermékeket is gyártott: megalakult kötőrészlege, ahol összesen 4 kézi síkkötőgépen készítettek „mentett” fonalból kötött termékeket.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1957 -->
+                <section class="timeline-section" data-year="1957" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/epitkezes_1957.webp" alt="A Tavasz utcai gyárépület építkezés közben – archív fotó" width="1040" height="692" loading="lazy" decoding="async">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1957</span>
+                            <h2>Építkezés</h2>
+
+                            <p>A Szegedi Fonalmentő Vállalat 1955-ben a Tavasz utca 2. szám alatti üresen álló épületbe költözött. Majd 1957-ben elkezdődtek a felújítások és építkezések. A modern, emeletes, légfűtéses gyárépület építési munkálatait 1959-ben fejezték be.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1959 -->
+                <section class="timeline-section" data-year="1959" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/fonalfeldolgozo_1959.webp" alt="Orsózógépek sora a fonalfeldolgozó üzemben – archív fotó" width="1040" height="695" loading="lazy" decoding="async">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1959</span>
+                            <h2>Szegedi Fonalfeldolgozó Vállalat</h2>
+
+                            <p>1959. szeptembertől a Fonalmentő Vállalat hivatalos cégneve Szegedi Fonalfeldolgozó Vállalatra változott. Már 300 munkavállalóval folyt a termelés, a megváltozott munkaképességű dolgozók aránya pedig 80% körüli volt. A vak és látássérült munkavállalókon kívül dolgoztak már mozgáskorlátozott, hallássérült és egészségkárosodott emberek is.</p>
                         </div>
                     </div>
                 </section>
@@ -203,19 +257,46 @@
                 <section class="timeline-section" data-year="1960" aria-hidden="true">
                     <div class="timeline-block">
                         <div class="timeline-image">
-                            <img src="../../img/timeline/gyartas_1960.webp" alt="A termelés indulásához kapcsolódó történeti kép" width="1536" height="1024">
+                            <img src="../../img/timeline/gyartas_1960.webp" alt="Munkatársak a textilüzem fonalfeldolgozó gépeinél – archív fotó" width="1536" height="1024">
                         </div>
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">1960</span>
-                            <h2>Termelés elindulása</h2>
+                            <h2>A textilipari tevékenység bővülése</h2>
 
-                            <p><strong>A textilipari tevékenység bővülése</strong></p>
+                            <p>A Szegedi Fonalfeldolgozó Vállalat tevékenysége az 1960-as években fokozatosan bővült a textilipari termékek készítésével. A kötőrészleg mellett létrejött a szövő- és előkészítő műhely, valamint elkezdődött a cérnagombgyártás is.</p>
+                        </div>
+                    </div>
+                </section>
 
-                            <p>
-                                A Szegedi Fonalfeldolgozó Vállalat tevékenysége fokozatosan bővült a textilipari termékek készítésével, létrejött a kötőrészleg ekkor még kézi síkkötőgépekkel, a szövő- és előkészítő műhely,
-                                 valamint elkezdődött a cérnagomb gyártása is. 
-                            </p>
+                <!-- 1961 -->
+                <section class="timeline-section" data-year="1961" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/szentes_1961.webp" alt="Szövőgépek a szentesi telep szövőrészlegén – archív fotó" width="1040" height="693" loading="lazy" decoding="async">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1961</span>
+                            <h2>Szentesi telep indulása</h2>
+
+                            <p>Elindult a termelés Szentesen. A szentesi telep szövőrészlegén nagyrészt nyers lepedővásznat, törülközőt és műszálszövetet gyártottak a zömében megváltozott munkaképességű emberek.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1967 -->
+                <section class="timeline-section" data-year="1967" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/vadasz_utca_1967.webp" alt="Cérnagombgyártó gép az elkészült gombokkal – archív fotó" width="1040" height="694" loading="lazy" decoding="async">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1967</span>
+                            <h2>Új telephely kialakítása</h2>
+
+                            <p>A Szegedi Városi Tanácstól megkapta a Szegedi Fonalfeldolgozó Vállalat a Vadász utca 2/b szám alatti épületet, melyben új telephelyet és részlegeket alakítottak ki: a cérnagombgyártó, orsózó és keresztorsózó üzemet és horgolórészleget.</p>
                         </div>
                     </div>
                 </section>
@@ -228,22 +309,65 @@
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">1970</span>
-                            <h2>Technológiai beruházások</h2>
+                            <h2>Védőmunkakörök létrehozása</h2>
 
-                            <p><strong>Korszerű textilipari gépek és hatékonyabb termelés</strong></p>
+                            <p>A 70-es évek elejétől egyre több értelmileg akadályozott embernek is lehetősége nyílt dolgozni a vállalatnál. A Szegedi Fonalfeldolgozó Vállalat kezdeményezésére „védőmunkakörök” létrehozásába kezdtek a Szociális Intézetek Központjával (SZIK). Külön gyógypedagógus segítette az értelmileg akadályozott munkavállalók munkavégzését.</p>
+                        </div>
+                    </div>
+                </section>
 
-                            <p>
-                                Az új, korszerű textilipari gépek beszerzésével jelentősen növekedett
-                                a termelés hatékonysága, a feldolgozás pedig gazdaságosabbá és
-                                tervezhetőbbé vált.
-                            </p>
+                <!-- 1975 -->
+                <section class="timeline-section" data-year="1975" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/gabi_bebiruha_1975.webp" alt="Gabi márkájú, kézzel horgolt fehér bébiruhák az eredeti dobozukkal, régi fa asztalon" width="1040" height="696" loading="lazy" decoding="async">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1975</span>
+                            <h2>Műszaki modernizálás</h2>
+
+                            <p>Elkezdődött a géppark modernizálása. Az elavult kézi szövő-, kötőgépeket korszerűbb automata gépekre cserélték, így fokozatosan növekedni kezdett a textilipari termelés.</p>
 
                             <ul>
-                                <li>Évente mintegy <strong>62 tonna fonal megmentése</strong></li>
-                                <li>Évente kb. <strong>400 tonna fonal feldolgozása</strong></li>
-                                <li>Évente több tízezer kötött felsőruházati termék előállítása</li>
-                                <li>Bébi- és gyermekruházati termékek gyártása</li>
+                                <li>évente 62 tonna fonalat mentettek és mintegy 400 tonna fonalat orsóztak</li>
+                                <li>több százezer nm műszaki szövetet, lepedővásznat gyártottak</li>
+                                <li>több mint 60 000 db felsőruházati terméket kötöttek</li>
+                                <li>30 000 db bébiruhát horgoltak kézzel</li>
+                                <li>cérnagombból pedig több mint 37 millió darabot gyártottak</li>
                             </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1983–85 -->
+                <section class="timeline-section" data-year="1983-1985" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/tavasz_utca_1983.webp" alt="A kibővített Tavasz utcai gyárépület – archív fotó" width="1040" height="729" loading="lazy" decoding="async">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1983–85</span>
+                            <h2>Építkezés a Tavasz utcán</h2>
+
+                            <p>Újabb nagy beruházásnak köszönhetően kibővítették az 1959-ben felépített épületet egy mintegy 1000 nm-es üzemcsarnokkal és épületrészekkel, továbbá egy kb. 1000 nm-es szociális létesítménnyel. Így jött létre a mai, 3 kétszintes épülettömbből álló gyárépület.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1989 -->
+                <section class="timeline-section" data-year="1989" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/rehabilitacio_1989.webp" alt="Munkatársak szövőgépeknél dolgoznak – archív fotó" width="1040" height="692" loading="lazy" decoding="async">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">1989</span>
+                            <h2>Rehabilitációs foglalkoztatási modell</h2>
+
+                            <p>1989-ben kezdte meg működését a Fonalfeldolgozó rehabilitációs osztálya. Ennek eredményeként a 90-es évek végére olyan rehabilitációs foglalkoztatási modellt sikerült kialakítani és működtetni, amely a „védett foglalkoztatáson” keresztül megfelelő munkalehetőséget biztosított a megváltozott munkaképességű (MMK) emberek számára.</p>
                         </div>
                     </div>
                 </section>
@@ -251,21 +375,15 @@
                 <!-- 1990 -->
                 <section class="timeline-section" data-year="1990" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
-                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/kontakta_1990.webp" alt="Villamosipari alkatrészek kézi összeszerelése" width="1040" height="694" loading="lazy" decoding="async">
+                        </div>
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">1990</span>
-                            <h2>Legrand együttműködés</h2>
+                            <h2>Villamosipari bérgyártás és együttműködés</h2>
 
-                            <p><strong>Elektromos kapcsolók és rendszerek gyártása</strong></p>
-
-                            <p>
-                                Hosszú távú és eredményes együttműködés indult a villamos rendszerek
-                                és informatikai hálózatok piacán meghatározó Legrand Hungary Zrt.-vel.
-                                A partnerség a SZEFO foglalkoztatási és gyártási tevékenységének
-                                egyik fontos pillérévé vált.
-                            </p>
+                            <p>Hosszú távú és eredményes együttműködés indult a Kontakta Vállalat (ma Legrand Zrt.) és a Szegedi Fonalfeldolgozó Vállalat között. A villamos berendezések összeszerelését kezdetben a szentesi telephelyen végezték MMK-s munkavállalók. A partnerség a SZEFO rehabilitációs foglalkoztatási és ipari bérgyártási tevékenységének fontos pillérévé vált.</p>
                         </div>
                     </div>
                 </section>
@@ -273,20 +391,15 @@
                 <!-- 1993 -->
                 <section class="timeline-section" data-year="1993" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
-                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/fonalfeldolgozo_rt_1993.webp" alt="A gyárépület homlokzata a Szegedi Fonalfeldolgozó Rt. felirattal" width="1040" height="781" loading="lazy" decoding="async">
+                        </div>
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">1993</span>
-                            <h2>Magyar állam tulajdonában</h2>
+                            <h2>Szegedi Fonalfeldolgozó Rt.</h2>
 
-                            <p><strong>Új szervezeti és tulajdonosi keretek</strong></p>
-
-                            <p>
-                                A társaság alapítója és egyedüli részvényese a Magyar Állam lett.
-                                A tulajdonosi jogokat később állami szervezetek gyakorolták,
-                                miközben a SZEFO tovább folytatta termelő és foglalkoztatási tevékenységét.
-                            </p>
+                            <p>1993-ban Szegedi Fonalfeldolgozó Részvénytársasággá vált és átkerült az önkormányzat tulajdonából az Állami Vagyonügynökség felügyelete alá. A főbb tevékenységek, mint szövés, keresztorsózás, sík- és körkötött kelmék gyártása mellett üvegtechnikai, csomagolóipari és villamosipari termékek gyártása is zajlott már, utóbbiak főként a rehabilitációs foglalkoztatásban.</p>
                         </div>
                     </div>
                 </section>
@@ -295,20 +408,14 @@
                 <section class="timeline-section" data-year="1998" aria-hidden="true">
                     <div class="timeline-block">
                         <div class="timeline-image">
-                            <img src="../../img/timeline/gyartas_2_szines.webp" alt="1998 – A Szegedi SZEFO megújulásához kapcsolódó kép" width="1536" height="1024">
+                            <img src="../../img/timeline/korkotogepek_1998.webp" alt="Korszerű körkötőgépek a kötödében" width="1040" height="693" loading="lazy" decoding="async">
                         </div>
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">1998</span>
-                            <h2>Megújulás</h2>
+                            <h2>Műszaki fejlesztések, beruházások</h2>
 
-                            <p><strong>A SZEFO megújulása</strong></p>
-
-                            <p>
-                                A vállalat működésében jelentős fejlesztések és beruházások indultak:
-                                korszerű technológia, modernizált géppark és hatékonyabb gyártási
-                                folyamatok alapozták meg a következő időszak fejlődését.
-                            </p>
+                            <p>A 90-es években országosan válságágazatnak számító könnyűiparban a Fonalfeldolgozó Rt.-nek sikerült talpon maradnia. Az 1998-ban indult nagy beruházásoknak, műszaki fejlesztéseknek köszönhetően modernizálták a teljes gépparkot: korszerű sík- és körkötőgépekkel, vasaló- és varrógépekkel stb. Ez lehetővé tette, hogy versenyképes, a világpiacon is jól értékesíthető, magas minőségű termékeket gyártsanak.</p>
                         </div>
                     </div>
                 </section>
@@ -316,20 +423,15 @@
                 <!-- 2001 -->
                 <section class="timeline-section" data-year="2001" aria-hidden="true">
                     <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
-                        <div class="timeline-image no-photo" aria-hidden="true"></div>
+                        <div class="timeline-image">
+                            <img src="../../img/timeline/paul_shark_2001.webp" alt="Gépi hímzéssel készülő Paul &amp; Shark felirat" width="1040" height="781" loading="lazy" decoding="async">
+                        </div>
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">2001</span>
-                            <h2>Paul &amp; Shark együttműködés</h2>
+                            <h2>Paul &amp; Shark – egy új nemzetközi kapcsolat</h2>
 
-                            <p><strong>Nemzetközi divatipari partnerség</strong></p>
-
-                            <p>
-                                A SZEFO együttműködésbe kezdett a világszerte ismert Paul &amp; Shark
-                                prémium divatmárka tulajdonosával, az olasz DAMA S.p.A. vállalattal.
-                                A partnerség fontos mérföldkő volt a nemzetközi gyártási jelenlét erősítésében.
-                            </p>
+                            <p>A Szegedi SZEFO Zrt. együttműködésbe kezdett a világszerte ismert Paul &amp; Shark prémium divatmárka tulajdonosával, az olasz DAMA S.p.A. vállalattal. A partnerség fontos mérföldkő: nemzetközi környezetben is erősíti a SZEFO szakmai jelenlétét és gyártási kompetenciáit.</p>
                         </div>
                     </div>
                 </section>
@@ -337,21 +439,15 @@
                 <!-- 2008 -->
                 <section class="timeline-section" data-year="2008" aria-hidden="true">
                     <div class="timeline-block">
-                        <div class="timeline-image">
-                            <img src="../../img/timeline/egyuttmukodes_2008_javitott.webp" alt="2008 – Együttműködés a Szegedi Tudományegyetemmel" width="1024" height="1024">
+                        <div class="timeline-image timeline-image--square">
+                            <img src="../../img/timeline/egyuttmukodes_2008_javitott.webp" alt="Kötött anyagok Chance és NANO hímzett felirattal" width="1024" height="1024">
                         </div>
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">2008</span>
                             <h2>Együttműködés a Szegedi Tudományegyetemmel</h2>
 
-                            <p><strong>K+F együttműködés</strong></p>
-
-                            <p>
-                                A SZEFO kutatás-fejlesztési együttműködést alakított ki a Szegedi Tudományegyetemmel.
-                                A közös munka célja az innovatív technológiák gyakorlati alkalmazása és
-                                a gyártási folyamatok fejlesztése volt.
-                            </p>
+                            <p>A SZEFO kutatás-fejlesztési együttműködést alakított ki a Szegedi Tudományegyetemmel. A közös munka eredménye a saját fejlesztésű, nemzetközi szabadalmi oltalommal védett nanosilver (nanoezüst) technológia, amelyet a vállalat a gyakorlatban is alkalmaz.</p>
                         </div>
                     </div>
                 </section>
@@ -360,20 +456,14 @@
                 <section class="timeline-section" data-year="2010" aria-hidden="true">
                     <div class="timeline-block">
                         <div class="timeline-image">
-                            <img src="../../img/timeline/chance_2010.webp" alt="2010 – Chance márka megalapítása" width="1536" height="1024">
+                            <img src="../../img/timeline/chance_kollekcio_2010.webp" alt="Chance márkájú kötött termékek a márka címkéjével" width="1040" height="696" loading="lazy" decoding="async">
                         </div>
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">2010</span>
-                            <h2>A Chance márka megalapítása</h2>
+                            <h2>A Chance márka születése</h2>
 
-                            <p><strong>Chance – a lehetőség márkája</strong></p>
-
-                            <p>
-                                2010-ben megalakult a Chance divatmárka. A márka a lehetőséget,
-                                az értékteremtést és a minőségi kivitelezést képviselte,
-                                miközben a SZEFO divatipari jelenlétét is erősítette.
-                            </p>
+                            <p>2010-ben megszületett a Chance divatmárka – a „lehetőség” márkája. A termékpaletta saját tervezésű és fejlesztésű kollekciókkal bővült: női, férfi és gyermek sík-kötött termékek készültek prémium minőségben. A márka innovációs értékét tovább erősítette a nanotechnológiára épülő termékfejlesztés, amely modern, korszerű megoldásokat hozott a kollekciókba.</p>
                         </div>
                     </div>
                 </section>
@@ -386,65 +476,24 @@
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">2013</span>
-                            <h2>Új együttműködések</h2>
+                            <h2>Volánbusz, BKK, BKV – munka- és formaruházat gyártása</h2>
 
-                            <p><strong>Hazai partnerek és formaruházati fejlesztések</strong></p>
-
-                            <p>
-                                A vállalat új hazai partnerekkel kezdett együttműködésbe,
-                                és tovább bővítette munkaruha- és formaruházati tevékenységét.
-                                Ez az időszak új piaci kapcsolatok kiépítését is jelentette.
-                            </p>
+                            <p>A SZEFO új hazai piaci partnerekkel bővítette együttműködéseit: a Volánbusz, valamint a BKK és BKV vállalatokkal. A SZEFO a munka- és formaruházati területen is megerősítette jelenlétét, munkaruhák gyártásával bővítve tevékenységét.</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- 2014 -->
-                <section class="timeline-section" data-year="2014" aria-hidden="true">
+                <!-- 2013–2014 -->
+                <section class="timeline-section" data-year="2013-2014" aria-hidden="true">
                     <div class="timeline-block">
                         <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
                         <div class="timeline-image no-photo" aria-hidden="true"></div>
 
                         <div class="timeline-text">
                             <span class="timeline-year-label">2013–2014</span>
-                            <h2>Együttműködés hazai divatmárkákkal</h2>
+                            <h2>Meghatározó hazai divatmárkákkal közösen</h2>
 
-                            <p><strong>Meghatározó hazai divatmárkákkal közösen</strong></p>
-
-                            <p>
-                                A SZEFO termékfejlesztési és gyártási együttműködéseket alakított ki
-                                több hazai divatmárkával és tervezővel.
-                            </p>
-
-                            <ul>
-                                <li>ABRON</li>
-                                <li>AERON</li>
-                                <li>Kata Szegő</li>
-                                <li>Nanushka</li>
-                                <li>Pápai Lilla</li>
-                                <li>Tomcsányi</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 2019 -->
-                <section class="timeline-section" data-year="2019" aria-hidden="true">
-                    <div class="timeline-block">
-                        <!-- KÉP HAMAROSAN: ide kerül majd egy illusztráló kép, ha elkészül -->
-                        <div class="timeline-image no-photo" aria-hidden="true"></div>
-
-                        <div class="timeline-text">
-                            <span class="timeline-year-label">2018–2019</span>
-                            <h2>Együttműködés hazai divattervezőkkel</h2>
-
-                            <p><strong>Stratégiai partnerségek</strong></p>
-
-                            <p>
-                                Tovább erősödtek a hazai divatipari és gyártói kapcsolatok.
-                                A stratégiai együttműködések a prémium gyártási kompetenciák
-                                és a termékfejlesztési folyamatok erősítését szolgálták.
-                            </p>
+                            <p>2013-tól termékfejlesztési és gyártói együttműködések indultak a hazai divatipar vezető szereplőivel, divattervezőkkel, prémium divatmárkákkal: ABODI, ÁERON, Katti Zoób, Nanushka, Pápai Lilla, Tomcsányi.</p>
                         </div>
                     </div>
                 </section>
@@ -459,46 +508,55 @@
                             <span class="timeline-year-label">2021</span>
                             <h2>Tulajdonosváltás</h2>
 
-                            <p><strong>Szeged-Csanádi Egyházmegye tulajdonában</strong></p>
-
-                            <p>
-                                A társaság tulajdonosi háttere megváltozott, és a SZEFO
-                                a Szeged-Csanádi Egyházmegye tulajdonába került.
-                                Az új tulajdonosi háttér mellett a vállalat tovább vitte
-                                foglalkoztatási, termelő és társadalmi küldetését.
-                            </p>
+                            <p>A Magyar Állam a Szegedi SZEFO Zrt. feletti 100%-os részesedését a Szeged-Csanádi Egyházmegyének adta át. 2021. december 29-től a társaság egyedüli részvényese és tulajdonosa a Szeged-Csanádi Egyházmegye.</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- JELEN -->
-                <section class="timeline-section" data-year="jelen" aria-hidden="true">
+                <!-- 2023 -->
+                <section class="timeline-section" data-year="2023" aria-hidden="true">
                     <div class="timeline-block">
                         <div class="timeline-image">
-                            <img src="../../img/timeline/jelen.webp" alt="Jelenünk – A SZEFO Közhasznú Nonprofit Zrt. jelenlegi működése" width="1100" height="733">
+                            <img src="../../img/timeline/sportruhazat_2023.webp" alt="Mezek mintázatának nyomtatása nagy formátumú textilnyomó gépen" width="1040" height="694" loading="lazy" decoding="async">
                         </div>
 
                         <div class="timeline-text">
-                            <span class="timeline-year-label">Jelen</span>
-                            <h2>A SZEFO Közhasznú Nonprofit Zrt. jelenlegi helyzete</h2>
+                            <span class="timeline-year-label">2023</span>
+                            <h2>Sportruházat gyártása</h2>
 
-                            <p>
-                                A SZEFO Közhasznú Nonprofit Zrt. ma több telephelyen és fióktelepen működő,
-                                termelő és foglalkoztatási bázis, amely egyszerre épít ipari
-                                tevékenységre és társadalmi felelősségvállalásra.
-                            </p>
+                            <p>Új sportruházati körkötőgépekkel elindult a sportruházat gyártása is. A Szeged-Csanád Grosics Akadémia labdarúgócsapata részére kezdtek el mezeket készíteni a termékfejlesztő munkatársak egy teljesen új gyártási technológiával.</p>
+                        </div>
+                    </div>
+                </section>
 
-                            <p>
-                                A vállalat tevékenysége két, egymást erősítő pilléren alapul:
-                                textil- és divatipari gyártáson, valamint foglalkoztatási
-                                rehabilitációhoz kapcsolódó bérmunkatevékenységen.
-                            </p>
+                <!-- 2023 -->
+                <section class="timeline-section" data-year="2023-mohu" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image timeline-image--tall">
+                            <img src="../../img/timeline/mohu_2023.webp" alt="Munkatársak elektronikai hulladékot bontanak kézzel" width="1040" height="1388" loading="lazy" decoding="async">
+                        </div>
 
-                            <p>
-                                A SZEFO küldetése ma is az, hogy értékteremtő munkát,
-                                méltó munkakörülményeket és stabil jövőképet biztosítson
-                                munkatársai számára.
-                            </p>
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">2023</span>
+                            <h2>Együttműködés a MOHU MOL Hulladékgazdálkodási Zrt.-vel</h2>
+
+                            <p>A Szegedi SZEFO Zrt. Hódmezővásárhelyi fióktelepén rehabilitációs foglalkoztatás keretében elindult a hulladékgazdálkodási tevékenység is. A megváltozott munkaképességű munkatársak elsősorban elektronikai hulladékok kézi bontását és válogatását, kezelését és e-hulladék újrahasznosításra előkészítését végzik.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2026 -->
+                <section class="timeline-section" data-year="2026" aria-hidden="true">
+                    <div class="timeline-block">
+                        <div class="timeline-image timeline-image--square">
+                            <img src="../../img/timeline/szefo_2026.webp" alt="A SZEFO Közhasznú Nonprofit Zrt. Tavasz utcai bejárata a cégtáblával" width="1040" height="1040" loading="lazy" decoding="async">
+                        </div>
+
+                        <div class="timeline-text">
+                            <span class="timeline-year-label">2026</span>
+                            <h2>SZEFO Közhasznú Nonprofit Zrt. – Új mérföldkő a SZEFO életében</h2>
+
+                            <p>A SZEFO 2026. áprilistól közhasznú nonprofit szervezetként, SZEFO Közhasznú Nonprofit Zrt. néven folytatja működését. Ez lehetőséget ad arra is, hogy még hatékonyabban tudja támogatni a megváltozott munkaképességű emberek munkaerőpiaci integrációját, és hosszú távon is fenntartható módon valósítsa meg társadalmi küldetését.</p>
                         </div>
                     </div>
                 </section>
