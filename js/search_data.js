@@ -1,11 +1,11 @@
 /* =========================================================
-   SZEFO.HU – KERESÉSI ADATOK
+   SZEFO.HU – A KERESŐ ADATAI
    Fájl helye: js/search_data.js
-   Betöltés: search.js előtt.
-
-   Megjegyzés:
-   Az URL-ek a hu/kereses/index.html oldalhoz képest relatívak.
-   A lista bővíthető új oldalakkal, kulcsszavakkal és leírásokkal.
+   A kereshető oldalak listája (cím, kulcsszavak, rövid szöveg). A search.js
+   előtt kell betöltődnie.
+   Az oldalak címei (URL-ek) a hu/kereses/index.html oldalhoz képest vannak
+   megadva. Új oldal felvételekor ide is be kell írni, különben a kereső nem
+   találja meg.
 ========================================================= */
 
 window.SZEFO_SEARCH_INDEX = [

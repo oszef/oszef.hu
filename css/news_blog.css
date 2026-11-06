@@ -1,17 +1,16 @@
 /* =========================================================
-   SZEFO.HU – HÍREK + BLOG OLDAL
+   SZEFO.HU – HÍREK ÉS BLOG OLDAL
    Fájl: css/news_blog.css
-
-   Csak a hu/hireink/index.html oldal saját stílusa.
-   A közös navbar/offcanvas/style tokenek továbbra is a style.css-ben vannak.
+   Csak a hu/hireink/index.html oldal saját stílusa. A közös fejléc, menü és
+   alapértékek a style.css-ben vannak.
 ========================================================= */
 
 /* =========================================================
    0. REJTETT ELEMEK
-   A JS a hidden attribútummal kapcsolgatja a blokkokat, de a
-   .news-blog-filters (flex) és .news-blog-grid (grid) saját display
-   értéke erősebb a böngésző [hidden] szabályánál, ezért azok
-   elrejtve is látszottak. Ez állítja helyre a hidden működését.
+   A JavaScript a hidden jelzővel rejti el és mutatja meg a blokkokat. A szűrők
+   (.news-blog-filters) és a hírrács (.news-blog-grid) saját megjelenítési
+   szabálya viszont erősebb a böngésző alapértelmezésénél, ezért elrejtve is
+   látszottak. Ez a szabály állítja helyre a hidden működését.
 ========================================================= */
 
 .news-blog-app [hidden] {
@@ -32,7 +31,7 @@
 }
 
 /* =========================================================
-   2. HERO
+   2. FEJLÉCKÉP
 ========================================================= */
 
 .news-blog-hero {
@@ -70,7 +69,7 @@
 }
 
 /* =========================================================
-   3. APP KERET
+   3. A HÍREK RÉSZ KERETE
 ========================================================= */
 
 .news-blog-app {
@@ -86,7 +85,7 @@
 }
 
 /* =========================================================
-   4. TOOLBAR + KERESŐ
+   4. ESZKÖZSOR ÉS KERESŐMEZŐ
 ========================================================= */
 
 .news-blog-toolbar {
@@ -148,12 +147,12 @@
 }
 
 /* =========================================================
-   5. HÍREK / BLOG TABOK
+   5. HÍREK / BLOG FÜLEK
 ========================================================= */
 
-/* A tab-kapcsoló és a magazin archívum linkje egy sorban áll.
-   A sor viszi a lenti térközt, hogy a tabs saját margója ne
-   tolja el egymáshoz képest a két elemet. */
+/* A Hírek/Blog fülek és a magazinarchívum linkje egy sorban állnak. Az alsó
+   térközt a sor adja, hogy a fülek saját margója ne tolja el egymáshoz képest
+   a két elemet. */
 .news-blog-tabs-row {
   display: flex;
   flex-wrap: wrap;
@@ -351,7 +350,7 @@
 }
 
 /* =========================================================
-   8. META ADATOK
+   8. KIEGÉSZÍTŐ ADATOK (dátum, kategória)
 ========================================================= */
 
 .news-blog-meta {
@@ -389,7 +388,7 @@
 }
 
 /* =========================================================
-   9. GRID + NORMÁL KÁRTYÁK
+   9. HÍRKÁRTYÁK RÁCSA
 ========================================================= */
 
 .news-blog-grid {
@@ -603,7 +602,7 @@
     padding: 10px 14px;
   }
 
-  /* Keskeny kijelzőn a magazin link a tabok alá, teljes szélességben kerül. */
+  /* Keskeny kijelzőn a magazin link a fülek alá kerül, teljes szélességben. */
   .news-blog-magazine-link {
     width: 100%;
     justify-content: center;
@@ -672,7 +671,7 @@
 }
 
 /* =========================================================
-   15. REDUCED MOTION
+   15. CSÖKKENTETT MOZGÁS
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {

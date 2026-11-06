@@ -1,7 +1,7 @@
 /* =========================================================
-   PDF / DOKUMENTUM LETÖLTÉS SEGÉD
+   PDF-DOKUMENTUMOK LETÖLTÉSE ÉS MEGNYITÁSA
    Fájl helye: js/downloader.js
-   Csak dokumentumtáras oldalakon betöltve.
+   Csak a dokumentumokat felsoroló oldalak töltik be.
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {

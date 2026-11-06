@@ -12,7 +12,7 @@
 
   <link rel="canonical" href="https://www.szefo.hu/hu/karrier/">
 
-  <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
+  <!-- Megosztási adatok (Open Graph, Twitter): ez a cím, leírás és kép jelenik meg, ha valaki az oldal linkjét Facebookon, Messengeren vagy más közösségi felületen megosztja -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
   <meta property="og:title" content="Karrier">
@@ -28,17 +28,17 @@
   <link href="../../css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
  
 
-  <!-- IDEIGLENES: a Céginformációk aloldalai frissítés alatt; a látogató értesítést lát, a fejlesztő helyben mindent (törléskor ezt a két sort is töröld) -->
+  <!-- IDEIGLENES: amíg a Céginformációk aloldalai frissülnek, a látogató egy „frissítés alatt” értesítést lát, a saját gépén dolgozó fejlesztő viszont mindent. Ha a szűrőt megszüntetjük, ezt a megjegyzést és az alatta lévő sort is törölni kell -->
   <script src="../../js/company_inf_filter.js"></script>
   <title>Karrier | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 
 <body>
-   <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
+   <!-- Ugrólink a tartalomra (akadálymentesség): aki billentyűzettel vagy felolvasóprogrammal böngészik, ezzel átugorhatja a fejlécet, és egyből a fő tartalomhoz jut -->
    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
   <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
   <header class="site-header">
-    <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
+    <!-- FELSŐ SÁV: a SZEFO-logó és a menügomb (a három vízszintes vonalas, ún. hamburger gomb, amely csak tableten és mobilon látszik) -->
     <div class="navbar">
       <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
         <img
@@ -61,7 +61,7 @@
       </button>
     </div>
 
-    <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
+    <!-- FŐMENÜ: asztali gépen vízszintes menüsáv a logó mellett, tableten és mobilon a menügombra oldalról becsúszó panel. Benne vannak az almenük és a Keresés gomb -->
     <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
       <div class="offcanvas-header">
         <button
@@ -118,7 +118,7 @@
     <div class="backdrop" id="backdrop" aria-hidden="true"></div>
   </header>
   <main id="main-content" class="career-page">
-<!-- KARRIER HERO KÉP: az oldal tetején megjelenő, teljes szélességű bemutatkozó kép -->
+<!-- NAGY NYITÓKÉP: az oldal tetején megjelenő, teljes szélességű kép -->
     <section class="career-hero" aria-label="Karrier oldal kiemelt képe">
       <img
         src="../../img/karrier/karrier-hero.webp"
@@ -182,13 +182,13 @@
             <div class="career-contact-box" aria-label="Karrier jelentkezési elérhetőségek">
               <p>
                 <strong>E-mail:</strong>
-                <!-- A mailto: attribútum megnyitja a felhasználó e-mail kliensét -->
+                <!-- A „mailto:” kezdetű link a látogató levelezőprogramját nyitja meg, a címzett már ki van töltve -->
                 <a href="mailto:karrier@szefo.hu">karrier@szefo.hu</a>
               </p>
 
               <p>
                 <strong>Telefon:</strong>
-                <!-- A tel: attribútum megnyitja a felhasználó telefonalkalmazását -->
+                <!-- A „tel:” kezdetű link a telefonhívást indítja (telefonon egy koppintással hívható a szám) -->
                 <a href="tel:+3662554054">+36 62 554 054</a>
                 <span>/108 mellék</span>
                 vagy
@@ -241,6 +241,9 @@
       </header>
 
       <!-- Jelenleg nincs nyitott pozíció. Új állás esetén ide kerül vissza a
+           Jelenleg nincs nyitott pozíció. Új állásnál ide kerül vissza az álláskártyák
+           rácsa (<div class="career-job-grid">); a korábbi kártyák mintája a
+           verziókezelő (git) régebbi változataiban megtalálható
            <div class="career-job-grid"> a kártyákkal (minta: a git előzményekben). -->
       <div class="career-jobs-empty section-card">
         <p>Jelenleg nincs aktuális állásajánlatunk. Kérjük, látogasson vissza később!</p>
@@ -248,8 +251,8 @@
     </section>
 
     <!-- =========================================================
-         4. KARRIER MODAL: felugró ablak, amelybe a kiválasztott
-         álláshirdetés részletei töltődnek be JavaScript segítségével
+         4. ÁLLÁSHIRDETÉS FELUGRÓ ABLAKA: ide tölti be a JavaScript a kiválasztott
+         álláshirdetés teljes szövegét
     ========================================================== -->
     <div
       class="career-modal"
@@ -356,7 +359,7 @@
 
   </footer>
 
-  <!-- JavaScript-fájl: a menü és az oldal egyéb interaktív elemeinek (pl. álláshirdetés-modal) működését biztosítja -->
+  <!-- JavaScript-fájl: a menü és az oldal többi kattintható részének (pl. az álláshirdetések felugró ablakának) működéséért felel -->
   <script src="../../js/script.js"></script>
 </body>
 </html>

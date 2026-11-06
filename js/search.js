@@ -1,11 +1,9 @@
 /* =========================================================
-   SZEFO.HU – KERESÉSI OLDAL LOGIKA
+   SZEFO.HU – A KERESŐ OLDAL MŰKÖDÉSE
    Fájl helye: js/search.js
-   Betöltés: csak a hu/kereses/index.html oldalon.
-
-   Függőség:
-   - search_data.js előbb töltődjön be
-   - window.SZEFO_SEARCH_INDEX legyen elérhető
+   Csak a hu/kereses/index.html oldal tölti be.
+   Feltétel: előtte a search_data.js töltődjön be, mert abban van a kereshető
+   oldalak listája (window.SZEFO_SEARCH_INDEX).
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =========================================================
-   1. KERESÉSI OLDAL INICIALIZÁLÁSA
+   1. A KERESŐ OLDAL INDULÁSA
 ========================================================= */
 
 /* Ennyi karaktertől indul a keresés. 1-2 betűre a találatok nagy része
@@ -48,8 +46,9 @@ function initSearchPage() {
     gepelesIdozito = window.setTimeout(() => {
       const query = input.value.trim();
 
-      /* Gépelés közben replaceState, hogy a böngésző előzménye ne teljen
-         meg minden egyes leütéssel – a vissza gomb így használható marad. */
+      /* Gépelés közben a böngésző címsorában frissítjük a keresett szót, de nem új
+         bejegyzésként (replaceState), hogy az előzmények ne teljenek meg minden
+         leütéssel – így a Vissza gomb használható marad. */
       updateUrl(query, "replace");
       renderForQuery(query);
     }, GEPELES_KESLELTETES);
@@ -200,26 +199,25 @@ function initSearchPage() {
    2. KERESÉSI TALÁLATOK ELŐÁLLÍTÁSA
 ========================================================= */
 
-// Kiválogatja a keresőindexből azokat az oldalakat, amelyek a beírt
-// kifejezés MINDEN szavát tartalmazzák valahol, majd relevancia (pontszám)
-// szerint csökkenő sorrendbe rendezi őket.
+// Kiválogatja a kereshető oldalak listájából azokat, amelyek a beírt kifejezés
+// MINDEN szavát tartalmazzák valahol, majd fontosság (pontszám) szerint
+// csökkenő sorrendbe rendezi őket.
 function getSearchResults(searchIndex, query) {
-  /* A tokenek a TELJES lekérdezés normalizálása utáni felbontásból
-     származnak (nem a nyers szavak egyenkénti normalizálásából) – így
-     az írásjellel, szóköz nélkül összekötött szavak (pl. "szülő,gondviselő")
-     is helyesen két külön AND-tokenre esnek szét, mert a normalizálás
-     a vesszőt is szóközzé alakítja, mielőtt a felbontás megtörténne. */
+  /* A keresett szavakat a TELJES beírt szöveg egységesítése (kisbetű, ékezet
+     nélkül, írásjel helyett szóköz) után bontjuk szét, nem szavanként
+     egységesítjük. Így az írásjellel, szóköz nélkül összekötött szavak (pl.
+     „szülő,gondviselő”) is helyesen két külön keresett szóra esnek szét, és
+     mindkettőnek szerepelnie kell a találatban. */
   const normalizedQuery = normalizeText(query);
   const queryTokens = normalizedQuery.split(/\s+/).filter(Boolean);
 
   if (!queryTokens.length) return [];
 
-  /* A találati listában az eredeti, ékezetes/nagybetűs alakot mutatjuk:
-     minden tokenhez megkeressük azt a nyers (szóközzel tagolt) szót,
-     amelynek normalizált alakja pontosan megegyezik vele. Ha egy token
-     írásjellel összekötött szavak felbontásából jött létre (nincs ilyen
-     1:1 megfelelő nyers szó), a normalizált alakot mutatjuk – ez a ritka
-     esetben kevésbé szép, de a keresés helyessége nem sérül. */
+  /* A találati listában a szavak eredeti, ékezetes alakját mutatjuk: minden
+     keresett szóhoz megkeressük azt a beírt szót, amelynek egységesített alakja
+     pontosan megegyezik vele. Ha a szó írásjellel összekötött szavak
+     szétbontásából jött létre (nincs ilyen beírt szó), az egységesített alakot
+     mutatjuk – ez ritkán fordul elő, kevésbé szép, de a keresés helyes marad. */
   const rawWords = String(query).trim().split(/\s+/).filter(Boolean);
   const displayByToken = new Map();
 
@@ -231,10 +229,10 @@ function getSearchResults(searchIndex, query) {
     displayByToken.set(token, rawMatch || token);
   });
 
-  /* A találati szavak felsorolásához (matchDetails) egyedi tokenek
-     kellenek, különben egy kétszer beírt szó (pl. "ház ház") duplikált
-     sorként jelenne meg a kártyán. A pontozás (queryTokens) viszont
-     szándékosan megtartja az esetleges ismétlődést. */
+  /* A „hol található” felsoroláshoz (matchDetails) minden szó csak egyszer kell,
+     különben egy kétszer beírt szó (pl. „ház ház”) kétszer jelenne meg a
+     kártyán. A pontozás (queryTokens) viszont szándékosan megtartja az
+     ismétlést. */
   const uniqueQueryTokens = [...displayByToken.keys()];
 
   return searchIndex
@@ -398,23 +396,19 @@ function createMatchList(matchDetails) {
 }
 
 /* =========================================================
-   4. SZÖVEG NORMALIZÁLÁSA ÉS POZÍCIÓ-TÉRKÉP
-   Ékezetfüggetlen és kisbetűs kereséshez. A buildNormalizedMap()
-   az EGYETLEN hely, ahol eldől, mi számít normalizálható karakternek –
-   a normalizeText() is ebből képzi az eredményét, hogy a keresési
-   egyezés (normalizeText) és a kiemelés/kivonat pozíciószámítása
-   (buildNormalizedMap) soha ne csúszhasson szét egymástól.
+   4. SZÖVEG EGYSÉGESÍTÉSE ÉS A BETŰK EREDETI HELYÉNEK NYILVÁNTARTÁSA
+   Az ékezet- és kisbetű-független kereséshez. Egyedül a buildNormalizedMap()
+   dönti el, mi számít egységesíthető karakternek; a normalizeText() is ebből
+   dolgozik. Így a keresés (normalizeText) és a kiemelés, illetve a kivonat
+   helyének kiszámítása (buildNormalizedMap) soha nem csúszhat el egymástól.
 ========================================================= */
 
-/* Karakterenként végzi el a normalizálást (kisbetűsítés, ékezetek
-   levágása, a nem megengedett karakterek szóközre cserélése, majd az
-   egymást követő szóközök összevonása), és közben megjegyzi minden
-   normalizált karakterhez az eredeti szövegbeli forrás-indexét. Így egy
-   a normalizált szövegben talált egyezés pozíciója pontosan
-   visszavezethető az eredeti szövegre, akkor is, ha írásjelek vagy
-   egymás melletti speciális karakterek miatt a whitespace-összevonás
-   egyébként eltolná a pozíciókat (ez a sima "normalizálás után
-   indexOf" megközelítés hibája lenne). */
+/* Betűnként egységesíti a szöveget (kisbetű, ékezet levágása, a nem engedett
+   jelek szóközre cserélése, a több egymás utáni szóköz összevonása), és közben
+   minden betűnél megjegyzi, hol volt az eredeti szövegben. Így egy találat
+   helye pontosan visszakereshető az eredeti szövegben akkor is, ha az
+   írásjelek vagy a szóközök összevonása miatt a két szöveg hossza eltér (az
+   „egyszerű egységesítés, majd keresés” módszer itt rossz helyet adna). */
 function buildNormalizedMap(source) {
   const normalizedChars = [];
   const sourceIndexes = [];
@@ -465,11 +459,10 @@ function createExcerpt(text, tokens) {
 
   if (!source) return "";
 
-  /* A buildNormalizedMap pontos forrás-pozíciókat ad vissza, ezért itt
-     nem merülhet fel a sima normalizeText() + indexOf() eltolódási hibája
-     (amikor szóköz melletti írásjelek miatt a normalizált szöveg rövidebb
-     lesz, mint az eredeti, és az abban talált index már nem illik rá az
-     eredeti szövegre). */
+  /* A buildNormalizedMap minden betű eredeti helyét megadja, ezért itt nem
+     fordulhat elő, hogy a kiemelés rossz helyre kerül (ez akkor történne, ha az
+     egységesített szöveg az írásjelek miatt rövidebb, mint az eredeti, és az
+     abban talált hely már nem illik az eredetire). */
   const { normalized, sourceIndexes } = buildNormalizedMap(source);
 
   /* A kivonat ablakát a legkorábban előforduló keresett szó köré
@@ -568,7 +561,8 @@ function highlightMatches(text, tokens) {
 }
 
 /* =========================================================
-   5. HTML BIZTONSÁGI SEGÉDEK
+   5. BIZTONSÁGI SEGÉDEK (a szövegben lévő különleges jelek ártalmatlanítása,
+   mielőtt az oldalra kerül)
 ========================================================= */
 
 function escapeHtml(value) {

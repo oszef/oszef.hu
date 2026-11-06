@@ -50,7 +50,8 @@
       if (ertek === undefined) return localStorage.getItem(NEZET_KULCS);
       localStorage.setItem(NEZET_KULCS, ertek);
     } catch (hiba) {
-      // Tiltott tárhely (pl. privát ablak): marad az alapértelmezés.
+      // Ha a böngésző nem enged adatot menteni (pl. privát ablakban), marad az
+      // alapértelmezés.
     }
     return null;
   }
@@ -184,7 +185,8 @@
     true
   );
 
-  // Nyitott ablaknál az Escape zár, a Tab a gombon marad (a mobilmenü fókuszcsapdája helyett).
+  // Nyitott ablaknál az Esc bezárja, a Tab billentyű pedig a gombon tartja a
+  // kijelölést (a mobilmenü saját kijelölés-kezelése helyett).
   window.addEventListener(
     "keydown",
     (event) => {

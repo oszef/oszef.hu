@@ -1,12 +1,10 @@
 /* =========================================================
-   SZEFO.HU – STANDARD PDF / DOKUMENTUMTÁR STÍLUS
+   SZEFO.HU – PDF-DOKUMENTUMTÁR
    Fájl helye: css/pdf_style.css
-   Csak dokumentumtáras oldalakon betöltve.
-
-   Feltétel: a fő style.css előbb töltődjön be, mert ez a fájl
-   használja a központi SZEFO változókat:
-   --color-primary, --color-primary-light, --color-text,
-   --color-muted, --color-surface, --radius-*, --shadow-*, stb.
+   Csak a dokumentumokat felsoroló oldalak töltik be. Feltétel: a style.css
+   előbb töltődjön be, mert ez a fájl az ott megadott közös alapértékeket
+   (színek, lekerekítés, árnyék: --color-primary, --color-text, --radius-*,
+   --shadow-* stb.) használja.
 ========================================================= */
 
 /* A dokumentumkártyákon (méretek, térközök) újra felhasznált egyedi értékek */
@@ -180,9 +178,9 @@
 }
 
 /* =========================================================
-   OPCIONÁLIS KOMPAKT VÁLTOZAT
-   Ha valamelyik oldalon sűrűbb listát szeretnél:
-   <section class="docs-section docs-section--compact">
+   SŰRŰBB VÁLTOZAT (választható)
+   Ha valamelyik oldalon sűrűbb listát szeretnél: <section class="docs-section
+   docs-section--compact">
 ========================================================= */
 
 .docs-section--compact{
@@ -199,7 +197,7 @@
 }
 
 /* =========================================================
-   RESPONSIVE
+   KISEBB KÉPERNYŐK
 ========================================================= */
 
 @media (max-width: 1024px){

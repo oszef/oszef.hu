@@ -44,7 +44,8 @@ oldalon ugyanúgy át kell írni.
 
 ## Az oldalak
 
-A felső menü (asztalon vízszintes sáv, 1024 px-ig kihúzható panel):
+A felső menü (asztali gépen vízszintes sáv, 1024 px-ig oldalról becsúszó
+panel):
 
 - **Kezdőlap** - `index.html`
 - **Rólunk** (lenyíló menü):
@@ -73,6 +74,21 @@ menüben nem szerepel, csak a láblécben:
 - Éves beszámolók - `hu/eves_beszamolok/`
 - Archívum - `hu/archivum/`
 
+A kezdőlap blokkjai fentről lefelé:
+
+1. Nyitóképek - automatikusan váltakozó képek szlogenekkel, szünet
+   gombbal.
+2. Rólunk - rövid bemutatkozás, a gomb a Bemutatkozás oldalra visz
+   (mobilon rövidebb szöveggel).
+3. Főbb adatok - három fő terület, számlálók és egy kördiagram.
+4. Tevékenységek és üzletágak - három kártya, a "Részletek" gomb felugró
+   ablakban mutatja a teljes leírást.
+5. Üzemegységek - nyolc kártya ugyanígy.
+6. Vezérigazgatói köszöntő - a "Bővebben" gomb ugyanitt nyitja ki a
+   teljes szöveget.
+7. ISO tanúsítványaink - három logó, mindegyik alatt a tanúsítvány
+   PDF-je.
+
 Menüből nem, csak egy másik oldalról elérhető:
 
 - Pályázat (NEAO-KP-1-2022/8-000016) - `hu/palyazat/`, az Alapítvány
@@ -81,10 +97,10 @@ Menüből nem, csak egy másik oldalról elérhető:
 
 ## A JavaScript fájlok, dióhéjban
 
-- `script.js` - a közös logika: a menü (asztalon felső sáv, 1024 px-ig
-  kihúzható offcanvas panel), a kezdőlapi képváltogató (carousel), a
-  számlálók, az idővonal, az üzletági és karrieres felugró ablakok
-  (modálok), a galériák.
+- `script.js` - a közös működés: a menü (asztali gépen felső sáv, 1024
+  px-ig oldalról becsúszó panel), a kezdőlap képváltója, a számlálók, a
+  Történetünk idővonala, az üzletági és a karrieres felugró ablakok, a
+  galériák.
 - `news_blog.js` - a Hírek/Blog oldal, benne magával a cikkek szövegével
   is.
 - `search.js` - a keresőoldal logikája.
@@ -138,13 +154,14 @@ Az élesítést a GitHub Actions végzi, a `.github/workflows/deploy.yml`
 alapján: a fájlokat FTPS-en (titkosított FTP-n) tölti fel a tárhelyre.
 
 - **Kézzel kell indítani**: a GitHub oldalán az *Actions* fül → *Deploy
-  (FTPS)* → *Run workflow*. Automatikusan, egy push után nem indul el
-  (a `push` indítás a fájlban ki van kommentelve, később bekapcsolható).
+  (FTPS)* → *Run workflow*. Automatikusan, egy feltöltés (push) után nem
+  indul el (az automatikus indítás a fájlban megjegyzésbe van téve,
+  később bekapcsolható).
 - Indításkor a **Próbafutás** pipa alapból be van jelölve: ilyenkor csak
   kiírja, mit töltene fel vagy törölne, de nem módosít semmit. Valódi
   feltöltéshez ki kell venni a pipát.
-- Csak a megváltozott fájlokat tölti fel, és **amit a repóból törölsz,
-  azt a szerverről is törli** - kézzel semmit nem kell törölni.
+- Csak a megváltozott fájlokat tölti fel, és **amit a tárolóból (repó)
+  törölsz, azt a szerverről is törli** - kézzel semmit nem kell törölni.
 - Nem tölti fel (és a szerveren nem is törli) a következőket: a `.git`
   fájlokat, a `.github/` és a `.claude/` mappát, a `README.md`-t, a
   `.well-known/` mappát és a `.ftpquota` fájlt.
@@ -186,7 +203,14 @@ HTML fájlhoz képest relatív, amelyikben szerepelnek: a gyökérből
 `./img/...`, egy `hu/valami/index.html`-ből pedig `../../img/...`. Új
 képnél tegyél rá `loading="lazy"` attribútumot, hogy csak akkor
 töltődjön be, amikor a látogató tényleg odagörget (kivéve, ha a kép az
-oldal tetején, azonnal látszik).
+oldal tetején, azonnal látszik). A `width` és a `height` mindig a kép
+valódi mérete legyen: ebből tudja a böngésző előre a kép arányát, így az
+oldal nem ugrik meg, amikor a kép betöltődik.
+
+A tartalmi fotók (pl. a Történetünk idővonalán) mindig teljes egészükben
+látszanak, nem vágjuk le őket. A Történetünk képei 1040 px szélesek; a
+kis felbontású régi fotók egy részét mesterséges intelligenciás
+nagyítóval (Real-ESRGAN) élesítettük. Ez a program nincs a tárolóban.
 
 **Új oldal felvétele** - ezekre kell figyelni:
 
@@ -214,8 +238,9 @@ hivatalos, auditált tanúsítvány, de a fontosabb szempontokat lefedi:
   intézi, asztalon pedig a `visibility: hidden` a zárt lenyílókon - a
   védelem ugyanaz, csak más eszközzel, mert az asztali sáv maga végig
   látható marad.
-- A menü egy `<nav aria-label="Fő navigáció">` landmarkon belül van, így
-  képernyőolvasóval egy lépésben oda lehet ugrani.
+- A menü egy `<nav aria-label="Fő navigáció">` elemen belül van. Ez az
+  oldal egyik "tájékozódási pontja" (landmark), így képernyőolvasóval egy
+  lépésben oda lehet ugrani.
 - Minden kattintható elemen jól látható fókuszgyűrű jelenik meg, amikor
   billentyűzettel állsz rá.
 - A vezérlők állapotát (nyitva/zárva, kiválasztva stb.) a képernyőolvasók
@@ -267,10 +292,12 @@ Ez a minta már használatban van a `.timeline-tick` elemnél, onnan
 lehet ellesni.
 
 **3. Ami kicsúszik a képernyőről, azt `inert`-té kell tenni.** A
-kihúzható menü zárt állapotban is a DOM-ban marad, ezért a `script.js`
-`inert` attribútumot tesz rá (a `style.css` pedig `visibility: hidden`-t,
-a régebbi böngészők kedvéért). Fontos, hogy a fókuszt mindig előbb hozzuk
-ki a panelből, és csak utána állítsuk be az `inert`-et.
+becsúszó menü zárt állapotban is az oldal része marad (csak nem látszik),
+ezért a `script.js` `inert` jelzőt tesz rá: ez a billentyűzet és a
+képernyőolvasó számára is kikapcsolja (a `style.css` pedig `visibility:
+hidden`-t, a régebbi böngészők kedvéért). Fontos, hogy a billentyűzetes
+kijelölést (fókuszt) mindig előbb hozzuk ki a panelből, és csak utána
+állítsuk be az `inert`-et.
 
 Az `inert` viszont **csak 1024 px-ig** kerül fel, mert afölött a menü
 vízszintes sávban ül és végig látható - ott az `inert` épp a billentyűzetes
@@ -286,6 +313,20 @@ a `transition-delay`-t nem. Ha egy elem késleltetéssel rejtőzik el (mint
 az asztali lenyílók `visibility`-je), akkor azt külön ki kell kapcsolni,
 különben csökkentett mozgásnál láthatatlanul, de fókuszálhatóan
 bennragadna a tabsorrendben.
+
+## Kommentek a kódban
+
+A fájlokban lévő megjegyzések (kommentek) magyarul, közérthetően
+készülnek, úgy, hogy az is értse, aki nem programozó:
+
+- Természetes mondatokban írjuk, úgy, ahogy egy kolléga elmagyarázná.
+- Azt mondják el, mire jó az adott rész, és miért van így megoldva, nem a
+  kódot ismétlik meg szavakkal.
+- Szakszót csak akkor használunk, ha muszáj, és akkor pár szóval meg is
+  magyarázzuk, pl. "inert jelző (a billentyűzet és a képernyőolvasó
+  számára kikapcsolja az elemet)".
+- Ha egy rész megváltozik, a hozzá tartozó kommentet is frissíteni kell,
+  hogy ne maradjon benne elavult információ.
 
 ## Amit még érdemes tudni
 

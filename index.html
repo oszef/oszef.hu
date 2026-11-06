@@ -8,7 +8,7 @@
     <meta name="keywords" content="ipari gyártás, ipari bérmunka, összeszerelés, villamosipari bérmunka, villamosipari összeszerelés, textilipari gyártás, kötöttáru gyártás, bérgyártás, rehabilitációs foglalkoztatás, Szeged">
     <link rel="canonical" href="https://www.szefo.hu/">
 
-    <!-- Közösségimédia-megosztási adatok (Open Graph, Twitter): ezek a cím, leírás és kép jelenik meg, ha valaki a linket Facebookon, Messengeren vagy más felületen megosztja -->
+    <!-- Megosztási adatok (Open Graph, Twitter): ez a cím, leírás és kép jelenik meg, ha valaki az oldal linkjét Facebookon, Messengeren vagy más közösségi felületen megosztja -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
     <meta property="og:title" content="SZEFO Közhasznú Nonprofit Zrt.">
@@ -18,7 +18,7 @@
     <meta property="og:locale" content="hu_HU">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Strukturált adat (JSON-LD) a keresőmotoroknak a cég nevéről, tevékenységeiről, címéről és elérhetőségeiről; ez nem jelenik meg látható szövegként az oldalon -->
+    <!-- A keresőknek szóló céges adatlap (JSON-LD formátumban): cégnév, tevékenységek, cím és elérhetőségek. Az oldalon nem jelenik meg látható szövegként -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -72,17 +72,17 @@
     <link rel="stylesheet" href="./css/popup.css">
     <link rel="stylesheet" href="./css/bootstrap-icons/bootstrap-icons.css">
 
-    <!-- IDEIGLENES: a Céginformációk aloldalai frissítés alatt; a látogató értesítést lát, a fejlesztő helyben mindent (törléskor ezt a két sort is töröld) -->
+    <!-- IDEIGLENES: amíg a Céginformációk aloldalai frissülnek, a látogató egy „frissítés alatt” értesítést lát, a saját gépén dolgozó fejlesztő viszont mindent. Ha a szűrőt megszüntetjük, ezt a megjegyzést és az alatta lévő sort is törölni kell -->
     <script src="js/company_inf_filter.js"></script>
     <title>Kezdőlap | SZEFO Közhasznú Nonprofit Zrt.</title>
 </head>
 
 <body>
-    <!-- Akadálymentesítési ugrólink: billentyűzettel vagy képernyőolvasóval böngészők ezzel ugorhatják át a fejlécet, egyenesen a fő tartalomra -->
+    <!-- Ugrólink a tartalomra (akadálymentesség): aki billentyűzettel vagy felolvasóprogrammal böngészik, ezzel átugorhatja a fejlécet, és egyből a fő tartalomhoz jut -->
     <a class="skip-link" href="#main-content">Tartalom átugrása</a>
     <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
     <header class="site-header">
-        <!-- NAVBAR: a fejléc felső sora a SZEFO-logóval és a mobil nézetben megjelenő menünyitó (hamburger) gombbal -->
+        <!-- FELSŐ SÁV: a SZEFO-logó és a menügomb (a három vízszintes vonalas, ún. hamburger gomb, amely csak tableten és mobilon látszik) -->
         <div class="navbar">
             <a class="navbar-brand" href="index.html" aria-label="SZEFO kezdőlap">
                 <img src="./img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
@@ -100,7 +100,7 @@
             </button>
         </div>
 
-        <!-- OFFCANVAS MENÜ: a hamburgergombra kattintva oldalról benyíló teljes főmenü, benne az almenükkel és a kereséssel -->
+        <!-- FŐMENÜ: asztali gépen vízszintes menüsáv a logó mellett, tableten és mobilon a menügombra oldalról becsúszó panel. Benne vannak az almenük és a Keresés gomb -->
         <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
             <div class="offcanvas-header">
                 <button
@@ -174,7 +174,7 @@
 
 
     <main id="main-content">
-        <!-- HERO CAROUSEL: a nyitóoldal tetején automatikusan váltakozó, teljes szélességű képes bemutató, rövid szlogenekkel -->
+        <!-- NYITÓKÉPEK (képváltó): a kezdőlap tetején automatikusan váltakozó, teljes szélességű képek rövid szlogenekkel -->
         <section class="hero-carousel" aria-label="Kiemelt tartalmak">
                 <div class="hero-slide active">
                     <img src="./img/hero/hero-1.webp" alt="SZEFO üzem" width="1366" height="768" loading="eager">
@@ -224,7 +224,7 @@
                     ›
                 </button>
 
-                <!-- Az automatikus lapozás megállítása / folytatása (WCAG 2.2.2): a mozgó tartalmat a látogató meg tudja állítani -->
+                <!-- Szünet/lejátszás gomb: a látogató megállíthatja és újraindíthatja a képek automatikus váltását. Ezt az akadálymentességi előírás (WCAG 2.2.2) kéri minden magától mozgó tartalomnál -->
                 <button
                     class="hero-pause"
                     type="button"
@@ -235,123 +235,6 @@
                 </button>
         </section>
 
-        <!-- VEZÉRIGAZGATÓI KÖSZÖNTŐ: rövid bevezető szöveg "Bővebben" gombbal, amely ugyanitt jeleníti meg a teljes köszöntőt -->
-        <section class="ceo-wrapper" aria-labelledby="ceo-title">
-            <div class="ceo-preview">
-                <h2 id="ceo-title">Vezérigazgatói köszöntő</h2>
-
-                <p>
-                    Nagy megtiszteltetés számomra, hogy a SZEFO Közhasznú Nonprofit Zrt. vezérigazgatójaként köszönthetem Önöket.
-                    Egy olyan vállalat munkáját folytathatom, amely immár több mint hetven éve biztosít méltó munkalehetőséget
-                    fogyatékossággal élő és egészségkárosodott emberek számára.
-                </p>
-
-                <p>
-                    Büszke vagyok arra a befogadó közösségre, amelyet munkatársaink alkotnak, és amelyben a mindennapokban
-                    láthatóvá válik az együttműködés, a szakmai tudás és az emberi méltóság tisztelete.
-                </p>
-
-                <a href="#" class="ceo-btn">Bővebben</a>
-            </div>
-
-            <div class="ceo-full">
-                <h3>Vezérigazgatói köszöntő</h3>
-
-                <p>
-                    <strong>Tisztelt Munkatársaink, Tisztelt Partnereink!</strong>
-                </p>
-
-                <p>
-                    Nagy megtiszteltetés számomra, hogy a SZEFO Közhasznú Nonprofit Zrt. vezérigazgatójaként köszönthetem Önöket.
-                    Hatalmas felelősséggel és egyben mély elhivatottsággal fogadom el ezt a megbízatást, hiszen egy olyan vállalat
-                    munkáját folytathatom, amelynek immár több mint hetven éve legfontosabb feladata a megváltozott munkaképességű,
-                    fogyatékossággal élő és egészségkárosodott emberek foglalkoztatásának, foglalkozási rehabilitációjának és
-                    méltányos munkakörülményeinek biztosítása.
-                </p>
-
-                <p>
-                    Amikor 1953-ban 27 látássérült ember megalapította az egykori Szegedi Fonalmentő Vállalatot, egy közös
-                    küldetéssel tették: értékteremtő munkát biztosítani azoknak, akik számára fogyatékosságuk, betegségük miatt
-                    a munkaerőpiac kevés esélyt kínált. Ez a küldetés ma is ugyanolyan fontos, mint évtizedekkel ezelőtt.
-                </p>
-
-                <p>
-                    Büszke vagyok arra a befogadó közösségre, amelyet munkatársaink alkotnak, és amelyben a mindennapokban
-                    láthatóvá válik az együttműködés, a szakmai tudás és az emberi méltóság tisztelete.
-                </p>
-
-                <p>
-                    Vezérigazgatóként számomra egyértelmű: a fogyatékossággal élő és megváltozott munkaképességű kollégák iránti
-                    elköteleződés, felelősségvállalás és támogatás nem csupán hagyomány, hanem a jövőnk egyik legfontosabb alapja is.
-                </p>
-
-                <h3>Kiemelt céljaim:</h3>
-
-                <ul>
-                    <li>a társadalmi felelősségvállalás még határozottabb képviselete</li>
-                    <li>az esélyegyenlőség további erősítése</li>
-                    <li>a minőség és innováció folyamatos fejlesztése</li>
-                    <li>a stabilitás és fenntarthatóság megőrzése</li>
-                </ul>
-
-                <p>
-                    Személyes motivációm egyszerű, mégis mélyről fakadó: olyan munkahelyet, munkakörülményeket és jövőképet
-                    kívánok biztosítani, ahol minden kolléga megtalálhatja a helyét, szakmai tudását, képességeit
-                    kibontakoztathatja, és érezheti, hogy munkája valódi értéket teremt.
-                </p>
-
-                <p>
-                    Ezúton szeretném megköszönni munkatársainknak az eddigi elhivatott munkát, partnereinknek pedig a hosszú évek
-                    során tanúsított bizalmat és együttműködést. A jövőben is számítok arra, hogy közösen, egymást támogatva
-                    folytatjuk munkánkat.
-                </p>
-
-                <p>
-                    Inspiráljon bennünket az elmúlt 70 év összefogása és kitartása – és építsünk tovább egy olyan vállalatot,
-                    amely példát mutat emberségből, szakmaiságból és felelősségvállalásból.
-                </p>
-
-                <div class="ceo-sign">
-                    <p><strong>Mérész Attila</strong></p>
-                    <p>vezérigazgató</p>
-                    <img src="./img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106" loading="lazy">
-                </div>
-
-                <button class="back-btn bottom-back" type="button">← Vissza</button>
-            </div>
-        </section>
-
-        <!-- ISO TANÚSÍTVÁNYOK: a cég három tanúsítványának (ISO 9001, ISO 14001, ISO 45001) logója egy-egy dobozban, mindegyik alatt a saját "Részletek" gombja, amely új lapon megnyitja az adott tanúsítvány PDF-jét; asztali és tablet nézetben a három egymás mellett, mobilon egymás alatt jelenik meg -->
-        <section class="iso-section" aria-labelledby="iso-title">
-            <h2 class="iso-title" id="iso-title">ISO Tanúsítványaink</h2>
-
-            <ul class="iso-certificates">
-                <li class="iso-certificate">
-                    <div class="iso-certificate-image">
-                        <img src="./img/iso/ISO9001.webp" alt="ISO 9001 tanúsítvány" width="300" height="150" loading="lazy">
-                    </div>
-
-                    <a class="btn iso-certificate-btn" href="./doc/minosegpolitika/ISO-9001-tanusitvany-2026.pdf" target="_blank" rel="noopener" aria-label="Részletek: ISO 9001 tanúsítvány (PDF, új lapon nyílik meg)">Részletek</a>
-                </li>
-
-                <li class="iso-certificate">
-                    <div class="iso-certificate-image">
-                        <img src="./img/iso/ISO14001.webp" alt="ISO 14001 tanúsítvány" width="2559" height="1595" loading="lazy">
-                    </div>
-
-                    <a class="btn iso-certificate-btn" href="./doc/minosegpolitika/SZEFO-14001-2026.pdf" target="_blank" rel="noopener" aria-label="Részletek: ISO 14001 tanúsítvány (PDF, új lapon nyílik meg)">Részletek</a>
-                </li>
-
-                <li class="iso-certificate">
-                    <div class="iso-certificate-image">
-                        <img src="./img/iso/ISO45001.webp" alt="ISO 45001 tanúsítvány" width="2559" height="1595" loading="lazy">
-                    </div>
-
-                    <a class="btn iso-certificate-btn" href="./doc/minosegpolitika/SZEFO-45001-2026.pdf" target="_blank" rel="noopener" aria-label="Részletek: ISO 45001 tanúsítvány (PDF, új lapon nyílik meg)">Részletek</a>
-                </li>
-            </ul>
-        </section>
-
         <!-- RÓLUNK SZEKCIÓ: rövid bemutatkozó szöveg a cégről, illusztráló képpel; a Bővebben gomb a Bemutatkozás aloldalra visz -->
         <section class="about-section" aria-labelledby="about-title">
             <div class="about-inner">
@@ -359,7 +242,7 @@
                     <h2 id="about-title">Rólunk</h2>
                     <h3>Értéket teremtünk – együtt</h3>
 
-                    <!-- Mobilon (768 px alatt) csak a két cím, az első kiemelt mondat és a gomb látszik, a "full-text" elemek csak asztali nézetben (lásd style.css, 10. és 15. pont) -->
+                    <!-- Mobilon (768 px-ig) csak a két cím, az első kiemelt mondat és a gomb látszik; a „full-text” jelölésű részek csak nagyobb képernyőn jelennek meg (lásd style.css, 10. és 15. pont) -->
                     <p><strong>Több mint 70 éve dolgozunk egy befogadó munkahelyért.</strong></p>
 
                     <p class="full-text">
@@ -411,7 +294,7 @@
             </div>
         </section>
 
-        <!-- FŐBB ADATOK: három fő terület Bootstrap ikonnal és kék szövegdobozzal, alatta a céget bemutató számok (működési évek, éves és napi termelési mennyiségek) és a megváltozott munkaképességű munkatársak arányát mutató kördiagram; látható cím nélkül -->
+        <!-- FŐBB ADATOK: három fő terület ikonnal és kék szövegdobozzal; alatta a céget bemutató számok (működési évek, éves és napi termelés) és egy kördiagram a megváltozott munkaképességű munkatársak arányáról. A blokknak nincs látható címe -->
         <section class="facts-section" aria-label="Főbb adatok">
             <div class="facts-top">
                 <article class="fact-item">
@@ -1299,6 +1182,124 @@
 
             </div>
             </section>
+
+        <!-- VEZÉRIGAZGATÓI KÖSZÖNTŐ (az Üzemegységek alatt): rövid bevezető szöveg; a „Bővebben” gomb ugyanitt jeleníti meg a teljes köszöntőt -->
+        <section class="ceo-wrapper" aria-labelledby="ceo-title">
+            <div class="ceo-preview">
+                <h2 id="ceo-title">Vezérigazgatói köszöntő</h2>
+
+                <p>
+                    Nagy megtiszteltetés számomra, hogy a SZEFO Közhasznú Nonprofit Zrt. vezérigazgatójaként köszönthetem Önöket.
+                    Egy olyan vállalat munkáját folytathatom, amely immár több mint hetven éve biztosít méltó munkalehetőséget
+                    fogyatékossággal élő és egészségkárosodott emberek számára.
+                </p>
+
+                <p>
+                    Büszke vagyok arra a befogadó közösségre, amelyet munkatársaink alkotnak, és amelyben a mindennapokban
+                    láthatóvá válik az együttműködés, a szakmai tudás és az emberi méltóság tisztelete.
+                </p>
+
+                <a href="#" class="ceo-btn">Bővebben</a>
+            </div>
+
+            <div class="ceo-full">
+                <h3>Vezérigazgatói köszöntő</h3>
+
+                <p>
+                    <strong>Tisztelt Munkatársaink, Tisztelt Partnereink!</strong>
+                </p>
+
+                <p>
+                    Nagy megtiszteltetés számomra, hogy a SZEFO Közhasznú Nonprofit Zrt. vezérigazgatójaként köszönthetem Önöket.
+                    Hatalmas felelősséggel és egyben mély elhivatottsággal fogadom el ezt a megbízatást, hiszen egy olyan vállalat
+                    munkáját folytathatom, amelynek immár több mint hetven éve legfontosabb feladata a megváltozott munkaképességű,
+                    fogyatékossággal élő és egészségkárosodott emberek foglalkoztatásának, foglalkozási rehabilitációjának és
+                    méltányos munkakörülményeinek biztosítása.
+                </p>
+
+                <p>
+                    Amikor 1953-ban 27 látássérült ember megalapította az egykori Szegedi Fonalmentő Vállalatot, egy közös
+                    küldetéssel tették: értékteremtő munkát biztosítani azoknak, akik számára fogyatékosságuk, betegségük miatt
+                    a munkaerőpiac kevés esélyt kínált. Ez a küldetés ma is ugyanolyan fontos, mint évtizedekkel ezelőtt.
+                </p>
+
+                <p>
+                    Büszke vagyok arra a befogadó közösségre, amelyet munkatársaink alkotnak, és amelyben a mindennapokban
+                    láthatóvá válik az együttműködés, a szakmai tudás és az emberi méltóság tisztelete.
+                </p>
+
+                <p>
+                    Vezérigazgatóként számomra egyértelmű: a fogyatékossággal élő és megváltozott munkaképességű kollégák iránti
+                    elköteleződés, felelősségvállalás és támogatás nem csupán hagyomány, hanem a jövőnk egyik legfontosabb alapja is.
+                </p>
+
+                <h3>Kiemelt céljaim:</h3>
+
+                <ul>
+                    <li>a társadalmi felelősségvállalás még határozottabb képviselete</li>
+                    <li>az esélyegyenlőség további erősítése</li>
+                    <li>a minőség és innováció folyamatos fejlesztése</li>
+                    <li>a stabilitás és fenntarthatóság megőrzése</li>
+                </ul>
+
+                <p>
+                    Személyes motivációm egyszerű, mégis mélyről fakadó: olyan munkahelyet, munkakörülményeket és jövőképet
+                    kívánok biztosítani, ahol minden kolléga megtalálhatja a helyét, szakmai tudását, képességeit
+                    kibontakoztathatja, és érezheti, hogy munkája valódi értéket teremt.
+                </p>
+
+                <p>
+                    Ezúton szeretném megköszönni munkatársainknak az eddigi elhivatott munkát, partnereinknek pedig a hosszú évek
+                    során tanúsított bizalmat és együttműködést. A jövőben is számítok arra, hogy közösen, egymást támogatva
+                    folytatjuk munkánkat.
+                </p>
+
+                <p>
+                    Inspiráljon bennünket az elmúlt 70 év összefogása és kitartása – és építsünk tovább egy olyan vállalatot,
+                    amely példát mutat emberségből, szakmaiságból és felelősségvállalásból.
+                </p>
+
+                <div class="ceo-sign">
+                    <p><strong>Mérész Attila</strong></p>
+                    <p>vezérigazgató</p>
+                    <img src="./img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106" loading="lazy">
+                </div>
+
+                <button class="back-btn bottom-back" type="button">← Vissza</button>
+            </div>
+        </section>
+
+        <!-- ISO TANÚSÍTVÁNYOK: a cég három tanúsítványának (ISO 9001, ISO 14001, ISO 45001) logója egy-egy dobozban, mindegyik alatt a saját "Részletek" gombja, amely új lapon megnyitja az adott tanúsítvány PDF-jét; asztali és tablet nézetben a három egymás mellett, mobilon egymás alatt jelenik meg -->
+        <section class="iso-section" aria-labelledby="iso-title">
+            <h2 class="iso-title" id="iso-title">ISO Tanúsítványaink</h2>
+
+            <ul class="iso-certificates">
+                <li class="iso-certificate">
+                    <div class="iso-certificate-image">
+                        <img src="./img/iso/ISO9001.webp" alt="ISO 9001 tanúsítvány" width="300" height="150" loading="lazy">
+                    </div>
+
+                    <a class="btn iso-certificate-btn" href="./doc/minosegpolitika/ISO-9001-tanusitvany-2026.pdf" target="_blank" rel="noopener" aria-label="Részletek: ISO 9001 tanúsítvány (PDF, új lapon nyílik meg)">Részletek</a>
+                </li>
+
+                <li class="iso-certificate">
+                    <div class="iso-certificate-image">
+                        <img src="./img/iso/ISO14001.webp" alt="ISO 14001 tanúsítvány" width="2559" height="1595" loading="lazy">
+                    </div>
+
+                    <a class="btn iso-certificate-btn" href="./doc/minosegpolitika/SZEFO-14001-2026.pdf" target="_blank" rel="noopener" aria-label="Részletek: ISO 14001 tanúsítvány (PDF, új lapon nyílik meg)">Részletek</a>
+                </li>
+
+                <li class="iso-certificate">
+                    <div class="iso-certificate-image">
+                        <img src="./img/iso/ISO45001.webp" alt="ISO 45001 tanúsítvány" width="2559" height="1595" loading="lazy">
+                    </div>
+
+                    <a class="btn iso-certificate-btn" href="./doc/minosegpolitika/SZEFO-45001-2026.pdf" target="_blank" rel="noopener" aria-label="Részletek: ISO 45001 tanúsítvány (PDF, új lapon nyílik meg)">Részletek</a>
+                </li>
+            </ul>
+        </section>
+
             <div class="business-modal" id="businessModal" aria-hidden="true">
             <div class="business-modal-backdrop" data-business-modal-close></div>
 
@@ -1384,7 +1385,7 @@
 
     </footer>
 
-    <!-- FELUGRÓ HIRDETÉS (POPUP): néhány másodperc várakozás után megjelenő promóciós ablak; addig marad, amíg a látogató be nem zárja (× gomb vagy Escape) -->
+    <!-- FELUGRÓ HIRDETÉS: néhány másodperccel a betöltés után megjelenő ablak (pl. álláshirdetés), amely addig marad, amíg a látogató be nem zárja (× gomb vagy Esc billentyű). JELENLEG KIKAPCSOLVA: a js/popup.js kódja megjegyzésbe van téve, ezért az ablak nem jelenik meg -->
      <div id="smartPopup" class="popup" role="complementary" aria-label="Álláshirdetés">
         <button class="popup-close" type="button" aria-label="Ajánlat bezárása">&times;</button>
 
@@ -1397,7 +1398,7 @@
 
 
 
-    <!-- JavaScript-fájlok: a popup.js a felugró hirdetést, a script.js a menü, a csúszkák és a kártyák működését biztosítja -->
+    <!-- JavaScript-fájlok: a popup.js a felugró hirdetést időzítené (jelenleg kikapcsolva), a script.js a menü, a nyitóképek és a kártyák működéséért felel -->
     <script src="js/popup.js"></script>
     <script src="js/script.js"></script>
 </body>

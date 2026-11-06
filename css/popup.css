@@ -1,13 +1,14 @@
 /* =========================================================
    FELUGRÓ HIRDETÉS (POPUP)
-   A főoldalon néhány másodperc után megjelenő promóciós ablak
-   stílusai. A hozzá tartozó HTML az index.html-ben, a
-   megjelenítést/időzítést a js/popup.js vezérli.
+   A kezdőlapon néhány másodperc után megjelenő ablak stílusai. A HTML az
+   index.html-ben van, a megjelenést és az időzítést a js/popup.js vezérli.
+   JELENLEG KIKAPCSOLVA: a popup.js kódja megjegyzésbe van téve (lásd ott).
 ========================================================= */
 
-/* A visibility azért kell az opacity mellé, mert enélkül a bezáró gombra
-   tabbal rá lehet menni akkor is, amikor a popup még nem jelent meg, vagy
-   már magától bezáródott. A 0.35s késleltetés hagyja lefutni a becsukást. */
+/* A visibility azért kell az opacity mellé, mert enélkül a bezáró gombra a Tab
+   billentyűvel rá lehetne lépni akkor is, amikor az ablak még nem jelent meg,
+   vagy már bezárult. A 0,35 másodperces késleltetés kivárja a becsukás
+   animációját. */
 .popup {
     position: fixed;
     bottom: 60px;

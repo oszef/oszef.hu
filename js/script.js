@@ -1,19 +1,18 @@
 /* =========================================================
-   SZEFO.HU – KÖZÖS JAVASCRIPT / REFAKTORÁLT VÁLTOZAT
+   SZEFO.HU – KÖZÖS JAVASCRIPT
    Fájl: js/script.js
-
-   Szerepe:
-   - offcanvas menü
-   - hero carousel
-   - oldalváltás animáció
-   - vezérigazgatói köszöntő
-   - számláló animációk
-   - timeline
-   - business / units kártyák
-   - közös részletező modal + egy kép
-   - e-hulladék galéria
-   - karrier modal
-   - kereső űrlap átirányítás
+   Ez a fájl kelti életre az oldalak mozgó, kattintható részeit:
+   - a menü (asztali gépen menüsáv, kisebb képernyőn becsúszó panel)
+   - a kezdőlap nyitóképeinek váltása
+   - az oldalváltáskori elhalványulás
+   - a vezérigazgatói köszöntő lenyitása
+   - a Főbb adatok számlálói és kördiagramja
+   - a Történetünk idővonala
+   - a Tevékenységek és az Üzemegységek kártyái és közös „Részletek” ablaka
+   - az E-hulladék oldal képgalériája
+   - a Karrier oldal álláshirdetés-ablaka
+   - a keresőmező átirányítása a kereső oldalra
+   - a lábléc évszámának frissítése
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =========================================================
-   SEGÉDFÜGGVÉNYEK
+   SEGÉDFÜGGVÉNYEK (kis eszközök, amelyeket a fájl többi része használ)
 ========================================================= */
 
 const SELECTOR_FOCUSABLE = [
@@ -58,13 +57,11 @@ function setBodyLocked(isLocked) {
   document.body.style.overflow = isLocked ? "hidden" : "";
 }
 
-/*
-   A style.css már kikapcsolja az animációkat, ha a felhasználó
-   csökkentett mozgást kért, de a carousel léptetése JS-ből jön,
-   ezért azt itt kell külön leállítani.
-   A matchMedia élőben kérdez, így a beállítás menet közbeni
-   módosítása is azonnal érvényesül.
-*/
+/* A style.css már kikapcsolja az animációkat, ha a látogató a gépén
+   csökkentett mozgást kért. A nyitóképek váltását viszont a JavaScript végzi,
+   ezért azt itt külön le kell állítani. A beállítást folyamatosan figyeljük
+   (matchMedia), így ha a látogató menet közben módosítja, az azonnal
+   érvényesül. */
 function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
@@ -121,18 +118,14 @@ function scrollToElement(element, offset = 80) {
 }
 
 /* =========================================================
-   1. OFFCANVAS MENÜ
+   1. MENÜ (asztali gépen menüsáv, kisebb képernyőn becsúszó panel)
 ========================================================= */
 
-/*
-   Asztali nézetben (1025 px felett) a menü vízszintes sávban ül a logó
-   mellett: nincs hamburger, nincs kicsúszó panel, a lenyílók lefelé
-   nyílnak. Alatta marad a kicsúszó offcanvas.
-
-   A töréspont a style.css `min-width: 1025px` szabályával van
-   összehangolva – ha ott változik, ezt is át kell írni, különben a
-   kettő szétcsúszik.
-*/
+/* Asztali nézetben (1025 px-től) a menü vízszintes sávban áll a logó mellett:
+   nincs menügomb, nincs becsúszó panel, a lenyílók lefelé nyílnak. Ennél
+   kisebb képernyőn marad a becsúszó panel. A határ a style.css `min-width:
+   1025px` szabályával van összehangolva – ha ott változik, itt is át kell
+   írni, különben a kettő elcsúszik egymástól. */
 const ASZTALI_MENU_TORESPONT = window.matchMedia("(min-width: 1025px)");
 
 function initOffcanvasMenu() {
@@ -148,17 +141,12 @@ function initOffcanvasMenu() {
 
   const asztali = () => ASZTALI_MENU_TORESPONT.matches;
 
-  /*
-     Mobilon a zárt panel csak kicsúszik a képernyőről, de a DOM-ban
-     marad, így a benne lévő linkek alapból fókuszálhatók maradnának:
-     billentyűzettel végig lehetne tabolni a láthatatlan menüponton.
-     Az inert egyszerre veszi ki az elemet a tabsorrendből és
-     a képernyőolvasó elől.
-
-     Asztalon viszont a menü végig látható, ott az inert épp a
-     billentyűzetes használatot lehetetlenítené el – ezért ott soha
-     nem tesszük rá.
-  */
+  /* Mobilon a bezárt menü csak kicsúszik a képernyőről, de az oldal része marad,
+     így a benne lévő linkekre a Tab billentyűvel továbbra is rá lehetne lépni.
+     Az inert jelző ezt kivédi: az elemet kiveszi a billentyűzettel bejárható
+     elemek közül, és elrejti a felolvasóprogram elől is. Asztalon viszont a menü
+     végig látható, ott az inert épp a billentyűzetes használatot tenné
+     lehetetlenné – ezért ott soha nem tesszük rá. */
   function setMenuInert(isInert) {
     if (isInert && !asztali()) {
       offcanvas.setAttribute("inert", "");
@@ -188,7 +176,8 @@ function initOffcanvasMenu() {
       return;
     }
 
-    // A fókuszt még az inert előtt ki kell hozni, különben a body-ra esik
+    // A billentyűzetes kijelölést (fókuszt) még az inert előtt ki kell hozni a
+    // menüből, különben az oldal elejére (body) ugrana
     if (offcanvas.contains(document.activeElement)) {
       menuToggle.focus({ preventScroll: true });
     }
@@ -215,12 +204,10 @@ function initOffcanvasMenu() {
     });
   }
 
-  /*
-     A töréspont átlépésekor rendet kell rakni: ami mobilon nyitva
-     maradt, az asztali sávban ottragadna, és fordítva – az asztali
-     nézetből érkező aria-hidden="false" mobilon elrejtetlenül hagyná
-     a kicsúszott panelt.
-  */
+  /* Ha az ablak mérete átlépi a határt (mobil ↔ asztali), rendet kell rakni: ami
+     mobilon nyitva maradt, az asztali sávban ottragadna, és fordítva – az
+     asztali nézetből hozott „látható” jelzés (aria-hidden="false") mobilon
+     rejtetlenül hagyná a kicsúszott panelt. */
   function alkalmazNezet() {
     closeDropdowns();
 
@@ -238,14 +225,12 @@ function initOffcanvasMenu() {
     }
   }
 
-  /*
-     A töréspontot két forrásból is figyeljük. A matchMedia "change"
-     eseménye a szabályos út, de nem minden környezetben sül el
-     megbízhatóan – ha kimarad, az asztali menü inert állapotban
-     ragadna, vagyis billentyűzettel és képernyőolvasóval használhatatlan
-     lenne. A resize csak akkor csinál bármit, ha tényleg átléptük a
-     határt, így nincs fölösleges munka görgetés/átméretezés közben.
-  */
+  /* A határ átlépését két módon is figyeljük. A böngésző képernyőméret-figyelője
+     (matchMedia "change") a szabályos út, de nem mindenhol jelez megbízhatóan –
+     ha kimarad, az asztali menü inert állapotban ragadna, vagyis billentyűzettel
+     és felolvasóprogrammal használhatatlan lenne. Az ablak átméretezésének
+     figyelése (resize) csak akkor csinál bármit, ha tényleg átléptük a határt,
+     így görgetés vagy átméretezés közben nincs fölösleges munka. */
   let elozoAsztali = asztali();
 
   function nezetFrissites() {
@@ -260,14 +245,11 @@ function initOffcanvasMenu() {
   ASZTALI_MENU_TORESPONT.addEventListener("change", nezetFrissites);
   window.addEventListener("resize", nezetFrissites);
 
-  /*
-     Harmadik háló. Ha a fenti két esemény valamiért kimarad, az asztali
-     menü inert állapotban ragadna: látszik, de billentyűzettel nem
-     elérhető és a képernyőolvasó sem látja. A ResizeObserver a
-     gyökérelem méretét figyeli, ami a nézetablakkal együtt változik, és
-     megbízhatóbban jelez, mint a resize esemény. A nezetFrissites úgyis
-     kilép, ha nem történt tényleges töréspontváltás.
-  */
+  /* Harmadik biztosíték: ha a fenti két figyelő valamiért nem jelez, az asztali
+     menü inert állapotban ragadna (látszik, de billentyűzettel nem elérhető, és
+     a felolvasóprogram sem látja). A ResizeObserver az oldal méretét figyeli,
+     ami az ablakkal együtt változik, és megbízhatóbban jelez. A nezetFrissites
+     függvény úgyis kilép, ha nem történt tényleges váltás. */
   if (typeof ResizeObserver === "function") {
     new ResizeObserver(nezetFrissites).observe(document.documentElement);
   }
@@ -335,13 +317,13 @@ function initOffcanvasMenu() {
 }
 
 /* =========================================================
-   2. ÁLTALÁNOS CAROUSEL
+   2. KÉPVÁLTÓ (carousel)
 ========================================================= */
 
-// Újrafelhasználható diavetítő (carousel) motor: automatikusan lépteti a
-// diákat, kezeli az előző/következő gombokat, és szünetelteti a léptetést,
-// amíg a látogató az egérrel egy dia fölött van, vagy arra fókuszál.
-// Jelenleg a főoldali hero carousel használja.
+// Újrafelhasználható képváltó (carousel): automatikusan lépteti a képeket,
+// kezeli az előző/következő gombokat, és megállítja a léptetést, amíg a
+// látogató az egérrel egy kép fölött van, vagy billentyűzettel rajta áll.
+// Jelenleg a kezdőlap nyitóképei használják.
 function createCarousel({
   slideSelector,
   nextSelector,
@@ -472,7 +454,7 @@ function initHeroCarousel() {
 }
 
 /* =========================================================
-   3. OLDALVÁLTÁS / FADE
+   3. OLDALVÁLTÁS: ELHALVÁNYULÁS
 ========================================================= */
 
 // A data-smooth-link jelölésű linkekre kattintva az oldal előbb elhalványul,
@@ -600,8 +582,9 @@ function initFactsAnimation() {
     const startTime = performance.now();
 
     function update(currentTime) {
-      // Az első képkocka időbélyege a performance.now() előtti is lehet,
-      // ezért a haladást 0 alá sem engedjük (különben negatív szám villanna fel)
+      // Az animáció első lépésének időpontja néha korábbi, mint az indítás
+      // pillanata, ezért a haladást 0 alá sem engedjük (különben egy pillanatra
+      // negatív szám villanna fel)
       const elapsed = Math.max(currentTime - startTime, 0);
       const progress = Math.min(elapsed / duration, 1);
       const easedProgress = 1 - Math.pow(1 - progress, 3);
@@ -686,12 +669,13 @@ function initFactsAnimation() {
 }
 
 /* =========================================================
-   6. TIMELINE
+   6. TÖRTÉNETÜNK – IDŐVONAL
 ========================================================= */
 
-// A Történetünk oldal idővonalát vezérli: az évszám gombokra (asztali nézet)
-// vagy a pontokra (mobil nézet) kattintva, illetve nyílbillentyűkkel az
-// adott év szövege és képe jelenik meg, a többi elrejtve marad.
+// A Történetünk oldal idővonalát vezérli: az évszám-gombokra (asztali gépen és
+// tableten) vagy a vonalkákra (kisebb képernyőn) kattintva, illetve a
+// nyílbillentyűkkel az adott év szövege és képe jelenik meg, a többi rejtve
+// marad.
 function initTimeline() {
   const timeline = qs("#timeline");
   const sections = qsa(".timeline-section");
@@ -726,8 +710,8 @@ function initTimeline() {
       year;
   }
 
-  // Az idővonal szíve: a kiválasztott évhez tartozó szöveges blokkot mutatja
-  // meg, az összes évszám-gombot és -pontot pedig ennek megfelelően jelöli ki
+  // Az idővonal szíve: a kiválasztott év blokkját mutatja meg, az összes
+  // évszám-gombot és vonalkát pedig ennek megfelelően jelöli ki
   function showSection(year, shouldScroll = false) {
     if (!year) return;
 
@@ -768,8 +752,9 @@ function initTimeline() {
     updateCurrentYearLabel(year);
   }
 
-  // Nyílbillentyűkkel (illetve Home/End-del) lépked az évszám gombok/pontok
-  // között, és rögtön meg is jeleníti a kiválasztott év tartalmát
+  // Nyílbillentyűkkel (illetve a Home és End billentyűvel) lépked az
+  // évszám-gombok vagy vonalkák között, és rögtön meg is jeleníti a kiválasztott
+  // év tartalmát
   function moveTimelineControl(items, currentIndex, key) {
     let nextIndex = currentIndex;
 
@@ -868,11 +853,11 @@ function initSearchForm() {
    8. KÖZÖS KÁRTYA NYITÁS / ZÁRÁS
 ========================================================= */
 
-// Közös, újrafelhasználható "Bővebben / Bezárás" viselkedés az üzletág- és
-// üzemegység-kártyákhoz: a címsáv nyíl gombja (ikon, ezért a felolvasott
-// neve aria-label) nyitja és zárja a felcsúszó panelt; egy kártya
-// kinyitásakor az összes többi bezárul, hogy mindig legfeljebb egy kártya
-// legyen nyitva egyszerre.
+// Közös „Bővebben / Bezárás” működés a Tevékenységek és az Üzemegységek
+// kártyáihoz: a címsáv nyíl gombja (csak ikon, ezért a felolvasóprogramnak
+// szóló nevét az aria-label adja) nyitja és zárja a felcsúszó panelt. Egy
+// kártya kinyitásakor az összes többi bezárul, hogy egyszerre legfeljebb egy
+// legyen nyitva.
 function initToggleCards({
   sectionSelector,
   cardSelector,
@@ -923,10 +908,12 @@ function initToggleCards({
     if (isOpen) closeOtherCards(card);
   });
 
-  // WCAG 1.4.13: az egérrel vagy fókusszal előbukkanó összefoglaló Escape-pel
-  // eltüntethető, az egér / a fókusz elmozdítása nélkül. A gombbal kinyitott
-  // kártyát az Escape bezárja, a fókusz a nyíl gombra kerül vissza.
-  // Capture fázisban fut, hogy egy nyitott modal Escape-jét ne zavarja.
+  // Akadálymentesség (WCAG 1.4.13): az egérrel vagy billentyűzettel előbukkanó
+  // összefoglaló az Esc billentyűvel eltüntethető, az egér vagy a kijelölés
+  // elmozdítása nélkül. A gombbal kinyitott kártyát az Esc bezárja, és a
+  // kijelölés visszakerül a nyíl gombra. Ez a figyelő a többi előtt kapja meg a
+  // billentyűt (capture), hogy egy nyitott felugró ablak saját Esc-kezelését ne
+  // zavarja.
   document.addEventListener(
     "keydown",
     (event) => {
@@ -980,7 +967,7 @@ function initUnitsCards() {
 }
 
 /* =========================================================
-   9. BUSINESS / UNITS KÖZÖS MODAL
+   9. TEVÉKENYSÉGEK ÉS ÜZEMEGYSÉGEK – KÖZÖS „RÉSZLETEK” ABLAK
 ========================================================= */
 
 // Az üzletág- és üzemegység-kártyák "Részletek" gombjára kattintva a kártyán
@@ -1179,7 +1166,7 @@ function initEwasteGallery() {
 }
 
 /* =========================================================
-   11. KARRIER OLDAL – ÁLLÁSHIRDETÉS MODAL
+   11. KARRIER OLDAL – ÁLLÁSHIRDETÉS FELUGRÓ ABLAKA
 ========================================================= */
 
 // A Karrier oldalon egy álláshirdetés-kártya "Részletek" gombjára kattintva

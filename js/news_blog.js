@@ -1,12 +1,11 @@
 /* =========================================================
-   SZEFO.HU – HÍREK + BLOG MINI-SPA
+   SZEFO.HU – HÍREK ÉS BLOG
    Fájl: js/news_blog.js
-
-   Működés:
-   - Hírek / Blog váltás
-   - kategóriaszűrés
+   A Hírek oldal teljes működése egy helyen, oldalújratöltés nélkül:
+   - váltás a Hírek és a Blog között
+   - szűrés kategóriára
    - keresés
-   - helyben olvasható részletes nézet
+   - a kiválasztott hír elolvasása ugyanazon az oldalon
 ========================================================= */
 
 // Itt található az összes hír és blogbejegyzés tényleges szövege (cím, dátum,
@@ -493,8 +492,9 @@ if (searchInput && initialSearch) {
     render();
   });
 
-  // A "Tovább olvasom" és a "Vissza a listához" gombok kattintását figyeli
-  // (mindkettő a kártyák/részletnézet dinamikusan generált HTML-jében van)
+  // A „Tovább olvasom” és a „Vissza a listához” gombok kattintását figyeli
+  // (mindkettő a JavaScript által utólag elkészített HTML-ben van, ezért a közös
+  // szülőelemen figyeljük őket)
   document.addEventListener("click", (event) => {
     const openButton = event.target.closest("[data-news-blog-open]");
     const backButton = event.target.closest("[data-news-blog-back]");

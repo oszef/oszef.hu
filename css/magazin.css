@@ -1,13 +1,11 @@
 /* =========================================================
    SZEFO.HU – KORÁBBI SZEFO MAGAZINOK (ARCHÍVUM)
    Fájl: css/magazin.css
-
-   Csak a hu/szefo_magazin/index.html oldal saját stílusa.
-   A közös design tokenek (--color-*, --radius-*, --shadow-*)
-   a style.css-ből jönnek, ezért az mindig előbb töltődjön be.
-
-   Az oldal háttere és hero-ja szándékosan a hírek oldal
-   (news_blog.css) képét követi, mert onnan nyílik meg.
+   Csak a hu/szefo_magazin/index.html oldal saját stílusa. A közös
+   alapértékeket (színek, lekerekítés, árnyék: --color-*, --radius-*,
+   --shadow-*) a style.css adja, ezért annak mindig előbb kell betöltődnie. Az
+   oldal háttere és fejlécképe szándékosan ugyanolyan, mint a Hírek oldalé,
+   mert onnan lehet ide eljutni.
 ========================================================= */
 
 /* =========================================================
@@ -24,7 +22,7 @@
 }
 
 /* =========================================================
-   2. HERO
+   2. FEJLÉCKÉP
 ========================================================= */
 
 .magazine-hero {
@@ -61,7 +59,7 @@
   line-height: var(--line-height-body);
 }
 
-/* Archív / megőrzési tájékoztató a hero alatt. */
+/* Archív / megőrzési tájékoztató a fejléckép alatt. */
 .magazine-notice {
   max-width: 980px;
   margin: 0 auto 44px;
@@ -288,7 +286,7 @@
 }
 
 /* =========================================================
-   8. RESPONZÍV
+   8. KISEBB KÉPERNYŐK
 ========================================================= */
 
 @media (max-width: 1024px) {
@@ -325,7 +323,7 @@
 }
 
 /* =========================================================
-   9. REDUCED MOTION
+   9. CSÖKKENTETT MOZGÁS
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,26 +1,32 @@
 
 /* =========================================================
-   SZEFO.HU – KÖZÖS STÍLUSLAP / REFAKTORÁLT VÁLTOZAT
+   SZEFO.HU – KÖZÖS STÍLUSLAP
    Fájl: css/style.css
 
-   Szerepe:
-   - közös design tokenek és alapbeállítások
-   - navbar / offcanvas navigáció
-   - főoldali blokkok
-   - Történetünk, Bemutatkozás és az információs oldalak közös stílusai
-   - üzletág / üzemegység kártyák és közös részletező modal
-   - Alapítvány oldal alap stílusai
+   Ez a fájl adja a honlap kinézetének nagy részét:
+   - közös alapértékek (színek, betűméretek, térközök, árnyékok) és
+     alapbeállítások
+   - a fejléc és a menü (asztali gépen menüsáv, kisebb képernyőn oldalról
+     becsúszó panel)
+   - a kezdőlap blokkjai
+   - a Történetünk, a Bemutatkozás és az információs oldalak közös stílusai
+   - a Tevékenységek és az Üzemegységek kártyái és közös „Részletek” ablaka
+   - az Alapítvány, a Kapcsolat, az E-hulladék, a Karrier és a Partnerek oldal
+     stílusai
 
    Nem ide tartozik:
-   - PDF dokumentumtár: pdf_style.css
-   - keresési oldal: search_style.css
+   - PDF-dokumentumtár: pdf_style.css
+   - kereső oldal: search_style.css
    - hírek oldal: news_blog.css
+   - SZEFO Magazin archívum: magazin.css
    - felugró hirdetés: popup.css
 ========================================================= */
 
 
 /* =========================================================
-   1. DESIGN TOKENS / ALAP VÁLTOZÓK
+   1. ALAPÉRTÉKEK EGY HELYEN (színek, betűk, méretek, térközök)
+   Az egész oldal ezeket az értékeket használja: ha itt átírsz egy színt vagy
+   egy méretet, az mindenhol egyszerre változik.
 ========================================================= */
 
 :root {
@@ -55,17 +61,20 @@
     --navbar-height: 60px;
     --hero-carousel-margin-top: calc(var(--navbar-height) + 16px);
 
-    /* Hero slide alapértelmezés – az egyes slide-ok felülírhatják. */
+    /* A nyitóképek alapbeállítása: a kép melyik része maradjon látható, ha nem fér
+       ki teljesen (egy-egy kép ezt felülírhatja). */
     --hero-position: center top;
 
-    /* Standard betűtípus és címméret tokenek */
+    /* Betűtípus és címméretek */
     --font-base: Arial, Helvetica, sans-serif;
 
-    /* Tipográfiai skála. Minden érték rem-ben van,
-       így a szöveg a böngésző betűméret-beállítását is követi (WCAG 1.4.4).
-       A clamp() alsó-felső határa is rem, ezért nagyításkor együtt nő.
-       12–13px-es szöveg nincs: a legkisebb a kiegészítő szöveg (14px).
-       Ikonok és nagy számkijelzők (pl. .fact-number) nem tartoznak ide. */
+    /* Betűméretek. Minden érték rem-ben (a böngésző alap betűméretéhez
+       viszonyítva) van megadva, így ha a látogató a böngészőben nagyobb betűt
+       állít be, a szöveg is vele nő (WCAG 1.4.4). A clamp() a képernyő
+       szélességétől függően egy alsó és egy felső határ között méretez, ezek is
+       rem-ben vannak. 12–13 px-es szöveg nincs: a legkisebb a 14 px-es kiegészítő
+       szöveg. Az ikonok és a nagy számok (pl. .fact-number) mérete nem ide
+       tartozik. */
     --font-size-page-title: clamp(2rem, 1.5rem + 1.6vw, 2.5rem);         /* H1: 32–40px */
     --font-size-section-title: clamp(1.5rem, 1.3rem + 0.7vw, 1.75rem);   /* H2: 24–28px */
     --font-size-card-title: 1.5rem;          /* kártyán belüli H2: 24px (a H2 alsó értéke) */
@@ -87,16 +96,16 @@
     --transition-base: 0.35s ease;
     --transition-slow: 0.6s ease;
 
-    /* Fókuszgyűrű és minimum kattintható méret.
-       A fókuszgyűrű szándékosan tömör színű: az áttetsző rgba() változat
-       világos háttéren alig látszik. A --hit-target a legkisebb méret,
-       amit ujjal még kényelmesen el lehet találni – apró elemeknél
-       (vonal, pötty) a gomb legyen ekkora, a látvány maradhat kisebb. */
+    /* Fókuszgyűrű és legkisebb kattintható méret. A fókuszgyűrű (a billentyűzettel
+       kiválasztott elem körüli keret) szándékosan tömör színű: az áttetsző
+       változat világos háttéren alig látszik. A --hit-target az a legkisebb méret,
+       amit ujjal még kényelmesen el lehet találni: apró elemeknél (vonal, pötty) a
+       gomb legyen ekkora, a látható rész maradhat kisebb. */
     --focus-ring: 3px solid var(--color-primary-light);
     --focus-ring-offset: 3px;
     --hit-target: 24px;
 
-    /* Standard SZEFO tartalmi listák */
+    /* A tartalmi felsorolások egységes kinézete (nyíl a sor elején) */
     --list-margin: 18px 0 0;
     --list-item-gap: 12px;
     --list-indent: 30px;
@@ -110,7 +119,8 @@
 
 
 /* =========================================================
-   2. RESET / GLOBAL
+   2. ALAPBEÁLLÍTÁSOK AZ EGÉSZ OLDALRA
+   (kiegyenlítik a böngészők eltérő alapértelmezéseit)
 ========================================================= */
 
 *,
@@ -123,8 +133,9 @@
 
 html {
     scroll-behavior: smooth;
-    /* A fix menüsor ne takarja el a billentyűzettel fókuszált vagy
-       horgonnyal megcélzott elemet (WCAG 2.4.11) */
+    /* A rögzített menüsor ne takarja el azt az elemet, amelyre a látogató
+       billentyűzettel ráállt, vagy amelyre egy oldalon belüli link ugrik (WCAG
+       2.4.11) */
     scroll-padding-top: calc(var(--navbar-height) + 16px);
 }
 
@@ -167,12 +178,12 @@ h3 { font-size: var(--font-size-subsection-title); }
     }
 }
 
-/* A height: auto elengedhetetlen a max-width: 100% mellé: a képeken ott van a
-   width/height attribútum (ez előzi meg a betöltés közbeni elrendezés-ugrást),
-   enélkül viszont a böngésző a fix attribútum-magasságot használná, és a kép
-   megnyúlna. Így az attribútumokból csak a képarány érvényesül.
-   Ahol a CSS szándékosan ad magasságot (pl. .navbar-brand img), az a
-   specifikusabb szabály továbbra is felülírja ezt. */
+/* A képek a dobozukhoz igazodnak, és nem nyúlnak meg. A HTML-ben minden képnél
+   ott a szélesség és a magasság (width/height): ebből a böngésző már betöltés
+   előtt tudja a kép arányát, így az oldal nem ugrik meg, amikor a kép
+   megérkezik. A height: auto miatt ebből csak az arány számít, a fix magasság
+   nem. Ahol a CSS szándékosan ad magasságot (pl. a fejléc logója), az a
+   pontosabb szabály felülírja ezt. */
 img,
 picture,
 svg {
@@ -229,11 +240,9 @@ main {
 }
 
 
-/*
-   Akadálymentes, csak képernyőolvasónak látható szöveg.
-   Használat például ikon-gombokhoz vagy vizuálisan rejtett labelekhez.
-   A clip-path a modern böngészők miatt került be, a clip pedig kompatibilitási tartalék.
-*/
+/* Csak a felolvasóprogramoknak szóló, a képernyőn nem látható szöveg, pl. egy
+   csak ikonból álló gomb neve. A clip-path a mai böngészőknek, a clip a
+   régebbieknek szól. */
 .sr-only {
     position: absolute !important;
     width: 1px !important;
@@ -248,7 +257,7 @@ main {
 }
 
 
-/* Látható fókuszállapotok billentyűzetes navigációhoz */
+/* Jól látható keret azon az elemen, amelyre a látogató billentyűzettel (Tab) ráállt */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -262,14 +271,12 @@ select:focus-visible,
 
 /* =========================================================
    2/A. GOMBOK ÉS KÁRTYÁK – KÖZÖS ALAP
-
-   A gombok és kártyák közös tulajdonságai itt vannak egy helyen,
-   a régi osztálynevek pedig rá vannak kötve. Így egy háttérszín vagy
-   sarokkerekítés átírása mindenhol egyszerre érvényesül.
-
-   Új gomb vagy kártya esetén az osztálynevet ide, a közös listához
-   kell felvenni, nem a teljes stílust újra lemásolni. Az egyedi
-   eltérések (padding, margó) maradnak az adott szabálynál.
+   A gombok és kártyák közös tulajdonságai itt vannak egy helyen, a régebbi
+   osztálynevek is ide vannak bekötve. Így ha egy háttérszínt vagy
+   sarokkerekítést átírsz, az mindenhol egyszerre változik. Új gombnál vagy
+   kártyánál az osztálynevet a lenti közös listához kell hozzáadni, nem a
+   teljes stílust újra lemásolni. Az egyedi eltérések (belső és külső térköz)
+   az adott elem saját szabályánál maradnak.
 ========================================================= */
 
 /* Gombok közös alapja */
@@ -314,7 +321,7 @@ select:focus-visible,
     transform: translateY(-2px);
 }
 
-/* Kerek lapozógombok a carousel-ekhez */
+/* Kerek lapozógombok a képváltókhoz */
 .btn--carousel,
 .hero-prev,
 .hero-next,
@@ -361,8 +368,8 @@ select:focus-visible,
 }
 
 /* =========================================================
-   2/B. STANDARD SZEFO TARTALMI LISTÁK
-   A menüket és footer linklistákat szándékosan nem érinti.
+   2/B. TARTALMI FELSOROLÁSOK EGYSÉGES KINÉZETE
+   A menük és a lábléc linklistái szándékosan nem tartoznak ide.
 ========================================================= */
 
 .ceo-full ul,
@@ -411,7 +418,9 @@ select:focus-visible,
 }
 
 /* =========================================================
-   3. PAGE TRANSITION
+   3. OLDALVÁLTÁS: ELHALVÁNYULÁS
+   Linkre kattintva az oldal finoman elhalványul, és az új oldal is finoman
+   jelenik meg.
 ========================================================= */
 
 .page-fade-out {
@@ -436,7 +445,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   4. NAVBAR
+   4. FEJLÉC FELSŐ SÁVJA (logó és menügomb)
 ========================================================= */
 
 .navbar {
@@ -493,15 +502,15 @@ select:focus-visible,
 
 
 /* =========================================================
-   5. OFFCANVAS MENÜ
+   5. OLDALRÓL BECSÚSZÓ MENÜ (tableten és mobilon, 1024 px-ig)
 ========================================================= */
 
-/* FONTOS:
-   A zárt panel csak kicsúszik a képernyőről, de a DOM-ban marad, ezért
-   a visibility is kell. Enélkül a benne lévő menüpontokra tabbal rá
-   lehet menni akkor is, amikor a menü zárva van. A script.js ezen felül
-   inert attribútumot is tesz rá; ez a szabály a régebbi böngészőké.
-   A 0.3s késleltetés hagyja lefutni a becsukó animációt. */
+/* FONTOS: a bezárt menü csak kicsúszik a képernyőről, de az oldal része marad.
+   A visibility: hidden nélkül billentyűzettel (Tab) továbbra is rá lehetne
+   lépni a láthatatlan menüpontokra. A script.js ezen felül az inert jelzőt is
+   ráteszi (ez a menüt a billentyűzet és a felolvasóprogram számára is
+   kikapcsolja); ez a szabály a régebbi böngészőknek szól. A 0,3 másodperces
+   késleltetés kivárja a kicsúszó animáció végét. */
 .offcanvas {
     position: fixed;
     top: 0;
@@ -577,7 +586,7 @@ select:focus-visible,
 }
 
 
-/* Offcanvas menülista és lenyíló almenük */
+/* A becsúszó menü listája és a lenyíló almenük */
 .menu {
     list-style: none;
 }
@@ -652,9 +661,10 @@ select:focus-visible,
 
 /* ---------------------------------------------------------
    AKTUÁLIS OLDAL A MENÜBEN
-   Az aria-current="page" a képernyőolvasónak mondja be, hol jár
-   a látogató; szemmel a sötétebb betűszín jelzi ugyanezt. Itt a
-   menüpontok alapszíne --color-text, ezért a sötétkék emel ki.
+   A menüpont aria-current="page" jelzése a felolvasóprogramnak mondja meg,
+   melyik oldalon jár a látogató; a szemnek a sötétebb betűszín jelzi ugyanezt.
+   Itt a menüpontok alapszíne --color-text, ezért a sötétkék emeli ki az
+   aktuálisat.
 --------------------------------------------------------- */
 .menu > li > a[aria-current="page"],
 .dropdown-menu li a[aria-current="page"],
@@ -663,7 +673,7 @@ select:focus-visible,
 }
 
 
-/* Offcanvas kereső – csak gombos változat */
+/* Keresés gomb a menüben (csak gomb, beviteli mező nélkül) */
 .search--button-only{
   display: block;
 }
@@ -692,27 +702,24 @@ select:focus-visible,
   transform: translateY(-1px);
 }
 /* =========================================================
-   6. HERO CAROUSEL
-   Blur háttér + contain előtérkép.
+   6. NYITÓKÉPEK (képváltó a kezdőlap tetején)
    Cél:
-   - a hero keret mindig legyen kitöltve,
-   - a fő kép ne vágódjon le durván,
-   - ne legyen csúnya üres sáv,
-   - a szöveg maradjon olvasható.
+   - a keret mindig ki legyen töltve, ne maradjon üres sáv,
+   - a kép lényeges része ne vágódjon le,
+   - a szöveg mindig jól olvasható legyen.
 ========================================================= */
 
 .hero-carousel {
     position: relative;
     width: 100%;
-    /* A hero képek natív aránya 16:9 (1366x768) – a 56.25vw pontosan
-       ezt az arányt adja ki a szélességből, így a kép a legtöbb
-       nézeten kitölti a keretet, nem marad elmosott üres sáv.
-       A biztonsági korlát NEM egy fix vh-százalék (az normál, magas
-       ablakon is feleslegesen vágott volna), hanem a tényleges elérhető
-       magasság: 100vh mínusz a fejléc (~65px, lásd a lenti asztali
-       nézet .hero-carousel margin-top-ját) és egy kis ráhagyás – így
-       csak akkor szűkíti a dobozt a 16:9-nél kisebbre, ha az egyébként
-       tényleg a lapon kívülre tolná a szöveget. */
+    /* A nyitóképek eredeti aránya 16:9 (1366×768). Az 56.25vw pontosan ezt az
+       arányt adja a képernyő szélességéből, így a kép a legtöbb képernyőn hézag
+       nélkül kitölti a keretet. A magasság felső határa nem egy fix százalék (az
+       normál, magas ablakban is fölöslegesen vágna), hanem a ténylegesen
+       rendelkezésre álló hely: az ablak magassága mínusz a fejléc (kb. 65 px, lásd
+       lent a .hero-carousel margin-top értékét) és egy kis ráhagyás. Így a keret
+       csak akkor lesz a 16:9-nél laposabb, ha különben a szöveg lecsúszna a
+       képernyőről. */
     height: clamp(400px, min(56.25vw, calc(100vh - 85px)), 1100px);
     height: clamp(400px, min(56.25vw, calc(100dvh - 85px)), 1100px);
     overflow: hidden;
@@ -726,7 +733,7 @@ select:focus-visible,
     isolation: isolate;
 }
 
-/* Slide alapállapot */
+/* Egy nyitókép alapállapota */
 .hero-slide {
     position: absolute;
     inset: 0;
@@ -739,22 +746,19 @@ select:focus-visible,
         visibility 0.7s ease;
 }
 
-/* Aktív slide */
+/* Az éppen látható nyitókép */
 .hero-slide.active {
     opacity: 1;
     visibility: visible;
     z-index: 1;
 }
 
-/*
-   Előtérkép: cover módban tölti ki a teljes szélességet és magasságot,
-   üres sáv (letterbox) sosem marad oldalt. Mind a 4 hero kép egységesen
-   16:9 arányú fájl, így ez a keret is szinte mindig pontosan 16:9 –
-   vágás csak a nagyon alacsony (rövid, de széles) ablakoknál fordul elő,
-   ahol a hero-carousel magassága a vh-sapka miatt szűkebb a 16:9-nél.
-   Ilyenkor a "top" pozíció miatt a vágás alulról (láb, padló) essen,
-   ne a fejeknél – kis kijelzőn/felbontáson ez számít igazán.
-*/
+/* A kép kitölti a keret teljes szélességét és magasságát (cover), oldalt sosem
+   marad üres sáv. Mind a 4 nyitókép 16:9 arányú, így a keret is szinte mindig
+   pontosan 16:9 – vágás csak nagyon alacsony, de széles ablakban fordul elő,
+   ahol a keret a magassági korlát miatt laposabb. Ilyenkor a „top” igazítás
+   miatt a kép alja vágódik le (láb, padló), nem a fejek – kis képernyőn ez
+   számít igazán. */
 .hero-slide img {
     position: absolute;
     inset: 0;
@@ -766,10 +770,7 @@ select:focus-visible,
     object-position: center top;
 }
 
-/*
-   Finom olvashatósági sötétítés.
-
-*/
+/* Finom sötétítés a képen, hogy a szöveg jobban olvasható legyen. */
 .hero-slide::after {
     content: "";
     position: absolute;
@@ -784,7 +785,7 @@ select:focus-visible,
     pointer-events: none;
 }
 
-/* Hero szöveg */
+/* A nyitóképek szövege */
 .hero-text {
     position: absolute;
     left: 50%;
@@ -872,7 +873,7 @@ select:focus-visible,
 }
 
 /* =========================================================
-   HERO – TABLET
+   NYITÓKÉPEK – TABLET
 ========================================================= */
 
 @media (max-width: 1024px) {
@@ -887,7 +888,7 @@ select:focus-visible,
 }
 
 /* =========================================================
-   HERO – MOBIL
+   NYITÓKÉPEK – MOBIL
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -927,7 +928,7 @@ select:focus-visible,
 }
 
 /* =========================================================
-   HERO – KIS MOBIL
+   NYITÓKÉPEK – KIS MOBIL
 ========================================================= */
 
 @media (max-width: 420px) {
@@ -973,7 +974,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   8. CEO BLOKK
+   8. VEZÉRIGAZGATÓI KÖSZÖNTŐ
 ========================================================= */
 
 .ceo-wrapper {
@@ -983,10 +984,10 @@ select:focus-visible,
 .ceo-preview,
 .ceo-full {
     max-width: var(--container-narrow);
-    /* Felül kisebb a rés, mert közvetlenül a hero carousel után jön,
-       ami már önmagában is elválasztja a tartalmat a navbartól – a
-       80px-es alsó rés viszont marad, hogy illeszkedjen a többi
-       szekció megszokott ritmusához. */
+    /* Felül 48 px, alul 80 px térköz. A kezdőlapon a köszöntő 2026 novembere óta
+       az Üzemegységek alatt áll: ott a fölötte lévő blokk nagyobb alsó térköze
+       érvényesül (két egymással érintkező térköz nem adódik össze, a nagyobb
+       számít). */
     margin: 48px auto 80px;
     padding: 50px 40px;
     background: var(--color-surface);
@@ -1119,9 +1120,10 @@ select:focus-visible,
     gap: 20px;
 }
 
-/* Logó doboza (háttér, árnyék, keret, lekerekítés: lásd "Kártyák közös alapja").
-   A container-type azért kell, hogy a logó magasságát a doboz szélességéhez
-   lehessen kötni (cqw egység, lásd lent). */
+/* A logó doboza (háttér, árnyék, keret, lekerekítés: lásd „Kártyák közös
+   alapja”). A container-type teszi lehetővé, hogy a logó magasságát a doboz
+   szélességéhez kössük (cqw egység = a doboz szélességének századrésze, lásd
+   lent). */
 .iso-certificate-image {
     container-type: inline-size;
     width: 100%;
@@ -1160,7 +1162,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   10. ABOUT SECTION
+   10. RÓLUNK (kezdőlap)
 ========================================================= */
 
 .about-section {
@@ -1230,7 +1232,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   11. FŐBB ADATOK / FACTS
+   11. FŐBB ADATOK (kezdőlap)
 ========================================================= */
 
 .facts-section {
@@ -1396,7 +1398,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   12. TIMELINE OLDAL (DESKTOP / TABLET)
+   12. TÖRTÉNETÜNK – IDŐVONAL (asztali gép és tablet)
 ========================================================= */
 
 .timeline-page {
@@ -1573,10 +1575,10 @@ select:focus-visible,
     font-weight: 700;
 }
 
-/* Desktop/tablet: gombos évszám nav látszik, tick nav rejtve */
+/* Asztali gépen és tableten az évszámos sáv látszik, a csak vonalkás (mobil) sáv rejtve van */
 .timeline-years-bar--ticks { display: none; }
 
-/* Évszám navigáció (desktop/tablet) */
+/* Évszámsáv (asztali gép és tablet) */
 .timeline-years-bar:not(.timeline-years-bar--ticks) {
     max-width: var(--container);
     margin: 20px auto 10px;
@@ -1625,10 +1627,11 @@ select:focus-visible,
     outline-offset: 3px;
 }
 
-/* Asztali/tablet évszám-sáv: a fő évszámok kiírt gombok, a köztes évek
-   vékony vonalkák (tickek), így mind a 23 év egy sorban elfér.
-   A tick maga a 24 px széles érinthető felület (--hit-target), a látható
-   vonalat a ::before rajzolja – ugyanúgy, mint a mobil .timeline-tick-nél. */
+/* Asztali és tablet évszámsáv: a fontosabb évszámok kiírt gombok, a köztes
+   évek vékony vonalkák, így mind a 23 év egy sorban elfér. Minden vonalka egy
+   24 px széles, ujjal is jól eltalálható gomb (--hit-target); a látható vékony
+   vonalat a ::before rajzolja bele – ugyanúgy, mint a mobil sávban
+   (.timeline-tick). */
 .timeline-years-bar:not(.timeline-years-bar--ticks) {
     align-items: center;
     gap: 4px;
@@ -1677,9 +1680,10 @@ select:focus-visible,
     outline-offset: 0;
 }
 
-/* Évszám-buborék a tick alatt rámutatáskor és billentyűs fókuszkor.
-   A sáv és a kártya közti résben jelenik meg (tartalmat nem takar),
-   és a gomb része, így ráhúzott egérrel is látva marad. */
+/* Évszám-buborék a vonalka alatt, ha a látogató egérrel fölé áll vagy
+   billentyűzettel rálép. A sáv és a kártya közötti résben jelenik meg
+   (tartalmat nem takar), és a gomb része, így egérrel rámutatva is látva
+   marad. */
 .year-item--tick::after {
     content: attr(aria-label);
     position: absolute;
@@ -1733,20 +1737,20 @@ select:focus-visible,
     }
 }
 /* =========================================================
-   TIMELINE – TICK-SÁV (860 px-ig)
-   - a kiírt évszámos sáv itt már nem férne ki egy sorban,
-     ezért a mobil tick-sáv látszik (a szabályok változatlanok)
-   - a mobil kártyás layout továbbra is 768 px-től indul
+   TÖRTÉNETÜNK – VONALKÁS ÉVSZÁMSÁV (860 px-ig)
+   - itt a kiírt évszámos sáv már nem férne ki egy sorban, ezért a mobilos,
+     csak vonalkás sáv látszik
+   - a mobilos kártyaelrendezés továbbra is 768 px-nél kezdődik
 ========================================================= */
 
 @media (max-width: 860px) {
 
-  /* Desktop/tablet év-gombok eltűnnek mobilon */
+  /* Az évszámos gombsor itt eltűnik */
   .timeline-years-bar:not(.timeline-years-bar--ticks) {
     display: none;
   }
 
-  /* Mobil tick nav: sticky a navbar alatt */
+  /* A vonalkás sáv görgetéskor a fejléc alatt marad (sticky) */
   .timeline-years-bar--ticks {
     display: flex;
     align-items: center;
@@ -1763,16 +1767,16 @@ select:focus-visible,
     box-shadow: 0 6px 16px rgba(0,0,0,0.06);
   }
 
-  /* FONTOS:
-     A korábbi 1953 / Jelen fix feliratokat levesszük.
-     Ezeket eddig a ::before és ::after írta ki. */
+  /* FONTOS: a sáv két végén korábban fix „1953” és „Jelen” felirat állt (a
+     ::before és az ::after írta ki). Ezeket kikapcsoljuk, a helyüket a
+     kiválasztott év felirata vette át. */
   .timeline-years-bar--ticks::before,
   .timeline-years-bar--ticks::after {
     content: none !important;
     display: none !important;
   }
 
-  /* Aktuális évszám felirat */
+  /* A kiválasztott év felirata a sáv elején */
   .timeline-current-year {
     order: -1;
     flex: 0 0 auto;
@@ -1789,20 +1793,20 @@ select:focus-visible,
     white-space: nowrap;
   }
 
-  /* Tick track: több helyet kap, mert nincs már 1953 / Jelen fix felirat */
+  /* A vonalkák sora: kitölti a sáv maradék részét */
   .timeline-years-track {
     flex: 1 1 auto;
     min-width: 0;
     display: flex;
     align-items: center;
-    /* Kis gap: maguk a tick gombok 24px szélesek, az érinthető felület
-       bennük van, nem a köztük lévő üres helyen. */
+    /* Kis rés a vonalkák között: maguk a gombok 24 px szélesek, az érinthető
+       felület bennük van, nem a köztük lévő üres helyen. */
     gap: 2px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     padding: 8px 0;
     margin: 0;
-    /* Hogy az aktív tick középre gördítése ne ugráljon */
+    /* Hogy a kiválasztott vonalka középre görgetése ne ugráljon */
     scroll-padding-inline: 24px;
   }
 
@@ -1827,8 +1831,8 @@ select:focus-visible,
     width: 2px;
     height: 14px;
     border-radius: 2px;
-    /* Az alfa szándékosan ilyen erős: a korábbi 0.28 fehér háttéren
-       alig látszott. */
+    /* A vonal szándékosan ilyen sötét (kevéssé áttetsző): a korábbi 0.28-as érték
+       fehér háttéren alig látszott. */
     background: rgba(0, 0, 0, 0.45);
     transition:
       height var(--transition-fast),
@@ -1870,16 +1874,15 @@ select:focus-visible,
 }
 
 /* =========================================================
-   TIMELINE – MOBIL
-   - tick nav megmarad
-   - 1953 / Jelen fix felirat levéve
-   - aktuális évszámot a .timeline-current-year mutatja
-   - kártyás mobil layout
+   TÖRTÉNETÜNK – MOBIL (768 px-ig)
+   - a vonalkás évszámsáv marad
+   - a kiválasztott évszámot a .timeline-current-year felirat mutatja
+   - a kártyán a kép fent, alatta a szöveg
 ========================================================= */
 
 @media (max-width: 768px) {
 
-  /* Header: kompaktabb mobilon */
+  /* Az oldal fejléce (cím és bevezető) mobilon tömörebb */
   .timeline-header {
     margin-top: calc(var(--navbar-height) + 18px);
     margin-bottom: 10px;
@@ -1950,7 +1953,7 @@ select:focus-visible,
   }
 }
 
-/* KIS MOBIL – timeline finomhangolás */
+/* KIS MOBIL – az idővonal finomhangolása */
 @media (max-width: 420px) {
   .timeline-years-bar--ticks {
     width: calc(100% - 20px);
@@ -1978,7 +1981,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   13. FOOTER - opcionális, ha később beépítjuk a kezdőlapra
+   13. LÁBLÉC (minden oldal alján)
 ========================================================= */
 
 .site-footer {
@@ -2112,7 +2115,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   14. TABLET BREAKPOINT
+   14. TABLET NÉZET (1024 px-ig)
 ========================================================= */
 
 @media (max-width: 1024px) {
@@ -2132,7 +2135,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   15. MOBIL BREAKPOINT
+   15. MOBIL NÉZET (768 px-ig)
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -2244,7 +2247,7 @@ select:focus-visible,
 
 
 /* =========================================================
-   16. KIS MOBIL
+   16. KIS MOBIL (420 px-ig)
 ========================================================= */
 
 @media (max-width: 420px) {
@@ -2267,7 +2270,9 @@ select:focus-visible,
 
 
 /* =========================================================
-   17. REDUCED MOTION
+   17. CSÖKKENTETT MOZGÁS
+   Ha a látogató a gépén kérte, hogy kevesebb animációt lásson, itt kapcsoljuk
+   ki őket.
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2303,10 +2308,10 @@ select:focus-visible,
   padding: var(--block-padding);
 }
 
-/* FONTOS:
-   A grid-elemek alapból nem zsugorodnak a tartalmuk alá, ezért egy széles
-   táblázat kifeszítené az egész blokkot a viewporton túlra. A min-width: 0
-   engedi összemenni, így a .table-scroll tud ténylegesen görgetni. */
+/* FONTOS: a rácsban (grid) álló elemek alapból nem mennek összébb a
+   tartalmuknál, ezért egy széles táblázat az egész blokkot a képernyőn túlra
+   feszítené. A min-width: 0 engedi összemenni, így a táblázat dobozában
+   (.table-scroll) tényleg oldalra lehet görgetni. */
 .info-block{
   min-width: 0;
 }
@@ -2376,7 +2381,7 @@ select:focus-visible,
   transform: translateY(-2px);
 }
 
-/* Történetünk oldalon a vissza gomb közelebb kerül a timeline kártyához. */
+/* A Történetünk oldalon a Vissza gomb közelebb kerül az idővonal kártyájához. */
 .timeline-page .mission-back{
   margin-top: 14px;
 }
@@ -2450,14 +2455,13 @@ select:focus-visible,
    itt csak az ezen az oldalon jelentkező extrák vannak.
 ========================================================= */
 
-/* Címkézett adatsor (Cím, Telefon, E-mail stb.)
-   Úgy viselkedik, mint egy kétoszlopos táblázat: az egész lista egy rács,
-   a sorokat adó <div>-ek subgriddel ezt a közös oszlopszélességet veszik
-   át, így minden érték (dd) ugyanabban az oszlopban kezdődik.
-   A címkeoszlop legfeljebb 45%-ig nő (hosszabb címke ott tördelődik),
-   az értékoszlop a maradékot kapja, és benne a hosszú szöveg is tör.
-   Ha a böngésző nem ismeri a subgridet, a soronkénti rács marad érvényben
-   (a dd-k akkor soronként igazodnak, de minden olvasható marad). */
+/* Címkézett adatsor (Cím, Telefon, E-mail stb.). Úgy viselkedik, mint egy
+   kétoszlopos táblázat: minden érték ugyanabban az oszlopban kezdődik, mert a
+   sorok a közös rács oszlopszélességét veszik át (subgrid). A címke oszlopa
+   legfeljebb a szélesség 45%-áig nő (a hosszabb címke ott új sorba törik), az
+   érték a maradékot kapja, és a hosszú szöveg is tördelődik. Ha egy böngésző
+   ezt nem ismeri, a sorok külön-külön igazodnak – kevésbé egyenletes, de
+   minden olvasható marad. */
 .info-data{
   margin: 16px 0 0;
   display: grid;
@@ -2538,13 +2542,12 @@ select:focus-visible,
   .site-list{ grid-template-columns: 1fr; }
 }
 
-/*
-   A táblázat mobilon nem fér ki, ezért ez a doboz görgeti vízszintesen.
-   A tabindex azért kell, hogy billentyűzettel is lehessen görgetni,
-   a role+aria-label pedig hogy a képernyőolvasó bejelentse a régiót.
-   FONTOS: maga a <table> maradjon igazi táblázat – ha display: block-ra
-   állítjuk, elveszik a sor-oszlop kapcsolat a képernyőolvasó számára.
-*/
+/* A táblázat mobilon nem fér ki, ezért ez a doboz oldalra görgethető. A
+   tabindex miatt billentyűzettel is lehet görgetni, a role és az aria-label
+   miatt pedig a felolvasóprogram bemondja, mi van a dobozban. FONTOS: maga a
+   <table> maradjon igazi táblázat – ha display: block-ra állítjuk, a
+   felolvasóprogram számára elvész, melyik adat melyik sorhoz és oszlophoz
+   tartozik. */
 .table-scroll{
   margin-top: 18px;
   overflow-x: auto;
@@ -2621,48 +2624,6 @@ select:focus-visible,
   white-space: nowrap;
 }
 
-/*
-   Évenként nyitható blokk az Adatszolgáltatás oldalon. Natív <details>,
-   így JS nélkül is működik és billentyűzetről is nyitható-zárható.
-   A legfrissebb év nyitva indul (open attribútum a HTML-ben).
-*/
-.year-block{
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  margin-top: 16px;
-  background: var(--color-surface);
-}
-
-.year-block > summary{
-  padding: 14px 16px;
-  min-height: var(--hit-target);
-  font-weight: 700;
-  font-size: var(--font-size-subsection-title);
-  color: var(--color-primary);
-  background: var(--color-surface-alt);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  list-style-position: inside;
-}
-
-.year-block[open] > summary{
-  border-bottom: 1px solid var(--color-border);
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
-}
-
-.year-block > summary:hover{
-  background: #e5eef8;
-}
-
-.year-block > summary:focus-visible{
-  outline: var(--focus-ring);
-  outline-offset: -3px;
-}
-
-.year-body{
-  padding: 4px 16px 18px;
-}
-
 /* Lábjegyzet a táblázatok alatt */
 .info-note{
   margin-top: 12px;
@@ -2715,9 +2676,6 @@ select:focus-visible,
 
   .info-table th,
   .info-table td{ padding: 9px 11px; }
-
-  .year-body{ padding: 4px 11px 14px; }
-  .year-block > summary{ padding: 12px 13px; }
 }
 
 @media (max-width: 420px){
@@ -2726,12 +2684,13 @@ select:focus-visible,
 }
 
 /* =========================================================
-   TEVÉKENYSÉGEK & ÜZLETÁGAK
-   Desktop: 3 kártya egy sorban
-   Tablet: 2 + 1 (a harmadik kártya középen, a többivel azonos szélességben)
-   Mobil: 1 oszlop
-   Teljes, sötétítés nélküli kép, közvetlenül alatta kék címsáv;
-   nyitáskor a panel a képre felcsúszik + részletek modal
+   TEVÉKENYSÉGEK ÉS ÜZLETÁGAK (kezdőlap)
+   Asztali gépen: 3 kártya egy sorban
+   Tableten: 2 + 1 (a harmadik kártya középen, a többivel azonos szélességben)
+   Mobilon: 1 oszlop
+   A kép teljes egészében, sötétítés nélkül látszik, alatta kék címsáv;
+   nyitáskor a sáv felcsúszik a képre, a „Részletek” gomb felugró ablakban
+   mutatja a teljes leírást.
 ========================================================= */
 
 .business-section{
@@ -2753,7 +2712,7 @@ select:focus-visible,
 }
 
 /* =========================================================
-   BUSINESS GRID
+   TEVÉKENYSÉGEK – KÁRTYARÁCS
 ========================================================= */
 
 .business-grid{
@@ -2764,7 +2723,7 @@ select:focus-visible,
 }
 
 /* =========================================================
-   BUSINESS CARD ALAP
+   TEVÉKENYSÉGEK – A KÁRTYA ALAPJA
 ========================================================= */
 
 /* A kártya magassága = a teljes kép + közvetlenül alatta a címsáv.
@@ -2898,8 +2857,8 @@ select:focus-visible,
 
 /* =========================================================
    ÖSSZEFOGLALÓ (a címsáv alatt előtűnő rész)
-   Függőleges padding szándékosan nincs rajta, hogy zárt
-   állapotban valóban 0 magas lehessen.
+   Függőleges belső térköz szándékosan nincs rajta, hogy zárt állapotban
+   valóban 0 magas lehessen.
 ========================================================= */
 
 .business-card-summary{
@@ -2933,12 +2892,12 @@ select:focus-visible,
 .business-card-summary p{
   max-width: 92%;
   margin: 0;
-  font-size: var(--font-size-small); /* kártya-ízelítő = kiegészítő szöveg; a teljes leírás a modalban 16px */
+  font-size: var(--font-size-small); /* A kártyán az ízelítő kisebb, kiegészítő szöveg; a teljes leírás a felugró ablakban 16 px-es. */
   line-height: var(--line-height-small);
   font-weight: 700;
 }
 
-/* Overlay gombok konténere */
+/* A felcsúszó panel gombjainak sora */
 .business-card-summary-actions{
   display: flex;
   justify-content: center;
@@ -2978,20 +2937,22 @@ select:focus-visible,
   transform: translateY(-1px);
 }
 
-/* Desktopon a Bezárás gomb nem kell, hover zárja */
+/* Asztali gépen a Bezárás gomb nem kell: a panel magától bezárul, ha az egér lemegy a kártyáról */
 .business-card-close{
   display: none;
 }
 
-/* A hosszú tartalom csak JS/modal számára van elrejtve */
+/* A teljes leírás a kártyán rejtve van; innen másolja át a JavaScript a felugró ablakba */
 .business-detail-content[hidden]{
   display: none;
 }
 
 /* =========================================================
    NYITOTT ÁLLAPOT
-   - .is-open: a nyíl gombbal / címsávra koppintva (minden méreten)
-   - desktopon egérrel rámutatva vagy billentyűzetfókusszal is
+   - .is-open: a nyíl gombbal vagy a címsávra koppintva (minden
+     képernyőméreten)
+   - asztali gépen akkor is, ha az egér a kártya fölött van, vagy
+     billentyűzettel rálépnek
 ========================================================= */
 
 .business-card.is-open .business-card-panel{
@@ -3126,7 +3087,7 @@ select:focus-visible,
 }
 
 /* =========================================================
-   BUSINESS MODAL – RÉSZLETEK ABLAK
+   RÉSZLETEK FELUGRÓ ABLAK (a Tevékenységek és az Üzemegységek közös ablaka)
 ========================================================= */
 
 .business-modal{
@@ -3247,7 +3208,7 @@ select:focus-visible,
   font-weight: 700;
 }
 
-/* Modal mobil */
+/* A felugró ablak mobilon */
 @media (max-width: 768px){
 
   .business-modal-dialog{
@@ -3266,8 +3227,8 @@ select:focus-visible,
 
 }
 /* =========================================================
-   BUSINESS MODAL – EGYKÉPES BLOKK
-   A szöveges tartalom után a modal alján jelenik meg.
+   RÉSZLETEK ABLAK – KÉP
+   A szöveg után, az ablak alján megjelenő egy darab kép.
 ========================================================= */
 
 .business-modal-image{
@@ -3314,9 +3275,9 @@ select:focus-visible,
   }
 }
 
-/* Képhez igazodó doboz: a doboz a kép saját arányát veszi fel,
-   így a kép vágás és oldalsó sáv nélkül, teljesen kitölti
-   (Tevékenységek & üzletágak modaljai). */
+/* Képhez igazodó doboz: a doboz a kép saját arányát veszi fel, így a kép vágás
+   és oldalsó sáv nélkül, teljesen kitölti (a Tevékenységek és üzletágak
+   felugró ablakaiban). */
 .business-modal-image--fit{
   aspect-ratio: auto;
 }
@@ -3325,11 +3286,12 @@ select:focus-visible,
   height: auto;
 }
 /* =========================================================
-   ÜZEMEGYSÉGEK
-   Desktop: 4 + 4
-   Tablet: 2 oszlop
-   Mobil: 1 oszlop
-   Business-blokkal egységes: teljes kép, alatta felcsúszó kék címsáv
+   ÜZEMEGYSÉGEK (kezdőlap)
+   Asztali gépen: 4 + 4 kártya
+   Tableten: 2 oszlop
+   Mobilon: 1 oszlop
+   Ugyanúgy működik, mint a Tevékenységek blokk: teljes kép, alatta felcsúszó
+   kék címsáv.
 ========================================================= */
 
 .units-section{
@@ -3358,10 +3320,10 @@ select:focus-visible,
 }
 
 /* =========================================================
-   UNITS CARD ALAP
+   ÜZEMEGYSÉGEK – A KÁRTYA ALAPJA
 ========================================================= */
 
-/* Ugyanaz a méretezés, mint a business kártyáknál: teljes kép + alatta a címsáv */
+/* Ugyanaz a méretezés, mint a Tevékenységek kártyáinál: teljes kép, alatta a címsáv */
 .units-card{
   --card-bar-h: calc(2 * 1.2 * var(--font-size-subsection-title) + 24px);
   position: relative;
@@ -3393,10 +3355,10 @@ select:focus-visible,
 }
 
 /* =========================================================
-   UNITS FELCSÚSZÓ PANEL
-   Ugyanaz a rács-mechanika, mint a business kártyáknál:
-   alapállapotban csak az alsó címsáv látszik, nyitáskor a sáv
-   a kártya tetejére csúszik, alatta előtűnik az összefoglaló.
+   ÜZEMEGYSÉGEK – FELCSÚSZÓ PANEL
+   Ugyanúgy működik, mint a Tevékenységek kártyáinál: alapállapotban csak az
+   alsó címsáv látszik, nyitáskor a sáv a kártya tetejére csúszik, alatta
+   előtűnik az összefoglaló.
 ========================================================= */
 
 .units-card-panel{
@@ -3444,7 +3406,7 @@ select:focus-visible,
   min-width: 0;
 }
 
-/* Nyitó / záró nyíl gomb: ugyanaz a forma, mint a business kártyáknál */
+/* Nyitó / záró nyíl gomb: ugyanolyan, mint a Tevékenységek kártyáin */
 .units-card-toggle{
   flex: none;
   display: inline-flex;
@@ -3486,9 +3448,9 @@ select:focus-visible,
 }
 
 /* =========================================================
-   UNITS ÖSSZEFOGLALÓ
-   Függőleges padding szándékosan nincs rajta, hogy zárt
-   állapotban valóban 0 magas lehessen.
+   ÜZEMEGYSÉGEK – ÖSSZEFOGLALÓ
+   Függőleges belső térköz szándékosan nincs rajta, hogy zárt állapotban
+   valóban 0 magas lehessen.
 ========================================================= */
 
 .units-card-summary{
@@ -3522,7 +3484,7 @@ select:focus-visible,
 .units-card-summary p{
   max-width: 92%;
   margin: 0;
-  font-size: var(--font-size-small); /* kártya-ízelítő = kiegészítő szöveg; a teljes leírás a modalban 16px */
+  font-size: var(--font-size-small); /* A kártyán az ízelítő kisebb, kiegészítő szöveg; a teljes leírás a felugró ablakban 16 px-es. */
   line-height: var(--line-height-small);
   font-weight: 700;
   text-align: center;
@@ -3532,7 +3494,7 @@ select:focus-visible,
   margin-bottom: 14px;
 }
 
-/* Units overlay gombok: ugyanaz a forma, mint a business kártyáknál */
+/* Az üzemegység-kártyák gombjai: ugyanolyanok, mint a Tevékenységek kártyáin */
 .units-card-close{
   display: none;
 }
@@ -3566,9 +3528,11 @@ select:focus-visible,
 }
 
 /* =========================================================
-   UNITS NYITOTT ÁLLAPOT
-   - .is-open: a nyíl gombbal / címsávra koppintva (minden méreten)
-   - desktopon egérrel rámutatva vagy billentyűzetfókusszal is
+   ÜZEMEGYSÉGEK – NYITOTT ÁLLAPOT
+   - .is-open: a nyíl gombbal vagy a címsávra koppintva (minden
+     képernyőméreten)
+   - asztali gépen akkor is, ha az egér a kártya fölött van, vagy
+     billentyűzettel rálépnek
 ========================================================= */
 
 .units-card.is-open .units-card-panel{
@@ -3619,11 +3583,11 @@ select:focus-visible,
 }
 
 /* =========================================================
-   KESKENY DESKTOP (1025–1199px)
-   A 4 oszlopos kártyák itt a legkeskenyebbek: tömörebb címsáv.
-   A 20px-es címből a „Félkész- és készáruvasaló üzem” itt 3 sorba
-   törik, ezért a sáv minden kártyán 3 sornyi magas – így egy sorban
-   egyformák maradnak, és a sáv a képet sem takarja.
+   KESKENY ASZTALI KÉPERNYŐ (1025–1199 px)
+   A 4 oszlopos kártyák itt a legkeskenyebbek, ezért a címsáv tömörebb. A 20
+   px-es címből a „Félkész- és készáruvasaló üzem” itt 3 sorba törik, ezért a
+   sáv minden kártyán 3 sornyi magas – így egy sorban egyformák maradnak, és a
+   sáv a képet sem takarja.
 ========================================================= */
 
 @media (min-width: 1025px) and (max-width: 1199px){
@@ -3729,7 +3693,7 @@ select:focus-visible,
 }
 
 /* =========================================================
-   FINOMHANGOLÁS – modal olvashatóság és kártya overlay
+   FINOMHANGOLÁS – a felugró ablak olvashatósága és a kártyák felcsúszó panele
 ========================================================= */
 
 .business-card-summary p,
@@ -4750,9 +4714,9 @@ select:focus-visible,
 
 
 /* =========================================================
-   KOMPATIBILITÁSI FALLBACK
-   Ha a böngésző nem támogatja a text-wrap: balance értéket,
-   a szöveg egyszerűen normál tördeléssel jelenik meg.
+   TARTALÉK RÉGEBBI BÖNGÉSZŐKNEK
+   Ha a böngésző nem ismeri a text-wrap: balance beállítást (egyenletes
+   hosszúságú sorok), a szöveg egyszerűen a szokásos módon tördelődik.
 ========================================================= */
 @supports not (text-wrap: balance) {
   .hero-text h1,
@@ -4779,23 +4743,23 @@ select:focus-visible,
 }/* =========================================================
    KARRIER OLDAL
    Felépítés:
-   - felső statikus hero kép
-   - bemutatkozó blokk: kéthasábos szöveg, alatta középen a videó
-   - álláshirdetés kártyák
-   - álláshirdetés részletező modal
+   - felül egy nagy, teljes szélességű kép
+   - bemutatkozó rész: két hasábos szöveg, alatta középen a videó
+   - álláshirdetés-kártyák (jelenleg helyettük tájékoztató)
+   - az álláshirdetés felugró ablaka
 ========================================================= */
 
 .career-page {
   max-width: var(--container);
   margin: 0 auto 100px;
-  /* A felső térköz a főoldali .hero-carousel margin-top értékeit követi
-     (asztalon 65px, tableten --hero-carousel-margin-top, mobilon 60px),
-     így a hero kép ugyanakkora résre kerül a fix fejléc alatt. */
+  /* A felső térköz ugyanaz, mint a kezdőlap nyitóképeinél (asztalon 65 px,
+     tableten --hero-carousel-margin-top, mobilon 60 px), így a kép ugyanakkora
+     résre kerül a rögzített fejléc alatt. */
   padding: 65px 20px 0;
 }
 
 /* =========================================================
-   1. KARRIER HERO KÉP
+   1. KARRIER – NAGY NYITÓKÉP
 ========================================================= */
 
 .career-hero {
@@ -4944,7 +4908,7 @@ select:focus-visible,
   box-shadow: var(--shadow-card);
 }
 
-/* Ha később iframe-es YouTube/Vimeo videó lenne */
+/* Ha később beágyazott (iframe) YouTube- vagy Vimeo-videó kerülne ide */
 .career-video iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -5160,18 +5124,18 @@ select:focus-visible,
   box-shadow: 0 14px 30px rgba(0, 63, 125, 0.24);
 }
 
-/* A modalhoz használt rejtett részletes tartalom */
+/* A teljes hirdetésszöveg a kártyán rejtve van; innen kerül a felugró ablakba */
 .career-job-detail[hidden] {
   display: none;
 }
 
-/* Opcionális általános / placeholder kártya */
+/* Választható, általános helykitöltő kártya */
 .career-job-card--placeholder .career-job-image img {
   filter: saturate(0.9);
 }
 
 /* =========================================================
-   4. KARRIER MODAL
+   4. KARRIER – ÁLLÁSHIRDETÉS FELUGRÓ ABLAKA
 ========================================================= */
 
 .career-modal {
@@ -5286,7 +5250,7 @@ select:focus-visible,
   text-decoration: underline;
 }
 
-/* A modalon belüli listák illeszkedjenek a közös SZEFO listastílushoz */
+/* A felugró ablakban lévő felsorolások is a közös SZEFO listastílust kövessék */
 .career-modal-content .szefo-list {
   margin-top: 14px;
 }
@@ -5403,7 +5367,7 @@ select:focus-visible,
     min-height: 46px;
   }
 
-  /* Modal mobilon alsó lap jelleggel */
+  /* Mobilon a felugró ablak a képernyő aljára simul, lapként (felül lekerekítve) */
   .career-modal-dialog {
     width: 100%;
     max-height: 92vh;
@@ -5457,7 +5421,7 @@ select:focus-visible,
 }
 
 /* =========================================================
-   REDUCED MOTION FINOMHANGOLÁS
+   CSÖKKENTETT MOZGÁS – FINOMHANGOLÁS
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -5600,15 +5564,12 @@ select:focus-visible,
 
 
 /* =========================================================
-   ASZTALI FELSŐ MENÜSÁV (1025 px felett)
-
-   1024 px-ig marad minden a régiben: hamburger gomb + kicsúszó
-   offcanvas panel. Efölött ugyanaz a markup vízszintes sávvá
-   rendeződik – a HTML-hez nem kellett hozzányúlni, csak az
-   elrendezés más.
-
-   A töréspont a js/script.js ASZTALI_MENU_TORESPONT konstansával
-   van összehangolva. Ha itt változik, ott is át kell írni.
+   ASZTALI MENÜSÁV (1025 px-től)
+   1024 px-ig a menü a menügombbal (hamburger) nyitható, oldalról becsúszó
+   panel. Ennél szélesebb képernyőn ugyanaz a HTML vízszintes sávvá rendeződik
+   – a HTML-hez nem kellett hozzányúlni, csak az elrendezés más. A határ
+   (töréspont) a js/script.js ASZTALI_MENU_TORESPONT értékével van
+   összehangolva: ha itt változik, ott is át kell írni.
 ========================================================= */
 
 @media (min-width: 1025px) {
@@ -5634,15 +5595,15 @@ select:focus-visible,
     border-bottom: 1px solid rgba(0, 63, 125, 0.08);
   }
 
-  /* Ebben a nézetben a fejléc tényleges magassága (logó + padding + szegély)
-     ~57px, nem a --navbar-height (60px) alapú érték – a hero ezért itt
-     kap saját, a valós magassághoz igazított margót, hogy ne maradjon
-     felesleges rés a fejléc és a carousel között. */
+  /* Ebben a nézetben a fejléc tényleges magassága (logó + belső térköz +
+     szegély) kb. 57 px, nem a --navbar-height (60 px) alapú érték – a nyitóképek
+     ezért itt saját, a valós magassághoz igazított margót kapnak, hogy ne
+     maradjon felesleges rés a fejléc és a képek között. */
   .hero-carousel {
     margin-top: 65px;
   }
 
-  /* A navbar már csak a logót tartja; a saját fix pozícióját és
+  /* A felső sáv (.navbar) itt már csak a logót tartja; a rögzített helyét és a
      hátterét a .site-header vette át. */
   .navbar {
     position: static;
@@ -5746,10 +5707,10 @@ select:focus-visible,
   }
 
   /* ---------------------------------------------------------
-     LENYÍLÓ PANELEK
-     Alapból rejtve, de a DOM-ban maradnak. A visibility: hidden
-     azért kell a display: none helyett, hogy legyen mihez animálni,
-     és hogy a méretük kiszámítható maradjon.
+     LENYÍLÓ MENÜK
+     Alapból rejtve vannak, de az oldal részei maradnak. A visibility: hidden
+     azért kell a display: none helyett, hogy az előtűnésük animálható legyen, és
+     a méretük kiszámítható maradjon.
   --------------------------------------------------------- */
   .dropdown-menu {
     position: absolute;
@@ -5768,9 +5729,10 @@ select:focus-visible,
     opacity: 0;
     visibility: hidden;
     transform: translateY(-6px);
-    /* A visibility nem folytonos érték, ezért nem időtartamot kap, hanem
-       késleltetést: záráskor csak a halványodás végén vált hidden-re, így
-       az animáció végigfut, utána viszont tényleg kikerül a tabsorrendből. */
+    /* A visibility nem fokozatosan változó érték, ezért nem időtartamot kap, hanem
+       késleltetést: záráskor csak a halványodás végén vált rejtettre, így az
+       animáció végigfut, utána viszont tényleg kikerül a Tab billentyűvel
+       bejárható elemek közül. */
     transition:
       opacity var(--transition-fast),
       transform var(--transition-fast),
@@ -5781,8 +5743,8 @@ select:focus-visible,
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    /* Nyitáskor viszont azonnal láthatóvá kell válnia, különben a
-       megjelenő panel a fade alatt még kattinthatatlan lenne. */
+    /* Nyitáskor viszont azonnal láthatóvá kell válnia, különben az előtűnés alatt
+       még nem lehetne rákattintani. */
     transition:
       opacity var(--transition-fast),
       transform var(--transition-fast),
@@ -5818,11 +5780,12 @@ select:focus-visible,
 
   /* ---------------------------------------------------------
      KÉTHASÁBOS LENYÍLÓ
-     A Céginformációk 14 elemű – egy hasábban ~600 px magas lenne,
-     ami kisebb laptopon lelógna a képernyőről. A :has() alapján
-     magától kéthasábos lesz minden 10-nél több elemű lenyíló, így
-     nem kell külön osztályt tenni a HTML-be. Ahol a böngésző nem
-     ismeri a :has()-t, ott egyhasábos marad – az is használható.
+     Ha egy lenyíló menü 10-nél több pontból áll, magától két hasábba rendeződik,
+     különben kisebb laptopon lelógna a képernyőről (korábban a Céginformációk
+     menü volt ilyen; 2026 októbere óta nincs a menüsorban, így most egyik
+     lenyíló sem ekkora). Ehhez nem kell külön osztály a HTML-be, a :has()
+     szabály magától felismeri. Ahol a böngésző ezt nem ismeri, egy hasábban
+     marad – az is használható.
   --------------------------------------------------------- */
   .dropdown-menu:has(li:nth-child(10)) {
     width: 540px;
@@ -5858,11 +5821,11 @@ select:focus-visible,
   }
 }
 
-/* A globális csökkentett-mozgás szabály csak a transition-duration-t
-   nullázza, a transition-delay-t nem. A lenyíló záró átmenete viszont
-   késleltetéssel rejti el a panelt, így ott a késleltetés életben
-   maradna: a panel negyed másodpercig láthatatlanul, de fókuszálhatóan
-   bennragadna a tabsorrendben. Ezért itt teljesen kikapcsoljuk. */
+/* Az általános csökkentett-mozgás szabály csak az animációk időtartamát
+   nullázza (transition-duration), a késleltetésüket (transition-delay) nem. A
+   lenyíló viszont záráskor késleltetéssel rejtőzik el, így ott a késleltetés
+   megmaradna: a panel negyed másodpercig láthatatlanul, de billentyűzettel
+   elérhetően bennragadna. Ezért itt teljesen kikapcsoljuk. */
 @media (prefers-reduced-motion: reduce) {
   .dropdown-menu,
   .dropdown.open .dropdown-menu {
@@ -5870,8 +5833,8 @@ select:focus-visible,
   }
 }
 
-/* Szűkebb asztali képernyőn (1025–1240 px) összébb húzzuk a menüt,
-   hogy a 7 menüpont + keresés + logó egy sorban maradjon. */
+/* Szűkebb asztali képernyőn (1025–1240 px) összébb húzzuk a menüt, hogy a 6
+   menüpont, a Keresés gomb és a logó egy sorban maradjon. */
 @media (min-width: 1025px) and (max-width: 1240px) {
   .site-header {
     gap: 12px;
