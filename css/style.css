@@ -4223,8 +4223,8 @@ select:focus-visible,
    E-HULLADÉK OLDAL
 
    Csak az e-hulladék oldal saját tartalmi/kártyás stílusai.
-   PDF dokumentumokhoz NEM tartalmaz külön CSS-t, mert azok
-   a meglévő css/pdf_style.css dokumentumtár komponenst használják.
+   Az oldal korábbi PDF dokumentumai az Archívum oldalra kerültek,
+   a helyükön egy tájékoztató kártya áll (.ewaste-notice).
 ========================================================= */
 
 .ewaste-page{
@@ -4443,6 +4443,31 @@ select:focus-visible,
   color: var(--color-text);
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
+}
+
+/* Tájékoztató kártya az oldal alján (az együttműködés megszűnéséről).
+   Teljes szélességű, ezért a szöveg sorait korlátozzuk, hogy ne legyenek
+   túl hosszúak és jól olvashatók maradjanak. */
+.ewaste-notice{
+  margin-top: 28px;
+}
+
+.ewaste-notice p{
+  max-width: 80ch;
+}
+
+/* A tájékoztató linkje ugyanúgy néz ki, mint az oldal többi linkje:
+   aláhúzott és félkövér, hogy a szövegben is jól észrevehető legyen. */
+.ewaste-notice a{
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ewaste-notice a:hover,
+.ewaste-notice a:focus-visible{
+  color: var(--color-primary-light);
 }
 
 @media (max-width: 1024px){

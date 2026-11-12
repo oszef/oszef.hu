@@ -360,9 +360,14 @@ window.SZEFO_SEARCH_INDEX = [
       "SZMSZ",
       "etikai kódex",
       "jogszabályok",
-      "szervezeti felépítés"
+      "szervezeti felépítés",
+      "e-hulladék",
+      "MOHU",
+      "fémkereskedelmi engedély",
+      "hulladékgazdálkodási engedély",
+      "telepengedély"
     ],
-    text: "Korábban közzétett adataink és dokumentumaink PDF formátumban. Archivált közérdekű adatok: a társaság vezetői, alapítványok, lapok és kiadványok, közzétételi listák, gazdálkodási adatok, szervezeti felépítés (2020. szeptember). A Takarékos törvény szerinti adatszolgáltatások 2009–2021, az Állami Számvevőszék 19127. számú jelentése és a szerződésekről szóló tájékoztatás. Éves energetikai szakreferens jelentések 2017–2025. A társaság szabályzatai (Alapszabály, SZMSZ, Adatvédelmi-adatbiztonsági szabályzat, Javadalmazási Szabályzat, Etikai Kódex, Közérdekű Adatok Közzétételének Szabályzata) és a működésére vonatkozó jogszabályok."
+    text: "Korábban közzétett adataink és dokumentumaink PDF formátumban. Archivált közérdekű adatok: a társaság vezetői, alapítványok, lapok és kiadványok, közzétételi listák, gazdálkodási adatok, szervezeti felépítés (2020. szeptember). A Takarékos törvény szerinti adatszolgáltatások 2009–2021, az Állami Számvevőszék 19127. számú jelentése és a szerződésekről szóló tájékoztatás. Éves energetikai szakreferens jelentések 2017–2025. A társaság szabályzatai (Alapszabály, SZMSZ, Adatvédelmi-adatbiztonsági szabályzat, Javadalmazási Szabályzat, Etikai Kódex, Közérdekű Adatok Közzétételének Szabályzata) és a működésére vonatkozó jogszabályok. E-hulladék: a hulladékgazdálkodási tevékenység és a MOHU-val 2026. október 31-ig tartó együttműködés dokumentumai (fémkereskedelmi engedély, hulladékgazdálkodási engedély, telepengedély és engedélymódosítás, MOHU sajtóközlemény)."
   },
   {
     id: "adatigenyles-rendje",
@@ -498,7 +503,7 @@ window.SZEFO_SEARCH_INDEX = [
     id: "e-hulladek",
     title: "E-hulladék",
     url: "../e-hulladek/index.html",
-    category: "Rólunk",
+    category: "Céginformációk",
     keywords: [
       "e-hulladék",
       "elektronikai hulladék",
@@ -512,7 +517,7 @@ window.SZEFO_SEARCH_INDEX = [
       "fémkereskedelmi engedély",
       "hulladékgazdálkodási engedély"
     ],
-    text: "A SZEFO hulladékgazdálkodási tevékenysége a hódmezővásárhelyi telephelyen (6800 Hódmezővásárhely, Erzsébeti út 8., KÜJ 100214695, KTJ 103002793) veszélyes és nem veszélyes hulladékok gyűjtésére és előkezelésére terjed ki: elektronikai hulladékok (16-os főcsoport) kézi bontása és válogatása, hűtő- és klímaberendezések gyűjtése, fém- és csomagolási hulladékok gyűjtése. Kezelési kódok: R12, E02-05, E02-06, E02-08. Letölthető dokumentumok: fémkereskedelmi engedély, hulladékgazdálkodási engedély, telepengedély és engedélymódosítás, MOHU sajtóközlemény."
+    text: "A SZEFO hulladékgazdálkodási tevékenysége a hódmezővásárhelyi telephelyen (6800 Hódmezővásárhely, Erzsébeti út 8., KÜJ 100214695, KTJ 103002793) veszélyes és nem veszélyes hulladékok gyűjtésére és előkezelésére terjed ki: elektronikai hulladékok (16-os főcsoport) kézi bontása és válogatása, hűtő- és klímaberendezések gyűjtése, fém- és csomagolási hulladékok gyűjtése. Kezelési kódok: R12, E02-05, E02-06, E02-08. Tájékoztatás: a SZEFO és a MOHU MOL Hulladékgazdálkodási Zrt. közötti együttműködés 2026. október 31. napjával megszűnt, a kapcsolódó korábbi dokumentumok (fémkereskedelmi engedély, hulladékgazdálkodási engedély, telepengedély és engedélymódosítás, MOHU sajtóközlemény) az Archívum oldalon érhetők el."
   },
   {
     id: "karrier",
