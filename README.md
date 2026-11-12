@@ -51,6 +51,8 @@ panel):
 - **Rólunk** (lenyíló menü):
   - Bemutatkozás - `hu/bemutatkozas/`
   - Történetünk - `hu/tortenetunk/`
+  - E-hulladék - `hu/e-hulladek/` (a korábbi dokumentumai az Archívum
+    oldalon vannak; a PDF-ek helye változatlanul a `doc/e-hulladek/` mappa)
   - Alapítvány - `hu/alapitvany/`
 - **Híreink** - `hu/hireink/`
 - **Kapcsolat** - `hu/kapcsolat/`
@@ -71,9 +73,6 @@ menüben nem szerepel, csak a láblécben:
 - Partnerek - `hu/partnerek/`
 - Adatigénylés rendje - `hu/adatigenyles_rendje/`
 - Éves beszámolók - `hu/eves_beszamolok/`
-- E-hulladék - `hu/e-hulladek/` (2026. november 12-ig a Rólunk menüben
-  volt; a korábbi dokumentumai az Archívum oldalra kerültek, a PDF-ek
-  helye változatlanul a `doc/e-hulladek/` mappa)
 - Archívum - `hu/archivum/`
 
 A kezdőlap blokkjai fentről lefelé:
@@ -115,9 +114,8 @@ Menüből nem, csak egy másik oldalról elérhető:
   fájl elején a `/*`, a végén a `*/` sort kell törölni. A popup HTML-je
   az `index.html`-ben, a stílusa a `css/popup.css`-ben megmaradt.
 - `company_inf_filter.js` - **ideiglenes** szűrő, amíg a Céginformációk
-  adatai frissülnek: a látogató 9 Céginformációk-aloldalon a
-  "Tartalmaink frissítés alatt" értesítést látja a tartalom helyett (az
-  E-hulladék oldal kivétel, azt mindenki látja). Csak
+  adatai frissülnek: a látogató a 9 Céginformációk-aloldalon a
+  "Tartalmaink frissítés alatt" értesítést látja a tartalom helyett. Csak
   megjelenítési szűrő, a lapok a szerveren továbbra is elérhetők, ezért
   bizalmas adat nem kerülhet rájuk. Minden oldal `<head>` része betölti.
   Kikapcsolás: a fájl törlése, és mind a 21 oldal `<head>`-jéből a rá

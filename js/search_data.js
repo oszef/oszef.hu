@@ -503,7 +503,7 @@ window.SZEFO_SEARCH_INDEX = [
     id: "e-hulladek",
     title: "E-hulladék",
     url: "../e-hulladek/index.html",
-    category: "Céginformációk",
+    category: "Rólunk",
     keywords: [
       "e-hulladék",
       "elektronikai hulladék",

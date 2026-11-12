@@ -31,8 +31,6 @@
 
   // A Céginformációk aloldalai (a mappanevük szerint). Az Alapítvány 2026-10-28 óta
   // a Rólunk menüben van, és minden látogató látja, ezért nincs a listán.
-  // Az E-hulladék oldal a láblécben a Céginformációk között szerepel, de
-  // szintén nyilvános, ezért az sincs a listán.
   const CEGINFO_OLDALAK = [
     "altalanos_ceginformaciok",
     "kozerdeku_adatok",
