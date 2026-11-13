@@ -52,8 +52,9 @@ panel):
   - Bemutatkozás - `hu/bemutatkozas/`
   - Történetünk - `hu/tortenetunk/`
   - E-hulladék - `hu/e-hulladek/` (csak egy tájékoztató van rajta; a
-    korábbi tartalma PDF-ként és a dokumentumai az Archívum oldalon vannak,
-    a PDF-ek helye a `doc/e-hulladek/` mappa)
+    korábbi tartalma PDF-ként és a dokumentumai az Archívum oldalon vannak.
+    Az eredeti iratok a `doc/e-hulladek/`, az oldal tartalmából készült
+    archív PDF a `doc/archivum/` mappában van)
   - Alapítvány - `hu/alapitvany/`
 - **Híreink** - `hu/hireink/`
 - **Kapcsolat** - `hu/kapcsolat/`
