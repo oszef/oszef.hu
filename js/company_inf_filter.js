@@ -31,6 +31,8 @@
 
   // A Céginformációk aloldalai (a mappanevük szerint). Az Alapítvány 2026-10-28 óta
   // a Rólunk menüben van, és minden látogató látja, ezért nincs a listán.
+  // Az Adatkezelési tájékoztató (2026-11-13) a láblécben a Céginformációk
+  // között van, de a látogatóknak mindig el kell érniük, ezért az sincs a listán.
   const CEGINFO_OLDALAK = [
     "altalanos_ceginformaciok",
     "kozerdeku_adatok",

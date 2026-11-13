@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Keresőoptimalizálási (SEO) alapadatok: az oldal rövid leírása és a kanonikus (elsődleges, keresők által preferált) webcím -->
+    <meta name="description" content="A SZEFO Közhasznú Nonprofit Zrt. honlapi adatkezelési tájékoztatója: az adatkezelő adatai, a honlap használata, a kapcsolatfelvétel és az Ön adatvédelmi jogai.">
+    <link rel="canonical" href="https://www.szefo.hu/hu/adatkezelesi_tajekoztato/">
+
+    <!-- Megosztási adatok (Open Graph, Twitter): ez a cím, leírás és kép jelenik meg, ha valaki az oldal linkjét Facebookon, Messengeren vagy más közösségi felületen megosztja -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SZEFO Közhasznú Nonprofit Zrt.">
+    <meta property="og:title" content="Honlapi adatkezelési tájékoztató">
+    <meta property="og:description" content="A SZEFO Közhasznú Nonprofit Zrt. honlapi adatkezelési tájékoztatója: az adatkezelő adatai, a honlap használata, a kapcsolatfelvétel és az Ön adatvédelmi jogai.">
+    <meta property="og:image" content="https://www.szefo.hu/img/hero/hero-1.webp">
+    <meta property="og:url" content="https://www.szefo.hu/hu/adatkezelesi_tajekoztato/">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Böngészőfül ikonja (favicon), az ikonokhoz használt Bootstrap Icons betűkészlet és az oldal kinézetét meghatározó CSS-stíluslap betöltése -->
+    <link rel="icon" href="../../img/fav/szefo_fav.PNG" type="image/png">
+    <link rel="stylesheet" href="../../css/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- IDEIGLENES: amíg a Céginformációk aloldalai frissülnek, a látogató egy „frissítés alatt” értesítést lát, a saját gépén dolgozó fejlesztő viszont mindent. Ha a szűrőt megszüntetjük, ezt a megjegyzést és az alatta lévő sort is törölni kell -->
+    <script src="../../js/company_inf_filter.js"></script>
+    <title>Adatkezelési tájékoztató | SZEFO Közhasznú Nonprofit Zrt.</title>
+</head>
+<body>
+    <!-- Ugrólink a tartalomra (akadálymentesség): aki billentyűzettel vagy felolvasóprogrammal böngészik, ezzel átugorhatja a fejlécet, és egyből a fő tartalomhoz jut -->
+    <a class="skip-link" href="#main-content">Tartalom átugrása</a>
+    <!-- FEJLÉC: a logót és a fő menüt tartalmazó sáv, amely minden oldal tetején megjelenik; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön szerepel -->
+    <header class="site-header">
+        <!-- FELSŐ SÁV: a SZEFO-logó és a menügomb (a három vízszintes vonalas, ún. hamburger gomb, amely csak tableten és mobilon látszik) -->
+        <div class="navbar">
+            <a class="navbar-brand" href="../../index.html" aria-label="SZEFO kezdőlap">
+                <img src="../../img/logo/szefo_logo.webp" alt="SZEFO Zrt. logó" width="300" height="106">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Menü megnyitása"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </div>
+
+        <!-- FŐMENÜ: asztali gépen vízszintes menüsáv a logó mellett, tableten és mobilon a menügombra oldalról becsúszó panel. Benne vannak az almenük és a Keresés gomb -->
+        <nav class="offcanvas" id="offcanvasMenu" aria-hidden="true" aria-label="Fő navigáció">
+            <div class="offcanvas-header">
+                <button
+                    class="close-btn"
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Menü bezárása"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li>
+                        <a href="../../index.html">Kezdőlap</a>
+                    </li>
+
+                    <!-- RÓLUNK ALMENÜ: a Bemutatkozás, a Történetünk, az E-hulladék és az Alapítvány aloldalakra mutató lenyíló menüpont -->
+                    <li class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Rólunk <span class="arrow" aria-hidden="true">›</span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../bemutatkozas/index.html">Bemutatkozás</a>
+                            </li>
+                            <li>
+                                <a href="../tortenetunk/index.html">Történetünk</a>
+                            </li>
+                            <li>
+                                <a href="../e-hulladek/index.html">E-hulladék</a>
+                            </li>
+                            <li>
+                                <a href="../alapitvany/index.html">Alapítvány</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../hireink/index.html">Híreink</a>
+                    </li>
+                    <li>
+                        <a href="../kapcsolat/index.html">Kapcsolat</a>
+                    </li>
+                    <li>
+                        <a href="../karrier/index.html">Karrier</a>
+                    </li>
+                    <li>
+                        <a href="../klaszter/index.html">Klaszter</a>
+                    </li>
+                </ul>
+
+               <!-- KERESÉS GOMB: átirányít a honlap kereső aloldalára -->
+               <div class="search search--button-only">
+                <a class="search-link" href="../kereses/index.html">
+                    Keresés
+                </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ELSÖTÉTÍTETT HÁTTÉR: a nyitott mobilmenü mögötti tartalmat elhomályosítja, amíg a menü nyitva van -->
+        <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content">
+        <!-- FŐ TARTALOM: a honlap adatkezelési tájékoztatója. A szöveg a SZEFO adatvédelmi tisztviselőjétől kapott Word-dokumentumból (2026. november) származik, változtatás nélkül -->
+        <section class="info-page" aria-labelledby="adatkezeles-title">
+
+            <!-- BEVEZETŐ: cím és rövid köszöntő -->
+            <section class="info-block section-card" aria-labelledby="adatkezeles-title">
+                <div class="info-content">
+                    <span class="section-eyebrow">SZEFO Közhasznú Nonprofit Zrt.</span>
+                    <h1 id="adatkezeles-title">Honlapi adatkezelési tájékoztató</h1>
+
+                    <p>Kedves Látogatónk!</p>
+
+                    <p>
+                        A SZEFO Közhasznú Nonprofit Zrt. fontosnak tartja személyes adatainak
+                        védelmét. Az alábbiakban röviden tájékoztatjuk honlapunk adatkezelési
+                        gyakorlatáról.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 1. AZ ADATKEZELŐ ADATAI: név, székhely és elérhetőségek -->
+            <section class="info-block section-card" aria-labelledby="adatkezelo-title">
+                <div class="info-content">
+                    <h2 id="adatkezelo-title">1. Az adatkezelő adatai</h2>
+
+                    <dl class="info-data">
+                        <div>
+                            <dt>Név</dt>
+                            <dd>SZEFO Közhasznú Nonprofit Zrt.</dd>
+                        </div>
+                        <div>
+                            <dt>Székhely</dt>
+                            <dd>6724 Szeged, Tavasz utca 2.</dd>
+                        </div>
+                        <div>
+                            <dt>E-mail</dt>
+                            <dd><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></dd>
+                        </div>
+                        <div>
+                            <dt>Telefon</dt>
+                            <dd><a href="tel:+3662554054">+36 62 554 054</a></dd>
+                        </div>
+                        <div>
+                            <dt>Adatvédelmi tisztviselő</dt>
+                            <dd><a href="mailto:adatvedelmitisztviselo@szefo.hu">adatvedelmitisztviselo@szefo.hu</a></dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+            <!-- 2. A HONLAP HASZNÁLATA: nincs regisztráció, nincsenek sütik, a technikai adatok kezelése -->
+            <section class="info-block section-card" aria-labelledby="honlap-title">
+                <div class="info-content">
+                    <h2 id="honlap-title">2. A honlap használata</h2>
+
+                    <p>
+                        Honlapunk tájékoztatási célokat szolgál, használatához nincs szükség
+                        regisztrációra vagy személyes adatok megadására.
+                    </p>
+
+                    <p>
+                        A honlap nem használ sütiket (cookie-kat), nem végez látogatottságmérést
+                        vagy marketingcélú látogatókövetést.
+                    </p>
+
+                    <p>
+                        A honlap működése során technikai adatok (például IP-cím) átmeneti
+                        kezelésére kerülhet sor a biztonságos működés érdekében. Az adatkezelés
+                        jogalapja a Társaság jogos érdeke (GDPR 6. cikk (1) bekezdés f) pont).
+                    </p>
+
+                    <p>
+                        Az üzemeltető tájékoztatása szerint a honlap nem tárol látogatói adatokat.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. KAPCSOLATFELVÉTEL: e-mailes és telefonos megkeresések adatai -->
+            <section class="info-block section-card" aria-labelledby="kapcsolatfelvetel-title">
+                <div class="info-content">
+                    <h2 id="kapcsolatfelvetel-title">3. Kapcsolatfelvétel</h2>
+
+                    <p>
+                        E-mailes vagy telefonos megkeresés esetén a megadott személyes adatokat
+                        kizárólag a megkeresés megválaszolásához és az ügyintézéshez szükséges
+                        célból kezeljük.
+                    </p>
+
+                    <p>
+                        Az általános megkeresések adatkezelésének jogalapja a Társaság jogos
+                        érdeke. Az adatokat a szükséges ideig, illetve a vonatkozó jogszabályi és
+                        iratkezelési előírások szerint őrizzük meg.
+                    </p>
+
+                    <p>
+                        Az állásjelentkezések e-mailben vagy telefonon történnek, nem a honlapon
+                        keresztül.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 4. ADATVÉDELEM ÉS AZ ÖN JOGAI: ki fér hozzá az adatokhoz, milyen jogai vannak a látogatónak, hová fordulhat panasszal -->
+            <section class="info-block section-card" aria-labelledby="jogok-title">
+                <div class="info-content">
+                    <h2 id="jogok-title">4. Adatvédelem és az Ön jogai</h2>
+
+                    <p>
+                        A személyes adatokhoz kizárólag az arra jogosult munkatársak és a szükséges
+                        mértékben az informatikai szolgáltatók férhetnek hozzá.
+                    </p>
+
+                    <p>
+                        Ön jogosult tájékoztatást kérni személyes adatainak kezeléséről, valamint a
+                        jogszabályi feltételek szerint kérheti azok helyesbítését, törlését,
+                        kezelésük korlátozását, illetve tiltakozhat az adatkezelés ellen.
+                    </p>
+
+                    <p>
+                        Adatvédelmi kérdéseivel adatvédelmi tisztviselőnkhöz fordulhat.
+                    </p>
+
+                    <p>
+                        Panasz esetén a Nemzeti Adatvédelmi és Információszabadság Hatósághoz
+                        (<a href="https://www.naih.hu" target="_blank" rel="noopener noreferrer" aria-label="www.naih.hu (új lapon nyílik)">www.naih.hu</a>)
+                        vagy bírósághoz fordulhat.
+                    </p>
+
+                    <p class="info-note">SZEFO Közhasznú Nonprofit Zrt.</p>
+                </div>
+            </section>
+
+            <!-- Vissza a főoldalra mutató link -->
+            <div class="mission-back">
+                <a class="mission-back-link" href="../../index.html">← Vissza a főoldalra</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- LÁBLÉC: elérhetőségek, gyorslinkek és jogi szöveg; mivel az oldal nem közös sablonból épül fel, minden aloldalon külön-külön, azonos tartalommal szerepel -->
+    <footer class="site-footer">
+        <!-- LÁBLÉC OSZLOPAI: cégnév, idézet és kapcsolat; a Céginformációk aloldalai; a közösségi oldalak (új lapon nyílnak) -->
+        <div class="site-footer-inner">
+            <div>
+                <h2>SZEFO Közhasznú Nonprofit Zrt.</h2>
+                <p>
+                    „A befogadó társadalom alapja a diszkrimináció-mentességgel párosuló pozitív cselekvés.” (Madridi nyilatkozat)
+                </p>
+
+                <h3 class="site-footer-subtitle">Kapcsolat</h3>
+                <p>6724 Szeged, Tavasz utca 2.</p>
+                <p><a href="tel:+3662554054">+36 62 554 054</a></p>
+                <p><a href="mailto:titkarsag@szefo.hu">titkarsag@szefo.hu</a></p>
+            </div>
+
+            <div>
+                <h2>Céginformációk</h2>
+                <ul>
+                    <li><a href="../altalanos_ceginformaciok/index.html">Általános céginformációk</a></li>
+                    <li><a href="../kozerdeku_adatok/index.html">Közérdekű adatok</a></li>
+                    <li><a href="../kepzo_intezmenyek/index.html">Képző intézmények</a></li>
+                    <li><a href="../projektek/index.html">Projektek</a></li>
+                    <li><a href="../minosegpolitika/index.html">Minőségpolitika</a></li>
+                    <li><a href="../partnerek/index.html">Partnerek</a></li>
+                    <li><a href="../adatigenyles_rendje/index.html">Adatigénylés rendje</a></li>
+                    <li><a href="../adatkezelesi_tajekoztato/index.html">Adatkezelési tájékoztató</a></li>
+                    <li><a href="../eves_beszamolok/index.html">Éves beszámolók</a></li>
+                    <li><a href="../archivum/index.html">Archívum</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Közösségi média</h2>
+                <ul class="site-footer-social">
+                    <li>
+                        <a href="https://www.facebook.com/szefononprofitzrt" target="_blank" rel="noopener noreferrer" aria-label="Facebook (új lapon nyílik)">
+                            <span class="site-footer-social-icon site-footer-social-icon--facebook" aria-hidden="true"><i class="bi bi-facebook"></i></span>
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/szegediszefo/?hl=de" target="_blank" rel="noopener noreferrer" aria-label="Instagram (új lapon nyílik)">
+                            <span class="site-footer-social-icon site-footer-social-icon--instagram" aria-hidden="true"><i class="bi bi-instagram"></i></span>
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tiktok.com/@szefokarrier" target="_blank" rel="noopener noreferrer" aria-label="TikTok (új lapon nyílik)">
+                            <span class="site-footer-social-icon site-footer-social-icon--tiktok" aria-hidden="true"><i class="bi bi-tiktok"></i></span>
+                            TikTok
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/szefo-nonprofit-zrt" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (új lapon nyílik)">
+                            <span class="site-footer-social-icon site-footer-social-icon--linkedin" aria-hidden="true"><i class="bi bi-linkedin"></i></span>
+                            LinkedIn
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- LÁBLÉC ALJA: copyright szöveg (az évszámot JavaScript frissíti automatikusan) és jogi tájékoztató szöveg -->
+        <div class="site-footer-bottom">
+            <p class="site-footer-copy">&copy; <span class="site-footer-year">2026</span> SZEFO Közhasznú Nonprofit Zrt. Minden jog fenntartva.</p>
+            <p class="site-footer-legal">A honlapon közzétett szövegek és képek szerzői jogi védelem alatt állnak. A közérdekű adatok felhasználására a vonatkozó jogszabályok az irányadók.</p>
+        </div>
+
+    </footer>
+
+    <!-- JavaScript-fájl: a script.js a menü működését biztosítja -->
+    <script src="../../js/script.js"></script>
+</body>
+</html>

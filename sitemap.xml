@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://www.szefo.hu/hu/e-hulladek/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.szefo.hu/hu/altalanos_ceginformaciok/</loc>
@@ -46,11 +46,15 @@
   </url>
   <url>
     <loc>https://www.szefo.hu/hu/archivum/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.szefo.hu/hu/adatigenyles_rendje/</loc>
     <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.szefo.hu/hu/adatkezelesi_tajekoztato/</loc>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.szefo.hu/hu/eves_beszamolok/</loc>

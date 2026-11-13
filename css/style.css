@@ -4222,9 +4222,10 @@ select:focus-visible,
 /* =========================================================
    E-HULLADÉK OLDAL
 
-   Csak az e-hulladék oldal saját tartalmi/kártyás stílusai.
-   Az oldal korábbi PDF dokumentumai az Archívum oldalra kerültek,
-   a helyükön egy tájékoztató kártya áll (.ewaste-notice).
+   Csak az e-hulladék oldal saját stílusai. 2026. november 13. óta az
+   oldalon csak a cím és egy tájékoztató kártya (.ewaste-notice) van;
+   a korábbi tartalom PDF-ként és a dokumentumok az Archívum oldalra
+   kerültek, ezért a korábbi tartalom stílusait is töröltük.
 ========================================================= */
 
 .ewaste-page{
@@ -4246,26 +4247,6 @@ select:focus-visible,
   font-weight: 700;
   margin-bottom: 16px;
   text-wrap: balance;
-}
-
-.ewaste-header p{
-  max-width: 72ch;
-  margin: 0 auto;
-  color: var(--color-muted);
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-}
-
-.ewaste-layout{
-  display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.4fr);
-  gap: 28px;
-  align-items: start;
-}
-
-.ewaste-content{
-  display: grid;
-  gap: 26px;
 }
 
 .ewaste-card{
@@ -4295,14 +4276,6 @@ select:focus-visible,
   text-wrap: balance;
 }
 
-.ewaste-card h3{
-  color: var(--color-primary);
-  font-size: var(--font-size-subsection-title);
-  line-height: var(--line-height-heading);
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
 .ewaste-card p{
   color: var(--color-text);
   font-size: var(--font-size-body);
@@ -4314,146 +4287,12 @@ select:focus-visible,
   margin-bottom: 0;
 }
 
-.ewaste-data-list{
-  list-style: none;
-  display: grid;
-  gap: 14px;
-  margin: 0;
-  padding: 0;
-}
-
-.ewaste-data-list li{
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  padding: 15px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(0, 63, 125, 0.08);
-}
-
-.ewaste-icon{
-  flex: 0 0 40px;
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  background: rgba(0, 91, 187, 0.10);
-  color: var(--color-primary-light);
-  font-size: 20px;
-  line-height: 1;
-}
-
-.ewaste-data-label{
-  display: block;
-  margin-bottom: 4px;
-  color: var(--color-primary-light);
-  font-size: var(--font-size-small);
-  line-height: 1;
-  font-weight: 700;
-}
-
-.ewaste-data-list strong,
-.ewaste-data-list a{
-  color: var(--color-text);
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-  font-weight: 700;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-}
-
-.ewaste-data-list a{
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.ewaste-data-list a:hover,
-.ewaste-data-list a:focus-visible{
-  color: var(--color-primary-light);
-  text-decoration: underline;
-}
-
-.ewaste-type-grid{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.ewaste-type-card{
-  padding: 20px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.76);
-  border: 1px solid rgba(0, 63, 125, 0.08);
-}
-
-.ewaste-type-card--wide{
-  grid-column: 1 / -1;
-}
-
-.ewaste-type-icon{
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 14px;
-  border-radius: 999px;
-  background: rgba(0, 91, 187, 0.10);
-  color: var(--color-primary-light);
-  font-size: 22px;
-}
-
-.ewaste-type-card p{
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-}
-
-.ewaste-tech-box{
-  padding: 18px;
-  margin-bottom: 18px;
-  border-radius: var(--radius-lg);
-  background: rgba(0, 91, 187, 0.07);
-  border: 1px solid rgba(0, 63, 125, 0.12);
-}
-
-.ewaste-process-list{
-  list-style: none;
-  display: grid;
-  gap: 14px;
-  margin: 0;
-  padding: 0;
-}
-
-.ewaste-process-list li{
-  display: grid;
-  gap: 6px;
-  padding: 18px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(0, 63, 125, 0.08);
-}
-
-.ewaste-process-list strong{
-  color: var(--color-primary-light);
-  font-weight: 700;
-}
-
-.ewaste-process-list span{
-  color: var(--color-text);
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-}
-
-/* Tájékoztató kártya az oldal alján (az együttműködés megszűnéséről).
-   Teljes szélességű, ezért a szöveg sorait korlátozzuk, hogy ne legyenek
-   túl hosszúak és jól olvashatók maradjanak. */
+/* Tájékoztató kártya a cím alatt (az együttműködés megszűnéséről).
+   Ugyanolyan széles, mint a cím, és középre kerül, így a szöveg sorai
+   nem lesznek túl hosszúak, jól olvashatók maradnak. */
 .ewaste-notice{
-  margin-top: 28px;
-}
-
-.ewaste-notice p{
-  max-width: 80ch;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* A tájékoztató linkje ugyanúgy néz ki, mint az oldal többi linkje:
@@ -4471,7 +4310,6 @@ select:focus-visible,
 }
 
 @media (max-width: 1024px){
-  .ewaste-layout{ grid-template-columns: 1fr; }
   .ewaste-card{ padding: 32px; }
 }
 
@@ -4482,18 +4320,10 @@ select:focus-visible,
   }
   .ewaste-header{ margin-bottom: 30px; }
   .ewaste-card{ padding: 28px 20px; border-radius: var(--radius-lg); }
-  .ewaste-type-grid{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 420px){
   .ewaste-card{ padding: 24px 18px; }
-  .ewaste-data-list li{ gap: 12px; }
-  .ewaste-icon{
-    flex-basis: 36px;
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-  }
 }
 /* =========================================================
    E-HULLADÉK – KAPCSOLÓDÓ KÉPGALÉRIA

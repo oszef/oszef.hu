@@ -17,7 +17,7 @@ a feltöltés előtt semmit legenerálni vagy lefordítani), hogy programozói
 háttér nélkül is módosítható és költségmentesen üzemeltethető legyen.
 
 Nincs közös sablon sem: a fejléc a menüvel és a lábléc **minden oldalon
-külön-külön szerepel**. Ha a menün vagy a láblécen változtatsz, mind a 21
+külön-külön szerepel**. Ha a menün vagy a láblécen változtatsz, mind a 22
 oldalon ugyanúgy át kell írni.
 
 ## Mi merre található
@@ -51,8 +51,9 @@ panel):
 - **Rólunk** (lenyíló menü):
   - Bemutatkozás - `hu/bemutatkozas/`
   - Történetünk - `hu/tortenetunk/`
-  - E-hulladék - `hu/e-hulladek/` (a korábbi dokumentumai az Archívum
-    oldalon vannak; a PDF-ek helye változatlanul a `doc/e-hulladek/` mappa)
+  - E-hulladék - `hu/e-hulladek/` (csak egy tájékoztató van rajta; a
+    korábbi tartalma PDF-ként és a dokumentumai az Archívum oldalon vannak,
+    a PDF-ek helye a `doc/e-hulladek/` mappa)
   - Alapítvány - `hu/alapitvany/`
 - **Híreink** - `hu/hireink/`
 - **Kapcsolat** - `hu/kapcsolat/`
@@ -72,6 +73,9 @@ menüben nem szerepel, csak a láblécben:
 - Minőségpolitika - `hu/minosegpolitika/`
 - Partnerek - `hu/partnerek/`
 - Adatigénylés rendje - `hu/adatigenyles_rendje/`
+- Adatkezelési tájékoztató - `hu/adatkezelesi_tajekoztato/` (2026. novembertől; a
+  szövege az adatvédelmi tisztviselőtől kapott Word-dokumentumból való, és
+  a céginfo-szűrő nem rejti el, mindenki látja)
 - Éves beszámolók - `hu/eves_beszamolok/`
 - Archívum - `hu/archivum/`
 
@@ -118,7 +122,7 @@ Menüből nem, csak egy másik oldalról elérhető:
   "Tartalmaink frissítés alatt" értesítést látja a tartalom helyett. Csak
   megjelenítési szűrő, a lapok a szerveren továbbra is elérhetők, ezért
   bizalmas adat nem kerülhet rájuk. Minden oldal `<head>` része betölti.
-  Kikapcsolás: a fájl törlése, és mind a 21 oldal `<head>`-jéből a rá
+  Kikapcsolás: a fájl törlése, és mind a 22 oldal `<head>`-jéből a rá
   mutató két sor (megjegyzés + `<script>`) törlése.
 
 ## Hogyan nézheted meg a saját gépeden
@@ -217,7 +221,7 @@ nagyítóval (Real-ESRGAN) élesítettük. Ez a program nincs a tárolóban.
 
 1. Új mappa a `hu/` alatt, benne `index.html` (érdemes egy hasonló
    meglévő oldalt lemásolni).
-2. A menübe és (ha kell) a láblécbe mind a 21 oldalon fel kell venni.
+2. A menübe és (ha kell) a láblécbe mind a 22 oldalon fel kell venni.
 3. `search_data.js` - különben a keresőben nem jön elő. Az URL-ek a
    `hu/kereses/index.html`-hez képest relatívak.
 4. `sitemap.xml` - új `<url>` sor, a mai dátummal.
