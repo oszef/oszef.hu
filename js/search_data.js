@@ -210,36 +210,6 @@ window.SZEFO_SEARCH_INDEX = [
     text: "Az Infotv. (2011. évi CXII. törvény) szerinti általános közzétételi lista. Cégadatok: SZEFO Közhasznú Nonprofit Zrt., székhely 6724 Szeged, Tavasz u. 2., cégjegyzékszám Cg.06-10-000122, adószám 11090036-2-06. Felügyeleti szervek: Budapest Főváros Kormányhivatal (rehabilitációs hatóság) és a Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH, 1055 Budapest, Falk Miksa u. 9-11.). Közérdekű adatok igénylése: Vezérigazgatói Titkárság, titkarsag@szefo.hu; adatvédelmi tisztviselő: Péli Katalin. A korábban közzétett adatok az Archívum oldalon érhetők el."
   },
   {
-    id: "kepzo-intezmenyek",
-    title: "Képző intézmények",
-    url: "../kepzo_intezmenyek/index.html",
-    category: "Céginformációk",
-    keywords: [
-      "képző intézmények",
-      "képzés",
-      "oktatás",
-      "tanulás",
-      "felnőttképzés",
-      "okj",
-      "efop",
-      "Péli Katalin",
-      "E-001255/2015",
-      "textiltermék összeállító",
-      "férfi szabó",
-      "női szabó",
-      "kötőgép kezelő",
-      "kötöttáru mosodai gépkezelő",
-      "kötöttáru varró szalagmunkás",
-      "ruhaipari sablonkivágó",
-      "kompetenciafejlesztés",
-      "konfliktuskezelés",
-      "önismeret",
-      "stresszkezelés",
-      "digitális kompetencia"
-    ],
-    text: "A SZEFO Közhasznú Nonprofit Zrt. felnőttképző intézményének nyilvántartásba vételi száma E-001255/2015, képzési vezető Péli Katalin. „A” képzési körben OKJ szerinti szakmai képzések: Textiltermék összeállító (21 542 02), Férfi szabó (34 542 04), Női szabó (34 542 06). „B” képzési körben egyéb szakmai képzések: Betanított kötőgép kezelő, Betanított kötöttáru mosodai gépkezelő, Betanított kötöttáru varró szalagmunkás, Kötöttáru alapanyag és kellék nyilvántartó, Ruhaipari sablonkivágó. „D” képzési körben kompetenciafejlesztő tréningek: társadalmi és munkaerő-piaci beilleszkedés, hatékony kommunikáció és konfliktuskezelés, munkaerő-piaci ismeretek, önismeret, stressz- és krízishelyzetek kezelése, tanulási technikák, digitális kompetenciafejlesztés. Az EFOP-1.1.6-17-2017-00006 projekt keretében 240 fő vett részt a képzéseken, 228 fő szerzett tanúsítványt."
-  },
-  {
     id: "projektek",
     title: "Projektek",
     url: "../projektek/index.html",
@@ -369,9 +339,14 @@ window.SZEFO_SEARCH_INDEX = [
       "hulladékgazdálkodási tevékenység",
       "Hódmezővásárhely",
       "KÜJ",
-      "KTJ"
+      "KTJ",
+      "képző intézmény",
+      "felnőttképzés",
+      "E-001255/2015",
+      "OKJ",
+      "EFOP-1.1.6-17"
     ],
-    text: "Korábban közzétett adataink és dokumentumaink PDF formátumban. Archivált közérdekű adatok: a társaság vezetői, alapítványok, lapok és kiadványok, közzétételi listák, gazdálkodási adatok, szervezeti felépítés (2020. szeptember). A Takarékos törvény szerinti adatszolgáltatások 2009–2021, az Állami Számvevőszék 19127. számú jelentése és a szerződésekről szóló tájékoztatás. Éves energetikai szakreferens jelentések 2017–2025. A társaság szabályzatai (Alapszabály, SZMSZ, Adatvédelmi-adatbiztonsági szabályzat, Javadalmazási Szabályzat, Etikai Kódex, Közérdekű Adatok Közzétételének Szabályzata) és a működésére vonatkozó jogszabályok. E-hulladék: az E-hulladék oldal korábbi tartalma (a hódmezővásárhelyi telephely adatai, KÜJ, KTJ, az átvett hulladéktípusok és a kezelési technológia), valamint a hulladékgazdálkodási tevékenység és a MOHU-val 2026. október 31-ig tartó együttműködés dokumentumai (fémkereskedelmi engedély, hulladékgazdálkodási engedély, telepengedély és engedélymódosítás, MOHU sajtóközlemény)."
+    text: "Korábban közzétett adataink és dokumentumaink PDF formátumban. Archivált közérdekű adatok: a társaság vezetői, alapítványok, lapok és kiadványok, közzétételi listák, gazdálkodási adatok, szervezeti felépítés (2020. szeptember). A Takarékos törvény szerinti adatszolgáltatások 2009–2021, az Állami Számvevőszék 19127. számú jelentése és a szerződésekről szóló tájékoztatás. Éves energetikai szakreferens jelentések 2017–2025. A társaság szabályzatai (Alapszabály, SZMSZ, Adatvédelmi-adatbiztonsági szabályzat, Javadalmazási Szabályzat, Etikai Kódex, Közérdekű Adatok Közzétételének Szabályzata) és a működésére vonatkozó jogszabályok. E-hulladék: az E-hulladék oldal korábbi tartalma (a hódmezővásárhelyi telephely adatai, KÜJ, KTJ, az átvett hulladéktípusok és a kezelési technológia), valamint a hulladékgazdálkodási tevékenység és a MOHU-val 2026. október 31-ig tartó együttműködés dokumentumai (fémkereskedelmi engedély, hulladékgazdálkodási engedély, telepengedély és engedélymódosítás, MOHU sajtóközlemény). Képző intézmény: a korábbi Képző intézmények oldal tartalma (a felnőttképző intézmény E-001255/2015 nyilvántartásba vételi száma, az „A”, „B” és „D” képzési körös képzések, az EFOP-1.1.6-17 projekt képzései és eredményei)."
   },
   {
     id: "adatigenyles-rendje",

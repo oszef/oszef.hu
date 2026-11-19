@@ -17,7 +17,7 @@ a feltöltés előtt semmit legenerálni vagy lefordítani), hogy programozói
 háttér nélkül is módosítható és költségmentesen üzemeltethető legyen.
 
 Nincs közös sablon sem: a fejléc a menüvel és a lábléc **minden oldalon
-külön-külön szerepel**. Ha a menün vagy a láblécen változtatsz, mind a 22
+külön-külön szerepel**. Ha a menün vagy a láblécen változtatsz, mind a 21
 oldalon ugyanúgy át kell írni.
 
 ## Mi merre található
@@ -69,16 +69,16 @@ menüben nem szerepel, csak a láblécben:
 
 - Általános céginformációk - `hu/altalanos_ceginformaciok/`
 - Közérdekű adatok - `hu/kozerdeku_adatok/`
-- Képző intézmények - `hu/kepzo_intezmenyek/`
 - Projektek - `hu/projektek/`
 - Minőségpolitika - `hu/minosegpolitika/`
 - Partnerek - `hu/partnerek/`
 - Adatigénylés rendje - `hu/adatigenyles_rendje/`
 - Adatkezelési tájékoztató - `hu/adatkezelesi_tajekoztato/` (2026. novembertől; a
-  szövege az adatvédelmi tisztviselőtől kapott Word-dokumentumból való, és
-  a céginfo-szűrő nem rejti el, mindenki látja)
+  szövege az adatvédelmi tisztviselőtől kapott Word-dokumentumból való)
 - Éves beszámolók - `hu/eves_beszamolok/`
-- Archívum - `hu/archivum/`
+- Archívum - `hu/archivum/` (a korábbi oldalakból készült archív PDF-ek a
+  `doc/archivum/` mappában vannak; a 2026. novemberben megszűnt Képző
+  intézmények oldal tartalma is itt, PDF-ként érhető el)
 
 A kezdőlap blokkjai fentről lefelé:
 
@@ -118,13 +118,6 @@ Menüből nem, csak egy másik oldalról elérhető:
   fájl teljes kódja megjegyzésben (`/* ... */`) van. Visszakapcsolás: a
   fájl elején a `/*`, a végén a `*/` sort kell törölni. A popup HTML-je
   az `index.html`-ben, a stílusa a `css/popup.css`-ben megmaradt.
-- `company_inf_filter.js` - **ideiglenes** szűrő, amíg a Céginformációk
-  adatai frissülnek: a látogató a 9 Céginformációk-aloldalon a
-  "Tartalmaink frissítés alatt" értesítést látja a tartalom helyett. Csak
-  megjelenítési szűrő, a lapok a szerveren továbbra is elérhetők, ezért
-  bizalmas adat nem kerülhet rájuk. Minden oldal `<head>` része betölti.
-  Kikapcsolás: a fájl törlése, és mind a 22 oldal `<head>`-jéből a rá
-  mutató két sor (megjegyzés + `<script>`) törlése.
 
 ## Hogyan nézheted meg a saját gépeden
 
@@ -148,11 +141,6 @@ Utána a böngészőben: `http://localhost:8000/`
 A `-c-1` azért kell, hogy a böngésző ne gyorsítótárazza (ne "jegyezze
 meg") a fájlokat - enélkül előfordulhat, hogy egy CSS vagy JS módosítás
 után is még a régi változatot látod.
-
-Helyi gépen (`localhost`, `127.0.0.1`, dupla kattintás) a Céginformációk
-szűrője nem kapcsol be, ott minden tartalom látszik. A látogatói nézet
-így nézhető meg: a cím végére `?fejleszto=0` (vissza: `?fejleszto=1`) -
-a böngésző megjegyzi a választást.
 
 ## Hogyan kerül fel élesbe
 
@@ -222,7 +210,7 @@ nagyítóval (Real-ESRGAN) élesítettük. Ez a program nincs a tárolóban.
 
 1. Új mappa a `hu/` alatt, benne `index.html` (érdemes egy hasonló
    meglévő oldalt lemásolni).
-2. A menübe és (ha kell) a láblécbe mind a 22 oldalon fel kell venni.
+2. A menübe és (ha kell) a láblécbe mind a 21 oldalon fel kell venni.
 3. `search_data.js` - különben a keresőben nem jön elő. Az URL-ek a
    `hu/kereses/index.html`-hez képest relatívak.
 4. `sitemap.xml` - új `<url>` sor, a mai dátummal.
